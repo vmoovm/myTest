@@ -1,0 +1,9 @@
+/*-----------------------------------------------------
+table
+-----------------------------------------------------*/
+.table (@borderColor: @bColor, @thBg: @bgColor-default) {
+	td ,
+	th { padding: 5px; .border(@borderColor);}
+	th { .bgColor(@thBg);}
+}
+.table { .table();}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>分享和转发</title>
+		<script src="js/CXJSBridge.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://fanya.chaoxing.com/js/md5.js"></script> 
+	</head>
+
+	<body>
+
+		<!--转发协议 function _jsBridgeReady(){ jsBridge.postNotification('CLIENT_CUSTOM_MENU', {show:1, width:22, height:22, icon:'http://live.superlib.com/front/mobile/common/images/zhuanfa2x.png', menu:'', option:"shareUrl()" }); } 显示按钮的方法， icon是图片地址 option是执行的方法 option分享的方法放 下面这个分享网页的方法就行。 { "cataid":100000015, "content":{ "resTitle":"还出", "resUrl":"https://appswh.chaoxing.com/formtool/getSpecifiedForm?formUuid=94fbaaf3-bae7-45c9-9c96-f14b287b4a97", "resLogo":"https://appswh.chaoxing.com/res/images/app/formtool/formLogo.png", "resUid":"172bcecda312f2010c8e4efa9815c996" } } resTitle 显示的标题 resUrl 点击后打开的网页的连接 resLogo 图标 resUid 资源的唯一id， resUid 生成规则： int lastIndex = url.lastIndexOf("/"); if (lastIndex == url.length() - 1) { key = Md5Util.strToMd5_32(url.substring(0, url.length() - 1)); } else { key = Md5Util.strToMd5_32(url); } 我再给你个例子，例子是分享直播的：-->
+
+		<script type="text/javascript">
+			function _jsBridgeReady(){
+				//此行代码是在学习通页面的顶部条右边，放一个按钮，点击按钮后，会运行forwardUrl方法
+				jsBridge.postNotification('CLIENT_CUSTOM_MENU', {
+					show:1,
+					width:30,
+					height:18,
+					icon:'http://home.yd.chaoxing.com/res/images/tools/forward.png',
+					menu:'',
+					option:"forwardUrl()"
+				});
+			}
+			function forwardUrl(){
+		    	var name="能看到标题吗";
+		    	var resUrl = "分享的真实url";
+		    	var coverUrl = "";     //logo
+		    	var key = md5(resUrl);  //md5.js里面的方法
+		    	
+		    	jsBridge.postNotification('CLIENT_TRANSFER_INFO', {
+		    		"cataid" : "100000015",
+		    		"cataName" : "网页",
+		    		"key" : key,
+		    		"content" : {
+		    			"toolbarType" : 2,
+		    			"resTitle" : name,
+		    			"resUrl" : resUrl,
+		    			"resUid" : key,
+		    			"resLogo" : coverUrl,
+		    			"_source" : "",
+		    			"sourceConfig" : "",
+						"showContent":1,  //是否显示描述
+						"resContent":"能看到描述吗" //描述
+		    		}
+		    	});
+		    }
+		</script>
+	</body>
+
+</html>

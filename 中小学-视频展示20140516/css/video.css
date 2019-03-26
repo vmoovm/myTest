@@ -1,0 +1,71 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+视频播放
+-----------------------------------------------------*/
+.zgreen,
+.zgreen a { color:#7b9e31;}
+
+
+.fullScreen {position:relative; width:1900px; overflow:hidden; background-color:#ccc;}
+.zback {text-align:right; padding-right:12px;}
+.zb_a { display:inline-block; width:47px; height:45px; background:url(../images/video_btn.png) 0  18px no-repeat; line-height:45px;}
+.zblackbg { position:absolute; left:0; top:0; width:10000px;}
+
+.zvideo { float:left; width:1670px; height:1000px; text-align:center;}
+.zv_bg {  width:930px; height:810px; margin:0 auto; background-color:#fff; text-align:center;}
+.zv_title { height:117px; line-height:116px; border-bottom:1px #c9c9c9 solid; text-align:center; font-size:18px; font-weight:bold; color:#333;}
+.zv_player { padding-top:50px;}
+
+.zreview { position:fixed; position:absoulte; right:0; top:0; width:274px; height:100%; padding-left:36px;}
+.zre_title { position:relative; width:274px; height:24px; background-color:#000;}
+.zre_t_out ,.zre_t_in { display:inline-block; position:absolute; left:-24px; width:24px; height:24px; background:url(../images/video_btn.png) 0 -66px no-repeat; cursor:pointer;}
+.zre_t_in { background:url(../images/video_btn.png) 0  -32px no-repeat;}
+.zre_t_h { display:inline-block; position:absolute; left:14px; width:180px; height:24px; line-height:24px; color:#fff;}
+.zre_content { height:9000px; padding-right:11px; padding-left:12px; padding-top:8px; background-color:#f2f2f6;}
+.zre_c_report { width:44px; height:25px; border:none; border-radius:2px; background-color:#7b9e31; color:#fff;}
+.zre_c_report:hover { background-color:#8ec026;}
+.zre_c_space { padding-top:11px; padding-bottom:18px; text-align:right;}
+.zre_c_textarea { width:245px; height:64px; border:1px #dbdbdb solid; line-height:20px; color:#555;}
+.zre_c_item { display:inline-block; padding-top:12px; padding-bottom:13px; border-bottom:1px #ccc dashed;}
+.zre_c_portrait { float:left; width:60px; height:60px; background-color:#ccc;}
+.zre_c_info { float:left; width:170px; height:60px; padding-left:12px; line-height:24px;}
+.zre_c_block { display:block;}
+.zre_c_name { display:inline-block; width:80px; padding-right:3px; overflow:hidden; white-space:nowrap;  -o-text-overflow:ellipsis; text-overflow:ellipsis; vertical-align:top; font-weight:bold; color:#7b9e31;}
+.zre_c_name a { color:#7b9e31;}
+.zre_c_school { display:inline-block; width:77px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis; vertical-align:top; }
+.zre_c_text { padding-top:5px; line-height:24px; font-size:12px;}
+.zre_c_reply_tail { padding-top:11px; padding-right:px; text-align:right;}
+.zre_c_reply_tail a { color:#999;}
+.zre_c_reply_tail a:hover { color:#7b9e31;}
+.zre_c_reply { padding-right:10px;}
+.zre_c_right8 { padding-right:8px;}
+.zre_c_r_re { position:relative; width:248px; height:140px; display:inline; line-height:0; display:none;}
+.zre_c_r_abs { display:inline-block; position:absolute; left:0px; top:12px; width:225px; height:64px; padding:10px; border:1px #ccc solid; border-radius:3px; background-color:#fff; font-size:12px; line-height:18px;}
+.zre_c_r_arrow { display:inline-block;  position:absolute; left:188px; top:5px; width:24px; height:9px; background:url(../images/video_btn.png) 0 -110px no-repeat; z-index:9;}
+.zre_c_r_ok { display:inline-block; position:absolute; left:204px; top:100px; width:44px; height:25px; padding-top:10px;}
+
+.zre_c_border { border-top:1px #dbdbdb solid; border-bottom:1px #dbdbdb solid;}
+.zre_c_border0 { border:none;}
+.zre_c_top11 { padding-top:11px;}
+
+
+.zre_page { height:26px; padding-right:12px; padding-top:20px; padding-bottom:19px; text-align:center;}
+.zre_p_box { display:inline-block; width:132px; text-align:right;}
+.zre_p_box a { display:inline-block; width:25px; height:24px; border:1px #d1d1d1 solid; border-right:0; background-color:#efefef; line-height:24px; text-align:center;}
+.zre_p_box a:hover { background-color:#7b9e31; color:#fff; text-decoration:none;}
+.zre_p_box a.zre_p_br1 { border-right:1px #d1d1d1 solid;}
+.zre_p_box a.zre_p_cur { display:inline-block; width:25px; height:24px;  border-left:1px #d1d1d1 solid; background-color:#7b9e31; color:#fff; text-align:center; line-height:24px; }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>多组单选和多选</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/checkAndRadio.css"/>
+<link rel="stylesheet" type="text/css" href="css/topics.css"/>
+<!--<link rel="stylesheet" type="text/css" href="css/zobj.css"/>-->
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/checkAndRadio.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<h2 class="zse_t">一般单选：（仅限每页只有一组时可用）</h2>
+	<div class="zselectTopic">
+		<ul class="zse_row zse_bg">
+			<li class="zse_con">
+				<div class="zcheckR">
+					<input type="radio" name="classname000" checked="checked" id="classId001" value="" />
+					<label for="classId001"><em class="zcheck"><i></i></em><span>A:对象自身用处不大，不过在了解其他类之前，还是应该了解它。因为 ECMAScript 中的 Object 对象与 Java 中的 java.lang.object 相似，ECMAScript 中的所有对象都由这个对象继承而来，Object 对象中的所有属性和方法都会出现在其他对象中，所以理解了 Object 对象，就可以更好地理解其他对</span></label>
+				</div>
+			</li>
+		</ul>
+		<ul class="zse_row ">
+			<li class="zse_con">
+				<div class="zcheckR">
+					<input type="radio" name="classname000" id="classId002" value="" />
+					<label for="classId002"><em class="zcheck"><i></i></em><span>B:第二小组</span></label>
+				</div>
+			</li>
+		</ul>
+		<ul class="zse_row">
+			<li class="zse_con">
+				<div class="zcheckR">
+					<input type="radio" name="classname000" id="classId003" value="" />
+					<label for="classId003"><em class="zcheck"><i></i></em><span>C:小组</span></label>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	//一般单选（一页只有一组时）
+	$(".zselectTopic").checkAndRadio({inputType:'radio',defaultT:'.zse_row'});
+	
+	</script>
+</body>
+</html>

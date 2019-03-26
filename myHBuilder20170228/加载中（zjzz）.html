@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>加载中</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<!--加载中 start-->
+		<p class="zloading">
+			<i></i><span>加载中...</span>
+		</p>
+		<p class="zloading">
+			<span>没有数据了</span>
+		</p>
+		<style type="text/css">
+			/*----------------------------------------------------
+			加载中
+			-----------------------------------------------------*/
+			.zloading { padding: 20px 0px; text-align: center;}
+			.zloading span{ display: inline-block; font-size: 14px; color: #666; vertical-align: middle;}
+			.zloading i { position: relative; display: inline-block; width: 1.4em; height: 1.2em; margin-right: 0.4em; vertical-align: middle;}
+			.zloading i:before { position: absolute; left: 0px; top: 0; content: ''; display: inline-block; width: 1em; height: 1em; border: 0.14em #bcbcbc solid; border-right: 0.14em #666 solid; border-radius: 50%; }
+			.zloading i:before { -webkit-animation: 1.1s linear infinite zloading_run; animation: 1.1s linear infinite zloading_run;}
+			@-webkit-keyframes zloading_run {
+				from{ -webkit-transform: rotate(0deg);}
+				to{  -webkit-transform: rotate(360deg);}
+			};
+			@keyframes zloading_run {
+				from{ transform: rotate(0deg);}
+				to{  transform: rotate(360deg);}
+			};
+		</style>
+		<!--加载中 end-->
+		
+	</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>逐帧动画</title>
+	</head>
+	<body>
+		<style type="text/css">
+         @-webkit-keyframes run{
+             0%{
+                 background-position: 0 0;
+             }
+             8.333%{
+                 background-position: -140px 0;
+             }
+             16.666%{
+                 background-position: -280px 0 ;
+             }
+             25.0%{
+                 background-position: -420px 0 ;
+             }
+             33.333%{
+                 background-position: -560px 0 ;
+             }
+             41.666%{
+                 background-position: -700px 0 ;
+             }
+             50.0%{
+                 background-position: -840px 0 ;
+             }
+             58.333%{
+                 background-position: -980px 0 ;
+             }
+             66.666%{
+                 background-position: -1120px 0 ;
+             }
+             75.0%{
+                 background-position: -1260px 0 ;
+             }
+             83.333%{
+                 background-position: -1400px 0 ;
+             }
+             91.666%{
+                 background-position: -1540px 0 ;
+             }
+             100%{
+                 background-position: 0 0 ;
+             }
+         }
+         .run {  width:140px;
+             height:140px;
+             margin: 20px auto;
+             background: url(images/754767-20160601000042992-1734972084.png);
+             /*animation:run .5s steps(1, start) infinite;*/
+             -webkit-animation:run 1s steps(1, start) infinite;
+        }
+        
+        /*3840 12*/
+        @-webkit-keyframes circleFire{
+        	0% { background-position: 0 0;}
+        	8.333% { background-position: -320px 0;}
+        	16.666% { background-position: -640px 0;}
+        	25% { background-position: -960px 0;}
+        	33.333% { background-position: -1280px 0;}
+        	41.666% { background-position: -1600px 0;}
+        	50.0%{ background-position: -1920px 0; }
+            58.333%{ background-position: -2240px 0; }
+            66.666%{ background-position: -2560px 0; }
+            75.0%{ background-position: -2880px 0; }
+            83.333%{ background-position: -3200px 0; }
+            91.666%{ background-position: -3520px 0; }
+            100%{ background-position: 0 0; }
+        }
+        .circleFire { width: 320px; height: 402px; margin: 20px auto;
+        	background: url(images/16a8035fd64d4bb00432b7887f9b031b.png) no-repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: circleFire 1s steps(1, start) infinite; 
+        }
+        
+        /*9600 30*/
+        @-webkit-keyframes csgan{
+        	0% { background-position: 0px 0;}
+        	3.333% { background-position: -320px 0;}
+        	6.666% { background-position: -640px 0;}
+        	10% { background-position: -960px 0;}
+        	13.333% { background-position: -1280px 0;}
+        	16.666% { background-position: -1600px 0;}
+        	20% { background-position: -1920px 0;}
+        	23.333% { background-position: -2240px 0;}
+        	26.666% { background-position: -2560px 0;}
+        	30% { background-position: -2880px 0;}
+        	33.333% { background-position: -3200px 0;}
+        	36.666% { background-position: -3520px 0;}
+        	40% { background-position: -3840px 0;}
+        	43.333% { background-position: -4160px 0;}
+        	46.666% { background-position: -4480px 0;}
+        	50% { background-position: -4800px 0;}
+        	53.333% { background-position: -5120px 0;}
+        	56.666% { background-position: -5440px 0;}
+        	60% { background-position: -5760px 0;}
+        	63.333% { background-position: -6080px 0;}
+        	66.666% { background-position: -6400px 0;}
+        	70% { background-position: -6720px 0;}
+        	73.333% { background-position: -7040px 0;}
+        	76.666% { background-position: -7360px 0;}
+        	80% { background-position: -7680px 0;}
+        	83.333% { background-position: -8000px 0;}
+        	86.666% { background-position: -8320px 0;}
+        	90% { background-position: -8640px 0;}
+        	93.333% { background-position: -8960px 0;}
+        	96.666% { background-position: -9280px 0;}
+        	100% { background-position: 0px 0;}
+        }
+        .csgan { width: 320px; height: 402px; margin: 20px auto;
+        	background: url(images/a51859d9d411adc523e2a13f7cdfb506.png) no-repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: csgan 2s steps(1, start) infinite; 
+        }
+        /*8000 25*/
+        @-webkit-keyframes sunshine{ 
+        	0% { background-position: 0px 0;}
+        	4%{ background-position: -320px 0;}
+        	8%{ background-position: -640px 0;}
+        	12%{ background-position: -960px 0;}
+        	16%{ background-position: -1280px 0;}
+        	20%{ background-position: -1600px 0;}
+        	24%{ background-position: -1920px 0;}
+        	28%{ background-position: -2240px 0;}
+        	32%{ background-position: -2560px 0;}
+        	36%{ background-position: -2880px 0;}
+        	40%{ background-position: -3200px 0;}
+        	44%{ background-position: -3520px 0;}
+        	48%{ background-position: -3840px 0;}
+        	52%{ background-position: -4160px 0;}
+        	56%{ background-position: -4480px 0;}
+        	60%{ background-position: -4800px 0;}
+        	64%{ background-position: -5120px 0;}
+        	68%{ background-position: -5440px 0;}
+        	72%{ background-position: -5760px 0;}
+        	76%{ background-position: -6080px 0;}
+        	80%{ background-position: -6400px 0;}
+        	84%{ background-position: -6720px 0;}
+        	88%{ background-position: -7040px 0;}
+        	92%{ background-position: -7360px 0;}
+        	96%{ background-position: -7680px 0;}
+        	100%{ background-position: 0px 0;}
+        }
+        .sunshine { width: 320px; height: 402px; margin: 20px auto;
+        	background: url(images/e79870be1ac370a374ce0cd0ededf079.png) repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: sunshine 2s steps(1, start) infinite; 
+        }
+        .rain { width: 320px; height: 402px; margin: 20px auto;
+        	background: url(images/f27c0e89e6ddd7fece55aa2991928fd9.png) repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: sunshine 2s steps(1, start) infinite; 
+        }
+        /*爆炸*/
+       @-webkit-keyframes bob{
+        	0% { background-position: 0 0;}
+        	20% { background-position: -301.5px 0;}
+        	40% { background-position: -603px 0;}
+        	60% { background-position: -904.5px 0;}
+        	80% { background-position: -1206px 0;}
+            100%{ background-position: 0 0; }
+        }
+       .bob { width: 601.5px; height: 560px; margin: 20px auto;
+        	background: url(images/jiguang.png) repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: bob .2s steps(1, start) 1; 
+        }
+        /*摇奖*/
+       @-webkit-keyframes ball{
+        	0% { background-position: 0 0;}
+        	07.14% { background-position: -640px 0;}
+        	14.28% { background-position: -1280px 0;}
+        	21.42% { background-position: -1920px 0;}
+        	28.56% { background-position: -2560px 0;}
+        	35.70% { background-position: -3200px 0;}
+        	42.84% { background-position: -3840px 0;}
+        	49.98% { background-position: -4480px 0;}
+        	57.12% { background-position: -5120px 0;}
+        	64.26% { background-position: -5760px 0;}
+        	71.40% { background-position: -6400px 0;}
+        	78.54% { background-position: -7040px 0;}
+        	85.68% { background-position: -7680px 0;}
+        	92.82% { background-position: -8320px 0;}
+        	99.96% { background-position: -8960px 0;}
+            100%{ background-position: 0 0; }
+        }
+       .ball { width: 640px; height: 515px; margin: 20px auto;
+        	background: url(images/ball2.png) repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: ball 2.1s steps(1, start) 10; 
+        }
+        /*箭头*/
+       @-webkit-keyframes arrow{
+        	0% { background-position: 0 0;}
+        	07.14% { background-position: -95px 0;}
+        	14.28% { background-position: -190px 0;}
+        	21.42% { background-position: -285px 0;}
+        	28.56% { background-position: -380px 0;}
+        	35.70% { background-position: -475px 0;}
+        	42.84% { background-position: -570px 0;}
+        	49.98% { background-position: -665px 0;}
+        	57.12% { background-position: -760px 0;}
+        	64.26% { background-position: -855px 0;}
+        	71.40% { background-position: -950px 0;}
+        	78.54% { background-position: -1045px 0;}
+        	85.68% { background-position: -1140px 0;}
+        	92.82% { background-position: -1235px 0;}
+            100%{ background-position: 0 0; }
+        }
+       .arrow { width: 95px; height: 109px; margin: 20px auto;
+        	background: url(images/arrow.png) repeat #333333;
+        	/*background-size: 150px 150px;*/
+        	animation: arrow 1.1s steps(1, start) infinite; 
+        }
+		</style>
+		<div class="run"></div>
+		<div class="arrow"></div>
+		<div class="ball"></div>
+		<!--<div class="bob"></div>-->
+		<div class="circleFire"></div>
+		<div class="csgan"></div>
+		<div class="sunshine"></div>
+		<script type="text/javascript">
+			function position(step, num) {
+				var pr = 0, bp = 0;
+				for (var i = 0; i < num; i++) {
+					// console.log(step * i + '%' + ' ' + {background-position: 0px 0;})
+					console.log(step*i)
+				}
+			}
+			position(3.57, 28)
+		</script>
+	</body>
+</html>

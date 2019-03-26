@@ -1,0 +1,50 @@
+page { background: #f5f6f8;}
+/*按钮*/
+.zre_top { padding: 60rpx 30rpx 48rpx; text-align: center;}
+.zre_btn { text-align: center;}
+.zre_bottom { padding: 35rpx 0; text-align: center;}
+.zbtn_middle { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.zbtn_double { display: -webkit-box; -webkit-box-pack: center;}
+
+
+/*标题*/
+.zht { padding: 0 30rpx; line-height: 88rpx; font-size: 32rpx; color: #999; background: #f5f6f8;}
+.zht2 { line-height: 60rpx; padding: 0 30rpx; font-size: 28rpx; color: #999; background: #f5f6f8;}
+/*粗横线*/
+.zst_border { height: 16rpx; margin-top: 35rpx; background: #f5f6f8;}
+.zsplit { height: 16rpx; background: #f5f6f8;}
+
+/*----------------------------------------------------
+上传图片
+-----------------------------------------------------*/
+.zshangchuan { border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+
+
+/*多行文本输入*/
+.zsh_textarea {}
+.zsh_contenteditable ,.zsh_contenteditable1 { width: 100%;}
+.zsh_contenteditable textarea,.zsh_contenteditable1  textarea {-webkit-appearance: none; width: 100%; height: 140rpx; padding: 10rpx 30rpx 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: none; border-radius: 0; outline: none; background: #fff; line-height: 58rpx; font-size: 32rpx; color: #333;}
+.zsh_contenteditable1  textarea { border: none; border-radius: 0; outline: none; background: #fff; line-height: 1.4;}
+.zsh_contenteditable1  textarea::-webkit-input-placeholder { font-size: 30rpx; }
+
+.zsh_img,.zsh_img1 { padding:0 30rpx;}
+.zsh_img1 { border-bottom: 1px #ebebeb solid;}
+.zsh_imgList { padding: 14rpx 0 0 0;}
+.zsh_rel { position: relative; display: inline-block;  width: 124rpx; height: 124rpx; margin-top: 16rpx; margin-bottom: 26rpx; margin-right: 48rpx;}
+.zsh_view { width: 124rpx; height: 124rpx;}
+.zsh_view image { width: 124rpx; height: 124rpx; border-radius: 10rpx;}
+.zsh_close { position: absolute; right: -20rpx; top: -20rpx; z-index: 10;}
+.zsh_addImg { display: inline-block; width: 124rpx; height: 124rpx; margin-bottom: 26rpx; border:1px #ebebeb solid; border-radius: 8rpx; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHRJREFUeNrs2TEKwDAIQFENvf/JvFOyt2OLJeT9LVN4iJNZVdHcvL2z8/MRhwUMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDPxdVzxvPd1NEwYGfrXD+fPOug8DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwPv0RJgAIGqBt8XjptMAAAAAElFTkSuQmCC) center no-repeat; background-size: 60rpx; vertical-align: bottom;}
+.zsh_addImg:first-child { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAwCAYAAABaHInAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZmQ3MGFiOS05YzA4LWEzNDctYTRjOS0xZDZhY2EyODkwYTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDcwOUQ2OTY3MkIxMTFFN0IyMEJCNEYwMEJDRDQyNUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDcwOUQ2OTU3MkIxMTFFN0IyMEJCNEYwMEJDRDQyNUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5OTg4YzA3OS1kMjc3LTlhNDQtYWQ1Yi0wMDdhZTM4MzI4ZjMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MWZkNzBhYjktOWMwOC1hMzQ3LWE0YzktMWQ2YWNhMjg5MGE0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+2modlAAAA/JJREFUeNrcmllIVFEYx++Ma4sWFUHYIi0PQaI2ZSERIa2aEeFDGkILpA9tEG1UVrQgPRQVRRBUFGVoPVT20G5CkTHTKkRqpJQP+dKmVprZ/8P/hYvkMnPv9dzrBz/O3GHmzPnf8813vu+c6/H7/ZoJiwT5IBtMAYM1c9YIKkEROA1aevqCz+f77/vhJgYRB0pBkmadyY2ZSVaBxaA+lI68JmbKKOomSAMxwBMiMeyjlH1K37dAVF8KyzOI2gWWgId0JTNuKH1ksk+xRLA2lM48If7HxPcjeHczNXvsBvtupYcE9R8LdcYi2B7R7LOjnX6rT1xRN7+Nwkz1bXTFUEK3R7PX2oNdIuCaLcYZk9BdAY4x1PYkSkJwhma/ZfQi3OtLhIy9IhAIxOkzFklREuV+gkJwCdSCNs3ZFgbiwQqwHQwAr8AMEbYeL46DZjAPPNFcZHpUxEylorkLBoIN4oo5/Eyh20R1EihjP8zLHBE2lReXNffbRbbJ4YbFr9bhg27vRVSuYxtlXMfa3D5dcMc2K7L73tgQMF+iFBjPRPc3+AhegDtBeEpQa6ZdwkaB3WAlQ3B37iWJ735QZuUArBYmd3Uz2AsGgb/gEXgAPoAGrj0TwSyQzlIljZmDZD7fnSZMgtA5Lh8yE9fATvCui8/L2jkUbAEbmcol0XU/mR2M10JhZymqCSwHWd2I0u0rxU8HVWAyZ3eYU4TlM62RhHQuKA7y+2+Z770Bk8B5JwgTdzrA12vA0xD7+cLCUm+XqRa2FQznvkexyb7qGE3FClQKC+MsaYZZM2tnwGfud0xTJUx+eCSoAc8sEiaFYglfp6sSlsz2scXrYbmeJakSNsZQUVtp79mOViVMX+C/WSyslW2EKmHNbGNtSJ7FfqgSVsU2wWJhen/VqoTdZ6I7B0RbKGwh23uqhDUwIsYyP7TCJCAt4v+sVGXmcYLtHpYqZu0gg0YJk2Rlwq4yP4xnKWLGpCLIBb9Y0ynNFaX2ymOEXM3UKpStb3G/C4b8s1q1MLHXrMX+sL6SZHhEEGvhNnCd2winDO7tiEJTBraUpX0W7/g+MK6Lz8dyhuWmFFLgIbDOiXsecrQqG7AnwQKWHgVMkWqZtUdTbKLh92so6LZTN3P0PE/WodlaxzGrFI0TiNHEbcu4pXDFkEY5VpgxQy9nzZbAqClHPvq+YqVm7sxamTDdZHf2Jekz83aqhl1tgUAgzChMf/olXnO/jWXbKMKe8yK7HwjLZVspwop4sQOkutgNU7nQixXJUa080lPBdaU/nEHLgp+iPw5hxwNfKkwO1jN8Pl+917AZI2dYm7SOB0eaXCSmiWOWsaeIKHnznwADAGqz5djGlL/BAAAAAElFTkSuQmCC); border: none; }
+.zsh_h { padding: 0 30rpx 2rpx; line-height: 37rpx; font-size: 32rpx; color: #999;}
+
+
+.zintegral { padding:1rpx 30rpx; padding-right: 0;  margin-top:35rpx; border-top:1rpx #ebebeb solid; border-bottom:1rpx #ebebeb solid; background: #fff;}
+.zin_row { position: relative; width: 100%; padding: 12rpx 30rpx 12rpx 0; border-bottom:1rpx #ebebeb solid; line-height: 74rpx; -webkit-box-sizing: border-box; box-sizing: border-box; background:#fff;}
+.zin_row:last-child { border-bottom: none;}
+.zin_line { font-size: 32rpx;}
+#zspace { padding: 0 35rpx; border-bottom: none;}
+.zin_key { font-size: 32rpx; color: #333;}
+.zin_key span { color: #b7b7b7; font-size: 30rpx;}
+.zin_value { color: #576b95; font-size: 32rpx;}
+.zin_value {position: absolute; left: 0; top: 12rpx; width: 100%; height: 100%; padding-right: 30rpx; box-sizing: border-box; -webkit-box-sizing: border-box; text-align: right;}

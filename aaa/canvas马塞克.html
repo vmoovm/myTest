@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body { background: #f5f6f8;}
+			.zcanvas { width: 500px; height: 500px; margin: 50px auto;}
+			.zcanvas canvas { width: 100%; height: 100%; background: #fff;}
+		</style>
+	</head>
+	<body>
+		 <canvas id="c1">
+    </canvas>
+    <script type="text/javascript">
+        var oC = document.getElementById("c1");
+        var oGC = oC.getContext("2d");
+        var img = new Image();
+        img.onload = function () {
+            draw(this);
+        }
+        img.src = 'images/1390284870411abijg.jpg';
+        function draw(obj) {
+        	console.log(oC.height)
+            oC.width = obj.width;
+            oC.height = obj.height * 2;
+            oGC.drawImage(obj, 0, 0);
+            var oImg = oGC.getImageData(0, 0, obj.width, obj.height);
+            var nImg = oGC.createImageData(obj.width, obj.height);
+            var num = 15;
+            var w = oImg.width / num;
+            var h = oImg.height / num;
+            for (var i = 0; i < w; i++) {
+                for (var j = 0; j < h; j++) {
+                    var color = getXY(oImg, num * i + Math.floor(Math.random() * num), num * j + Math.floor(Math.random() * num));
+                    for (var k = 0; k < num; k++) {
+                        for (var l = 0; l < num; l++) {
+                            setXY(nImg, i * num + k, j * num + l, color);
+                        }
+                    }
+                }
+            }
+            oGC.putImageData(nImg, 0, oImg.height);
+        }
+        //获取指定位置的像素值
+        function getXY(obj, x, y) {
+            var color = [];
+            color[0] = obj.data[4 * (obj.width * y + x)];
+            color[1] = obj.data[4 * (obj.width * y + x) + 1];
+            color[2] = obj.data[4 * (obj.width * y + x) + 2];
+            color[3] = obj.data[4 * (obj.width * y + x) + 3];
+            return color;
+        }
+        //设置指定位置的像素值
+        function setXY(obj, x, y, color) {
+            obj.data[4 * (obj.width * y + x)] = color[0];
+            obj.data[4 * (obj.width * y + x) + 1] = color[1];
+            obj.data[4 * (obj.width * y + x) + 2] = color[2];
+            obj.data[4 * (obj.width * y + x) + 3] = color[3];
+        }
+    </script>
+		<!--<div class="zcanvas">
+			<canvas id="canvas" width="1000" height="1000"></canvas>
+		</div>
+		<script type="text/javascript">
+			var canvasDom = document.getElementById('canvas');
+			canvasCxt = canvas.getContext('2d');
+			
+			
+		</script>-->
+	</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+视频统计
+-----------------------------------------------------*/
+
+/*弹层*/
+.zlayer { position:absolute; left:0; top:0; width:100%; height:100%; padding-top:100px; background:url(../images/video_opacity.png) repeat; display:none;}
+.zla_bg { width:646px; height:401px; margin:0 auto; padding:1px; border:1px #cbcbcb solid; background-color:#fff;}
+.zla_title { height:40px; background-color:#09c; color:#fff;}
+.zla_h { float:left; padding-left:9px; line-height:40px; font-size:18px;}
+.zla_close { float:right; display:inline-block; width:26px; height:26px; padding-top:6px; padding-right:9px; background:url(../images/video_05.gif) 0 6px no-repeat; cursor:pointer;}
+.zla_box {  padding-top:26px; padding-left:16px; padding-bottom:23px; padding-right:14px;}
+
+.zla_select { padding-bottom:22px; border-bottom:1px #d6d6d6 dashed;}
+.zla_s_name { float:left; width:50px; line-height:30px;}
+
+.zla_checkbox { height:182px; padding-top:15px; padding-bottom:9px; border-bottom:1px #ccc solid; overflow:hidden; overflow-y:auto;}
+.zla_c_table {}
+.zla_c_tr td{ height:32px;}
+.zla_c_btn { padding-top:21px; text-align:center; line-height:32px;}
+.zla_c_yes,.zc_c_cancel { display:inline-block; width:57px; height:32px;}
+.zla_c_yes a { display:inline-block; width:57px; height:32px; border-radius:2px; background-color:#0099cc; color:#fff;}
+.zla_c_yes a:hover {background-color:#1fa8e4; text-decoration:none;}
+.zla_c_cancel { padding-left:31px;}
+.zla_c_cancel a { display:inline-block; width:55px; height:30px; border-radius:2px; border:1px #ccc solid; background-color:#f7f7f7; color:#999;}
+.zla_c_cancel a:hover{ background-color:#fff; color:#333; text-decoration:none;}
+/*----------------------------------------------------
+模拟下拉框
+-----------------------------------------------------*/
+.ze_box { float:left; width:110px; padding-right:20px;}
+.zselect { position:relative; width:108px; border:1px #ccc solid; cursor:pointer; background:url(../images/select_arrow.gif) right 11px no-repeat; background-color:#eee; z-index:999;}
+.zse_p { width:71px; height:30px; padding-left:6px; border-right:1px #ccc solid; background-color:#fff; line-height:30px; font-size:14px; color:#555;}
+.zse_ul { position:absolute; left:-1px; top:31px; width:108px; border:1px #ccc solid; border-top:none; background-color:#fff; display:none;}
+.zse_li {border-top:1px #efefef solid;}
+.zse_first {border-top:none;}
+.zse_li a { display:block; height:30px; padding-left:6px; padding-right:6px; line-height:30px;}
+.zse_li a:link { color: #555; text-decoration: none; }
+.zse_li a:visited { color: #555; text-decoration: none; }
+.zse_li a:hover { color:#fff; text-decoration: none; background-color:#09C;}
+.zse_li a:active { color: #555; text-decoration: none; }
+
+

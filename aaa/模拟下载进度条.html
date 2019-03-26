@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模拟下载完成</title>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			* {margin: 0; padding: 0;}
+			body { font-size: 12px;}
+				.zbtn { position: relative; width: 200px; height: 30px; background: #ccc; margin: 0 auto; margin-top: 200px;}
+				.zbtn p { position: absolute; left: 0; top: 0; width: 0%; height: 30px; text-indent: 4em; overflow: hidden; white-space: nowrap; line-height: 30px;}
+				.zbtn .cur { background: #f00; color: #fff;}
+				.zbtn .bg { width: 100%; background: #f5f6f8; color: #666;}
+			</style>
+			<div class="zbtn">
+				<p class="bg" id="bg">模拟下载完成0%</p>
+				<p class="cur" id="cur">模拟下载完成0%</p>
+			</div>
+			<script type="text/javascript">
+				var percent = 0
+				var clear = setInterval(function () {
+					percent++
+					if (percent > 100) {
+						clearInterval(clear)
+						return
+					}
+					$("#cur").width(percent + '%')
+					$("#cur").text('模拟下载完成' + percent + '%')
+					$("#bg").text('模拟下载完成' + percent + '%')
+				}, 200)
+			</script>
+	</body>
+</html>

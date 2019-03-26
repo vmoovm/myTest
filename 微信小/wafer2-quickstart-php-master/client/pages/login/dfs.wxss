@@ -1,0 +1,67 @@
+/* pages/login/dfs.wxss */
+page { background: #f7f7f7;}
+.title { padding: 12rpx 0; text-align: center; font-size: 24rpx;}
+.section { padding: 30rpx;}
+.label-1, .label-2{
+    margin-bottom: 15px;
+}
+.section__title { font-size: 28rpx;}
+.label-1__text, .label-2__text {
+    display: inline-block;
+    vertical-align: middle;
+	font-size: 26rpx;
+}
+
+.label-1__icon {
+    position: relative;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    background: #fcfff4;
+}
+
+.label-1__icon-checked {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    background: #1aad19;
+}
+
+
+.label-2__icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    background: #fcfff4;
+    border-radius: 50px;
+}
+
+.label-2__icon-checked {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background: #1aad19;
+    border-radius: 50%;
+}
+
+.label-4_text{
+    text-align: center;
+    margin-top: 15px;
+}
+.label-btn { display: flex; padding:0 30rpx;}
+.label-btn button { flex: 1; margin: 15rpx;}
+.imgList-box { display: flex; justify-content:space-between; padding: 30rpx;}
+.imgList-item { width: 200rpx; height: 270rpx; margin-right: 15rpx;}
+.imgList-item:last-child { margin-right: 0}
+.imgList-pic { width: 200rpx; height: 200rpx; overflow: hidden}
+.imgList-title { display: block; width: 100%; height: 40rpx; line-height: 40rpx; font-size: 30rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.imgList-txt { display: block; width: 100%; height: 30rpx; line-height: 30rpx; font-size: 26rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}

@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人常用标签布局和样式库hcquery</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/cjuery.css" rel="stylesheet" type="text/css" />
+<script>
+
+</script>
+</head>
+
+<body id="body">
+<div class="zbg">
+<h1 class="ztitle">个人常用标签布局和样式库HCQuery</h1>
+
+<!--page start-->
+<div class="zcenter">
+	<h2 class="zh2">分页代码</h2>
+    <p class="znotice">注意：以上a标签与a标签之间不能有空格和换行，若添加span标签也同理，否则会产生空白间隙<span class="zwhite">(例如:)</span></p>
+	<ul class="zpage">
+    	<li class="zp_li">
+        	<a class="zp_width80" href="#">首页</a><a class="zp_width80" href="#">上一页</a><a href="#">3</a><a href="#">4</a><a class="zp_cur" href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a class="zp_width80" href="#">下一页</a><a class="zp_width80 zp_br1" href="#">尾页</a></li>
+    </ul>
+</div>
+<!--page end-->
+
+<!--page2 start-->
+<div class="zcenter">
+	<h2 class="zh2">分页代码</h2>
+    <p class="znotice">注意：以上a标签与a标签之间不能有空格和换行，若添加span标签也同理，否则会产生空白间隙<span class="zwhite">(例如:)</span></p>
+	<div class="zpage2" style=" background-color:#FFF">
+      <ul class="zp_ul">
+        <li class="zp_count">每页14条记录&nbsp;&nbsp; 总共54条记录</li>
+        <li class="zp_fn"><a class="zp_width" href="#">首页</a><a class="zp_width" href="#">上一页</a><a class="zp_width" href="#">下一页</a><a class="zp_width" href="#">尾页</a><span class="zp_span">页码2/4</span>
+          <input class="zp_input" name="" type="text" />
+          <a class="zp_width" href="#">跳转</a></li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+</div>
+<!--page2 end-->
+
+<!--vertical menu start-->
+<div class="zcenter">
+	<h2 class="zh2">垂直多级菜单</h2>
+    <p class="znotice">注意：注意给二三级以上菜单添加css样式display:none;因为默认是打开的<span class="zwhite">(例如:)</span></p>
+    <ul class="zmenu white">
+        <li class="zm_f_a"><a class="zm_first zarrow_gray" href="#">一级菜单</a>
+        	<ul class="zm_s_a">
+                <li><a class="zm_second zarrow_gray" href="#">二级菜单</a>
+                    <ul class="zm_t_a">
+                        <li><a class="zm_third zarrow_color" href="#">三级菜单</a>
+                            <ul class="zm_m_a">
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="zm_third zarrow_color" href="#">三级菜单</a>
+                            <ul class="zm_m_a">
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                                <li><a class="zm_more" href="#">四级菜单</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="zm_second" href="#">二级菜单</a>
+                    
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!--vertical menu end-->
+
+<!--start-->
+<div class="zcenter">
+	<h2 class="zh2">单行多行文本垂直水平居中</h2>
+    <p class="znotice">注意：1,样式ztext_middle、ztext_m_outer这两个父级标签必须存在。<br />2,<font color="red">父级标签ztext_middle绝对不能用text-align:center</font><span class="zwhite">(例如:)</span></p>
+	<div class="ztext_middle" style="">
+        <ul class="ztext_m_outer">
+            <li class="ztext_m_inside">
+                在此输入文本内容 在此输入文本内容 在此输入文本内容 在此输入<br />文本内容 在此输入文本内容 在此输入文本内容 在此输入文本内容 在此输入文本内容
+                 在此输入文本内容 在此输入文本内容 在此输入文本内容 在此<br />输入文本内容 在此输入文本内容 在此输入文本内容
+                  在此输入文本内容 在此输入文本内容 在此输入文本内容 在<br />此输入文本内容
+            </li>
+        </ul>
+    </div>
+</div>
+<!--end-->
+
+<!--model h start-->
+<div class="zcenter">
+	<h2 class="zh2">模块标题的写法</h2>
+    <p class="znotice">注意：不想写标题左右的宽度就得用float，且要清除浮动<span class="zwhite">(例如:)</span></p>
+	<h2 class="zmodel_h"><span class="zmodel_h2">新闻公告</span><span class="zmodel_more"><a href="#">更多</a></span><div class="clear"></div></h2>
+</div>
+<!--model hend-->
+
+<!--model start-->
+<div class="zcenter">
+	<h2 class="zh2">标题与时间同行且不使用float，重点是可以兼容所有浏览器</h2>
+    <p class="znotice">注意：这几样css是必须的display:inline-block;设置宽度，以便于限制长度，超出部分用省略号代替；<br />
+    text-align:right;这个样式是右侧内容必填的一个属性，主要让内容居右； vertical-align:middle;这个是兼容的写法，为兼容低版本的Firefox<span class="zwhite">(例如:)</span></p>
+	<div class="zlistTime">
+    	<h2 class="zli_top"><span class="zli_t_h">新闻公告</span><span class="zli_t_more zgray"><a href="#">更多&nbsp;&gt;&gt;</a></span></h2>
+        <ul>
+            <li class="zli_li"><h3><a class="zli_title" href="#">标题与时间同行且不使用float，重点是可以兼容所有浏览器</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+            <li class="zli_li"><h3><a class="zli_title" href="#">标题与时间同行且不使用float，重点是可以兼容所有浏览器</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+            <li class="zli_li"><h3><a class="zli_title" href="#">单行多行文本垂直水平居中单行多行文本垂直垂直水平居中单行多行文本垂直水平居中</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+            <li class="zli_li"><h3><a class="zli_title" href="#">标题与时间同行且不使用float，重点是可以兼容所有浏览器</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+            <li class="zli_li"><h3><a class="zli_title" href="#">标题与时间同行且不使用float，重点是可以兼容所有浏览器</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+            <li class="zli_li"><h3><a class="zli_title" href="#">标题与时间同行且不使用float，重点是可以兼容所有浏览器</a><span class="zli_time zgray">2090-12-31</span></h3></li>
+        </ul>
+
+    </div>
+</div>
+<!--model end-->
+<!--articleList start-->
+<div class="zcenter">
+	<h2 class="zh2">文章列表</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div style="background-color:#fff;">
+        <ul class="p_top zbordertop1">
+          <li class="p_title">检测常识</li>
+          <li class="p_more"></li>
+          <div class="clear"></div>
+        </ul>
+        <ul class="p_content">
+          <li><a href="#">网站已开通，欢迎大家使用会证会</a><span class="p_new"><img src="images/articleList/safe_new.gif" width="11" height="11" alt="最新" /></span></li>
+          <li><a href="#">“2013全国高职高专教育经管会双证会</a></li>
+          <li><a href="#">“2013全国高职高专教育经管会双证会</a></li>
+        </ul>
+      </div>
+</div>
+<!--articleList end-->
+<!--articleList2 start-->
+<div class="zcenter">
+	<h2 class="zh2">文章列表</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="box_top" style=" background-color:#fff;">
+        <div class="p_top mi_bordertop">
+          <ul>
+            <li class="p_title mi_title">热点关注</li>
+            <li class="p_more"></li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="p_content">
+          <ul class="mi_left">
+            <li><a href="#">网站已开通，欢会证会</a><span class="p_new"><img src="images/articleList/safe_new.gif" width="11" height="11" alt="最新" /></span></li>
+            <li><a href="#">“2013全国高职会双证会</a></li>
+            <li><a href="#">“2013全国高职高证会</a></li>
+            <li><a href="#">“20教育经管会双证会</a></li>
+          </ul>
+          <ul class="mi_right">
+            <li><a href="#">网站已开家使</a><span class="p_new"><img src="images/articleList/safe_new.gif" width="11" height="11" alt="最新" /></span></li>
+            <li><a href="#">“2育经管会双证会</a></li>
+            <li><a href="#">“20教育经管会双证会</a></li>
+            <li><a href="#">“20教育经管会双证会</a></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+</div>
+<!--articleList2 end-->
+
+<!--nav start-->
+<div class="zcenter">
+	<h2 class="zh2">通用导航且有当前背景和hover效果</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+    <div class="mainNav">
+          <div class="m_content">
+            <ul class="white" id="nav">
+              <li class="m_item">
+                <h1><a class="m_i_cur" href="#">首页</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">热点关注</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">安全消费指南</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">消费维权</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">检测常识</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">特色农产品博览</a></h1>
+              </li>
+              <li class="m_item">
+                <h1><a href="#">大众讲堂</a></h1>
+              </li>
+              <div class="clear"></div>
+            </ul>
+          </div>
+        </div>
+</div>
+<!--nav end-->
+
+<!--nav1 start-->
+<div class="zcenter nav1">
+    <h2 class="zh2">纯颜色不固定宽度导航</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+    <div class="znav">
+      <div class="znav1000">
+        <ul class="zn_ul">
+          <li class="zn_li zn_first zn_cur"><a href="#">首页</a></li>
+          <li class="zn_li"><a href="#">高校共享课程</a></li>
+          <li class="zn_li"><a href="#">社会开放课程</a></li>
+          <li class="zn_li"><a href="#">联盟成员</a></li>
+          <li class="zn_li zn_last"><a href="#">通知公告</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+<!--nav1 end-->
+
+<!--portrait shade start-->
+<div class="zcenter">
+	<h2 class="zh2">用户头像圆形遮罩</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div style=" padding-left:20px; background-color:#fff;">
+    	<ul class="zsi_top18">
+          <li class="zsi_width70">
+            <dl class="zsi_w_re">
+              <dd class="zsi_w_portrait"><img src="images/portrait/muke_portrait.gif" width="70" height="70" alt="头像" /></dd>
+              <dd class="zsi_w_border"></dd>
+            </dl>
+          </li>
+          <li class="zsi_width212">
+            <dl>
+              <dd class="zsi_font14">袁佳联<span class="zsi_font10">教授</span></dd>
+              <dd class="zsi_top5">部门：摄影</dd>
+              <dd>职位：教学</dd>
+            </dl>
+          </li>
+          <div class="clear"></div>
+        </ul>
+    </div>
+</div>
+<!--portrait shade end-->
+
+<!--tab start-->
+<div class="zcenter">
+	<h2 class="zh2">tab选项卡切换</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div style=" background-color:#fff;">
+      <ul class="zla_m_tab">
+        <li class="zla_m_item zla_m_cur"><a href="javascript:void(0)">培训活动</a><b>|</b></li>
+        <li class="zla_m_item"><a href="javascript:void(0)">教师试讲</a><b>|</b></li>
+        <li class="zla_m_item"><a href="javascript:void(0)">公开教学</a><b>|</b></li>
+        <li class="zla_m_item"><a href="javascript:void(0)">示范教学</a><b>|</b></li>
+        <li class="zla_m_item"><a href="javascript:void(0)">教学档案</a></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
+    </div>
+</div>
+<!--tab end-->
+
+<!--textPic start-->
+<div class="zcenter">
+	<h2 class="zh2">半透明背景文字描述显示在图片之上的底部</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zp_content">
+        	<ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm0039-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm1079-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+				<li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm4228-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm0003-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm0789-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm0003-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zp_item">
+            	<li class="zp_i_img"><img src="images/textPic/xltm0003-1.jpg" width="240" height="148" /></li>
+                <li class="zp_i_text zwhite"><a href="#">春天已过</a></li>
+                <li class="zp_i_a"><a href="#"></a></li>
+            </ul>
+            <ul class="zmore">
+            	<li class="zm_red zwhite"><a href="#">发现更多</a></li>
+            </ul>
+            <div class="clear"></div>
+      </div>
+</div>
+<!--textPic end-->
+
+<!--picShow start-->
+<div class="zcenter">
+	<h2 class="zh2">图片列表展示</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<ul class="zc_ul" style=" background-color:#fff;">
+        <li class="zc_li">
+            <dl>
+                <dd class="zc_pic"><a href="#" title="《电路》"><img src="images/picShow/1.jpg" width="336" height="200" alt="《电路》" /></a></dd>
+                <dd><h2 class="zc_name"><a href="#" title="《电路》">《电路》</a></h2></dd>
+                <dd class="zc_author">&nbsp;</dd>
+            </dl>
+        </li>
+        <li class="zc_li">
+            <dl>
+                <dd class="zc_pic"><a href="#" title="《火炮设计理论》"><img src="images/picShow/2.jpg" width="336" height="200" alt="《火炮设计理论》" /></a></dd>
+                <dd><h2 class="zc_name"><a href="#" title="《火炮设计理论》">《火炮设计理论》</a></h2></dd>
+                <dd class="zc_author">&nbsp;</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dd class="zc_pic"><a href="#" title="《固体火箭发动机气体动力学》"><img src="images/picShow/3.jpg" width="336" height="200" alt="《固体火箭发动机气体动力学》" /></a></dd>
+                <dd><h2 class="zc_name"><a href="#" title="《固体火箭发动机气体动力学》">《固体火箭发动机气体动力学》</a></h2></dd>
+                <dd class="zc_author">&nbsp;</dd>
+            </dl>
+        </li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<!--picShow end-->
+
+<!--picShow2 start-->
+<div class="zcenter">
+	<h2 class="zh2">图片列表展示</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div style=" width:448px; background-color:#fff;">
+        <div class="mi_dzjt">
+          <h2 class="mi_d_h2 white">大众讲堂</h2>
+          <a class="mi_d_more" href="#"></a>
+          <div class="clear"></div>
+        </div>
+        <div class="mi_d_top">
+          <ul class="mi_d_item">
+            <li class="mi_d_box"><a href="#"><img src="images/articleList/safe_72.jpg" width="206" height="104" alt="最新" /></a>
+              <h2><a href="#">世界建筑史（History to..）</a></h2>
+              <p>陈仲丹 &nbsp;南京大学</p>
+            </li>
+            <li class="mi_d_bottom"></li>
+          </ul>
+          <ul class="mi_d_item mi_d_padding0">
+            <li class="mi_d_box"><a href="#"><img src="images/articleList/safe_72.jpg" width="206" height="104" alt="最新" /></a>
+              <h2><a href="#">世界建筑史（History to..）</a></h2>
+              <p class="gray">陈仲丹 &nbsp;南京大学</p>
+            </li>
+            <li class="mi_d_bottom"></li>
+          </ul>
+          <ul class="mi_d_item">
+            <li class="mi_d_box"><a href="#"><img src="images/articleList/safe_72.jpg" width="206" height="104" alt="最新" /></a>
+              <h2><a href="#">世界建筑史（History to..）</a></h2>
+              <p>陈仲丹 &nbsp;南京大学</p>
+            </li>
+            <li class="mi_d_bottom"></li>
+          </ul>
+          <ul class="mi_d_item mi_d_padding0">
+            <li class="mi_d_box"><a href="#"><img src="images/articleList/safe_72.jpg" width="206" height="104" alt="最新" /></a>
+              <h2><a href="#">世界建筑史（History to..）</a></h2>
+              <p class="gray">陈仲丹 &nbsp;南京大学</p>
+            </li>
+            <li class="mi_d_bottom"></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+</div>
+<!--picShow2 end-->
+
+<!--picShow3 start-->
+<div class="zcenter">
+	<h2 class="zh2">图片列表展示</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zd_content" style=" background-color:#fff;">
+      <h2 class="zfont">参考资料</h2>
+      <dl class="zd_top25">
+        <dd class="zd_pic"><a href="#" title="大师的人像摄影"><img src="images/detailed/muke_11.gif" width="68" height="103" alt="大师的人像摄影" /></a></dd>
+        <dd class="zd_text">
+          <p><a href="#" title="大师的人像摄影">大师的人像摄影</a></p>
+          <p>林路著</p>
+          <p>福州市：福建科学技术出版社2010.04</p>
+        </dd>
+        <div class="clear"></div>
+      </dl>
+      <dl class="zd_top25">
+        <dd class="zd_pic"><a href="#" title="大师的人像摄影"><img src="images/detailed/muke_11.gif" width="68" height="103" alt="大师的人像摄影" /></a></dd>
+        <dd class="zd_text">
+          <p><a href="#" title="大师的人像摄影">大师的人像摄影</a></p>
+          <p>林路著</p>
+          <p>福州市：福建科学技术出版社2010.04</p>
+        </dd>
+        <div class="clear"></div>
+      </dl>
+      <div class="clear"></div>
+    </div>
+</div>
+<!--picShow3 end-->
+
+<!--help start-->
+<div class="zcenter">
+	<h2 class="zh2">帮助信息</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zhelp">
+    	<ul class="zhe_center">
+        	<li class="zhe_item">
+            	<dl>
+                	<dt class="zhe_i_dt">新手上路</dt>
+                    <dd class="zhe_i_dd"><a href="#">注册新用户</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">用户登录</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">如何订购</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">购物车功能</a></dd>
+                    <dd class="zhe_i_dd"><a href="#"></a></dd>
+                </dl>
+            </li>
+            <li class="zhe_item">
+            	<dl>
+                	<dt class="zhe_i_dt">新手上路</dt>
+                    <dd class="zhe_i_dd"><a href="#">注册新用户</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">用户登录</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">如何订购</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">购物车功能</a></dd>
+                    <dd class="zhe_i_dd"><a href="#"></a></dd>
+                </dl>
+            </li>
+            <li class="zhe_item">
+            	<dl>
+                	<dt class="zhe_i_dt">新手上路</dt>
+                    <dd class="zhe_i_dd"><a href="#">注册新用户</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">用户登录</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">如何订购</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">购物车功能</a></dd>
+                    <dd class="zhe_i_dd"><a href="#"></a></dd>
+                </dl>
+            </li>
+            <li class="zhe_item">
+            	<dl>
+                	<dt class="zhe_i_dt">新手上路</dt>
+                    <dd class="zhe_i_dd"><a href="#">注册新用户</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">用户登录</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">如何订购</a></dd>
+                    <dd class="zhe_i_dd"><a href="#">购物车功能</a></dd>
+                    <dd class="zhe_i_dd"><a href="#"></a></dd>
+                </dl>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="zhelp">
+    	<div class="zhe_center">
+            <table class="zhe_table" border="1">
+              <thead>
+                <tr class="zhe_thead">
+                	<th>新手上路</th>
+                    <th>会员活动</th>
+                    <th>配送服务</th>
+                    <th>付款方式</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="zhe_tr">
+                  <td><a href="#">注册新帐户</a></td>
+                  <td><a href="#">用户登录</a></td>
+                  <td><a href="#">如何订购</a></td>
+                  <td><a href="#">购物车功能</a></td>
+                </tr>
+                
+                <tr class="zhe_tr">
+                  <td><a href="#">配送时间</a></td>
+                  <td><a href="#">配送运费</a></td>
+                  <td><a href="#">配送方式</a></td>
+                  <td><a href="#">门店取货服务说明</a></td>
+                </tr>
+                <tr class="zhe_tr">
+                  <td><a href="#">配送时间</a></td>
+                  <td><a href="#">配送运费</a></td>
+                  <td><a href="#">配送方式</a></td>
+                  <td><a href="#">门店取货服务说明</a></td>
+                </tr>
+                <tr class="zhe_tr">
+                  <td><a href="#">配送时间</a></td>
+                  <td><a href="#">配送运费</a></td>
+                  <td><a href="#">配送方式</a></td>
+                  <td><a href="#">门店取货服务说明</a></td>
+                </tr>
+                <tr class="zhe_tr">
+                  <td><a href="#">礼券说明</a></td>
+                  <td><a href="#">购物金说明</a></td>
+                  <td><a href="#">活动商品说明</a></td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+              
+            </table>
+		</div>
+    </div>
+</div>
+<!--help end-->
+
+<!--model footer start-->
+<div class="zcenter">
+	<h2 class="zh2">model footer 底部的写法css</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zfooter">
+    	<ul class="zf_center">
+        	<li class="">个人常用标签布局和样式库HCQuery</li>
+			<li>QQ:1206762787</li>
+        </ul>
+    </div>
+</div>
+<!--model footer end-->
+
+<!--model2 footer start-->
+<div class="zcenter">
+	<h2 class="zh2">model footer 底部的写法css</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+    <div class="tcopyright" style=" background-color:#fff;">
+    <p> <a href="#" target="_blank" rel="nofollow">关于腾讯</a> | <a href="#" target="_blank" rel="nofollow">About Tencent</a> | <a href="#" target="_blank" rel="nofollow">服务协议</a> | <a href="#" target="_blank" rel="nofollow">隐私权保护</a> | <a href="#" target="_blank" rel="nofollow">开放平台</a> | <a href="#" target="_blank" rel="nofollow">广告服务</a> | <a href="#" target="_blank" rel="nofollow">腾讯招聘</a> | <a href="#" target="_blank" rel="nofollow">腾讯公益</a> | <a href="#" target="_blank" rel="nofollow">客服中心</a> | <a href="#" target="_blank" rel="nofollow">网站导航</a> </p>
+    <p class="en">Copyright &#169; 1998 - 2014 Tencent. All Rights Reserved</p>
+    <p> <a href="#" target="_blank" rel="nofollow">腾讯公司</a> <a href="#" target="_blank" rel="nofollow">版权所有</a> </p>
+  </div>
+</div>
+<!--model2 footer end-->
+
+<!--inline buttton start-->
+<div class="zcenter">
+	<h2 class="zh2">并排多个按钮</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+  <div class="zmodules"><label class="zmo_label">用户名：<input class="zmo_input" type="text" value="请输入用户名" /></label><label class="zmo_label">用户密码：<input class="zmo_input" type="text" value="请输入密码" /></label><span class="zmo_ok"><a href="#">登录</a></span><span class="zmo_register"><a href="#">免费注册</a></span><span class="ze_box"><span class="zselect" id="select"><i class="zse_p">请选择</i><ul class="zse_ul"><li class="zse_li zse_first"><a href="javascript:void(0);">菜单一</a></li><li class="zse_li"><a href="javascript:void(0);">菜单二</a></li><li class="zse_li"><a href="javascript:void(0);">菜单三</a></li></ul></span></span><span class="ze_box"><span class="zselect" id="select"><i class="zse_p">请选择</i><ul class="zse_ul"><li class="zse_li zse_first"><a href="javascript:void(0);">菜单一</a></li><li class="zse_li"><a href="javascript:void(0);">菜单二</a></li><li class="zse_li"><a href="javascript:void(0);">菜单三</a></li></ul></span></span><label class="zmo_label">验证码：<input class="zmo_input" type="text" value="请输入验证码" /></label><span class="zmo_img"><img src="images/modules/001.gif" width="80" height="28" /></span>
+</div>
+<!--inline buttton end-->
+
+<!--login start-->
+<div class="zcenter">
+	<h2 class="zh2">登陆模块</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zlogin" style="background-color:#fff;" align="center">
+        <table>
+          <tr>
+            <td colspan="3"><h2 class="zl_h2">用户登陆</h2></td>
+          </tr>
+          <tr>
+            <td class="zl_name">邮箱帐号：</td>
+            <td><input class="zl_input" type="text" name="textfield" id="textfield" value="输入邮箱/账号--zl_input这是默认样式" /></td>
+            <td class="zl_prompt zblue"><a href="#">选择学校</a></td>
+          </tr>
+          <tr class="zl_tr_top18">
+            <td class="zl_name">密码：</td>
+            <td><input class="zl_input2" type="text" name="textfield2" id="textfield2" value="输入密码--zl_input2这是写入时样式" /></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="zl_tr_top18">
+            <td class="zl_name"></td>
+            <td><table width="100%">
+                <tr class="zl_tr_top0">
+                  <td class="zl_left"><label class="zl_cursor">
+                      <input type="checkbox" name="checkbox2" id="checkbox2" />
+                      记住密码</label></td>
+                  <td class="zl_right"><a href="#">忘记密码</a></td>
+                </tr>
+              </table></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="zl_tr_top18">
+            <td>&nbsp;</td>
+            <td><label class="zl_btn">
+                <input class="zl_btn_right" type="submit" name="button" id="button" value="登陆" />
+              </label></td>
+            <td class="zl_prompt zblue"><a href="#">注册</a></td>
+          </tr>
+        </table>
+  </div>
+</div>
+<!--login end-->
+
+<!--login1 start-->
+<div class="zcenter">
+    <h2 class="zh2">登录没有验证码可手动加</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+    <!--登录之前 start-->
+    <ul class="zli_login1">
+        <li><input class="zli_l_input zli_name" name="" type="text" value="用户名" /></li>
+        <li><input class="zli_l_input zli_psw" name="" type="text" value="密码" /></li>
+        <li class="zli_l_btn"><a href="#">登&nbsp;录</a></li>
+    </ul>
+    <!--登录之前 end-->
+    <p style="height:30px;">这行只是为了空行，不要复制此行</p>
+    <!--登录之后 start-->
+    <ul class="zli_login2">
+        <li class="zli_lo_top">
+            <p class="zli_lo_portrait"><a href="#"><img src="images/login1/nanjing_12.jpg" width="78" height="78" /></a></p>
+            <dl class="zli_lo_info">
+                <dd class="zli_lo_wel">欢迎<span><a href="#">贾玉洁</a></span></dd>
+                <dd class="zli_lo_top5"><span class="zli_lo_in">进入</span><span class="zli_lo_zoom"><a href="#">教学空间</a></span><div class="clear"></div></dd>
+                <dd class="zli_lo_top15"><span class="zli_lo_set"><a href="#">后台管理</a></span><span class="zli_lo_email"><a href="#">修改邮箱</a></span></dd>
+                <dd></dd>
+            </dl>
+        </li>
+        <li class="zli_lo_box">
+            <span class="zli_lo_modify"><a href="#">修改密码</a></span><span class="zli_lo_layout"><a href="#">退出登录</a></span>
+        </li>
+    </ul>
+    <!--登录之后 end-->
+</div>
+<!--login1 end-->
+
+    
+<!--chapter start-->
+<div class="zcenter">
+	<h2 class="zh2">章节展示</h2>
+    <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+	<div class="zsi_dir" style=" background-color:#fff;">
+        <div class="zsi_line">
+          <ul>
+            <li class="zsi_circle"><i class="zsi_num">1</i><a class="zsi_first" href="#">光圈</a>
+              <ol class="zsi_sub">
+                <li><a href="#">1.1光圈是什么</a></li>
+                <li><a href="#">1.2光圈大小的表示方法</a></li>
+                <li><a href="#">1.3问题答疑</a></li>
+              </ol>
+            </li>
+            <li class="zsi_circle"><i class="zsi_num">2</i><a class="zsi_first" href="#">光圈</a>
+              <ol class="zsi_sub">
+                <li><a href="#">2.1光圈是什么</a></li>
+                <li><a href="#">2.2光圈大小的表示方法</a></li>
+                <li><a href="#">2.3问题答疑</a></li>
+              </ol>
+            </li>
+            <li class="zsi_circle"><i class="zsi_num">3</i><a class="zsi_first" href="#">光圈</a>
+              <ol class="zsi_sub">
+                <li><a href="#">3.1光圈是什么</a></li>
+                <li><a href="#">3.2光圈大小的表示方法</a></li>
+                <li><a href="#">3.3问题答疑</a></li>
+              </ol>
+            </li>
+            <li class="zsi_circle"><i class="zsi_num">3</i><a class="zsi_first" href="#">光圈</a></li>
+            <li class="zsi_circle"><i class="zsi_num">4</i><a class="zsi_first" href="#">光圈</a></li>
+            <li class="zsi_circle"><i class="zsi_num">5</i><a class="zsi_first" href="#">光圈</a>
+              <ol class="zsi_sub">
+                <li><a href="#">5.1光圈是什么</a></li>
+                <li><a href="#">5.2光圈大小的表示方法</a></li>
+                <li><a href="#">5.3问题答疑</a></li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--chapter end-->
+    
+    <!--top start-->
+    <div class="zcenter top">
+        <h2 class="zh2">top顶部</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        <div class="zheader">
+            <div class="zh_center">
+                <ul class="zh_top">
+                    <li class="zh_fl">
+                        <dl>
+                            <dd><a href="#">未来学生</a></dd>
+                            <dd><a href="#">在校学生</a></dd>
+                            <dd><a href="#">毕业校友</a></dd>
+                            <dd><a href="#">教职员工</a></dd>
+                        </dl>
+                    </li>
+                    <li class="zh_fr">
+                        <dl>
+                            <dd><a href="#">教育基金会</a></dd>
+                            <dd><a href="#">数字北语</a></dd>
+                            <dd><a href="#">中文</a></dd>
+                            <dd><a href="#">English</a></dd>
+                        </dl>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--top end-->
+    
+    <!--top1 start-->
+    <div class="zcenter top1">
+        <h2 class="zh2">顶部</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        <div class="zheader">
+            <div class="zh_center">
+                <ul class="zh_top clearfix">
+                    <li class="fl"><a href="#"><img src="images/top1/sicfl_02.gif" width="199" height="50" alt="logo" /></a></li>
+                    <li class="fr">
+                        <!--登录后 start-->
+                        <dl style=" display:none;">
+                            <dd>您好，贾玉洁！</dd>
+                            <dd class="zh_counter"><a href="#">泛雅平台</a></dd>
+                            <dd class="zh_layout"><a href="#">退出</a></dd>
+                        </dl>
+                        <!--登录后 end-->
+                        <!--登录前 start-->
+                        <p class="zl_login"><input class="zh_l_user" type="text" value="用户名" /><input class="zh_l_psw" type="text" value="密码" /><span class="zh_l_btn"><a href="#">登录</a></span></p>
+                        <!--登录前 end-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p style="height:30px;">这行只是为了空行，不要复制此行</p>
+        <div class="zheader">
+            <div class="zh_center">
+                <ul class="zh_top clearfix">
+                    <li class="fl"><a href="#"><img src="images/top1/sicfl_02.gif" width="199" height="50" alt="logo" /></a></li>
+                    <li class="fr">
+                        <!--登录后 start-->
+                        <dl>
+                            <dd>您好，贾玉洁！</dd>
+                            <dd class="zh_counter"><a href="#">泛雅平台</a></dd>
+                            <dd class="zh_layout"><a href="#">退出</a></dd>
+                        </dl>
+                        <!--登录后 end-->
+                        <!--登录前 start-->
+                        <p class="zl_login" style=" display:none;"><input class="zh_l_user" type="text" value="用户名" /><input class="zh_l_psw" type="text" value="密码" /><span class="zh_l_btn"><a href="#">登录</a></span></p>
+                        <!--登录前 end-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--top1 end-->
+    
+    <!--top2 start-->
+    <div class="zcenter top2">
+        <h2 class="zh2">顶部top2</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        <div class="zheader">
+        <div class="zh1000">
+            <div class="zh_logo fl"><a href="#"><img src="images/top2/dalian_02.gif" width="394" height="79" alt="大连理工" /></a></div>
+            <div class="zh_login fr clearfix">
+                <!--before start-->
+                <p style=" display:none;"><input class="zh_l_user" type="text" value="" /><input class="zh_l_psw" type="text" value="" /><span class="zh_l_btn"><a href="#"></a></span></p>
+                <!--before end-->
+                <!--after start-->
+                <p class="zl_l_after">
+                    <span class="zh_l_message"></span>
+                    <span class="zh_l_photo"><img src="images/top2/user_photo.jpg" width="30" height="30" alt="photo" /></span>
+                    <span class=""></span>
+                    <span class="zh_l_info"><a href="#">学习空间</a></span>
+                    <span class="zh_l_info"><a href="#">退出</a></span>
+                </p>
+                <!--after end-->
+            </div>
+          </div>
+          <div class="zh_n_bg bgPng"></div>
+    </div>
+    </div>
+    <!--top2 end-->
+    
+    <!--textImg start-->
+    <div class="zcenter textImg">
+        <h2 class="zh2">textImg主要是左侧文字水平垂直居中</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        <div>
+            <ul class="zla_m_h">
+              <li class="ztext_middle">
+                <dl class="ztext_m_outer">
+                  <dd class="ztext_m_inside">
+                    <h2 class="zla_m_h2">学院风采</h2>
+                    <p class="zla_m_p">University style</p>
+                  </dd>
+                </dl>
+              </li>
+            </ul>
+            <p class="zla_m_img"><img src="images/textImg/tianjin_flower.jpg" width="550" height="105" alt="教师培训" /></p>
+            <div class="clear"></div>
+          </div>
+    </div>
+    <!--textImg end-->
+    
+    <!--schedule start-->
+    <div class="zcenter">
+        <h2 class="zh2">进度条</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        <p class="zadd_schedule">
+          <span class="zadd_s_name">学习进度：</span>
+          <span class="zadd_s_notComplete">
+            <span class="zadd_s_complete"></span>
+            <span class="zadd_s_percent">80%</span></span>
+        </p>
+    </div>
+    <!--schedule end-->
+    
+    <!--start-->
+    <div class="zcenter">
+        <h2 class="zh2">标题</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        
+    </div>
+    <!--end-->
+    
+    <!--start-->
+    <div class="zcenter">
+        <h2 class="zh2">标题</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        
+    </div>
+    <!--end-->
+    
+    <!--start-->
+    <div class="zcenter">
+        <h2 class="zh2">标题</h2>
+        <p class="znotice">注意：注意给<span class="zwhite">(例如:)</span></p>
+        
+    </div>
+    <!--end-->
+    
+    </div>
+    <!--layer start-->
+    <div class="zlayer">
+        <div class="zla_center">
+            <h2 class="zla_h">个人常用标签布局和样式库HCQuery</h2>
+            <h2 class="zla_qq">QQ:1206762787</h2>
+        </div>
+    </div>
+    <!--layer end-->
+</div>
+</body>
+</html>
+

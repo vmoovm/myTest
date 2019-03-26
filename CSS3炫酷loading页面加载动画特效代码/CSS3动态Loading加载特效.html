@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0078)http://www.17sucai.com/preview/11/2014-07-31/css3%E5%8A%A0%E8%BD%BD/index.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" -webkit-"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CSS3动态Loading加载特效</title>
+
+
+
+<style>
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{text-align:center;background:#fff;}
+
+#loading {
+	width:200px;
+	height:100px;
+	margin: 50px auto;
+}
+
+#loading span {
+	height:80px;
+	width:15px;
+	background:#f01b00;
+	display:inline-block;
+	animation:loader 1s infinite;
+}
+#loading p {
+  color: #f01b00;
+  font-size: 20px;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-weight: 300;
+  letter-spacing: .05em;
+  text-align: center;
+}
+@keyframes loader{
+	50% { height:30px; margin-top:50px; opacity:.5; }
+}
+
+#loading span:nth-child(1) {animation-delay:.1s;}
+#loading span:nth-child(2) {animation-delay:.2s;}
+#loading span:nth-child(3) {animation-delay:.3s;}
+#loading span:nth-child(4) {animation-delay:.4s;}
+#loading span:nth-child(5) {animation-delay:.5s;}
+#loading span:nth-child(6) {animation-delay:.6s;}
+</style>
+
+<script src="./CSS3动态Loading加载特效_files/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="loading">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<p>Thinking</p>
+</div>
+
+
+
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>备考答疑</title>
+		<!--<script src="js/mui.min.js"></script>-->
+		<!--<link href="css/mui.min.css" rel="stylesheet"/>-->
+		<!--<link href="css/mui.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/layer2.css" />
+		<!--<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>-->
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rante.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="zbox">
+			<!--头部 start-->
+			<div class="zheader">
+				<p class="zheader_title">备考答疑</p>
+				<a class="zheader_back" href="#"></a>
+			</div>
+			<!--头部 end-->
+			<div class="zbox_content">
+				<div class="zadvertisement">
+					<img src="temp/20160602_01.png"/>
+				</div>
+				<!--选择考试信息 start-->
+				<div class="zmodeTitle1">
+					<h2 class="">热门课程</h2>
+				</div>
+				<div class="zinfo">
+					<ul class="zinfo_row"><span id="userResult"></span>
+						<li class="zinfo_name" id="showUserPicker"><em></em><span>考试名称</span></li>
+						<li class="zinfo_select"><span>全部考试</span></li>
+					</ul>
+					<ul class="zinfo_row">
+						<li class="zinfo_name"><em></em><span>考试科目</span></li>
+						<li class="zinfo_select"><span>全部科目</span></li>
+					</ul>
+				</div> 
+				<!--选择考试信息 end-->
+				<!--搜索 start-->
+				<div class="zsearch">
+					<dl class="zsearch_box">
+						<dd><input type="text" name="" id="" value="" placeholder="请输入关键字" /></dd>
+						<dt><input type="submit" id="" name="搜索" /></dt>
+					</dl>
+				</div>
+				<!--搜索 end-->
+				<!--热门答疑 start-->
+				<div class="zmodeTitle1">
+					<h2 class="">热门答疑</h2>
+				</div>
+				<div class="zhot">
+					<ul class="zhot_row">
+						<li class="zhot_item"><a href="#">网络图流程图</a></li>
+						<li class="zhot_item"><a href="#">网络图流程图很多字时候的</a></li>
+					</ul>
+					<ul class="zhot_row">
+						<li class="zhot_item"><a href="#">网络图流程图</a></li>
+						<li class="zhot_item"><a href="#">网络图流程图很多字时候的</a></li>
+					</ul>
+					<ul class="zhot_row">
+						<li class="zhot_item"><a href="#">网络图流程图</a></li>
+						<li class="zhot_item"><a href="#">网络图流程图很多字时候的</a></li>
+					</ul>
+					<div class="zhot_more">
+						<a href="#">更多</a>
+					</div>     
+				</div> 
+				<!--热门答疑 end-->
+			</div>
+		</div>
+		<script type="text/javascript">
+			//普通示例
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						text: '全部考试'
+					}, {
+						text: '多选题'
+					}, {
+						text: '单选题'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							userResult.innerText = JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+		</script>		
+	</body>
+</html>

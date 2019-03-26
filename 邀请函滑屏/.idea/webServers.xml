@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2aac95c4-ec04-4568-ac77-e76bb38f30b9" name="1" url="http://192.168.97.115">
+        <fileTransfer port="0" mountedRoot="E:\会议邀请\confer" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

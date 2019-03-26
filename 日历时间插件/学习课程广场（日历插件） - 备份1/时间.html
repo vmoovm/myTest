@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>时间</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ztime.css"/>
+		<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div class="ztime-opacity"></div>
+		<div class="ztime">
+			<div class="ztime-header">
+				<dl class="ztime-headerLeft">
+					<dd class="ztime-prevHour" id="prevHour"></dd>
+					<dd class="ztime-prevMinute" id="prevMinute"></dd>
+					<dt class="ztime-result ztime-white">
+						<div class="" id="setTime">
+							<span data-hour="23" data-minute="10">23 : 10</span>
+						</div>
+						<!--<div class="calendar-time"><h1>15:00</h1><p></p></div>-->
+					</dt>
+					<dd class="ztime-nextMonth" id="nextMinute"></dd>
+					<dd class="ztime-nextYear" id="nextHour"></dd>
+				</dl>
+				<p class="ztime-headerRight ztime-gray" id="now">现在</p>
+			</div>
+			<div class="ztime-body" id="ztimeBody">
+				<div class="ztime-hourBox ztime-line">
+					<ul class="ztime-ampm">
+						<li class="zcur"><span>上午</span></li>
+						<li><span>下午</span></li>
+					</ul>
+					<div class="ztime-hourContent">
+						<dl class="ztime-tr">
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>1<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>2<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>3<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>4<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>5<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>6<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+						</dl>
+						<dl class="ztime-tr">
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>7<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>8<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>9<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>10<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th ztime-setedHour">
+								<dl class="ztime-hour">
+									<dt>11<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+							<dt class="ztime-th">
+								<dl class="ztime-hour">
+									<dt>12<span>时</span></dt>
+									<dd>时</dd>
+								</dl>
+							</dt>
+						</dl>
+					</div>
+				</div>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">01</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">02</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute ztime-setedMinute">
+							<dt class="ztime-point">03</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">04</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">05</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">06</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">07</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">08</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">09</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">10</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">11</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">12</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">13</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">14</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">15</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">16</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">17</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">18</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">19</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">20</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">21</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">22</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">23</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">24</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">25</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">26</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">27</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">28</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">29</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">30</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">31</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">32</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">33</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">34</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">35</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">36</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">37</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">38</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">39</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">40</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">41</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">42</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">43</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">44</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">45</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">46</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">47</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">48</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">49</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">50</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">51</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">52</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">53</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-6">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">54</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-7">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">55</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-8">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">56</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="ztime-tr ztime-darker">
+					<dd class="ztime-td" id="col2019-11-9">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">57</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-3">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">58</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-4">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">59</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+					<dd class="ztime-td" id="col2019-11-5">
+						<dl class="ztime-minute">
+							<dt class="ztime-point">00</dt>
+							<dd class="ztime-unit">分</dd>
+						</dl>
+						<div class="ztime-define">
+							<p></p>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="ztime-btn">
+				<p>确定</p>
+			</div>
+		</div>
+		<script src="js/ztime.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new ZzlTime('ztimeBody', {
+				
+			})
+		</script>
+	</body>
+</html>

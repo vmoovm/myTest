@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>字段列表</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="js/rem750.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--字段列表 end-->
+		<div class="zfields">
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">姓名：</dt>
+				<dd class="zfields_value">张中乐</dd>
+			</dl>
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">性别：</dt>
+				<dd class="zfields_value">男</dd>
+			</dl>
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">QQ号：</dt>
+				<dd class="zfields_value">1206762787</dd>
+			</dl>
+		</div>
+		<div class="zfields">
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">姓名：</dt>
+				<dd class="zfields_input"><input type="text" name="" id="" value="请输入" placeholder="姓名" /></dd>
+			</dl>
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">性别：</dt>
+				<dd class="zfields_label"><label for="male"><input type="radio" checked="checked" name="sex" id="male" value="男" /><em>男</em></label><label for="female"><input type="radio" name="sex" id="female" value="女" /><em>女</em></label></dd>
+			</dl>
+			<dl class="zfields_row zfields_bline">
+				<dt class="zfields_name">爱好：</dt>
+				<dd class="zfields_label"><label for="dushu"><input type="checkbox" checked="checked" name="dushu" id="dushu" value="看书" /><span></span><em>看书</em></label><label for="lvyou"><input type="checkbox" checked="checked" name="lvyou" id="lvyou" value="旅游" /><span></span><em>旅游</em></label></dd>
+			</dl>
+		</div>
+		<style type="text/css">
+			.zfields {}
+			.zfields_row {display: -webkit-box; padding: 0.24rem 0rem; font-size: 0.3rem;}
+			.zfields_name {  display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+			.zfields_value { -webkit-box-flex: 1; text-align: right; background: #f5f6f8;}
+			.zfields_bline { margin-left: 0.2rem; background-image: linear-gradient(transparent 35%,#dedede 65%); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; background-color: #fff;}
+			.zfields_bline:last-child { margin-left: 0; padding-left: 0.24rem; background-image: linear-gradient(transparent 35%,#dedede 65%); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; background-color: #fff;}
+			.zfields_bline:first-child {  }
+			.zfields_input { -webkit-box-flex: 1;}
+			.zfields_input input[type='text'] { width: 100%; height: 0.4rem; border: 1px #dedede solid; background: #e5e5e5e5;}
+			.zfields_label label { margin-left: 0.1rem; margin-right: 0.5rem; font-size: 0.3rem; vertical-align: middle;}
+			.zfields_label em { display: inline-block; vertical-align: middle;}
+			.zfields_label input[type='radio'] { position: relative; width: 1px; height: 1px; margin-right: 0.4rem; vertical-align: middle;}
+			.zfields_label input[type='radio']:before, .zfields_label input[type='radio']:checked:after { position: absolute; display: inline-block; content: '';  border-radius: 50%;}
+			.zfields_label input[type='radio']:before { left: 0; top: -0.17rem; width: 0.32rem; height: 0.32rem; border: 1px #09f solid; background: #fff;}
+			.zfields_label input[type='radio']:checked:after { left: 0.08rem; top: -0.08rem; width: 0.17rem; height: 0.17rem; background: #09f; -webkit-transform-origin: center center;  -webkit-animation: radioAnimation 0.16s ease 0s forwards;}
+			.zfields_label input[type='radio'] { vertical-align: middle;}
+			.zfields_label input[type='checkbox'] { display: none;}
+			.zfields_label label input[type='checkbox']~span { position: relative; display: inline-block; width: 0.32rem; height: 0.32rem; border: 1px #09f solid; border-radius: 50%; background: #fff; vertical-align: middle;}
+			.zfields_label label input[type='checkbox']~span:before { position: absolute; left: 0.03rem; top: 0.17rem; display: inline-block; content: ''; width: 2px; height: 0rem; background: #fff; -webkit-transform-origin: left top; -webkit-transform: rotate(-45deg);}
+			.zfields_label label input[type='checkbox']~span:after { position: absolute; left: 0.13rem; top: 0.26rem; display: inline-block; content: ''; width: 2px; height: 0rem; background: #fff; -webkit-transform-origin: left top; -webkit-transform: rotate(-135deg);}
+			.zfields_label label input[type='checkbox']:checked~span { background: #09f;}
+			.zfields_label label input[type='checkbox']:checked~span:before { -webkit-animation: leftcheckbox 0.16s ease 0s forwards;}
+			.zfields_label label input[type='checkbox']:checked~span:after { -webkit-animation: rightcheckbox 0.16s ease 0s forwards; -webkit-animation-delay: 0.16s;}
+			/*动画*/
+			@-webkit-keyframes leftcheckbox {
+				0%{ height: 0;}
+				100%{ height: 0.15rem;}
+			}
+			@-webkit-keyframes rightcheckbox {
+				0%{ height: 0;}
+				50%{ height: 0;}
+				100%{ height: 0.3rem;}
+			}
+			@keyframes leftcheckbox {
+				0%{ height: 0;}
+				100%{ height: 0.11rem;}
+			}
+			@keyframes rightcheckbox {
+				0%{ height: 0;}
+				50%{ height: 0;}
+				100%{ height: 0.22rem;}
+			}
+			@-webkit-keyframes radioAnimation {
+				0%{ -webkit-transform:scale(0,0); opacity: 0;}
+				100%{-webkit-transform:scale(1,1); opacity: 1;}
+			}
+		</style>
+		<!--字段列表 end-->
+	</body>
+</html>

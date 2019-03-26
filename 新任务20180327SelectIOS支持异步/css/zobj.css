@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+添加发放对象
+-----------------------------------------------------*/
+.zobject {  background-color: #f5f4f6; border-top: 1px rgba(204,204,204,0.5);}
+.zobject_site { position: fixed; bottom: 0; left: 0; width: 100%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 1200;}
+.zobject_header { display: -webkit-box; display: box; -webkit-box-pack: justify; height: 0.86rem; padding: 0 0.38rem; border: 1px #e6e6e6 solid; line-height: 0.86rem;}
+.zobject_header h2 { font-size: 0.32rem;}
+.zobject_header h2 span { display: inline-block; vertical-align: middle; line-height: 0.819rem; color: #09f;}
+.zobject_header h2 em { display: inline-block; vertical-align: middle; width: 0.3rem; height: 0.819rem; margin-right: 0.234rem; background-image: url(../images/icon5.png); background-position: center; background-repeat: no-repeat; background-size: 0.3rem; -webkit-transform: rotate(180deg); transform: rotate(180deg);}
+.zobject_header div { -webkit-box-flex: 1; text-align: center; line-height: 0.819rem; font-size: .32rem;}
+.zobject_header p em { display: inline-block; min-width: 0.234rem; height: 0.819rem; font-size: 0.3rem; color: #09f; }
+.zobject_header p span { display: inline-block; min-width: 0.30rem; height: 0.819rem; background: url(../images/delete_13.png) center no-repeat; background-size: 0.28rem 0.28rem;}
+
+.zobject_body { height: 44vh; overflow: hidden; overflow-y: auto;}
+.zobject_box { display: -webkit-box; display: box; padding: 0.117rem 0.234rem; border-bottom: 1px #dedede solid; line-height: 0.6435rem; font-size: .32rem;}
+.zobject_dt{ height: 0.8775rem; line-height: 0.8775rem;}
+.zobject_con { -webkit-box-flex: 1; /*min-height: 1.5444rem;*/}
+.zobject_con p { display: inline-block;  margin: 0.0468rem; padding:0.0234rem 0.0936rem 0.0234rem 0.0234rem; border: 1px #dedede solid; border-radius: 0.0936rem;}
+.zobject_con p span { display: inline-block; min-width: 0.702rem; max-width:1.638rem;  vertical-align: middle; text-align: center; font-size: 0.3rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.zobject_con p span {
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.zobject_con p i.zdelete_item { display: inline-block; width: 0.1287rem; height: 0.1287rem; margin: 0 0.0702rem; background: url(../images/deletex_03.png) no-repeat; background-size: 0.1287rem; vertical-align: middle;}
+.zobject_add { text-align: center;}
+.zobject_add a { display: inline-block; width: 0.468rem; height: 0.468rem; margin-top: 0.1521rem; /*background: url(../images/add_30.png) no-repeat;*/ background: url(../images/icon5.png) center no-repeat; background-size: 0.3rem;}
+.zobject_btn { margin-top: 0.234rem; padding: 0.351rem 0; text-align: center;}
+
+/*单行文本输入*/
+.zobject-input { display: -webkit-box; display: box; width: 100%; padding: 0.234rem 0; padding-top: 0; box-sizing: border-box;}
+.zobject-typeText { -webkit-box-flex: 1; height: 0.8775rem; padding-left: 0.3rem; -webkit-transiton:0.6s all ease; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+.zobject-typeText input { width: 100%; height: 0.8775rem; border: none; border-radius: 0; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff; line-height: none; line-height: normal; font-size: 0.351rem; color: #333;} 
+.zobject-typeText input::-webkit-input-placeholder { font-size: 0.3042rem;}
+
+/*----------------------------------------------------
+默认班级列表
+-----------------------------------------------------*/
+.zclasses { max-height: 7.5rem; position: relative; overflow: hidden; overflow-y: auto; -webkit-overflow-scrolling:touch;}
+.zgroup { background: #fff; border-top: 1px #ebebeb solid;}
+.zcl_row { display: -webkit-box; display: box; height: 0.64rem; padding: 0.12rem 0.3rem .12rem 0; margin-left: .3rem; line-height: 0.64rem; font-size: 0.32rem; background-image: -webkit-linear-gradient(transparent 40%, #ebebeb 60%); background-repeat: no-repeat; background-position: bottom; background-size: 100% 1px; background-color: #fff;}
+.zcl_con { -webkit-box-flex: 1;}
+.zcl_num i,.zcl_num span { display: inline-block; vertical-align: middle;}
+.zcl_num span { padding-right: 0.0468rem; color: #999;}

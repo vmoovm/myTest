@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>inline-table</title>
+		<style type="text/css">
+			.ztable { display: inline-table; width: 80%;}
+			.ztable p { display: table-cell: height: 30px; border: 1px #007AFF solid;}
+		</style>
+	</head>
+	<body>
+		<div class="ztable">
+			<p>dsfa</p>
+			<p>fdsaf</p>
+			<p>fdsaf</p>
+			<p>fdsaf</p>
+		</div>
+		<div class="ztable">
+			<p>dsfa</p>
+			<p>fdsdsafdafsdafsdaaf</p>
+			<p>fdsaf</p>
+			<p>fdsaf</p>
+		</div>
+		<div class="ztable">
+			<p>dsfa</p>
+			<p>fdsafsdafsdaff</p>
+			<p>fdssdafdsaaf</p>
+			<p>fdssdafsadfsadfsdafsdafsaf</p>
+		</div>
+		<script type="text/javascript">
+			var _events = {}
+			
+			var IA = {
+				on: function (type, fn) {
+		        if ( !_events[type] ) {
+		            _events[type] = [];
+		        }
+		        _events[type].push(fn);
+		    }
+
+			}
+			AI.on('click', function () {
+				console.log(12312)
+			})
+		</script>
+	</body>
+</html>

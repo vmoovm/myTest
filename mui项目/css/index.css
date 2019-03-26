@@ -1,0 +1,96 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+公共
+-----------------------------------------------------*/
+.zcommon_title {  display: -webkit-box; -webkit-box-pack: justify; margin-top: 10px; padding: 10px 0px; background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%),-webkit-linear-gradient(#dedede 50%,transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: top,bottom; background-color: #fff; line-height: 20px;}
+.zcommon_title h1 { font-size: 16px;}
+.zcommon_title h1 i,.zcommon_title h1 span { display: inline-block; vertical-align: middle;}
+.zcommon_title h1 i { margin-right: 6px; width: 2px; height: 20px; background: #f10d0c;}
+.zcommon_title a { display: block; padding-right: 10px; color: #999; font-size: 12px; line-height: 20px;}
+/*----------------------------------------------------
+图标导航
+-----------------------------------------------------*/
+.zbanner { background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom; background-color: #fff;}
+.zbanner_body {}
+.zbanner_item {-webkit-user-select:none; user-select:none;}
+.zbanner_item img { width: 100%; -webkit-user-select:none; user-select:none;}
+.zbanner_footer { display: -webkit-box; -webkit-box-pack: center; padding: 10px; height: 20px;}
+.zbanner_footer p { margin: 0 10px; font-size: 12px;}
+.zbanner_footer p a,.zbanner_footer p i { display: inline-block; vertical-align: middle;}
+.zbanner_footer p a { color: #333;}
+.zbanner_footer p i { padding-right: 3px; font-size: 16px;}
+#zbanner span.swiper-pagination-bullet { background: #f10d0c;}
+
+/*----------------------------------------------------
+图标导航
+-----------------------------------------------------*/
+
+.znav { padding: 20px 0px; margin-top: 10px; background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%),-webkit-linear-gradient(#dedede 50%,transparent 50%); background-size: 100% 1px,100% 1px; background-repeat: no-repeat; background-position: top,bottom; background-color: #fff}
+.znav_content { }
+.znav_item {/* width: 80px; */}
+.znav_icon { width: 40px; height: 40px; margin: 0 auto; border-radius: 50%; overflow: hidden; text-align: center; background: #fff;}
+.znav_icon i { width: 40px; height: 40px; line-height: 40px; font-size: 20px; color: #fff; font-family: 'myproject' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+	.znav_name { line-height: 2; font-size: 14px; text-align: center; color: #fff;}
+	.znav_name a { color: #333;}
+/*----------------------------------------------------
+课程展示
+-----------------------------------------------------*/
+.zcourse { }
+.zcourse_box { padding: 16px 10px 16px; background: #fff; background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 100% 1px; background-position: bottom;}
+.zcourse_item {}
+.zcourse_bg { position: relative;}
+.zcourse_img img { width: 100%; }
+.zcourse_th { position: absolute; left: 0; bottom:0; width:97.5%; padding-left: 2.5%; height: 20px; background: rgba(0,0,0,0.4); color: #fff; font-size: 12px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+
+/*----------------------------------------------------
+图文列表
+-----------------------------------------------------*/
+.zlistImg { margin-top: 10px; background: #fff; background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 100% 1px; background-position: top;}
+.zlistImg_title { font-size: 16px; text-align: center;padding: 10px 0; line-height: 30px;}
+.zlistImg_row { padding: 10px;}
+.zlistImg_row img { width: 100%;}
+.zlistImg_th { padding: 4px 0; height: 30px; line-height: 30px; font-size: 14px; color: #333;}
+.zlistImg_ {}
+/*----------------------------------------------------
+左1右2等分布局
+-----------------------------------------------------*/
+.zlayout { display: -webkit-box; /*height: 300px;*/ background: #fff;  background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 100% 1px; background-position: bottom;}
+.zlayout_side1 { -webkit-box-flex: 1; margin: 2.5px; -webkit-box-orient: vertical; -webkit-box-pack: justify;}
+.zlayout_side2 { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient:vertical;  background-image: -webkit-linear-gradient(left,#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 1px 100%; background-position: left;}
+.zlayout_side2_smT,.zlayout_side2_smD { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.zlayout_side2_smT { background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 100% 1px; background-position: bottom;}
+.zlayout_pt { display: -webkit-box; -webkit-box-pack: justify; padding: 0.4rem;}
+/*.zlayout img { width: 100%;}*/
+.zlayout_img { }
+.zlayout_img img { width: 100%; max-height:100%}
+.zlayout_info {}
+.zlayout_info dt { font-size: 14px; color: #333;}
+.zlayout_info dd { line-height: 2; font-size: 12px; color: #929292;}
+
+/*----------------------------------------------------
+上图下文
+-----------------------------------------------------*/
+.ztoSay { background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-size: 100% 1px; background-position: bottom; background-repeat: no-repeat; background-color: #fff;}
+.ztoSay_row { display: -webkit-box; -webkit-box-pack: justify;}
+.ztoSay_item  { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack:justify; padding: 10px; background: #fff;}
+.ztoSay_pic  { overflow: hidden;}
+.ztoSay_pic img { width: 100%;}
+.ztoSay_txt  {}
+.ztoSay_h  { line-height: 24px; font-size: 14px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.ztoSay_p  { line-height: 18px; font-size: 12px; color: #999;}
+.ztoSay_p span,.ztoSay_p em,.ztoSay_p a { display: inline-block; vertical-align: middle;}
+.ztoSay_p span { color: #09f;}
+.ztoSay_p em { color: #;}
+.ztoSay_p a { padding: 0 4px; border-radius: 10px; line-height: 1.4; color: #fff; font-size: 10px; background: #f22b24;}

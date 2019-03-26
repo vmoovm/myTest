@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>下拉刷新</title>
+<!--<link rel="stylesheet" type="text/css" href="css/mui.css"/>-->
+<style type="text/css">
+	*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    -webkit-user-select: none;
+
+    outline: none;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+.mui-content
+{
+    background-color: #efeff4;
+
+    -webkit-overflow-scrolling: touch;
+}
+.mui-scroll-wrapper
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+}
+.mui-block
+{
+    display: block !important;
+}
+.mui-visibility
+{
+    visibility: visible !important;
+}
+.mui-scroll
+{
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+.mui-spinner
+{
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+
+    -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-animation: spinner-spin 1s step-end infinite;
+            animation: spinner-spin 1s step-end infinite;
+}
+
+.mui-spinner:after
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox=\'0 0 120 120\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\'><defs><line id=\'l\' x1=\'60\' x2=\'60\' y1=\'7\' y2=\'27\' stroke=\'%236c6c6c\' stroke-width=\'11\' stroke-linecap=\'round\'/></defs><g><use xlink:href=\'%23l\' opacity=\'.27\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(30 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(60 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(90 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(120 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.27\' transform=\'rotate(150 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.37\' transform=\'rotate(180 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.46\' transform=\'rotate(210 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.56\' transform=\'rotate(240 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.66\' transform=\'rotate(270 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.75\' transform=\'rotate(300 60,60)\'/><use xlink:href=\'%23l\' opacity=\'.85\' transform=\'rotate(330 60,60)\'/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+}
+.mui-table-view
+{
+    position: relative;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    background-color: #fff;
+}
+.mui-table-view:before
+{
+    top: -1px;
+}
+.mui-table-view-chevron .mui-table-view-cell
+{
+    padding-right: 65px;
+}
+.mui-table-view:after
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 1px;
+
+    content: '';
+    -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+
+    background-color: #c8c7cc;
+}
+.mui-table-view-chevron .mui-table-view-cell
+{
+    padding-right: 65px;
+}
+.mui-table-view-cell p
+{
+    margin-bottom: 0;
+}
+.mui-table-view-cell:last-child:before, .mui-table-view-cell:last-child:after
+{
+    height: 0;
+}
+.mui-table-view-cell:after
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+
+    height: 1px;
+
+    content: '';
+    -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+
+    background-color: #c8c7cc;
+}
+.mui-hidden
+{
+    display: none !important;
+}
+.mui-scroll-wrapper
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.mui-scroll
+{
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+.mui-scrollbar
+{
+    position: absolute;
+    z-index: 9998;
+
+    overflow: hidden;
+
+    -webkit-transition: 500ms;
+            transition: 500ms;
+    transform: translateZ(0px);
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.mui-scrollbar-vertical
+{
+    top: 0;
+    right: 1px;
+    bottom: 2px;
+
+    width: 4px;
+}
+.mui-scrollbar-vertical .mui-scrollbar-indicator
+{
+    width: 100%;
+}
+
+.mui-scrollbar-horizontal
+{
+    right: 2px;
+    bottom: 0;
+    left: 2px;
+
+    height: 4px;
+}
+.mui-scrollbar-horizontal .mui-scrollbar-indicator
+{
+    height: 100%;
+}
+
+.mui-scrollbar-indicator
+{
+    position: absolute;
+
+    display: block;
+
+    box-sizing: border-box;
+
+    -webkit-transition: .01s cubic-bezier(.1, .57, .1, 1);
+            transition: .01s cubic-bezier(.1, .57, .1, 1);
+    transform: translate(0px, 0px) translateZ(0px);
+
+    border: 1px solid rgba(255, 255, 255, .80196);
+    border-radius: 2px;
+    background: rgba(0, 0, 0, .39804);
+}
+.mui-pull-bottom-pocket
+{
+    position: relative;
+    bottom: 0;
+
+    height: 40px;
+}
+.mui-pull-bottom-pocket .mui-pull-loading
+{
+    visibility: hidden;
+}
+.mui-pull-bottom-pocket .mui-pull-loading.mui-in
+{
+    display: inline-block;
+}
+
+.mui-pull
+{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+
+    text-align: center;
+
+    color: #929292;
+}
+
+.mui-pull-loading
+{
+    margin-right: 10px;
+
+    -webkit-transition: -webkit-transform .4s;
+            transition:         transform .4s;
+    -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+    vertical-align: middle;
+}
+
+.mui-pull-loading.mui-reverse
+{
+    -webkit-transform: rotate(180deg) translateZ(0);
+            transform: rotate(180deg) translateZ(0);
+}
+
+.mui-pull-caption
+{
+    font-size: 15px;
+    line-height: 24px;
+
+    position: relative;
+
+    display: inline-block;
+    overflow: visible;
+
+    margin-top: 0;
+
+    vertical-align: middle;
+}
+.mui-pull-caption span
+{
+    display: none;
+}
+.mui-pull-caption span.mui-in
+{
+    display: inline;
+}
+.mui-pull-top-pocket
+{
+    top: 0;
+}
+.mui-icon
+{
+    font-family: Muiicons;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    -webkit-font-smoothing: antialiased;
+}
+.mui-pull-top-pocket, .mui-pull-bottom-pocket
+{
+    position: absolute;
+    left: 0;
+
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+
+    width: 100%;
+    height: 50px;
+}
+
+
+.mui-pull-top-pocket
+{
+    top: 0;
+}
+
+
+
+</style>
+</head>
+
+<body>
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<!--数据列表-->
+			<ul class="mui-table-view mui-table-view-chevron">
+				
+				<li class="mui-table-view-cell">
+					<p class="item" style="width: 200px; font-size: 16px; margin: 0 auto;">&nbsp;<br><br>主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的,买穿的'主管指了指不远处的地方，该女子就又高高兴兴地走了。&nbsp;<br>保安去请教'高招',主管当时是这样对女患者说的: '我们这里是建行,只有建房子才能到这里取钱。你取钱买吃的,那肯定是粮食了,要去农行,买穿的等东西,取钱要到工商银行才行！'&nbsp;<br>我同学打心眼里佩服呀,到底是当主管的啊!!!!&nbsp;<br><br>…………&nbsp;<br>…………&nbsp;<br>过了一会儿,该女士又回来了.而且带来了工行的回答:'农行的人说了,这里是农行,只有农民能取钱,我是城市人口,工行的人说了,我们这里是公行,只能公的来取,母的不行!!!!,说我是贱人,要到建行取钱'&nbsp;</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>-->
+<script>
+	mui.init({
+		pullRefresh: {
+			container: '#pullrefresh',
+			down: {
+				callback: pulldownRefresh
+			},
+			up: {
+				contentrefresh: '正在加载...',
+				height: 50,
+					auto: false,
+					contentinit: '上拉显示更多',
+					contentdown: '上拉显示更多',
+					contentrefresh: '正在加载...',
+					contentnomore: '没有更多数据了',
+					duration: 300,
+				callback: pullupRefresh
+			}
+		}
+	});
+	/**
+	 * 下拉刷新具体业务实现
+	 */
+	function pulldownRefresh() {
+		setTimeout(function() {
+			var table = document.body.querySelector('.mui-table-view');
+			var cells = document.body.querySelectorAll('.mui-table-view-cell');
+			for (var i = cells.length, len = i + 3; i < len; i++) {
+				var li = document.createElement('li');
+				li.className = 'mui-table-view-cell';
+				li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+				//下拉刷新，新纪录插到最前面；
+				table.insertBefore(li, table.firstChild);
+			}
+			mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+		}, 1500);
+	}
+	var count = 0;
+	/**
+	 * 上拉加载具体业务实现
+	 */
+	function pullupRefresh() {
+		setTimeout(function() {
+			mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+			var table = document.body.querySelector('.mui-table-view');
+			var cells = document.body.querySelectorAll('.mui-table-view-cell');
+			for (var i = cells.length, len = i + 5; i < len; i++) {
+				var li = document.createElement('li');
+				li.className = 'mui-table-view-cell';
+				li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+				table.appendChild(li);
+			}
+		}, 1500);
+	}
+</script>
+</body>
+</html>

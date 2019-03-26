@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+.bgnone { background: none;}
+.zcenter { width: 1000px; margin: 0 auto;}
+.ztitleH { height: 47px; background-color: #9899a0;}
+.ztitleH a,.ztitleH span { display: inline-block; vertical-align: middle;}
+.zti_h { line-height: 47px;}
+.zbox { background-color: #fff}
+/*-----------------------------------------------------
+Top
+-----------------------------------------------------*/
+.ztop {}
+.zt_logo { display: inline-block; padding-top: 8px; padding-left: 4%;}
+/*-----------------------------------------------------
+Header
+-----------------------------------------------------*/
+.zheader {}
+
+/*-----------------------------------------------------
+Nav
+-----------------------------------------------------*/
+.znav {}
+
+
+/*-----------------------------------------------------
+编辑器
+-----------------------------------------------------*/
+.zeditor { width: 100%;}
+.zed_row { position: relative; width: 400px; display: block; line-height: 24px; background-color: #000;}
+.zed_n { position: absolute; top: 0; left: -20px; width: 20px; background-color: #006DCC}
+.zed_code { background-color: #FFFF00}
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.zfooter {}

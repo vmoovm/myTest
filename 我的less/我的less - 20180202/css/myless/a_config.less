@@ -1,0 +1,199 @@
+// 全局配置
+
+// 必读：
+// -----------------------------------------------------
+// 大小简写：
+// x-small: 	特小 xm
+// small: 		小 	sm
+// middle: 	            中 	md
+// large: 		大 	lg
+// extra: 		特大 et
+// -----------------------------------------------------
+// -----------------------------------------------------
+// 简写：
+// default: 	默认 df
+// current: 	当前 cur
+// routine：	            常规 rt
+// -----------------------------------------------------
+// -----------------------------------------------------
+// 位置简写：
+// top：	                      上：t
+// bottom：               下：b
+// left： 	          左：l
+// right：	          右：r
+// -----------------------------------------------------
+// -----------------------------------------------------
+// 颜色程度简写：
+// dark: 	         深色  d
+// gray:       灰色  g
+// light:      浅色  l
+// white:      白色  w
+// -----------------------------------------------------
+
+
+//-----------------------------------------------------
+// pulick
+// -----------------------------------------------------
+@url: '../images/';				// 图片路径
+@wrap: 1200px;					// 页面宽度 
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 { .family(); .fontSize(); font-weight:normal;}	
+body { .fontSize(); .family(); .color(); .bgColor();}
+input,select,textarea{ margin: 0; padding:0; vertical-align:middle; .family(); .color(); outline:none; resize:none;}
+
+a { .color(); text-decoration: none; }
+a:hover { .color(); text-decoration: none; }
+// -----------------------------------------------------
+// font-size
+// -----------------------------------------------------
+@fontSize: 12px;				// 默认 
+@fontSize-xm: 14px;				// 特小号
+@fontSize-sm: 16px;				// 小号
+@fontSize-md: 18px;				// 中号
+@fontSize-lg: 20px;				// 大号
+@fontSize-et: 22px;				// 特大号
+// -----------------------------------------------------
+// font-size  title: tt
+// -----------------------------------------------------
+@fontSize-tt: 28px;				// 默认 
+@fontSize-tt-xm: 24px;			// 特小号
+@fontSize-tt-sm: 26px;			// 小号
+@fontSize-tt-md: 30px;			// 中号
+@fontSize-tt-lg: 32px;			// 大号
+@fontSize-tt-et: 36px;			// 特大号
+
+// -----------------------------------------------------
+// font-family
+// -----------------------------------------------------
+@family: Tahoma,Helvetica,Arial,'Microsoft YaHei',sans-serif;				// 默认字体
+@family-st: '宋体';															// 宋体 	song ti
+@family-yh: '微软雅黑','Microsoft YaHei';										// 雅黑	ya hei
+@family-en: 'Helvetica Neue',Helvetica,Arial,sans-serif;					// 英文	en enlish
+@family-cn: Tahoma,Helvetica,Arial,'Microsoft YaHei',sans-serif;			// 英/汉	cn china
+
+// -----------------------------------------------------
+// height
+// -----------------------------------------------------
+@height: 22px;					// 默认行高
+@height-xm: 24px;				// 
+@height-sm: 26px;				// 
+@height-md: 28px;				// 
+@height-lg: 30px;				// 
+@height-et: 32px;				// 
+@height-tt: 34px;				// 默认标题行高
+@height-tt-xm: 38px;				// 
+@height-tt-sm: 42px;				// 
+@height-tt-md: 46px;				// 
+@height-tt-lg: 58px;				// 
+@height-tt-et: 52px;				// 
+// -----------------------------------------------------
+// line-height: lineHeight / multiple：mp 倍数
+// -----------------------------------------------------
+@lineHeight-mp: 1.5;					// 默认倍数行高
+@lineHeight-mp-xm: 1;				// 
+@lineHeight-mp-sm: 1.2;				// 
+@lineHeight-mp-md: 1.6;				// 
+@lineHeight-mp-lg: 1.8;				// 
+@lineHeight-mp-et: 2;				// 
+
+// -----------------------------------------------------
+// 通用色
+// -----------------------------------------------------
+@main: #0cf;					// 主色
+@auxi: #37b0bb;					// 辅色
+@primary: #33577b;				// 原始色 暗蓝
+@info: #399bff;					// 信息色 蓝
+@success: #26a65b;				// 通过色 绿
+@danger: #ef4836;				// 危险色 红
+@warning: #f39c12;				// 警告色 黄
+@disable: #ccc;					// 禁止色 浅灰色
+@default: #58666e;				// 默认色 深灰色
+
+// -----------------------------------------------------
+// color:c /black:b /dark:d /gray:g /light:l /white:w /main:m /auxi:a
+// -----------------------------------------------------
+@color: #333;					// 默认
+@color-d: #666;					// 深灰	dark
+@color-g: #999;					// 灰色	gray
+@color-l: #ccc;					// 浅灰	light
+@color-w: #fff;					// 白色	white
+
+// -----------------------------------------------------
+// background-color
+// -----------------------------------------------------
+@bgColor: #fff;					// 默认
+@bgColor-d: #ccc;				// 深灰	dark
+@bgColor-g: #efefef;			// 灰色	gary
+@bgColor-l: #fbfbfb;			// 浅灰	light
+@bgColor-w: #fff;				// 白色	white
+
+// -----------------------------------------------------
+// 按钮配置
+// -----------------------------------------------------
+// 自定义色
+@btnColor: #09f;				// 默认
+@btnColor-d: #09f;				// 深色	dark
+@btnColor-g: #ebebeb;			// 灰色	gray
+@btnColor-l: #f7f7f7;			// 浅灰	light
+@btnColor-w: #fff;				// 白色	white
+
+// -----------------------------------------------------
+// border-color:bc /black:b /dark:d /gray:g /light:l /white:w /main:m /auxi:a
+// -----------------------------------------------------
+@bColor: #ebebeb;					// 默认
+@bColor-d: #ccc;				// 深灰	dark
+@bColor-g: #dedede;				// 灰色	gray
+@bColor-l: #eee;				// 浅灰	light
+@bColor-w: #fff;				// 白色	white
+
+// -----------------------------------------------------
+// border-radius o:四角/t:两上角/b:两下角/l:两左角/r:两右角 
+// -----------------------------------------------------
+@radius: 3px;
+@radius-xm: 4px;
+@radius-sm: 5px;
+@radius-md: 6px;
+@radius-lg: 7px;
+@radius-et: 8px;
+
+// -----------------------------------------------------
+// 统一间距margin top:t/bottom:b/right:r/left:l
+// -----------------------------------------------------
+@margin: 12px;
+@margin-xm: 10px;
+@margin-sm: 16px;
+@margin-md: 20px;
+@margin-lg: 30px;
+@margin-et: 36px;
+// -----------------------------------------------------
+// 统一间距padding top:t/bottom:b/right:r/left:l
+// -----------------------------------------------------
+@padding: 12px;
+@padding-xm: 10px;
+@padding-sm: 16px;
+@padding-md: 20px;
+@padding-lg: 30px;
+@padding-et: 36px;
+
+/*-----------------------------------------------------
+icons
+-----------------------------------------------------*/
+ // 图标大小
+@iconSize: 14px;
+@iconSize-xm: 16px;
+@iconSize-sm: 18px;
+@iconSize-md: 20px;
+@iconSize-lg: 22px;
+@iconSize-et: 24px;
+// 图标颜色
+@iconColor: #09f;				// 默认
+@iconColor-d: #09f;				// 深色	dark
+@iconColor-g: #ebebeb;			// 灰色	gray
+@iconColor-l: #f7f7f7;			// 浅灰	light
+@iconColor-w: #fff;				// 白色	white
+
+
+

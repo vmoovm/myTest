@@ -1,0 +1,14 @@
+
+/*----------------------------------------------------
+html1.0 css2.0 default
+-----------------------------------------------------*/
+body,form,label,fieldset,img,div{
+border:0;margin:0px; padding:0;}
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+body {font-size:12px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; background:#fff;}
+input,select,textarea{ margin: 0; padding:0; vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+
+a { color: #333; text-decoration: none; }
+a:hover,a:focus,a:active { color:#333; text-decoration: none; }

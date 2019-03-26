@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="content"></div>
+		<script type="text/javascript">
+			var size = 128;
+			var xhr = new XMLHttpRequest();
+			var ac = new window.AudioContext();
+			var analyser = ac.createAnalyser();
+			var gainNode = ac[ac.createGain ? "createGain" : "createGainNode"]();
+
+			gainNode.connect(ac.destination);
+			analyser.fftSize = size * 2;
+			analyser.connect(gainNode);
+
+			function getMusic(name) {
+				xhr.abort();
+				xhr.open("get", "media/" + name);
+				xhr.responseType = "arraybuffer";
+				xhr.onload = function() {
+					ac.decodeAudioData(xhr.response, function(buffer) {
+						var bufferSource = ac.createBufferSource();
+						bufferSource.buffer = buffer;
+						bufferSource.connect(analyser);
+						bufferSource[bufferSource.start ? "start" : "noteOn"](0);
+					}, function(err) {
+						console.log(err)
+					})
+				};
+				xhr.send();
+			}
+
+			//实时分析音频函数
+			function analysis() {
+				var arr = new Uint8Array(analyser.frequencyBinCount);
+				requestAnimationFrame = window.requestAnimationFrame;
+
+				function a() {
+					analyser.getByteFrequencyData(arr);
+					draw(arr); //调用绘图函数
+					console.log(arr); //在控制台可以看到输出的音频数据
+					requestAnimationFrame(a);
+				}
+				requestAnimationFrame(a);
+			}
+
+			analysis();
+		</script>
+		<script type="text/javascript">
+			//创建canvas 并添加到文档中
+			var canvas = document.createElement("canvas");
+			var ctx = canvas.getContext("2d");
+			$(".content").html(canvas); //.content是需要展示图形的位置
+			
+			var height = $(".content").height();
+			var width = $(".content").width();
+			canvas.width = width;
+			canvas.height = height;
+
+			function resize() { //如果窗口的大小改变了，绘图跟着改变
+				canvas.height = height; //设置绘图相关的参数和属性
+				canvas.width = width;
+				var line = ctx.createLinearGradient(0, 0, 0, height);
+				line.addColorStop(0, "#CD96CD");
+				line.addColorStop(0.5, "#C6E2FF");
+				line.addColorStop(1, "#00BFFF");
+
+				ctx.fillStyle = line;
+			}
+
+			resize();
+
+			function draw(arr) { //参数arr就是上面分析函数里得到的arr
+				ctx.clearRect(0, 0, width, height); //每次画图之前先清空画布
+				var w = width / size; //平均每个柱的宽度  size 要画的柱子的个数
+				for(var i = 0; i < size; i++) { //柱子的个数
+					var h = arr[i] / 256 * height; //每个柱的高度      
+					ctx.fillRect(w * i, height - h, w * 0.6, h); //w*i 表示第i个柱子的起始点的x坐标，height - h表示第i个柱子的起始点的y坐标，w*0.6表示柱子的宽度，h是高度
+				}
+			}
+		</script>
+	</body>
+
+</html>

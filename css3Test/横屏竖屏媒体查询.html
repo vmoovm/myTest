@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*垂直水平居中对齐*/
+			
+			.tip {
+				background: #000;
+				color: #fff;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				/*border: 1px solid;*/
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
+				display: -moz-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-moz-box-align: center;
+				-ms-flex-align: center;
+				-webkit-justify-content: center;
+				-moz-justify-content: center;
+				justify-content: center;
+				-webkit-box-pack: center;
+				-moz-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-align-items: center;
+				-moz-align-items: center;
+				align-items: center;
+			}
+			/*竖屏*/
+			
+			@media screen and (orientation:portrait) {
+				.tip {
+					display: none
+				}
+			}
+			/*横屏*/
+			
+			@media screen and (orientation:landscape) {
+				.tip {
+					display: -webkit-box;background: #333333;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="tip">
+			
+		</div>
+	</body>
+
+</html>

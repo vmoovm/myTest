@@ -1,0 +1,808 @@
+/*他妈的移动端,不止坑爹,见谁坑谁.*/
+@charset "utf-8";
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+
+/*----------------------------------------------------
+用于文章，解决显示不整齐
+-----------------------------------------------------*/
+text-align:justify; text-justify:inter-ideograph;
+/*----------------------------------------------------
+解决空格在不同浏览器宽度大小问题
+-----------------------------------------------------*/
+/*方法一：将页面转为gbk编码*/
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+/*方法二:为空格把字体设置成任意一种字符等间距的字体*/
+<div style="font-family: '宋体'">nbsp;nbsp;nbsp;nbsp;我是第二行</div>
+/*----------------------------------------------------
+multiple多张图片上传file input
+-----------------------------------------------------*/
+<input type="file" name="file" id="" multiple="multiple" @change="fileOption($event)" value=""/>
+/*----------------------------------------------------
+单张图片上传file input
+-----------------------------------------------------*/
+<input type="file" name="file" id="" @change="fileOption($event)" value=""/>
+/*----------------------------------------------------
+初始化字体（重点汉字：\5b8b\4f53）
+-----------------------------------------------------*/
+{12px/1.5 tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif}
+
+/*----------------------------------------------------
+webfont  源文件在test目录下fzrsy.otf
+-----------------------------------------------------*/
+@font-face {
+            font-family: 'webfont';
+            src: url('https://g.alicdn.com/mm/ziyuan/0.1.13/fzrsy.otf');
+            src: url('https://g.alicdn.com/mm/ziyuan/0.1.13/fzrsy.otf?#iefix') format('embedded-opentype'),
+            url('https://g.alicdn.com/mm/ziyuan/0.1.13/fzrsy.otf') format('woff'),
+            url('https://g.alicdn.com/mm/ziyuan/0.1.13/fzrsy.otf') format('truetype'),
+            url('https://g.alicdn.com/mm/ziyuan/0.1.13/fzrsy.otf#FZZDHJW--GB1-0') format('svg');
+            font-stretch: 'normal';
+        }
+        .webfont {
+            font-family: 'webfont';
+            color: #4d7fff;
+            line-height: 1em;
+            margin-bottom: 12px;
+            /*transform: scale(1, 1.2);*/
+        }
+/*----------------------------------------------------
+IOS用户点链接会出现一个半透明灰色遮罩, 如果想要禁用
+-----------------------------------------------------*/
+a,button,input,textarea{
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+/*----------------------------------------------------
+部分android系统中元素被点击时产生的边框怎么去掉
+
+注：
+-webkit-user-modify有个副作用，就是输入法不再能够输入多个字符。
+另外，有些机型去除不了，如小米2
+对于按钮类还有个办法，不使用a或者input标签，直接用div标签
+-----------------------------------------------------*/
+a,button,input,textarea{
+	-webkit-tap-highlight-color: rgba(0,0,0,0;);
+	 -webkit-user-modify:read-write-plaintext-only; 
+}
+/*----------------------------------------------------
+移动端取消touch高亮效果
+-----------------------------------------------------*/
+html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/*----------------------------------------------------
+如何禁止保存或拷贝图像（IOS）
+-----------------------------------------------------*/
+img { -webkit-touch-callout: none; }
+/*----------------------------------------------------
+winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉
+-----------------------------------------------------*/
+<meta name="msapplication-tap-highlight" content="no">
+/*----------------------------------------------------
+只要你在自己的网站里增加一个meta标签，告诉360浏览器这个网站应该用哪个内核渲染，那么360浏览器就会在读取到这个标签后，立即切换对应的内核，并将这个行为应用于这个二级域名下所有网址。
+目前该功能已经在所有的360浏览器中实现，我们也建议其它浏览器厂商一起支持这个标签，让其成为行业标准。
+-----------------------------------------------------*/
+浏览器默认内核的指定只需在head标签中添加一行代码即可： 
+若页面需默认用极速核，增加标签：<meta name="renderer" content="webkit"> 
+若页面需默认用ie兼容内核，增加标签：<meta name="renderer" content="ie-comp"> 
+若页面需默认用ie标准内核，增加标签：<meta name="renderer" content="ie-stand"> 
+content的取值为webkit,ie-comp,ie-stand之一，区分大小写，分别代表用webkit内核，IE兼容内核，IE标准内核。
+
+/*----------------------------------------------------
+改变input 的 placeholder属性css
+-----------------------------------------------------*/
+input::-webkit-input-placeholder {
+    color: #c2c2c2;
+}
+/*可选*/
+input:focus::-webkit-input-placeholder{color:#E}
+/*----------------------------------------------------
+改变input 的 type="number"属性css上下箭头
+-----------------------------------------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none !important; appearance: none !important;}
+/*----------------------------------------------------
+文字两端对齐
+-----------------------------------------------------*/
+.zfield_justify { text-align: justify;}
+.zfield_justify:after{ display: inline-block; overflow: hidden; width: 100%; height: 0; content: ''; vertical-align: top;}
+/*----------------------------------------------------
+极细边框
+-----------------------------------------------------*/
+.ztata_row1 { background-image: linear-gradient(#222 50%,transparent 50%);
+  background-size:  100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
+  }
+
+/*----------------------------------------------------
+让所有鼠标行为禁止，IE11 及谷歌4.0以上可支持
+-----------------------------------------------------*/  
+	pointer-events：auto | none | visiblepainted | visiblefill | visiblestroke | visible | painted | fill | stroke | all
+/*----------------------------------------------------
+input 选择照片、选择视频
+-----------------------------------------------------*/
+/*选择照片*/
+<input type=file accept="image/*">
+/*选择视频*/
+<input type=file accept="video/*">
+/*使用总结：
+
+ios 有拍照、录像、选取本地图片功能
+部分android只有选取本地图片功能*/
+
+/*----------------------------------------------------
+屏幕旋转的事件和样式
+-----------------------------------------------------*/
+
+window.orientation，取值：正负90表示横屏模式、0和180表现为竖屏模式；
+
+window.onorientationchange = function(){
+	switch(window.orientation){
+	    case -90:
+	    case 90:
+	    alert("横屏:" + window.orientation);
+	    case 0:
+	    case 180:
+	    alert("竖屏:" + window.orientation);
+	    break;
+	}
+} 
+
+/*竖屏时使用的样式*/
+@media all and (orientation:portrait) {
+.css{}
+}
+
+/*横屏时使用的样式*/
+@media all and (orientation:landscape) {
+.css{}
+}
+
+
+
+
+
+
+/*----------------------------------------------------
+以下CSS样式实现了各浏览器的标签禁止选中功能。
+-----------------------------------------------------*/
+.UnSelect {
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+/*设置IOS页面长按不可复制粘贴，但是IOS上出现input、textarea不能输入，因此将使用-webkit-user-select:auto;*/
+*{
+  -webkit-touch-callout:none; /*系统默认菜单被禁用*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -khtml-user-select:none; /*早期浏览器*/
+  -moz-user-select:none;/*火狐*/
+  -ms-user-select:none; /*IE10*/
+  user-select:none;
+}
+input,textarea {
+  -webkit-user-select:auto; /*webkit浏览器*/
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+}
+
+
+
+/*----------------------------------------------------
+苹果手机input按钮样式如何修改
+-----------------------------------------------------*/
+-webkit-appearance: none;
+
+/*----------------------------------------------------
+多行文字省略号
+-----------------------------------------------------*/
+.rowsEles {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/*display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+text-overflow: ellipsis;，可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 */
+/*----------------------------------------------------
+ * 模糊
+-----------------------------------------------------*/
+.all-blur{
+     -webkit-filter: blur(3px); 
+     -moz-filter: blur(3px);
+     -ms-filter: blur(3px); 
+     -o-filter: blur(3px);
+     filter: blur(3px);
+     filter: url(blur.svg#blur); /* IE10 */  
+     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');/* IE6~IE9 */
+}
+
+/*----------------------------------------------------
+ * 整个网页变灰
+-----------------------------------------------------*/
+ html{	
+ 	-webkit-filter: grayscale(100%);	
+ 	-moz-filter: grayscale(100%);	
+ 	-ms-filter: grayscale(100%);	
+ 	-o-filter: grayscale(100%);	
+ 	filter: grayscale(100%);
+ 	filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); 
+	/*可以用小数*/
+	-webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(0.1);
+	-webkit-filter: grayscale(0.8);
+	/*ie用滤镜*/
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);	
+	}
+/*----------------------------------------------------
+使页面变模糊
+-----------------------------------------------------*/
+.mh{
+	-webkit-backface-visibility:hidden;
+	-webkit-filter:blur(5px);
+	filter:blur(5px);
+	opacity: 0.8;
+	-webkit-animation:nvfadeInDown 1s .1s ease both;
+	-moz-animation:nvfadeInDown .3s .1s ease both;
+	}
+@-webkit-keyframes nvfadeInDown {
+	0% {
+		opacity: .2;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes nvfadeInDown {
+	0% {
+		opacity: .2;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/*----------------------------------------------------
+莫名的空白
+-----------------------------------------------------*/
+ 父标限高加滚动条,父标签后面会出现 莫名的空白,子标签越多,出现的空白越多.
+给子标签加box-sizing和去掉padding样式可以解决此问题
+例:<div style=" height:100px; overflow:hidden; overflow-y:auto;">
+	<p style="box-sizing：content-border;">子标签</p>
+</div>
+
+/*----------------------------------------------------
+去掉IE浏览器中的输入框input自带的X(叉)删除功能
+-----------------------------------------------------*/
+input::-ms-clear, ::-ms-reveal{display: none;}
+/*----------------------------------------------------
+a伪类顺序
+-----------------------------------------------------*/
+未访问的链接 
+a:link {color: #FF0000}
+已访问的链接  
+a:visited {color: #00FF00}
+鼠标移动到链接上	 
+a:hover {color: #FF00FF}
+选定的链接 
+a:active {color: #0000FF}	 
+
+基于display:inline-block的列表布局
+注意：
+一、IE6/7下冒号英文化后间隙demo
+二、letter-spacing去除间隙空格
+
+white-space:pre;/*文本有多少个空格浏览器中显示多少空格，文本换行，也换行，即原样输出*/
+
+/*----------------------------------------------------
+多余省略号
+-----------------------------------------------------*/
+ overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;
+
+/*----------------------------------------------------
+中文、英文超出换行
+-----------------------------------------------------*/
+.br { word-wrap:break-word;	word-break:break-all;}
+.fdsa { text-justify: inter-ideograph;}
+/*----------------------------------------------------
+ * 使文章显得整齐
+-----------------------------------------------------*/
+word-break: keep-all;
+    word-wrap: break-word; // 只对英文起作用，以单词作为换行依据。
+    white-space: pre-wrap; //只对中文起作用，强制换行。
+    text-align:justify;  //css英文语句的两端对齐：
+    text-justify:inter-ideograph;
+
+/*----------------------------------------------------
+ * 背景渐变色
+ * http://www.runoob.com/css3/css3-gradients.html
+-----------------------------------------------------*/;
+background: linear-gradient(to left, rgb(1, 194, 230), rgb(17, 96, 255))
+
+
+background:-moz-linear-gradient(left,#ace,#f96);/*Mozilla*/
+background:-webkit-gradient(linear,0 50%,100% 50%,from(#ace),to(#f96));/*Old gradient for webkit*/
+background:-webkit-linear-gradient(left,#ace,#f96);/*new gradient for Webkit*/
+background:-o-linear-gradient(left,#ace,#f96); /*Opera11*/
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#28bb7f, endColorstr=#158c5b);/*IE<9>*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#28bb7f, endColorstr=#158c5b)";/*IE8+*/
+
+/* 设置多个颜色渐变 */
+  background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%,rgba(255,255,255,0.5) 100%);
+
+/*设置形状  它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse。*/
+background: -webkit-radial-gradient(circle, red, yellow, green);
+background: -webkit-radial-gradient(ellipse, red, yellow, green);
+background: radial-gradient(ellipse, red, yellow, green); /* 标准的语法 */
+
+/*不同尺寸大小关键字的使用 closest-side  farthest-side  closest-corner   farthest-corner*/
+  background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black); 
+  background: -o-radial-gradient(60% 55%, farthest-side,blue,green,yellow,black);
+  background: -moz-radial-gradient(60% 55%, closest-corner,blue,green,yellow,black);
+  background: radial-gradient(60% 55%, farthest-corner,blue,green,yellow,black); /* 标准的语法 */
+
+/*重复的径向渐变    理解：如background-repeat:repeat;*/
+  background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);
+  background: -o-repeating-radial-gradient(red, yellow 10%, green 15%);
+  background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%);
+  background: repeating-radial-gradient(red, yellow 10%, green 15%); /* 标准的语法 */
+
+
+
+/*IOS滚动条硬件加速*/
+-webkit-overflow-scrolling:touch;
+
+
+/*----------------------------------------------------
+css3 圆角
+-----------------------------------------------------*/
+-webkit-border-radius:3px; -moz-border-radius:3px; -o-border-radius:3px; border-radius:3px;
+/*----------------------------------------------------
+半透明-khtml- 此前缀为老版sarfari
+-----------------------------------------------------*/
+-webkit-opacity: 0.7;-moz-opacity:0.3;  -o-opacity: 0.9;  opacity: 0.9; filter:alpha(opacity=50);  
+
+/*扩展*/
+RGBA记法。
+此色彩模式与RGB相同，只是在RGB模式上新增了Alpha透明度。
+IE6.0-8.0不支持使用 rgba 模式实现透明度，可使用 IE 滤镜处理，如：
+
+filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
+
+#88000000 的前两位数字控制透明度，取值16进制从00 -> FF（越小越透明），00表示完全透明，FF就是全不透明，后面六位是色值。
+
+扩展知识：
+progid:DXImageTransform.Microsoft.Gradient()滤镜里的 startColorstr 参数值是 #AARRGGBB 形式的， 
+其中的AA是代表不透明度的十六进制，00表示完全透明，FF就是全不透明，化成十进制的范围就是0~255，剩下的 RRGGBB 就是颜色的十六进制代码。
+
+举例如：
+background: rgba(125, 0, 0, .3); 表示的是30%不透明度的红色背景。
+把30%的不透明度转换成十六制呢的方法如下：
+先计算#AA的的十进制x，x/255 = 3/10，解得x=3*255/10，然后再把x换算成十六进制，约等于4C。
+
+常用透明度对应16进制关系：
+.0（00） .1（19） .05（0C） .15（26）
+.2（33） .3（4C） .25（3F） .35（59）
+.4（66） .5（7F） .45（72） .55（8C）
+.6（99） .7（B2） .65（A5） .75（BF）
+.8（CC） .9（E5） .85（D8） .95（F2
+/*----------------------------------------------------
+css3 多个阴影
+-----------------------------------------------------*/
+box-shadow:0 0 10px 5px black,0 0 10px 20px red;
+/*inset内阴影且可以用小数，默认为外阴影*/
+box-shadow:.1px 1px 3px rgba(0,0,0,0.3) inset;
+/*----------------------------------------------------
+css3 box阴影
+-----------------------------------------------------*/
+-webkit-box-shadow:5px 5px 5px #999 inset; -moz-box-shadow:5px 5px 5px #999 inset;  -o-box-shadow:5px 5px 5px #999 inset; box-shadow:5px 5px 5px #999 inset;
+
+/*----------------------------------------------------
+css3 文本阴影
+-----------------------------------------------------*/
+-webkit-text-shadow:5px 5px 5px #999 inset; -O-text-shadow:5px 5px 5px #999 inset; -moz-text-shadow:5px 5px 5px #999 inset;  text-shadow:5px 5px 5px #999 inset;
+
+/*----------------------------------------------------
+全属性默认效果动画缩写
+-----------------------------------------------------*/
+-webkit-transition:1s ease all; -moz-transition:1s ease all; -o-transition:1s ease all; transition:1s ease all;
+
+/*----------------------------------------------------
+过渡属性:
+-----------------------------------------------------*/
+-webkit-transition-property:all; -moz-transition-property:all; -o-transition-property:all; transition-property:all;
+
+all：表示针对所有元素。
+none：表示没有元素。
+ident：指定CSS属性列表，如height  background
+
+
+/*----------------------------------------------------
+弹层背景平铺宽高自适应
+-----------------------------------------------------*/
+ position:fixed; _position:absolute; bottom:0; _bottom:auto; _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight));  width:100%; height:1080px; border-top:3px #999 solid; background:url(../images/opacity50.png) repeat;
+
+/*----------------------------------------------------
+最大最小宽高限制
+-----------------------------------------------------*/
+ min-width: 1000px; *width:expression(document.body.clientWidth < 1000? '1000px':'auto');
+ min-height: 1000px; *width:expression(document.body.clientHeight < 1000? '1000px':'auto');
+ max-width: 1000px; *width:expression(document.body.clientWidth > 1000? '1000px':'auto');
+ max-height: 1000px; *width:expression(document.body.clientHeight > 1000? '1000px':'auto');
+
+/*----------------------------------------------------
+IE6 png背景透明
+-----------------------------------------------------*/
+background:transparent url(images/name.png) no-repeat 0 0!important;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/name.png');
+_background-image: none;
+
+
+
+
+/*----------------------------------------------------
+全属性默认效果动画缩写
+-----------------------------------------------------*/
+-webkit-transition:1s ease all; -moz-transition:1s ease all; -o-transition:1s ease all; transition:1s ease all;
+
+/*----------------------------------------------------
+过渡属性:
+-----------------------------------------------------*/
+-webkit-transition-property:all; -moz-transition-property:all; -o-transition-property:all; transition-property:all;
+
+all：表示针对所有元素。
+none：表示没有元素。
+ident：指定CSS属性列表，如height  background
+
+
+/*----------------------------------------------------
+过渡时间:
+-----------------------------------------------------*/
+-webkit-transition-duration:1s;-moz-transition-duration:1s;-o-transition-duration:1s;transition-duration:1s;
+
+/*----------------------------------------------------
+延迟时间:
+-----------------------------------------------------*/
+-webkit-transition-delay:1s;-moz-transition-delay:1s;-o-transition-delay:1s;transition-delay:1s;
+
+/*----------------------------------------------------
+过渡效果:
+-----------------------------------------------------*/
+-webkit-transition-timing-function:1s;-moz-transition-timing-function:1s;-o-transition-timing-function:1s;transition-timing-function:1s;
+
+ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
+linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+cubic-bezier：特殊的立方贝塞尔曲线效果。
+
+/*----------------------------------------------------
+旋转 、 缩放
+-webkit-transform:rotate(360deg) scale(1.2,1.2);
+-moz-transform:rotate(360deg) scale(1.2,1.2);
+-o-transform:rotate(360deg) scale(1.2,1.2);
+transform:rotate(360deg) scale(1.2,1.2);
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+缩放
+-webkit-transform:scale(0.8,1.2);
+-moz-transform:scale(0.8,1.2);
+-o-transform:scale(0.8,1.2);
+transform:scale(0.8,1.2);
+
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视空间（三维）
+-webkit-transform:perspective(500px) rotateX(0deg);
+-moz-transform:perspective(500px) rotateX(360deg);
+-o-transform:perspective(500px) rotateX(0deg);
+transform:perspective(500px) rotateX(360deg);
+-----------------------------------------------------*/
+/*----------------------------------------------------
+旋转
+
+旋转45度
+.rotate_clockwise{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+三维空间x轴旋转60度
+.rotateX{
+    -webkit-transform:perspective(800px) rotateX(60deg);
+    -moz-transform:perspective(800px) rotateX(60deg);
+	-o-transform:perspective(800px) rotateX(60deg);
+    transform:perspective(800px) rotateX(60deg);
+}
+三维空间y轴旋转60度
+.rotateY{
+    -webkit-transform:perspective(800px) rotateY(60deg);
+    -moz-transform:perspective(800px) rotateY(60deg);
+ 	-o-transform:perspective(800px) rotateY(60deg);
+    transform:perspective(800px) rotateY(60deg);
+}
+三维空间z轴旋转60度
+.rotateZ{
+    -webkit-transform:perspective(800px) rotateZ(60deg);
+    -moz-transform:perspective(800px) rotateZ(60deg);
+	-o-transform:perspective(800px) rotateZ(60deg);
+    transform:perspective(800px) rotateZ(60deg);
+}          
+-----------------------------------------------------*/
+
+
+
+/*----------------------------------------------------
+位移
+-webkit-transform:translate(100px);
+-moz-transform:translate(100px);
+-o-transform:translate(100px);
+transform:translate(100px);
+-----------------------------------------------------*/
+ 
+ 
+ 
+/*----------------------------------------------------
+倾斜
+-webkit-transform:skew(45deg,20deg);
+-moz-transform:skew(45deg,20deg);
+-o-transform:skew(45deg,20deg);
+transform:skew(45deg,20deg);
+-----------------------------------------------------*/
+/*----------------------------------------------------
+矩阵变形
+-webkit-transform:matrix(1,0.4,0,1,0,0);
+-moz-transform:matrix(1,0.4,0,1,0,0);
+-o-transform:matrix(1,0.4,0,1,0,0);
+transform:matrix(1,0.4,0,1,0,0);
+-----------------------------------------------------*/
+
+
+/*----------------------------------------------------
+
+-----------------------------------------------------*/
+ 
+/*----------------------------------------------------
+完整动画
+.animation_name{
+    position:absolute;
+    -webkit-animation:0.5s 0.5s ease infinite alternate;
+    -webkit-animation-name:demo;
+	-moz-animation:0.5s 0.5s ease infinite alternate;
+    -moz-animation-name:demo;
+	-o-animation:0.5s 0.5s ease infinite alternate;
+    -o-animation-name:demo;
+    animation:0.5s 0.5s ease infinite alternate;
+    animation-name:demo;
+}
+@-webkit-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@-moz-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@-o-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+-----------------------------------------------------*/
+/*----------------------------------------------------
+动画时间
+-webkit-animation-duration:2s;
+-moz-animation-duration:2s;
+-o-animation-duration:2s;
+animation-duration:2s;
+-----------------------------------------------------*/
+/*----------------------------------------------------
+开始播放时间
+-webkit-animation-delay:1s;
+-moz-animation-delay:0;
+-o-animation-delay:0;
+animation-delay:1s;
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放方式
+-webkit-animation-timing-function:linear;
+-moz-animation-timing-function:linear;
+-o-animation-timing-function:linear;
+animation-timing-function:linear;
+
+ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
+linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+step-start：马上转跳到动画结束状态。
+step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
+steps(<number>[, [ start | end ] ]?)：第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
+cubic-bezier(<number>, <number>, <number>, <number>)：特殊的立方贝塞尔曲线效果。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放次数
+-webkit-animation-iteration-count:infinite
+-moz-animation-iteration-count:infinite;
+-o-animation-iteration-count:infinite
+animation-iteration-count:infinite;
+number：自定义动画执行次数，设置值可为0或正整数。
+infinite：无限循环。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放方向
+-webkit-animation-direction:reverse;
+-moz-animation-direction:reverse;
+-o-animation-direction:reverse;
+animation-direction:reverse;
+
+normal：正常方向。
+reverse：动画反向运行,方向始终与normal相反。（FF14.0.1以下不支持）
+alternate：动画会循环正反方向交替运动，奇数次（1、3、5……）会正常运动，偶数次（2、4、6……）会反向运动，即所有相关联的值都会反向。
+alternate-reverse：动画从反向开始，再正反方向交替运动，运动方向始终与alternate定义的相反。（FF14.0.1以下不支持）
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放后状态
+-webkit-animation-fill-mode:forwards;
+-moz-animation-fill-mode:forwards;
+-o-animation-fill-mode:forwards;
+animation-fill-mode:forwards;
+
+none：默认值。不设置对象动画之外的状态
+forwards：结束后保持动画结束时的状态，但当animation-direction为0，则动画不执行，持续保持动画开始时的状态
+backwards：结束后返回动画开始时的状态
+both：结束后可遵循forwards和backwards两个规则。
+both和forwards的使用到底有什么区别呢？
+both是设置对象状态为动画结束或开始的状态，主要是取决于-webkit-animation-direction这个属性
+注释：当设置方向为反方向的时候，根据动画执行的次数判断小球是否处于backwards还是forwards的状态，以上代码是执行偶数次，动画来回运动，最终回到初始状态极为backwards状态，当为奇数次时，则为结束状态forwards状态
+
+-----------------------------------------------------*/
+/*----------------------------------------------------
+对象动画状态
+-webkit-animation-play-state:paused;
+-moz-animation-play-state:paused;
+-o-animation-play-state:paused;
+animation-play-state:paused;
+
+running：默认值。运动
+paused：暂停
+-----------------------------------------------------*/
+/*----------------------------------------------------
+变形原点（中心轴）
+-webkit-transform-origin:center center;
+-moz-transform-origin:left center;
+-o-transform-origin:50px top;
+transform-origin:50% 100%;
+
+percentage：用百分比指定坐标值。可以为负值。
+length：用长度值指定坐标值。可以为负值。
+left center right是水平方向取值，而top center bottom是垂直方向的取值。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视属性通常配合
+.mod_run_code{
+    -webkit-perspective-origin:right top;
+    -moz-perspective-origin:right top;
+	-o-perspective-origin:right top;
+    perspective-origin:right top;
+    -webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transform: perspective(500px);
+    -moz-transform: perspective(500px);
+	-o-transform: perspective(500px);
+    transform: perspective(500px);
+}
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视原点
+-webkit-perspective-origin:50% top;
+-moz-perspective-origin:right center;
+-o-perspective-origin:right -50px;
+perspective-origin:right top;
+
+percentage：用百分比指定坐标值。可以为负值。
+length：用长度值指定坐标值。可以为负值。
+left,center right是水平方向取值，而top center bottom是垂直方向的取值。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+3D呈现
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+
+flat：所有子元素在 2D 平面呈现。
+preserve-3d：保留3D空间。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+隐藏内容的背面
+-webkit-backface-visibility:visible;
+-moz-backface-visibility:visible;
+-o-backface-visibility:visible;
+backface-visibility:visible;
+
+visible：默认值，旋转的时候背景可见。
+hidden：旋转的时候背景不可见。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+实例（鼠标滑过放大，移出还原）
+.IndexClassesList a img	{width: 280px;height: 210px;-moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.IndexClassesList	.ICLItemCur a img	{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+手机app  rem em
+
+html {font-size: 62.5%;}  //10/16 = 62.5%
+body {font-size: 1.2rem;}  //1.4*10px = 12px
+h1 { font-size: 2.4rem;}  //2.4*10px = 24px
+rem与em都是相对的计算单位，
+计算上类似不过是以统一的根元素<html>设定基准值，默认原基准值为1em=16px，设定为0.625em=10px方便计算。
+用rem制作出来的页面，宽度自适应，火狐下显示正常，opera浏览器下面的尺寸总是显得大，这是什么情况呢？
+这个问题 其实是因为有的浏览器默认最小字号为12px，导致如果在宽高、行高、边距等地方用rem，
+虽然在html那设置了10px，但默认还是会按照12px来计算，所以实际会偏大。
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+.消除transition闪屏
+-----------------------------------------------------*/
+.css{ 
+	-webkit-transform-style: preserve-3d;/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/ 
+	-webkit-backface-visibility: hidden;/*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/  
+}
+
+/*----------------------------------------------------
+只做测试用
+-----------------------------------------------------*/
+.test { position:fixed; _position:absolute; bottom:0; _bottom:auto; _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); width:200px; height:200px; border:1px #ccc solid; background-color:#fff; overflow:auto;}
+.testbg { background-color:#CF3;}
+.test { width:300px; height:300px; background-color:#F3C;}
+
+
+
+
+main {  
+/* main绝对定位，进行内部滚动 */  
+position: absolute;  
+top: 50px;  
+bottom: 34px;  
+/* 使之可以滚动 */  
+ overflow-y: scroll;  
+  /* 增加该属性，可以增加弹性，是滑动更加顺畅 */  
+  -webkit-overflow-scrolling: touch;     
+}  
+ 
+main .content {  
+    height: 2000px;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

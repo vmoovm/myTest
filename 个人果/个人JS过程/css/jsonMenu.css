@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+
+.container { width: 70%; margin: 0 auto; padding: 30px; border: 1px #ececec solid; box-shadow: 0px 0px 10px #ececec;}
+
+/*-------------------------------------------------------
+无限级菜单
+-----------------------------------------------------*/
+.zmenu {}
+.zmenu a { color: #333; vertical-align: middle;}
+.zme_first { line-height: 24px;}
+.zme_second { display: none; padding-left: 20px;}
+.zme_on {}
+.zme_row {}
+.zme_list {}
+.zme_list a { padding-right: 16px; background: url(../image/jsonMenu/T1iVCoXk8qXXXXXXXX.png) 100% -6px no-repeat;}
+.zme_on a { background-position: 100% 6px;}
+.zme_row em { display: inline-block; width: 12px; height: 12px; margin-right: 10px; border: 1px #999 solid; line-height: 12px; text-align: center; font-size: 14px; color: #999; vertical-align: middle; font-family: arial; font-style: normal;}
+/*-----------过渡 transition---------------*/
+
+
+
+/*----------动画 animation----------------*/

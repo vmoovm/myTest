@@ -1,0 +1,39 @@
+.wwrap{
+
+}
+.wamend{
+    overflow:hidden;
+    border-radius:50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.01rem solid #33adff;
+    margin: 0.3rem auto 0.5rem;
+}
+.wamend p{
+    font-size: 0.2rem;
+    width: 1.8rem;
+    line-height: 0.45rem;
+    background:#33adff;
+    text-align: center;
+    color: #fff;
+}
+.wamend div{
+     line-height: 1.3rem;
+     text-align: center;
+     text-align: center;
+     font-size:0.55rem;
+     color:#33adff;
+    
+ }
+.wamend span{
+    font-size: 0.32rem;
+}
+
+.zhtt { display: -webkit-box; -webkit-box-align: center; width: 100%;}
+.zhtt-word { -webkit-box-flex: 1; font-size: .28rem;}
+.zhtt-more { padding-right: .3rem;}
+.zhtt-more a { color: #09f;}
+
+
+
+

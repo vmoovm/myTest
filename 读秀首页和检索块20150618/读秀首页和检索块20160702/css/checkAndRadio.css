@@ -1,0 +1,22 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+单选和多选（普通状态）
+-----------------------------------------------------*/
+.zcheckB,.zcheckR {}
+.zcheckB label,.zcheckR label { display: block; padding: 0; vertical-align: baseline;}
+.zcheckB input.zcheckinput,.zcheckR input.zradioinput { position: absolute; left: -1000000px;}
+.zcheckB span,.zcheckB em,.zcheckR span,.zcheckR em { display: inline-block; vertical-align: middle; }
+.zcheckB b,.zcheckR b { font-weight: normal; color: #929292;}
+
+/*----------------------------------------------------
+选中状态
+-----------------------------------------------------*/
+.zcheck,.zchecked {}
+.zcheck i,.zchecked i { display: inline-block; width: 22px; height: 32px; background: url(../images/circle_check.png) left top no-repeat;}
+.zchecked i { background-image: url(../images/circle_checked.png);}
+
+.zcheckR label .zcheck i,.zcheckR label .zchecked i { background: url(../images/radio_check.png) left center no-repeat;}
+
+.zcheckR label .zchecked i { background-image: url(../images/radio_checked.png);}

@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,body,ul,ol,dl,dd,dt,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,th{
+border:0;margin:0px;padding: 0; float:none;font-family:'arial';text-overflow:ellipsis/*多余的文字隐藏并用省略号显示，但IE5和FF无效*/}
+
+ul,ol{font-size: 12px;list-style-type: none;color:#414141;}
+li {list-style-type:none;}
+h1,h2,h3,h4,h5,h6 { font-family:'arial','Microsoft Sans Serif','Microsoft YaHei';  font-weight:normal;}
+h1 {text-align:left; font-size:14px;}
+h2 { font-size:14px;}	
+span { font-family:'arial','Microsoft Sans Serif';}
+body {font-size:12px;font-family:'arial','Microsoft Sans Serif','Microsoft YaHei';color:#414141; line-height: 1.5;}
+em,i,b { font-style: normal;}
+/*链接的先后顺序Link Visited Hover Active*/
+a:link { color: #666; text-decoration: none; }
+a:visited { color: #666; text-decoration: none; }
+a:hover { color:#f60; text-decoration: underline; }
+a:hover { color:#08d468; text-decoration: underline; }
+a:active { color: #666; text-decoration: none; }
+
+#container{ min-width: 600px; width:expression(document.body.clientWidth < 600? '600px':'auto');} 
+.bg { background-image: -webkit-linear-gradient(-50deg,rgba(180,180,180,0) 0%,rgba(180,180,180,0.05) 50%,rgba(245,245,245,0.1) 50%,rgba(245,245,245,0) 100%);
+/*-webkit-linear-gradient(left,rgba(180,180,180,0.05) 0%,rgba(180,180,180,0.5) 30%,rgba(255,255,255,0.5) 70%,rgba(255,255,255,0.05) 100%);*/
+background-size: 1300px 880px;
+background-repeat: no-repeat;
+}
+.clear{ clear:both; _height: 0px; +height: 0px; _overflow: hidden; height:0px; margin:0; padding:0; width:0; border:none; }
+.width100 { width:100%; height:auto; margin:auto; }
+.center { min-width: 800px; max-width: 90%; margin: 0 auto; padding: 10px;}
+.blue { margin-top: 30px; padding: 15px 0; background: #3083eb; color: #fff;}
+.content {}
+.content textarea { width: 100%; padding: 15px; background: none; border: none; box-sizing: border-box; resize: none; line-height: ;}
+
+.top { position: relative; height: 70px; padding: 0 30px; border-bottom: 1px rgba(63,204,240,1) solid; background: -webkit-linear-gradient(0deg,rgba(8,212,104,1) 0%,rgba(63,204,240,1) 100%),#07d468; font-size: 36px; color: #fff; font-family: "arial black";}
+.top a { position: absolute; left: 30px; top: 0; color: #e1fcee;}
+.top i ,.top em,.top b { position: absolute; font-style: normal;}
+.top i { left: 0px; top: 0px; color: #fff;}
+.top em { left: 28px; top: 6px;}
+.top b { left: 54px; top: 0px; color: #ffe198;}
+.top:after { position: absolute; right: 30px; bottom: 5px; content: "v:1.0.0"; font-size: 12px; font-family: arial; color: rgba(255,255,255,0.6);}
+.top:before { content: ""; position: absolute; right: 50px; top: 10px; width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 0 10px 0 rgba(255,255,255,0.2),-60px -10px 5px 40px rgba(255,255,255,0.1),-40px 10px 1px -5px rgba(255,255,255,0.16),-120px 0px 0px -12px rgba(255,255,255,0.36); background: rgba(255,255,255,0.3); z-index: 10;}
+
+.banner { height: 320px; text-align: center;   display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center;
+background-image: -webkit-linear-gradient(-50deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.2) 50%,rgba(200,200,200,0.2) 50%,rgba(200,200,200,0.1) 100%),
+-webkit-linear-gradient(left,rgba(230,0,134,1) 0%,rgba(239,44,84,1) 50%,rgba(227,97,13,1) 100%);
+}
+.banner h2 { font-size: 46px; color: #fff; line-height: 1.6; letter-spacing: 8px;}
+.banner h3 { font-size: 36px; color: #fff; line-height: 1.6; letter-spacing: 8px;}
+.banner p { font-size: 26px; color: #f5abbc; line-height: 1.6; letter-spacing: 10px; font-family: "arial narrow"}
+
+
+.code { margin-top: 20px;}
+.code_header { display: -webkit-box; -webkit-box-pack: justify; line-height: 32px;}
+.code_title { position: relative; height: 32px; padding: 0 10px; font-size: 18px; color: #08d468;}
+.code_title:after { content: ''; position: absolute; left: -2px; top: 20px; width: 4px; height: 4px; border: 1px #08d468 solid; border-radius: 50%;}
+.code_title em { padding-left: 6px; font-size: 14px; font-style: normal; color: #ccc;}
+.code_right { height: 32px; font-size: 14px; color: #3eccef;}
+.code_right a { color: #3eccef;}
+.code_header { position: relative; width: 100%;
+background-image: -webkit-linear-gradient(left, #08d468 0%, rgba(204,204,204,1) 15%, rgba(204,204,204,0) 100%);
+background-image: linear-gradient(left, #08d468 0%, rgba(204,204,204,1) 15%, rgba(204,204,204,0) 100%);
+  background-size:  100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.code_header:before { position: absolute; left: -1px; bottom: -1px; content: ''; width: 4px; height: 4px; background: #08d468; border-radius: 50%;}
+.code_body { padding: 14px 0px;
+background-image: -webkit-linear-gradient(top,#08d468 0%,rgba(204,204,204,1) 15%, rgba(204,204,204,0) 60%);
+background-size: 1px 100%;
+background-repeat: no-repeat;
+background-position: left;
+}
+/*两列*/
+.lie { display: -webkit-box;}
+.lie_flex { -webkit-box-flex: 1; margin-left: 20px; padding-left: 40px; border-left: 1px #ccc dashed;}
+.lie_w { width: 313px; min-height: 770px; padding:42px; padding-top: 138px; background: url(../images/ipone.png) no-repeat;}
+/*全展示出来*/
+.code_tt { padding-top: 10px; line-height: 20px; font-size: 14px; color: #333;}
+.code_imgs { height: 400px;}
+.code_imgs iframe { width: 100%; height: 100%; margin: 0 auto; border: none;}
+.code_box { max-height: 400px; overflow-y:auto;}
+.code_instr { padding: 10px 0; border-bottom: 1px #ccc dashed; font-size: 12px; line-height: 20px; color: #666;}
+/*tab切换*/
+.code_tab { display: -webkit-box; height: 26px; margin-top: 10px; border-bottom: 1px #ccc solid;}
+.code_tab li { margin-right: 15px; margin-bottom: -1px; padding: 0 10px;}
+.code_tab li.code_tab_cur { border-bottom: 1px #08d468 solid; color: #08d468;}
+
+
+.module { display: -webkit-flex; -webkit-justify-content:space-between;}
+.module_item { -webkit-box-flex:1; position: relative;min-width: 100px; max-width: 500px; height: 200px; margin-left: 16px; margin-bottom: 30px; box-sizing: border-box; box-shadow: 2px 4px 8px rgba(200,200,200,0.8);background: #fff; }
+.module_item:hover { border-box; box-shadow: 2px 4px 8px rgba(8,212,104,0.3);}
+.module_box { position: relative; width: 100%; height: 100%; overflow: hidden;}
+.module_img { text-align: center;}
+.module_img img { max-width: 100%; max-height: 100%;}
+.module_info { position: absolute; left: 0; top: 110px; width: 100%; min-height: 120px; padding: 0 20px; padding-top: 5px; box-sizing: border-box; line-height: 2; font-size: 14px;
+background:-webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,1) 40%);
+background:linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,1) 40%);
+overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.module_info i,.module_info em,.module_info b { display: inline-block; width: 16px; height: 16px; margin-right: 2px; border-radius: 2px; background: #999; text-align: center; line-height: 16px; font-size: 12px; color: #fff;}
+.module_info em { background: #08d468; }
+.module_info b { background: #f9a513; }
+.module_count { position: absolute; bottom: 0; left: 0; width: 100%; height: 30px; padding:0 20px; box-sizing: border-box; background: #fff; color: #999;}
+
+
+.footer { margin-top: 30px; padding: 30px 100px; padding: 1px 100px;
+background: -webkit-linear-gradient(left,rgba(204,204,204,0) 0%,rgba(204,204,204,1) 30%,rgba(8,212,104,1) 50%,rgba(204,204,204,1) 70%,rgba(204,204,204,0) 100%);
+background-repeat: no-repeat;
+background-size: 100% 1px;
+}
+.footer_title { position: relative; margin-top: -13px; text-align: center; word-spacing: 0;}
+.footer_title span{display: inline-block; margin-top: -1px; background: #fff; font-size: 16px; color: #08d468; }
+.footer_title span:before,.footer_title span:after { content: ''; display: inline-block; width: 4px; height: 4px; border: 1px #08d468 solid; border-radius: 50%;}
+/*.footer_title:before,.footer_title:after { content: ''; position: absolute; top: 10px; width: 4px; height: 4px; background: #08d468; border-radius: 50%;}*/
+
+.footer_box { padding: 10px 100px 40px; text-align: center; line-height: 2;}
+.footer_box h2 { font-size: 16px;}
+.footer_box p { font-size: 14px; color: #666;}

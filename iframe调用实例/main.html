@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+<link rel="stylesheet" type="text/css" href="css/alert.css"/>
+
+
+<style type="text/css">
+body {background: transparent;  }
+</style>
+
+<!--layer start-->
+<!--layer start-->
+
+<!--layer end-->
+<!--layer end-->
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+        function ShowExit() {
+            //获取iframe的window对象
+            //var topWin = window.top.document.getElementById("topNav").contentWindow;
+            //通过获取到的window对象操作HTML元素，这和普通页面一样
+            //topWin.document.getElementById("exit").style.visibility = "visible";
+            //$(window.parent.document).find("#zopacity").show();
+            
+        }
+        
+        var linkcss='<link href="css/alert.css" rel="stylesheet" type="text/css" />';
+        var message=$('<div class="zlayer" style="display: block;" id="zlayer">\
+						<div class="zlayer_containter zlayer_sm">\
+							<div class="zlayer_header">\
+								<span class="fr zlayer_close"></span>\
+								<h1 class="zlayer_title">收藏到书房</h1>\
+							</div>\
+							<div class="zlayer_body">\
+								<div class="zlayer_message">\
+									真的要取消收藏该专题吗？\
+								</div>\
+							</div>\
+							<div class="zlayer_footer">\
+								<p class="zlayer_btn">\
+									<a class="zgreen" href="#">确定</a>\
+									<a class="zgray" href="#">取消</a>\
+								</p>\
+							</div>\
+						</div>\
+					</div>');
+        
+        
+            /*state false true  false 为当前页面，true 为跨父iframe
+			 */
+			function zopenWindow(state){
+				var w=state ? $(window.parent.document):$(window);
+				// var w=$(window.parent.document);
+				if(!(w.find("body").find("#zopacity").length)){
+					var eleCss= {'position': 'fixed', 'width': '100%', 'height': '100%', 'background': '#000', 'left': '0', 'bottom': 0, 'display': 'none'};
+					var eleId=$('<div class="zopacity" id="zopacity">');
+					w.find("body").append(eleId);
+					w.find("body").append(message);
+					w.find("head").append(linkcss);
+					eleId.css(eleCss);
+				}
+					
+				eleId.show();
+				$("#zlayer").show();
+				
+			}
+			zopenWindow(true);
+			
+			$(window.parent.document).o n("click",".zgreen",function(){
+				alert('能');
+			});
+			function zcloseWindow(state){
+				var w=state ? $(window.parent.document):$(window);
+				w.find("#zopacity").hide();
+				$("#zlayer").hide();
+			}
+    </script>
+    
+    
+    <!--<script type="text/javascript">
+    	var ziHeight = $(document).height()
+    	var fujiWin = $(window.parent.document)
+		var main = fujiWin.find('#main').Height(ziHeight)
+    </script>-->
+</head>
+<body>
+<div>
+  <input type="button" name="btnOk" value="在顶端显示退出" onclick="zopenWindow(true);" />
+</div>
+</body>
+</html>

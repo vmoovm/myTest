@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自定义-自定义</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<style type="text/css">
+	.swiper-slide { text-align: center;}
+</style>
+</head>
+
+<body>
+	<style type="text/css">
+#swiper-container2 .swiper-slide{
+line-height:2 !important;
+color:#666 !important;
+font-size:14px !important;
+background:#eee !important;
+}
+#swiper-container2 .active-nav{
+background:#ddd !important;
+}</style>
+<div class="swiper-container swiper-container-horizontal" id="swiper-container3">
+	<div class="swiper-wrapper" id="zcon">
+		<div class="swiper-slide blue-slide" >
+			slider1</div>
+		<div class="swiper-slide red-slide" >
+			slider2</div>
+		<div class="swiper-slide orange-slide">
+			slider3</div>
+		<div class="swiper-slide blue-slide">
+			slider4</div>
+		<div class="swiper-slide red-slide">
+			slider5</div>
+		<div class="swiper-slide orange-slide">
+			slider6</div>
+		<div class="swiper-slide blue-slide" >
+			slider7</div>
+		<div class="swiper-slide red-slide">
+			slider8</div>
+	</div>
+</div>
+<div class="swiper-container swiper-container-horizontal" id="swiper-container2">
+	<div class="swiper-wrapper" id="znav">
+		<div class="swiper-slide active-nav">
+			版块1</div>
+		<div class="swiper-slide">
+			版块2</div>
+		<div class="swiper-slide">
+			版块3</div>
+		<div class="swiper-slide">
+			版块4</div>
+		<div class="swiper-slide">
+			版块5</div>
+		<div class="swiper-slide" >
+			版块6</div>
+		<div class="swiper-slide">
+			版块7</div>
+		<div class="swiper-slide" >
+			版块8</div>
+	</div>
+</div>
+
+<div class="" style="text-align: center;">
+	<input type="button" name="" id="zadd" value="追加" />
+	<input type="button" name="update" id="update" value="update" />
+</div>
+<script> 
+var mySwiper2 = new Swiper('#swiper-container2',{
+	watchSlidesProgress : true,
+	watchSlidesVisibility : true,
+	slidesPerView : 3,
+	onTap: function(){
+		mySwiper3.slideTo(mySwiper2.clickedIndex)
+	}
+})
+
+
+var mySwiper3 = new Swiper('#swiper-container3',{
+	onSlideChangeStart: function(){
+		updateNavPosition()
+	}
+	
+})
+
+function updateNavPosition(){
+		$('#swiper-container2 .active-nav').removeClass('active-nav')
+	var activeNav = $('#swiper-container2 .swiper-slide').eq(mySwiper3.activeIndex).addClass('active-nav');
+
+		if (!activeNav.hasClass('swiper-slide-visible')) {
+			if (activeNav.index()>mySwiper2.activeIndex) {
+				var thumbsPerNav = Math.floor(mySwiper2.width/activeNav.width())-1;
+				mySwiper2.slideTo(activeNav.index()-thumbsPerNav)
+			}
+			else {
+				if(activeNav.index()==mySwiper2.activeIndex){
+					mySwiper2.slideTo(activeNav.index()+1);
+				}else{
+					mySwiper2.slideTo(activeNav.index())
+				}
+				
+			}
+		}
+	}
+$("#zadd").click(function(){
+	var zn='<div class="swiper-slide active-nav swiper-slide-visible" >版块9</div>';
+	var zc='<div class="swiper-slide red-slide swiper-slide-active">slider9</div>';
+	$("#znav").append(zn);
+	$("#zcon").append(zc);
+	
+});
+$("#update").click(function(){
+	mySwiper2.update();
+	mySwiper3.update();
+});
+</script>
+<!--main start-->
+<!--main end-->
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*格式化样式*/
+*{margin:0;padding:0}
+body{font:12px/1.5 宋体,Arial, Helvetica, sans-serif;color:#333}
+table{width:100%; border-collapse:collapse;border:none;border-spacing:0}
+a{color:#202020;text-decoration:none;}
+img{border:none}
+input{vertical-align:middle;outline:none}
+textarea{outline:none;}
+ul,ol,dl{list-style:none;}
+b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+h1,h2,h3,h4,h5,h6{font-size:14px;font-weight:normal;}
+
+/*公共样式*/
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{overflow:hidden;zoom:1}
+.clear{clear:both}
+.center { width:600px; margin:0 auto; background-color:#CF3;}
+
+/*文本切换*/
+.FocusImg{width:600px;height:105px;position:relative;}
+.FocusPic{width:500px;height:105px; margin:0 auto; overflow:hidden;position:relative;}
+.FocusPic ul{position:relative;width:1500px;overflow: hidden;}
+.FocusPic ul li{width:500px;height:105px;float:left;}
+.Btn{width:30px;height:61px;position:absolute;z-index:999;top:35px;cursor:pointer;}
+.BtnLeft{background:url(../image/comJs/BtnLeft.png) no-repeat;left:0px}
+.BtnRight{background:url(../image/comJs/BtnRight.png) no-repeat;right:0px;}
+.FocusNum{text-align:center;position:absolute;bottom:-25px;width:600px;height:25px;background:url(../image/comJs/FocusBg.png) repeat}
+.FocusNum a{display:inline-block;width:20px;height:19px;background:url(../image/comJs/FocusNum.png) no-repeat;background-position:right top;margin-top:3px;margin-left:5px;}
+.FocusNum a.FocusCur{background-position:left top;}
+.F_text {}
+.F_text dd { float:left; width:100px; line-height:30px; padding-left:10px; padding-right:10px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis;}

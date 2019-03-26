@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+/*-----------------------------------------------------
+Warnning: a_,b_,c_,f_,l_n_,r_,w_, inhibit CSSName
+
+以上样式字母样式开头命名禁止使用
+
+以下样式注释：
+Default：默认不用修改
+User-defined：用户自定义
+Header：头部区域
+Footer:页脚区域
+FriendShip:友情链接
+Alert Msg：全局JS样式
+
+注释部分为待用，根据情况自由分配
+
+注：使用前请将以上中文注释删除，以免IE6下部分中文注释BUG！
+   英文不可删，如"Warnning:"不可删。
+-------------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+table {border-collapse:collapse;} 
+
+/*Clear float*/
+.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+/*Text overflow ellipsis*/
+.overflow { overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+/*IE6 Empty*/
+.empty { line-height:0; font-size:0;}
+/*break*/
+.br { word-wrap:break-word;	word-break:break-all;}
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1 { font-family:'arial'; font-size:12px; font-weight:bold;}
+h2 { font-family:'arial','Microsoft Sans Serif'; font-size:12px; font-weight:bold;}	
+body {font-size:12px; font-family:'arial','Microsoft Sans Serif','宋体','微软雅黑'; color:#414141; background:#fff;}
+
+a:link { color: #666; text-decoration: none; }
+a:visited { color: #666; text-decoration: none; }
+a:hover { color:#f60; text-decoration: underline; }
+a:active { color: #666; text-decoration: none; }
+
+/*Global*/
+.center,.center_top { width:1000px; height:auto; margin:0 auto;}
+.center_top { padding-top:10px;}
+.box { background:none;}
+.box_top { padding-top:10px;}
+.box_left { padding-left:10px;}
+.left {float:left; width:725px; height:auto; padding-left:10px;}
+.right { float:left; width:245px; height:auto; padding-left:10px;}
+.left0 { float:left; width:735px; height:auto;}
+.right0 { float:left; width:255px; height:auto;}
+.text { text-align:center;}
+
+/*FontColor*/
+.white ,
+.white a:link ,
+.white a:visited ,
+.white a:hover ,
+.white a:active	{ color:#fff;}
+
+.red ,
+.red a:link ,
+.red a:visited ,
+.red a:hover ,
+.red a:active { color:#c51410;}
+
+.blue ,
+.blue a:link ,
+.blue a:visited ,
+.blue a:hover ,
+.blue a:active { color:#375ba3;}
+
+.gray ,
+.gray a:link ,
+.gray a:visited ,
+.gray a:hover ,
+.gray a:active { color:#aaa;}
+
+.yan ,
+.yan a:link ,
+.yan a:visited ,
+.yan a:hover ,
+.yan a:active { color:#0bace1;}
+
+/*-----------------------------------------------------
+Header
+-----------------------------------------------------*/
+.top { line-height:32px; background:url(../image/skin/sucai_skin_2.gif) 0 -45px repeat-x; color:#1e1e1e;}
+.t_left { float:left;}
+.t_right { float:right;}
+.t_r_dec { padding-left:12px; padding-right:5px; line-height:31px; background:url(../image/skin/sucai_skin_1.gif) -1125px -320px no-repeat;}
+
+.header {}
+
+/*-----------------------------------------------------
+Nav
+-----------------------------------------------------*/
+.mainNav {}
+
+/*.mainNav a:link { color:#fff; text-decoration:none;}
+.mainNav a:visited { color:#fff; text-decoration:none;}
+.mainNav a:hover { color:#fff; text-decoration:none;}
+.mainNav a:active { color:#fff; text-decoration:none;}*/
+
+.subnav {}
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.footer {}
+.f_bg {}
+.f_nav {}
+.f_nav h3 {}
+.f_copyright {}
+
+/*-----------------------------------------------------
+Friendship
+-----------------------------------------------------*/
+/*.friendship { padding-left:10px; padding-right:10px;}
+.fr_bg { height:31px; border-bottom:1px #c00 solid;}
+.fr_title { width:140px; height:30px; display:block; background:url(../image/skin/sucai_skin_1.gif) -582px 0px no-repeat;}
+.fr_box { padding-top:15px; padding-bottom:10px;}
+.fr_links { padding-left:20px;}
+.fr_links h4 { display:block; float:left; width:80px; height:20px; padding-left:10px; padding-right:5px; line-height:20px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis; font-size:12px; font-weight:normal;}
+.fr_logo { text-align:center;}*/
+
+/*-----------------------------------------------------
+Alert Msg
+-----------------------------------------------------*/
+/*.window {}
+.w_bg {}*/

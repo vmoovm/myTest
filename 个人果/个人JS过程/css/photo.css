@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+CSS Name
+======================================================*/
+/**javascript style**/
+
+.imagePreviewmask { background-color:#000; filter:alpha(opacity=60); height:100%; left:0; opacity:0.6; overflow:hidden; position:fixed; top:0; -moz-user-select:none; width:100% }
+/*#imageScreen .tip { background-color:#fffded; display:none; height:30px; left:50%; line-height:27px; margin-left:-150px; position:absolute; text-align:center; top:10px; width:300px }*/
+#imageScreen { position:absolute; left:0; top:0px; width: 100%; z-index: 10001;}
+.im_hd {  position:absolute; top:0; width:100%; background:#252728; height:56px; z-index:107 }
+.im_h_info { display:inline; float:left; height:20px; margin-top:15px; margin-left:30%; text-align:center; width:40%; color:#ccc;}
+.im_h_name { display:inline-block; margin-right:20px; max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; zoom:1 }
+.im_h_name,.im_h_num { vertical-align:middle }
+
+/*工具*/
+.im_toolbar { position:absolute; right:0 }
+.im_t_ul { float:right; height:56px; margin-right:20px; padding:0; line-height:56px; }
+.im_t_li { }
+.im_t_close { float:right; height:56px; width:56px; background:url(../image/photos/close.gif) 20px 20px no-repeat; background-color:#0a446a; cursor:pointer; }
+.im_t_close:hover { background-position:-1px -32px; background-color:#0c5483 }
+.im_t_vie,.im_t_dow,.im_t_del  {float:left; width:90px;  margin-top:20px; line-height:20px;}
+.im_t_del {width:60px}
+.im_t_del a,.im_t_dow a,.sharedow a, .im_t_vie a,.sharevie a { display:inline-block; height:17px; padding-left:25px; background:url(../image/photos/download.png) no-repeat;line-height:17px; color:#888; text-decoration:none; zoom:1 }
+.im_t_del a { background-position:0 0 }
+.im_t_dow a, .sharedow a { background-position:0 -47px; width:65px }
+.im_t_vie a, .sharevie a { background-position:0 -95px; padding-left:30px }
+.im_t_del a:hover { background-position:0 -26px; color:#fff }
+.im_t_dow a:hover,.sharedow a:hover { background-position:-0px -73px; color:#fff }
+.im_t_vie a:hover,.sharevie a:hover { background-position:0 -119px; color:#fff }
+.im_t_confirm { position:absolute; right:27px; top:40px; width:202px; height:72px; padding-top:18px; background:url(../image/photos/del_confirm_bg.png); color:#555;  z-index:107 }
+.im_t_confirm p { height:20px; line-height:20px; text-align:center }
+.im_t_confirm a { background:url(/resource/img/gallary/photoView.png?v=4e978.png) no-repeat -181px 0; color:#3998e7; float:left; height:28px; line-height:26px; margin-top:13px; margin-right:8px; width:50px }
+.im_t_confirm a.im_t_yes { margin-left:21px }
+.im_t_confirm a.im_t_no {}
+.im_t_confirm a:hover { background-position:-181px -30px; color:#3998e7 }
+
+/*背景*/
+.im_list { position:relative; width:100%; height:100%; background-color:#F39;}
+.im_list img { height:100%;}
+.im_none { position:absolute; top:355px; height:50px; z-index:1; display:none;}
+.im_small { position:absolute; top:355px; height:50px; z-index:2}
+.im_big { position:absolute; top:329px; height:100px; z-index:3}
+.im_cur { position:absolute; top:180px; height:400px; z-index:4;}
+
+
+
+
+/*.im_small { position:absolute; left:70px; top:355px; height:50px; z-index:2}
+.im_big { position:absolute; left:100px; top:329px; height:100px; z-index:3}
+.im_none { position:absolute; left:100px; top:329px; height:100px; z-index:3}
+.im_cur { position:absolute; left:450px; top:180px; height:400px; z-index:4;}
+.im_def { position:absolute; left:0px; top:56px; height:50px; z-index:1}*/
+/*左右按钮*/
+.img_prev, .img_next { position:absolute; top:56px; width:45%; height:100%; z-index:102;}
+.img_prev { left:0 }
+.img_next { right:0 }
+
+.img_prev a, .img_next a, .img_p_hover a, .img_n_hover a {  position:absolute; display:inline-block; width:28px; height:44px;background:url(../image/photos/gallary-arrow.png) no-repeat;}
+.img_next a {right:20px; background-position:-35px 0; }
+.img_next a:hover, .img_n_hover a { background-position:-35px -48px }
+.img_prev a { left:20px; background-position:0 0;}
+.img_prev a:hover, .img_p_hover a { background-position:0 -48px }
+
+
+
+
+
+/*********************************************************************************/

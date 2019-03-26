@@ -1,0 +1,92 @@
+// 依赖关系：a_config_color.less
+/* -----------------------------------------------------
+background-color
+ -----------------------------------------------------*/
+@bgColor-default: @default;		// 默认色
+@bgColor-disable: @disable;		// 禁止色
+@bgColor-primary: @primary;		// 原始色
+@bgColor-info: @info;			// 信息色
+@bgColor-success: @success;		// 通过色
+@bgColor-danger: @danger;		// 危险色
+@bgColor-warning: @warning;		// 警告色
+@bgColor-main: @main;			// 主色
+@bgColor-auxi: @auxi;			// 辅色
+// hover
+@bgColor-hover: darken(@bgColor, 10%);
+@bgColor-d-hover: darken(@bgColor-d, 10%);
+@bgColor-g-hover: darken(@bgColor-g, 10%);
+@bgColor-l-hover: darken(@bgColor-l, 10%);
+@bgColor-w-hover: #fff;
+@bgColor-default-hover: darken(@default, 10%);
+@bgColor-disable-hover: darken(@disable, 10%);
+@bgColor-primary-hover: darken(@primary, 10%);
+@bgColor-info-hover: darken(@info, 10%);	
+@bgColor-success-hover: darken(@success, 10%);
+@bgColor-danger-hover: darken(@danger, 10%);
+@bgColor-warning-hover: darken(@warning, 10%);
+@bgColor-main-hover: darken(@main, 10%);
+@bgColor-auxi-hover: darken(@auxi, 10%);
+.bgColor { background-color: @bgColor;}
+.bgColor-d { background-color: @bgColor-d;}
+.bgColor-g { background-color: @bgColor-g;}
+.bgColor-l { background-color: @bgColor-l;}
+.bgColor-w { background-color: @bgColor-w;}
+.bgColor-default { background-color: @bgColor-default;}
+.bgColor-disable { background-color: @bgColor-disable;}
+.bgColor-primary { background-color: @bgColor-primary;}
+.bgColor-info { background-color: @bgColor-info;}
+.bgColor-success { background-color: @bgColor-success;}
+.bgColor-danger { background-color: @bgColor-danger;}
+.bgColor-warning { background-color: @bgColor-warning;}
+.bgColor-main { background-color: @bgColor-main;}
+.bgColor-auxi { background-color: @bgColor-auxi;}
+.bgColor-hover { background-color: @bgColor-hover;}
+.bgColor-d-hover { background-color: @bgColor-d-hover;}
+.bgColor-g-hover { background-color: @bgColor-g-hover;}
+.bgColor-l-hover { background-color: @bgColor-l-hover;}
+.bgColor-w-hover { background-color: @bgColor-w-hover;}
+.bgColor-default-hover { background-color: @bgColor-default-hover;}
+.bgColor-disable-hover { background-color: @bgColor-disable-hover;}
+.bgColor-primary-hover { background-color: @bgColor-primary-hover;}
+.bgColor-info-hover { background-color: @bgColor-info-hover;}
+.bgColor-success-hover { background-color: @bgColor-success-hover;}
+.bgColor-danger-hover { background-color: @bgColor-danger-hover;}
+.bgColor-warning-hover { background-color: @bgColor-warning-hover;}
+.bgColor-main-hover { background-color: @bgColor-main-hover;}
+.bgColor-auxi-hover { background-color: @bgColor-auxi-hover;}
+
+// -----------------------------------------------------
+// background-image: 参值：@imgName, @imgUrl:'../images/'
+// -----------------------------------------------------
+.bgImage (@imgName:'',@imgUrl:@url) {
+	background-image: url('@{imgUrl}@{imgName}');
+}
+
+// -----------------------------------------------------
+// 参值：@imgName, @imgUrl:'../images/', @noRepeat:no-repeat
+// -----------------------------------------------------
+.bgImage-n (@imgName:'', @imgUrl:@url, @noRepeat:no-repeat) {
+	background: url('@imgUrl@imgName') @noRepeat;
+}
+// -----------------------------------------------------
+// background:bg c:center,t:top, l:left, r:right,
+// -----------------------------------------------------
+.bgImage-c-c (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') center center @noRepeat;}
+.bgImage-c-t (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') center top @noRepeat;}
+.bgImage-c-b (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') center top @noRepeat;}
+.bgImage-l-t (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') left top @noRepeat;}
+.bgImage-l-c (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') left center @noRepeat;}
+.bgImage-l-b (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') left bottom @noRepeat;}
+.bgImage-r-t (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') right top @noRepeat;}
+.bgImage-r-c (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') right center @noRepeat;}
+.bgImage-r-b (@imgName, @imgUrl:@url, @noRepeat:no-repeat) { background: url('@{imgUrl}@{imgName}') right bottom @noRepeat;}
+
+// -----------------------------------------------------
+// background-size
+// -----------------------------------------------------
+.bgSize (@x, @y) {
+	-webkit-background-size: @x @y;
+	   -moz-background-size: @x @y;
+		 -o-background-size: @x @y;
+	        background-size: @x @y;
+}

@@ -1,0 +1,43 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+单选和多选（普通状态）
+-----------------------------------------------------*/
+
+.zcheckB,.zcheckR { overflow: hidden;}
+.zcheckB label,.zcheckR label { display: -webkit-box; width: 100%; /*height:2.75rem;*/}
+.zcheckB input[type=checkbox],.zcheckR input[type=radio] { position: absolute; /*left: -100000rem; top: 500000rem;*/ display: none;} 
+.zcheckB span,.zcheckB em,.zcheckR span,.zcheckR em { display: block;}
+.zcheckB span,.zcheckR span { -webkit-box-flex: 1;}
+.zcheckB b,.zcheckR b { font-weight: normal; color: #929292;}
+
+.zcheckB input[type=text],.zcheckR input[type=text] { display: block; -webkit-box-flex: 1; height: 2.5rem; margin-left: 1rem; padding-right: 1rem; border: none; background: none; line-height: 2.5rem; vertical-align: middle;}
+
+/*----------------------------------------------------
+单选和多选(编辑状态)
+-----------------------------------------------------*/
+.zcheckB_edit,.zcheckR_edit { display: -webkit-box;}
+.zcheckB_edit label,.zcheckR_edit label { display: -webkit-box;}
+.zcheckB_edit input[type=checkbox],.zcheckR_edit input[type=radio],.zcheckR_edit input[type=checkbox] { position: absolute; left: -1000rem;}
+.zcheckB_edit span,.zcheckB_edit em,.zcheckR_edit span,.zcheckR_edit em { display: block; }
+.zcheckB_edit b,.zcheckR_edit b { font-weight: normal; color: #929292;}
+
+.zcheckB_edit input[type=text],.zcheckR_edit input[type=text] { display: block; -webkit-box-flex: 1; height: 2.5rem; margin-left: 1rem; padding-right: 1rem; border: none; background: none; line-height: 2.5rem; vertical-align: middle;}
+
+/*----------------------------------------------------
+选中状态
+-----------------------------------------------------*/
+.zcheck,.zchecked {margin-right: 0.4rem;}
+.zcheckB .zcheck i,.zcheckB .zchecked i,
+.zcheckR .zcheck i,.zcheckR .zchecked i {  display: inline-block; width: 2rem; height: 2.6rem; background-repeat: no-repeat; background-position: center 48%;  background-size: 1.8rem;}
+.zcheckB .zcheck i,.zcheckB .zchecked i { background-image: url(../images/circle_check.png);}
+.zcheckB .zchecked i { background-image: url(../images/circle_checked.png);}
+.zcheckR .zcheck i,.zcheckR .zchecked i { background-image: url(../images/radio_check.png);}
+.zcheckR .zchecked i { background-image: url(../images/radio_checked.png);}
+
+
+
+
+
+

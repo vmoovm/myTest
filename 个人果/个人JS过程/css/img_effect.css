@@ -1,0 +1,53 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+图片飞入切换
+======================================================*/
+.keautoBox { position: relative; width: 100%; height: 260px; overflow: hidden;}
+.keautoCon { position: absolute; left: 50%; top: 0; width: 1920px; height: 260px; margin-left: 960px;}
+
+.bottom { position:absolute; bottom:0; width:100%; height:20px; z-index:99999;}
+.btn_center { width:350px; margin:0 auto; text-align:center;}
+.btn_off,.btn_on { width:12px; height:12px; margin-left: 5px; border-radius: 10px; background:#0066FF; display:inline-block; cursor: pointer;}
+.btn_off,.btn_on { *display: inline;}
+.btn_on { background:#fff;}
+
+.prev,.next { position:absolute; top:150px; display:block; width:57px; height:62px;  index:99999}
+.next { right:-57px; background:url(../image/img_effects/next.png) center no-repeat;}
+.prev { left:-57px; background:url(../image/img_effects/prev.png) center no-repeat;}
+
+.imgbox { position:absolute; width:990px; height:100%; left:0px; top:0px;}
+
+.content { position: absolute; left: 0px; top: 0; width:990px; height:100%;  background-color:#fff;}
+.gezi { position: absolute; width:23px; height: 23px; background-repeat: no-repeat;}
+
+
+
+.keautoCon{ width: 1920px; height: 260px; position: absolute; top: 0; margin-left: -960px; left: 50%; }
+.keautoBox{position:relative; width:100%; overflow:hidden; height:260px;}
+/*焦点图*/
+div.wrapper { width: 1920px; position: relative; }
+.fn-clear { zoom: 1; }
+.box_skitter { position: relative; background: none; }
+.box_skitter ul { display: none; }
+.box_skitter .container_skitter { overflow: hidden; position: relative; }
+.box_skitter .image { overflow: hidden; }
+.box_skitter .image img { display: none; }
+.box_skitter .box_clone { position: absolute; top: 0; left: 0; width: 100px; overflow: hidden; display: none; z-index: 20; }
+.box_skitter .box_clone img { position: absolute; top: 0; left: 0; z-index: 20; }
+.box_skitter .prev_button { position: absolute; top: 50%; left: 300px; z-index: 100; width: 57px; height: 62px; overflow: hidden; text-indent: -9999em; margin-top: -25px; background: url(../images/prev.png) no-repeat left top !important; _display:none }
+.box_skitter .next_button { position: absolute; top: 50%; right: 300px; z-index: 100; width: 57px; height: 62px; overflow: hidden; text-indent: -9999em; margin-top: -25px; background: url(../images/next.png) no-repeat left top !important; _display:none }
+.box_skitter .label_skitter { z-index: 150; position: absolute; display: none; }
+.loading { position: absolute; top: 50%; right: 50%; z-index: 10000; margin: -16px -16px; color: #fff; text-indent: -9999em; overflow: hidden; background: url(../images/ajax-loader.gif) no-repeat left top; width: 31px; height: 31px; }
+#slideshow { width: 1920px; height: 260px; }
+#slideshow ul { display: none; }
+
+
+
+
+
+
+
+
+

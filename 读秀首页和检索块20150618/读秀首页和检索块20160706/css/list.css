@@ -1,0 +1,138 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+布局
+-----------------------------------------------------*/
+.zwrap { min-width: 980px; *width:expression(document.body.clientWidth < 980? '980px':'auto'); padding-left: 1%; padding-right: 1%;}
+.zmiddle { margin-left: 200px; margin-right: 200px; padding-left: 2%; padding-right: 3%;}
+.list_sidebar { padding-top: 20px;}
+
+/*弹窗口背景*/
+.zlayer { position: fixed; _position: absolute; left: 50%; top: 20%; width:554px; margin-left: -277px; z-index: 100001; display: none;}
+.zla_box { border:3px #999 solid; background-color:#fff; -o-box-shadow:6px 6px 14px #777; -webkit-box-shadow:6px 6px 14px #777; -moz-box-shadow:6px 6px 14px #777; box-shadow:6px 6px 14px #777; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color=#777777);}
+.zla_title { height:34px; border-bottom:1px #dcdcdc solid; background-color:#f0f0f0;}
+.zla_title h2 { float: left; padding-left:14px; line-height:34px; font-size: 14px; font-weight: bold; color: #000;}
+.zla_title p { float: right; width: 12px; height: 34px; padding-left: 10px; padding-right: 7px; background: url(../images/icon.png) 10px -306px no-repeat; cursor: pointer;}
+.zla_info { padding-bottom: 12px;}
+.zla_info p { width: 95%; line-height: 22px; font-size: 12px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zla_scroll { max-height: 220px; *height:expression(document.body.clientHeight > 220? '220px':'auto'); overflow: hidden; overflow-y: auto;}
+.zla_scroll p { width: 95%; line-height: 22px; font-size: 12px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zla_bg { padding-top:9px; padding-left:15px; padding-right:13px; padding-bottom:22px;}
+.zla_con { /*height:251px;  overflow:hidden; overflow-y:auto;*/}
+.zla_con h2 { padding-top: 12px; padding-bottom: 10px; border-top: 1px #cfcfcf dashed;}
+.zla_c_ico { background-image:url(../images/upfile_infro.gif); background-position: center 80px; background-repeat: no-repeat;}
+.zla_ok,.zla_no { width:127px; height:36px; border:1px #5c7b1b solid; background-color:#7b9e31; color:#fff; font-size:14px;}
+.zla_no { margin-left:20px; border:1px #adacac solid; background-color:#eee; color:#333; }
+
+/*-----------------------------------------------------
+匹配方式和搜索结果统计
+-----------------------------------------------------*/
+.zcount { min-width: 1000px; *width:expression(document.body.clientWidth < 1000? '1000px':'auto'); height: 20px; padding-top: 20px; padding-left: 1%; padding-right: 1%; border-bottom: 1px #ccc solid;}
+.zco_mode {}
+.zco_menu { float: left; height: 20px; position: relative;}
+.zco_triangle ,.zco_triangle1 { height: 20px; padding-right:16px;} 
+.zco_triangle a,.zco_triangle1 a { padding-right: 24px;  background: url(../images/icon.png) right -284px no-repeat;}
+.zco_triangle1 a { background-position: right -260px;} 
+.zt_sub { position: relative;}
+.zco_site { position: absolute; left: -7px; top: 20px; width: 100px; height: 100px; display: none; line-height: 32px;}
+.zco_arrow1,.zco_arrow2 { position: absolute; left: 53px; top: 10px; line-height: 17px; font-size: 24px; color: #dadada; display: none;}
+.zco_arrow2 { top: 11px; color: #fff;}
+.zco_box { padding: 8px; border: 1px #dadada solid; border-radius: 3px; background-color: #fff; box-shadow: 1px 1px 2px #ededed; text-align: left;  line-height: 32px;}
+.zco_box a { padding: 0; padding-left: 8px;}
+.zco_box li { border-bottom: 1px #dadada dashed;}
+.zco_box li a { display: block;}
+/*-----------------------------------------------------
+下拉菜单
+-----------------------------------------------------*/
+.zxueke { padding-right: 20px;}
+.zxueke li { line-height: 30px;}
+.zxk_arrow,.zxk_arrow1 { display: inline-block; width: 12px; height: 12px; margin-left: 10px; background: url(../images/icon.png) 0 -151px no-repeat;}
+.zxk_arrow1 { background-position: 0 -175px;}
+.zxk_menu {display: none;}
+.zxk_menu dt { padding: 6px; padding-left: 10px; padding-right: 10px; background-color: #f2a501; color: #fff;}
+.zxk_menu dt a { color: #fff;}
+.zxk_menu dt a:hover { color: #fff;}
+
+.zxk_menu dd { padding-left: 36px; padding-right: 10px;}
+.zxk_menu dd a { color: #666;}
+.zxk_menu dd a:hover { color: #666;}
+/*-----------------------------------------------------
+list
+-----------------------------------------------------*/
+.zlist { background-position: 0 -50px; }
+.zli_row li { line-height: 30px;}
+.zli_dir { padding: 6px; padding-left: 10px; padding-right: 10px; background-color: #f2a501; color: #fff;}
+.zli_dir a { color: #fff;}
+.zli_dir a:hover { color: #fff;}
+.zli_box { padding-top: 10px; padding-bottom: 10px; line-height: 26px;}
+.zli_666 { color: #666;}
+.zli_indent { text-indent: 2em;}
+.zli_item { display: inline-block; width: 61px; height: 30px; line-height: 30px;}
+.zli_item { *display: inline;}
+
+/*----------------------------------------------------
+检索结果
+-----------------------------------------------------*/
+.zresult {}
+.zre_item { height: 210px; padding-top: 20px; border-bottom: 1px #cfcfcf dashed;}
+.zre_checkbox { width: 22px; height: 22px;}
+.zre_sidebar { width: 100px;}
+.zre_img { width: 100px; height: 145px; overflow: hidden;}
+.zre_info { margin-left: 140px;}
+.zre_info h2 { height: 26px; font-family: "微软雅黑";}
+.zre_info h2 a { display: inline-block; }
+.zre_info h2 a.zre_title { padding-right: 15px; font-size: 16px; color: #000; font-weight: bold; }
+.zre_info h2 a.zre_primary,.zre_info h2 a.zre_warning { width: 70px; height: 20px; line-height: 20px; text-align: center; font-size: 12px; color: #fff;}
+.zre_info h2 a.zre_primary:hover,.zre_h a.zre_warning:hover { text-decoration: none;}
+.zre_info h2 a.zre_primary { background: #2978e3;}
+.zre_info h2 a.zre_warning { background: #f2a500;}
+.zre_info h2 a.zre_primary:hover { background: #2f84f8;}
+.zre_info h2 a.zre_warning:hover { background: #ffb61b;}
+
+.zre_info p { width: 95%; line-height: 22px; font-size: 12px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zre_info em,.zre_f_name1,.zre_f_dir { color: #a4a4a4; white-space: nowrap;}
+.zre_f_name1 { padding-top: 4px;}
+.zre_info i { display: inline-block; width: 36px;}
+.zre_info span {  padding-right: 15px; color: #000;}
+
+.zre_f_con1 { line-height: 24px; color: #000;}
+.zre_media { padding-top: 8px; text-align: right;}
+.zre_icon { display: inline-block; height: 20px; padding-left: 47px;  background: url(../images/icons1.png) no-repeat;}
+/*.zre_fankui { background-position: 27px 3px;} 反馈符号*/
+.zre_shoucang { background-position: 27px -21px;}
+.zre_daochu { background-position: 27px -45px;}
+.zre_count { padding-right: 10px;}
+.zre_bottom { padding-top: 14px;}
+.zre_checkAll {}
+/*----------------------------------------------------
+相关
+-----------------------------------------------------*/
+.zxiangguan {  padding-top: 12px;}
+.zxiangguan li { display: inline-block; width: 170px; height: 30px;  padding-right: 2%; line-height: 30px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zxiangguan li { *display: inline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

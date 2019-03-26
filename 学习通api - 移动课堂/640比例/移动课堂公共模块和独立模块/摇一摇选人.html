@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>摇一摇选人</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/shake.css"/>
+<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+/*----------------------------------------------------
+图片展示
+-----------------------------------------------------*/
+.zimgList { }
+.zimgList_header { padding: 1.2rem 1.2rem;}
+.zimgList_header h2 { line-height: 1.6rem; font-size: 1.4rem; color: #333;}
+.zimgList_box { background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-repeat: no-repeat; background-size: 100% 1px; background-position: bottom;}
+.zimgList_item {}
+.zimgList_bg { position: relative;}
+.zimgList_img img { width: 100%; }
+.zimgList_th { position: absolute; left: 0; bottom:0; width:97.5%; padding-left: 2.5%; height: 20px; background: rgba(0,0,0,0.4); color: #fff; font-size: 12px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+
+</style>
+</head>
+<body>
+	<div class="zbox">
+		<div class="zimgList">
+			<div class="zimgList_header">
+				<h2>选人标题标题</h2>
+			</div>
+			<div class="zimgList_box">
+				<div class="swiper-container" id="zimgList">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide zimgList_item">
+			        		<dl class="zimgList_bg">
+			        			<dd class="zimgList_img"><img src="temp/201706221056_03.jpg"/></dd>
+			        		</dl>
+				        </div>
+				        <div class="swiper-slide zimgList_item">
+			        		<dl class="zimgList_bg">
+			        			<dd class="zimgList_img"><img src="temp/201706221056_05.jpg"/></dd>
+			        		</dl>
+				        </div>
+				        <div class="swiper-slide zimgList_item">
+				        		<dl class="zimgList_bg">
+				        			<dd class="zimgList_img"><img src="temp/201706221056_03.jpg"/></dd>
+				        		</dl>
+				        </div>
+				        <div class="swiper-slide zimgList_item">
+			        		<dl class="zimgList_bg">
+			        			<dd class="zimgList_img"><img src="temp/201706221056_03.jpg"/></dd>
+			        		</dl>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="zbox_content">
+			<h2 class="zshake_instr">摇一摇，摇到谁就选谁</h2>
+			<div class="zshake">
+				<div class="zshake_icon">
+					<i class="animated"></i>
+				</div>
+				<h3 class="zshake_title">紧握手机，开始摇吧！</h3>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//course
+		var mynav = new Swiper('#zimgList', {
+	        slidesPerView: 2.2,
+	        paginationClickable: true,
+	        spaceBetween: 13,
+	        slidesOffsetBefore : 13,
+	        slidesOffsetAfter : 13,
+	    });
+		
+	</script>
+</body>
+
+</html>

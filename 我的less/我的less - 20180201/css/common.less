@@ -1,0 +1,101 @@
+@import "myless/reset.less";			// 初始化
+@import "myless/myless.less";			// 
+
+
+/*-----------------------------------------------------
+public
+-----------------------------------------------------*/
+.container { .wrap();}
+.margin-t { .margin-t();}
+.margin-t-xm { .margin-t(@margin-xm);}
+.margin-t-sm { .margin-t(@margin-sm);}
+.margin-t-md { .margin-t(@margin-md);}
+.margin-t-lg { .margin-t(@margin-lg);}
+.margin-t-et { .margin-t(@margin-et);}
+.title { .lineHeight-tt-et(); .border-b();
+	h1 { .fontSize-et();
+		i { display: inline-block; width: 4px; height: 20px; margin-right: 5px; .bgColor-main(); vertical-align: middle;}
+		span { vertical-align: middle;}
+	}
+	p { .height-tt-et(); .fontSize-xm();.color-main();}
+	a { vertical-align: middle; .color-main(); .lineHeight-tt-et();}
+	span { vertical-align: middle; margin-right: 5px;}
+}
+
+.tab { height: 50px; .bgColor-l(); 
+	dl { height: 48px; .bgColor-w(); .lineHeight-tt-et();}
+	dt { display: inline-block; height: 48px; .padding-r-l(); .border-b(transparent, 2px); .fontSize-lg();
+		a { .color();}
+	}
+	dt.cur { .border-b(@bColor-main, 2px); .color-main();
+		a { .color-main();}
+	}
+}
+/*-----------------------------------------------------
+top
+-----------------------------------------------------*/
+.top { height: 40px; line-height: 40px; .padding-r-l(); .bgColor-g();
+	a { display: inline-block;}
+}
+.top-welcome { .fontSize-xm(); .color-g();}
+.top-btn { text-align: right;
+	a { display: inline-block;}
+}
+/*-----------------------------------------------------
+header
+-----------------------------------------------------*/
+.header { height: 120px; .bgColor-l();}
+
+/*-----------------------------------------------------
+nav
+-----------------------------------------------------*/
+.nav { height: 60px; .bgColor-main();}
+.nav-box { height: 60px;
+	li {display: inline-block; height: 60px; .margin-r-l(); line-height:60px; .fontSize-md();
+		a { display: inline-block; height: 60px; .padding-r-l(); .color-w(); }
+	}
+	li.cur a,
+	li a:hover { .bgColor-w(); .color-main(); }
+}
+
+
+/*-----------------------------------------------------
+table
+-----------------------------------------------------*/
+.table { .border-t(@bColor-main, 2px);
+	td,
+	th { padding: 5px; .border(); text-align: center;}
+	th { .bgColor-l(); .fontSize-md(); font-weight: normal;}
+	td { .fontSize-sm();}
+}
+
+/*-----------------------------------------------------
+lisetText
+-----------------------------------------------------*/
+.listText { width: 50%;}
+.listText-box { .padding();
+	li { .padding-t-b(); .border-b(@bColor, 1px, dashed);
+		i { display: inline-block; vertical-align: middle; width: 6px; height: 6px; margin-right: 10px; border-radius: 50%; .bgColor-main();}
+		a { display: inline-block; vertical-align: middle; .lineHeight(); .overflow();  .fontSize-sm();}
+	}
+}
+
+/*-----------------------------------------------------
+footer
+-----------------------------------------------------*/
+.footer { height: 100px; .margin-t(@margin-et); .padding-t-b(); .border-t(@bColor-main, 2px); .bgColor-g();}
+.footer-nav { text-align: center; .lineHeight-md();
+	a { .padding-r-l(15px, 15px); .color(); .fontSize-sm();}
+}
+
+
+/*-----------------------------------------------------
+其他
+-----------------------------------------------------*/
+.mylessIcons {
+	li { display: inline-block; width: 20%; margin-bottom: 5px; .height-et(); .lineHeight-et(); .border();
+		i { .color-main(); vertical-align: middle; margin-right: 5px;}
+		span { display: inline-block; vertical-align: middle;}
+	}
+}
+

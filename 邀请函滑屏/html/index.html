@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <!--<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <title>Title</title>
+    <link rel="stylesheet" href="../res/css/reset.css">
+    <link rel="stylesheet" href="../res/css/index.css">
+    <link rel="stylesheet" href="../res/css/swiper.min.css">
+    <script src="../res/js/ratio.js"></script>
+    
+    <script src="../res/js/swiper.min.js"></script>
+    <script src="../res/js/jquery-1.9.0.min.js"></script>
+    <style type="text/css">
+    	 .parallax-bg {
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        width: 100%;
+	        height: 22.8rem;
+    	}
+    	.swiper-container {
+		  width: 100%;
+		  height: 100%;
+		}
+		
+		.swiper-slide {
+		  overflow: auto;
+		  -webkit-overflow-scrolling: touch;
+		}
+    </style>
+</head>
+<body>
+	
+		<div class="swiper-container" id="pageSlide">
+			<div class="parallax-bg w_invitation_wrap" data-swiper-parallax="-23%"></div>
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+		        	<div class="zfirstPage" id="firstPage">
+					    <div class="w_head" >
+					        <p>阅读·成长</p>
+					        <p>课程联盟高峰论坛</p>
+					    </div>
+					    <div class="zfirstPage-flex"></div>
+					    <div class="w_invitation_name">
+					        <div class="w_invitation" id="invitBtn">&nbsp;</div>
+					    </div>
+				    </div>
+		        </div>
+		        <div class="swiper-slide" style="padding-top: .7rem;">
+		        	<div class="w_content">
+				        <div class="w_tit">
+				            <span></span>
+				            <h4>参会回执</h4>
+				            <span></span>
+				        </div>
+				        <p class="w_eng_name">INTERNATIONAL</p>
+				        <div class="w_text">
+				            <ul>
+				                <li><span>姓名</span><input type="text"></li>
+				                <li><span>性别</span><a class="sexShow"></a></li>
+				                <div class="w_show_sex sex" style="">
+				                        <p class="w_one_p" style="">是</p>
+				                        <p>否</p>
+				                </div>
+				                <li><span>单位</span><input type="text"></li>
+				                <li><span>职务</span><input type="text"></li>
+				                <li><span>职称</span><input type="text"></li>
+				                <li><span>电话</span><input type="text"></li>
+				                <li><span>是否就餐</span><p class="w_con_show"><i>1241312</i><a class="isrepast"></a></p></li>
+				                <div class="w_show_sex repast" style="">
+				                    <p class="w_one_p" style="">是</p>
+				                    <p>否</p>
+				                </div>
+
+				                <li><span>是否开车</span><a></a></li>
+				                <li><span>是否住宿</span><a></a></li>
+				            </ul>
+				
+				            <div class="w_sub">
+				                <a href="#">提交</a>
+				            </div>
+				        </div>
+				    </div>
+					<div class="" style="height: 1rem;"></div>
+		        </div>
+		    </div>
+		</div>
+	<script type="text/javascript">
+		$(".sexShow").on('click',function(event) {
+	        event.preventDefault();
+	        if($('.sex').is(':hidden')){
+	            $(".sex").show();
+	            $(this).parent().parent().addClass("bor_radio")
+	            $(this).addClass("pull_a");
+	        }else{
+	            $(".sex").hide();
+	            $(this).parent().parent().removeClass("bor_radio")
+	            $(this).removeClass("pull_a");
+	        }
+	    });
+	    $(".isrepast").on('click',function(event) {
+	        event.preventDefault();
+	        if($('.repast').is(':hidden')){
+	            $(".repast").show();
+	            $(this).parent().parent().addClass("bor_radio")
+	            $(this).addClass("pull_a");
+	        }else{
+	            $(".repast").hide();
+	            $(this).parent().parent().removeClass("bor_radio")
+	            $(this).removeClass("pull_a");
+	        }
+	    });
+
+	</script>
+	<script> 
+		var mySwiper = new Swiper('.swiper-container', {
+		  direction: 'vertical',
+		  autoHeight: true,
+		  parallax: true,
+	        speed: 600
+		});
+		
+		var startScroll, touchStart, touchCurrent;
+		mySwiper.slides.on('touchstart', function (e) {
+		  startScroll = this.scrollTop;
+		  touchStart = e.targetTouches[0].pageY;
+		}, true);
+		mySwiper.slides.on('touchmove', function (e) {
+		  touchCurrent = e.targetTouches[0].pageY;
+		  var touchesDiff = touchCurrent - touchStart;
+		  var slide = this;
+		  var onlyScrolling =
+		    (slide.scrollHeight > slide.offsetHeight) &&
+		    (
+		      (touchesDiff < 0 && startScroll === 0) ||
+		      (touchesDiff > 0 && startScroll === (slide.scrollHeight - slide.offsetHeight)) ||
+		      (startScroll > 0 && startScroll < (slide.scrollHeight - slide.offsetHeight))
+		    );
+		  if (onlyScrolling) {
+		    e.stopPropagation();
+		  }
+		}, true);
+		mySwiper.on('slideChangeTransitionEnd', function () {
+		  if (this.activeIndex == (mySwiper.$wrapperEl[0].children.length - 1)) {
+		    $('#invitBtn').hide();
+		  } else {
+		    $('#invitBtn').show();
+		  }
+		
+		  if (this.activeIndex == 4) {
+		    if (policyNo == null || policyNo.length == 0) {
+		      return false;
+		    }
+		    if ($('[name=focusFamily]:checked').length == 0 && $('[name=securitySelect]:checked').length == 0) {
+		      return false;
+		    }
+		    $.ajax({
+		      type: "POST",
+		      url: contentPath + '/updateUserInfo',
+		      data: $('#form').serialize(),
+		      success: function (data) {
+		        console.log(data);
+		      },
+		      error: function () {
+		        console.log('error')
+		      }
+		    });
+		  }
+		})
+		$('#invitBtn').on('click', function () {
+		  mySwiper.slideNext();
+		})
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<script>
+    // $('.w_head').css({
+        // "height": $(window).height()
+    // });
+    var h = $(window).height();
+
+    var scroll_offset=$(".w_content").position();
+    var isScrolling = false;
+    $(window).scroll(function(){
+    var scrolltop=$(this).scrollTop(); //获取当前页面顶部的坐标
+	    // if( scrolltop < scroll_offset.top && scrolltop > 50 && !isScrolling){
+	    	// isScrolling = true;
+	    	// $('html,body').animate({scrollTop: scroll_offset.top}, 500, function(){ isScrolling = false});
+	    // } else {
+	    // }
+	    if(scrolltop < 200) {
+	    	$('.w_invitation_name').fadeIn();
+	    } else {
+	    	$('.w_invitation_name').fadeOut();
+	    }
+	    
+    })
+    var state = false;
+    $('#invitation').on('click', '#invitBtn', function(event) {
+        // event.preventDefault();
+        $('html,body').animate({scrollTop: scroll_offset.top}, 500);
+        $('.w_invitation_name').fadeOut();
+        state = true;
+    });
+    var index = 0;//初始下标
+    var prevX = 0;
+    var startY=0;
+    var endY=0;
+    $('#invitation').on('touchstart', '#firstPage', touchstart);
+    $('#invitation').on('touchmove', '#firstPage', touchmove);
+    $('#invitation').on('touchend', '#firstPage', touchend);
+
+    //开始滑动
+    function touchstart(e){
+        // e.preventDefault();
+        startY = e.originalEvent.targetTouches[0].pageY;
+    };
+
+// $('body,html').animate({scrollTop:scroll_offset.top},500);
+// e.stopPropagation();
+// $('.w_invitation_name').fadeOut(500);
+    function touchmove(e){
+    	endY = e.originalEvent.targetTouches[0].pageY;
+        var srcTop=$(document).scrollTop();
+        moveY = endY-startY;
+        // var ctur =$('body,html').position().top
+        if(srcTop > 50 && srcTop < 200){
+			$('body,html').animate({scrollTop:scroll_offset.top},500);
+        	
+        }
+        // console.log(moveY)
+    };
+    function touchend(e){
+       /* var srcTop=$(document).scrollTop();
+        var moveY = endY-startY;
+        if(moveY>0&& state == true){
+
+            if(srcTop<winH){
+                $('body,html').animate({scrollTop:-scroll_offset.top},500);
+                $('.w_invitation_name').fadeIn(500);
+                state = false;
+            }
+        }else if(moveY<0 && state==false){
+
+            e.stopPropagation();
+            $('body,html').animate({scrollTop:scroll_offset.top},500);
+            $('.w_invitation_name').fadeOut(500);
+            state = true
+        }*/
+    };
+
+
+</script>-->
+</html>

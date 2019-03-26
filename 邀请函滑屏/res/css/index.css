@@ -1,0 +1,36 @@
+.w_invitation_wrap{height:25.8rem;box-sizing:border-box;background: url(../images/bg1.jpg) no-repeat center/100% 100%;}
+.w_top{width: 100%;height: 100%;display: -webkit-flex;}
+.w_head{box-sizing:border-box;font-size: 0.73rem;color:#fff;padding:1.6rem 0.8rem 0;text-align: center}
+.zfirstPage { display: -webkit-box; -webkit-box-orient: vertical; height: 100vh;}
+.zfirstPage-flex { -webkit-box-flex: 1;}
+.w_invitation_name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: end; height: 5.5rem; background: url(../temp/invi.png) center 88% no-repeat; background-size: 3.31rem 3.67rem;}
+.w_invitation { height: .88rem;}
+
+.w_content{width: 6.5rem; background: rgba(1, 18, 80, .6) ;margin-left: auto; margin-right: auto; padding: 0.6rem 0.7rem; margin-bottom: .5rem; -webkit-box-sizing: border-box}
+.w_tit{display: -webkit-flex;-webkit-justify-content: center;-webkit-align-items: center}
+.w_tit span{display: block;width: 0.6rem;height: 0.02rem;background: #fff;}
+.w_tit h4{font-size: 0.42rem;color: #fff;margin: 0 0.15rem}
+.w_eng_name{text-align: center;font-size: 0.22rem;color: #fff;line-height: 0.55rem}
+.w_text{width: 100%;}
+.w_text li{-webkit-box-sizing:border-box;padding-right:0.2rem;border-radius: 0.06rem;width: 100%;font-size: 0.24rem;color: #0a185f;background: #fff;margin-top: 0.3rem;display: -webkit-flex;-webkit-justify-content: space-between;-webkit-align-items: center}
+.w_text span{padding: 0.24rem 0.2rem;border: none}
+.w_text input{min-width: 3.8rem;max-width:4rem;padding: 0.2rem 0;border: none;outline: none}
+.w_con_show{display: -webkit-flex;-webkit-justify-content: space-between}
+.w_text ul a{background: url(../images/more.png) no-repeat right/80%;height: 0.3rem;display: inline-block;width: 0.2rem;margin-left: 0.2rem}
+.w_text ul i{font-size: 0.24rem;}
+.w_sub{border-radius:0.06rem;margin-top:0.54rem;width: 100%;height: 0.72rem;  background: -webkit-linear-gradient(#1da9f1, #1371db);display: -webkit-flex;-webkit-justify-content: center;-webkit-align-items: center}
+.w_sub a{font-size: 0.26rem;color: #fff}
+.pull_a{background: url(../images/pull.png) no-repeat center!important;}
+.w_show_sex{background: #fff;line-height: 0.64rem;font-size: .24rem;color: #626262;padding: 0 0.1rem;display: none}
+.w_show_sex p{border-bottom: 1px dotted #d4d4d4;padding-left: 0.25rem;}
+.bor_radio{border-bottom-left-radius: 0!important;border-bottom-right-radius: 0!important;}
+
+/*报名成功*/
+.w_invitation_box{height:16.8rem;box-sizing:border-box;background: url(../images/bg2.jpg) no-repeat center/100% 100%;}
+.w_content_suss{width: 6.5rem;background: rgba(1, 18, 80, .6);margin: auto;padding: 0.6rem 0.7rem;-webkit-box-sizing: border-box;margin-top: 2rem}
+.w_message{font-size: 0.34rem;color: #fff;text-align: center;margin-top: 0.4rem;}
+.w_message li{line-height: 0.78rem;}
+
+
+
+

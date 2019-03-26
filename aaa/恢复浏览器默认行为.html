@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box { height: 100vh; overflow: hidden;}
+			.bottom { position: fixed; bottom: 0; left: 0; right: 0; height: 80px; background-color: #ccc;}
+			.content { height: 1800px; background: #F4F4F4;}
+			.content p { height: 50px; border-bottom: #FF0081 1px solid;}
+		</style>
+	</head>
+	<body>
+		<div class="zbox">
+			<div class="content">
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</div>
+			<div class="bottom"><a href="#">刷新</a><span id="test"></span></div>
+		</div>
+		<script type="text/javascript">
+			document.addEventListener('touchstart', function (e) {
+			 e.preventDefault();
+			 document.getElementById("test").innerHTML = e.pageY
+			 document.querySelector('.content p').style.background = "#0099FF"
+			 e.returnValue = true;
+			}, false);
+		</script>
+	</body>
+</html>

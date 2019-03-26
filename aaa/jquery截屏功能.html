@@ -1,0 +1,35 @@
+<html>  
+    <head>  
+        <meta name="layout" content="main">  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+        <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->  
+        <!--<script type="text/javascript" src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>-->  
+           
+        <script  type="text/javascript" >  
+       function EllipseOne(context, x, y, a, b) {
+		    var step = (a > b) ? 1 / a : 1 / b;
+		    context.beginPath();
+		    context.moveTo(x + a, y);
+		    for(var i = 0; i < 2 * Math.PI; i += step) {
+		        context.lineTo(x + a * Math.cos(i), y + b * Math.sin(i));
+		    }
+		    context.closePath();
+		    context.fill();
+		}
+       // var context = document.getElementById("app")
+        var canvas = document.querySelector("#canvas");
+ 		var cobj = canvas.getContext("2d");
+       	EllipseOne(cobj, 50,50,50,50);
+        </script>
+    </head>  
+    <body>  
+           
+          
+        <div class="" style="background-color: #abc;">  
+         <canvas id="canvas" width="500" height="500"></canvas>  
+        </div>  
+        <textArea id="textArea" col="20" rows="10" ></textArea>  
+        <input class="example1" type="button" value="button">  
+        生成界面如下：  
+    </body>  
+</html> 

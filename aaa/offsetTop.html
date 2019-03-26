@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			.rel { position: relative; height: 2000px;}
+			.test { position: absolute; left: 30%; top: 20%; width: 30px; height: 30px; background: #ccc;}
+		</style>
+	</head>
+	
+	<body>
+		<div class="rel">
+			<div class="test" id="test"></div>
+		</div>
+		<script type="text/javascript">
+			var test = document.getElementById("test")
+			test.addEventListener('click', function(e) {
+				console.log(e.clientY, e.screenY, e.pageY, test.offsetTop)
+				console.log(test.offsetTop - e.pageY)
+			}, false)
+			
+			
+			console.log(test.offsetTop)
+		</script>
+	</body>
+</html>

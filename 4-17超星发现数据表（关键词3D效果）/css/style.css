@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px; padding:0px;}
+body{font:12px/1.5 Microsoft YaHei,SimSun, Arial, Helvetica, sans-serif; color:#333; background:#FFF;}
+img{border:0px;}
+ul,ol{list-style-type:none;}
+h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+table {border-collapse: collapse;border-spacing: 0;}
+input,select,textarea{vertical-align:middle; outline:none; resize:none; font-family:Microsoft YaHei;}
+a{color:#333; text-decoration:none;}
+a:hover{color:#3091f2;}
+.clearfix{zoom:1; overflow:hidden;}
+.clear{ clear:both; font-size:0; height:0; line-height:0;}
+.leftF{float:left;}
+.rightF{float:right;}
+.icons{ font-size:0px; text-indent:-9999999px; overflow:hidden; display:block;}
+/****************************************************/
+.wrap{ width:1078px; margin:0 auto;}
+.qheader{ background:#484848;}
+.qheader .wrap{ height:44px;}
+.qheader .logo{ height:34px; padding:5px 0; float:left;}
+.qheader .logo img{ height:34px; display:block;}
+
+.qsearch{ width:728px; margin:80px auto 0;}
+.qsearch .fidtext{ width:602px; height:20px; line-height:20px; padding:10px; float:left; border:solid #3091f2 1px; border-radius:4px;}
+.qsearch .bnt{ width:86px; height:42px; float:right; background:#3091f2; border:0 none; cursor:pointer; border-radius:4px; font-size:14px; color:#FFF;}
+.div_label{ clear:both; font-size:14px; color:#666; padding-top:10px;}
+.div_label label{ margin-right:20px;}
+.div_label input{ margin:0 3px 3px 0;}
+
+.pedia{ width:1078px; margin:30px auto 0;}
+.pedia_tit{ height:39px; border-bottom:solid #3091f2 1px;}
+.pedia_tit h2{ width:80px; height:39px; line-height:39px; text-align:center; background:#3091f2; font-size:14px; color:#FFF; float:left;}
+.pedia_text{ line-height:30px; color:#4c4c4c; padding:11px 0; text-align:justify;}
+
+.excel{ width:1076px; margin:10px auto 0; border:solid #e0e0e0 1px;}
+.excel h2{ font-size:14px; color:#09f; padding:15px 35px 0; line-height:22px;}
+.figure{ width:721px; float:left; margin-left:35px;}
+
+.excel_right{ width:230px; border:solid #d9d9d9 1px; float:right; margin:15px 35px 0 0; border-radius:4px;}
+.research{}
+.research h2{ padding:15px 20px 0;}
+.research ul{ margin:0 2px 0 20px;}
+.research li{ height:40px; line-height:40px; font-size:14px; border-bottom:dashed #aaa 1px;}
+.research li .num{ width:18px; height:16px; line-height:16px; text-align:center; background:#b3b3b3; color:#FFF; font-size:12px; display:block; float:left; margin:12px 6px 0 0;}
+.research li .order_1{ background:#ff0000}
+.research li .order_2{ background:#be6ffc}
+.research li .order_3{ background:#ff9600}
+.research li a{ display:block; width:100px; float:left; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.research li .arch{ width:70px; height:4px; float:left; margin:18px 0 0;}
+.research li .arch .bsi{ width:100%; height:4px; background:#3091f2;}
+.research li .col_1 .bsi{ background:#ff0000}
+.research li .col_2 .bsi{ background:#be6ffc}
+.research li .col_3 .bsi{ background:#ff9600}
+
+.related{}
+.related h2{ padding:11px 20px 0;}
+.words{ margin:7px auto 0; width:190px; height:160px; position:relative;}
+.words a{position:absolute;top:0px;left:0px;color:#333;text-decoration:none;margin:0 10px 15px 0;line-height:18px;text-align:center;font-size:12px;padding:1px 5px;display:inline-block;border-radius:3px;}
+.words a.tagc1{ color:#ecb465;}
+.words a.tagc2{ color:#3accf6;}
+.words a.tagc3{ color:#87e38c;}
+.words a.tagc4{ color:#f06868;}
+.words a.tagc5{ color:#cb92f8;}
+.words a.tagc6{ color:#f686c3;}
+.words a.tagc7{ color:#6fb2f6;}
+.words a:hover{ color:#FFF; background:#666;}
+.export_bnt{ width:1078px; margin:0 auto; padding:10px 0 5px; line-height:20px;}
+.export_bnt a{ color:#3091f2;}
+
+.recom{ width:1078px; margin:20px auto 0;}
+.recom ul{ padding:11px 0;}
+.recom li{ height:30px; line-height:30px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.recom li span{ float:right; margin-left:15px;}
+
+
+.footer{ margin:40px 0 0 0; padding:30px 0; background:#f7f7f7; line-height:24px; text-align:center; color:#8a8a8a;}
+.footer a{ color:#8a8a8a;}
+.footer a:hover{ color:#3091f2;}
+.footer img{ margin:0 10px; vertical-align:top}
+

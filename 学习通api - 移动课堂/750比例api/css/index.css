@@ -1,0 +1,31 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+参考备用
+-----------------------------------------------------*/
+body { background:url(../images/bg_02.jpg) #30373f no-repeat; background-attachment: fixed;}
+
+.zresult { margin-bottom: 10px; padding: 16px; border: 1px #ccc solid;}
+.zmenu_fixed {position: fixed; top: 50px; z-index: 1;}
+/*----------------------------------------------------
+重置bootstrap
+-----------------------------------------------------*/
+.jumbotron { padding-top: 70px;}
+ .lead {
+    padding-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+.list-group {
+	margin-bottom: 0;
+}
+.navbar-collapse { padding: 0;}
+
+/*----------------------------------------------------
+重置syntaxhighlighter
+-----------------------------------------------------*/
+.syntaxhighlighter {
+  margin: 0em 0 1em 0 !important;
+  padding: 1em 0;
+}

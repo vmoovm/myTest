@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/raphael-v-2.1.2.js" ></script>
+		<script>
+            window.onload = function () {
+                var src = document.getElementById("bee").src,
+                    angle = 0;
+                document.getElementById("holder").innerHTML = "";
+                var R = Raphael("holder", 640, 480);
+                R.circle(320, 240, 200).attr({fill: "#000", "fill-opacity": .5, "stroke-width": 5});
+                var img = R.image(src, 160, 120, 320, 240);
+                var butt1 = R.set(),
+                    butt2 = R.set();
+                butt1.push(R.circle(24.833, 26.917, 26.667).attr({stroke: "#ccc", fill: "#fff", "fill-opacity": .4, "stroke-width": 2}),
+                           R.path("M12.582,9.551C3.251,16.237,0.921,29.021,7.08,38.564l-2.36,1.689l4.893,2.262l4.893,2.262l-0.568-5.36l-0.567-5.359l-2.365,1.694c-4.657-7.375-2.83-17.185,4.352-22.33c7.451-5.338,17.817-3.625,23.156,3.824c5.337,7.449,3.625,17.813-3.821,23.152l2.857,3.988c9.617-6.893,11.827-20.277,4.935-29.896C35.591,4.87,22.204,2.658,12.582,9.551z").attr({stroke: "none", fill: "#000"}),
+                           R.circle(24.833, 26.917, 26.667).attr({fill: "#fff", opacity: 0}));
+                butt2.push(R.circle(24.833, 26.917, 26.667).attr({stroke: "#ccc", fill: "#fff", "fill-opacity": .4, "stroke-width": 2}),
+                           R.path("M37.566,9.551c9.331,6.686,11.661,19.471,5.502,29.014l2.36,1.689l-4.893,2.262l-4.893,2.262l0.568-5.36l0.567-5.359l2.365,1.694c4.657-7.375,2.83-17.185-4.352-22.33c-7.451-5.338-17.817-3.625-23.156,3.824C6.3,24.695,8.012,35.06,15.458,40.398l-2.857,3.988C2.983,37.494,0.773,24.109,7.666,14.49C14.558,4.87,27.944,2.658,37.566,9.551z").attr({stroke: "none", fill: "#000"}),
+                           R.circle(24.833, 26.917, 26.667).attr({fill: "#fff", opacity: 0}));
+                butt1.translate(10, 181);
+                butt2.translate(10, 245);
+                butt1[2].click(function () {
+                    angle -= 90;
+                    img.stop().animate({transform: "r" + angle}, 1000, "<>");
+                }).mouseover(function () {
+                    butt1[1].animate({fill: "#fc0"}, 300);
+                }).mouseout(function () {
+                    butt1[1].stop().attr({fill: "#000"});
+                });
+                butt2[2].click(function () {
+                    angle += 90;
+                    img.animate({transform: "r" + angle}, 1000, "<>");
+                }).mouseover(function () {
+                    butt2[1].animate({fill: "#fc0"}, 300);
+                }).mouseout(function () {
+                    butt2[1].stop().attr({fill: "#000"});
+                });
+                // setTimeout(function () {R.safari();});
+            };
+        </script>
+	</head>
+
+	<body>
+		<div id="holder">
+			<svg height="480" version="1.1" width="640" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative; left: -0.5px; top: -0.5px;">
+				<desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.2</desc>
+				<defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+				<circle cx="320" cy="240" r="200" fill="#000000" stroke="#000" fill-opacity="0.5" stroke-width="5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.5;"></circle>
+				<image x="160" y="120" width="320" height="240" preserveAspectRatio="none" xlink:href="http://raphaeljs.com/bd.jpg" transform="matrix(0,1,-1,0,560,-80)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></image>
+				<circle cx="24.833" cy="26.917" r="26.667" fill="#ffffff" stroke="#cccccc" fill-opacity="0.4" stroke-width="2" transform="matrix(1,0,0,1,10,181)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.4;"></circle>
+				<path fill="#000000" stroke="none" d="M12.582,9.551C3.251,16.237,0.921,29.021,7.08,38.564L4.720000000000001,40.253L9.613,42.515L14.506,44.777L13.938,39.417L13.371,34.058L11.006,35.752C6.349,28.377000000000002,8.176,18.567000000000004,15.358,13.422000000000004C22.809,8.084000000000003,33.175,9.797000000000004,38.513999999999996,17.246000000000002C43.851,24.695,42.138999999999996,35.059,34.693,40.398L37.55,44.386C47.167,37.493,49.376999999999995,24.109,42.485,14.490000000000002C35.591,4.87,22.204,2.658,12.582,9.551Z"
+				transform="matrix(1,0,0,1,10,181)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+				<circle cx="24.833" cy="26.917" r="26.667" fill="#ffffff" stroke="#000" opacity="0" transform="matrix(1,0,0,1,10,181)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></circle>
+				<circle cx="24.833" cy="26.917" r="26.667" fill="#ffffff" stroke="#cccccc" fill-opacity="0.4" stroke-width="2" transform="matrix(1,0,0,1,10,245)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.4;"></circle>
+				<path fill="#000000" stroke="none" d="M37.566,9.551C46.897000000000006,16.237000000000002,49.227000000000004,29.022,43.068000000000005,38.565L45.428000000000004,40.254L40.535000000000004,42.516L35.642,44.778L36.21,39.418L36.777,34.059L39.142,35.753C43.79900000000001,28.378,41.972,18.568,34.790000000000006,13.423000000000002C27.339000000000006,8.085,16.973000000000006,9.798000000000002,11.634000000000007,17.247C6.3,24.695,8.012,35.06,15.458,40.398L12.600999999999999,44.386C2.983,37.494,0.773,24.109,7.666,14.49C14.558,4.87,27.944,2.658,37.566,9.551Z"
+				transform="matrix(1,0,0,1,10,245)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+				<circle cx="24.833" cy="26.917" r="26.667" fill="#ffffff" stroke="#000" opacity="0" transform="matrix(1,0,0,1,10,245)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></circle>
+			</svg>
+		</div>
+		<p id="copy">Demo of <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library</p>
+
+	</body>
+
+</html>

@@ -1,0 +1,168 @@
+@import "../myless/myless.less";				// 公共配色
+
+/*.zcontainer { max-width: 7.5rem; margin: 0 auto;}*/
+.zcontainer { width: 100%;}
+.zsplit { height: .2rem; background: @bgColor;}
+.isbottom { height: .6rem; line-height: .6rem; border-top: .02rem @bdColor solid; text-align: center; font-size: .26rem; color: @color-gray;}
+.zopacity { position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, .3); z-index: 500; display: none;}
+/*----------------------------------------------------
+模块标题title
+-----------------------------------------------------*/
+.ztitle { padding: .36rem .3rem .24rem; color: @color; text-align: center;}
+.ztitle-h { position: relative; width: 100%; line-height: .62rem; font-size: .36rem; font-weight: 500;}
+.ztitle-t { padding-top: .12rem; line-height: .34rem; font-size: .26rem; color: @color-light;}
+.ztitle-line { margin: 0 .3rem; height: .02rem; background: @bgColor; text-align: center;}
+.ztitle-line span { display: inline-block; width: .3rem; height: .02rem; background: @bgColor-dark;}
+.ztitle-btn{ position: absolute; right: 0; top: 50%; margin-top: -.2rem; width: 1.2rem; height: .4rem; border-radius: .08rem; line-height: .4rem; text-align: center; font-size: .3rem; background: @bgColor-main; color: @color-white; font-weight: normal;}
+.ztitle-btn:hover { color: @color-white;}
+.ztitle-icon { position: absolute; right: 0; top: 0; margin-top: .2rem;height: .4rem;}
+.ztitle-icon:before { display: inline-block; content: ''; vertical-align: middle; margin-right: .18rem; width: .26rem; height: .25rem; background: url(../images/replacement.png) center no-repeat; background-size: .26rem .25rem;}
+.ztitle-icon a { display: inline-block; vertical-align: middle; line-height: 1; font-size: .26rem; color: @color-gray; cursor: pointer;}
+.ztitle-icon a:hover { color: @color-gray;}
+/*链接/更多/查看全部*/
+.zlink { display: -webkit-box; -webkit-box-align: center; padding: .3rem; padding-bottom: .4rem; -webkit-box-pack: center;}
+.zlink a { display: inline-block; padding-right: .3rem; background: url(../images/arrow.png) right center no-repeat; background-size: .22rem;}
+
+
+/*----------------------------------------------------
+胶囊按钮切换
+-----------------------------------------------------*/
+.zcapsuleB { padding-top: .3rem;}
+.zcapsuleB-tab { display: -webkit-box; -webkit-box-pack: center;}
+.zcapsuleB-tab li { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center;  min-width: 1.3rem; height: .5rem; border: .02rem @bdColor-dark solid; border-right: none; text-align: center;}
+.zcapsuleB-tab li:first-child { border-radius: .07rem 0 0 .07rem;}
+.zcapsuleB-tab li:last-child { border-radius: 0 .07rem .07rem 0; border-right: .02rem @bdColor-dark solid;}
+.zcapsuleB-tab li.zcapsuleB-cur { border: .02rem @bdColor-main solid; background: @bgColor-main; color: @color-white;}
+.zcapsuleB-tab li.zcapsuleB-cur + li { border-left: .02rem @bdColor-main solid;}
+
+/*----------------------------------------------------
+首页banner
+-----------------------------------------------------*/
+#index_banner {}
+#index_banner .swiper-slide { }
+#index_banner .swiper-slide  img { width: 100%; }
+/*----------------------------------------------------
+nav
+-----------------------------------------------------*/
+.znav { height: 1.74rem;}
+.znav-list { display: -webkit-box; padding: 0 .5rem; padding-top: .07rem;}
+.znav-item { -webkit-box-flex: 1; padding-top: .2rem;}
+.znav-img { height: .8rem; text-align: center;}
+.znav-img img { width: .8rem; height: .8rem; border-radius: 50%; overflow: hidden;}
+.znav-name { height: .46rem; line-height: .46rem; text-align: center; font-size: .30rem; color: @color-dark;}
+.znav-name a { color: @color-dark; cursor: pointer;}
+/*----------------------------------------------------
+知识胶囊
+-----------------------------------------------------*/
+.ztextList { padding: .3rem .3rem .1rem; }
+.ztextList-row { display: -webkit-box; align-items: center; -webkit-box-align: center; padding-bottom: .3rem; font-size: .3rem; color: @color-dark; }
+.ztextList-flex { -webkit-box-flex: 1; padding-right: .6rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ztextList-flex:before { display: inline-block; content: ''; width: .3rem; height: .3rem; margin-right: .2rem; vertical-align: middle; background: url(../images/icon_03.png) center no-repeat; background-size: .27rem;}
+.ztextList-flex a { vertical-align: middle; color: @color-dark; cursor: pointer;}
+.ztextList-m {}
+
+/*----------------------------------------------------
+每天30分钟一讲座
+-----------------------------------------------------*/
+.zimgListV { padding: .3rem;}
+.zimgListV-h { font-size: .3rem; color: @color-dark;}
+.zimgListV-list {}
+.zimgListV-item {}
+.zimgListV-img { position: relative; width: 100%;}
+.zimgListV-img img { width: 100%;}
+.zimgListV-red {}
+.zimgListV-red:before { position: absolute; left: 0; top: 0; display: inline-block; content: ''; width: 0; height: 0;  border-top: .84rem solid #e60012; border-right: .84rem solid transparent;}
+.zimgListV-red span { position: absolute; left: 0; top: 0; width: .84rem; height: .84rem; -webkit-transform: rotate(-45deg); line-height: .42rem; text-align: center; font-size: .22rem; color: @color-white;}
+.zimgListV-count { position: absolute; right: .1rem; bottom: .12rem; line-height: 1.2; text-align: right; font-size: .26rem; color: @color-white;}
+.zimgListV-text { padding-left: .2rem; padding-top: .1rem; height: 1.03rem;}
+.zimgListV-text h1, .zimgListV-text p { height: .48rem; line-height: .48rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zimgListV-text h1 {font-size: .3rem; color: @color-dark;}
+.zimgListV-text p { font-size: .26rem; color: @color-gray;}
+
+/*----------------------------------------------------
+直播预告
+-----------------------------------------------------*/
+.ztextListB { padding-bottom: .1rem; }
+.ztextListB-row { display: -webkit-box; align-items: center; -webkit-box-align: center; padding: .3rem; border-top: .1rem @bdColor solid; font-size: .3rem; color: @color-dark; }
+.ztextListB-row:first-child { border-top: none;}
+.ztextListB-flex { -webkit-box-flex: 1; padding-right: .6rem; line-height: 1;}
+.ztextListB-flex h1 { width: 100%;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ztextListB-flex h1:before { display: inline-block; content: ''; width: .48rem; height: .34rem; margin-right: .2rem; vertical-align: middle; background: url(../images/live.png) center no-repeat; background-size: .48rem .3rem;}
+.ztextListB-flex h1 a { display: inline-block; vertical-align: middle; color: @color-dark;}
+.ztextListB-flex h1 a:hover { color: @color-dark;}
+.ztextListB-flex p { padding-left: .68rem; padding-top: .2rem; line-height: .32rem; font-size: .26rem; color: @color-gray;}
+.ztextListB-m, 
+.ztextListB-mMid { width: 1.2rem; height: .4rem; border-radius: .08rem; line-height: .4rem; text-align: center; font-size: .3rem; background: @bgColor-main; color: @color-white;}
+.ztextListB-mMid { width: 1.54rem;}
+.ztextListB-mMid a, .ztextListB-mMid a:hover,
+.ztextListB-m a, .ztextListB-m a:hover { color: @color-white; cursor: pointer;}
+/*----------------------------------------------------
+猜你喜欢
+-----------------------------------------------------*/
+.zimgListM {}
+.zimgListM-list { padding: .3rem 0;}
+.zimgListM-item { margin-right: .2rem;}
+.zimgListM-img { position: relative; width: 100%;}
+.zimgListM-img img { width: 100%;}
+/*抄 每天30分钟一讲座，角标
+ * .zimgListM-red {}
+.zimgListM-red:before { position: absolute; left: 0; top: 0; display: inline-block; content: ''; width: 0; height: 0;  border-top: .84rem solid #e60012; border-right: .84rem solid transparent;}
+.zimgListM-red span { position: absolute; left: 0; top: 0; width: .84rem; height: .84rem; -webkit-transform: rotate(-45deg); line-height: .42rem; text-align: center; font-size: .22rem; color: @color-white;}
+.zimgListM-count { position: absolute; right: .1rem; bottom: .12rem; line-height: 1.2; text-align: right; font-size: .26rem; color: @color-white;}*/
+.zimgListM-text { padding-left: .2rem; padding-top: .1rem; height: 1.03rem;}
+.zimgListM-text h1, .zimgListM-text p { height: .48rem; line-height: .48rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zimgListM-text h1 {font-size: .3rem; color: @color-dark;}
+.zimgListM-text p { font-size: .26rem; color: @color-gray;}
+
+/*----------------------------------------------------
+微专业
+-----------------------------------------------------*/
+.zimgListH {}
+.zimgListH-list { padding: .3rem 0;}
+.zimgListH-item { margin-right: .2rem;}
+.zimgListH-img { position: relative; width: 100%;}
+.zimgListH-img img { width: 100%;}
+/*抄 每天30分钟一讲座，角标
+ * .zimgListH-red {}
+.zimgListH-red:before { position: absolute; left: 0; top: 0; display: inline-block; content: ''; width: 0; height: 0;  border-top: .84rem solid #e60012; border-right: .84rem solid transparent;}
+.zimgListH-red span { position: absolute; left: 0; top: 0; width: .84rem; height: .84rem; -webkit-transform: rotate(-45deg); line-height: .42rem; text-align: center; font-size: .22rem; color: @color-white;}
+.zimgListH-count { position: absolute; right: .1rem; bottom: .12rem; line-height: 1.2; text-align: right; font-size: .26rem; color: @color-white;}*/
+.zimgListH-text { padding-left: .2rem; padding-top: .1rem;}
+.zimgListH-text h1, .zimgListH-text p { height: .48rem; line-height: .48rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zimgListH-text h1 {font-size: .3rem; color: @color-dark;}
+.zimgListH-text p { font-size: .26rem; color: @color-gray;}
+
+/*----------------------------------------------------
+全部讲座
+-----------------------------------------------------*/
+.zsubjects { padding: .3rem;}
+.zsubjects-arrow:after { display: inline-block; content: ''; vertical-align: middle; margin-left: .18rem;  width: .27rem; height: .27rem; background: url(../images/arrow.png) center no-repeat; background-size: .27rem .27rem;}
+.zsubjects-arrow span { display: inline-block; vertical-align: middle;}
+.zsubjects-row { display: -webkit-box; -webkit-box-lines: multiple;}
+.zsubjects-item, .zsubjects-selected { width: 1.44rem; margin: .04rem .14rem .15rem; font-size: .22rem; text-align: center;}
+.zsubjects-item a, .zsubjects-selected a { display: inline-block; padding: 0 .14rem; border: .02rem @bdColor-dark solid; border-radius: .06rem; line-height: .38rem; cursor: pointer; color: @color-gray;}
+.zsubjects-selected a { border: .02rem @bdColor-main solid; color: @color-main;}
+.zsubjects-text { padding-left: .2rem; padding-top: .1rem;}
+.zsubjects-text h1, .zsubjects-text p { height: .48rem; line-height: .48rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zsubjects-text h1 {font-size: .3rem; color: @color-dark;}
+.zsubjects-text p { font-size: .26rem; color: @color-gray;}
+
+/*----------------------------------------------------
+每天30分钟一讲座
+-----------------------------------------------------*/
+.zimgText {}
+.zimgText-t {  padding: 0 .3rem; padding-top: .18rem; line-height: .48rem; font-size: .26rem; color: @color-dark;}
+.zimgText-list {}
+.zimgText-row { display: -webkit-box;  padding: 0 .3rem; padding-bottom: .4rem; border-bottom: .02rem @bdColor solid;}
+.zimgText-row:last-child { border-bottom: none;}
+.zimgText-pic { width: 2.4rem; height: 1.34rem;}
+.zimgText-pic img { width: 100%; height: 100%;}
+.zimgText-info { -webkit-box-flex: 1; padding-left: .3rem;}
+.zimgText-h { height: 1.11rem;}
+/*单行文字已注释
+ * .zimgText-h h1 { width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; line-height: 1; vertical-align: top; font-size: .3rem; color: @color-dark;}*/
+.zimgText-h h1 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; width: 100%; height: .7rem; overflow: hidden; text-overflow: ellipsis; line-height: 1.2; vertical-align: top; font-size: .3rem; color: @color-dark;}
+.zimgText-h p { padding-top: .04rem; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: .22rem; color: @color-gray;}
+.zimgText-txt { -webkit-box-pack: end; line-height: .22rem; font-size: .22rem; color: @color-lighter;}
+
+

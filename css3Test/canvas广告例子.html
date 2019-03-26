@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="650" height="650" id="canvas"></canvas>
+		<script type="text/javascript">
+			var canvasId = document.getElementById("canvas");
+			var context = canvasId.getContext('2d');
+			// 黑色背景 (矩形)
+			context.fillStyle = '#333';
+			context.fillRect(0, 0, 650, 650); //矩形API fillRect(x, y, width, height)
+			
+			// 底部红色到粉色渐变条 (矩形 颜色渐变)
+			var gradient1 = context.createLinearGradient(0, 450, 600, 500);
+			gradient1.addColorStop("0", "red");
+			gradient1.addColorStop("1", "pink");
+			context.fillStyle = gradient1;
+			context.fillRect(0, 600, 650, 50);
+			
+			// 左上角的橙色圆形右上方的三角形 (线)
+			context.beginPath(); // 重置路径起点
+			context.moveTo(80, 30); // 笔触移动至点x,y
+			context.lineTo(180, 30);
+			context.lineTo(80, 80);
+			context.lineTo(80, 30);
+			context.closePath(); // 定义从当前点到路径起点的路径
+			context.fillStyle = "#f60";
+			context.fill();
+			
+			// 左上角的橙色圆形 （圆形）
+			context.beginPath();
+			context.arc(80, 80, 50, 0, 2* Math.PI, false); // arc(圆心x坐标，圆心y坐标，圆半径， 开始弧度，结束弧度， 是否逆时针绘制)
+			context.closePath();
+			context.fill();
+			
+			// 左上角橙色圆形中的两个白色弧形 (弧形)
+			context.fillStyle = 'yellow';
+			context.beginPath();
+			context.arc(80, 95, 40, - Math.PI / 8, - Math.PI / 8 * 7, true);
+			context.closePath();
+			context.fill();
+			
+			context.fillStyle = '#fff';
+			context.beginPath();
+			context.arc(80, 68, 40, Math.PI / 8, Math.PI / 8 * 7, false);
+			context.closePath();
+			context.fill();
+			
+			// 头部的渐变字"网上搜不到的行程计划" (文字)
+			context.font = "bold 36px Verdana";
+			var gradient = context.createLinearGradient(180, 90, canvasId.width, 116); //createLinearGradient(起点x坐标， 起点y坐标，终点x坐标，终点y坐标)
+			gradient.addColorStop("0", "green");
+			gradient.addColorStop("0.5", "yellow");
+			gradient.addColorStop("1.0", "red");
+			context.fillStyle = gradient;
+			context.fillText("网上搜不到的行程计划", 180, 90);
+			
+			// 中间两个"法国"大字
+			context.font = "bold 220px '微软雅黑'";
+			context.textAlign = 'left';
+			context.textBaseline = 'top';
+			context.fillStyle = '#f60';
+			context.fillText('法国', 65, 100, 560); // fillText(起点x坐标，起点y坐标，文字总共最大宽度)
+			
+			// 底部“七点假期拥抱法国”字
+			context.font = "bold 50px '微软雅黑', '宋体'";
+			context.strokeStyle = "#fff";
+			context.strokeText("七天假期拥抱法国", 85, 370);
+			
+			// 底部“七天假期拥抱法国”字的叠加
+			context.font = "bold 50px '微软雅黑', '宋体'";
+			context.fillStyle = "rgba(255, 255, 255, 0.3)";
+			context.fillText("七天假期拥抱法国",105, 385);
+			
+		</script>
+	</body>
+</html>

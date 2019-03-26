@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>文本行距始终保持为n倍字体大小</title>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body { font-size: 14px; line-height: 1.5;}
+			.moni { background: #333333; color: #fff; font-size: 20px; line-height: 1;}
+			.moni_p { margin: 0; padding: 0; color: #c00; background: #f8f8f8;}
+		</style>
+	</head>
+	<body>
+		<div class="moni">
+			如何使页面文本行距始终保持为n倍字体大小的基调？
+		</div>
+			<p class="moni_p">注意，不要给n加单位。</p>
+			<style type="text/css">
+				li {  list-style-type: none;}
+				.c3d { position: absolute; left: 0; top: 0; width: 1rem; height: 3rem; -webkit-transform: perspective(1000px) rotateY(50deg) rotateX(50deg); -webkit-transition: all 100ms ease-out 0s; -webkit-transform-style: preserve-3d;}
+				.c3d li { position: absolute; left: 50%; top: 50%; margin-top: -.25rem; margin-left: -.5rem; width: 1rem; height: .5rem; background: #ccc; -webkit-transform-origin: center center -3rem; -webkit-backface-visibility: hidden;}
+				.c3d li:nth-child(1n) {  -webkit-transform: translateZ(3rem) rotateX(0deg);}
+				.c3d li:nth-child(2n) {  -webkit-transform: translateZ(3rem) rotateX(-10deg);}
+				.c3d li:nth-child(3n) {  -webkit-transform: translateZ(3rem) rotateX(-20deg);}
+				.c3d li:nth-child(4n) {  -webkit-transform: translateZ(3rem) rotateX(-30deg);}
+				.c3d li:nth-child(5n) {  -webkit-transform: translateZ(3rem) rotateX(-40deg); background: #333;}
+				.c3d li:nth-child(6n) {  -webkit-transform: translateZ(3rem) rotateX(-50deg); background: #ccc;}
+				.c3d li:nth-child(7n) {  -webkit-transform: translateZ(3rem) rotateX(-60deg); background: #ccc;}
+				.c3d li:nth-child(8n) {  -webkit-transform: translateZ(3rem) rotateX(-70deg); background: #ccc;}
+				.c3d li:nth-child(9n) {  -webkit-transform: translateZ(3rem) rotateX(-80deg); background: #ccc;}
+				.c3d li:nth-child(10n) {  -webkit-transform: translateZ(3rem) rotateX(-90deg); background: #ccc;}
+				.c3d li:nth-child(11n) {  -webkit-transform: translateZ(3rem) rotateX(-100deg); background: #ccc;}
+				.c3d li:nth-child(12n) {  -webkit-transform: translateZ(3rem) rotateX(-110deg); background: #ccc;}
+				.c3d li:nth-child(13n) {  -webkit-transform: translateZ(3rem) rotateX(-120deg); background: #ccc;}
+				.c3d li:nth-child(14n) {  -webkit-transform: translateZ(3rem) rotateX(-130deg); background: #ccc;}
+				.c3d li:nth-child(15n) {  -webkit-transform: translateZ(3rem) rotateX(-140deg); background: #ccc;}
+				.c3d li:nth-child(16n) {  -webkit-transform: translateZ(3rem) rotateX(-150deg); background: #ccc;}
+				.c3d li:nth-child(17n) {  -webkit-transform: translateZ(3rem) rotateX(-160deg); background: #ccc;}
+				.c3d li:nth-child(18n) {  -webkit-transform: translateZ(3rem) rotateX(-170deg); background: #ccc;}
+				.c3d li:nth-child(19n) {  -webkit-transform: translateZ(3rem) rotateX(-180deg); background: #ccc;}
+				.c3d li:nth-child(20n) {  -webkit-transform: translateZ(3rem) rotateX(-190deg); background: #ccc;}
+				.c3d li:nth-child(21n) {  -webkit-transform: translateZ(3rem) rotateX(-200deg); background: #ccc;}
+				.c3d li:nth-child(22n) {  -webkit-transform: translateZ(3rem) rotateX(-210deg); background: #ccc;}
+				.c3d li:nth-child(23n) {  -webkit-transform: translateZ(3rem) rotateX(-220deg); background: #ccc;}
+				.c3d li:nth-child(24n) {  -webkit-transform: translateZ(3rem) rotateX(-230deg); background: #ccc;}
+				.c3d li:nth-child(25n) {  -webkit-transform: translateZ(3rem) rotateX(-240deg); background: #ccc;}
+				.c3d li:nth-child(26n) {  -webkit-transform: translateZ(3rem) rotateX(-250deg); background: #ccc;}
+				.c3d li:nth-child(27n) {  -webkit-transform: translateZ(3rem) rotateX(-260deg); background: #ccc;}
+				.c3d li:nth-child(28n) {  -webkit-transform: translateZ(3rem) rotateX(-270deg); background: #ccc;}
+				.c3d li:nth-child(29n) {  -webkit-transform: translateZ(3rem) rotateX(-280deg); background: #ccc;}
+				.c3d li:nth-child(30n) {  -webkit-transform: translateZ(3rem) rotateX(-290deg); background: #ccc;}
+				.c3d li:nth-child(31n) {  -webkit-transform: translateZ(3rem) rotateX(-300deg); background: #ccc;}
+				.c3d-ani { -webkit-animation:15s linear infinite forwards; -webkit-animation-name:cir;}
+				.c3d-ania { -webkit-animation:10s linear infinite forwards; -webkit-animation-name:cira;}
+				@-webkit-keyframes cir{
+					from{ -webkit-transform: perspective(500px) rotateY(20deg) rotateX(0deg); }
+					to{ -webkit-transform: perspective(500px) rotateY(20deg) rotateX(360deg); }
+				}
+				@-webkit-keyframes cira{
+					0%{ -webkit-transform: perspective(500px) rotateY(50deg) rotateX(0deg); }
+					40%{ -webkit-transform: perspective(500px) rotateY(10deg) rotateX(200deg); }
+					70%{ -webkit-transform: perspective(500px) rotateY(20deg) rotateX(50deg); }
+					100%{ -webkit-transform: perspective(500px) rotateY(50deg) rotateX(360deg); }
+				}
+			</style>
+			
+			<ul class="c3d c3d-ania">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+				<li>16</li>
+				<li>17</li>
+				<li>18</li>
+				<li>19</li>
+				<li>20</li>
+				<li>21</li>
+				<li>22</li>
+				<li>23</li>
+				<li>24</li>
+				<li>25</li>
+				<li>26</li>
+				<li>27</li>
+				<li>28</li>
+				<li>29</li>
+				<li>30</li>
+				<li>31</li>
+			</ul>
+			<ul class="c3d c3d-ani">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+				<li>16</li>
+				<li>17</li>
+				<li>18</li>
+				<li>19</li>
+				<li>20</li>
+				<li>21</li>
+				<li>22</li>
+				<li>23</li>
+				<li>24</li>
+				<li>25</li>
+				<li>26</li>
+				<li>27</li>
+				<li>28</li>
+				<li>29</li>
+				<li>30</li>
+				<li>31</li>
+			</ul>
+			<script type="text/javascript">
+				document.querySelectorAll('li').forEach(function(v, i, o) {
+						console.log(v,i,o)
+						if (v.classList.contains('at')) {
+							v.classList.remove('at');
+						} else if (v.classList.contains('side1')) {
+							v.classList.remove('side1');
+						} else if (v.classList.contains('side2')) {
+							v.classList.remove('side2');
+						}
+					});
+			</script>
+	</body>
+</html>

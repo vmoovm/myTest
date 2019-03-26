@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>移动</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/alert.css" rel="stylesheet" type="text/css" />
+<script src="js/ratio.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--main end-->
+	<script type="text/javascript">
+		var clear = null;
+		/**
+		 * @type {Document}
+		 */
+		var alertDom = document.createElement('article');
+		var alertspan = document.createElement('span');
+		/**
+		 * @description 黑框弹层提示
+		 * @param {String} msg 文字提示,字符串
+		 * @param {Number} second 消失时间，秒
+		 * @example
+		 * alertPrompt('邮箱格式不正确',1)
+		 */
+		function alertPrompt(msg, second){
+			alertspan.innerHTML = msg;
+			alertDom.className = 'zal-bg';
+			alertDom.appendChild(alertspan)
+			document.querySelector('body').appendChild(alertDom);
+			alertDom.addEventListener('animationend', function () {
+				if (new RegExp(' zend ').test(' ' + this.className + ' ')) {
+					alertDom.remove();
+				}
+			}, false);
+			alertDom.classList.add('zstart');
+			if(clear) clearTimeout(clear);
+			clear = setTimeout(function(){
+				alertDom.classList.remove('zstart');
+				alertDom.classList.add('zend');
+			}, second * 1000 + 200);
+			
+		}
+		
+		alertPrompt('邮箱格式不正确',1)
+	</script>
+</body>
+</html>

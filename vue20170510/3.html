@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>循环v-for</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/vue.min.js" type="text/javascript"></script>
+<style type="text/css">
+	.zmain {padding: 40px; text-align: center;}
+	.zmain  p { padding: 20px 0; font-size: 14px; text-align: center; }
+	.zmain ul { padding: 10px 0; font-size: 14px;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<p><input type="checkbox" name="aa1" v-model="v" id="aa1" value=""/><label for="aa1">控制下面字段</label></p>
+	<ul class="" v-if='v' v-for='site in sites'>
+		<li><span>姓名：</span>{{site.name}}<em>性别：</em>{{site.sex}}</li>
+	</ul>
+	<template v-for='item in sites'>
+		<p v-html="'姓名：'+item.name + '性别：'+ item.sex "></p>
+	</template>
+	
+	<p v-for="val in sites">{{val}}</p>
+	<p v-for="val in objs">{{val}}</p>
+	<h2>输出key val 键值对(sites)</h2>
+	<p v-for="(key,value) in sites">{{key}}:{{value}}</p>
+	<h2>输出key val 键值对(objs)</h2>
+	<p v-for="(key,value,index) in objs">{{index}}-{{value}}:{{key}}</p>
+	<dl>
+		<dt>v-for 整数迭代</dt>
+		<dd v-for="(n,index) in 10">{{index}}--{{n}}</dd>
+	</dl>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	new Vue({
+		el:'.zmain',
+		data:{
+			sites:[
+				{name:'xt_张',sex:'男'},
+				{name:'jin_金',sex:'女'},
+				{name:'wang_王',sex:'嬲'},
+				{name:'hao_郝',sex:'嫐'}
+			],
+			objs:{
+				zy:'web前端组',
+				nl:29,
+				xx:'石家庄'
+			},
+			v:true
+		}
+	});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1365 @@
+require 'ruble'
+=begin 
+ HBuilder可使用ruby脚本来扩展代码块和增强操作命令。这是极客的神奇玩具。
+  本文档用于用户自定义HTML扩展命令，并非HBuilder预置命令的文档，预置的代码块不可改。查阅预置代码块，请在弹出预置代码块界面时点右下角的编辑按钮，比如div代码块。
+  本文档修改完毕，保存即可生效。
+  玩的愉快，别玩坏！
+  
+  脚本开源地址 https://github.com/dcloudio/HBuilderRubyBundle
+  可以把你的配置共享到这里，也可以在这里获取其他网友的版本
+  
+  注：如果1.9版本之前的用户修改过HTML代码块，请点右键打开本文档所在目录，找之前的snippets.rb.bak文件，把修改过的内容放置进来。 
+=end
+
+with_defaults :scope => 'text.html text' do |bundle|  #=====HTML标签代码块================================================================================
+#如下是一个示例代码块，可以复制后再添加新代码块
+  snippet 'div_class' do |cmd|  #div_class是显示名称，代码助手提示列表显示时可见
+    cmd.trigger = 'divc'        #divc是激活字符，即按下divc后会触发该代码块
+    cmd.expansion = "<div class=\"$1\">
+	$0
+</div>"                         #expansion是代码块的输出内容，其中$0、$1是光标的停留和切换位置。$1是第一个停留光标，$0是最后回车时停留的光标。
+													      #如果输出涉及到换行和tab，也需严格在这里使用换行和tab。
+													      #输出双引号在前面加\来转义，输出$使用\$(单引号中)或\\$(双引号中)转义
+    cmd.needApplyReContentAssist = true  #这句话的意思是输出后同时激活代码助手，即在$1的位置直接拉出样式列表
+  end #div_class代码块结束
+  
+  snippet 'ng-pluralize' do |cmd|
+    cmd.trigger = 'ngp'
+    cmd.expansion = "<ng-pluralize>$1</ng-pluralize>"
+  end
+  #前端魔方/前端百变魔方 start
+  
+  snippet 'footer服务' do |cmd|
+    cmd.trigger = 'zffw'
+    cmd.expansion = "<!--footer start-->
+		<div class=\"zfooter\">
+			<div class=\"zfooter_box\">
+				<p class=\"zfooter_img\"><img src=\"img/anzhuo.png\"/></p>
+				<div class=\"zfooter_service\">
+					<dl class=\"zfooter_item\">
+						<dt><i></i><span>帮助中心</span></dt>
+						<dd><a href=\"#\">常见问题</a></dd>
+						<dd><a href=\"#\">如何投诉</a></dd>
+						<dd><a href=\"#\">如何贷款</a></dd>
+					</dl>
+					<dl class=\"zfooter_item\">
+						<dt><i></i><span>保障体系</span></dt>
+						<dd><a href=\"#\">本金保障</a></dd>
+						<dd><a href=\"#\">政策法规</a></dd>
+						<dd><a href=\"#\">担保协议</a></dd>
+					</dl>
+					<dl class=\"zfooter_item\">
+						<dt><i></i><span>网站规划</span></dt>
+						<dd><a href=\"#\">借款标准</a></dd>
+						<dd><a href=\"#\">借贷费用</a></dd>
+						<dd><a href=\"#\">提现规则</a></dd>
+					</dl>
+					<dl class=\"zfooter_item\">
+						<dt><i></i><span>关于我们</span></dt>
+						<dd><a href=\"#\">关于直言</a></dd>
+						<dd><a href=\"#\">平台介绍</a></dd>
+						<dd><a href=\"#\">联系我们</a></dd>
+					</dl>
+					<dl class=\"zfooter_item\">
+						<dt><i></i><span>关注我们</span></dt>
+						<dd><a href=\"#\">新浪微博</a></dd>
+						<dd><a href=\"#\">腾讯微博</a></dd>
+						<dd><a href=\"#\">微信</a></dd>
+					</dl>
+				</div>
+				<div class=\"clear\"></div>
+			</div>
+			<div class=\"zfooter_bg\">
+				<p class=\"zfooter_copyright\">版权所有，保留一切权利。 赞助商：上海赢科投资有限公司。 蒙ICP备06004630号</p>
+				<p class=\"zfooter_copyright\">版权归张中乐所有</p>
+			</div>
+		</div>
+		<style type=\"text/css\">
+			/*----------------------------------------------------
+			footer
+			-----------------------------------------------------*/
+			.zfooter { background: #0180d7;}
+			.zfooter_box { width: 1000px; margin: 0 auto; padding: 20px 0 30px;}
+			.zfooter_item { float: left; width: 120px; padding: 0 20px; text-align: center; color: #fff;}
+			.zfooter_item dt { font-size: 18px; line-height: 2;}
+			.zfooter_item dt i ,.zfooter_item dt span { display: inline-block; vertical-align: middle;}
+			.zfooter_item dt i { width: 20px; height: 20px; margin-right: 5px; background: #09f;}
+			.zfooter_item dd { font-size: 14px; line-height: 2;}
+			.zfooter_item a { color: #fff;}
+			.zfooter_img { float: right; width: 100px; height: 100px;}
+			.zfooter_service { margin-right: 120px;}
+			.zfooter_bg { height: 44px; background: #004383;}
+			.zfooter_copyright { padding: 10px 0px; text-align: center; font-size: 14px; color: #fff;}
+		</style>
+		<!--footer end-->"
+  end
+  
+  snippet 'footer友情链接' do |cmd|
+    cmd.trigger = 'zfyqlj'
+    cmd.expansion = "<!--footer start-->
+		<div class=\"zfooter\">
+			<div class=\"zfooter_box\">
+				<div class=\"zfooter_title\">
+					<i></i><span>友情链接</span>
+				</div>
+				<p class=\"zfooter_img\"><img src=\"img/anzhuo.png\"/></p>
+				<ul class=\"zfooter_link\">
+					<li><a href=\"#\">超星集团</a></li>
+					<li><a href=\"#\">超星图书馆</a></li>
+					<li><a href=\"#\">超星发现</a></li>
+					<li><a href=\"#\">百度</a></li>
+					<li><a href=\"#\">腾讯</a></li>
+					<li><a href=\"#\">腾讯游戏</a></li>
+					<li><a href=\"#\">阿里巴巴</a></li>
+					<li><a href=\"#\">新浪</a></li>
+					<li><a href=\"#\">新浪娱乐</a></li>
+					<li><a href=\"#\">网易新闻</a></li>
+					<li><a href=\"#\">网易游戏</a></li>
+					<li><a href=\"#\">网易邮箱</a></li>
+				</ul>
+				<div class=\"clear\"></div>
+			</div>
+			<p class=\"zfooter_copyright\">版权所有，保留一切权利。 赞助商：上海赢科投资有限公司。 蒙ICP备06004630号</p>
+			<p class=\"zfooter_copyright\">版权归张中乐所有</p>
+		</div>
+		<style type=\"text/css\">
+			/*----------------------------------------------------
+			footer
+			-----------------------------------------------------*/
+			.zfooter { background: #d1d1d1; padding-bottom: 20px;}
+			.zfooter_box { width: 1000px; margin: 0 auto; padding: 20px 0 30px;}
+			.zfooter_title { padding:10px 0px; line-height: 2; font-size: 18px;}
+			.zfooter_title i,.zfooter_title span { display: inline-block; vertical-align: middle;}
+			.zfooter_title i { width: 5px; height: 20px; margin-right: 6px; background: #000;/* vertical-align: middle;*/}
+			.zfooter_img { float: right; width: 100px; height: 100px;}
+			.zfooter_link { margin-right: 120px; line-height: 1.6; font-size: 14px;}
+			.zfooter_link li { display: inline-block; width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+			.zfooter_copyright { padding: 10px 0px; text-align: center; font-size: 14px; color: #777;}
+		</style>
+		<!--footer end-->"
+  end
+
+  snippet 'tab切换' do |cmd|
+    cmd.trigger = 'ztab'
+    cmd.expansion = "<!--tab start-->
+<dl class=\"${1:ztab}\">
+	<!--<dt>如果右侧有文字</dt>-->
+	<dd class=\"${1:ztab}_cur\">生鲜</dd>
+	<dd>熟食</dd>
+</dl>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	tab 切换
+	-----------------------------------------------------*/
+	.${1:ztab}  { height: 40px; line-height: 40px; font-size: 16px;}
+	.${1:ztab} dd { display: inline-block; padding: 0 16px;}
+	.${1:ztab} dd { *display: inline-block;}
+	.${1:ztab} dd:hover,
+	.${1:ztab}_cur { background: #4C8D00; color: #fff;}
+</style>
+<!--tab end-->"
+  end
+  
+  snippet '侧导航' do |cmd|
+    cmd.trigger = 'zcdh'
+    cmd.expansion = "<!--侧导航 start-->
+<div class=\"${1:zsiderNav}\">
+	<ul class=\"${1:zsiderNav}_box\">
+		<li class=\"${1:zsiderNav}_row {1:zsiderNav}_cur\"><a href=\"#\">首页</a></li>
+		<li class=\"${1:zsiderNav}_row\"><a href=\"#\">关于我们</a></li>
+		<li class=\"${1:zsiderNav}_row\"><a href=\"#\">通识课程</a></li>
+		<li class=\"${1:zsiderNav}_row\"><a href=\"#\">教学资源库</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	侧导航
+	-----------------------------------------------------*/
+	.${1:zsiderNav}  { width: 200px;}
+	.${1:zsiderNav}_box { line-height: 50px; border-right: 1px #ccc solid; font-size: 16px; background: #efefef;}
+	.${1:zsiderNav}_row { border-bottom: 1px #dedede solid; text-align: center;}
+	.${1:zsiderNav}_row:hover,
+	.${1:zsiderNav}_cur { color: #4C8D00; background: #fff;}
+	.${1:zsiderNav}_cur a { color: #4C8D00;}
+</style>
+<!--侧导航 end-->"
+  end
+  
+  snippet '侧导航子级' do |cmd|
+    cmd.trigger = 'zcdhzj'
+    cmd.expansion = "<!--侧导航子级 start-->
+<div class=\"${1:zsiderNav1}\">
+	<ul class=\"${1:zsiderNav1}_box\">
+		<li class=\"${1:zsiderNav1}_row ${1:zsiderNav1}_cur\"><a href=\"#\">首页</a></li>
+		<li class=\"${1:zsiderNav1}_row\"><a href=\"#\">关于我们</a></li>
+		<li class=\"${1:zsiderNav1}_row\"><a href=\"#\">通识课程</a>
+			<ul class=\"${1:zsiderNav1}_sub\">
+				<li><a href=\"#\">子级——英语</a></li>
+				<li><a href=\"#\">子级——高等数学</a></li>
+				<li><a href=\"#\">子级——综合艺术</a></li>
+			</ul>
+		</li>
+		<li class=\"${1:zsiderNav1}_row\"><a href=\"#\">教学资源库</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	侧导航子级
+	-----------------------------------------------------*/
+	.${1:zsiderNav1}  { width: 200px;}
+	.${1:zsiderNav1}_box { line-height: 50px; border-right: 1px #ccc solid; font-size: 16px; background: #efefef;}
+	.${1:zsiderNav1}_row { border-bottom: 1px #dedede solid; text-align: center;}
+	.${1:zsiderNav1}_row:hover,
+	.${1:zsiderNav1}_cur { color: #4C8D00; background: #fff;}
+	.${1:zsiderNav1}_cur a { color: #4C8D00;}
+	.${1:zsiderNav1}_sub { display: block; background: #f7f7f7; font-size: 14px;}
+	.${1:zsiderNav1}_sub li { border-top: 1px #dedede solid;}
+	.${1:zsiderNav1}_sub li:hover { background: #fff;}
+</style>
+<!--侧导航子级 end-->"
+  end
+  
+  snippet '常规标题' do |cmd|
+    cmd.trigger = 'zbtcg'
+    cmd.expansion = "<!--标题 start-->
+<div class=\"${1:ztitle}\">
+	<span class=\"${1:ztitle}_more\"><a href=\"#\">更多</a><i>&raquo;</i></span>
+   	<h1 class=\"${1:ztitle}_h\"><i></i>常规标题</h1>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	标题
+	-----------------------------------------------------*/
+	.${1:ztitle}  { height: 40px; border-bottom: solid 1px #ccc;}
+	.${1:ztitle}_h { line-height: 40px; font-size: 16px;}
+	.${1:ztitle}_h i { display: inline-block; vertical-align: middle; margin-right: 6px; width: 3px; height: 20px; background: #4C8D00;}
+	.${1:ztitle}_more { float: right; line-height: 40px; font-size: 14px; color: #999;}
+	.${1:ztitle}_more a,
+	.${1:ztitle}_more i { display: inline-block; vertical-align: middle; color: #999;}
+</style>
+<!--标题 end-->"
+  end
+  
+  snippet '常规弹层' do |cmd|
+    cmd.trigger = 'ztccg'
+    cmd.expansion = "<!--常规弹层 start-->
+<div class=\"zopacity\">
+	<div class=\"${1:zmessage}\">
+		<div class=\"${1:zmessage}_header\">
+			<p class=\"fl ${1:zmessage}_close\"></p>
+			<h1 class=\"${1:zmessage}_title\">消息提示</h1>
+		</div>
+		<div class=\"${1:zmessage}_body\">
+			这里请编辑消息
+		</div>
+		<div class=\"${1:zmessage}_footer\">
+			<div class=\"${1:zmessage}_btn\">
+				<input type=\"submit\" class=\"${1:zmessage}_ok\" value=\"确定\" />
+				<input type=\"button\" class=\"${1:zmessage}_cancel\" value=\"取消\" />
+			</div>
+		</div>
+	</div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	常规弹层
+	-----------------------------------------------------*/
+	.zopacity { position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6);}
+	.${1:zmessage} { margin: 0 auto; margin-top: 10%; width: 300px; background: #f7f7f7;}
+	.${1:zmessage}_header { height: 44px; padding: 0 15px; background: #ccc;}
+	.${1:zmessage}_title { line-height: 44px; font-size: 16px;}
+	.${1:zmessage}_close { float: right; margin-top: 10px; width: 10px; height: 10px; background: #000;}
+	.${1:zmessage}_body { padding: 20px 10px;}
+	.${1:zmessage}_footer { padding: 10px 10px 20px;}
+	.${1:zmessage}_btn { text-align: center;}
+	.${1:zmessage}_ok { width: 70px; height: 30px; margin: 0 15px; border: none; background: #4C8D00; color: #fff;}
+	.${1:zmessage}_cancel { width: 70px; height: 30px; border: none; background: #ccc; color: #333;}
+</style>
+<!--常规弹层 end-->"
+  end
+  
+  snippet '常规字段' do |cmd|
+    cmd.trigger = 'zzdcg'
+    cmd.expansion = "<!--常规字段 start-->
+<p class=\"${1:zfield}\">
+	<b class=\"${1:zfield}_name\">姓名：</b><span class=\"${1:zfield}_data\">张中乐</span>
+</p>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	常规字段
+	-----------------------------------------------------*/
+	.${1:zfield} {}
+	.${1:zfield}_name { font-size: 14px; color: #666; vertical-align: middle;}
+	.${1:zfield}_data { font-size: 12px; color: #333; vertical-align: middle;}
+</style>
+<!--常规字段 end-->"
+  end
+  
+  snippet '大图标' do |cmd|
+    cmd.trigger = 'zdtb'
+    cmd.expansion = "<!--大图标 start-->
+<dl class=\"${1:zicon}\">
+	<dd class=\"${1:zicon}_icon\"><i></i></dd>
+	<dt class=\"${1:zicon}_txt\">
+		<h1>执行力</h1>
+		<p>24小时在线服务</p>
+	</dt>
+</dl>
+<style type=\"text/css\">
+	.${1:zicon} { float: left; width: 100px;}
+	.${1:zicon}_icon { text-align: center;}
+	.${1:zicon}_icon i { display: inline-block; width: 38px; height: 38px; border-radius: 50%; background: #555555;}
+	.${1:zicon}_txt h1 { line-height: 30px; text-align: center; color: #666; font-size: 14px;}
+	.${1:zicon}_txt p { line-height: 22px; font-size: 12px; color: #999;}
+</style>
+<!--大图标 end-->"
+  end
+  
+  snippet '普通导航' do |cmd|
+    cmd.trigger = 'zdhpt'
+    cmd.expansion = "<!--普通导航 start-->
+<div class=\"${1:znav}\">
+	<ul class=\"${1:znav}_box\">
+		<li class=\"${1:znav}_cur\"><a href=\"#\">首页</a></li>
+		<li><a href=\"#\">关于我们</a></li>
+		<li><a href=\"#\">通识课程</a></li>
+		<li><a href=\"#\">教学资源库</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	普通导航
+	-----------------------------------------------------*/
+	.${1:znav}  {}
+	.${1:znav}_box { height: 50px; line-height: 50px; font-size: 16px; background: #f7f7f7;}
+	.${1:znav}_box li { float: left; padding: 0 16px;}
+	.${1:znav}_cur { height: 50px; color: #4C8D00;}
+	.${1:znav}_cur a { color: #4C8D00;}
+</style>
+<!--普通导航 end-->"
+  end
+  
+  snippet '单选样式' do |cmd|
+    cmd.trigger = 'zdxr'
+    cmd.expansion = "<!--单选样式 start-->
+<p class=\"${1:zradio}\">
+	<input type=\"radio\" name=\"radio\" id=\"radio0\" value=\"\"/><label for=\"radio0\">选我</label>
+	<input type=\"radio\" name=\"radio\" id=\"radio1\" value=\"\"/><label for=\"radio1\">选他</label>
+</p>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	单选样式
+	-----------------------------------------------------*/
+	.${1:zradio} {}
+	.${1:zradio} input { position: relative; width: 1px; height: 1px; margin-right: 18px; margin-left: 24px;}
+	.${1:zradio} input:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px; border-radius: 50%; border: 1px #ccc solid; background: #f1f1f1; content: '';}
+	.${1:zradio} input:checked:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px; border-radius: 50%;  border: 1px #09f solid; background: #f1f1f1; content: '';}
+	.${1:zradio} input:checked:after { position: absolute; left: 1px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #09f; content: ''; z-index: 1;}
+</style>
+<!--单选样式 end-->"
+  end
+  
+  snippet '多选样式' do |cmd|
+    cmd.trigger = 'zdxc'
+    cmd.expansion = "<!--多选样式 start-->
+<p class=\"${1:zcheckbox}\">
+	<input type=\"checkbox\" name=\"checkbox\" id=\"checkbox0\" value=\"\"/><label for=\"checkbox0\">选我</label>
+	<input type=\"checkbox\" name=\"checkbox\" id=\"checkbox1\" value=\"\"/><label for=\"checkbox1\">选他</label>
+</p>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	多选样式
+	-----------------------------------------------------*/
+	.${1:zcheckbox} {}
+	.${1:zcheckbox} input { position: relative; width: 1px; height: 1px; margin-right: 18px; margin-left: 24px;}
+	.${1:zcheckbox} input:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px; border: 1px #ccc solid; border-radius: 1px; background: #f1f1f1; content: '';}
+	.${1:zcheckbox} input:checked:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px;  border: 1px #09f solid; border-radius: 1px; background: #f1f1f1; content: '';}
+	.${1:zcheckbox} input:checked:after { position: absolute; left: 1px; top: -5px; width: 8px; height: 8px; background: #09f; content: ''; z-index: 1;}
+</style>
+<!--多选样式 end-->"
+  end
+  
+  snippet 'logo导航' do |cmd|
+    cmd.trigger = 'zdhl'
+    cmd.expansion = "<!--logo导航 start-->
+<div class=\"${1:znavLogo}\">
+	<a class=\"fl\" href=\"#\" style=\"font-size: 30px;\"><img src=\"\"/>logo</a>
+	<ul class=\"${1:znavLogo}_box\">
+		<li class=\"${1:znavLogo}_cur\"><a href=\"#\">首页</a></li>
+		<li><a href=\"#\">关于我们</a></li>
+		<li><a href=\"#\">通识课程</a></li>
+		<li><a href=\"#\">教学资源库</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	logo导航
+	-----------------------------------------------------*/
+	.${1:znavLogo}  {}
+	.${1:znavLogo}_box { margin-left: 100px; height: 50px; line-height: 50px; font-size: 16px; background: #f7f7f7;}
+	.${1:znavLogo}_box li { float: left; padding: 0 16px;}
+	.${1:znavLogo}_cur { height: 50px; color: #4C8D00;}
+	.${1:znavLogo}_cur a { color: #4C8D00;}
+</style>
+<!--logo导航 end-->"
+  end
+  
+  snippet '子级导航' do |cmd|
+    cmd.trigger = 'zdhzj'
+    cmd.expansion = "<!--子级导航 start-->
+<div class=\"${1:znav1}\">
+	<ul class=\"${1:znav1}_box\">
+		<li class=\"${1:znav1}_item ${1:znav1}_cur\"><p><a href=\"#\">首页</a></p></li>
+		<li class=\"${1:znav1}_item\"><p><a href=\"#\">关于我们</a></p></li>
+		<li class=\"${1:znav1}_item\"><p><a href=\"#\">通识课程</a></p>
+			<ul class=\"${1:znav1}_sub\">
+				<li><p><a href=\"#\">英语</a></p></li>
+				<li><p><a href=\"#\">高等数学</a></p></li>
+				<li><p><a href=\"#\">综合艺术</a></p></li>
+			</ul>
+		</li>
+		<li><p><a href=\"#\">教学资源库</a></p></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	子级导航
+	-----------------------------------------------------*/
+	.${1:znav1}  {}
+	.${1:znav1}_box { height: 50px; line-height: 50px; border-bottom: 1px #ccc solid; font-size: 16px; background: #f7f7f7;}
+	.${1:znav1}_item { float: left; position: relative; padding: 0 16px;}
+	.${1:znav1}_cur { height: 50px; color: #4C8D00;}
+	.${1:znav1}_cur a { color: #4C8D00;}
+	.${1:znav1}_sub { display: block; position: absolute; left: 0; width: 100px; border: 1px #ccc solid; border-top: none; background: #f7f7f7; text-align: center;}
+	.${1:znav1}_sub li { position: relative; width: 100%;}
+	.${1:znav1}_sub li:hover { background: #fff;}
+</style>
+<!--子级导航 end-->"
+  end
+  
+  snippet '登录top' do |cmd|
+    cmd.trigger = 'zdlt'
+    cmd.expansion = "<!--登录 start-->
+<div class=\"${1:zfield}\">
+	<ul>
+		<li class=\"${1:zfield}_item\">
+			<input type=\"text\" class=\"${1:zfield}_input\" placeholder=\"请输入帐号\" />
+		</li>
+		<li class=\"${1:zfield}_item\">
+			<input type=\"text\" class=\"${1:zfield}_input\" placeholder=\"请输入密码\" />
+		</li>
+		<li class=\"${1:zfield}_item\">
+			<input class=\"${1:zfield}_input ${1:zfield}_wSM\" type=\"text\" name=\"\" id=\"\" value=\"\" placeholder=\"验证码\" />
+			<a class=\"${1:zfield}_veriflyImg\" href=\"#\"><img src=\"img/201612241557_25.jpg\" width=\"60\" height=\"26\"/></a>
+		</li>
+		<li class=\"${1:zfield}_btn\">
+			<input type=\"submit\" class=\"${1:zfield}_ok\" value=\"确定\" />
+			<input type=\"button\" class=\"${1:zfield}_register\" value=\"注册\" />
+		</li>
+		<li class=\"${1:zfield}_item ${1:zfield}_forget\"><a href=\"#\">忘记密码？</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	登录
+	-----------------------------------------------------*/
+	.${1:zfield} { padding:10px;}
+	.${1:zfield}_item { float: left; padding-right: 10px; padding-bottom: 10px;}
+	.${1:zfield}_input { padding: 0 4px; width: 100px; height: 26px; border: 1px #ccc solid; background: #fff; font-size: 12px; color: #333; vertical-align: middle;}
+	.${1:zfield}_wSM { width: 80px;}
+	.${1:zfield}_veriflyImg { vertical-align: middle;}
+	.${1:zfield}_veriflyImg img { vertical-align: middle;}
+	.${1:zfield}_btn { float: left; margin-left: 10px;}
+	.${1:zfield}_ok { width: 70px; height: 30px; margin: 0 15px; border: none; background: #4C8D00; color: #fff;}
+	.${1:zfield}_register { width: 70px; height: 30px; border: none; background: #ccc; color: #333;}
+	.${1:zfield}_forget {padding-left: 10px; line-height: 30px ;}
+</style>
+<!--登录 end-->"
+  end
+  
+  snippet '登录' do |cmd|
+    cmd.trigger = 'zdl'
+    cmd.expansion = "<!--登录 start-->
+<div class=\"${1:zfield}\">
+	<ul>
+		<li class=\"${1:zfield}_row\">
+			<b class=\"${1:zfield}_name\">帐户名：</b>
+			<input type=\"text\" class=\"${1:zfield}_input\" placeholder=\"请输入帐号\" />
+			<em class=\"${1:zfield}_red\">*</em>
+		</li>
+		<li class=\"${1:zfield}_row\">
+			<b class=\"${1:zfield}_name\">密码：</b>
+			<input type=\"text\" class=\"${1:zfield}_input\" placeholder=\"请输入密码\" />
+			<em class=\"${1:zfield}_red\">*</em>
+		</li>
+		<li class=\"${1:zfield}_row\">
+			<span class=\"${1:zfield}_name\">验证码：</span>
+			<input class=\"${1:zfield}_input ${1:zfield}_wSM\" type=\"text\" name=\"\" id=\"\" value=\"\" placeholder=\"验证码\" />
+			<a class=\"${1:zfield}_veriflyImg\" href=\"#\"><img src=\"img/201612241557_25.jpg\" width=\"80\" height=\"26\"/></a>
+			<a class=\"${1:zfield}_vague\" href=\"#\">看不清楚？</a>
+		</li>
+		<li class=\"${1:zfield}_forgetId\"><label for=\"forgetid\"><input type=\"checkbox\" name=\"\" id=\"forgetid\" value=\"\" /><span>记住密码？</span></label></li>
+		<li class=\"${1:zfield}_btn\">
+			<input type=\"submit\" class=\"${1:zfield}_ok\" value=\"确定\" />
+			<input type=\"button\" class=\"${1:zfield}_cancel\" value=\"取消\" />
+		</li>
+	</ul>
+	<p class=\"${1:zfield}_forget\"><a href=\"#\">忘记密码？</a></p>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	登录
+	-----------------------------------------------------*/
+	.${1:zfield} { width: 350px; padding: 30px 10px;}
+	.${1:zfield}_row { padding-bottom: 10px;}
+	.${1:zfield}_name { display: inline-block; width: 100px; text-align: right; font-size: 16px; color: #666; vertical-align: middle;}
+	.${1:zfield}_input { padding: 0 4px; width: 100px; height: 26px; border: 1px #ccc solid; background: #fff; font-size: 12px; color: #333; vertical-align: middle;}
+	.${1:zfield}_red { color: red; font-size: 14px; vertical-align: middle;}
+	.${1:zfield}_gray { color: #999; vertical-align: middle;}
+	.${1:zfield}_wSM { width: 60px;}
+	.${1:zfield}_veriflyImg { vertical-align: middle;}
+	.${1:zfield}_veriflyImg img { vertical-align: middle;}
+	.${1:zfield}_vague { margin-left: 5px; vertical-align: middle;}
+	.${1:zfield}_forgetId { margin-left: 100px;}
+	.${1:zfield}_btn { margin-top: 20px; margin-left: 88px;}
+	.${1:zfield}_ok { width: 70px; height: 30px; margin: 0 15px; border: none; background: #4C8D00; color: #fff;}
+	.${1:zfield}_cancel { width: 70px; height: 30px; border: none; background: #ccc; color: #333;}
+	.${1:zfield}_forget { padding-top: 20px; text-align: right;}
+</style>
+<!--登录 end-->"
+  end
+  
+  snippet '登录状态' do |cmd|
+    cmd.trigger = 'zdlzt'
+    cmd.expansion = "<!--登录状态 start-->
+<div class=\"${1:zlogin}\">
+	<ul>
+		<li class=\"${1:zlogin}_portait\"><img src=\"img/201612241557_25.jpg\"/></li>
+		<li class=\"${1:zlogin}_slideDown\"><p class=\"${1:zlogin}_name\"><a href=\"#\">张中乐</a><i></i></p>
+			<div class=\"${1:zlogin}_subsite\">
+				<ul class=\"${1:zlogin}_sublist\">
+					<li><a href=\"#\">个人中心</a></li>
+					<li style=\"border-bottom:none;\"><a href=\"#\">退出</a></li>
+				</ul>
+			</div>
+		</li>
+		<li class=\"${1:zlogin}_layout\"><a href=\"#\">退出</a></li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	登录状态
+	-----------------------------------------------------*/
+	.${1:zlogin} { width: 150px; padding: 30px 10px;}
+	.${1:zlogin}_portait { float: left; width: 36px; height: 36px;}
+	.${1:zlogin}_portait img { width: 100%; height: 100%; border-radius: 50%;}
+	.${1:zlogin}_slideDown { float: left; position: relative; height: 30px; font-size: 14px; padding-top: 8px;}
+	.${1:zlogin}_name { padding-left: 10px; font-size: 14px;}
+	.${1:zlogin}_name a {  color: #222;}
+	.${1:zlogin}_name i { display: inline-block; margin-left: 4px; border-top: 8px #4C8D00 solid; border-bottom: 1px transparent solid; border-left: 5px transparent solid; border-right: 5px transparent solid;}
+	.${1:zlogin}_name i.zdown { border-bottom: 8px #4C8D00 solid; border-top: 1px transparent solid;}
+	.${1:zlogin}_subsite { position: absolute; left: 0; top: 34px; width: 100px;  display: block;}
+	.${1:zlogin}_sublist { background: rgba(0,0,0,0.4);}
+	.${1:zlogin}_sublist li { border-bottom: 1px #ccc dashed; text-align: center;}
+	.${1:zlogin}_sublist li a { display: inline-block; width: 100%; line-height: 30px; font-size: 14px; color: #fff;}
+	.${1:zlogin}_layout { float: left;  padding-top: 8px; padding-left: 10px; color: #999; vertical-align: middle; font-size: 14px;}
+	.${1:zlogin}_layout a { color: #4C8D00;}
+</style>
+<!--登录状态 end-->"
+  end
+  
+  snippet '返回顶部' do |cmd|
+    cmd.trigger = 'zfhdb'
+    cmd.expansion = "<!--返回顶部 start-->
+<div class=\"${1:zgoTop}\" id=\"${1:zgoTop}\">
+	<div class=\"${1:zgoTop}_site\">
+		<ul class=\"${1:zgoTop}_box\">
+			<li class=\"${1:zgoTop}_row ${1:zgoTop}_arrow\">
+				<a href=\"javascript:void(0)\"></a><i>返回顶部</i></li>
+			<li class=\"${1:zgoTop}_row ${1:zgoTop}_rcode\">
+				<a class=\"${1:zgoTop}_rcode\" href=\"javascript:void(0)\"></a><i class=\"zspecial\"><img src=\"img/anzhuo.png\" width=\"180\" alt=\"二维码\"/>
+				<br />
+				<b>扫一扫</b><br />
+				<b>大奖拿回家</b>
+			</i></li>
+			<li class=\"${1:zgoTop}_row zits\">
+				<a href=\"javascript:void(0)\"></a><i>安卓下载</i></li>
+		</ul>
+	</div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	返回顶部
+	-----------------------------------------------------*/
+	.${1:zgoTop} { }
+	.${1:zgoTop}_right0 { right: 0px;}
+	.${1:zgoTop}_site { float: right; width: 1px; height: 0px;}
+	.${1:zgoTop}_box {position: fixed; bottom: 40px; width:34px; margin-left: 34px;  }
+	.${1:zgoTop}_row { position: relative; width: 34px; height: 34px; margin-top: 5px; }
+	.${1:zgoTop}_row a { position: absolute; left: 0; top: 0;  display: block; width: 34px; height: 34px;background: url(img/gotop.png) no-repeat; background-color: #000; text-align: center; z-index: 10;}
+	.${1:zgoTop}_arrow { display: none;}
+	.${1:zgoTop}_arrow a { background-position: 0 0px;}
+	.${1:zgoTop}_arrow:hover a { background-position:  -38px 0px; background-color: #000;}
+	.${1:zgoTop}_rcode a { background-position: 1px -42px;}
+	.${1:zgoTop}_rcode:hover a { background-position:  -47px -42px; background-color: #000;}
+	.${1:zgoTop}_row i { position: absolute; right: 34px; top: 0; display: inline-block; *width: 140px!important; height: 34px; padding-left: 10px; line-height: 34px; padding-right: 10px; overflow: hidden; white-space: nowrap; background-color: #000000; color: #fff; display: none;}
+	.${1:zgoTop}_row:hover i { display: inline-block;}
+	.${1:zgoTop}_row i.zspecial { height: 260px; top: -226px; padding-top: 10px; text-align: center; line-height: 24px;}
+</style>
+<!--返回顶部 end-->"
+  end
+  
+  snippet '分页' do |cmd|
+    cmd.trigger = 'zfy'
+    cmd.expansion = "<!--分页 start-->
+<ul class=\"${1:zpage}\">
+	<li class=\"${1:zpage}_li\">
+    	<a class=\"${1:zpage}_btn\" href=\"#\">首页</a>
+    	<a class=\"${1:zpage}_btn\" href=\"#\">上一页</a>
+    	<a href=\"#\">1</a>
+    	<a href=\"#\">2</a>
+    	<a class=\"${1:zpage}_cur\" href=\"#\">3</a>
+    	<a href=\"#\">4</a>
+    	<a class=\"${1:zpage}_btn\" href=\"#\">下一页</a>
+    	<a class=\"${1:zpage}_btn\" href=\"#\">尾页</a>
+	</li>
+</ul>
+<style type=\"text/css\">
+	/*-----------------------------------------------------
+	分页css
+	-----------------------------------------------------*/
+	.${1:zpage} { width:600px; height:50px; margin:0 auto; padding-top:10px; }
+	.${1:zpage}_li { text-align:center; }
+	.${1:zpage}_li a { display:inline-block; width:32px; height:32px; line-height:32px; text-align:center; background-color:#efefef; }
+	.${1:zpage}_li a.${1:zpage}_btn { width:80px; background-color:#4C8D00; color:#fff; }
+	.${1:zpage}_li a:hover { background-color:#4C8D00; color:#fff; }
+	.${1:zpage}_li a.${1:zpage}_cur { display:inline-block; width:32px; height:32px; background-color:#4C8D00; color:#fff; line-height:32px; text-align:center; }
+</style>
+<!--分页 end-->"
+  end
+  
+  snippet '高级分页' do |cmd|
+    cmd.trigger = 'zfygj'
+    cmd.expansion = "<!--高级分页 start-->
+<div class=\"${1:zpage2}\">
+	<ul class=\"${1:zpage2}_box\">
+    	<li class=\"${1:zpage2}_opt\">
+    		<a class=\"${1:zpage2}_btn\" href=\"#\">首页</a>
+    		<a class=\"${1:zpage2}_btn\" href=\"#\">上一页</a>
+    		<a class=\"${1:zpage2}_btn\" href=\"#\">下一页</a>
+    		<a class=\"${1:zpage2}_btn\" href=\"#\">尾页</a>
+    		<span class=\"${1:zpage2}_span\">页码2/4</span>
+      		<input class=\"${1:zpage2}_input\" name=\"\" type=\"text\">
+      		<a class=\"${1:zpage2}_btn\" href=\"#\">跳转</a>
+    	</li>
+  	</ul>
+	<div class=\"${1:zpage2}_count\">每页14条记录&nbsp;&nbsp; 总共54条记录</div>
+    <div class=\"clear\"></div>
+</div>
+
+<style type=\"text/css\">
+	/*-----------------------------------------------------
+	高级分页css
+	-----------------------------------------------------*/
+	.${1:zpage2} { width: 1000px; height:50px; margin: 0 auto;}
+	.${1:zpage2}_box { float:right; padding-top:15px; }
+	.${1:zpage2}_opt { text-align:center;  color:#000;}
+	.${1:zpage2}_opt a { display:inline-block; width:48px; height:24px; line-height:24px; text-align:center; color:#000;}
+	.${1:zpage2}_opt a.${1:zpage2}_btn { width:50px; height:24px;}
+	.${1:zpage2}_opt a:hover { background-color:#4C8D00; color:#fff; text-decoration:none;}
+	.${1:zpage2}_opt a.${1:zpage2}_cur { display:inline-block; width:50px; height:24px;  background-color:#4C8D00; color:#fff; line-height:24px; text-align:center;}
+	.${1:zpage2}_span { padding-left:6px; padding-right:6px;}
+	.${1:zpage2}_input { width:43px; height:22px; border:1px #ccc solid; background:#fff;}
+</style>
+<!--高级分页 end-->"
+  end
+  
+  snippet '横式单选' do |cmd|
+    cmd.trigger = 'zdxhs'
+    cmd.expansion = "<!--横式单选 start-->
+<p class=\"${1:zradio1}\">
+	<label class=\"${1:zradio1}_item\" for=\"radio1\"><input type=\"radio\" name=\"radio1\" id=\"radio1\" value=\"\" /><span>男</span></label>
+	<label class=\"${1:zradio1}_item\" for=\"radio2\"><input type=\"radio\" name=\"radio1\" id=\"radio2\" value=\"\" /><span>女</span></label>
+</p>
+<style type=\"text/css\">
+	.${1:zradio1} { padding-top: 20px; padding-left: 20px;}
+	.${1:zradio1}_item { padding-right: 20px;}
+	.${1:zradio1}_item input,
+	.${1:zradio1}_item span { vertical-align: middle;}
+	.${1:zradio1}_item span { padding-left: 4px; font-size: 14px;}
+</style>
+<!--横式单选 end-->"
+  end
+  
+  snippet '横式复选' do |cmd|
+    cmd.trigger = 'zfxhs'
+    cmd.expansion = "<!--横式复选 start-->
+<p class=\"${1:zcheckbox1}\">
+	<label class=\"${1:zcheckbox1}_item\" for=\"checkbox1\"><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1\" value=\"\" /><span>大学英文</span></label>
+	<label class=\"${1:zcheckbox1}_item\" for=\"checkbox2\"><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox2\" value=\"\" /><span>高等数学</span></label>
+</p>
+<style type=\"text/css\">
+	.${1:zcheckbox1} { padding-top: 20px; padding-left: 20px;}
+	.${1:zcheckbox1}_item { padding-right: 20px;}
+	.${1:zcheckbox1}_item input,
+	.${1:zcheckbox1}_item span { vertical-align: middle;}
+	.${1:zcheckbox1}_item span { padding-left: 4px; font-size: 14px;}
+</style>
+<!--横式复选 end-->"
+  end
+  
+  snippet '记录集' do |cmd|
+    cmd.trigger = 'zjlj'
+    cmd.expansion = "<!--记录集 start-->
+<div class=\"${1:zrecord}\">
+	<div class=\"${1:zrecord}_header\">
+		<dl class=\"${1:zrecord}_thead\">
+			<dd class=\"${1:zrecord}_time\">日期</dd>
+			<dd class=\"${1:zrecord}_volume\">大小</dd>
+			<dd class=\"${1:zrecord}_operate\">
+				鼠标滑过操作
+			</dd>
+			<dd class=\"${1:zrecord}_name\">
+				<p class=\"zcheckB\">
+					<input class=\"zcheck_input\" onfocus=\"blur()\" type=\"checkbox\" name=\"\" checked=\"checked\" id=\"mf001\" value=\"\" />
+					<label for=\"mf001\"><em class=\"zcheck\"><b></b></em><span>全选</span></label>
+				</p>
+			</dd>
+		</dl>
+		<div class=\"clear\"></div>
+	</div>
+	<div class=\"${1:zrecord}_body\">
+		<dl class=\"${1:zrecord}_row\">
+			<dd class=\"${1:zrecord}_time\">2017-02-26</dd>
+			<dd class=\"${1:zrecord}_volume\">24MB</dd>
+			<dd class=\"${1:zrecord}_operate\">
+				<i class=\"zshare\"></i>
+				<i class=\"zcopy\"></i>
+				<i class=\"zdelete\"></i>
+			</dd>
+			<dd class=\"${1:zrecord}_name\">
+				<p class=\"zcheckB\">
+					<input class=\"zcheck_input\" onfocus=\"blur()\" type=\"checkbox\" name=\"\" checked=\"checked\" id=\"mf001\" value=\"\" />
+					<label for=\"mf001\"><em class=\"zchecked\"><b></b></em><i class=\"${1:zrecord}_icons\"></i><span>前端百变魔方</span></label>
+				</p>
+			</dd>
+		</dl>
+	</div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	记录集
+	-----------------------------------------------------*/
+	.${1:zrecord} {}
+	.${1:zrecord}_header { border-bottom: 1px #ccc solid;}
+	.${1:zrecord}_body {}
+	.${1:zrecord}_footer {}
+	.${1:zrecord}_row,
+	.${1:zrecord}_thead { height: 38px; padding: 0 20px; font-size: 14px;}
+	.${1:zrecord}_row { border-bottom: 1px #ccc dashed;}
+	.${1:zrecord}_operate { float: right; padding-top: 8px;}
+	.${1:zrecord}_operate i { display: inline-block; margin: 0 10px; width: 20px; height: 20px; background: #000000;}
+	.${1:zrecord}_operate i.zshare { background-position: 0 0;}
+	.${1:zrecord}_operate i.zcopy { background-position: 0 0;}
+	.${1:zrecord}_operate i.zdelete { background-position: 0 0;}
+	.${1:zrecord}_volume, 
+	.${1:zrecord}_time { float: right; width: 120px; padding: 0 1%; color: #999; text-align: center;  line-height: 38px;}
+	.${1:zrecord}_name { overflow: hidden;}
+	.${1:zrecord}_name .zcheckB { margin-top: 8px;}
+	.${1:zrecord}_icons { display: inline-block; width: 20px; height: 20px; margin-right: 8px; background: #000000; vertical-align: middle;}
+	
+	/*----------------------------------------------------
+	单选和多选(PC  px)
+	-----------------------------------------------------*/
+	.zcheckB label,.zcheckR label { display: block; width: 100%; overflow: hidden;}
+	.zcheckB .zcheck_input,.zcheckR .zcheck_input { position: absolute; left: -10000px;}
+	.zcheckB span,.zcheckR span { display: inline-block; vertical-align: middle;  font-size: 16px; width: 60%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+	.zcheckB em,.zcheckR em { float: left;}
+	.zcheck,.zchecked { margin-right: 8px;}
+	.zcheckB .zcheck b,.zcheckB .zchecked b { display: inline-block; width: 20px; height: 20px; background: url(img/checkboxAndRadio/checkbox_check.png) center 50% no-repeat;}
+	.zcheckB .zchecked b { background-image: url(img/checkboxAndRadio/checkbox_checked.png);}
+	.zcheckR .zcheck b,.zcheckR .zchecked b { display: inline-block; width: 20px; height: 20px; background: url(img/checkboxAndRadio/circle_check.png) center 50% no-repeat;}
+	.zcheckR .zchecked b { background-image: url(img/checkboxAndRadio/circle_checked.png);}
+</style>
+<!--记录集 end-->"
+  end
+  
+  snippet '加载中' do |cmd|
+    cmd.trigger = 'zjzz'
+    cmd.expansion = "<!--加载中 start-->
+<p class=\"${1:zloading}\">
+	<i></i><span>加载中...</span>
+</p>
+<p class=\"${1:zloading}\">
+	<span>没有数据了</span>
+</p>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	加载中
+	-----------------------------------------------------*/
+	.${1:zloading} { padding: 20px 0px; text-align: center;}
+	.${1:zloading} span{ display: inline-block; font-size: 14px; color: #666; vertical-align: middle;}
+	.${1:zloading} i { position: relative; display: inline-block; width: 1.4em; height: 1.2em; margin-right: 0.4em; vertical-align: middle;}
+	.${1:zloading} i:before { position: absolute; left: 0px; top: 0; content: ''; display: inline-block; width: 1em; height: 1em; border: 0.14em #bcbcbc solid; border-right: 0.14em #666 solid; border-radius: 50%; }
+	.${1:zloading} i:before { -webkit-animation: 1.1s linear infinite ${1:zloading}_run; animation: 1.1s linear infinite ${1:zloading}_run;}
+	@-webkit-keyframes ${1:zloading}_run {
+		from{ -webkit-transform: rotate(0deg);}
+		to{  -webkit-transform: rotate(360deg);}
+	};
+	@keyframes ${1:zloading}_run {
+		from{ transform: rotate(0deg);}
+		to{  transform: rotate(360deg);}
+	};
+</style>
+<!--加载中 end-->"
+  end
+  
+  snippet '箭头上' do |cmd|
+    cmd.trigger = 'zjts'
+    cmd.expansion = "<!--箭头上 start-->
+<p class=\"${1:zriangle}\">
+	<i class=\"${1:zriangle}_up\"></i>
+</p>
+<style type=\"text/css\">
+	.${1:zriangle}_up { display: inline-block; border:5px transparent solid; border-bottom: 8px #666 solid; border-top: 0 transparent solid; vertical-align: middle;}
+</style>
+<!--箭头上 end-->"
+  end
+  
+  snippet '箭头下' do |cmd|
+    cmd.trigger = 'zjtx'
+    cmd.expansion = "<!--箭头下 start-->
+<p class=\"${1:zriangle}\">
+	<i class=\"${1:zriangle}_down\"></i>
+</p>
+<style type=\"text/css\">
+	.${1:zriangle}_down { display: inline-block; border:5px transparent solid; border-top: 8px #666 solid; border-bottom: 0 transparent solid; vertical-align: middle;}
+</style>
+<!--箭头下 end-->"
+  end
+  
+  snippet '箭头右' do |cmd|
+    cmd.trigger = 'zjty'
+    cmd.expansion = "<!--箭头右 start-->
+<p class=\"${1:zriangle}\">
+	<i class=\"${1:zriangle}_right\"></i>
+</p>
+<style type=\"text/css\">
+	.${1:zriangle}_right { display: inline-block; border:5px transparent solid; border-left: 8px #666 solid; border-right: 0 transparent solid; vertical-align: middle;}
+</style>
+<!--箭头右 end-->"
+  end
+  
+  snippet '箭头左' do |cmd|
+    cmd.trigger = 'zjtz'
+    cmd.expansion = "<!--箭头左 start-->
+<p class=\"${1:zriangle}\">
+	<i class=\"${1:zriangle}_left\"></i>
+</p>
+<style type=\"text/css\">
+	.${1:zriangle}_left { display: inline-block; border:5px transparent solid; border-right: 8px #666 solid; border-left: 0 transparent solid; vertical-align: middle;}
+</style>
+<!--箭头左 end-->"
+  end
+  
+  snippet '进度条' do |cmd|
+    cmd.trigger = 'zjdt'
+    cmd.expansion = "<!--进度条 start-->
+<ul class=\"${1:zprogressBar}\">
+	<li class=\"${1:zprogressBar}_percent\">36%</li>
+	<li class=\"${1:zprogressBar}_name\">水库存</li>
+	<li class=\"${1:zprogressBar}_scale\"><span><i></i></span></li>
+</ul>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	进度条
+	-----------------------------------------------------*/
+	.${1:zprogressBar} { width: 300px; height: 30px; padding: 10px; overflow: hidden;}
+	.${1:zprogressBar}_name { float: left; line-height: 20px; font-size: 14px;}
+	.${1:zprogressBar}_scale { margin-left: 60px; margin-right: 50px;}
+	.${1:zprogressBar}_scale span { position: relative; display: inline-block; width: 100%; height: 20px; background: #ccc;}
+	.${1:zprogressBar}_scale i { position: absolute; left: 0; top: 0; display: inline-block; width: 56%; height: 20px; background: #4C8D00;}
+	.${1:zprogressBar}_percent { float: right; width: 40px; line-height: 20px;}
+</style>
+<!--进度条 end-->"
+  end
+  
+  snippet '居中标题' do |cmd|
+    cmd.trigger = 'zbtjz'
+    cmd.expansion = "<!--居中标题 start-->
+<div class=\"${1:ztitle}\">
+	<p class=\"${1:ztitle}_line\"></p>
+   	<h1 class=\"${1:ztitle}_h\"><span>居中标题</span></h1>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	居中标题
+	-----------------------------------------------------*/
+	.${1:ztitle}  { position: relative; height: 40px;  text-align: center;}
+	.${1:ztitle}_line { position: absolute; left: 0; top: 40px; width: 100%; height: 1px; background: #dedede;}
+	.${1:ztitle}_h {  position: absolute; left: 0; top: 28px; width: 100%;  font-size: 16px; text-align: center;}
+	.${1:ztitle}_h span { display: inline-block; background: #dedede; padding: 2px 20px; border-radius: 3px;}
+</style>
+<!--居中标题 end-->"
+  end
+  
+  snippet '可输入字段' do |cmd|
+    cmd.trigger = 'zzdksr'
+    cmd.expansion = "<!--可输入字段 start-->
+<p class=\"${1:zfield}\">
+	<b class=\"${1:zfield}_name\">姓名：</b> <input type=\"text\" class=\"${1:zfield}_input\" placeholder=\"请输入\" /> <em class=\"${1:zfield}_red\">*</em>
+</p>
+<style type=\"text/css\">
+	.${1:zfield} {}
+	.${1:zfield}_name { font-size: 16px; color: #666; vertical-align: middle;}
+	.${1:zfield}_input { padding: 0 4px; width: 100px; height: 26px; border: 1px #ccc solid; background: #fff; font-size: 12px; color: #333; vertical-align: middle;}
+	.${1:zfield}_red { color: red; font-size: 14px; vertical-align: middle;}
+	.${1:zfield}_gray { color: #999; vertical-align: middle;}
+</style>
+<!--可输入字段 end-->"
+  end
+ 
+  snippet '两栏布局' do |cmd|
+    cmd.trigger = 'zbj2'
+    cmd.expansion = "<!--两栏布局 start-->
+<div class=\"${1:zlayout}\">
+	<div class=\"${1:zlayout}_sider\">姓名：</div>
+	<div class=\"${1:zlayout}_wide\">张中乐</div>
+	<div class=\"clear\"></div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	两栏布局
+	-----------------------------------------------------*/
+	.${1:zlayout} {}
+	.${1:zlayout}_sider { float: left; width: 200px; text-align: right; font-size: 14px; color: #666; vertical-align: middle;}
+	.${1:zlayout}_wide { margin-left: 200px; font-size: 12px; color: #333; vertical-align: middle;}
+</style>
+<!--两栏布局 end-->"
+  end
+  
+    
+  snippet '企业头部' do |cmd|
+    cmd.trigger = 'ztbqy'
+    cmd.expansion = "<!--企业头部 start-->
+<div class=\"${1:ztop}\">
+	<a href=\"#\" title=\"logo\"><img src=\"\" alt=\"logo\"/></a>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	企业头部
+	-----------------------------------------------------*/
+	.${1:ztop} { height: 120px; background: #ccc;}
+	.${1:ztop}_logo { display: inline-block;}
+	.${1:ztop}_logo img { max-height: 120px;}
+</style>
+<!--企业头部 end-->"
+  end
+  
+    
+  snippet '三栏布局' do |cmd|
+    cmd.trigger = 'zbj3'
+    cmd.expansion = "<!--三栏布局 start-->
+<div class=\"${1:zlayout}\">
+	<div class=\"fr ${1:zlayout}_sider\">侧栏</div>
+	<div class=\"fl ${1:zlayout}_sider\">侧栏</div>
+	<div class=\"${1:zlayout}_wide\"></div>
+	<div class=\"clear\"></div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	三栏布局
+	-----------------------------------------------------*/
+	.${1:zlayout} {}
+	.${1:zlayout}_sider { width: 200px; min-height: 800px; text-align: right; font-size: 14px; color: #666; vertical-align: middle; background: #ccc;}
+	.${1:zlayout}_wide { margin-left: 200px; margin-right: 200px; font-size: 12px; color: #333; vertical-align: middle;}
+</style>
+<!--三栏布局 end-->"
+  end
+  
+  snippet '上传按钮' do |cmd|
+    cmd.trigger = 'zscan'
+    cmd.expansion = "<!--上传按钮 start-->
+<span class=\"${1:zlayer}_add\"><span><i></i><em>添加图片</em></span><input type=\"file\" name=\"\" id=\"\" value=\"\" /></span>
+<style type=\"text/css\">
+	.${1:zlayer}_add { display: inline-block; position: relative; width: 96px; height: 26px; border: 1px #eee solid; background: #fff; overflow: hidden;}
+	.${1:zlayer}_add i { position: absolute; left: 8px; top: 2px; width: 18px; height: 18px; background: #000;}
+	.${1:zlayer}_add em { position: absolute; left: 20px; width: 80px; height: 26px; padding-right: 10px; line-height: 26px; text-align: center;}
+	.${1:zlayer}_add input { position: absolute; left: 0px; top:-22px; width:100%; height: 54px; padding-bottom: 10px; filter: Alpha(opacity=0);opacity:0}
+</style>
+<!--上传按钮 end-->"
+  end
+  
+  snippet '上图下文' do |cmd|
+    cmd.trigger = 'ztws'
+    cmd.expansion = "<!--上图下文 start-->
+<ul class=\"${1:ztopPDownT}\">
+	<li class=\"${1:ztopPDownT}_pic\"><img src=\"\"/></li>
+	<li class=\"${1:ztopPDownT}_txt\">
+		<h1 class=\"${1:ztopPDownT}_h\"><a href=\"#\">标题可能会很长很长的</a></h1>
+		<p class=\"${1:ztopPDownT}_p\">第二行小字</p>
+	</li>
+</ul>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	上图下文
+	-----------------------------------------------------*/
+	.${1:ztopPDownT}  { float:left; width: 140px; margin-right: 10px; background: #fff;}
+	.${1:ztopPDownT}_pic  { width: 140px; height: 200px; background: #000; overflow: hidden;}
+	.${1:ztopPDownT}_pic img { width: 100%;}
+	.${1:ztopPDownT}_txt  {}
+	.${1:ztopPDownT}_h  { line-height: 22px; font-size: 16px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+	.${1:ztopPDownT}_p  { line-height: 18px; font-size: 12px; color: #999;}
+</style>
+<!--上图下文 end-->"
+  end
+  
+  snippet '竖式单选' do |cmd|
+    cmd.trigger = 'zdxss'
+    cmd.expansion = "<!--竖式单选 start-->
+<ul class=\"${1:zradio1}\">
+	<li class=\"${1:zradio1}_row\">
+		<label class=\"${1:zradio1}_label\" for=\"radio1\"><input type=\"radio\" name=\"radio1\" id=\"radio1\" value=\"\" /><span>要死</span></label>
+	</li>
+	<li class=\"${1:zradio1}_row\">
+		<label class=\"${1:zradio1}_label\" for=\"radio2\"><input type=\"radio\" name=\"radio1\" id=\"radio2\" value=\"\" /><span>要活</span></label>
+	</li>
+</ul>
+<style type=\"text/css\">
+	.${1:zradio1} { padding-top: 20px; padding-left: 20px;}
+	.${1:zradio1}_row { padding-bottom: 10px;}
+	.${1:zradio1}_label input,
+	.${1:zradio1}_label span { vertical-align: middle;}
+	.${1:zradio1}_label span { padding-left: 4px; font-size: 14px;}
+</style>
+<!--竖式单选 end-->"
+  end
+  
+  snippet '竖式复选' do |cmd|
+    cmd.trigger = 'zfxss'
+    cmd.expansion = "<!--竖式复选 start-->
+<ul class=\"${1:zcheckbox1}\">
+	<li class=\"${1:zcheckbox1}_row\">
+		<label class=\"${1:zcheckbox1}_label\" for=\"checkbox1\"><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox1\" value=\"\" /><span>好好学习</span></label>
+	</li>
+	<li class=\"${1:zcheckbox1}_row\">
+		<label class=\"${1:zcheckbox1}_label\" for=\"checkbox2\"><input type=\"checkbox\" name=\"checkbox1\" id=\"checkbox2\" value=\"\" /><span>一等奖学金</span></label>
+	</li>
+</ul>
+<style type=\"text/css\">
+	.${1:zcheckbox1} { padding-top: 20px; padding-left: 20px;}
+	.${1:zcheckbox1}_row { padding-bottom: 10px;}
+	.${1:zcheckbox1}_label input,
+	.${1:zcheckbox1}_label span { vertical-align: middle;}
+	.${1:zcheckbox1}_label span { padding-left: 4px; font-size: 14px;}
+</style>
+<!--竖式复选 end-->"
+  end
+  
+  snippet '搜索' do |cmd|
+    cmd.trigger = 'zss'
+    cmd.expansion = "<!--搜索 start-->
+<div class=\"${1:zretrieve1}\">
+   	<input type=\"text\" value=\"\" class=\"${1:zretrieve1}_input\" placeholder=\"请输入\" name=\"\"><input type=\"submit\" title=\"查找\" class=\"${1:zretrieve1}_submit\" value=\"搜索\">
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	搜索
+	-----------------------------------------------------*/
+	.${1:zretrieve1}  { width: 230px;}
+	.${1:zretrieve1}_input {width: 180px; height: 27px; padding: 0 5px; line-height: 28px; border: solid 1px #e3e3e3; background: #fff;}
+	.${1:zretrieve1}_submit { width: 38px; height: 30px; border: none; background: #e3e3e3; color: #000; cursor: pointer; vertical-align: middle;}
+</style>
+<!--搜索 end-->"
+  end
+  
+  snippet '头像式图文列表' do |cmd|
+    cmd.trigger = 'ztxtw'
+    cmd.expansion = "<!--头像式图文列表 start-->
+<div class=\"${1:zlargeIcon}\">
+	<ul class=\"${1:zlargeIcon}_box\">
+		<li class=\"${1:zlargeIcon}_row\">
+			<div class=\"${1:zlargeIcon}_rR\">
+				<em>共27人听课</em>
+			</div>
+			<div class=\"${1:zlargeIcon}_info\">
+				<div class=\"${1:zlargeIcon}_icons\">
+					<p class=\"${1:zlargeIcon}_img\"><img src=\"img/201612241557_25.jpg\"/></p>
+				</div>
+				<div class=\"${1:zlargeIcon}_text\">
+			        <div class=\"${1:zlargeIcon}_middle\">
+		                <dl class=\"${1:zlargeIcon}_content\">
+							<dt><a href=\"#\">UI图标设计教程</a><span>sfj</span></dt>
+							<dd><span>主讲：罗大人</span><span>2017年10月上架</span></dd>
+						</dl>
+			        </div>
+			    </div>
+				<div class=\"clear\"></div>
+			</div>
+			<div class=\"clear\"></div>
+		</li>
+	</ul>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	头像式图文列表
+	-----------------------------------------------------*/
+	.${1:zlargeIcon} {}
+	.${1:zlargeIcon}_box {}
+	.${1:zlargeIcon}_row { height: 90px; border-bottom: 1px #dedede dashed;}
+	/*右侧*/
+	.${1:zlargeIcon}_rR { float: right; } 
+	.${1:zlargeIcon}_rR em { display: inline-block; vertical-align: middle; line-height: 90px; font-size: 14px; color: #858585;}
+	/*默认图标*/
+	.${1:zlargeIcon}_info { padding: 0 10px;}
+	.${1:zlargeIcon}_icons { float: left;}
+	.${1:zlargeIcon}_img { width: 60px; height: 60px; padding-top: 15px;display: table-cell; vertical-align:middle; text-align: center; *font-size: 52px; *font-family:Arial;}
+	.${1:zlargeIcon}_img img { max-width: 100%; max-height: 100%;*width: 60px; *height: 60px;}
+	/*多行标题垂直居中(高90)*/
+	.${1:zlargeIcon}_text { height:90px; margin-left: 70px; position:static;  *position:relative; *display:block!important; display:table!important; }
+	.${1:zlargeIcon}_middle { position:static;  *position:absolute; display:table-cell; vertical-align:middle;  *display:block; top:50%; width:100%; }
+	.${1:zlargeIcon}_content {  position:relative; top:-50%; width:100%;}
+	.${1:zlargeIcon}_content dt,.${1:zlargeIcon}_content dd { width: 300px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+	.${1:zlargeIcon}_content dt { font-size: 16px; color: #333;}
+	.${1:zlargeIcon}_content dt span { padding-left: 14px; color: #858585; font-size: 14px;}
+	.${1:zlargeIcon}_content dd { padding-top: 8px; font-size: 12px; color: #999;}
+	.${1:zlargeIcon}_content dd span { padding-right: 20px;}
+	.${1:zlargeIcon}_content dd a { color: #09f;}
+
+</style>
+<!--头像式图文列表 end-->"
+  end
+  
+  snippet '图标文字' do |cmd|
+    cmd.trigger = 'ztbwz'
+    cmd.expansion = "<!--图标文字 start-->
+<p class=\"${1:zicon}\">
+	<i class=\"${1:zicon}_icon\"></i><a class=\"${1:zicon}_txt\" href=\"#\">说明文字</a>
+</p>
+<style type=\"text/css\">
+	.${1:zicon} { float:left;}
+	.${1:zicon}_icon { display: inline-block; vertical-align: middle; width: 18px; height: 18px; margin-right: 8px; background: #555555;}
+	.${1:zicon}_txt { display: inline-block; vertical-align: middle; color: #666; font-size: 14px;}
+	
+	/*———————————————不想命名class就用下面————————————————————————————*/
+	.${1:zicon} {}
+	.${1:zicon} i { display: inline-block; vertical-align: middle; width: 18px; height: 18px; margin-right: 10px; background: #555555;}
+	.${1:zicon} a { display: inline-block; vertical-align: middle; color: #666; font-size: 14px;}
+	
+</style>
+<!--图标文字 end-->"
+  end
+  
+  snippet '图上标题' do |cmd|
+    cmd.trigger = 'ztsbt'
+    cmd.expansion = "<!--图上标题 start-->
+<dl class=\"${1:zimgInTxt}\">
+	<dd class=\"${1:zimgInTxt}_pic\"><img src=\"img/201612241557_25.jpg\"/></dd>
+	<dt class=\"${1:zimgInTxt}_txt\">
+		<a href=\"#\">可以有很长很长的标题省略号</a>
+	</dt>
+</dl>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	图上标题
+	-----------------------------------------------------*/
+	.${1:zimgInTxt}  { float: left; position: relative; width: 160px; height: 200px; margin-right: 10px;}
+	.${1:zimgInTxt}_pic  { position: absolute; left: 0; top: 0; width: 160px; height: 200px; background: #ccc; overflow: hidden;}
+	.${1:zimgInTxt}_pic img { width: 100%; height: 100%;}
+	.${1:zimgInTxt}_txt  { position: absolute; left: 0; bottom: 0; width: 100%; height: 42px; background: rgba(0,0,0,0.4);}
+	.${1:zimgInTxt}_txt  { line-height: 42px; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #fff;}
+	.${1:zimgInTxt}_txt a { color: #fff;}
+</style>
+<!--图上标题 end-->"
+  end
+  
+  snippet '外围搜索' do |cmd|
+    cmd.trigger = 'zssww'
+    cmd.expansion = "<!--外围搜索 start-->
+<div class=\"${1:zretrieve}\">
+   	<input type=\"text\" value=\"\" class=\"${1:zretrieve}_input\" placeholder=\"请输入\" name=\"\"><input type=\"submit\" title=\"查找\" class=\"${1:zretrieve}_submit\" value=\"搜索\">
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	外围搜索
+	-----------------------------------------------------*/
+	.${1:zretrieve}  { width: 230px; height: 28px; border: solid 1px #ccc;}
+	.${1:zretrieve}_input {width: 180px; height: 27px; padding: 0 5px;line-height: 27px; border-top: solid 1px #e3e3e3; border-left: solid 1px #e3e3e3; border-right: 0; border-bottom: 0; background: #fff; font-family: Microsoft YaHei; vertical-align: middle;}
+	.${1:zretrieve}_submit { width: 39px; height: 28px; border: none; background: #555555; color: #fff; cursor: pointer; vertical-align: middle;}
+</style>
+<!--外围搜索 end-->"
+  end
+  
+  snippet '无按钮弹层' do |cmd|
+    cmd.trigger = 'ztcwan'
+    cmd.expansion = "<!--无按钮弹层 start-->
+<div class=\"zopacity\">
+	<div class=\"${1:zmessage}\">
+		<div class=\"${1:zmessage}_header\">
+			<p class=\"fl ${1:zmessage}_close\"></p>
+		</div>
+		<div class=\"${1:zmessage}_body\">
+			&radic; 这里请编辑消息
+		</div>
+	</div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	无按钮弹层
+	-----------------------------------------------------*/
+	.zopacity { position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6);}
+	.${1:zmessage} { margin: 0 auto; margin-top: 10%; width: 300px; background: #f7f7f7;}
+	.${1:zmessage}_header { height: 24px; padding: 0 15px;}
+	.${1:zmessage}_body { padding: 20px 10px; text-align: center; font-size: 14px;}
+</style>
+<!--无按钮弹层 end-->"
+  end
+  
+  snippet '新闻列表' do |cmd|
+    cmd.trigger = 'zxwlb'
+    cmd.expansion = "<!--新闻列表 start-->
+<ul class=\"${1:news}\">
+	<li class=\"${1:news}_row\">
+		<em>2017-03-12</em><i></i><a href=\"#\">如果世界末日你首先联想到什么</a>
+	</li>
+</ul>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	新闻列表
+	-----------------------------------------------------*/
+	.${1:news} { width: 320px; padding: 20px;}
+	.${1:news}_row { border-bottom: 1px #ccc dashed; line-height: 26px; font-size: 14px;}
+	.${1:news}_row em ,
+	.${1:news}_row i ,
+	.${1:news}_row a {display: inline-block; vertical-align: middle;}
+	.${1:news}_row em { float: right; color: #999;}
+	.${1:news}_row i { width: 10px; height: 10px; margin-right: 6px; background: #000;}
+	.${1:news}_row a { display: inline-block; width: 160px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+</style>
+<!--新闻列表 end-->"
+  end
+  
+  snippet '验证码' do |cmd|
+    cmd.trigger = 'zyzm'
+    cmd.expansion = "<!--验证码 start-->
+<li class=\"${1:zfield}_row\">
+	<b class=\"${1:zfield}_name\">验证码：</b>
+	<input class=\"${1:zfield}_input ${1:zfield}_wSM\" type=\"text\" name=\"\" id=\"\" value=\"\" placeholder=\"验证码\" />
+	<a class=\"${1:zfield}_veriflyImg\" href=\"#\"><img src=\"img/201612241557_25.jpg\" width=\"80\" height=\"20\"/></a>
+</li>
+<style type=\"text/css\">
+	.${1:zfield}_wSM { width: 60px;}
+	.${1:zfield}_veriflyImg { vertical-align: middle;}
+	.${1:zfield}_veriflyImg img { vertical-align: middle;}
+</style>
+<!--验证码 end-->"
+  end
+  
+  snippet '正文文章' do |cmd|
+    cmd.trigger = 'zzwwz'
+    cmd.expansion = "<!--正文文章 start-->
+<div class=\"${1:zarticle}\">
+	<dl class=\"${1:zarticle}_header\">
+		<dt class=\"${1:zarticle}_h\">时光慢走</dt>
+		<dd class=\"${1:zarticle}_p\"><span>作者：张中乐</span><span>发布时间：2017-03-02</span></dd>
+	</dl>
+	<div class=\"${1:zarticle}_body\">
+		日升日落，一年又逢春，岁岁月月又今朝，时光时光慢些走。
+	</div>
+</div>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	正文文章
+	-----------------------------------------------------*/
+	.${1:zarticle} { width: 1000px; margin: 0 auto; padding: 25px; background: #fff;}
+	.${1:zarticle}_header { padding-top: 40px; text-align: center;}
+	.${1:zarticle}_h { line-height: 2; font-size: 24px; color: #000;}
+	.${1:zarticle}_p { line-height: 1.6; font-size: 14px; color: #999;}
+	.${1:zarticle}_p span { padding: 0 20px;}
+	.${1:zarticle}_body { padding:20px 0 50px; font-size: 14px; text-indent: 2em; color: #666; line-height: 1.6;}
+</style>
+<!--正文文章 end-->"
+  end
+  
+  snippet '左图右文' do |cmd|
+    cmd.trigger = 'ztwz'
+    cmd.expansion = "<!--左图右文 start-->
+<ul class=\"${1:zleftPRightT}\">
+	<li class=\"${1:zleftPRightT}_pic\"><img src=\"\"/></li>
+	<li class=\"${1:zleftPRightT}_txt\">
+		<h1 class=\"${1:zleftPRightT}_h\"><a href=\"#\">可以有很长很长的标题</a></h1>
+		<p class=\"${1:zleftPRightT}_p\">灰色字简介</p>
+	</li>
+</ul>
+<style type=\"text/css\">
+	/*----------------------------------------------------
+	左图右文
+	-----------------------------------------------------*/
+	.${1:zleftPRightT}  { float: left; width: 300px; margin-right: 10px;}
+	.${1:zleftPRightT}_pic  { float: left; width: 80px; height: 80px; background: #ccc; overflow: hidden;}
+	.${1:zleftPRightT}_pic img { width: 100%;}
+	.${1:zleftPRightT}_txt  { margin-left: 60px;}
+	.${1:zleftPRightT}_h  { line-height: 22px; font-size: 16px;}
+	.${1:zleftPRightT}_p  { line-height: 18px; font-size: 12px; color: #999;}
+</style>
+<!--左图右文 end-->"
+  end
+  
+  snippet 'swiper' do |cmd|
+    cmd.trigger = 'zswiper'
+    cmd.expansion = "<div class=\"swiper-container\">
+    <div class=\"swiper-wrapper\">
+        <div class=\"swiper-slide\">Slide 1</div>
+        <div class=\"swiper-slide\">Slide 2</div>
+        <div class=\"swiper-slide\">Slide 3</div>
+    </div>
+</div>"
+  end
+#前端魔方/前端百变魔方 end  
+
+end
+
+
+with_defaults :scope => 'text.html entity.other.attribute-name.html' do |bundle|  #=====HTML属性代码块====================================================
+#如下是一个示例代码块，可以复制后再添加新代码块
+  snippet 'ng-' do |s|   #ng-是显示名称，代码助手提示列表显示时可见
+    s.trigger = 'ng-'		 #ng-是激活字符，即按下ng-后会触发该代码块
+    s.expansion='ng-${1:app/bind/bind-html/bind-template/blur/change/checked/class/class-even/class-odd/click/cloak/controller/copy/csp/cut/dblclick/disabled/focus/hide/href/if/include/init/keydown/keypress/keyup/list/model/mousedown/mouseenter/mouseleave/mousemove/mouseover/mouseup/ng-non-bindable/open/options/paste/readonly/repeat-start/repeat-end/selected/show/src/srcset/style/submit/swipe-left/swipe-right/switch/switch-default/switch-when/view}="$2"'
+		#expansion是代码块的输出内容，其中$0、$1是光标的停留和切换位置。
+	  #$1是第一个停留光标，$0是最后回车时停留的光标。
+	  #使用{}包围的内容，是提示值域。
+	  #如果输出涉及到换行和tab，也需严格在这里使用换行和tab。
+	  #输出双引号在前面加\来转义，输出$使用\$(单引号中)或\\$(双引号中)转义
+    s.locationType='HTML_ATTRIBUTE'
+  end #ng代码块结束
+
+end
+
+
+with_defaults :scope => 'text.html - source', :input => :none, :output => :insert_as_snippet do |bundle|  #=====无显示名称的快捷命令=======================
+=begin
+如下示例均为系统已经预置的命令，无需重复制作
+示例1 Ctrl+Enter输出<br />
+  command t(:quick_br) do |cmd|
+    cmd.key_binding = 'M2+ENTER'
+    cmd.output = :insert_as_snippet
+    cmd.input = :none
+    cmd.invoke { "<br />" }
+  end
+示例2 Ctrl+9为选中文字添加包围标签
+  command t(:wrap_selection_in_tag_pair) do |cmd|
+    cmd.key_binding = "CONTROL+9"
+    cmd.input = :selection
+    cmd.invoke do |context|
+      selection = ENV['TM_SELECTED_TEXT'] || ''
+      if selection.length > 0
+        "<${1:p}>#{selection.gsub('/', '\/')}</${1:p}>"
+      else
+        "<${1:p}>$0</${1:p}>"
+      end
+    end
+  end
+=end
+#可复制一段命令，在下面开始制作新命令
+  
+end

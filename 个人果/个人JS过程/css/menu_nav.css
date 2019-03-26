@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+代码介绍
+-----------------------------------------------------*/
+
+.ze_box { width:1000px; margin:0 auto; padding-top:50px; padding-bottom:50px; background-color: #000000;}
+
+.zt_nav { height: 109px; margin-left: 234px; font-family: "黑体";}
+.zt_nav a { color: #fff;  }
+.zt_nav a:hover { text-decoration: none;}
+.zt_item { float: left; }
+.zt_rel { position: relative; width: 0px; height: 0px;}
+.zt_def,.zt_cur,.zt_hover { height: 64px; padding-top: 45px; padding-left: 10px; padding-right: 10px; font-size: 14px; font-weight: bold;}
+.zt_cur,.zt_hover { background-color: #1693cb; color: #fff;}
+.zt_cur a,.zt_hover a { color: #fff;}
+
+.zt_sub {position: absolute; left: 0; bottom: 0; width: 480px; height: 36px; font-size: 12px; font-weight: normal; display: none;}
+.zt_sub a { color: #1d3c4b;}
+.zt_sub a:hover { text-decoration: underline;}
+.zt_sub dd { float:left; padding-left: 10px; padding-right: 10px; background-color: #1693cb; line-height: 36px;}
+.zt_sub dd { *display: inline-block;}

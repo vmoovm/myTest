@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+/*-----------------------------------------------------
+Warnning: a_,b_,c_,f_,l_n_,r_,w_, inhibit CSSName
+
+以上样式字母样式开头命名禁止使用
+
+以下样式注释：
+Default：默认不用修改
+User-defined：用户自定义
+Header：头部区域
+Footer:页脚区域
+FriendShip:友情链接
+Alert Msg：全局JS样式
+
+注释部分为待用，根据情况自由分配
+
+注：使用前请将以上中文注释删除，以免IE6下部分中文注释BUG！
+   英文不可删，如"Warnning:"不可删。
+-------------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+table {border-collapse:collapse;} 
+b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+
+/*Clear float*/
+.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+/*Text overflow ellipsis*/
+.overflow { overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+/*IE6 Empty*/
+.empty { line-height:0; font-size:0;}
+/*break*/
+.br { word-wrap:break-word;	word-break:break-all;}
+.fr{ float:right;}
+.fl{ float:left;}
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 { font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; font-size:12px; font-weight:bold;}	
+body {font-size:12px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#414141; background:#fff;}
+input,select,textarea{vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+
+a { color: #555; text-decoration: none; }
+a:hover { color:#4c8d00; text-decoration: underline; }
+
+
+/*Global*/
+.center,.center_top { width:1000px; height:auto; margin:0 auto;}
+.center_top { padding-top:10px;}
+.box { background:none;}
+.box_top { padding-top:10px;}
+.box_left { padding-left:10px;}
+.left {float:left; width:725px; height:auto; padding-left:10px;}
+.right { float:left; width:245px; height:auto; padding-left:10px;}
+.left0 { float:left; width:735px; height:auto;}
+.right0 { float:left; width:255px; height:auto;}
+.text { text-align:center;}
+
+/*FontColor*/
+.white ,
+.white a:hover 	{ color:#fff;}
+
+.red ,
+.red a:hover { color:#c51410;}
+
+.blue ,
+.blue a:hover { color:#375ba3;}
+
+.gray ,
+.gray a:hover { color:#aaa;}
+
+.yan ,
+.yan a:hover { color:#0bace1;}
+
+/*-----------------------------------------------------
+Header
+-----------------------------------------------------*/
+.top {}
+
+.header {}
+
+/*-----------------------------------------------------
+Nav
+-----------------------------------------------------*/
+.mainNav {}
+
+.subnav {}
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.footer {}
+

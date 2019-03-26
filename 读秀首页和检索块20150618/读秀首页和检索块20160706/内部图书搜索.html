@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>内部图书搜索</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/books.css" rel="stylesheet" type="text/css" />
+<link href="css/checkAndRadio.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/checkAndRadio.js"></script>
+<script src="js/jquery-often-effects.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		//你可能还需要的标题tab切换
+		$(".zre_tab").on('click','.zre_def',function(){
+			$(this).attr('class','zre_cur').siblings().attr('class','zre_def')
+			var thisId=$(this).attr('rel')
+			$(".zrecommend").hide();
+			$(thisId).show();
+		});
+
+		//你可能还喜欢
+		$("#zre_pic").switchPic({
+			
+			num:3,			//一次滑动数量
+			isBtn:true,		//是否显示左右滑动按钮
+			showBtn:false,		//是否开启鼠标滑动效果hover
+			isPoint:false,		//是否显示底部圆点按钮
+			isAuto:true,		//是否开启自动滑动
+			speed:3000,		//图片滑动速度
+			LorR:1,		//默认滑动方向为右。1：左；0:右,亦可不传值
+		});
+		$("#prettyRadio1").checkAndRadio({inputType:'radio',checkR:'.zcheckR',checkGroup:'.zs_field'});
+		$("#prettyRadio1").checkAndRadio({inputType:'radio',checkR:'.zcheckR',checkGroup:'.zs_pp'});
+	});
+</script>
+</head>
+
+<body>
+<!--top start-->
+<div class="ztop">
+	<ul>
+		<li class="zt_left zt_sub">
+			<p class="zt_menu"><a href="#">选择行业</a>
+			</p>
+			<div class="zt_site">
+				<ul class="zt_box">
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+				</ul>
+			</div>
+			<p class="zt_arrow1">&diams;</p>
+			<p class="zt_arrow2">&diams;</p>
+		</li>
+		<li class="zt_def">
+			<a href="#">退出</a>
+		</li>
+		<li class="zt_def zt_sub">
+			<p class="zt_menu"><a href="#">服务中心</a>|</p>
+			<div class="zt_site">
+				<ul class="zt_box">
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+					<li><a href="#">我的图书馆</a>
+					</li>
+				</ul>
+			</div>
+			<p class="zt_arrow1">&diams;</p>
+			<p class="zt_arrow2">&diams;</p>
+		</li>
+		<li class="zt_def">
+			<a href="#">论文检测</a>|
+		</li>
+		<li class="zt_def">
+			<a href="#">繁體中文</a>|
+		</li>
+		<li class="zt_cur">
+			<a href="#">首页</a>|
+		</li>
+	</ul>
+</div>
+<!--top end-->
+
+<!--header start-->
+<div class="zs_wrap">
+	<div class="fl zs_logo">
+		<a href="#">
+			<img src="images/logo_02.png" />
+		</a>
+	</div>
+	<div class="zs_box2 prettyRadio1" id="prettyRadio1">
+		<ul>
+			<li class="zs_classly">
+				<span class="zs_c_cur"><a href="#">知识</a></span>
+				<span class="zs_c_def"><a href="#">图书</a></span>
+				<span class="zs_c_def"><a href="#">期刊</a></span>
+				<span class="zs_c_def"><a href="#">报纸</a></span>
+				<span class="zs_c_def"><a href="#">学位论文</a></span>
+				<span class="zs_c_def"><a href="#">会议论文</a></span>
+				<span class="zs_c_def"><a href="#">文档</a></span>
+				<span class="zs_c_def"><a href="#">信息资讯</a><i>|</i></span>
+				<span class="zs_c_def"><a href="#">电子书</a></span>
+				<span class="zs_c_def"><a href="#"></a></span>
+			</li>
+			<li class="zs_more zs_m_sub">
+				<p class="zs_m_menu"><a href="#">更多&gt;&gt</a>
+				</p>
+				<div class="zs_m_site">
+					<ul class="zs_m_box">
+						<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+						</li>
+						<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+						</li>
+						<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+						</li>
+						<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+						</li>
+						<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+						</li>
+					</ul>
+				</div>
+				<p class="zs_m_arrow1">&diams;</p>
+				<p class="zs_m_arrow2">&diams;</p>
+			</li>
+
+		</ul>
+
+		<div class="zs_input">
+			<input type="text" id="" class="zs_intext" value="" />
+			<input type="button" id="" class="zs_btn" value="中文搜索" />
+			<input type="button" id="" class="zs_btn" value="外文搜索" />
+			<span class="zs_to">
+				<a href="#">高级搜索</a>
+			</span>
+		</div>
+		<ul>
+			<li class="fl zs_field">
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" checked="checked" name="names_book" id="bookId005" value="" />
+						<label for="bookId005"><em class="zcheck"><i></i></em><span>全部字段</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_book" id="bookId006" value="" />
+						<label for="bookId006"><em class="zcheck"><i></i></em><span>书名</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_book" id="bookId007" value="" />
+						<label for="bookId007"><em class="zcheck"><i></i></em><span>作者</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_book" id="bookId008" value="" />
+						<label for="bookId008"><em class="zcheck"><i></i></em><span>主题词</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_book" id="bookId009" value="" />
+						<label for="bookId009"><em class="zcheck"><i></i></em><span>丛书名</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_book" id="bookId010" value="" />
+						<label for="bookId010"><em class="zcheck"><i></i></em><span>目次</span></label>
+					</span>
+				</p>
+				<div class="clear"></div>
+			</li>
+			<li class="fl zs_pp">
+				<span class="fl zs_p_name">匹配：</span>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_pp" id="ppId007" value="" />
+						<label for="ppId007"><em class="zcheck"><i></i></em><span>精确</span></label>
+					</span>
+				</p>
+				<p class="zs_radio">
+					<span class="zcheckR">
+						<input class="zradioinput" type="radio" name="names_pp" id="ppId008" value="" />
+						<label for="ppId008"><em class="zcheck"><i></i></em><span>模糊</span></label>
+					</span>
+				</p>
+				<div class="clear"></div>
+			</li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!--header end-->
+<!--main start-->
+<div class="zcenter">
+	<div class="fl zwide">
+		<div class="">
+			<div class="zbo_btn">
+				<p class="zbo_count">（被引用指数<em>0.0163</em> 被引用册数<em>3</em>）</p>
+				<p class="zbo_primary"><a href="#">部分阅读</a></p>
+				<p class="zbo_warning"><a href="#">图书下载</a></p>
+				<p class="zbo_danger"><a href="#">图书馆文献传递</a></p>
+			</div>
+			<div class="fl zbo_sidebar">
+				<p class="zbo_img"><img src="temp/201504201647_06.png"/></p>
+				<div class="zstar">
+					<span class="zstar_icon zstar_s1"></span>
+				</div>
+				<p class="zbo_txt"><span><em>2.5</em>分</span>   共4份评级</p>
+				<p class="zbo_share"><img src="images/201504201647_16.png"/></p>
+			</div>
+			<div class="fr zbo_info">
+				<h2>从你的全世界路过</h2>
+				<p><em>作者：</em><span>张佳佳著</span></p>
+				<p><em>出版发行：</em><span>长沙、湖南文艺出版社</span></p>
+				<p><em>ISBN号：</em><span>978-7-5404-6689-3</span></p>
+				<p><em>页数：</em><span>323</span></p>
+				<p><em>原书定价：</em><span>68.00</span></p>
+				<p><em>主题词：</em><span>短篇小说-小说集-中国-当代</span></p>
+				<p><em>中图发分类号：</em><span>I247.7</span></p>
+				<table width="100%" border="" cellspacing="" cellpadding="">
+					<tr>
+						<td class="zbo_f_name1" valign="top">内容提要：</td>
+						<td class="zbo_f_con1">本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事
+				         原版的基础上，新增了9个打动人心的故事在原版的基础上……</td>
+					</tr>
+				</table>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="zbo_media">
+			<span class="zbo_icon zbo_fankui"><em></em><a href="#">问题反馈</a></span>
+			<span class="zbo_icon zbo_shoucang"><em></em><a href="#">加入收藏</a></span>
+			<span class="zbo_icon zbo_daochu"><em></em><a href="#">导出记录</a></span>
+		</div>
+		<!--您可能还需要 start-->
+		<div class="ztitle">
+			<h2 class="fl">
+				<i class="zti_icon1"></i>
+				<span class="zti_h">您可能还需要</span>
+			</h2>
+			<p class="fr zre_tab">
+				<span class="zre_def" rel="#zre_list">列表</span>
+				<em>|</em>
+				<span class="zre_def zre_cur" rel="#zre_pic">图片</span>
+			</p>
+			<div class="clear"></div>
+		</div>
+		<div class="zrecommend" id="zre_list">
+			<ul class="zre_list">
+				<li><a href="#">圣书之美</a></li>
+				<li><a href="#">古代《圣经》汉译与中西文化交流</a></li>
+				<li><a href="#">圣经历险记</a></li>
+				<li><a href="#">今日如何读旧约</a></li>
+				<li><a href="#">上帝的代言人 《旧约》中的先知</a></li>
+				<li><a href="#">基督教新约伦理学 探寻群体 十架与新造的伦理意境</a></li>
+			</ul>
+		</div>
+		<div class="zrecommend" id="zre_pic"  style="display: block;">
+			<p class="zre_prev"><a role="left" href="javascript:void(0)"></a></p>
+				<div class="zre_view" role="viewW">
+					<div class="zre_site clearfix" role="middle">
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_44.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_42.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_40.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_44.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_42.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_44.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+						<ul class="zre_item">
+							<li class="zre_img"><a href="#"><img src="temp/201504161534_40.jpg"/></a></li>
+							<li class="zre_h"><a href="#">追风筝的人</a></li>
+						</ul>
+					</div>
+					<div class="zre_site clearfix" role="mid"></div>
+				</div>
+			<p class="zre_next"><a role="right" href="javascript:void(0)"></a></p>
+			<div class="clear"></div>
+		</div>
+		<!--您可能还需要 end-->
+		<!--图书评论 start-->
+		<div class="ztitle">
+			<h2 class="fl">
+				<i class="zti_icon1"></i>
+				<span class="zti_h">图书评论</span>
+			</h2>
+			<p class="fr zco_media">
+				<span class="zco_icon zco_n"><a href="#">132</a></span>
+				<span class="zco_icon zco_w zre_cur"><a href="#">写评论</a></span>
+			</p>
+			<div class="clear"></div>
+		</div>
+		<div class="zcomment">
+			<ul class="zco_item clearfix">
+				<li class="fl zco_img"></li>
+				<li class="fl zco_info">
+					<h2 class="zco_h">放下回味许久</h2>
+					<p class="zco_gray">晶晶琪 来自当当</p>
+					<p class="zco_txt">有些沉重和伤感，不应该错过的一本书！</p>
+				</li>
+			</ul>
+			<ul class="zco_item clearfix">
+				<li class="fl zco_img"></li>
+				<li class="fl zco_info">
+					<h2 class="zco_h">放下回味许久</h2>
+					<p class="zco_gray">晶晶琪 来自当当</p>
+					<p class="zco_txt">有些沉重和伤感，不应该错过的一本书！</p>
+				</li>
+			</ul>
+			<ul class="zco_item clearfix">
+				<li class="fl zco_img"></li>
+				<li class="fl zco_info">
+					<h2 class="zco_h">放下回味许久</h2>
+					<p class="zco_gray">晶晶琪 来自当当</p>
+					<p class="zco_txt">有些沉重和伤感，不应该错过的一本书！</p>
+				</li>
+			</ul>
+		</div>
+		<!--图书评论 end-->
+	</div>
+	
+	<div class="fr zsidebar">
+		<h2 class="zs_title">获取此书</h2>
+		<div class="zs_content">
+			<p class="zrow"><a href="#">图书馆文献传递</a></p>
+			<p class="zrow"><a href="#">相似文档下载</a></p>
+			<p class="zrow"><a href="#">文献互助</a></p>
+			<h2 class="zro_h">网络书店</h2>
+			<p class="zrow"><a href="#">当当网</a><em class="zro_cheaper">￥35.7</em></p>
+			<h2 class="zro_h">他图书馆借阅</h2>
+			<p class="zrow"><a href="#">浙江建设职业技术学院图书馆</a></p>
+			<p class="zrow"><a href="#">石家庄学院图书馆</a></p>
+			<p class="zrow"><a href="#">天津市和平区图书馆</a></p>
+			<p class="zrow"><a href="#">云南大学图书馆</a></p>
+			<p class="zrow"><a href="#">三明学院图书馆</a></p>
+			<p class="zrow"><a href="#">福州大学图书馆</a></p>
+			<p class="zrow"><a href="#">福建医科大学图书馆</a></p>
+			<p class="zrow"><a href="#">无锡科技职业学院图书馆</a></p>
+			<p class="zrow"><a href="#">天津大学图书馆</a></p>
+			<p class="zrow"><a href="#">浙江大学宁波理工学院图书馆</a></p>
+			<p class="zro_m"><em>（收藏馆：33）</em><a href="#">更多&gt;&gt;</a></p>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!--main end-->
+
+<!--footer start-->
+<div class="zfooter">
+	<div class="zcenter">
+		<p>
+			<span><a href="#">关于读秀</a>|</span>
+			<span><a href="#">用户评价</a>|</span>
+			<span><a href="#">常见问题</a>|</span>
+			<span><a href="#">使用帮助</a>|</span>
+			<span><a href="#">联系我们</a>|</span>
+			<span><a href="#">使用感受</a></span>
+		</p>
+		<p class="zf_p">公司内部 © 2015 · powered by duxiu   客服电话：010-51667449  京ICP备07013879号-1   京公网安备11010802013526号</p>
+	</div>
+</div>
+<!--footer end-->
+</body>
+</html>

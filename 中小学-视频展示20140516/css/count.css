@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+视频统计
+-----------------------------------------------------*/
+.zcount { background-color:#fff;}
+
+.zco_space { height:600px; padding-top:40px; padding-left:12px; padding-right:18px; padding-bottom:69px; overflow:hidden; overflow-y:auto;}
+.zco_title  { height:38px; border-bottom:2px #d9d9d9 solid;}
+.zco_t_tab { float:left; width:106px; height:40px; margin-bottom:-2px; }
+.zco_t_tab i { color:#d9d9d9; line-height:40px; font-size:14px;}
+.zco_t_tab a ,.zco_t_cur a { display:inline-block; width:89px; height:40px; line-height:40px; text-align:center;}
+.zco_t_tab a:hover , .zco_t_cur a { display:inline-block; background:url(../images/video_04.gif) 0 bottom no-repeat; text-decoration:none;}
+.zco_content { padding-top:15px; padding-bottom:15px; display:none;}
+.zco_c_item { padding-top:13px; padding-bottom:12px; border-bottom:1px #ccc dashed;}
+.zco_c_bg { background-color:#fafafa;}
+.zco_c_name { display:inline-block; width:170px; height:22px; padding-right:20px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis;  text-overflow:ellipsis; vertical-align:middle; line-height:22px;}
+.zco_c_progress { display:inline-block; width:670px; height:22px; border-radius:2px; background-color:#a9d86e; vertical-align:middle;}
+.zco_c_video { display:inline-block; width:90px; height:22px; padding-left:20px; overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis;  text-overflow:ellipsis; vertical-align:middle; line-height:22px; color:#2e95c2;}
+.zco_c_video a { color:#2eaeda;}
+.zco_c_video a:hover { color:#248fbc;}
+/*弹层*/
+.zco_layer { position:absolute; left:0; top:0; width:100%; height:100%; padding-top:100px; background:url(../images/video_opacity.png) repeat; display:none;}
+.zco_l_bg { width:646px; height:460px; margin:0 auto; padding:1px; border:1px #cbcbcb solid; background-color:#fff;}
+.zco_l_title { height:40px; background-color:#09c;}
+.zco_l_h { float:left; padding-left:9px; line-height:40px; font-size:18px;}
+.zco_l_close { float:right; display:inline-block; width:26px; height:26px; padding-top:6px; padding-right:9px; background:url(../images/video_05.gif) 0 6px no-repeat; cursor:pointer;}
+.zco_l_box {  padding-top:28px; padding-left:16px; padding-bottom:23px; padding-right:14px;}
+
+
+

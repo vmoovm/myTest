@@ -1,0 +1,48 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,iframe,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+iframe { background: none;}
+li,dd,dl,dt {list-style-type:none;}
+table {border-collapse:collapse;} 
+b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+.empty { line-height:0; font-size:0;}
+.fr{ float:right;}
+.fl{ float:left;}
+.clearfix{overflow:hidden;zoom:1}
+.br { word-wrap:break-word;	word-break:break-all;}
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 { font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; font-size:12px; font-weight:normal;}	
+body {font-size:12px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#414141; background:#fff;}
+input,select,textarea{vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+
+a { color: #555; text-decoration: none; }
+a:hover { color:#4c8d00; text-decoration: underline; }
+
+/*-----------------------------------------------------
+Top
+-----------------------------------------------------*/
+.ztop {}
+
+/*-----------------------------------------------------
+Header
+-----------------------------------------------------*/
+.zheader {}
+
+/*-----------------------------------------------------
+Nav
+-----------------------------------------------------*/
+.znav {}
+
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.zfooter {}

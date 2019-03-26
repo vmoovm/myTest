@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自定义-自定义</title>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/css3-mediaqueries.js" type="text/javascript"></script>
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<link href="css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/screen.css" rel="stylesheet" type="text/css" />
+
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script>
+$(function(){
+	var fl=1;
+	$('#test').click(function(){
+		if(fl){
+			$(this).css('textAlign','right');
+			fl=0;
+		}else{
+			$(this).css('textAlign','left');
+			fl=1;
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div><ul id="ul_box">
+	<li>dsfdsf</li>
+	<li>dsfdsf</li>
+	<li>dsfdsf</li>
+	<li>dsfdsf</li>
+	<li>dsfdsf</li>
+</ul></div>
+<div class="earth" style=" font-family:none; display:none;">
+  <div class="zcenter">
+      <div class="zc_re">
+		<span class="zc_meteor  zc_scale"></span>
+		<span class="zc_meteor2 ac_scale1"></span>
+		<span class="zc_meteor1 zc_scale2"></span>
+      </div>
+  </div>
+  
+  <div class="zcenter">
+	<span class="n7 translte"></span>
+	<span class="n8 rotate"></span>
+	<span class="n0 scale"></span>
+	<span class="n4"></span>
+	<span class="n0 skew"></span>
+	<span class="n4 translte"></span>
+	<span class="n6 matrix"></span>
+	<span class="n2 translte"></span>
+	<span class="n5"></span>
+	<span class="n1"></span>
+	<span class="n3 matrix"></span>
+  </div>
+  
+  <div class="zcenter">
+	<div class="demo_box ease">ease</div>
+	<div class="demo_box linear">linear</div>
+	<div class="demo_box ease-in">ease-in</div>
+	<div class="demo_box ease-out">ease-out</div>
+	<div class="demo_box ease-in-out">ease-in-out</div>
+	<div class="demo_box cubic-bezier">cubic-bezier(0.52,0,0.58,1.0)</div>
+	<input type="button" id="run" value="运行" style="margin:10px 10px;" />
+	<script>
+	$(function(){
+		$("#run").toggle(function(){
+			$(".demo_box").addClass("run");
+			$(this).val("返回");
+		},function(){
+			$(".demo_box").removeClass("run");
+			$(this).val("运行");
+		});
+	});
+	</script>
+	</div>
+  
+</div>
+</body>
+</html>

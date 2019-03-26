@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>为什么推荐前端框架MUI</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="">
+		<div class="aw-mod-body">
+							<div class="aw-question-detail-txt markitup-box" id="markdownbody">
+								<h3>MUI为何诞生</h3><ol><br>
+<li><p>性能和体验的差距，一直是mobile app开发者放弃HTML5的首要原因。 <br>
+浏览器天生的切页白屏、不忍直视的转页动画、浮动元素的抖动、无法流畅下拉刷新、侧滑抽屉卡顿等问题，这些都让HTML5开发者倍感挫败，尤其拿到Android低端机运行，摔手机的心都有；</p></li><br>
+<li><p>另一方面，浏览器默认控件样式又少又丑，制作一个漂亮的控件非常麻烦，也有一些制作简单的ui框架但性能低下。</p></li><br>
+</ol><p>mui框架有效的解决了这些问题，这是一个可以方便开发出高性能App的框架，也是目前最接近原生App效果的框架。<br>
+</p><div class="aw-comment-upload-img-list active">
+	<a href="http://ask.dcloud.net.cn/uploads/article/20141107/6de03b311c9d5034ba1bdd1b76d56f38.png" target="_blank" data-fancybox-group="thumb" rel="lightbox"><img src="http://ask.dcloud.net.cn/uploads/article/20141107/6de03b311c9d5034ba1bdd1b76d56f38.png" data-original="http://ask.dcloud.net.cn/uploads/article/20141107/6de03b311c9d5034ba1bdd1b76d56f38.png" class="img-polaroid" title="" alt="" style="display: inline;"></a>
+</div>
+<p></p><p>其实我们原本是开放心态，大家随意使用自己喜欢的前端框架。但是其他移动App框架实在不给力：<br>
+    - 基于jq的jqmobile，性能低的无法忍受<br>
+    - 基于angular的ionic，都把pc端很重的东西引入到移动App中。angularjs本身设计是为了pc端网页的双向数据绑定，做个移动App干嘛用这么重的东西。<br>
+    - bootstrap这种响应式设计，性能在低端机不足，而且UI风格一看就是网页，不是App的感觉。<br>
+    - framework7只能在iPhone上运行也无法被接受。<br>
+   于是为了方便广大开发者，我们基于ratchet框架制作了mui。</p><h3>MUI的定位是：最接近原生体验的移动App的UI框架</h3><p>基于mui的定位，产生了mui的几个特点，轻、小、只涉及UI、只为移动App而生、界面风格原生化。<br>
+所以请大家注意，mui有所为有所不为：</p><ol><br>
+<li><p>mui不是jq，不封装dom操作<br>
+与ui无关的mui不做，你愿意用jq或zepto就自己用，并不冲突。<br>
+但我们并不建议在移动App里引入jq或zepto这些框架，原因如下：</p><ul><br>
+<li>为了性能，层层封装的框架，尤其是遍历循环dom时，影响效率，尤其在低端Android手机上，我们费死劲了才把性能以毫秒为单位一点点提升，搞这个的dom框架进来就让很多努力又付诸东流。</li><br>
+<li>原生JS挺简单，为何需要jq？<br>
+jq的成功当时是因为ie6、7、8、9、10、chrome、ff这些浏览器不兼容，让开发者崩溃，而且pc上浏览器性能好，跨平台兼容也不影响性能。但jq根本就不是为手机设计的。<br>
+手机上只有webkit浏览器（忽略wp，反正mui不支持wp），根本就不需要jq这种封装框架来操作dom。<br>
+而且HBuilder提供了代码块来简化开发，敲dg、dq，直接生成document.getElementById("")、document.querySelectorAll("")，非常快捷方便，而且执行性能非常高，而且没有浏览器兼容问题。<br>
+发现很多开发者只会jq，反正想继续在App里使用jq没有问题。但也建议大家多学学js本身。</li><br>
+</ul></li><br>
+<li><p>mui、HTML5+、5+Runtime的关系说明<br>
+mui是一个前端框架，HTML5+是一套HTML5能力扩展规范，HTML5+ Runtime是实现HTML5+规范的强化浏览器引擎。<br>
+有点类似于bootstrap、w3c和chrome os的关系。<br>
+HTML5+规范隶属于http://www.html5plus.org，定义了HTML5规范中没有但开发者做App需要的扩展规范。<br>
+DCloud的5+ Runtime完整的实现了HTML5+规范。同时5+ Runtime还实现了Native.js，一种通过js调用几十万原生API的技术。<br>
+为了提升体验，mui势必会调用一些5+Rutime的增强能力，主要是plus.webview和plus.nativeUI。<br>
+但mui不是要替代HTML5Plus，以后也无计划替代把所有5+的webview api都包一层。<br>
+mui是把一些常用的窗体操作封装了，但这种封装适应面也是有限的，遇到复杂窗体管理，还是要仔细了解plus.webview。<br>
+所以，</p><ul><br>
+<li>有人抱怨mui的文档不全，其实是缺本文，本文终于说清楚mui做什么不做什么了。详细的mui文档要去下方提示的mui官网查看。</li><br>
+<li>有人抱怨mui api不全，其实是没去看plus的api。因为官方推荐的顺序是，先学5+，再学mui。倒过来就不太容易理解如何封装的了。</li><br>
+<li>有人抱怨示例代码里写的mui的方法，为何文档里没有，是因为有些方法是工程师为了自己方便而写的，并没有进入mui的api，比如mui.alert，其实是plus.nativeUI.alert，在HBuilder里敲pna回车即可。</li><br>
+</ul></li><br>
+</ol><p><strong>mui是一个开源项目，请前往托管在github的<a href="http://dev.dcloud.net.cn/mui/">mui官网</a>查看详细介绍</strong></p><p>这里是mui发布时的演讲视频：<a href="http://v.youku.com/v_show/id_XNzYyOTEyMjcy.html">http://v.youku.com/v_show/id_XNzYyOTEyMjcy.html </a><br>
+这里是培训领域合作伙伴0Hicn录制的免费培训视频：<a href="http://DCloud.apk00.com">http://DCloud.apk00.com</a></p><br>
+								
+																<div class="aw-comment-upload-img-list">
+																																</div>
+																
+																<ul class="aw-comment-upload-file-list">
+																																			</ul>
+															</div>
+							<div class="aw-question-detail-meta aw-article-detail-meta">
+								<span class="aw-article-vote">
+									<a href="javascript:;" class="agree" onclick="article_vote(this, 91, 1);"><i class="fa fa-thumbs-up"></i> <b>14</b> 赞</a>
+									<a href="javascript:;" class="disagree" onclick="article_vote(this, 91, -1);"><i class="fa fa-thumbs-down"></i></a>
+								</span>
+								
+								<a class="aw-text-color-999 pull-right" onclick="$.dialog('shareOut', {item_type:'article', item_id:91});"><i class="fa fa-share"></i>分享</a>
+															</div>
+							
+														<div class="aw-article-voter">
+																<a href="http://ask.dcloud.net.cn/people/%E4%BC%A4%E8%80%8C%E6%97%A0%E5%91%B3" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="伤而无味"><img alt="伤而无味" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/Kayson" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="Kayson"><img alt="Kayson" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/744934982" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="744934982"><img alt="744934982" src="http://ask.dcloud.net.cn/uploads/avatar/000/00/43/35_avatar_mid.jpg"></a>
+																<a href="http://ask.dcloud.net.cn/people/%E4%B9%A0%E5%A4%A7%E5%A4%A7" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="习大大"><img alt="习大大" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/%E5%8F%AF%E8%8B%A6%E5%8F%AF%E4%B9%90" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="可苦可乐"><img alt="可苦可乐" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/cike8899" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="cike8899"><img alt="cike8899" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/Wcheng" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="Wcheng"><img alt="Wcheng" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/DCloud_MUI_new" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="DCloud_MUI_new"><img alt="DCloud_MUI_new" src="http://ask.dcloud.net.cn/uploads/avatar/000/00/22/35_avatar_mid.jpg"></a>
+																<a href="http://ask.dcloud.net.cn/people/sky315sky" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="sky315sky"><img alt="sky315sky" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/z_dongdong" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="z_dongdong"><img alt="z_dongdong" src="http://ask.dcloud.net.cn/uploads/avatar/000/09/63/25_avatar_mid.jpg"></a>
+																<a href="http://ask.dcloud.net.cn/people/gaus" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="gaus"><img alt="gaus" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/GODVer" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="GODVer"><img alt="GODVer" src="http://ask.dcloud.net.cn/uploads/avatar/000/12/07/48_avatar_mid.jpg"></a>
+																<a href="http://ask.dcloud.net.cn/people/goldfish" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="goldfish"><img alt="goldfish" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<a href="http://ask.dcloud.net.cn/people/%E5%B8%9D%E9%98%99" class="voter" data-toggle="tooltip" data-placement="right" data-original-title="帝阙"><img alt="帝阙" src="http://ask.dcloud.net.cn/static/common/avatar-mid-img.png"></a>
+																<!--<a class="more-voters">...</a>-->
+							</div>
+													</div>
+	</div>
+</div>
+<!--main end-->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>多组单选和多选</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/checkAndRadio.css"/>
+<link rel="stylesheet" type="text/css" href="css/topics.css"/>
+<link rel="stylesheet" type="text/css" href="css/zobj.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/checkAndRadio.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<div class="" id="group">
+		<h2 class="zse_t">group单选1：</h2>
+		<div class="zselectTopic">
+			<ul class="zse_row zse_bg">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname000" checked="checked" id="classId101" value="" />
+						<label for="classId101"><em class="zcheck"><i></i></em><span>A:对象自身用处不大，不过在了解其他类之前，还是应该了解它。</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row ">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname000" id="classId102" value="" />
+						<label for="classId102"><em class="zcheck"><i></i></em><span>B:第二小组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname000" id="classId103" value="" />
+						<label for="classId103"><em class="zcheck"><i></i></em><span>C:小组</span></label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<h2 class="zse_t">group单选2：</h2>
+		<div class="zselectTopic">
+			<ul class="zse_row zse_bg">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname001" checked="checked" id="classId201" value="" />
+						<label for="classId201"><em class="zcheck"><i></i></em><span>A:对象自身用处不大，</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row ">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname001" id="classId202" value="" />
+						<label for="classId202"><em class="zcheck"><i></i></em><span>B:第二小组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckR">
+						<input type="radio" name="classname001" id="classId203" value="" />
+						<label for="classId203"><em class="zcheck"><i></i></em><span>C:小组</span></label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<h2 class="zse_t">group多选2：</h2>
+		<div class="zselectTopic">
+			<ul class="zse_row zse_bg">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" checked="checked" id="classId211" value="" />
+						<label for="classId211"><em class="zcheck"><i></i></em><span>A:第一小组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" id="classId212" value="" />
+						<label for="classId212"><em class="zcheck"><i></i></em><span>B:吃饭组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" id="classId213" value="" />
+						<label for="classId213"><em class="zcheck"><i></i></em><span>C:饭桶组</span></label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<h2 class="zse_t">group多选2：</h2>
+		<div class="zselectTopic">
+			<ul class="zse_row zse_bg">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" checked="checked" id="classId401" value="" />
+						<label for="classId401"><em class="zcheck"><i></i></em><span>A:第一小组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" id="classId402" value="" />
+						<label for="classId402"><em class="zcheck"><i></i></em><span>B:吃饭组</span></label>
+					</div>
+				</li>
+			</ul>
+			<ul class="zse_row">
+				<li class="zse_con">
+					<div class="zcheckB">
+						<input type="checkbox" name="" id="classId403" value="" />
+						<label for="classId403"><em class="zcheck"><i></i></em><span>C:饭桶组</span></label>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+	//一般单选（一页只有一组时）
+	$("#group").checkAndRadio({inputType:'checkbox',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+	$("#group").checkAndRadio({inputType:'radio',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+	</script>
+</body>
+</html>

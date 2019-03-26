@@ -1,0 +1,94 @@
+﻿/*----------------------------------------------------
+积分设置
+-----------------------------------------------------*/
+.zintegral { padding:1px 0.3rem; padding-right: 0;  margin-top:0.351rem;background-image: -webkit-linear-gradient(#ebebeb 50%, transparent 50%), -webkit-linear-gradient(transparent 50%, #ebebeb 50%); background-size: 100% 1px,100% 1px; background-repeat: no-repeat; background-position: top,bottom; background: #fff;}
+.zin_opacity { position: absolute; bottom: 0; left: 0; width: 100%; height: 100vh; background: #000; opacity: 0.5; display: none; z-index: 99;}
+.zin_site { position: absolute; bottom: 0.1404rem; left: 5%; width: 90%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 100;}
+.zin_closebtn { display: block; margin-top: 0.0936rem; line-height: 0.819rem; border-radius: 0.0936rem; background: #fff; color: #c00; line-height: 0.819rem; text-align: center; font-size: .32rem;}
+.zin_itembox { overflow: hidden;  border-radius: .12rem;}
+.zin_row { position: relative; width: 100%; padding: .12rem .3rem .12rem 0; background-image: -webkit-linear-gradient(transparent 50%, #ebebeb 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom; background-color: #fff; line-height: .74rem; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.zin_row:last-child { background:#fff;}
+.zin_set,.zin_line { display: -webkit-box; display: box; width: 100%; padding: .12rem 0.35rem; border-bottom: 1px #d8dde4 solid; line-height: .74rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.zin_line { font-size: 0.32rem;}
+#zspace { padding: 0 0.35rem; border-bottom: none;}
+.zin_row dt,.zin_set dt { font-size: 0.32rem; color: #333;}
+.zin_set dt { -webkit-box-flex:1; text-align: right;}
+.zin_row dt span { color: #b7b7b7; font-size: 0.3rem;}
+/*.zin_row:first-child { border-top: 1px #ebebeb solid;}*/
+/*.zin_row dd,.zin_set dd { color: #1785fb; font-size: 0.4446rem;}*/
+.zin_row dd,.zin_set dd { color: #09f; font-size: 0.32rem;}
+.zin_row dd {position: absolute; left: 0; top: .12rem; width: 100%; height: 100%; padding-right: .3rem; box-sizing: border-box; -webkit-box-sizing: border-box; text-align: right;}
+.zin_row dd span {display: inline-block; vertical-align: middle;}
+.zin_row dd em { display: inline-block; width: 0.3rem; height: 0.3rem; margin-left: 0.0468rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 0.24rem .24rem; vertical-align: middle;}
+.zin_row dd b { font-weight: normal;}
+.zin_row dd i { color: #333; font-size: 0.3rem; display: inline-block;; vertical-align: middle;}
+
+.zin_set dd { width: 47%;}
+.zin_set dd i { display: inline-block; width: 1.3572rem; height: .74rem; background: none;}
+.zin_visible dd i { display: inline-block; background: url(../images/right.jpg) center no-repeat; background-size: 0.4212rem;}
+
+/*.zin_itembox {overflow: hidden; border-radius: .12rem;}
+.zin_row ,.zin_set { display: -webkit-box; display: box; width: 100%; padding: .12rem 0.351rem; border-bottom: solid 1px #d8dde4; line-height: .74rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.zin_set {  background: #fff;}
+.zin_row dt,.zin_set dt { -webkit-box-flex:1; font-size: .32rem; color: #333;}
+.zin_set dt { margin-left: 0.702rem; text-align: right;}
+.zin_row:first-child { border-top: 1px #ebebeb solid;}
+.zin_row dd,.zin_set dd { color: #1785fb; font-size: 0.4446rem;}
+.zin_row dd { width: 50%;}
+.zin_row dd span {display: inline-block; vertical-align: middle;}
+.zin_row dd em { display: inline-block; width: 0.3276rem; height: 0.3276rem; margin-left: 0.0468rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 0.234rem; vertical-align: middle;}
+
+.zin_set dd { width: 47%;}
+.zin_set dd i { display: none; width: 1.3572rem; height: .74rem; background: url(../images/right.jpg) center no-repeat; background-size: 0.4212rem;}
+.zin_visible dd i { display: inline-block;}*/
+.zin_slideList { height: 2.94rem; -webkit-transition: height .4s linear; transition: height .2s linear;}
+.zin_slideUp .zin_row { background:none;}
+.zin_slideUp .zin_slideList { height: 0; overflow: hidden;}
+.zinfop { padding: 0.0468rem 0.351rem; line-height: 0.702rem; font-size: .32rem; color:#999; font-family: arial;}
+
+.zin_long { display: -webkit-box; width: 100%; padding: .12rem 0.351rem; border-bottom: solid 1px #d8dde4; line-height: .74rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.zin_long dt { padding-right: 0.468rem; font-size: .32rem; color: #333;}
+.zin_long dt input { width: 0.936rem; border: none; background: none; text-align: center; color: #09f;}
+.zin_long dt input::-webkit-outer-spin-button,
+.zin_long dt input::-webkit-inner-spin-button{-webkit-appearance: none !important; appearance: none !important;}
+.zin_long dd span { display: inline-block; vertical-align: middle;}
+.zin_long dd { -webkit-box-flex: 1; text-align: right;}
+.zin_long dd em { display: inline-block; width: 0.3276rem; height: 0.5616rem; margin-left: 0.0468rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 0.234rem; vertical-align: middle;}
+
+.animated {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode:both;
+}
+
+
+@-webkit-keyframes fadeInUp{
+    0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px);opacity: 1;}
+}
+
+@keyframes fadeInUp{
+   0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px); opacity: 1;}
+}
+
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown{
+    0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px);; opacity: 0;}
+}
+
+@keyframes fadeInDown{
+   0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px); opacity: 0;}
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}

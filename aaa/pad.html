@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Share Example</title>
+		<style type="text/css">
+			.test {
+				height: 50px;
+				background: #0099FF;
+			}
+			.row { line-height: 1; background: #2FC7C9; font-weight: normal;}
+			.row:nth-child(even) { background: #fff;}
+			* { padding: 0; margin: 0;}
+			.zf { display: -webkit-inline-box; background: #0099FF; display: -webkit-grid;}
+			.ze { width: 40px; height: 40px;}
+			.zfb { display: -webkit-box; background: #000000;}
+			
+		</style>
+		<script src="js/rem750.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			// 一个发布者publisher
+			var pub = {
+				publish: function () {
+					dep.notify();
+				}
+			};
+			
+			// 三个订阅者 subscribers
+			var sub1 = {
+				update: function () {
+					console.log("sub1");
+				}
+			};
+			var sub2 = {
+				update: function () {
+					console.log("sub2");
+				}
+			};
+			var sub3 = {
+				update: function () {
+					console.log("sub3");
+				}
+			}
+			
+			// 一个主题对象
+			function Dep() {
+				this.subs = [sub1, sub2, sub3];
+			}
+		</script>
+	</body>
+
+</html>

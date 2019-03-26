@@ -1,0 +1,119 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+.fc { font-size:18px; color:#c00;}
+body { background:url(../images/bg_star.gif) repeat;}
+.earth { height:500px; background:url(../images/bannerdiqiu.png) center 50px no-repeat;}
+.zcenter { width:1600px; margin:0 auto; padding-top:50px; padding-bottom:50px;}
+.zc_re { position:relative; width:1600px; height:800px; overflow:hidden;}
+.zcenter span { display:inline-block;}
+.zc_meteor { position:absolute; left:800px; top:30px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_meteor:hover { position:absolute; left:10px; top:700px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_meteor1 { position:absolute; left:1200px; top:-131px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_meteor1:hover { position:absolute; left:-1600px; top:-131px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_meteor2 { position:absolute; left:90px; top:-11px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_meteor2:hover { position:absolute; left:-1090px; top:-1500px; width:266px; height:500px; background:url(../images/liuxing.png) no-repeat;}
+.zc_scale {-webkit-transition:0.5s ease all; -webkit-transform:rotate(-10deg) scale(0.5)}
+.zc_scale1 {-webkit-transition:0.5s ease all; -webkit-transform:rotate(-10deg) scale(0.3)}
+.zc_scale2 {-webkit-transition:0.5s ease all;}
+
+
+.n0,.n1,.n2,.n3,.n4,.n5,.n6,.n7,.n8,.n9 { display:inline-block; width:98px; height:150px; padding-left:20px; padding-right:30px; background:url(../images/html5test_0.png) center no-repeat; -webkit-transition:1s ease all;}
+.n1 { background:url(../images/html5test_1.png) center no-repeat;}
+.n2 { background:url(../images/html5test_2.png) center no-repeat;}
+.n3 { background:url(../images/html5test_3.png) center no-repeat;}
+.n4 { background:url(../images/html5test_4.png) center no-repeat;}
+.n5 { background:url(../images/html5test_5.png) center no-repeat;}
+.n6 { background:url(../images/html5test_6.png) center no-repeat;}
+.n7 { background:url(../images/html5test_7.png) center no-repeat;}
+.n8 { background:url(../images/html5test_8.png) center no-repeat;}
+.n9 { background:url(../images/html5test_9.png) center no-repeat;}
+
+
+.skew:hover { -webkit-transform:skew(-20deg,30deg);}
+.scale:hover {-webkit-transform:scale(2,2);}
+.rotate:hover { -webkit-transform:rotate(3600deg);}
+.translte:hover { -webkit-transform:translate(-80px,80px);}
+/*a表示scaleX(); 水平缩放
+c表示skewY(); 垂直倾斜
+e表示skewX(); 水平倾斜
+b表示scaleY(); 垂直缩放
+d表示translateX(); 水平位移
+f表示translateY() 垂直位移
+*/
+.matrix:hover { -webkit-transform:matrix(0.5,2,0.5,0.5,5,5);}
+.matrix {-webkit-animation:perspective_none 4s infinite linear; -moz-animation:perspective_none 4s infinite linear }
+
+
+.demo_box{
+    -webkit-transition:all 2s 0.5s;
+    -moz-transition:all 2s 0.5s;
+    position:relative;
+    left:10px;
+    width:50px;
+    height:50px;
+    border-radius:50px;
+    margin:10px 0;
+    overflow:hidden;
+}
+.ease{
+    -webkit-transition-timing-function:ease;
+    -moz-transition-timing-function:ease;
+}
+.linear{
+    -webkit-transition-timing-function:linear;
+    -moz-transition-timing-function:linear;
+}
+.ease-in{
+    -webkit-transition-timing-function:ease-in;
+    -moz-transition-timing-function:ease-in;
+}
+.ease-out{
+    -webkit-transition-timing-function:ease-out;
+    -moz-transition-timing-function:ease-out;
+}
+.ease-in-out{
+    -webkit-transition-timing-function:ease-in-out;
+    -moz-transition-timing-function:ease-in-out;
+}
+.cubic-bezier{
+    -webkit-transition-timing-function:cubic-bezier(0.52,0,0.58,1.0);
+    -moz-transition-timing-function:cubic-bezier(0.52,0,0.58,1.0);
+}
+.run{
+    left:500px;
+}                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

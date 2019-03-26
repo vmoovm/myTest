@@ -1,0 +1,183 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+参考备用
+-----------------------------------------------------*/
+
+
+/**/
+#api{
+	width:1200px;
+	margin:0 auto;
+}
+#api #aside{
+	width:360px;
+	float:left;
+	vertical-align:top;
+	
+	margin:30px 0;
+	
+	padding: 3px;
+    background-color: #F5F6F7;
+
+}
+#api #aside .shadow{
+	float:left;
+	border:1px solid #e2e2e2;
+}
+#api #aside .top{
+	padding-bottom:30px;
+	width:100%;
+	float:left;
+	background:#FFF;
+	color:#000;
+	border-top:4px solid #69F;
+}
+#api #aside h2{
+	font-size:18px;
+	margin:30px 0 0 20px;
+}
+#api #aside p{
+margin:3px 0 0 20px;
+font-size:12px;
+font-weight:bold;
+}
+#api #aside dl{
+	width:100%;
+	float:left;
+	border-top:1px solid #e9e9ea;
+}
+#api #aside dt a{
+	text-decoration: none;
+color: #272727;
+line-height:40px;
+background:url(../images/lnavi_s.png) no-repeat 20px 50%;
+background-color:#fff;
+text-indent:40px;
+width:100%;
+float:left;
+}
+
+#api #aside dt.active a{
+	background-image:url(../images/lnavi_s2.png);
+	font-weight:bold;
+	}
+#api #aside dd{
+	display:none;
+	width:100%;
+	float:left;
+	border-top: 1px dashed #E3E3E3;
+	background:#f8f8f8;
+	
+	
+}
+#api #aside dd a{
+	line-height:30px;
+	float:left;
+	text-indent:40px;
+	background:url(../images/lnavi2a.png) no-repeat 30px 50%;
+	
+}
+#api #aside .show{
+	display:block;
+}
+#api #aside dd .option{
+text-decoration: none;
+
+color:#575757;
+}
+#api #aside .active .option{
+	font-weight:bold;
+	color:#ff3300;
+}
+#api #aside .active{
+/*background: #aed6ff;
+    background-image: linear-gradient(90deg,#fff, #aed6ff);*/
+}
+
+#api #aside dd .value{
+	float:right;
+	width:85px;
+overflow: hidden;
+right: 0;
+white-space: nowrap;
+line-height:30px;
+}
+#api #aside dd .namespace{
+	width:185px;
+}
+#api #aside .hljs-string q:before{content: "'";}
+#api #aside .hljs-string q:after{content: "'";}
+
+/**/
+#api #content{
+	float:right;
+	vertical-align: top;
+	padding:0 0 20px 0;
+	width:800px;
+	font-size:13px;
+	line-height:26px;
+color: #444!important;
+margin-top:30px;
+}
+#api .api-box{
+	width:800px;
+}
+#api #content .title{
+	border-bottom:1px solid #CCC;
+	margin-bottom:1em;
+	position:relative;
+	
+}
+
+#api #content .title h1{
+	font-size:24px;
+	font-weight:bold;
+	line-height:3;
+}
+#api #content p{
+	}
+#api #content h2{	
+	border-bottom: 1px dashed #DBDBDB;
+font-size: 14px;
+line-height: 30px;
+font-weight: bold;
+margin: 30px 0 10px 0;
+color:#000;
+}
+
+  #option-value{
+	width:100%;
+	float:left;
+	padding:0 0 2em 0;
+}
+  #option-value dt{
+float:left;	
+}
+  #option-value dd{
+	float:left;
+	margin-right:30px;
+}
+  .swiper-slide{
+	color:#fff;
+	line-height:300px;
+	text-align:center;
+	font-size:50px;
+}
+  .blue-slide{
+	background: #4390EE;
+}
+  .red-slide {
+background: #CA4040;
+}
+  .orange-slide {
+background: #FF8604;
+}
+  .green-slide{background:#49a430;}
+  .pink-slide{background:#973e76;}
+  pre div{
+	line-height:1;
+	width:100%;
+	float:left;
+}

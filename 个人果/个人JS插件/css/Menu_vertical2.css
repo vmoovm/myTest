@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+垂直显示
+======================================================*/
+.menu_vertical2 { border-top:1px #ccc solid; border-bottom:1px #ccc solid;}
+.menu_vertical2 .m_center { width:1024px; margin:0 auto;}
+.menu_vertical2 .m_width { width:200px;}
+
+.menu_vertical2 .m_f_a { background-color:#666; border-top:1px #fff solid; border-radius:5px 5px 0 0;}
+.menu_vertical2 .m_s_a { background-color:#669; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.menu_vertical2 .m_t_a { background-color:#FC0; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.menu_vertical2 .m_m_a { background-color:#6CF; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.menu_vertical2 .m_width a { display:block; height:30px; line-height:30px; color:#fff;}
+.menu_vertical2 .m_first,
+.menu_vertical2 .m_second,
+.menu_vertical2 .m_third,
+.menu_vertical2 .m_more { display:block; width:200px; height:30px; line-height:30px; text-align:center;}
+/*.menu_vertical2 .m_second { background-color:#0F6;}
+.menu_vertical2 .m_third { background-color:#FC0}
+.menu_vertical2 .m_more { background-color:#6CF}*/
+
+.menu_vertical2 .arrow_gray{ background:url(../image/vertical/arrow_ico.png) 175px -56px no-repeat;}
+.menu_vertical2 .arrow_color{ background:url(../image/vertical/arrow_ico.png) 175px 10px no-repeat;}
+.menu_vertical2 .arrow_empty {}
+
+/*======================================================
+垂直右侧显示
+======================================================*/
+.menu_vertical { border-top:1px #ccc solid; border-bottom:1px #ccc solid;}
+.menu_vertical .m_center { width:1024px; margin:0 auto;}
+.menu_vertical .m_width { width:90px;}
+
+.menu_vertical .m_f_a {}
+.menu_vertical .m_s_a { display:none;}
+.menu_vertical .m_t_a { display:none;}
+.menu_vertical .m_m_a { display:none;}
+
+.menu_vertical .m_first,
+.menu_vertical .m_second,
+.menu_vertical .m_third,
+.menu_vertical .m_more { display:block; width:90px; height:30px; line-height:30px; text-align:center; background-color:#F60}
+.menu_vertical .m_second { background-color:#0F6;}
+.menu_vertical .m_third { background-color:#FC0}
+.menu_vertical .m_more { background-color:#6CF}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

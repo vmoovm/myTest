@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>树形结构</title>
+		<script src="js/vue.min.js"></script>
+		<script src="js/axios.min.js"></script>
+	</head>
+		<body>
+		
+		<div class="zcontainer" id="app">
+			<p class="" style="height:2px; background:#e60012;"></p>
+			<div class="wrap">
+				<ul class="zmenu">
+					<menu1 v-for="(tree, index) in getTree.organizeList" :key="index" :cur="index" :menudata="tree"></menu1>
+				</ul>
+			</div>
+		</div>
+		
+		<script type="text/x-template" id="menu-sub">
+			<li>
+				<!--<h2>{{menudata}}</h2>-->
+				<h1 class="zitem-row"  v-show="!menudata.edit" :class="{zbold: isFolder}" @click="toggle()" @dblclick="changeFile()" @mouseenter="showModify()" @mouseleave="hideModify()">
+					<i v-if="isFolder" :class="[open ? 'ztrangle_down' : 'ztrangle_right']"></i><span class="zmenu-tt" v-text="menudata.orgName"></span> <span v-show="isModify" class="zmenu-modify" @click.stop="edit(menudata)">修改</span>
+				</h1>
+				<p  class="zmenu-newItem" v-show="menudata.edit"><input type="text" name="" id="" :value="menudata.orgName" v-model="tempName" placeholder="修改" /><span @click="modifyChild(menudata)"></span><em @click="modifyCancel(menudata)"></em></p>
+				<ul class="zmenu-sub" v-if="menudata.organizeList" v-show="open">
+					<menu1 v-for="(tree, index) in menudata.organizeList" :key="index" :menudata="tree"></menu1>
+					<li class="zmenu-newItem" v-show="isNewSub"><input type="text" name="" id="" v-model="newName" value="" placeholder="新建" /><span @click="addChild()"></span><em @click="hideInput()"></em></li>
+					<li v-show="!isNewSub" class="zitem-add" @click="showInput()"><em>+</em><span>添加<span></li>
+				</ul>
+			</li>
+		</script>
+		
+		<script type="text/javascript">
+			Vue.component('menu1', {
+				template: '#menu-sub',
+				props: {
+					menudata: Array,
+					cur: Number
+				},
+				data: function () {
+					return {
+						open: false,
+						isNewSub: false, // 是否命名名称
+						newName: '', // 新名称
+						isEdit: false, // 是否要编辑
+						tempName: '', // 临时存储修改变量名
+						isModify: false // 是否显示修改按钮
+					}
+				},
+				computed: {
+					// 时时计算是否有子菜单
+					isFolder: function () {
+						return this.menudata.userCount || (this.menudata.organizeList && this.menudata.organizeList.length)
+					}
+				},
+				methods: {
+					// 打开显示子菜单
+					toggle: function () {
+						var _this = this
+						// 防止重复请求,仅首次请求
+						if(this.menudata.userCount && !this.menudata.organizeList) {
+							axios.get('js/secondData.json').then(function(res){
+								if(res.data.success) {
+									console.log(res.data.data.organizeList)
+									// 每一个菜单追加可编辑字段，修改菜单时用
+									for(var i = 0; i < res.data.data.organizeList.length; i++) {
+										_this.$set(res.data.data.organizeList[i], 'edit', false)
+									}
+									// 将请求的数据追加到驱动数据中
+									_this.$set(_this.menudata, 'organizeList', res.data.data.organizeList)
+									console.log(_this.menudata)
+								} else {
+									alert('res error')
+								}
+							}).catch(function(err){
+								console.log(err)
+							})
+						}
+						if (this.isFolder) {
+							this.open = !this.open
+						}
+					},
+					//创建文件夹，将没有文件夹属性的menudata加organizeList这个属性，使其变为文件夹可打开
+					changeFile: function () {
+						if (!this.isFolder) {
+							Vue.set(this.menudata, 'organizeList', []) //使用set来增加menudata的organizeList属性，使其变为响应的
+							this.showInput() // 默认添加一个子文件 
+							this.open = true
+						}
+					},
+					// 显示命名
+					showInput: function () {
+						this.isNewSub = true
+					},
+					// 创建一个子文件 orgName默认为'新组织'
+					addChild: function () {
+						this.menudata.organizeList.push({
+							orgName: this.newName ? this.newName : '新组织'
+						})
+						this.newName = ''
+						this.hideInput()
+					},
+					// 关闭命名
+					hideInput: function () {
+						this.isNewSub = false
+					},
+					// 重新编辑菜单
+					edit: function (data) {
+						this.$set(data, 'edit', true)
+						this.tempName = data.orgName
+					},
+					// 确认修改菜单
+					modifyChild: function (data) {
+						this.$set(data, 'orgName', this.tempName)
+						this.$set(data, 'edit', false)
+					},
+					// 取消修改菜单
+					modifyCancel: function (data) {
+						this.$set(data, 'edit', false)
+					},
+					// 显示编辑按钮
+					showModify: function () {
+						this.isModify = true
+					},
+					//隐藏编辑按钮
+					hideModify: function () {
+						this.isModify = false
+					}
+				}
+			})
+		</script>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data: {
+					getTree: {
+						organizeList: [
+							{
+								orgName: ''
+							}
+						]
+					}
+				},
+				mounted: function(){
+					var _this = this
+					axios.get('js/firstData.json').then(function(res){
+						if(res.data.success) {
+							_this.getTree = res.data.data
+							for(var i = 0; i < _this.getTree.organizeList.length; i++) {
+								_this.$set(_this.getTree.organizeList[i], 'edit', false)
+								console.log(_this.getTree.organizeList[i])
+							}
+							console.log(_this.getTree)
+						} else {
+							alert('res error')
+						}
+					}).catch(function(err){
+						console.log(err)
+					})
+				}
+			})
+		</script>
+		<style type="text/css">
+			div, p, h1, h2, h3, h4, ul, ol, dl, dd, dt, li { padding:0; margin:0;}
+			li, ol { float:none; list-style: none;}
+			ul, dl { list-style-position: outside; list-style-type: none;}
+			body {font: 300 1em/1 Microsoft Yahei, PingFang SC, Lantinghei SC, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans; color: #444;}
+			.zbold {font-weight: bold; font-size: 14px;}
+			
+			
+			.zcontainer { width: 300px; margin:40px auto;}
+			.wrap { width: 100%; height: 500px; overflow:auto;}
+			.zmenu { border:1px #ebebeb solid;}
+			.zmenu-sub { padding-left: 30px;}	
+			.zitem {line-height: 44px;cursor: pointer;}
+			.zitem-row { font-size:14px;  white-space: nowrap;}
+			.zitem-add { line-height: 44px; cursor: pointer;  white-space: nowrap;}
+			.zitem-add em { font-style: normal;}
+			.zmenu-newItem { white-space: nowrap;}
+			.zmenu-newItem input { width:180px; height: 38px; border:1px #ccc solid;}
+			.zmenu-newItem span,
+			.zmenu-newItem em { display:inline-block; width: 40px; height:40px; vertical-align: middle; background-position: center center; background-repeat:no-repeat;}
+			.zmenu-newItem span { background-image:url(img/ok.png)}
+			.zmenu-newItem em { background-image:url(img/no.png)}
+			.zmenu-tt { display:inline-block; vertical-align:middle; line-height:44px; white-space: nowrap;}
+			.zmenu-modify { display: inline-block; vertical-align: middle; padding-left: 6px; font-size: 14px; color: #09f;}
+			.ztrangle_down,
+			.ztrangle_right { display: inline-block; width:18px; height:44px; vertical-align:middle;}
+			.ztrangle_down { background:url(img/trangle_down.png) 0 center no-repeat;}
+			.ztrangle_right { background:url(img/trangle_right.png) 0 center no-repeat;}
+		</style>
+	</body>
+</html>

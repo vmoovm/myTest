@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="code"></div> 
+		<img id="img"/>
+		
+		<script type="text/javascript">
+		    var qrcode=document.getElementById("code").qrcode({ 
+		        render:'canvas||table',
+		        width: 200, //宽度 
+		        height:200, //高度 
+		        text: "http://www.baidu.com" //任意内容 
+		    }).style.display='none'; 
+		    var canvas=qrcode.getElementsByTagName('canvas')[0].get(0);  
+		    //如果有循环,此句必不可少 qrcode.find('canvas').remove();
+		    var data = canvas.toDataURL('image/jpg');
+		    document.getElementById("img").setAttribute('src', data)
+		    // $('#img').attr('src',data) ;
+		    saveFile(data,"fd范德萨范德萨");
+		
+		    //转为图片的方法,需要上门的data
+		    function saveFile(data,filename){
+		        var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+		        save_link.href=data;
+		        save_link.download=filename;
+		        var event=document.createEvent('MouseEvents');
+		        event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+		        save_link.dispatchEvent(event);
+		    };
+		</script>
+	</body>
+</html>

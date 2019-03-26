@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+选择题
+-----------------------------------------------------*/
+.zselectTopic {}
+.zse_tabBox { margin-top: 0.351rem; border-top: 1px #dedede solid;}
+.zse_t { padding: 0 0.2808rem; border-bottom: 1px #dedede solid; background: #efefef; line-height: 0.8775rem; font-size: 0.3276rem; color: #666;}
+.zse_box {}
+.zse_row { display: -webkit-box; display: box; padding: 0.117rem 0.351rem; border-bottom: 1px #dedede solid; background-color: #fff; line-height: 0.6435rem; font-size: 0.3276rem;}
+.zse_row:first-child {border-top: 1px #dedede solid;}
+.zse_con { -webkit-box-flex: 1; }
+.zse_bg { background-color: #d5ecfe;}
+/*右侧可选择加东西，备用样式*/
+.zse_num { display: none; width: 0.8775rem; text-align: right;}
+.zse_num i,.zse_num span { display: inline-block; vertical-align: middle;}
+.zse_num span { padding-right: 0.0468rem; color: #929292;}
+.zse_num i { color: #f00;}
+.zse_row:last-child .zse_num { display: block;}
+/*添加选项*/
+.zse_add { padding:0.468rem 0.2808rem; text-align: right;}
+.zse_add span,.zse_add a { display: inline-block; vertical-align: middle;}
+.zse_add a { width: 0.468rem; height: 0.468rem; background: url(../images/add_30.png) no-repeat; background-size: 0.4446rem;}
+.zse_add span { height: 0.468rem; padding-left: 0.1404rem; padding-right: 0.468rem; line-height: 0.3978rem; font-size: 0.3276rem;}
+
+/*----------------------------------------------------
+简答题
+-----------------------------------------------------*/
+.zshortAnswer {}
+
+/*----------------------------------------------------
+编辑题类型
+-----------------------------------------------------*/
+.zeditQuestion {}
+.zed_box { display: -webkit-box; -webkit-box-align: center; padding: 0.468rem 0.2808rem 0.117rem; text-align: center;}
+.zed_box li { -webkit-box-flex: 1; height: 0.819rem; margin: 0 0.234rem; padding-top: 0.0117rem; border:1px #09f solid; border-radius: 0.117rem; line-height: 0.819rem; text-align: center; color: #09f; font-size: 0.351rem;}
+.zed_box li.zed_cur { background: #09f; color: #fff;}

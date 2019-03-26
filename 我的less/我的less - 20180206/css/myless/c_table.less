@@ -1,0 +1,11 @@
+// 依赖关系: a_background_color.less
+
+/*-----------------------------------------------------
+table
+-----------------------------------------------------*/
+.table (@borderColor: @bColor, @thBg: @bgColor-default) {
+	td ,
+	th { padding: 5px; .border(@borderColor);}
+	th { background-color: @thBg;}
+}
+.table { .table();}

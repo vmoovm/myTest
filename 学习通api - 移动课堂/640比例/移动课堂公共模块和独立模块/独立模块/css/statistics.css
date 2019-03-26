@@ -1,0 +1,80 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+全是统计啊
+-----------------------------------------------------*/
+/*大屏*/
+.zscreen_columns { display: -webkit-box; background: #fff;}
+.zscreen_equal { -webkit-box-flex: 1;}
+.zscreen_equal:not(:first-child) { border-left: 1px #dedede solid;}
+/*统计*/
+.zstatisitics {}
+.zst_key { padding:1rem 1.2rem 0rem;  font-size: 1.4rem;}
+.zst_row { display: -webkit-box; padding-top: 0.6rem; border-top: 1px #dedede solid;}
+.zst_p { -webkit-box-flex:1; }
+.zst_p span { /*padding: 0.5rem 0 1rem 0;*/ }
+.zst_p span i { color:#3cba6e }
+.zst_score { text-align: right; color: #929292;}
+/*已投/未投 已答/未答*/
+.zst_TaD {  padding:0 1.2rem; font-size: 1.4rem; color: #09f;}
+.zst_TaD i { color:#3cba6e;}
+/*图表*/
+.zst_chart { background: #fff; text-align: center;}
+
+/*选项统计*/
+.zst_option { padding: 1.2rem; border-top: 1px #dedede solid; background: #fff;}
+.zst_item { margin-top: 1.2rem;}
+.zst_h { font-size: 1.4rem;}
+.zst_progress { display: -webkit-box;}
+.zst_progressBar { -webkit-box-flex: 1; height: 1.2rem; margin-top: 0.4rem; border-radius: 0.6rem; overflow: hidden; background: #dedede;}
+.zst_progressBar em { display: block; height: 100%; width: 0rem; background: #09f;}
+.zst_num { width: 4rem; padding-top: 0.2rem; padding-left: 1.5rem; line-height: 1.8rem; color: #09f; font-size: 1.4rem;}
+.zst_progressVal { width: 4rem; padding-top: 0.2rem; padding-right: 0.6rem; line-height: 1.8rem; text-align: right; font-size: 1.4rem; color: #666;}
+.zst_shortAnswer {font-size: 1.2rem; line-height: 2rem;}
+
+/*教师查看该学生结果*/
+/*.zst_box { padding:1.2rem 0; border-top: 1rem #e4e4e4 solid; overflow: hidden; overflow-y: auto;}*/
+.zst_box { }
+.zst_th { display: -webkit-box; -webkit-box-pack: justify; margin-bottom: 1.2rem; padding: 0 1.2rem; border-bottom: 1px #e4e4e4 solid; line-height: 3.5rem; font-size: 1.4rem; color: #666;}
+.zst_th dt { -webkit-box-flex: 1;}
+.zst_th dd { text-align: right;}
+.zst_th a { color: #09f;}
+.zst_reply {  padding:1.2rem 0; border-top: 1rem #e4e4e4 solid;}
+/*测验统计*/
+.zpollStatistics {display: -webkit-box;}
+.zpollStatistics_t {-webkit-box-flex: 1; padding: 1rem 0; padding-bottom: 0; }
+.zpollStatistics_t h2 { padding:0.6rem 1.2rem 0.65rem; line-height: 2.5rem; font-size: 1.4rem; color: #333; word-wrap:break-word; word-break:break-word;}
+.zpollStatistics_t h2 span { color: #929292;}
+.zpollTime { height: 2.4rem; padding: 1.6rem 1.2rem 1rem; line-height: 2.4rem; text-align: right; font-size: 1.4rem; color: #f00;}
+.zpollTime i,.zpollTime span { display: inline-block; vertical-align: middle;}
+.zpollTime i { width: 2.4rem; height: 2.4rem; margin-right: 0.4rem; background: url(../images/clock_03.png) center no-repeat; background-size: 2rem;}
+
+.zsituation { padding: 0 1.2rem 1.2rem; border-bottom: 1px #dedede solid; font-size: 1.4rem; color: #09f;}
+.zratio { padding: 1.2rem; border-top: 1px #dedede solid; border-bottom: 1px #dedede solid; background: #fff;}
+.zratio_t { line-height: 2rem; font-size: 1.4rem; color: #929292;}
+.zratio_box { padding: 1rem 0rem; overflow: hidden;}
+.zratio_item { float: left; width: 6.2rem; width: 48%;}
+.zratio_circle { width: 6.2rem; height: 6.2rem; /*border: 0.1rem #09f solid; border-radius: 50%;*/ text-align: center;}
+.zratio_circle dt { padding-top: 0.5rem; line-height: 2rem; font-size: 1.4rem; color: #09f;}
+.zratio_circle dd { line-height: 2rem; font-size: 1rem; color: #929292;}
+.zratio_num { line-height: 2rem; text-align: center; font-size: 1.2rem; color: #333;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

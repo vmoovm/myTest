@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+table {border-collapse:collapse;} 
+b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+.clearfix{overflow:hidden;zoom:1;}
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1,h2,h3,h4 { font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; font-size:12px; font-weight:normal;}
+body {font-size:14px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#414141; background:#fff;}
+input,select,textarea{vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+a { color: #555; text-decoration: none; }
+a:hover { color:#2e95c2; text-decoration: underline; }
+/*-----------------------------------------------------
+Global
+-----------------------------------------------------*/
+.zcenter1000 { width:1000px; margin:0 auto;}
+.zmain { background:url(../images/body_bg_11.gif) repeat;}
+.zwhite,
+.zwhite a { color:#fff;}
+.zgray,
+.zgray a { color:#999;}
+.zred,
+.zred a { color:#c00;}
+.zblue,
+.zblue a { color:#2e95c2;}
+/*-----------------------------------------------------
+Header
+-----------------------------------------------------*/
+.zheader { height:90px; background-color:#fff;}
+.zh_box { width:1000px; margin:0 auto;}
+.zh_logo { float:left; width:520px; padding-top:15px;}
+.zh_search { float:left; width:352px; padding-left:21px; padding-top:27px;}
+.zh_s_bg { height:38px; background:url(../images/video_06.gif) no-repeat;}
+.zh_s_input { width:285px; height:38px; padding-left:5px; border:0; background:none; color:#999; line-height:38px;}
+.zh_s_btn { width:62px; height:38px; border:0; background:none; cursor:pointer;}
+.zh_login { float:left; width:92px; padding-left:14px; padding-top:25px;}
+.zh_l_loading { display:inline-block; width:91px; height:39px; font-size:16px;}
+.zh_l_loading a { display:inline-block; width:91px; height:39px; border-radius:2px; background-color:#2e95c2; text-align:center; line-height:39px;}
+.zh_l_loading a:hover { background-color:#1fa8e4;}
+.zh_login_after { float:left; width:92px; padding-left:14px; padding-top:25px; text-align:right;}
+.zh_l_portrait { float:right; display:block; width:38px; height:38px; border:1px #ccc solid;}
+.zh_l_logout { float:right; display:block; height:38px; padding-left:10px; line-height:38px;}
+/*-----------------------------------------------------
+Nav
+-----------------------------------------------------*/
+.znav { height:40px; background-color:#000; font-size:16px;}
+.zn_li { display:inline;}
+.zn_li a { display:inline-block; height:37px; padding-left:36px; padding-right:36px;_padding-bottom:10px; border-bottom:2px #000 solid; line-height:37px; color:#fff;}
+.zn_cur {}
+.zn_cur a ,.zn_li a:hover { color:#fff; text-decoration:none; padding-left:36px; padding-right:36px; _padding-bottom:10px; border-bottom:2px #e99b12 solid; line-height:37px;}
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.zfooter{ color:#ffffff; background:#111213; padding:20px 0 30px 0; text-align:center;}
+.zf_p{text-align:center;color:#ffffff;line-height:30px;}
+
+

@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+field不带下划线普通字段
+-----------------------------------------------------*/
+.zfield { padding:0.234rem 0.2808rem 0rem;  font-size: 0.3276rem;}
+.zfield_row { display: -webkit-box; padding-top: 0.1404rem;}
+.zfield dt {-webkit-box-flex:1;}
+.zfield dt em { color: #f00;}
+.zfield dd { font-size: 0.3276rem;}
+.zfield dd a { color: #09f;}
+
+
+.zscore { padding: 0 0.2808rem;}
+.zscore_row { padding: 0.0702rem 0.2808rem; border-bottom: 1px #dedede solid;}
+.zscore_info { display: -webkit-box; display: box;}
+.zscore_pic { width: 0.936rem; height: 0.936rem; padding: 0.0468rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+.zscore_pic img { width: 0.936rem; border-radius: 50%;}
+.zscore_txt { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack:center; margin-left: 0.234rem;}
+.zscore_txt:only-child {margin-left: 0;}
+.zscore_th { display: -webkit-box; -webkit-box-pack: justify;}
+.zscore_th h2 {-webkit-box-flex:1; padding-right:0.468rem; font-size: 0.3276rem; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.zscore_th p { font-size: 0.2808rem; color: #333;}
+.zscore_th span { color: red; font-size: 0.3276rem;}
+.zscore_evaluate { padding: 0.1872rem 0; line-height: 0.3744rem; color: #777; font-size: 0.2808rem;}
+.zscore_evaluate span { color: #333;}
+.zscore_empty { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; height: 2.808rem; -webkit-box-align: center; text-align: center; font-size: 0.3276rem; color: #929292;}

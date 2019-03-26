@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'myproject';
+  src:  url('../fonts/myproject.eot?frtfbr');
+  src:  url('../fonts/myproject.eot?frtfbr#iefix') format('embedded-opentype'),
+    url('../fonts/myproject.ttf?frtfbr') format('truetype'),
+    url('../fonts/myproject.woff?frtfbr') format('woff'),
+    url('../fonts/myproject.svg?frtfbr#myproject') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'myproject' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-editT:before {
+  content: "\e927";
+}
+.icon-recycle:before {
+  content: "\e928";
+}
+.icon-shops:before {
+  content: "\e926";
+}
+.icon-minus:before {
+  content: "\e924";
+}
+.icon-plus:before {
+  content: "\e925";
+}
+.icon-magnifier:before {
+  content: "\e921";
+}
+.icon-ellipsis:before {
+  content: "\e922";
+}
+.icon-settting:before {
+  content: "\e923";
+}
+.icon-classify:before {
+  content: "\e91e";
+}
+.icon-shopping:before {
+  content: "\e91f";
+}
+.icon-home:before {
+  content: "\e920";
+}
+.icon-scan:before {
+  content: "\e91d";
+}
+.icon-back:before {
+  content: "\e903";
+}
+.icon-arrow:before {
+  content: "\e91c";
+}
+.icon-received:before {
+  content: "\e917";
+}
+.icon-evaluate:before {
+  content: "\e918";
+}
+.icon-payment:before {
+  content: "\e919";
+}
+.icon-receiving:before {
+  content: "\e91a";
+}
+.icon-return:before {
+  content: "\e91b";
+}
+.icon-help:before {
+  content: "\e913";
+}
+.icon-address:before {
+  content: "\e914";
+}
+.icon-order:before {
+  content: "\e915";
+}
+.icon-favorite:before {
+  content: "\e916";
+}
+.icon-safe:before {
+  content: "\e900";
+}
+.icon-phone:before {
+  content: "\e901";
+}
+.icon-personal:before {
+  content: "\e902";
+}
+.icon-tidings:before {
+  content: "\e904";
+}
+.icon-edit:before {
+  content: "\e905";
+}
+.icon-laugh:before {
+  content: "\e906";
+}
+.icon-lock:before {
+  content: "\e907";
+}
+.icon-email:before {
+  content: "\e908";
+}
+.icon-right:before {
+  content: "\e909";
+}
+.icon-time:before {
+  content: "\e90a";
+}
+.icon-money:before {
+  content: "\e90b";
+}
+.icon-brand:before {
+  content: "\e90c";
+}
+.icon-message:before {
+  content: "\e90d";
+}
+.icon-synthetic:before {
+  content: "\e90e";
+}
+.icon-luck:before {
+  content: "\e90f";
+}
+.icon-service:before {
+  content: "\e910";
+}
+.icon-more:before {
+  content: "\e911";
+}
+.icon-car:before {
+  content: "\e912";
+}
+.icon-html5:before {
+  content: "\eae5";
+}
+

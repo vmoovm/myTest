@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+弹层
+-----------------------------------------------------*/
+.zco_layer { position:absolute; left:0; top:0; width:100%; height:100%; background:url(../image/layer/opacity50.png) repeat; display:none;}
+.ztext_middle { width:100%; height:100%; *position:relative; *display:block!important;display:table!important; }
+.ztext_m_outer { position:static;  *position:absolute;display:table-cell; vertical-align:middle;  *display:block;top:50%; width:100%; }
+.ztext_m_inside { position:relative; top:-50%; text-align:center; width:100%; }
+.zwaiting { display:inline-block; height:124px; padding-left:174px; background:url(../image/layer/201331013354986080.gif) no-repeat; line-height:124px; font-size:22px; color:#fff;}

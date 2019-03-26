@@ -1,0 +1,11 @@
+{
+	"data":{
+		"organizeList":[
+			{"deptId":1385,"fOrgId":0,"id":1,"inserttime":1522740296000,"orgChain":"1/","orgName":"组织1","orgNameChain":"组织1/","updatetime":1525915391000,"userCount":5},
+			{"deptId":1385,"fOrgId":0,"id":2,"inserttime":1523353710000,"orgChain":"2/","orgName":"组织2","orgNameChain":"组织2/","updatetime":1525915395000,"userCount":5},
+			{"deptId":1385,"fOrgId":0,"id":3,"inserttime":1523353730000,"orgChain":"3/","orgName":"组织3","orgNameChain":"组织3/","updatetime":1525915399000,"userCount":1},
+			{"deptId":1385,"fOrgId":0,"id":39,"inserttime":1526383811000,"orgChain":"39/","orgName":"组织啊","orgNameChain":"组织啊/","updatetime":1526383813000,"userCount":0}
+		]
+	},
+	"success":true
+}

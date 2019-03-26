@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全部资源（列表显示）</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/right.js"></script>
+</head>
+<body>
+<!--header start-->
+<div class="zheader">
+  <div class="headerwrap">
+    <div class="headerwrap_1">
+      <div class="menu">
+        <div class="navshow" style="margin-right: 0px;">
+          <ul>
+            <li class="zr_t_back"><a href="#"></a></li>
+            <li class="m_li"><a href="#">首页</a></li>
+            <li class="m_li"><a href="">统计</a></li>
+            <li class="m_li"><a href="">资料</a></li>
+            <li class="m_li"><a target="_blank" href="">互动课堂</a></li>
+            <li class="m_li"><a href="">作业</a></li>
+            <li class="m_li"><a href="">考试</a></li>
+            <li class="m_li"><a href="">PBL</a></li>
+            <li class="m_li"><a href="">讨论</a></li>
+            <li class="m_li"><a class="current" href="">设置</a></li>
+          </ul>
+        </div>
+      </div>
+      <h1 class="zh_h1" title="java语言设计">如何追到女神</h1>
+    </div>
+  </div>
+</div>
+<!--header end-->
+<!--main start-->
+<div class="RightCon">
+  <div class="radiusBG mng_smile clearfix">
+    <div class="fl nav_mng">
+      <ul class="inner_nav_mng">
+        <li>
+          <p class="icons_il icon_ca"><a class="cur" href="#">全部文件</a></p>
+        </li>
+        <li>
+          <p class="icons_il icon_co"><a href="#">教材教参</a></p>
+        </li>
+        <li>
+          <p class="icons_il icon_te"><a href="#">视频</a></p>
+        </li>
+        <li>
+          <p class="icons_il icon_po"><a href="#">期刊</a></p>
+        </li>
+        <li>
+          <p class="icons_il icon_lw"><a href="#">论文</a></p>
+        </li>
+        <li>
+          <p class="icons_il icon_kj"><a href="#">课件</a></p>
+        </li>
+        <li>
+          <dl class="znewAdd">
+            <dd>
+              <p class="zn_bg"><a href="#"></a></p>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <p class="zn_mysource"><a class="zn_m_btn" href="#">我的资源</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="fr zresource">
+      <div class="zr_box">
+        <div class="zr_top">
+          <ul>
+            <li class="fl zr_t_search">
+              <dl class="zr_t_search">
+                <dd class="fl zr_t_box">
+                  <input class="zr_t_input" name="" type="text" />
+                </dd>
+                <dd class="fl">
+                  <input class="zr_t_sbtn" name="" type="button" value="本地搜索" />
+                </dd>
+                <div class="clear"></div>
+              </dl>
+            </li>
+            <li class="fl zr_t_left18"> <span class="zr_t_btn zr_t_btn74"> <a class="zr_t_btn_right zr_t_btn74" href="#">资源库</a> </span> </li>
+            <li class="fl zr_t_left6"> <span class="zr_t_btn zr_t_btn74"> <a  class="zr_t_btn_right zr_t_btn74" href="#">URL</a> </span> </li>
+            <li class="fl zr_t_left6"> <span class="zr_t_btn zr_t_btn74"> <a class="zr_t_btn_right zr_t_btn74" href="#">本地上传</a> </span> </li>
+            <li class="fl zr_t_left6"> <span class="zr_t_btn zr_t_btn86"> <a class="zr_t_btn_right zr_t_btn86" href="#">新建文件夹</a> </span> </li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="zr_bottom">
+          <div class="ZYCon">
+            <table cellpadding="0" cellspacing="0" class="zlTable" id="zlTable">
+              <thead>
+                <tr>
+                  <th width="20" align="center"><input name="" type="checkbox" value="" /></th>
+                  <th align="left"> <span>文件名</span>
+                    <div style="display:none;" class="selectd" id="selected"> <span class="fl" style="margin-right:10px;;">已选中9个文件/文件夹</span> <a href="javascript:void(0)" class="morebtn"> <span>更多</span> <b></b>
+                      <ul>
+                        <li>权限</li>
+                        <li>删除</li>
+                      </ul>
+                      </a>
+                      <div class="clear"></div>
+                    </div>
+                  </th>
+                  <th width="90" align="left">上传者</th>
+                  <th width="90" align="left">大小</th>
+                  <th width="66" align="left">创建日期</th>
+                  <!--当前大图标显示样式zr_t_b_cur，当前小图标显示样式zr_t_i_cur，去掉当前样式鼠标滑过效果启作用，添加上当前样式当前状态启作用，鼠标滑过效果失效-->
+                  <th width="52"><span class="zr_t_block"><a href="#"></a></span><span class="zr_t_inline zr_t_i_cur"><a href="#"></a></span></th>
+                </tr>
+              </thead>
+              <tbody id="tableId02">
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr download" title="下载"></a> </div>
+                    <i><img src="images/data/music.gif" width="20" height="18"/></i> <a href="javascript:void(0)">课程基础资料夹</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="Hover">
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/excl.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a</td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/exe.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/flv.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/music.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="Hover">
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/pdf.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li><span class="zjurisdiction">权限</span>
+                            <dl class="zj_box">
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <label>
+                                  <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" />
+                                  单选</label>
+                              </dd>
+                              <dd>
+                                <input name="" type="checkbox" value="" />
+                              </dd>
+                            </dl>
+                          </li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/ppt.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/rar.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/share.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/star.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/txt.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/word.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/video.gif" width="20" height="18"/></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><input name="" type="checkbox" value="" /></td>
+                  <td align="left"><div class="fr zybtn"> <a href="javascript:void(0)" class="fr more" title="更多"></a> <a href="javascript:void(0)" class="fr download" title="下载"></a> <a href="javascript:void(0)" class="fr read" title="阅读"></a>
+                      <div class="moreCon">
+                        <ul>
+                          <li>权限</li>
+                          <li>删除</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <i><img src="images/data/url.gif" width="20" height="18"></i> <a href="javascript:void(0)">2000年考研英语全真试卷</a></td>
+                  <td class="font12">我自己</td>
+                  <td class="font12">4.23 KB</td>
+                  <td class="font12">2013-10-31</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="zr_b_page" align="center">
+            <table class="zr_b_table">
+              <tr>
+                <td width="100"><a href="#">上一页</a></td>
+                <td><span class="zr_b_span"><a href="#">1</a></span><span class="zr_b_span"><a href="#">2</a></span><span class="zr_b_span"><a href="#">3</a></span><span class="zr_b_span"><a href="#">4</a></span></td>
+                <td width="100"><a href="#">下一页</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!--main end-->
+</body>
+</html>

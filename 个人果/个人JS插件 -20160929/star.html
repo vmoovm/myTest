@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jquery评星</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/star.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/star.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	//实例一：
+	$('.t1').star({
+		subElement:'li',//子标签名
+		css_off:'zs_t_r_gray',//默认效果样式名
+		css_on:'zs_t_r_color'//当前效果样式名
+	});
+	//实例二：
+	$('.t2').star({
+		subElement:'dd',
+		css_off:'zs_t_r_gray',
+		css_on:'zs_t_r_color'
+	});
+
+});
+</script>
+</head>
+<body>
+<div class="zs_i_infor">
+  <ul>
+    <li>传id或class均可</li>
+    <li>subElement:'li',//子标签名</li>
+    <li>class_off:'zs_t_r_gray',//默认效果样式名</li>
+    <li>class_on:'zs_t_r_color'//当前效果样式名</li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+<div class="zs_i_infor">
+	<h2>实例一：</h2>
+  <ul  class="zs_t_mouseover t1" id="zs_score">
+    <li class="zs_t_r_color" title="很差">&nbsp;</li>
+    <li class="zs_t_r_gray" title="较差">&nbsp;</li>
+    <li class="zs_t_r_gray" title="一般">&nbsp;</li>
+    <li class="zs_t_r_gray" title="推荐">&nbsp;</li>
+    <li class="zs_t_r_gray" title="力荐">&nbsp;</li>
+    <div class="clear"></div>
+  </ul>
+  <h2>实例一：</h2>
+  <ul  class="zs_t_mouseover t1" id="zs_score">
+    <li class="zs_t_r_color" title="很差">&nbsp;</li>
+    <li class="zs_t_r_color" title="较差">&nbsp;</li>
+    <li class="zs_t_r_gray" title="一般">&nbsp;</li>
+    <li class="zs_t_r_gray" title="推荐">&nbsp;</li>
+    <li class="zs_t_r_gray" title="力荐">&nbsp;</li>
+    <div class="clear"></div>
+  </ul>
+  <h2>实例二：</h2>
+  <ul>
+    <li  class="zs_t_mouseover2">
+    	<dl id="zs_score1" class="t2">
+        	<dd class="zs_t_r_color" title="很差">&nbsp;</dd>
+            <dd class="zs_t_r_gray" title="较差">&nbsp;</dd>
+            <dd class="zs_t_r_gray" title="一般">&nbsp;</dd>
+            <dd class="zs_t_r_gray" title="推荐">&nbsp;</dd>
+            <dd class="zs_t_r_gray" title="力荐">&nbsp;</dd>
+            <div class="clear"></div>
+        </dl>
+    </li>
+    
+  </ul>
+</div>
+</body>
+</html>

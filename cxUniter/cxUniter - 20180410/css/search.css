@@ -1,0 +1,11 @@
+/*-----------------------------------------------------
+search
+-----------------------------------------------------*/
+.cx_search { padding: .22rem .3rem;}
+.cx_search_box { display: -webkit-box; -webkit-box-align: center; position: relative; height: .56rem; border-radius: .56rem; background-color: #f9f9f9;}
+.cx_search_box a { display: none; position: absolute; left: 0; top: 0; height: .56rem; width: .76rem;}
+.cx_search_box input[type='text'] { display: block; -webkit-box-flex: 1; height: .56rem; line-height: .56rem;  padding-left: 0; border: none; border-radius: .56rem; background:url(../images/magnifier@2x.png) center no-repeat; background-size: 1.12rem .33rem; text-align: center; color: #b3b3b3; font-size: .28rem;}
+.cx_search_box input[type='text']::-webkit-input-placeholder { padding-left: .5rem; line-height: .56rem; }
+.cx_search_focus a { display: block; }
+.cx_search_focus input[type='text'] { padding-left: .76rem; background-position: .26rem center; text-align: left; color: #333;}
+.cx_search_focus input[type='text']::-webkit-input-placeholder { padding-left: .0rem; line-height: .56rem; }

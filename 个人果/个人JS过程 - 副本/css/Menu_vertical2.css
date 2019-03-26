@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+menu
+======================================================*/
+.menu { border-top:1px #ccc solid; border-bottom:1px #ccc solid;}
+.m_center { width:1024px; margin:0 auto;}
+.m_width { width:200px;}
+
+.m_f_a { background-color:#666; border-top:1px #fff solid; border-radius:5px 5px 0 0;}
+.m_s_a { background-color:#669; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.m_t_a { background-color:#FC0; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.m_m_a { background-color:#6CF; border-top:1px #fff solid; border-radius:5px 5px 0 0; display:none;}
+.m_width a { display:block; height:30px; line-height:30px; color:#fff;}
+
+
+.m_first,.m_second,.m_third,.m_more { display:block; width:200px; height:30px; line-height:30px; text-align:center;}
+.m_second {}
+.m_third {}
+.m_more {}
+
+.arrow_gray{ background:url(../image/menu/arrow_ico.png) 175px -56px no-repeat;}
+.arrow_color{ background:url(../image/menu/arrow_ico.png) 175px 10px no-repeat;}
+
+.arrow_empty {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

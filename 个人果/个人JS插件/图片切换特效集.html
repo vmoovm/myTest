@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../HCQuery/css/basic.css"/>
+<link rel="stylesheet" type="text/css" href="css/img_effects.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/img_effects.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#move').imgEffects({
+			imgW:990,//必填项，图片宽
+			imgH:350,//必填项，图片高
+			//imgSpeed:3000,//选填项，图片切换间隔 ，默认为3秒
+			//effectSpeed:500,//选填项，效果过渡速度，默认为500毫秒
+			zidingyi:[2,21,20]//可选项，自定义几种动画，默认为空数组，必须填写大于等于正整数或为空白
+			//sort:true,//选填项，顺序,分为按顺序切换效果和随机切换效果，默认为true为 顺序，false为随机
+			//sortN:1//选填项，顺序起效时，记录效果坐标，计数器作用，与sort一同使用，true起作用，默认为-1，改值会影响第一个切换效果
+			//cur:1,//选填项，当前图片， 默认为第一张
+			//ele:'<li class="btn_off"></li>'//选填项,默认追加按钮为li
+		});
+	})
+</script>
+<title>图片切换集</title>
+
+<script>
+
+</script>
+</head>
+
+<body>
+<div id="calendar">
+  <div class="outer" id="move">
+        <div class="postion" role="viewW">
+            <ul class="imgbox" role="imgBox">
+                <li class="content">
+                	<a href="#"><img src="image/img_effects/53b28224N6c6239b0.jpg"/></a>
+                </li>
+                <li class="content">
+                	<a href="#"><img src="image/img_effects/53bf3d15N54250761.jpg"/></a>
+                </li>
+                <li class="content">
+                	<a href="#"><img src="image/img_effects/53bf3d40Ne415e5ab.jpg"/></a>
+                </li>
+                <li class="content">
+                	<a href="#"><img src="image/img_effects/53c32d80N637d708e.jpg"/></a>
+                </li>
+                <li class="content">
+                	<a href="#"><img src="image/img_effects/53c3362aNf6a4b2c7.jpg"/></a>
+                </li>
+            </ul>
+            <ul class="imgbox" role="imgEffects">
+
+            </ul>
+        </div>
+        <div class="bottom">
+            <ul class="btn_center" role="btn">
+                <li class="btn_on"></li>
+            </ul>
+        </div>
+        <div class="prev"><a role="left" href="javascript:void(0)"></a></div>
+        <div class="next"><a role="right" href="javascript:void(0)"></a></div>
+    </div>
+</div>
+</body>
+</html>

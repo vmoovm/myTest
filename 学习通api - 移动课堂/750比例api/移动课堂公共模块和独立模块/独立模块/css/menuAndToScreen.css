@@ -1,0 +1,124 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+投屏和底部菜单
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.zfooter { width: 100%;}
+.zf_box { width:100%; height: 4.55rem; padding-top: 0.4rem; background: #f7f7f7;}
+.zfooter ul {display: -webkit-box; display: box; -webkit-box-pack: center;}
+.zfooter ul li { display: block; width:8rem;}
+.zfooter a { display: block; width: 4rem; height: 4rem; margin: 0 auto; border-radius: 50%;}
+.zfooter a.zstudent { background: url(../images/icons_06.png) center no-repeat #f8a728; background-size: 4rem;}
+.zfooter a.zplus { background: url(../images/icons_08.png) center no-repeat #00cee0; background-size: 4rem;}
+.zfooter a.zscreen { background: url(../images/icons_10.png) center no-repeat #f54768; background-size: 4rem;}
+.zfooter a.zplay { background: url(../images/icons_bf.png) center no-repeat #f54768; background-size: 4rem;}
+
+/*-----------------------------------------------------
+Menu
+-----------------------------------------------------*/
+/*.zopacity { position: fixed; left: 0; top: -0.01rem; width: 100%; height: 100vh; background: #000; opacity: 0.5;}
+.zmenu { position: fixed; bottom: 0; width: 100%;  z-index: 100;}
+.zm_arrow1,.zm_arrow { position: absolute; top: 1.2rem; right: 4rem; width: 0; height: 0; border-left:0.5rem solid transparent; border-right: 0.5rem solid transparent; border-bottom: 0.8rem solid #b5b5b5; z-index: 160;}
+.zm_arrow1 { margin-top: 1px; border-bottom: 0.8rem solid #f0f0f0;}
+.zm_box { border: 1px #bebebe solid; border-radius: 0.3rem; overflow: hidden; background: #f0f0f0; display: none;}
+.zm_box ul { box-sizing: border-box; padding: 1rem 0.8rem; padding-right: 0;  padding-top: 0.4rem; background: #f0f0f0; overflow: hidden;}
+.zm_item { float: left; width:8.6rem; height: 3.6rem; padding: 0.4rem 0.4rem 0.4rem 0;}
+.zm_icon { display: inline-block; width: 3rem; height: 3rem; border-radius: 50%; background-position: center; background-repeat: no-repeat; background-size: 2rem; vertical-align: middle;}
+
+.zm_yunpan { background-image: url(../images/circleIcon_05.png); background-color:#f26c60;}
+.zm_qiandao { background-image: url(../images/circleIcon_07.png); background-color:#ffa200;}
+.zm_wenda { background-image: url(../images/circleIcon_09.png); background-color:#34b87f; background-size: 1.6rem;}
+.zm_toupiao { background-image: url(../images/icons_51.png); background-color:#5fb5d8;}
+.zm_taolun { background-image: url(../images/icons_52.png); background-color:#7e97d7;}
+.zm_tupian { background-image: url(../images/circleIcon_15.png); background-color:#e7507b;}
+.zm_xuesheng { background-image: url(../images/icons_35.png); background-color:#34b87f;}
+.zm_qiangda { background-image: url(../images/circleIcon_03.png); background-color:#e7507b;}
+.zm_suijixuan { background-image: url(../images/circleIcon_11.png); background-color:#7e97d7;}
+.zm_name { display: inline-block; padding-left: 0.2rem; vertical-align: middle;}
+.zm_name a { display: inline-block; width: 100%; height: 2.3rem; text-align: center; line-height: 2.3rem; font-size: 1.2rem; color: #4c85e5;  white-space: nowrap;}
+.zm_button { display: -webkit-box; display: box; padding: 0.8rem; background: #d4d4d4;}
+.zm_flex { -webkit-box-flex: 1; padding:0 0.3rem;}
+.zm_flex input { width: 100%; height: 2.6rem; border: none; border-radius: 0.3rem; background: #4c85e5; font-size: 1.2rem; color: #fff;}*/
+
+/*大图标*/
+/*.zm_toushepingmu { background: url(../images/icons_65.png) center no-repeat #34b87f; background-size: 4rem;}
+.zm_touping1 { background: url(../images/touping_01.png) center no-repeat #a6a6a6; background-size: 4rem;}
+.zm_shezhi { background: url(../images/icons_68.png) center no-repeat #7e97d7; background-size: 4rem;}*/
+
+/*-----------------------------------------------------
+Footer
+-----------------------------------------------------*/
+.zfooter { /*position: fixed; bottom: 0;*/ width: 100%; z-index: 99;}
+.zf_box { height: 4.55rem; padding-top: 0.4rem; background: #f7f7f7;}
+.zfooter ul {display: -webkit-box; display: box; -webkit-box-pack: center;}
+.zfooter ul li { display: block; width: 8rem;}
+.zfooter a { display: block; width: 4rem; height: 4rem; margin: 0 auto; border-radius: 50%;}
+.zfooter a.zstudent { background: url(../images/icons_06.png) center no-repeat #f8a728; background-size: 4rem;}
+.zfooter a.zplus { background: url(../images/icons_08.png) center no-repeat #00cee0; background-size: 4rem;}
+.zfooter a.zscreen { background: url(../images/icons_10.png) center no-repeat #f54768; background-size: 4rem;}
+
+/*-----------------------------------------------------
+Menu
+-----------------------------------------------------*/
+.zmenu { position: absolute; bottom: 0; width: 100%;  z-index: 100;}
+.zm_box,.zm_box1 { max-width:32rem; padding-top: 0.4rem; background: #f0f0f0; display: none;}
+.zm_box ul,.zm_box1 ul,.zm_box2 ul { display: -webkit-box; width: 100%; -webkit-box-align: center; -webkit-box-pack: justify; box-sizing: border-box; padding: 0 1rem; padding-top: 1rem;}
+.zm_box1 { height: 4.5rem; border-top: 1px #c2c2c2 solid; background: #f9f9f9; display: block;}
+.zm_box1 ul { padding-top: 0.2rem;}
+.zm_box2 ul { padding: 0 5rem;}
+.zm_item { width:5.5rem; height: 6.9rem; padding-top: 1rem; padding-bottom: 1rem;}
+.zm_icon { width: 4rem; height: 4rem; margin: 0 auto; border-radius: 50%; background-position: center; background-repeat: no-repeat; background-size: 2.6rem;}
+
+.zm_yunpan { background-image: url(../images/circleIcon_05.png); background-color: #f26c60;}
+.zm_qiandao { background-image: url(../images/circleIcon_07.png); background-color: #ffa200;}
+.zm_wenda { background-image: url(../images/circleIcon_09.png); background-color: #34b87f; background-size: 3rem;}
+.zm_taolun { background-image: url(../images/circleIcon_13.png);background-color: #7e97d7}
+.zm_toushepingmu { background: url(../images/circleIcon_18.png) center no-repeat #34b87f; background-size: 3rem;}
+.zm_touping1 { background: url(../images/circleIcon_19.png) center no-repeat #a6a6a6; background-size: 3rem;}
+.zm_qiangda { background-image: url(../images/circleIcon_03.png); background-color: #e7507b}
+.zm_suijixuan { background-image: url(../images/circleIcon_11.png); background-color: #7e97d7;}
+.zm_name { text-align: center;}
+.zm_name a { display: block; width: 100%; height: 2.3rem; text-align: center; line-height: 2.3rem; font-size: 1.2rem; color: #555;  white-space: nowrap;/* overflow: hidden; text-overflow: ellipsis;*/}
+.zm_close { display: block; height: 5rem; background: url(../images/icons_73.png) center no-repeat #fff; background-size: 1.75rem;}
+
+
+.animated {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode:both;
+}
+
+
+@-webkit-keyframes fadeInUp{
+    0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px);opacity: 1;}
+}
+
+@keyframes fadeInUp{
+   0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px); opacity: 1;}
+}
+
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown{
+    0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px);; opacity: 0;}
+}
+
+@keyframes fadeInDown{
+   0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px); opacity: 0;}
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}

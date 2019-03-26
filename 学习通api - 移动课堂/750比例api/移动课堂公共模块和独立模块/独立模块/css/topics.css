@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+选择题
+-----------------------------------------------------*/
+.zselectTopic {}
+.zse_tabBox { margin-top: 1.5rem;}
+.zse_t { padding: 0 1.2rem; border-bottom: 1px #dedede solid; line-height: 3.75rem; font-size: 1.4rem; color: #666;}
+.zse_box {}
+.zse_row { display: -webkit-box; display: box; padding: 0.5rem 1.2rem; border-bottom: 1px #dedede solid; background-color: #fff; line-height: 2.75rem; font-size: 1.4rem;}
+.zse_tabBox .zse_row:first-child { border-top: 1px #dedede solid;}
+.zse_con { -webkit-box-flex: 1; }
+.zse_bg { background-color: #d5ecfe;}
+/*右侧可选择加东西，备用样式*/
+.zse_num {  display: block; width: 3.75rem; height:2.75rem; padding:0 0.1rem; text-align: right;}
+.zse_num i,.zse_num span { display: inline-block; vertical-align: middle;}
+.zse_num span { padding-right: 0.2rem; color: #929292;}
+.zse_num i { width:1.8rem; height: 1.8rem; /*padding-left: 1rem;*/ margin-top: 0.4rem; border: 1px #f00 solid; border-radius: 50%; line-height: 1.9rem; text-align: center; color: #f00;}
+/*添加选项*/
+.zse_add { padding:2rem 1.2rem; text-align: right;}
+.zse_add span,.zse_add a { display: inline-block; vertical-align: middle;}
+.zse_add a { width: 2rem; height: 2rem; background: url(../images/add_30.png) no-repeat; background-size: 1.9rem;}
+.zse_add span { height: 2rem; padding-left: 0.6rem; padding-right: 2rem; line-height: 1.7rem; font-size: 1.4rem;}
+
+/*----------------------------------------------------
+简答题
+-----------------------------------------------------*/
+.zshortAnswer {}
+
+/*----------------------------------------------------
+编辑题类型
+-----------------------------------------------------*/
+.zeditQuestion {}
+.zed_box { display: -webkit-box; -webkit-box-align: center; padding: 2rem 1.2rem 0.5rem; text-align: center;}
+.zed_box li { -webkit-box-flex: 1; height: 3.5rem; margin: 0 1rem; padding-top: 0.05rem; border:1px #09f solid; border-radius: 0.5rem; line-height: 3.5rem; text-align: center; color: #09f; font-size: 1.5rem;}
+.zed_box li.zed_cur { background: #09f; color: #fff;}
+

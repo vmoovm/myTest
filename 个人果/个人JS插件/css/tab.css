@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+tab
+======================================================*/
+.bg { width:1024px; height:auto; margin:0 auto; padding:20px; border:1px #eee solid;}
+
+
+.tab {}
+.t_title { height:50px; background-color:#dfdfdf;}
+.t_t_box { padding-top:20px; padding-left:15px;}
+.t_t_box li { float:left; width:90px; height:30px;line-height:30px; text-align:center; cursor:pointer;}
+.t_t_box li a { display:block; width:90px; height:30px; }
+.t_t_off { background-color:#0b9eec; border-right:1px #dfdfdf solid; color:#fff;}
+.t_t_on { background-color:#0b9eec;}
+.t_t_on { background-color:#fff; border-right:1px #fff; color:#333;}
+
+.t_content { height:100px; padding:15px; line-height:24px; border:1px #dfdfdf solid; border-top:0; background-color:#fff;}
+.t_c_box { display:none;}
+
+.tab2{ background-color:#ccc;}
+.tab2 li{ float:left; width:50px; height:30px; line-height:30px; text-align:center; cursor:pointer;}
+
+.content2 { height:50px; padding:10px; border:1px #ccc solid; background-color:#FFF; display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

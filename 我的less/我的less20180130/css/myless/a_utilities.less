@@ -1,0 +1,245 @@
+// pc版
+
+/* 必读  */
+
+/*-----------------------------------------------------
+ 类型:
+ 字体颜色\背景颜色\按钮颜色\边框颜色\图标颜色
+ 字体大小\图标大小\按钮大小\内边距\外边距
+ 
+ 颜色：
+ 主色（自定义）\ 辅色（自定义）\ 原始色（暗色系）\ 信息色（蓝色系）\  通过色（绿色系）\ 危险色（红色系）\ 警告色（黄色系）\ 禁止色（灰色系）\ 默认色（自定义）
+
+尺寸：
+特小 	小 	中 	大 	特大 
+
+区块：
+头 \ 导航  \ 主体 \ 尾
+
+功能：
+登录 \ 注册 \ 表单 \ 分页  \ 消息弹层 \ 提醒弹层  \ 功能弹层  \ 下拉框 \ 表格 \ 菜单 \ 搜索 \ 文章 \ 图文列表 \ 文本列表 \ 标题  \ 标签页 \ 返回顶部
+ 
+ 应用技巧： 
+1.按功能和行为调用样式，禁止按颜色值调用；  例：success与主色调相同，成功按钮禁止相互调主色调颜色；
+2.严格按类型调用变量，禁止混搭调用; 例：字号禁止相互调用图标字号变量；内边距禁止相互调用外边距变量；
+3.
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+大小简写：
+x-small: 	特小 xm
+small: 		小	sm
+middle: 	中 	md
+large: 		大 	lg
+extra: 		特大 et
+-----------------------------------------------------*/
+
+
+// 必读：
+/*-----------------------------------------------------
+大小简写：
+x-small: 	特小 xm
+small: 		小	sm
+middle: 	中 	md
+large: 		大 	lg
+extra: 		特大 et
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+简写：
+default: 	默认 df
+current: 	当前 cur
+routine：	常规 rt
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+位置简写：
+top：		上：t
+bottom：		下：b
+left： 		左：l
+right：		右：r
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+颜色程度简写：
+dark: 		深色  d
+gray: 		灰色  g
+light:  	浅色  l
+white:  	白色  w
+-----------------------------------------------------*/
+/* 全局配置 */
+
+
+.wrap (@wrap: @wrap) { width:@wrap; margin-left: auto; margin-right: auto;}
+/*-----------------------------------------------------
+font-size
+-----------------------------------------------------*/
+/* 文字大小 */
+.fontSize { font-size: @fontSize;}
+.fontSize-xm { font-size: @fontSize-xm;}
+.fontSize-sm { font-size: @fontSize-sm;}
+.fontSize-md { font-size: @fontSize-md;}
+.fontSize-lg { font-size: @fontSize-lg;}
+.fontSize-et { font-size: @fontSize-et;}
+
+/*-----------------------------------------------------
+icons
+-----------------------------------------------------*/
+/* 图标大小 */
+.iconSize { font-size: @iconSize;}
+.iconSize-xm { font-size: @iconSize-xm;}
+.iconSize-sm { font-size: @iconSize-sm;}
+.iconSize-md { font-size: @iconSize-md;}
+.iconSize-lg { font-size: @iconSize-lg;}
+.iconSize-et { font-size: @iconSize-et;}
+
+// 图标颜色
+@iconColor-default: @default;		// 默认色
+@iconColor-disable: @disable;		// 禁止色
+@iconColor-primary: @primary;		// 原始色
+@iconColor-info: @info;				// 信息色
+@iconColor-success: @success;		// 通过色
+@iconColor-danger: @danger;			// 危险色
+@iconColor-warning: @warning;		// 警告色
+@iconColor-main: @main;				// 主色
+@iconColor-auxi: @auxi;				// 辅色
+// hover
+@iconColor-hover: darken(@iconColor, 10%);
+@iconColor-d-hover: darken(@iconColor-d, 10%);
+@iconColor-g-hover: darken(@iconColor-g, 10%);
+@iconColor-l-hover: darken(@iconColor-l, 10%);
+@iconColor-w-hover: #fff;
+@iconColor-default-hover: darken(@default, 10%);
+@iconColor-disable-hover: darken(@disable, 10%);
+@iconColor-primary-hover: darken(@primary, 10%);
+@iconColor-info-hover: darken(@info, 10%);
+@iconColor-success-hover: darken(@success, 10%);
+@iconColor-danger-hover: darken(@danger, 10%);
+@iconColor-warning-hover: darken(@warning, 10%);
+@iconColor-main-hover: darken(@main, 10%);
+@iconColor-auxi-hover: darken(@auxi, 10%);
+.iconColor { color: @iconColor;}
+.iconColor-d { color: @iconColor-d;}
+.iconColor-g { color: @iconColor-g;}
+.iconColor-l { color: @iconColor-l;}
+.iconColor-w { color: @iconColor-w;}
+.iconColor-default { color: @color-default;}
+.iconColor-disable { color: @color-disable;}
+.iconColor-primary { color: @color-primary;}
+.iconColor-info { color: @color-info;}
+.iconColor-success { color: @color-success;}
+.iconColor-danger { color: @color-danger;}
+.iconColor-warning { color: @color-warning;}
+.iconColor-main { color: @color-main;}
+.iconColor-auxi { color: @color-auxi;}
+// hover
+.iconColor-default-hover { color: @color-default-hover;}
+.iconColor-disable-hover { color: @color-disable-hover;}
+.iconColor-primary-hover { color: @color-primary-hover;}
+.iconColor-info-hover { color: @color-info-hover;}
+.iconColor-success-hover { color: @color-success-hover;}
+.iconColor-danger-hover { color: @color-danger-hover;}
+.iconColor-warning-hover { color: @color-warning-hover;}
+.iconColor-main-hover { color: @color-main-hover;}
+.iconColor-auxi-hover { color: @color-auxi-hover;}
+.iconColor-hover { color: @color-hover;}
+.iconColor-d-hover { color: @color-d-hover;}
+.iconColor-g-hover { color: @color-g-hover;}
+.iconColor-l-hover { color: @color-l-hover;}
+.iconColor-w-hover { color: @color-w-hover;}
+/*-----------------------------------------------------
+font-family
+-----------------------------------------------------*/
+.family { font-family: @family;}
+.family-st { font-family: @family-st;}
+.family-yh { font-family: @family-yh;}
+.family-en { font-family: @family-en;}
+.family-cn { font-family: @family-cn;}
+
+/* -----------------------------------------------------
+line-height: lineH / multiple：mp 倍数
+ -----------------------------------------------------*/
+.lineH(@height: @lineH) { line-height:@lineH;}
+.lineH-xm(@height: @lineH-xm) { line-height:@lineH;}
+.lineH-sm(@height: @lineH-sm) { line-height:@lineH;}
+.lineH-md(@height: @lineH-md) { line-height:@lineH;}
+.lineH-lg(@height: @lineH-lg) { line-height:@lineH;}
+.lineH-et(@height: @lineH-et) { line-height:@lineH;}
+.lineH-mp(@height: @lineH-mp) { line-height:@lineH;}
+.lineH-mp-xm(@height: @lineH-mp-xm) { line-height:@lineH;}
+.lineH-mp-sm(@height: @lineH-mp-sm) { line-height:@lineH;}
+.lineH-mp-md(@height: @lineH-mp-md) { line-height:@lineH;}
+.lineH-mp-lg(@height: @lineH-mp-lg) { line-height:@lineH;}
+.lineH-mp-et(@height: @lineH-mp-et) { line-height:@lineH;}
+
+.lineH-tt(@lineH: @lineH-tt) { line-height:@lineH;}
+.lineH-tt-xm(@lineH: @lineH-tt-xm) { line-height:@lineH;}
+.lineH-tt-sm(@lineH: @lineH-tt-sm) { line-height:@lineH;}
+.lineH-tt-md(@lineH: @lineH-tt-md) { line-height:@lineH;}
+.lineH-tt-lg(@lineH: @lineH-tt-lg) { line-height:@lineH;}
+.lineH-tt-et(@lineH: @lineH-tt-et) { line-height:@lineH;}
+// -----------------------------------------------------
+// 通用色hover
+// -----------------------------------------------------
+@default-hover: darken(@default, 10%);			// 默认色
+@disable-hover: darken(@disable, 10%);			// 禁止色
+@primary-hover: darken(@primary, 10%);			// 原始色
+@info-hover: darken(@info, 10%);				// 信息色
+@success-hover: darken(@success, 10%);			// 通过色
+@danger-hover: darken(@danger, 10%);			// 危险色
+@warning-hover: darken(@warning, 10%);			// 警告色
+@main-hover: darken(@main, 10%);				// 主色
+@auxi-hover: darken(@auxi, 10%);				// 辅色
+/*-----------------------------------------------------
+color:c /black:b /dark:d /gray:g /light:l /white:w /main:m /auxi:a
+-----------------------------------------------------*/
+@color-default: @default;		// 默认色
+@color-disable: @disable;		// 禁止色
+@color-primary: @primary;		// 原始色
+@color-info: @info;				// 信息色
+@color-success: @success;		// 通过色
+@color-danger: @danger;			// 危险色
+@color-warning: @warning;		// 警告色
+@color-main: @main;				// 主色
+@color-auxi: @auxi;				// 辅色
+
+// hover
+@color-hover: darken(@color, 10%);
+@color-d-hover: darken(@color-d, 10%);
+@color-g-hover: darken(@color-g, 10%);
+@color-l-hover: darken(@color-l, 10%);
+@color-w-hover: #fff;
+@color-default-hover: darken(@default, 10%);
+@color-disable-hover: darken(@disable, 10%);
+@color-primary-hover: darken(@primary, 10%);
+@color-info-hover: darken(@info, 10%);
+@color-success-hover: darken(@success, 10%);
+@color-danger-hover: darken(@danger, 10%);
+@color-warning-hover: darken(@warning, 10%);
+@color-main-hover: darken(@main, 10%);
+@color-auxi-hover: darken(@auxi, 10%);
+.color { color: @color;}
+.color-d { color: @color-d;}
+.color-g { color: @color-g;}
+.color-l { color: @color-l;}
+.color-w { color: @color-w;}
+.color-default { color: @color-default;}
+.color-disable { color: @color-disable;}
+.color-primary { color: @color-primary;}
+.color-info { color: @color-info;}
+.color-success { color: @color-success;}
+.color-danger { color: @color-danger;}
+.color-warning { color: @color-warning;}
+.color-main { color: @color-main;}
+.color-auxi { color: @color-auxi;}
+// hover
+.color-default-hover { color: @color-default-hover;}
+.color-disable-hover { color: @color-disable-hover;}
+.color-primary-hover { color: @color-primary-hover;}
+.color-info-hover { color: @color-info-hover;}
+.color-success-hover { color: @color-success-hover;}
+.color-danger-hover { color: @color-danger-hover;}
+.color-warning-hover { color: @color-warning-hover;}
+.color-main-hover { color: @color-main-hover;}
+.color-auxi-hover { color: @color-auxi-hover;}
+.color-hover { color: @color-hover;}
+.color-d-hover { color: @color-d-hover;}
+.color-g-hover { color: @color-g-hover;}
+.color-l-hover { color: @color-l-hover;}
+.color-w-hover { color: @color-w-hover;}

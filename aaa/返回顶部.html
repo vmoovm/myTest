@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.moveTop {   
+			    width: 40px;
+			    height: 40px;
+			    position: fixed;
+			    bottom: 30px;
+			    right: 15px;
+			    z-index: 5;
+			    background: url(images/icons_index.png) no-repeat;
+			    background-position: 0 -120px;
+    			background-size: 50px auto;
+			    display: none;
+			    }
+			
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<div class="" style="height: 10000px;"></div>
+		<a href="javascript:;" style="z-index: 10;" class="moveTop" id="movetop"></a>
+		<script type="text/javascript">
+			/* 返回顶部开始  */
+		//当点击跳转链接后，回到页面顶部位置
+		$("#movetop").click(function() {
+			$("body,html").animate({
+				scrollTop : 0
+			}, 500);
+			return false;
+		});
+		// 出现返回顶部视图
+		var oWindowHeight = $(window).height() * 3;
+		$(window).scroll(
+			function() {
+				// 返回顶部
+				if ($(document).scrollTop() > oWindowHeight) {
+					$("#movetop").fadeIn(500);
+				} else {
+					$("#movetop").fadeOut(500);
+				}
+				//加载更多
+				var a = document.documentElement.scrollTop == 0 ? document.body.clientHeight
+						: document.documentElement.clientHeight;
+				if (a > document.documentElement.clientHeight) {
+					a = document.documentElement.clientHeight;
+				}
+				var b = document.documentElement.scrollTop == 0 ? document.body.scrollTop
+						: document.documentElement.scrollTop;
+				var c = document.documentElement.scrollTop == 0 ? document.body.scrollHeight
+						: document.documentElement.scrollHeight;
+				var c2 = c - 1;
+				if (a + b == c || a + b == c2) {
+					//加载更多
+					loadmore();
+				}
+				
+			});
+
+		/* 返回顶部结束  */
+		</script>
+	</body>
+</html>

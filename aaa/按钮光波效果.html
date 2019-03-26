@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/rem750.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.button_text_container {
+				position: relative;
+				z-index: 10000;
+				 text-align: center;
+				
+			}
+			.button_text_container button {
+				width: 120px; height: 40px; margin: 0 auto; overflow: hidden;
+			}
+			.button_text_container button:active {
+				content: '';
+				display: inline-block;
+				border-radius: 50%;
+				animation: explode 0.5s forwards;
+			}
+			/*.explode-circle {
+				animation: explode 0.5s forwards;
+			}
+			.desplode-circle {
+				animation: desplode 0.5s forwards;
+			}*/
+			@keyframes explode {
+				0% {
+					width: 0px;
+					height: 0px;
+					margin-left: 0px;
+					margin-top: 0px;
+					background-color: rgba(42, 53, 80, 0.2);
+				}
+				100% {
+					width: 400px;
+					height: 400px;
+					margin-left: -200px;
+					margin-top: -200px;
+					background-color: rgba(20, 180, 87, 0.8);
+				}
+			}
+			@keyframes desplode {
+				0% {
+					width: 400px;
+					height: 400px;
+					margin-left: -200px;
+					margin-top: -200px;
+					background-color: rgba(20, 180, 87, 0.8);
+				}
+				100% {
+					width: 0px;
+					height: 0px;
+					margin-left: 0px;
+					margin-top: 0px;
+					background-color: rgba(129, 80, 108, 0.6);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+	<div class="button_text_container">
+		<button class="bubbly-button explode-circle" id="buttonToggle">Click me!</button>
+	</div>
+	</body>
+
+</html>

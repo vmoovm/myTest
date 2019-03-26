@@ -1,0 +1,74 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*学生列表*/
+.zstudentList { border-top: 1px #dedede solid;}
+/*----------------------------------------------------
+portrait头像 可以列表
+-----------------------------------------------------*/
+.zportrait { padding: 1.2rem;}
+.zpo_row,.zpo_rowList,.zpo_row_2x ,.zpo_row_3x { display: -webkit-box; display: box; padding: 0 1.2rem;}
+.zpo_rowList { padding: 0.3rem 1.2rem; border-bottom: 1px #dedede solid;}
+.zre_num { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; width: 2rem; line-height: 4.4rem; font-size: 1.6rem; color: #f00;}
+.zpo_pic { position: relative; width: 4rem; height: 4rem; padding: 0.2rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+.zpo_pic img { width: 4rem; border-radius: 50%;}
+.zpo_pic span,.zpo_pic em { display: inline-block; position: absolute;}
+.zpo_pic span { position: absolute; left: -2.2rem; top: -1rem; width: 3.25rem; height: 3.1rem;}
+.zpo_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 2.4rem;}
+.zpo_txt { -webkit-box-flex:1; display: -webkit-box; display: box; margin-left: 1rem;}
+.zpo_th { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.zpo_th a { display: block; height: 2.4rem; line-height: 2.4rem; font-size: 1.4rem; color: #000; cursor: pointer;}
+.zpo_th a:hover,.zpo_th a:focus,.zpo_th a:active { color:#000; text-decoration: none;}
+.zpo_th p { height: 1.6rem; font-size: 1rem; color: #777; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zpo_th p.zpo_t { line-height: 1.6rem; color: #929292;}
+.zpo_time { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; font-size: 1rem; color: #777;}
+.zpo_time h2 { line-height: 2.4rem; font-size: 1rem;}
+.zpo_time p { line-height: 1.6rem;}
+.zpo_red { color: red;}
+
+/*2倍尺寸*/
+.zpo_row_2x { padding: 1rem 0;}
+.zpo_row_2x .zpo_pic { position: relative; width: 6rem; height: 6rem; padding: 0.4rem;}
+.zpo_row_2x .zpo_pic img { width: 6rem; border-radius: 50%;}
+.zpo_row_2x .zpo_pic span,.zpo_row_2x .zpo_pic em { display: inline-block; position: absolute;}
+.zpo_row_2x .zpo_pic span { position: absolute; left: -2rem; top: -1.2rem; width: 3.25rem; height: 3.1rem;}
+.zpo_row_2x .zpo_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 3rem;}
+.zpo_row_2x .zpo_th a { display: block; height: 3.6rem; line-height: 3.6rem; font-size: 1.6rem; color: #000;}
+.zpo_row_2x .zpo_th p { height: 2rem;  font-size: 1.2rem;}
+.zpo_row_2x .zpo_th p.zpo_t {  line-height: 2rem; color: #929292; font-size: 1.4rem;}
+.zpo_row_2x .zpo_time { font-size: 1.4rem;}
+.zpo_row_2x .zpo_time h2 { line-height: 3.6rem; font-size: 1.2rem;}
+.zpo_row_2x .zpo_time p { line-height: 2rem;}
+/*3倍尺寸*/
+.zpo_row_3x { padding: 1.5rem 0;}
+.zpo_row_3x .zpo_pic { width: 7.6rem; height: 7.6rem; padding: 0.4rem;}
+.zpo_row_3x .zpo_pic img { width: 7.6rem; border-radius: 50%;}
+.zpo_row_3x .zpo_th a { display: block; height: 4rem; line-height: 4rem; font-size: 1.8rem; color: #000;}
+.zpo_row_3x .zpo_th p { height: 2.4rem; font-size: 1.4rem;}
+.zpo_row_3x .zpo_th p.zpo_t { line-height: 2.4rem; color: #929292; font-size: 1.6rem;}
+.zpo_row_3x .zpo_time { font-size: 1.6rem;}
+.zpo_row_3x .zpo_time h2 { line-height: 4rem; font-size: 1.4rem;}
+.zpo_row_3x .zpo_time p { line-height: 2.4rem;}
+
+/*portrait 仅头像*/
+.zphoto,.zphoto_2x,.zphoto_3x { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; -webkit-box-align: center;}
+.zph_info { text-align: center;}
+.zph_pic { position: relative; width: 4rem; height: 4rem; margin: 0 auto; padding: 0.2rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+.zph_pic img { width: 4rem; border-radius: 50%;}
+.zph_pic span,.zph_pic em { display: inline-block; position: absolute;}
+.zph_pic span { position: absolute; left: -2.2rem; top: -1rem; width: 3.25rem; height: 3.1rem;}
+.zph_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 2.4rem;}
+.zph_name { font-size: 1.4rem;}
+.zph_p{ line-height: 1.6rem; font-size: 1rem; color: #929292;}
+/*2倍尺寸*/
+.zphoto_2x .zph_pic {position: relative; width: 6rem; height: 6rem; padding: 0.4rem;}
+.zphoto_2x .zph_pic img { width: 6rem; border-radius: 50%;}
+.zphoto_2x .zph_pic span,.zphoto_2x .zph_pic em { display: inline-block; position: absolute;}
+.zphoto_2x .zph_pic span { position: absolute; left: -2rem; top: -1.2rem; width: 3.25rem; height: 3.1rem;}
+.zphoto_2x .zph_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 3rem;}
+.zphoto_2x .zph_name { font-size: 1.6rem;}
+.zphoto_2x .zph_p { line-height: 2rem; font-size: 1.2rem;}
+/*3倍尺寸*/
+.zphoto_3x .zph_pic { width: 7.6rem; height: 7.6rem; padding: 0.4rem;}
+.zphoto_3x .zph_pic img { width: 7.6rem; border-radius: 50%;}
+.zphoto_3x .zph_name { font-size: 1.8rem;}
+.zphoto_3x .zph_p { line-height: 2.4rem; font-size: 1.4rem; }

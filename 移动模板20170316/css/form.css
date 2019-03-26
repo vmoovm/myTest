@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-----------------------------------------------------
+表单
+-----------------------------------------------------*/
+.zform {}
+.zform_row { display: -webkit-box; padding: 6px 15px; background-image: -webkit-linear-gradient(#dedede 50%,transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom; background-color: #fff;}
+.zform_field { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; width: 80px; }
+.zform_field { font-size: 16px; color: #333; }
+.zform_flex { -webkit-box-flex: 1;}
+.zform_input { width: 100%; height: 30px; border: none; background: transparent; line-height: 30px;}
+.zform_attached { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; padding-left: 14px; border-left: 1px #dedede solid; font-size: 14px;}
+.zform_attached a { color: #e63114;}

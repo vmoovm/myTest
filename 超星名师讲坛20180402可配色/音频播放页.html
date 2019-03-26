@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="zscreen" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" /> 
+<title>音频播放</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/ratio.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+	<!--main start-->
+	<div class="zmuiscPlayer">
+		<p class="zmuiscPlayer-bg"></p>
+		<div class="zmuiscPlayer-box">
+			<div class="zmuiscPlayer-cover">
+				<div class="zmuiscPlayer-img">
+					<img id="zmusicPlayer-cover" src="temp/201712011442_05.jpg"/>
+				</div>
+				<dl class="zmuiscPlayer-info">
+					<dt>正在播放(<span id="zmusicPlayer-progress">1/1</span>):<span id="zmusicPlayer-title">让科学成为未来中国的文化基因</span></dt>
+					<dd id="zmusicPlayer-state">金晓峰&nbsp;复旦大学教授 </dd>
+				</dl>
+			</div>
+			<div class="zmuiscPlayer-footer">
+				<div class="zmuiscPlayer-progress">
+					<p class="zmuiscPlayer-time" id="startTime">00:00</p>
+					<div class="zmuiscPlayer-progressBar">
+						<div class="zmuiscPlayer-progressBg">
+							<div class="zmuiscPlayer-progressCur" id="progress" style="width: 0;">
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<p class="zmuiscPlayer-time" id="countTime">00:00</p>
+				</div>
+				<div class="zmuiscPlayer-button">
+					<input type="button" name="" id="speedLNum" data-long = "-15" class="zmuiscPlayer-speedLNum" value="" />
+					<p id="prev" class="zmuiscPlayer-prev"><span></span></p>
+					<p id="play" class="zmuiscPlayer-start"></p>
+					<!--<p id="pause" class="zmuiscPlayer-pause"></p>-->
+					<p id="next" class="zmuiscPlayer-next"><span></span></p>
+					<input type="button" name="" id="speedRNum"  data-long = "15" class="zmuiscPlayer-speedRNum" value="" />
+				</div>
+			</div>
+			<ul class="zmuiscPlayer-behavior">
+				<li class="zmuiscPlayer-wordIcon"><p><a href="#">文稿</a></p></li>
+				<li class="zmuiscPlayer-speedIcon" id="playRate"><p><a href="#">倍速播放</a></p></li>
+				<li class="zmuiscPlayer-videoIcon"><p><a href="#">切换视频</a></p></li>
+				<!--<li class="zmuiscPlayer-listenIcon"><p><a href="#">边听边聊</a></p></li>-->
+				<li class="zmuiscPlayer-listIcon" id="zmuiscPlayer-toggleList"><p><a href="#">列表</a></p></li>
+			</ul>
+			<div class="zmuiscPlayer-bottom">
+				<div class="zopacity" id="zopacity"></div>
+				<div class="zmuiscPlayer-menu zmuiscPlayer-none" id="zmuiscPlayer-window">
+					<div class="zmuiscPlayer-header">
+						<ul class="zmuiscPlayer-flex">
+							<li class="zmuiscPlayer-downIcon"><span>下载全部（123）</span></li>
+							<li class="zmuiscPlayer-favoriteIcon"><span>收藏全部</span></li>
+							<li class="zmuiscPlayer-recycleIcon"></li>
+						</ul>
+					</div>
+					<ul class="zmuiscPlayer-list" id="playerList">
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未基因">让科学成为未基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因让科学成为未来中国的文化基因让科学成为未来中国的文化基因">让科学成为未来中国的文化基因让科学成为未来中国的文化基因让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因">让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因">让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因">让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row zmuiscPlayer-playing">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因">让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+						<li class="zmuiscPlayer-row">
+							<p class="zmuiscPlayer-actionshape"></p>
+							<h1 class="zmuiscPlayer-h"><a href="#" title="让科学成为未来中国的文化基因">让科学成为未来中国的文化基因</a><span>- 金晓峰</span></h1>
+							<p class="zmuiscPlayer-delete"></p>
+						</li>
+					</ul>
+					<p class="zmuiscPlayer-close" id="zmuiscPlayer-closeList">关闭</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--main end-->
+	<audio id="media" src=""></audio>
+	<script src="js/zplayer.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var mediaSource = [{
+				title: 'bbc_sherlock_openning',
+				srcMedia: 'music/bbc_sherlock_openning.mp3',
+				cover: 'temp/20160104162001.png'
+			}, {
+				title: 'Neptune Illusion Dennis Kuo',
+				srcMedia: 'music/Neptune Illusion Dennis Kuo .mp3',
+				cover: 'temp/201712011442_05.jpg'
+			}, {
+				title: '爱啦啦',
+				srcMedia: 'music/爱啦啦.mp3',
+				cover: 'temp/201711281441_16.jpg'
+			}, {
+				title: '爱上这个女声 放进专辑里私藏 夜电播音员',
+				srcMedia: 'music/爱上这个女声 放进专辑里私藏 夜电播音员.mp3',
+				cover: 'temp/201711281441_14.jpg'
+			}];
+			
+			zplayer (mediaSource);
+			
+	</script>
+	<script type="text/javascript">
+		var toggleList = document.getElementById("zmuiscPlayer-toggleList");
+		var colseList = document.getElementById("zmuiscPlayer-closeList");
+		var playerWindow = document.getElementById("zmuiscPlayer-window");
+		var zopacity = document.getElementById("zopacity");
+		toggleList.addEventListener('click', function () {
+			if (RegExp(' zmuiscPlayer-none ').test(' ' + playerWindow.className + ' ')) {
+				playerWindow.classList.remove('zmuiscPlayer-none');
+				zopacity.style.display = 'block';
+			} else {
+				playerWindow.classList.add('zmuiscPlayer-none');
+				zopacity.style.display = 'none';
+			}
+		}, false);
+		colseList.addEventListener('click', function () {
+			playerWindow.classList.add('zmuiscPlayer-none');
+		}, false);
+		
+	</script>
+	<script src="js/onEvent.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		new On('#playerList', 'click', '.zmuiscPlayer-delete', function (obj) {
+			obj.self.parentElement.classList.add('animation');
+		})
+		new On('#playerList', 'animationend', '.zmuiscPlayer-row', function (obj) {
+			obj.self.classList.remove('animation');
+			obj.self.remove();
+		})
+	</script>
+</body>
+</html>

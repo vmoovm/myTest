@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环page中所有子元素及间接子元素.html</title>
+	</head>
+	<body>
+		<div class="aa">
+			<div class="dd">
+				<div class="dds">dds</div>
+				<p>pp</p>
+				<h1>h1</h1>
+				<div class="aas">
+					<ul>
+						<li>aas-li1</li>
+						<li>aas-li2</li>
+						<li>
+							<dl>
+								<dt>dt</dt>
+								<dd>dd</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function Traverse(p_element,p_callback) {
+
+			   p_callback(p_element);
+			
+			   var list = p_element.children;
+			
+			   for (var i = 0; i < list.length; i++) {
+			
+			       Traverse(list[i],p_callback);  // recursive call
+			
+			   }
+			
+			}
+			var el = document.querySelector('.aa');
+			function ccc(ele) {
+				console.log("ele"  + ele.nodeName);
+			}
+			Traverse(el,ccc);
+		</script>
+	</body>
+</html>

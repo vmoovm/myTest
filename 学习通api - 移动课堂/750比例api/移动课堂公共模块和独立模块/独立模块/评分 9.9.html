@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>评分 9.9</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="css/imgUpLoad.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	#imgLarge .swiper-pagination {bottom: 0px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); text-shadow: 0 0 1px #000;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zbox">
+	<div class="zbox_content">
+		<div class="zsh_intitle" style="background: none;">
+			<h2>【标题】以下4张图你最喜欢哪张？</h2>
+		</div>
+		<!--<div class="zsh_img">
+			<dl class="zsh_imgList">
+				<dd class="zsh_rel"><img src="temp/201601191126_13.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_15.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_17.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_22.png" /></dd>
+			</dl>
+		</div>-->
+		<div class="swiper-container imgLarge" id="imgLarge">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide imgLarge_item">
+					<img src="temp/1390284870411abijg.jpg"/>
+				</div>
+				<div class="swiper-slide imgLarge_item">
+					<img src="temp/20160810.png"/>
+				</div>
+				<div class="swiper-slide imgLarge_item">
+					<img src="temp/56298de4498e8943b8a393a3.jpg"/>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="zlist_group">
+			<dl class="zlist_field">
+				<dt>评分：</dt>
+				<dd class="zlist_flex"><input type="text" name="" id="" value="" placeholder="满分100" /></dd>
+				<dt class="zlist_space">  分</dt>
+			</dl>
+			<dl class="zlist_field">
+				<dt>评语：</dt>
+				<dd class="zlist_flex">
+					<textarea style="width:100%; height: 6.15rem; box-sizing: border-box; padding: 0.8rem 0; line-height: 2rem; border: none;" name="textarea" rows="" cols=""></textarea>
+				</dd>
+			</dl>
+			<!--<dl class="zlist_field">
+				<dt>评语：</dt>
+				<dd class="zlist_flex"><input type="text" name="" id="" value="" placeholder="例：优" /></dd>
+			</dl>-->
+		</div>
+		<div class="zre_top">
+			<p class="zre_go"><a href="#">提交</a></p>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	var imgLarge=new Swiper("#imgLarge",{
+		pagination: '.swiper-pagination',
+  paginationType : 'fraction',
+  paginationFractionRender: function (swiper, currentClassName, totalClassName) {
+      return '<span class="' + currentClassName + '"></span>' +
+             ' of ' +
+             '<span class="' + totalClassName + '"></span>';
+  }
+	})
+</script>
+</body>
+</html>

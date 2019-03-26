@@ -1,0 +1,55 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*学生列表*/
+/*----------------------------------------------------
+论文
+-----------------------------------------------------*/
+.zpapers { padding: 0;}
+.zpapers_row { display: -webkit-box; display: box; padding: 0.3rem 1.2rem; border-bottom: 1px #dedede solid; background-color: #fff;}
+.zpagers_arrow { padding-right: 3%; background:url(../images/icon5_color.png) 97% center no-repeat #fff; background-size: 1.6rem;}
+a.zpapers_info { display: block; -webkit-box-flex:1;}
+.zpapers_info dl { display: -webkit-box; display: box;}
+.zpapers_pic { position: relative; width: 4rem; height: 4rem; padding: 0.2rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+.zpapers_pic img { width: 4rem; border-radius: 50%;}
+.zpapers_pic span,.zpapers_pic em { display: inline-block; position: absolute;}
+.zpapers_pic span { position: absolute; left: -2.2rem; top: -1rem; width: 3.25rem; height: 3.1rem;}
+.zpapers_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 2.4rem;}
+.zpapers_th { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; margin-left: 1rem;}
+.zpapers_th h2 { height: 2.4rem; line-height: 2.4rem; font-size: 1.4rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zpapers_th p { height: 1.6rem; font-size: 1.1rem; color: #777;}
+.zpapers_th p.zpapers_t { line-height: 1.6rem; color: #929292;}
+.zpapers_right { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; text-align: right; font-size: 1.2rem; color: #777;}
+.zpapers_right h2 { line-height: 2.4rem; font-size: 1.2rem;}
+.zpapers_right p { line-height: 1.6rem;}
+.zpapers_right h2.zpapers_link { line-height: 1.8rem;}
+.zpapers_link span,.zpapers_link em,.zpapers_link i { display: inline-block; vertical-align: middle;}
+.zpapers_link span { padding: 0 0.6rem; border: 1px #09f solid; border-radius: 0.4rem; color: #09f; font-size: 1rem;}
+.zpapers_link em { color: #333;}
+.zpapers_link i { display: inline-block; width: 1.6rem; height: 1.6rem; margin-left: 0.6rem; background: url(../images/icon_modify_03.png) no-repeat; background-size: 1.5rem;}
+.zpapers_red { color: red;}
+.zpagers_arrow .zpapers_right { padding-right: 1.6rem;}
+/*数量*/
+.ztp { display: -webkit-box; -webkit-box-pack: center; padding: 2rem 0;}
+.ztp_field { line-height: 2.6rem;}
+.ztp_jishu { display: -webkit-box; display: box; width: 8rem; height: 2.5rem; border: 1px #dedede solid; background: #fff;}
+.ztp_input { -webkit-box-flex: 1; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.ztp_input input::-webkit-outer-spin-button,
+.ztp_input input::-webkit-inner-spin-button{-webkit-appearance: none !important; appearance: none !important;}
+.ztp_input input { width: 100%;  border: none; box-sizing: border-box; background: none; vertical-align: top; line-height: 2.5rem; text-align: center; font-size: 1.4rem; color: #333;} 
+.ztp_minus,.ztp_plus { display: block; width: 2rem; height: 2.5rem; background: #efefef; text-align: center; color: #333; font-size: 1.2rem; line-height: 2.5rem; cursor: default;}
+.ztp_plus { border-left: 1px #dedede solid;}
+.ztp_minus { border-right: 1px #dedede solid;}
+
+/*创建论文*/
+.zcreatPaper {}
+.zcreatPaper_input { display: -webkit-box; display: box; width: 100%; padding-top: 1rem; box-sizing: border-box;}
+.zcreatPaper_typeText { -webkit-box-flex: 1; height: 3.75rem; padding-left: 1rem; -webkit-transiton:0.6s all ease; border-bottom: 1px #dedede solid; border-top:1px #dedede solid; background: #fff;}
+.zcreatPaper_typeText input { width: 100%; height: 3.75rem; border: none; border-radius: 0;  background: #fff; line-height: none; line-height: normal; font-size: 1.5rem; color: #333;} 
+/*.zcreatPaper_tt { height: 3.75rem; padding-left: 1.2rem; border-bottom: 1px #dedede solid; border-top:1px #dedede solid;  background: #fff; line-height: 3.75rem; font-size:1.5rem; color: #929292;}*/
+
+.zcreatPaper_cover {  height: 4rem; margin-top: 1rem; padding: 1rem 1.2rem; border-top:1px #dedede solid; border-bottom: 1px #dedede solid;  background: #fff;}
+.zcreatPaper_content { display: -webkit-box;  height: 4rem; padding: 0.2rem;}
+.zcreatPaper_pic { width: 4rem; height: 4rem; background: url(../images/cover.png) no-repeat; background-size: cover;}
+.zcreatPaper_pic span { display: block;  width: 4rem; border-radius: 50%; background: url(../images/cover.png) center no-repeat;}
+.zcreatPaper_name { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; padding-left: 1rem; color: #333; font-size: 1.4rem; color: #929292;}
+.zcreatPaper_name a { color: #929292;}

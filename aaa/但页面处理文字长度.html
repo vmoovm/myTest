@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<ul id="test">
+			<li>你</li>
+			<li>们</li>
+			<li>快</li>
+			<li>乐</li>
+		</ul>-->
+		<script type="text/javascript">
+			var li = document.querySelectorAll('li');
+			var arr = [1, 5, 10, 20, 50, 40]
+			for(var n = 0; n < li.length; n++) {
+				li[n].onclick=function() {
+					console.log(arr[n]);
+				}
+			}
+			// 以次点击"你"，"们"，"快"，"乐" 输出结果:
+		</script>
+		
+		
+		
+		<ul>
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+		</ul>
+		<script type="text/javascript">
+			var eles = document.querySelectorAll('li');
+			var cc = ["bbc", "aa", "a10", 20, 50, 40]
+			function ccc(i) {
+					eles[i].onclick=function() {
+					console.log(cc[i]);
+					}
+				}
+			for(var i = 0; i < eles.length; i++) {
+				ccc(i)
+			}
+			// 结果 输入正常
+			
+			
+			var eles = document.querySelectorAll('li');
+			var cc = ["bbc", "aa", "a10", 20, 50, 40]
+			for(var i = 0; i < eles.length; i++) {
+				eles[i].onclick=function() {
+					console.log(cc[i]);
+				}
+			}
+			// 结果一直输出 50
+		</script>
+	</body>
+</html>

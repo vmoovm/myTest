@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			html,body,p { margin: 0; padding: 0;}
+			.zmain { width: 100%; height: 2500px; margin: 0 auto; border-top: #255625 3px solid; background: #ccc; box-sizing: border-box;}
+			#pushDown { padding: 0; margin: 0; margin-top: -30px; height: 30px; /*background: #1A8944; font-size: 16px; text-align: center; line-height: 30px;*/}
+			html,body,.swiper-container,.swiper-wrapper,.swiper-slide  { height: 800px;}
+			.zbox { display: -webkit-box; height: 100vh; -webkit-box-orient:vertical;}
+			.zbox_content { overflow: hidden; overflow-y: auto; -webkit-box-flex: 1;}
+			.zanimate { -webkit-transition:all ease 0.4s; transition:all ease 0.4s;}
+			
+			html,body { height: 100%;}
+			
+			
+			/*-----------------------------------------------------
+			refreshing
+			-----------------------------------------------------*/
+			.zrefresh { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center; text-align: center;}
+			.zrefresh .refresh_btn { color: #929292; font-size: 1rem;}
+			.zrefresh .refresh_btn a { line-height: 2rem; color: #929292;}
+			.zrefresh .refresh_text { margin-left: 0.5em;}
+			.zrefresh .refreshing { margin: 0.2em; font-size: 10px; border-top: 0.2em solid rgba(0, 0, 0, 0.3); border-right: 0.2em solid rgba(0, 0, 0, 0.3); border-bottom: 0.2em solid rgba(0, 0, 0, 0.3); border-left: 0.2em solid #000; -webkit-animation: ccircle 1.1s infinite linear; animation: ccircle 1.1s infinite linear; -webkit-animation-play-state: paused; animation-play-state: paused; }
+			.zrefresh .refreshing,
+			.zrefresh .refreshing:after { border-radius: 50%; width: 1.5em; height: 1.5em; }
+			@-webkit-keyframes ccircle {
+			  0% {
+			    -webkit-transform: rotate(0deg);
+			    transform: rotate(0deg);
+			  }
+			  100% {
+			    -webkit-transform: rotate(360deg);
+			    transform: rotate(360deg);
+			  }
+			}
+			@keyframes ccircle {
+			  0% {
+			    -webkit-transform: rotate(0deg);
+			    transform: rotate(0deg);
+			  }
+			  100% {
+			    -webkit-transform: rotate(360deg);
+			    transform: rotate(360deg);
+			  }
+			}
+			.zrefresh .zrunning { -webkit-animation-play-state: running; animation-play-state: running; }
+		</style>
+	</head>
+	<body>
+		
+		<link rel="stylesheet" type="text/css" href="swiper.css"/>
+		<script src="swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<div class="zbox">
+			<div class="zbox_content" id="scroll">-->
+				
+				
+				
+				<!--<div class="" id="scroll" style="height: 100vh; overflow-y:auto;">-->
+					
+				
+				<div class="zmain" id="zmain">
+					<p style="height: 300px; background: #122B40;">第一段</p>
+					<p style="height: 300px; background: #1B6D85;">第二段</p>
+					<p style="height: 300px; background: #1A8944;">第三段</p>
+					<div id="tbox" style="height: 200px; background: #000000; overflow: auto;">
+						<p style="width: 100px; height: 500px; background: #09f;">
+						文字开始<br /><br /><br /><br /><br />
+						文字结束<br /><br /><br />
+						</p>
+					</div>
+					<div class="swiper-container">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide" id="slide">Slide 1</div>
+					        <div class="swiper-slide">Slide 2</div>
+					        <div class="swiper-slide">Slide 3</div>
+					    </div>
+					</div>
+					
+					<script type="text/javascript">
+						var ss=new Swiper('.swiper-container',{});
+					</script>
+				</div>
+				
+				<!--</div>-->
+				
+				
+				
+				
+			<!--</div>
+		</div>-->
+		<script type="text/javascript">
+			var zmain=document.getElementById("zmain");
+			var eleScroll=document.querySelector("#scroll") || null;
+			var scroll=eleScroll || window;
+			var	sTop= eleScroll? eleScroll.scrollTop : (document.documentElement.scrollTop || document.body.scrollTop);
+			var isEnd=false; //是否关闭上拉加载
+			var zheight=document.documentElement.clientHeight;
+				//创建下拉刷新状态结构
+			var refreshUp=document.createElement('div');
+				refreshUp.className="zrefresh",refreshUp.id='refreshUp';
+			var refreshState=document.createElement('p');
+			    refreshState.className="refreshing";
+			var refreshTxt=document.createElement('p');
+			    refreshTxt.className="refresh_text";
+			    refreshUp.appendChild(refreshState);
+			    refreshUp.appendChild(refreshTxt);
+			    refreshTxt.innerHTML='上拉加载';
+			    zmain.parentNode.appendChild(refreshUp,zmain);
+			
+				scroll.onscroll=function(){
+					sTop= eleScroll? eleScroll.scrollTop : (document.documentElement.scrollTop || document.body.scrollTop);
+					var isState=sTop+zheight;
+					if(isState>=(eleScroll ? eleScroll.scrollHeight-2 : document.body.scrollHeight-2) && !isEnd){
+						console.log("数据加载中");
+						eleScroll ? eleScroll.appendChild(document.getElementById('tbox').cloneNode()) : document.getElementsByTagName('body')[0].appendChild(document.getElementById('tbox').cloneNode());
+					}else{
+						console.log('还没有到底部');
+					}
+				}
+	
+		</script>
+	</body>
+</html>

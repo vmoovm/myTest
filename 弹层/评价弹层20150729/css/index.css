@@ -1,0 +1,12 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+弹窗口背景
+-----------------------------------------------------*/
+.zlayer {position:fixed; _position:absolute; left:0; top:0;  _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight)); width:100%; height:2000px; background:url(../images/opacity50.png) repeat; display:none;}
+.zl_box { position:fixed; _position:absolute; left:5%; top:20%;  _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight));  width:90%; margin:0 auto; border:3px #a8a8a8 solid; background-color:#fff;    }
+.zl_t { height:34px; border-bottom: 1px #d0d0d0 solid; background-color: #f0f0f0;}
+.zl_text { padding-left:12px; color:#555; line-height:34px; font-size:12px; color:#4b5b67; }
+.zl_close { display:inline-block; width:20px; height:20px; margin-top:8px; background:url(../images/collect_icon.png) right -24px no-repeat; cursor:pointer;}
+.zl_bg { padding: 25px;}

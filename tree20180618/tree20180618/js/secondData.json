@@ -1,0 +1,13 @@
+{
+	"data":{
+		"organizeList":[
+			{"deptId":1385,"fOrgId":2,"id":61,"inserttime":1528253853000,"orgChain":"2/61/","orgName":"海淀地区","orgNameChain":"组织2/海淀地区/","updatetime":1528253853000,"userCount":1},
+			{"deptId":1385,"fOrgId":2,"id":62,"inserttime":1528253875000,"orgChain":"2/62/","orgName":"天津地区","orgNameChain":"组织2/天津地区/","updatetime":1528253875000,"userCount":1},
+			{"deptId":1385,"fOrgId":2,"id":63,"inserttime":1528254170000,"orgChain":"2/63/","orgName":"辽宁地区","orgNameChain":"组织2/辽宁地区/","updatetime":1528254170000,"userCount":1},
+			{"deptId":1385,"fOrgId":2,"id":64,"inserttime":1528254183000,"orgChain":"2/64/","orgName":"黑龙江地区","orgNameChain":"组织2/黑龙江地区/","updatetime":1528254183000,"userCount":0},
+			{"deptId":1385,"fOrgId":2,"id":65,"inserttime":1528254330000,"orgChain":"2/65/","orgName":"吉林地区","orgNameChain":"组织2/吉林地区/","updatetime":1528254330000,"userCount":0},
+			{"deptId":1385,"fOrgId":2,"id":73,"inserttime":1528267238000,"orgChain":"2/73/","orgName":"北京地区","orgNameChain":"组织2/北京地区/","updatetime":1528267238000,"userCount":0}
+		]
+	},
+	"success":true
+}

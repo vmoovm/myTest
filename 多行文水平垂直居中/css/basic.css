@@ -1,0 +1,19 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+
+
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+.ztext_middle { height:300px; width:500px; border: 1px #ccc solid; position:static;  *position:relative; *display:block!important; display:table!important; }
+.ztext_m_outer { position:static;  *position:absolute; display:table-cell; vertical-align:middle;  *display:block; top:50%; width:100%; }
+.ztext_m_inside { position:relative; top:-50%; text-align:center; width:100%; }

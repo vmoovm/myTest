@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>头像式图文列表</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<!--头像式图文列表 start-->
+		<div class="zlargeIcon">
+			<ul class="zlargeIcon_box">
+				<li class="zlargeIcon_row">
+					<div class="zlargeIcon_rR">
+						<em>共27人听课</em>
+					</div>
+					<div class="zlargeIcon_info">
+						<div class="zlargeIcon_icons">
+							<p class="zlargeIcon_img"><img src="img/201612241557_25.jpg"/></p>
+						</div>
+						<div class="zlargeIcon_text">
+					        <div class="zlargeIcon_middle">
+				                <dl class="zlargeIcon_content">
+									<dt><a href="#">UI图标设计教程</a><span>sfj</span></dt>
+									<dd><span>主讲：罗大人</span><span>2017年10月上架</span></dd>
+								</dl>
+					        </div>
+					    </div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</li>
+			</ul>
+		</div>
+		<style type="text/css">
+			/*----------------------------------------------------
+			头像式图文列表
+			-----------------------------------------------------*/
+			.zlargeIcon {}
+			.zlargeIcon_box {}
+			.zlargeIcon_row { height: 90px; border-bottom: 1px #dedede dashed;}
+			/*右侧*/
+			.zlargeIcon_rR { float: right; } 
+			.zlargeIcon_rR em { display: inline-block; vertical-align: middle; line-height: 90px; font-size: 14px; color: #858585;}
+			/*默认图标*/
+			.zlargeIcon_info { padding: 0 10px;}
+			.zlargeIcon_icons { float: left;}
+			.zlargeIcon_img { width: 60px; height: 60px; padding-top: 15px;display: table-cell; vertical-align:middle; text-align: center; *font-size: 52px; *font-family:Arial;}
+			.zlargeIcon_img img { max-width: 100%; max-height: 100%;*width: 60px; *height: 60px;}
+			/*多行标题垂直居中(高90)*/
+			.zlargeIcon_text { height:90px; margin-left: 70px; position:static;  *position:relative; *display:block!important; display:table!important; }
+			.zlargeIcon_middle { position:static;  *position:absolute; display:table-cell; vertical-align:middle;  *display:block; top:50%; width:100%; }
+			.zlargeIcon_content {  position:relative; top:-50%; width:100%;}
+			.zlargeIcon_content dt,.zlargeIcon_content dd { width: 300px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+			.zlargeIcon_content dt { font-size: 16px; color: #333;}
+			.zlargeIcon_content dt span { padding-left: 14px; color: #858585; font-size: 14px;}
+			.zlargeIcon_content dd { padding-top: 8px; font-size: 12px; color: #999;}
+			.zlargeIcon_content dd span { padding-right: 20px;}
+			.zlargeIcon_content dd a { color: #09f;}
+
+		</style>
+		<!--头像式图文列表 end-->
+		
+		
+	</body>
+</html>

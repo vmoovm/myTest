@@ -1,0 +1,18 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+默认班级列表
+-----------------------------------------------------*/
+.zclasses { width: 600px; margin: 0 auto;}
+.zcl_row { padding: 10px 30px; border-bottom: 1px #dedede solid; background-color: #fff; line-height: 70px; font-size: 28px; overflow: hidden;}
+.zcl_con { margin-right: 50px;}
+.zcl_num { float: right;}
+.zcl_num i,.zcl_num span { display: inline-block; vertical-align: middle;}
+.zcl_num span { padding-right: 4px; color: #929292;}
+.zcl_num i {padding: 0 10px; color: #f00;}
+.zcl_input { margin-top: 9px; margin-left: 50px;}
+.zcl_input input { width: 95%; height: 50px; margin-left: 1%; padding-right: 2%; border: 1px #dedede dashed; background: none; line-height: 50px; font-size: 20px; vertical-align: middle;}
+
+.check_opt { font-size: 20px; line-height: 70px; text-align: center;}
+.check_opt li { display: inline-block; margin: 0 20px;}

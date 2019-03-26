@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*-----------------------------------------------------
+
+-----------------------------------------------------*/
+
+.zshopping {}
+.zshopping_mode { margin-bottom: 10px; background-image: -webkit-linear-gradient(#dedede 50%, transparent 50%),-webkit-linear-gradient(#dedede 50%, transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: top,bottom; background-color: #fff;}
+.zshopping_header { display: -webkit-box; height: 40px; padding-right: 10px; background-image: -webkit-linear-gradient(#dedede 50%, transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom;}
+.zshopping_name { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zshopping_name i,.zshopping_name a,.zshopping_name img { vertical-align: middle;}
+.zshopping_name i { margin-right: 7px;font-size: 16px; color: #333;}
+.zshopping_name a { display: inline-block; font-size: 14px; color: #333;}
+.zshopping_name img { margin-right: 5px; max-width: 25px; max-height: 25px;}
+.zshopping_link { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; font-size: 12px; color: #09f;}
+
+.zshopping_body {}
+.zshopping_row { display: -webkit-box; padding: 10px 0; padding-right: 10px; background-image: -webkit-linear-gradient(#dedede 50%, transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom;}
+.zshopping_row:last-child { background: none;}
+.zshopping_check { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; -webkit-box-align: center; padding: 0 10px;}
+.zshopping_check label { font-size: 13px; padding-left: 6px; vertical-align: middle; color: #666;}
+.zshopping_check input { position: relative; display: inline-block; font-family: 'myproject' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; vertical-align: middle;}
+.zshopping_check input:before { content: ""; position: absolute; border-radius: 50%; left: -2px; top: -2px; width: 18px; height: 18px; border:1px #ccc solid;  font-size: 18px; background: #fff;}
+.zshopping_check input:checked:before { content: "\e909"; position: absolute; border-radius: 50%;  left: -2px; top: -2px; width: 18px; height: 18px; border:1px #f10d0c solid; font-size: 18px; background: #f10d0c; color: #fff;}
+.zshopping_icon {}
+.zshopping_img { width: 80px; height: 80px; padding: 3px; border: 1px #dedede solid; display: table-cell; vertical-align: middle; text-align: center;}
+.zshopping_img img { max-width: 100%; max-height: 100%;}
+.zshopping_info { -webkit-box-flex: 1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: justify;  margin-left: 12px;}
+.zshopping_th { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.zshopping_th h1 { font-size: 14px; display: -webkit-box; -webkit-box-orient:vertical; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp:2;}
+.zshopping_th p { padding-top: 6px; font-size: 12px; color: #929292; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.zshopping_attach {	display: -webkit-box; -webkit-box-pack: justify;}
+.zshopping_price { ; padding-top: 4px;}
+.zshopping_price1,.zshopping_price2,.zshopping_price3 { display: inline-block; padding: 1px 4px 2px; border-radius: 2px; font-size: 16px; color: #f10d0c;}
+.zshopping_price2 { color: #929292; text-decoration: line-through;}
+.zshopping_price3 { color: #f10d0c;}
+.zshopping_num { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; -webkit-box-align:end;}
+.zshopping_num i,.zshopping_num input { vertical-align: middle;}
+.zshopping_num input { width: 30px; height: 20px; border: none; border: 1px #dedede solid; background: #fff; font-size: 12px; text-align: center; color: #929292;}
+.zshopping_minus,.zshopping_plus { padding: 2px; border: 1px #dedede solid; font-size: 16px; color: #929292; }
+.zshopping_plus { border-left: none; }
+.zshopping_minus { border-right: none; }
+.zshopping_footer {  line-height: 2; text-align: center; background: #f4fafd; font-size: 12px; color: #929292; background-image: -webkit-linear-gradient(#dedede 50%, transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: bottom;}
+
+.zshopping_count { display: -webkit-box; padding-left:10px; height: 48px; background-image: -webkit-linear-gradient(#dedede 50%, transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-position: top;}
+.zshopping_count h1 { padding-top: 8px; line-height: 1;}
+.zshopping_count p { line-height: 1;}
+.zshopping_go { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; padding: 0 14px; background: #f10d0c; font-size: 14px; color: #fff;}
+.zshopping_go a { color: #fff;}
+.zshopping_go sub { display: inline-block; font-size: 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

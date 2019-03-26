@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+模拟下拉框
+-----------------------------------------------------*/
+.zeffects { width:1000px; margin:0 auto; padding-top:50px; padding-bottom:50px; padding-left:20px; padding-right:20px; background-color:#fff;}
+
+.ze_box { width:200px;}
+.ze_box .zselect { position:relative; width:200px; border:1px #aaa solid; cursor:pointer; background:url(../image/select/select_arrow.gif) right 11px no-repeat; background-color:#ccc;}
+.ze_box .zse_p { width:160px; height:30px; padding-left:6px; border-right:1px #aaa solid; background-color:#fff; line-height:30px; font-size:14px; color:#555;}
+.ze_box .zse_ul { position:absolute; left:-1px; top:31px; width:200px; border:1px #aaa solid; border-top:none; background-color:#fff; display:none;}
+.ze_box .zse_li {border-top:1px #efefef solid;}
+.ze_box .zse_first {border-top:none;}
+.ze_box .zse_li a { display:block; height:30px; padding-left:6px; padding-right:6px; line-height:30px;}
+.ze_box .zse_li a:link { color: #555; text-decoration: none; }
+.ze_box .zse_li a:visited { color: #555; text-decoration: none; }
+.ze_box .zse_li a:hover { color:#fff; text-decoration: none; background-color:#09C;}
+.ze_box .zse_li a:active { color: #555; text-decoration: none; }
+
+
+
+
+
+
+
+
+

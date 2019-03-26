@@ -1,0 +1,11 @@
+﻿
+/*----------------------------------------------------
+menu
+-----------------------------------------------------*/
+.zmenu { height: 3.75rem; padding-right: 1px; border-top: 1px #dedede solid; background: #f8f8f8;}
+.zmenu_box { display: -webkit-box; -webkit-box-pack:center;}
+.zmenu_item { /*width: 8rem;*/ -webkit-box-flex: 1; position: relative;  border-right: 1px #dedede solid; font-size: 1.4rem; line-height: 3.75rem; text-align: center;}
+.zmenu_item:last-child { border-right: none;}
+.zmenu_item span { position: absolute; right: 0.1rem; bottom: 0.1rem; width: 0px; height: 0px; border-style: solid; border-color: transparent #929292 #929292 transparent;  border-width: 0.5rem;}
+.zmenu_sub { position: absolute; bottom: 3.75rem; left: -1px; width: 100%; border: 1px #dedede solid; border-bottom: none; background: #f8f8f8; display: none;}
+.zmenu_sub li { border-bottom: 1px #dedede solid;}

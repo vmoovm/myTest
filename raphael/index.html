@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>自定义-自定义</title>
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<!--<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>-->
+		<script src="js/raphael-v-2.1.2.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style media="screen">
+            body {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            h1 {
+                font-weight: 400;
+                height: 5%;
+            }
+            #canvas {
+                height: 480px;
+                margin: 0 auto;
+                text-align: left;
+                width: 640px;
+            }
+            #code {
+                font-family: Consolas, Monaco, "Lucida Console", monospace;
+                height: 4em;
+                margin: 10px;
+                padding: 0;
+                width: 90%;
+            }
+            #run {
+                font-size: 2em;
+            }
+        </style>
+        <script>
+            window.onload = function () {
+                var paper = Raphael("canvas", 640, 480),
+                    btn = document.getElementById("run"),
+                    cd = document.getElementById("code");
+
+                (btn.onclick = function () {
+                    paper.clear();
+                    paper.rect(0, 0, 640, 480, 10).attr({fill: "#fff", stroke: "none"});
+                    try {
+                        (new Function("paper", "window", "document", cd.value)).call(paper, paper);
+                    } catch (e) {
+                        alert(e.message || e);
+                    }
+                })();
+            };
+        </script>
+	</head>
+
+	<body>
+		<div id="canvas">
+			
+		</div>
+		<div><textarea id="code">paper.circle(320, 240, 60).animate({fill: "#223fa3", stroke: "#000", "stroke-width": 80, "stroke-opacity": 0.5}, 2000);</textarea></div>
+		<div><button id="run" type="button">Run</button></div>
+	</body>
+
+</html>

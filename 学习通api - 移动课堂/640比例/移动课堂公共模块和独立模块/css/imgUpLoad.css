@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+上传图片
+-----------------------------------------------------*/
+.zshangchuan { border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+/*单行文本输入*/
+.zsh_input { display: -webkit-box; display: box; width: 100%; padding: 1rem 0; padding-top: 0; box-sizing: border-box;}
+.zsh_typeText { -webkit-box-flex: 1; height: 3.75rem; padding-left: 1rem; -webkit-transiton:0.6s all ease; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+.zsh_typeText input { width: 100%; height: 3.75rem; border: none; border-radius: 0;  background: #fff; line-height: none; line-height: normal; font-size: 1.5rem; color: #333;} 
+.zsh_tt { height: 3.75rem; padding-left: 1.2rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; line-height: 3.75rem; font-size:1.5rem; color: #999;}
+
+.zcameraBtn {  -webkit-transiton:1.6s all ease; width: 4.8rem; padding-left: 0.6rem; padding-right: 1rem; height: 3.75rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; text-align: right;}
+.zcameraBtn img { width: 2.6rem; margin-top: 0.65rem;}
+.zcameraBtn span { display: inline-block; width: 3.5rem; height: 3.5rem; background: url(../images/camera_03.png) no-repeat; background-position: center; background-size: 2.4rem; line-height: 3.5rem; font-size: 1.2rem; color: #09f;-webkit-filter: grayscale(1); filter: grayscale(1);}
+
+.zaddBtn { padding-left: 0.6rem; padding-right: 1rem; height: 3.75rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; text-align: right;}
+.zaddBtn span { display: block; width: 2rem; height: 2rem; margin-top: 0.95rem; background: url(../images/add_32.png) no-repeat;/* background: url(../images/icon5.png) center no-repeat;*/ background-size: 1.6rem;}
+
+/*多行文本输入*/
+.zsh_textarea {}
+.zsh_site { position: relative; width: 0.05rem; height: 0;}
+.zsh_zgray { position: absolute; top: 0.7rem; left: 1.2rem; display: inline-block; width: 4.7rem; font-size: 1.35rem; color: #333; z-index: 10; -webkit-user-select: none;}
+.zsh_contenteditable ,.zsh_contenteditable1 { width: 100%;}
+.zsh_contenteditable textarea,.zsh_contenteditable1  textarea {-webkit-appearance: none; width: 100%; min-height: 6rem; padding:0.4rem 1.2rem 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: none; border-radius: 0; outline: none; background: #fff; line-height: 2.5rem; font-size: 1.4rem; color: #333;}
+.zsh_contenteditable1  textarea { border: none; border-radius: 0; outline: none; background: #fff; line-height: 1.4;}
+.zsh_contenteditable1  textarea::-webkit-input-placeholder { font-size: 1.3rem; }
+
+.zcameraBtn1 { position: relative; width: 100%; height: 0; -webkit-filter: grayscale(1); filter: grayscale(1);}
+.zcameraBtn1 img { position: absolute; right: 1rem; top: -3.15rem; width: 2.6rem;}
+.zcameraBtn1 span { position: absolute; right: 1rem; top: -3.15rem; width: 3rem; height: 3rem; background: url(../images/camera_03.png) no-repeat; background-position: center; background-size: 2.4rem; -webkit-filter: grayscale(1); filter: grayscale(1);}
+
+.zsh_intitle { padding: 0.8rem 0; padding-bottom: 0; }
+.zsh_intitle h2 { padding:0.6rem 1.2rem 0.65rem 1.2rem; line-height: 1.4; font-size: 1.4rem; color: #333; word-wrap:break-word;	word-break:break-all;}
+.zsh_intitle h2 span { color: #999;}
+
+.zsh_img,.zsh_img1 { padding:0 1.2rem;}
+.zsh_img1 { border-bottom: 1px #ebebeb solid;}
+.zsh_imgList { padding: 0.5rem 0 0 0;}
+.zsh_rel { position: relative; display: inline-block; letter-spaceing:-0.2rem; width: 5rem; height: 5rem; margin-bottom: 1rem; margin-right: 1.95rem;}
+.zsh_view { display: inline-block;  overflow: hidden; width: 5rem; height: 5rem; border-radius: 0.4rem;}
+.zsh_view img {/* display: none;*/}
+.zsh_close { position: absolute; right: -0.8rem; top: -0.8rem; width: 1.5rem; height: 1.5rem; background: url(../images/delete_06.png) center no-repeat; background-size: 90%; z-index: 10;}
+.zsh_addImg { display: inline-block; letter-spaceing:-0.2rem; width: 5rem; height: 5rem; border:1px #ebebeb solid; border-radius: 0.4rem; background: url(../images/add_03.png) center no-repeat; background-size: 2.8rem;}
+.zsh_addImg:first-child { background-image: url(../images/cameraicon.png); border: none; }
+.zsh_h { padding: 0 1.2rem 0.1rem; line-height: 1.6rem; font-size: 1.4rem; color: #999;}
+
+/*借助swiper 大图预览*/
+.imgLarge {}
+.imgLarge_item { display: table-cell; height: 16rem; text-align: center; vertical-align: middle;}
+.imgLarge_item img { max-width: 100%; max-height: 100%;}
+
+.zlistImgs { width: 100%; padding: 1rem 0 0.4rem;}
+.zlistImgs p { margin: 0 1.2rem; padding-bottom: 0.6rem; text-align: center;}
+.zlistImgs p img { max-width: 100%; max-height: 100%;}
+
+/*----------------------------------------------------
+图片展示
+-----------------------------------------------------*/
+.zimgList { border-bottom: 1px #ebebeb solid; background-color: #fff;}
+.zimgList_header { padding: 1.2rem 1.2rem;}
+.zimgList_header h2 { line-height: 1.5; font-size: 1.4rem; color: #333;}
+.zimgList_box { padding-bottom: 1.2rem;}
+.zimgList_item {}
+.zimgList_bg { position: relative;  width: 100%; height: 14rem; overflow: hidden;}
+.zimgList_img { height: 100%;}
+.zimgList_img img { }
+.zimgList_imgw100 img { width: 100%; display: inline-block;}
+.zimgList_imgh100 img { height: 100%; display: inline-block;}
+.zimgList_th { position: absolute; left: 0; bottom:0; width:97.5%; padding-left: 2.5%; height: 20px; background: rgba(0,0,0,0.4); color: #fff; font-size: 12px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}

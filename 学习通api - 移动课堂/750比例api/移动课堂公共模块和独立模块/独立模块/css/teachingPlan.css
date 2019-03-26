@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+教案管理
+-----------------------------------------------------*/
+.zarticleManage_list { position: relative; height: 0.01rem; /*display: none;*/ }
+.zarticleManage_list ul { position: absolute; top: 4rem; left: 0rem; display: -webkit-box; }
+.zarticleManage_list ul li { padding:0.6rem 1rem; border-left: 1px rgba(255,255,255,0.8) solid; background: rgba(51,51,51,0.8); text-align: center; line-height: 2rem; font-size: 1.4rem;}
+.zarticleManage_list ul li:last-child { padding-right: 2rem; border-radius: 0 2rem 2rem 0; }
+.zarticleManage_list ul li:first-child { border-left: none;}
+.zarticleManage_list ul li a { font-size: 1.2rem; color: #fff;}
+.zarticleManage_animation { -webkit-animation:0.5s ease forwards; -webkit-transform:translate(-30rem);}
+.zarticleManage_ltor { -webkit-animation-name:moveShow;}
+.zarticleManage_rtol { -webkit-animation-name:moveHide;}
+
+@-webkit-keyframes moveShow {
+    0%{ -webkit-transform:translate(-30rem);}
+	100%{ -webkit-transform:translate(0rem);}
+}
+
+@-webkit-keyframes moveHide{
+    0%{ -webkit-transform:translate(0rem);}
+	100%{ -webkit-transform:translate(-30rem);}
+}
+
+/*----------------------------------------------------
+教案课件列表
+-----------------------------------------------------*/
+.zlist { padding: 1.85rem 0rem;}
+.zli_row { height: 4.5rem; overflow: hidden; border-bottom: 1px #dedede solid;}
+.zli_row:first-child { border-top: 1px #dedede solid;}
+.zli_record { display: -webkit-box; height: 100%; }
+.zli_txt { width: 100%; padding: 1rem 1.5rem; box-sizing: border-box; font-size: 1.5rem;}
+.zli_row dt { font-size: 1.5rem; color: #000; line-height: 2.4rem;}
+.zli_row dt a { color: #000;}
+/*.zli_row dd { font-size: 1rem; color: #777; line-height: 2rem;}*/
+.zli_manage { display: -webkit-box; display: box; width: 9rem; height: 100%; }
+.zli_manage a { display: block; -webkit-box-flex: 1; height: 100%; line-height: 4.5rem; text-align: center;; color: #fff; font-size: 1.5rem;}
+.zli_manage a.zli_edit { background: #ff7f00; }
+.zli_manage a.zli_move { background: #ff7800; }
+.zli_manage a.zli_delete { background: #fb0200; }
+
+/*----------------------------------------------------
+教案列表
+-----------------------------------------------------*/
+.zjalist { padding: 1.5rem; }
+.zja_row { display: block;}
+.zja_row dl,.zja_add { display: -webkit-box; display: box; height: 4.1rem; border-bottom: 1px #dadada solid;}
+.zja_row dl dt { -webkit-box-flex: 1; height: 4.1rem; padding-left: 1.1rem; line-height: 4.1rem; font-size: 1.5rem;}
+.zja_row dl dd { width: 3rem; height: 4.1rem; background: url(../images/myIcons_03.png) center no-repeat; background-size: 1rem 1.65rem;}
+.zja_add a { display: block; width: 3rem; height: 3rem; margin-top: 0.55rem; margin-left: 1.1rem; background: url(../images/add_07.png) center no-repeat; background-size: 3rem;}
+
+
+/*----------------------------------------------------
+创建教案
+-----------------------------------------------------*/
+.zcreat { padding: 1rem;}
+.zcr_row { padding-top:1.2rem; padding-bottom: 0.7rem; padding-left: 1rem; line-height: 2rem; color: #aeaeae; font-size: 1.5rem;}
+.zcr_row:not(:last-child) {  border-bottom: 1px #ccc solid;}
+.zcr_row>input { height: 3rem; border: none; background: none; line-height: 3rem;}
+
+
+.zinfo { padding: 0rem;}
+.zin_box { padding-bottom: 2.2rem; padding-top: 1rem; line-height: 2rem; font-size: 1.2rem; color: #777;}
+/*----------------------------------------------------
+zvote投票\zdiscuss讨论\PPT\zsign签到\zanswer抢答
+-----------------------------------------------------*/
+.zvote,
+.zdiscuss,
+.zppt,
+.zcloud,
+.zrandom,
+.zsign,
+.zask,
+.zquestion,
+.zanswer,
+.zlive,
+.zscore,
+.zpic { display: -webkit-box; display: box; height: 5.4rem; border: 1px #dedede solid;  -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 4px; background: #fff;}
+
+.zgoing { background: #fff;}
+
+.zvote .zicon,
+.zdiscuss .zicon,
+.zppt .zicon,
+.zcloud .zicon,
+.zrandom .zicon,
+.zsign .zicon,
+.zask .zicon,
+.zquestion .zicon,
+.zanswer .zicon,
+.zlive .zicon,
+.zscore .zicon,
+.zpic .zicon { width: 4.5rem; border-right: 1px #dcdcdc solid; }
+
+.zvote .zicon { background: url(../images/teachingPlan/icons_88.png) center no-repeat; background-size: 2.5rem;}
+.zdiscuss .zicon { background: url(../images/teachingPlan/icons_13.png) center no-repeat; background-size: 2.5rem;}
+/*.zppt .zicon { background: url(../images/icons_28.png) center no-repeat; background-size: 2.5rem;}*/
+.zcloud .zicon { background: url(../images/teachingPlan/yunpan.png) center no-repeat; background-size: 2.5rem;}
+.zrandom .zicon { background: url(../images/teachingPlan/sjxr.png) center no-repeat; background-size: 2.5rem;}
+.zsign .zicon { background: url(../images/teachingPlan/qd.png) center no-repeat; background-size: 2.5rem;}
+/*.zask .zicon { background: url(../images/icons_61.png) center no-repeat; background-size: 2.5rem;}*/
+.zquestion .zicon { background: url(../images/teachingPlan/icons_61.png) center no-repeat; background-size: 2.5rem;}
+.zanswer .zicon { background: url(../images/teachingPlan/dq.png) center no-repeat; background-size: 2.5rem;}
+.zlive .zicon { background: url(../images/teachingPlan/live.png) center no-repeat; background-size: 2.5rem;}
+.zscore .zicon { background: url(../images/teachingPlan/score.png) center no-repeat; background-size: 2.5rem;}
+.zpic .zicon img { width: 100%; vertical-align: middle;}
+
+.zvote .ztext,
+.zdiscuss .ztext,
+.zppt .ztext,
+.zcloud .ztext,
+.zrandom .ztext,
+.zsign .ztext,
+.zask .ztext,
+.zquestion .ztext,
+.zanswer .ztext,
+.zlive .ztext,
+.zscore .ztext,
+.zpic .ztext { -webkit-box-flex: 1; display: -webkit-box; display: box; -webkit-box-orient: vertical; -webkit-box-pack: center; padding:0 0.6rem; padding-bottom: 0.1rem; }
+
+.zvote .ztext h2,
+.zvote .ztext .ztt,
+.zdiscuss .ztext h2,
+.zdiscuss .ztext .ztt,
+.zppt .ztext h2,
+.zppt .ztext .ztt,
+.zcloud .ztext h2,
+.zcloud .ztext .ztt,
+.zrandom .ztext h2,
+.zrandom .ztext .ztt,
+.zsign .ztext h2,
+.zsign .ztext .ztt,
+.zask .ztext h2,
+.zask .ztext .ztt,
+.zquestion .ztext h2,
+.zquestion .ztext .ztt,
+.zanswer .ztext h2,
+.zanswer .ztext .ztt,
+.zlive .ztext h2,
+.zlive .ztext .ztt,
+.zscore .ztext h2,
+.zscore .ztext .ztt,
+.zpic .ztext h2,
+.zpic .ztext .ztt { font-size: 1.4rem; color: #777; }
+
+.zvote .ztext .ztt,
+.zdiscuss .ztext .ztt,
+.zppt .ztext .ztt,
+.zcloud .ztext .ztt,
+.zrandom .ztext .ztt,
+.zsign .ztext .ztt,
+.zask .ztext .ztt,
+.zquestion .ztext .ztt,
+.zanswer .ztext .ztt,
+.zlive .ztext .ztt,
+.zscore .ztext .ztt,
+.zpic .ztext .ztt { line-height: 1.6rem; font-size: 1rem; color: #929292;}
+
+.zvote .ztext .ztt .zhh,
+.zdiscuss .ztext .ztt .zhh,
+.zppt .ztext .ztt .zhh,
+.zcloud .ztext .ztt .zhh,
+.zrandom .ztext .ztt .zhh,
+.zsign .ztext .ztt .zhh,
+.zask .ztext .ztt .zhh,
+.zquestion .ztext .ztt .zhh,
+.zanswer .ztext .ztt .zhh,
+.zlive .ztext .ztt .zhh,
+.zscore .ztext .ztt .zhh,
+.zpic .ztext .ztt .zhh {}
+
+.zvote .ztext .ztt .ztime,
+.zdiscuss .ztext .ztt .ztime,
+.zppt .ztext .ztt .ztime,
+.zcloud .ztext .ztt .ztime,
+.zrandom .ztext .ztt .ztime,
+.zsign .ztext .ztt .ztime,
+.zask .ztext .ztt .ztime,
+.zquestion .ztext .ztt .ztime,
+.zanswer .ztext .ztt .ztime,
+.zlive .ztext .ztt .ztime,
+.zscore .ztext .ztt .ztime,
+.zpic .ztext .ztt .ztime { color: #929292; /*width: 80%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;*/}
+
+
+
+.zvote .ztext h2,
+.zdiscuss .ztext h2,
+.zppt .ztext h2,
+.zcloud .ztext h2,
+.zrandom .ztext h2,
+.zsign .ztext h2,
+.zask .ztext h2,
+.zquestion .ztext h2,
+.zanswer .ztext h2,
+.zlive .ztext h2,
+.zscore .ztext h2,
+.zpic .ztext h2 { font-weight:400}
+
+.zvote .ztext h2.zyellow,
+.zdiscuss .ztext h2.zyellow,
+.zppt .ztext h2.zyellow,
+.zcloud .ztext h2.zyellow,
+.zrandom .ztext h2.zyellow,
+.zsign .ztext h2.zyellow,
+.zask .ztext h2.zyellow,
+.zquestion .ztext h2.zyellow,
+.zanswer .ztext h2 .zyellow,
+.zlive .ztext h2 .zyellow,
+.zscore .ztext h2 .zyellow,
+.zpic .ztext h2 .zyellow { color: #f2a561; }
+
+/*.zvote .ztext h2,
+.zvote .ztext h3 { height: 1.3rem; line-height: 1.3rem;}
+
+.zvote .zcount { line-height: 1.4rem; font-size: 0.9rem; color: #999;}
+.zvote .zcount span { color: #039bff;}*/.zpoint { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center; width: 5rem; text-align: center; color: #929292; font-size: 1.4rem;}
+
+.ziconBottom { padding-bottom:0.2rem;}

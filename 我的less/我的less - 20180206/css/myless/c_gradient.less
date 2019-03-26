@@ -1,0 +1,22 @@
+// 依赖关系: a_background_color.less
+// -----------------------------------------------------
+// 渐变
+// -----------------------------------------------------
+.gradient (linear, @startColor: @bgColor-l, @endColor: @bgColor-w, @forward: left) { 
+	background: -webkit-linear-gradient(@forward, @startColor, @endColor);
+	background: -moz-linear-gradient(@forward, @startColor, @endColor);
+	background: -o-linear-gradient(@forward, @startColor, @endColor);
+	background: linear-gradient(@forward, @startColor, @endColor);
+	
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+}
+.gradient (@startColor: @bgColor-l, @endColor: @bgColor-w, @forward: left) { 
+	background: -webkit-linear-gradient(@forward, @startColor, @endColor);
+	background: -moz-linear-gradient(@forward, @startColor, @endColor);
+	background: -o-linear-gradient(@forward, @startColor, @endColor);
+	background: linear-gradient(@forward, @startColor, @endColor);
+	
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+}

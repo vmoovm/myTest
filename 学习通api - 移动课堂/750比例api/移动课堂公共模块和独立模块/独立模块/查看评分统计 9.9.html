@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>查看评分统计 9.9</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="css/imgUpLoad.css" rel="stylesheet" type="text/css" />
+<link href="css/score.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--main start-->
+<div class="zbox">
+	<div class="zbox_content">
+		<div class="zsh_intitle" style="background: none;">
+			<h2>【标题】以下4张图你最喜欢哪张？</h2>
+		</div>
+		<div class="zsh_img">
+			<dl class="zsh_imgList">
+				<dd class="zsh_rel"><img src="temp/201601191126_13.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_15.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_17.png" /></dd>
+				<dd class="zsh_rel"><img src="temp/201601191126_22.png" /></dd>
+			</dl>
+		</div>
+		<div class="zfield">
+			<dl class="zfield_row">
+				<dt>平均分 <em>90</em> 分</dt>
+				<dd><a href="#">评价</a></dd>
+			</dl>
+		</div>
+		<p class="zst_border"></p>
+		<div class="zheader1">
+			<ul class="ztabList">
+				<li class="ztabList_cur">已评：3</li>
+				<li>未评：18</li>
+			</ul>
+		</div>
+		<div class="swiper-container" id="zscore">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="zscore">
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>优！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>再接再厉</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>再接再厉</p>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="zscore">
+						<div class="zscore_empty">
+							全部评完
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	// ztabList_cur
+	$(".ztabList").on("touchstart","li",function(){
+		$(this).addClass("ztabList_cur").siblings().removeClass("ztabList_cur")
+		zscore.slideTo( $(this).index());
+	})
+	
+	var zscore=new Swiper("#zscore",{
+		onSlideChangeStart: function(){
+			updateNavPosition()
+		}
+	});
+	function updateNavPosition(){
+		$(".ztabList li").removeClass("ztabList_cur");
+		$(".ztabList li").eq(zscore.activeIndex).addClass('ztabList_cur');
+	}
+</script>
+</body>
+</html>

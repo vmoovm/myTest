@@ -1,0 +1,15 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+垂直居中css
+-----------------------------------------------------*/
+
+
+.ztext_middle { height:300px; width:500px; position:static;  *position:relative;
+ *display:block!important;
+display:table!important; }
+.ztext_m_outer { position:static;  *position:absolute;
+display:table-cell; vertical-align:middle;  *display:block;
+top:50%; width:100%; }
+.ztext_m_inside { position:relative; top:-50%; text-align:center; width:100%; }

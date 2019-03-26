@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="images"></div>
+		<script type="text/javascript">
+			// $.ajax({
+				// type:"get",
+				// url:"http://mobilelearn.fy.chaoxing.com/ppt/beginsAPI/isupCrouse?tpid=&chartId=18250984390658",
+				// async:true,
+				// dataType:'jsonp'
+			// });
+			
+			jQuery.ajax({
+				async:false,
+				url: "http://www.lagou.com/join/listW3cplus?kd=%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91",
+				type: "GET",
+				dataType: "jsonp",
+				jsonpCallback: 'success_jsonpCallback',
+				// contentType: "application/jsonp; charset=utf-8",
+				success: function(data) {
+					//success_jsonpCallback(data);
+				}
+			});
+		</script>
+	</body>
+</html>

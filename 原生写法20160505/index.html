@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自定义-自定义</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+<style>
+							.pagetab { overflow: hidden;}
+							.pagetab li { float: left; height: 50px; padding: 0 20px; border-right: 1px #ccc solid; border-top: 1px #ccc solid; background: #cdcdcd; color: #222;}
+							.pagetab li.cur { background: #666; color: #fff;}
+							.boxzz {
+								padding: 18px;
+								border: 1px #ccc solid;
+								border-radius: 5px;
+								background: #f5f5f5;
+								margin: 10px 0;
+								line-height: 30px;
+								display: none;
+							}
+						</style>
+						<ul class="pagetab">
+							<li class="cur">css样式</li>
+							<li>html结构</li>
+							<li>javascript</li>
+						</ul>
+						<div class="boxzz" style="display: block;">css样式：{dede:field.css /}</div>
+						<div class="boxzz">html标签：{dede:field.html/}</div>
+						<div class="boxzz">js脚本：{dede:field.js/}</div>
+						<div style="clear:both"></div>
+						<script type="text/javascript">
+							//var pageTab=document.getElementsByClassName("pagetab")[0].children;
+							
+							//for(var n=0;n<pageTab.length;n++){
+								//pageTab[n].onclick=function(event){
+									
+									//请问怎么转成原生的;
+								//};
+							//}
+							
+							 $(".pagetab li").click(function(){
+								 $(".boxzz").hide();
+								 $(".boxzz").eq($(this).index()).show();
+							 });
+						</script>
+</body>
+</html>

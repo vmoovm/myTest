@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="layout" content="main">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/html2canvas.min.js"></script>
+         
+        <script type="text/javascript">
+		function takeScreenshot() {
+		  console.log('test');
+		    html2canvas(document.getElementById('view'), {
+		        onrendered: function(canvas) {
+		            document.body.appendChild(canvas);
+		        },
+		      width: 300,
+		    height: 300
+		    });
+		}
+</script>
+</head>
+<body>
+	<ul id="app">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div class="" id="demoImg" style=" height: 300px; width: 300px;"></div>
+	<script src="js/zrender.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<div class="" id="main" style="width: 300px; height: 300px; background: #00A9E0;"></div>
+	<!--<canvas id="zr"></canvas>-->
+    <script type="text/javascript">
+    	var main1 = document.getElementById("main");
+    	// var cx =  main.getContext("2d");
+    	var zr = zrender.init(main1);
+    	
+    	zr.modShape = function(targetId, confObj) {
+    		console.log(this);
+    		console.log(targetId);
+    		console.log(confObj);
+    	};
+    	// var zr = document.getElementById("zr");
+    	var circle = new zrender.Circle({
+		    shape: {
+		        cx: 150,
+		        cy: 50,
+		        r: 40
+		    },
+		    style: {
+		    	fontSize:30,
+		    	textFill:'#c00',
+		        fill: '#ff0',
+		        text:'集团重大风险',
+		        color: '#f00',
+		        width:300,
+		    },
+		    draggable:true,
+		    
+		    onclick: function(params){
+		    	console.log(params.target.id)
+		    	console.log(zrender.util.getContext().canvas.toDataURL())
+		    	console.log(document.getElementById("demoImg").style)
+		    	var url = $("#main").find('canvas')[0].toDataURL()
+		    	console.log(url);
+		    	document.getElementById("demoImg").style.backgroundImage='url(' + url +')';
+		    }
+		   });
+		zr.add(circle);
+		// console.log(main1.querySelector(''))
+		// console.log();
+		
+		
+		// 背景底图
+        var addShape = new zrender.Image({
+            style : {
+                image : "images/active_taolun.png",
+                x : 100,
+                y : 100,
+                width : 54,
+                height : 54,
+                lineWidth : 0
+           },
+           hoverable : false,
+           draggable:true,
+        });
+         zr.add(addShape);   
+            
+       /* zr.addShape(new RingShape({
+                style: {
+                    x: 400,
+                    y: 400,
+                    r0: 165,
+                    r :380,
+                    brushType : 'both',
+                    color : 'rgba(220, 20, 60, 0)',          // rgba supported
+                    //strokeColor : color.getColor(5),  // getColor from default palette
+                    lineWidth : 1,
+                    textPosition :'inside'
+                }
+            }));*/
+            
+            
+            
+            
+        //添加图片（上图中为了显示效果添加了5张图片，下面代码中只有一次）
+        /*var rotationPI = Math.PI / 180; //旋转角度
+        var origin = 1.1;
+        var rotaion = new zrender.Image({
+            style : {
+                x : 40,
+                y : 40,
+                image : "images/WeUI1_11.png",
+                width : 100,
+                height : 100
+            },
+            draggable : true,
+            clickable : true,
+            onmousewheel: function(params){ //拖动
+                
+                // var eventTool = require('zrender/tool/event');
+                var delta = params.event;
+                var imgx = params.target.style.x; //图片位置 x
+                var imgy = params.target.style.y; //图片位置 y
+                var imgw = params.target.style.width; //图片宽度 width
+                var imgh = params.target.style.height; //图片高度 height
+                origin += (delta > 0 ? 1 : -1) * 0.1;
+                console.log(params.target.id)
+                // console.log(Transformable.rotation);
+                zr.modShape(params.target.id, {scale : [origin, origin, imgx+imgw/2, imgy+imgh/2]});
+                zr.refresh();
+                stop(params.event);
+            },
+            onclick : function(params){
+                var imgx = params.target.style.x; //图片位置 x
+                var imgy = params.target.style.y; //图片位置 y
+                var imgw = params.target.style.width; //图片宽度 width
+                var imgh = params.target.style.height; //图片高度 height
+                var x = imgx + imgw/2;
+                var y = imgy + imgh/2;
+
+                rotationPI = rotationPI > Math.PI * 2 ? rotationPI % (Math.PI * 2) : rotationPI;
+                rotationPI += Math.PI * 5 /180;
+                zr.modShape(params.target.id, {
+                    rotation: [rotationPI, x, y]
+                });
+                zr.refresh();
+            },
+            ondrift :function( shape, x, y){
+                console.info(shape);
+            }
+		});
+		zr.add(rotaion);*/
+    </script>
+</body>
+
+</html>
+
+   

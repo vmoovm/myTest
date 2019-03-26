@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+/*max-width: 1580px 类似这些值可以自行设定*/
+@media only screen and (max-width: 1580px) {
+#ul_box li { background-color:#F33;}
+}
+@media only screen and (max-width: 1480px) {
+#ul_box li {height:280px;}
+}
+
+@media only screen and (max-width: 1380px) {
+#ul_box li {height:280px;}
+}
+@media only screen and (max-width: 1280px) {
+#ul_box li {height:280px;}
+}
+
+@media only screen and (max-width: 1024px) {
+#ul_box li { background-color:#000}
+}
+
+@media only screen and (max-width: 800px) {
+#ul_box li {height:200px;}	
+}
+@media only screen and (max-width: 700px) {
+#ul_box li {height:160px;}	
+}
+
+@media only screen and (max-width: 600px) {
+#ul_box li {height:120px;}	
+}
+
+@media only screen and (max-width: 500px) {
+#ul_box li { background-color:#FC3}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

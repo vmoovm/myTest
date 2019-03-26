@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=100%; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<title>学生划手势-jQuery手机手势密码图案解锁代码</title>
+		<style type="text/css">
+			/*格式化样式*/
+			
+			* {
+				margin: 0;
+				padding: 0
+			}
+			body {
+				font: 12px/1.5 MIcrosoft YaHei, Arial, Helvetica, sans-serif;
+				color: #333
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				border: none;
+				border-spacing: 0
+			}
+			a {
+				color: #202020;
+				text-decoration: none;
+			}
+			img {
+				border: none
+			}
+			input {
+				vertical-align: middle;
+				outline: none
+			}
+			textarea {
+				outline: none;
+			}
+			ul, ol, dl {
+				list-style: none;
+			}
+			b, em, i, u, strong {
+				font-weight: normal;
+				font-style: normal;
+				text-decoration: none;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-size: 14px;
+				font-weight: normal;
+			}
+			/**2017-01-03**/
+			
+			.fontTips {
+				font-size: 16px;
+				color: #999;
+				line-height: 1.8;
+				padding: 10px 0
+			}
+			.rebuild {
+				width: 240px;
+				margin: 0 auto;
+				font-size: 16px;
+				padding: 20px 0 20px 30px;
+				color: #999;
+			}
+			.rebuild span.blue {
+				color: #0099ff
+			}
+			.pasordBtn {
+				text-align: center;
+			}
+			.pasordBtn span {
+				display: inline-block;
+				width: 98px;
+				height: 36px;
+				line-height: 36px;
+				text-align: center;
+				border: solid 1px #0099ff;
+				border-radius: 3px;
+				background: #fff;
+				font-size: 16px;
+				color: #0099ff;
+				margin: 0 15px
+			}
+			.pasordBtn span.save {
+				background: #0099ff;
+				color: #fff;
+			}
+			.initial {
+				width: 240px;
+				height: 240px;
+				position: relative;
+				margin: 0 auto;
+				margin-top: -240px;
+			}
+		</style>
+		<script src="src/ratio.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body style="background:#f1f2f4">
+
+		<div align="center" class="fontTips">
+			<p>通过滑动创建一个签到手势并传达给学生，</p>
+			<p>学生输入正确手势完成签到</p>
+			<p>（签到手势最少连接4个点）</p>
+		</div>
+		<div class="gesturepwd" style="margin:0 auto;">
+		</div>
+		<style type="text/css">
+			.gesturepwd canvas { width: 5.7rem; height: 5.7rem;}
+		</style>
+		<script src="src/jquery-2.1.4.min.js"></script>
+		<script src="src/jquery.gesture.password.js"></script>
+		<script>
+			$(".gesturepwd").GesturePasswd({
+				backgroundColor: "none", //背景色
+				color: "#999", //主要的控件颜色
+				roundRadii: 60, //大圆点的半径
+				pointRadii: 16, //大圆点被选中时显示的圆心的半径
+				space: 70, //大圆点之间的间隙
+				width: 570, //整个组件的宽度
+				height: 570, //整个组件的高度
+				lineColor: "#7fccff", //用户划出线条的颜色
+				cirCleColor: "#09f", //用户划出圆的颜色
+				zindex: 100, //整个组件的css z-index属性
+				isRem: true // 是否使用rem（默认比例750/100）
+			});
+
+			$(".gesturepwd").on("hasPasswd", function(e, passwd) {
+				var result;
+				// if(confirm("确定要记录手势密码吗？")) {
+					// alert(passwd)
+				// }
+				if(passwd == "123698") {
+					result = true;
+				} else {
+					result = false;
+				}
+
+				if(result == true) {
+					$(".gesturepwd").trigger("passwdRight");
+					setTimeout(function() {
+						//密码验证正确后的其他操作，打开新的页面等。。。
+						alert("密码正确！")
+					}, 500); //延迟半秒以照顾视觉效果
+				} else {
+					$(".gesturepwd").trigger("passwdWrong");
+					// $(".gesturepwd").trigger("complete");
+					//密码验证错误后的其他操作。。。
+				}
+
+				$(".rebuild span").addClass("blue") //重设按钮变成蓝色
+			});
+			// $(".gesturepwd").trigger("resetState");
+			
+			function rebuildPass() {
+				$(".gesturepwd").trigger("rebuild");
+			}
+		</script>
+		<div class="rebuild">
+			<span class="blue" onclick="rebuildPass()">重设</span>
+		</div>
+		<div class="pasordBtn">
+			<span class="save">保存</span>
+			<span>发放</span>
+		</div>
+		<div class="" style="height: 400px; background: #0099FF;"></div>
+		<div class="" style="height: 400px; background: #0f0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: end; -webkit-box-align: end; font-size: .36rem;">
+			<p>最后一段文字</p>
+		</div>
+	</body>
+
+</html>

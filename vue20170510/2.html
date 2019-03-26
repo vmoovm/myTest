@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>条件v-if</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/vue_index.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	.zmain { width: 600px; height: 600px; border: 1px #ccc solid; margin: 0 auto;}
+	.txt { width: 500px; height: 100px; background: #ccc; margin: 30px auto;}
+	.tt { height: 54px; background: #000000; color: #fff; line-height: 50px; padding-left: 20px;}
+	.uu { background: #f7f7f7; line-height: 2;}
+	.uu li { list-style: decimal;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<input type="checkbox" name="" v-model="v" id="vv" value=""/><label for="vv">动态显示</label>
+	<div v-bind:class="{'txt':v}">
+		<input type="checkbox" name="" v-model='c' id="cc" value=""/><label for="cc">显示黑背景</label>
+	</div>
+	<p v-bind:class="{'tt':c}" v-if="v">
+		<input type="checkbox" name="" id="ccc" v-model='c' value=""/><label for="ccc">动态显示</label>
+	</p>
+	
+	<template v-if="v">
+		<ul v-bind:class="{'uu':c}">
+			<li>山部滚落的石子 template是vue.js的特定模板</li>
+		</ul>
+	</template>
+	<p v-if="r>0.5">{{r}} 大于0.5</p>
+	<p v-if="r==0.5">{{r}} 等于0.5</p>
+	<p v-if="r<0.5">{{r}} 小于0.5</p>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	//是否为浮点数
+	function isFloat( str ) {
+	  for(i=0;i<str.length;i++)  {
+	     if ((str.charAt(i)<"0" || str.charAt(i)>"9")&& str.charAt(i) != '.'){
+	      return false;
+	     }
+	  }
+	  return true;
+	}
+	
+	function xround(x,num){
+		if(typeof x!='number') return false;
+		if(isFloat(x)){
+			if(x.toString().split('.')[1].length>num){
+				return Math.round(x*Math.pow(10,num))/Math.pow(10,num);
+			}else{
+				var ab=x.toString();
+				for(var i=0; i<Math.abs(x.toString().split('.')[1].length-num);i++){
+					ab+="0";
+				}
+				return ab;
+			}
+		}else{
+			var ab=x.toString();
+				for(var i=0; i<=num;i++){
+					i==0?ab+=".":ab+="0";
+				}
+				return ab;
+		};
+		
+	}
+	new Vue({
+		el:'.zmain',
+		data:{
+			v:true,
+			c:false,
+			ok:false,
+			r:xround(Math.random(),3).toString()
+		}
+	});
+</script>
+</body>
+</html>

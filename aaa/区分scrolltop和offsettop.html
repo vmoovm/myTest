@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a { text-align: center; height: 40px; background: #ccc; line-height: 40px;}
+		</style>
+	</head>
+	<body>
+		<div class="">
+			
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p class="a" id="a123">提交</p>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<p class="a" id="a124" style="position: fixed; left: 0; bottom: 0; right: 0;">取消</p>
+			
+			<script type="text/javascript">
+				var a123 = document.getElementById("a123")
+				var a124 = document.getElementById("a124")
+				// offsetTop 随着滚动条滑动不会变
+				var wt = document.documentElement.scrollTop
+				console.log(a123.offsetTop)
+				console.log(a124.offsetTop + wt)
+				console.log(wt)
+				a124.addEventListener('click', function(e) {
+					console.log(e.pageX)
+				})
+				// a124.style.bottom = '3px'
+				function d() {
+					a124.style.bottom = parseInt(a124.style.bottom) + 3 + 'px'
+					console.log(a124.style.bottom)
+					console.log(a123.offsetTop)
+					console.log(a124.offsetTop + wt)
+				}
+				// scrollTop 因为没有定义滚动条 所以随着滚动条滑动不会变
+				// console.log(a123.scrollTop)
+				// console.log(a124.scrollTop)
+			</script>
+		</div>
+	</body>
+</html>

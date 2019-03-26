@@ -1,0 +1,385 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>JS日历</title>
+<script>
+	// JavaScript Document
+	/**
+	* JS万年历 作者 DK  
+	*@param inputId  输入框的ID
+	*@param  patten  输出的日期格式 1、2014年9月11日 17:14:13  2、 2014年9月11日  3、2014-9-11 17:14:13  4、2014-9-11  5、17:14:13
+	*@param color 主题色调颜色
+	*@param isDefault 是否在输入框中显示默认值
+	*使用方法  ：  <input type="text" id="date"/>
+	*            <script>nyDate('date',3,'pink',true);
+	*/
+function myDate(inputId,patten,color,isDefault){
+	
+	
+	function $(id){return document.getElementById(id);}
+	
+	
+	var input = $(inputId);//获取输入框对象
+	var left = input.offsetLeft;//获取输入框的绝对位置
+	var top = input.offsetTop;
+	var height=input.offsetHeight;
+	
+	
+	//var div="<div style='border:1px solid "+color+";width:200px; height:200px; display:none; position:absolute;' id='myDate_border_div'></div>";
+	//创建一个层
+	var div_border = document.createElement("div");
+	//设置层的各种样式属性:
+	div_border.style.borderWidth="2px";
+	div_border.style.borderColor=color;
+	div_border.style.borderStyle="solid";
+	div_border.style.width="200px";
+	div_border.style.height="180px";
+	div_border.style.position="absolute";
+	div_border.style.left=left+"px";
+	div_border.style.top=(top+height)+"px";
+	div_border.style.backgroundColor="#fff";
+	div_border.style.padding="2px";
+	div_border.style.display="none";
+	div_border.id="mydate_border";
+	
+	
+	//查询当年的年份
+	var newDate = new Date();
+	var year = newDate.getFullYear();
+	var month = newDate.getMonth()+1;
+	var hour = newDate.getHours();
+	var date_ = newDate.getDate();
+	var ap = hour>12?'PM':'AM';
+	
+	//开始编写div内部的内容：
+	var top_="<div style='text-align:center; height:25px;'><div title='上一年' id='mydate_upYear'><</div>";
+	
+	//top_+="<input type='text' value='"+year+"年' readOnly id='myDateYear'/>";
+	
+	top_+="<select id='myDateYear' value='"+year+"'>"
+	for(var i = 1900;i<=5000;i++){
+		top_+="<option value='"+i+"'>"+i+"年</option>";
+	}
+	top_+="</select>";
+	
+	top_+="<div title='下一年' id='mydate_downYear'>></div><div title='上一月' id='mydate_upMonth'><</div>";
+	//top_+="<input type='text' value='"+month+"月' readOnly id='myDateMonth'/>";
+	top_+="<select id='myDateMonth' value='"+month+"'>"
+	for(var i = 1;i<=12;i++){
+		top_+="<option value='"+i+"'>"+i+"月</option>";
+	}
+	top_+="</select>";
+	top_+="<div id='mydate_downMonth' title='下一月'>></div></div>";
+	var center="<div id='myDate_center' style=' height:150px; wihth:100%'></div>";
+	var foot="<div style='height:25px; padding:3px;'><input style='width:55px;height:20px; float:left;' type='text' id='myDate_time'/> <div style='float:left;margin-left:5px; text-align:center;  display:inline; line-height:25px;'>"+ap+" [<a id='today' href=''>今天</a>] [<a id='closeMyDate' href=''>关闭</a>]</div></div>";
+	div_border.innerHTML=top_+center+foot;
+	
+	
+	//alert(left+":"+top);
+	//将DIV加入页面中
+	document.body.appendChild(div_border);
+	
+	//给月份选择框添加选择事件
+	$("myDateMonth").onchange=function(){
+		showTime_(year,$("myDateMonth").value);
+	}
+	//给年份选择框添加选择事件
+	$("myDateYear").onchange=function(){
+		showTime_($("myDateYear").value,month);
+	}
+	
+	//设置foot中的时分秒
+	var time = "";
+	this.stime = function(){
+		var dateTime = new Date();
+		time = dateTime.getHours()+":"+dateTime.getMinutes()+":"+dateTime.getSeconds();
+		$("myDate_time").value=time;
+		setTimeout('stime()',1000);
+	}
+	stime();
+	
+	
+	//选择日期的事件
+	this.choiceDate=function(y,m,d){
+		switch(patten){
+			case 1:
+				input.value=y+"年"+m+"月"+d+"日 "+time;
+				break;
+			case 2:
+				input.value=y+"年"+m+"月"+d+"日 ";
+				break;
+			case 3:
+				input.value=y+"-"+m+"-"+d+" "+time;
+				break;
+			case 4:
+				input.value=y+"-"+m+"-"+d;
+				break;
+			case 5:
+				input.value=time;
+				break;
+			default:
+				alert('格式参数传递错误啦！');
+		}
+		
+		date_=d-1;
+		year=y;
+		month=m;
+		try{
+			this.showTime_(year,month);
+			this.closeThis();
+		}catch(e){}
+		
+	}
+	if(isDefault){
+		this.choiceDate(year,month,date_);
+	}
+	this.showTime_=function(year,month){
+		if(year<1900){
+			return;
+		}
+		if(month<1 || month>12){
+			return;
+		}
+		
+		//调整选择框中显示的月份和年份
+		$("myDateMonth").value=month;
+		$("myDateYear").value=year;
+		//创建一个date
+		var nd = new Date(year,month-1,1);
+		var day = nd.getDay();//取出当月的第一天是星期几
+		//判断年份是不是闰年
+		var isRun = false;
+		if(year%400==0 || (year%100!=0 && year%4==0)){
+			isRun=true;
+		}
+		var monthDays = 31;//计算当月的总天数
+		switch(month+1){
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+				monthDays=30;
+				break;
+			case 2:
+				if(isRun){monthDays=29;}else{monthDays=28;}
+				break;
+			}
+		//根据天数控制行数
+		var rowCount = Math.ceil((monthDays+day)/7);
+		
+		//
+		switch(rowCount){
+			case 4:
+				$("myDate_center").style.height="110px";
+				break;
+			case 5:
+				$("myDate_center").style.height="120px";
+				div_border.style.height="170px";
+				break;
+			case 6:
+				$("myDate_center").style.height="140px";
+				div_border.style.height="190px";
+				break;
+		}
+		//根据年份和月份显示中间部分的内容
+		var date="<table style='border:1px solid "+color+"' cellpadding='0' cellspacing='0' width='100%' border='1'><tr><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr>";
+		var d = 0;
+		for(var i = 0;i<rowCount;i++){
+			date+="<tr>";
+			for(var x = 0;x<7;x++,d++){
+				if(d<day || d>monthDays+day){
+				date+="<td style='background-color:#fff; border:0px;'  align='center'> </td>";
+				}else{
+ 
+					if((d-day)==date_){
+						
+						date+="<td style='border:0px;background-color:"+color+"; cursor:hand;' onmouseover='this.style.backgroundColor=\"#ccc\"'				onmouseout='this.style.backgroundColor=\""+color+"\"' onclick='choiceDate("+year+","+month+","+(d+1-day)+")' align='center'>"+(d+1-day)+"</td>";
+					}else{
+						date+="<td style=' border:0px;background-color:#fff; cursor:hand;' onmouseover='this.style.backgroundColor=\"#ccc\"'				onmouseout='this.style.backgroundColor=\"#fff\"' onclick='choiceDate("+year+","+month+","+(d+1-day)+")' align='center'>"+(d+1-day)+"</td>";
+					}
+				}
+			}
+			date+="</tr>"
+		}
+		date+="</table>";
+		
+		$("myDate_center").innerHTML=date;
+	}
+	showTime_(year,month);
+	
+	
+	//关闭事件
+	this.closeThis=function(){
+		div_border.style.display='none';
+	}
+	
+	//给input添加打开万年历的事件
+	$(inputId).onfocus=function(){
+		div_border.style.display='block';
+	}
+	//input失去焦点就关闭万年历
+	$(inputId).onblur=function(){
+	
+			//div_border.style.display='none';
+	}
+	
+	//选择今天
+	this.choiceToday=function(){
+		var td = new Date();
+		this.choiceDate(td.getFullYear(),td.getMonth()+1,td.getDate());
+	}
+	
+	//设置今天按钮的样式和事件
+	$("today").style.fontSize='14px';
+	$("today").style.color="#000";
+	$("today").style.textDecoration='none';
+	$("today").href='javascript:choiceToday()';
+	
+	//设置关闭按钮的样式和事件
+	$("closeMyDate").style.fontSize='14px';
+	$("closeMyDate").style.color="#000";
+	$("closeMyDate").style.textDecoration='none';
+	$("closeMyDate").href='javascript:closeThis()';
+	
+	
+	//设置上一年按钮的样式
+	$("mydate_upYear").style.borderWidth='1px';
+	$("mydate_upYear").style.borderColor=color;
+	$("mydate_upYear").style.borderStyle='solid';
+	$("mydate_upYear").style.float='left';
+	$("mydate_upYear").style.marginTop='2px';
+	$("mydate_upYear").style.backgroundColor=color;
+	$("mydate_upYear").style.width='10px';
+	$("mydate_upYear").style.cursor='hand';
+	$("mydate_upYear").style.textAlign='center';
+	$("mydate_upYear").style.marginLeft='5px';
+	$("mydate_upYear").style.display='inline';
+	//设置年份文本框的样式
+	$("myDateYear").style.borderWidth='1px';
+	$("myDateYear").style.borderColor=color;
+	$("myDateYear").style.borderStyle='solid';
+	$("myDateYear").style.float='left';
+	$("myDateYear").style.minWidth='70px';
+	$("myDateYear").style.cursor='hand';
+	$("myDateYear").style.marginLeft='2px';
+	$("myDateYear").style.display='inline';
+	//设置下一年的按钮样式
+	$("mydate_downYear").style.borderWidth='1px';
+	$("mydate_downYear").style.borderColor=color;
+	$("mydate_downYear").style.borderStyle='solid';
+	$("mydate_downYear").style.float='left';
+	$("mydate_downYear").style.marginTop='2px';
+	$("mydate_downYear").style.backgroundColor=color;
+	$("mydate_downYear").style.width='10px';
+	$("mydate_downYear").style.cursor='hand';
+	$("mydate_downYear").style.marginLeft='2px';
+	$("mydate_downYear").style.textAlign='center';
+	$("mydate_downYear").style.display='inline';
+	//设置上一月按钮的样式
+	$("mydate_upMonth").style.borderWidth='1px';
+	$("mydate_upMonth").style.borderColor=color;
+	$("mydate_upMonth").style.borderStyle='solid';
+	$("mydate_upMonth").style.float='left';
+	$("mydate_upMonth").style.marginTop='2px';
+	$("mydate_upMonth").style.backgroundColor=color;
+	$("mydate_upMonth").style.width='10px';
+	$("mydate_upMonth").style.cursor='hand';
+	$("mydate_upMonth").style.textAlign='center';
+	$("mydate_upMonth").style.marginLeft='5px';
+	$("mydate_upMonth").style.display='inline';
+	//设置月份文本框的样式
+	$("myDateMonth").style.borderWidth='1px';
+	$("myDateMonth").style.borderColor=color;
+	$("myDateMonth").style.borderStyle='solid';
+	$("myDateMonth").style.float='left';
+	$("myDateMonth").style.minWidth='50px';
+	$("myDateMonth").style.cursor='hand';
+	$("myDateMonth").style.marginLeft='2px';
+	$("myDateMonth").style.display='inline';
+	//设置下一月的按钮样式
+	$("mydate_downMonth").style.borderWidth='1px';
+	$("mydate_downMonth").style.borderColor=color;
+	$("mydate_downMonth").style.borderStyle='solid';
+	$("mydate_downMonth").style.float='left';
+	$("mydate_downMonth").style.marginTop='2px';
+	$("mydate_downMonth").style.backgroundColor=color;
+	$("mydate_downMonth").style.width='10px';
+	$("mydate_downMonth").style.cursor='hand';
+	$("mydate_downMonth").style.marginLeft='2px';
+	$("mydate_downMonth").style.textAlign='center';
+	$("mydate_downMonth").style.display='inline';
+	
+	//给上一年按钮添加点击事件
+	$("mydate_upYear").onclick=function(){
+		if(year<=1900){
+			return;
+		}
+		year = year-1;
+		$("myDateYear").value=year+"年";
+		showTime_(year,month);
+	}
+	//给下一年按钮添加点击事件
+	$("mydate_downYear").onclick=function(){
+		year = year+1;
+		$("myDateYear").value=year+"年";
+		showTime_(year,month);
+	}
+	//给上一月按钮添加点击事件
+	$("mydate_upMonth").onclick=function(){
+		if(month<=1 || month>12){
+			return;
+		}
+		
+		month = month-1;
+		$("myDateMonth").value=month+"月";
+		showTime_(year,month);
+	}
+	//给下一月按钮添加点击事件
+	$("mydate_downMonth").onclick=function(){
+		if(month<1 || month>=12){
+			return;
+		}
+		
+		month = month+1;
+		$("myDateMonth").value=month+"月";
+		showTime_(year,month);
+	}
+	
+}
+ 
+//以上为JS日历
+//一下为测试代码
+	window.onload=function(){
+			myDate('date',3,'#f00',false);
+	}
+</script>
+<style>
+	a{ text-align:center; text-decoration:none;color:#EEEFE9; color:#C4FFFF }
+</style>
+</head>
+ 
+<body bgcolor="">
+<div class="" style="height: 1800px;">
+日期:<input type="text" onFocus=""  name="date" id="date"/><br/>
+其他:<input type="text" />
+</div>
+<script type="text/javascript">
+	// 测试用
+	var year = 2018, month = 2, day = 4, nd = 0
+	var obj = new Date(year, month - 1, 1)
+	// var aa = new Date(new Date(year, month - 1, 1).setTime(new Date(year, month - 1, 1).setMonth(new Date(year, month - 1, 1).getMonth() - 1))).getMonth() + 1
+	// console.log(aa)
+	// nd = 1
+	// aa = new Date(new Date(year, month - 1, 1).setTime(new Date(year, month - 1, 1).setMonth(new Date(year, month - 1, 1).getMonth() - 1))).getMonth() + 1
+	// aa = new Date(new Date(year, month + 1, 1).setTime(new Date(year, month + 1, 1).setMonth(new Date(year, month + 1, 1).getMonth() - 1))).getMonth() + 1
+	// console.log(aa)
+	
+	var aa = new Date(new Date(year, month - 1, 1).setTime(new Date(year, month - 1, 1).setDate(new Date(year, month - 1, 1).getDate() - day + nd))).getDate()
+	console.log(aa)
+	nd = 1
+	aa = new Date(new Date(year, month - 1, 1).setTime(new Date(year, month - 1, 1).setDate(new Date(year, month - 1, 1).getDate() - day + nd))).getDate()
+	aa = new Date(new Date(year, month - 1, 1).setTime(new Date(year, month - 1, 1).setDate(new Date(year, month - 1, 1).getDate() + 31 - nd))).getDate()
+	console.log(aa)
+</script>
+</body>
+</html>

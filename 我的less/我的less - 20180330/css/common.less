@@ -1,0 +1,116 @@
+
+
+/*-----------------------------------------------------
+public
+-----------------------------------------------------*/
+.container { .wrap();}
+.margin-t { .margin-t();}
+.margin-t-xm { .margin-t(@margin-xm);}
+.margin-t-sm { .margin-t(@margin-sm);}
+.margin-t-md { .margin-t(@margin-md);}
+.margin-t-lg { .margin-t(@margin-lg);}
+.margin-t-et { .margin-t(@margin-et);}
+.title { .lineHeight-tt-et(); .border-b();
+	h1 { .fontSize-et();
+		i { display: inline-block; width: 4px; height: 20px; margin-right: 10px; .bgColor-main(); vertical-align: middle;}
+		span { vertical-align: middle;}
+	}
+	p { .height-tt-et(); .fontSize-xm();.color-main();}
+	a { vertical-align: middle; .color-auxi(); font-size: 40px; .lineHeight-tt-et();
+		&:hover { .color-main();}
+	}
+	span { vertical-align: middle; margin-right: 5px;}
+}
+
+.tab { height: 50px; .bgColor-light(); 
+	dl { height: 48px; .bgColor-white(); .lineHeight-tt-et();}
+	dt { display: inline-block; height: 48px; .padding-r-l(); .border-b(transparent, 2px); .fontSize-lg();
+		a { .color();}
+	}
+	dt.cur { .border-b(@bColor-main, 2px); .color-main();
+		a { .color-main();}
+	}
+	dd { 
+		a { height: 48px; .lineHeight-tt-et(); font-size: 40px; .color-auxi();
+			&:hover { text-decoration: none; .color-main();}
+		}
+	}
+}
+/*-----------------------------------------------------
+top
+-----------------------------------------------------*/
+.top { height: 40px; line-height: 40px; .padding-r-l(); .bgColor-gray();
+	a { display: inline-block;}
+}
+.top-welcome { .fontSize-xm(); .color-gray();}
+.top-btn { text-align: right;
+	a { display: inline-block;}
+}
+/*-----------------------------------------------------
+header
+-----------------------------------------------------*/
+.header { height: 120px; /*.bgImage-c-t('mylessbg.jpg?v=123456468748');*/ .bgColor-light(); .gradient(@bgColor-white, lighten(@bgColor-main, 34%));
+}
+.logo { height: 120px; .color-main(); font-size: 50px;}
+
+/*-----------------------------------------------------
+nav
+-----------------------------------------------------*/
+.nav { height: 60px; .bgColor-main();}
+.nav-box { height: 60px;
+	li {display: inline-block; height: 60px; .margin-r-l(); line-height:60px; .fontSize-md();
+		a { display: inline-block; height: 60px; .padding-r-l(); .color-white(); }
+	}
+	li.cur a,
+	li a:hover { .bgColor-white(); .color-main(); }
+}
+
+.banner {  position: relative; .bgColor-light();
+	&-imgs { height: 500px;}
+	&-progress { position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: rgba(255, 255, 255, .3); text-align: center;
+		span { display: inline-block; width: 10px; height: 10px; margin: 15px 5px; border-radius: 50%; .bgColor-white();
+			&.cur { .bgColor-main();}
+		}
+	}
+}
+
+
+/*-----------------------------------------------------
+search
+-----------------------------------------------------*/
+.search { width: 300px; height: 30px; margin-top: 60px; .bgColor-white();
+	&-input { .border(@bColor-main); padding-left: 4px; width: 224px; height: 30px; .bgColor-white();}
+	&-btn { display: inline-block; width: 60px; height: 30px; padding: 0 4px; .border(@bColor-main); .bgColor-main(); line-height: 30px; text-align: center; .color-white(); 
+		i { vertical-align: middle; .fontSize-lg();}
+		span { display: inline-block; vertical-align: middle; .fontSize-xm();}
+		&:hover { .color-white();}
+	}
+}
+	
+/*-----------------------------------------------------
+table
+-----------------------------------------------------*/
+.table { .border-t(@bColor-main, 2px);
+	td,
+	th { padding: 8px; .border(); text-align: center;}
+	th { .bgColor-light(); .fontSize-md(); font-weight: normal;}
+	td { .fontSize-xm();}
+	tr:hover {
+		th,
+		td { .bgColor-light();}
+	}
+}
+
+
+
+/*-----------------------------------------------------
+footer
+-----------------------------------------------------*/
+.footer { height: 100px; .margin-t(@margin-et); .padding-t-b(); .border-t(@bColor-main, 2px); .bgColor-light();}
+.footer-nav { text-align: center; .lineHeight-md();
+	a { .padding-r-l(@padding-xm, @padding-xm); .color(); .fontSize-sm();
+		&:hover { .color-main();}
+	}
+}
+
+

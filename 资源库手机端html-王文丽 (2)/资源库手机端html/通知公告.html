@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0"/>
+    <meta charset="utf-8">
+    <title>视频库</title>
+    <link rel="stylesheet" href="css/cxUniter.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ratio.js" charset="utf-8"></script>
+    <script src="js/jquery-1.9.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="cx_search">
+    <div class="cx_search-box"><a href="#"></a><input type="text" name="" id="cx_search-input" value="" placeholder="搜索" /><p class="cx_search-clear"></p></div>
+</div>
+<div class="w_video_library">
+    <div class="w_data w_notice">
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《综合素质》考情全攻略</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+        <dl class="w_query_data_dl w_notice_dl" >
+            <dd class="w_query_data_dd w_notice_dd">
+                <h2 class="cx_owt w_notice_name" >《高三第一次全国大联考【新课标Ⅱ卷】试卷</h2>
+                <p class="cx_owt w_notice_date">2017-06-10 12:56</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $("#cx_search-input").focus(function () {
+        $(this).parents('.cx_search-box').addClass('cx_search-focus');
+
+    }).blur(function () {
+        if ($(this).val() == '') {
+            $(this).parents('.cx_search-box').removeClass('cx_search-focus');
+        }
+    })
+    $("#cx_search-input").on('input', function () {
+        if ($(this).val() != '') {
+            $(this).next('.cx_search-clear').show();
+        } else {
+            $(this).next('.cx_search-clear').hide();
+        }
+    });
+</script>
+</html>

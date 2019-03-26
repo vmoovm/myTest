@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+任务头
+-----------------------------------------------------*/
+.ztaskHead { display: -webkit-box; -webkit-box-pack: justify; height: 3.75rem; overflow: hidden; border-bottom: 1px #dedede solid; background: #f8f8f8;}
+.ztaskHead_integral { height: 3.75rem; padding-right: 1.2rem; line-height: 3.75rem; font-size: 1.4rem;}
+.ztaskHead_type { -webkit-box-flex:1; line-height: 3.75rem; padding-left: 1.2rem; font-size: 1.4rem; color: #333;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ztaskHead_type { color: #1785fb; font-size: 1.4rem;}
+.ztaskHead_type { padding-left: 1rem;}
+.ztaskHead_type span {display: inline-block; vertical-align: middle;}
+.ztaskHead_type em { display: inline-block; width: 1.4rem; height: 1.4rem; margin-left: 0.2rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 1.2rem; vertical-align: middle;}
+
+/*----------------------------------------------------
+任务类型
+-----------------------------------------------------*/
+.ztaskType { }
+.ztaskType_site { position: absolute; bottom: 0.6rem; left: 5%; width: 90%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 100;}
+.ztaskType_closebtn { display: block; margin-top: 0.4rem; line-height: 3.5rem; border-radius: 0.4rem; background: #fff; color: #c00; line-height: 3.5rem; text-align: center; font-size: 1.4rem;}
+.ztaskType_itembox {overflow: hidden; border-radius: 0.5rem;}
+.ztaskType_set { display: -webkit-box; display: box; width: 100%; padding: 0.5rem 1.5rem; border-bottom: solid 1px #d8dde4; line-height: 2.5rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.ztaskType_set { background: #fff;}
+.ztaskType_set dt { -webkit-box-flex:1; text-align: right; font-size: 1.4rem; color: #09f;}
+.ztaskType_set dd { color: #1785fb; font-size: 1.9rem;}
+.ztaskType_set dd { width: 44%;}
+.ztaskType_set dd i { display: none; width: 5.8rem; height: 2.5rem; background: url(../images/right.jpg) center no-repeat; background-size: 1.8rem;}
+.ztaskType_visible dd i { display: inline-block;}
+
+/*----------------------------------------------------
+任务活动列表
+-----------------------------------------------------*/
+.ztaskList {}
+.ztaskList_row dl { display: -webkit-box; display: box; padding: 0.3rem 0.4rem; padding-right: 1.2rem; border-bottom: 1px #dedede solid; background: #fff;}
+.ztaskList_pic { display: table-cell; width: 4rem; height: 4rem; padding: 0.2rem; text-align: center; vertical-align: middle;}
+.ztaskList_pic img { width: 3rem;}
+.ztaskList_txt { -webkit-box-flex:1; display: -webkit-box; display: box; margin-left: 0.4rem;}
+.ztaskList_th { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.ztaskList_th span { display: block; height: 2.4rem; line-height: 2.4rem; font-size: 1.4rem; color: #000; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ztaskList_th small { display: inline-block; width: 1rem; height: 1rem; margin-left: 0.4rem; border-radius: 50%; background: #fc2b1c;}
+.ztaskList_th p { height: 1.6rem; font-size: 1rem; color: #777;}
+.ztaskList_th p.ztaskList_t { line-height: 1.6rem; color: #929292; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.ztaskList_time { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; text-align: right; font-size: 1rem; color: #929292;}
+.ztaskList_time h2 { line-height: 2.4rem; font-size: 1rem;}
+.ztaskList_time p { line-height: 1.6rem;}
+.ztaskList_red { color: red;}
+

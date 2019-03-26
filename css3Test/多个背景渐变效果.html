@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>多个背景渐变效果</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/zepto.js" type="text/javascript"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+<style type="text/css">
+	body {
+	/*background-color: #3D3527;*/
+    /*background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='),#3D3527;*/
+    /*background: linear-gradient(-45deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),
+    -webkit-gradient(linear, 0% 20%, 180% 60%, color-stop(50%, rgba(0,0,0,0)),color-stop(50%, rgba(255,255,255,0.03))) #3D3527;*/
+    /*linear-gradient(30deg, rgba(40,120,20,0) 50%, rgba(120,255,120,0.03) 100%, #3D3527;*/
+    /*background: -moz-linear-gradient(135deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),-moz-linear-gradient(left, rgba(0,0,0,0) 90%,rgba(255,255,255,0.03) 90%),#3D3527;
+    background: -webkit-linear-gradient(135deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),-webkit-linear-gradient(left, rgba(0,0,0,0) 90%,rgba(255,255,255,0.03) 90%),#3D3527;
+    background: linear-gradient(-45deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),linear-gradient(to right, rgba(0,0,0,0) 90%,rgba(255,255,255,0.03) 90%),#3D3527;*/
+    /*background-size: 150px 150px, 400px 400px;*/
+	}
+	
+	body {
+		background: linear-gradient(-45deg, rgba(0,0,0,0) 50%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.01)),
+    -webkit-gradient(linear, 0% 20%, 180% 60%, color-stop(40%, rgba(0,0,0,0)),color-stop(50%, rgba(255,255,255,0.03)))#333333;
+		background-size: 100px 150px,100px 10px;
+		-webkit-border-radius: 15px;
+	}
+	
+	
+</style>
+
+
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="">
+		<input type="text"  onpaste="return false" name="" id="" value="" />
+		<input style="ime-mode:disabled">
+	</div>
+</div>
+<input type=button value=查看网页源代码 onclick="window.location = 'view-source:'+ 'http://www.pconline.com.cn'">
+
+
+<input type="button" value="最大化" onclick="max.Click()"><input type="button" value="最小化" onclick="min.Click()">
+
+<object id="min" type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+<param name="Command" value="Minimize">
+</object>
+
+<object id="max" type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+<param name="Command" value="Maximize">
+</object>
+<!--main end-->
+<noscript><iframe src=多个背景渐变效果.html></iframe></noscript>
+</body>
+</html>

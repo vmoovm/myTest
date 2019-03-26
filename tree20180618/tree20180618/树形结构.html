@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>树形结构</title>
+		<script src="js/vue.min.js"></script>
+		<script src="js/axios.min.js"></script>
+	</head>
+		<body>
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="zcontainer">
+		<ul class="zmenu" id="zmenu">
+		  <item v-for="(tree, index) in treeData" :key="index" :model="tree"> </item> <!-- 将数据传递给子组件 -->
+		</ul>
+		</div>
+		
+		
+		
+		
+		<script type="text/x-template" id="sub-item">
+		  <li class="zitem">
+		    <div
+		      :class="{zbold: isFolder}" 
+		      @click="toggle"
+		      @dblclick="changeType"><!-- 如果是文件夹点击一下可打开关闭 如果是文件，双击可将其改变为文件夹 -->
+		      <i v-if="isFolder" :class="[open ? 'ztrangle_down' : 'ztrangle_right']"></i><span class="zmenu-tt" v-text="model.name"></span>
+		    </div>
+		    <ul class="zmenu-sub" v-show="open" v-if="isFolder"> <!-- open属性来决定是否打开，isFolder属性来决定能否打开 -->
+		      <item v-for="model in model.children" :model="model"> </item> <!-- 重复使用item，并将数据传递给子组件，很深层次的文件夹也会遍历到 -->
+		      <li class="zitem" @click="addChild">+</li>
+		    </ul>
+		  </li>
+		</script>
+		<script type="text/javascript">
+			// 定义并注册组件
+			Vue.component('item', {
+			  template: '#sub-item',
+			  props: { //传递父组件传递的数据
+			    model: Object //判断是否是Object类型的数据
+			  },
+			  data: function () {
+			    return {
+			      open: false
+			    }
+			  },
+			  computed: { 
+			    isFolder: function () { //使用isFolder来判断是否是文件夹，这个变量随model.children的值的变化进行变化
+			      return this.model.children && this.model.children.length  //如果this.model.children是存在的，并且长度不为0的时候返回true
+			    }
+			  },
+			  methods: {
+			    toggle: function () { //使用此方法决定是否打开文件夹
+			      if (this.isFolder) {
+			        this.open = !this.open
+			      }
+			    },
+			    changeType: function () { //创建文件夹，将没有文件夹属性的model加children这个属性，使其变为文件夹可打开
+			      if (!this.isFolder) {
+			        Vue.set(this.model, 'children', []) //使用set来增加model的children属性，使其变为响应的
+			        this.addChild() // 默认添加一个子文件 
+			        this.open = true
+			      }
+			    },
+			    addChild: function () { // 创建一个子文件 name默认为'new stuff'
+			      this.model.children.push({
+			        name: 'new stuff'
+			      })
+			    }
+			  }
+			})
+		</script>
+		<script type="text/javascript">
+			var data = [{ //初始数据
+			  name: 'My Tree',
+			  children: [
+			    { name: 'hello' },
+			    { name: 'wat' },
+			    {
+			      name: 'child folder',
+			      children: [
+			        {
+			          name: 'child folder',
+			          children: [
+			            { name: 'hello', 
+			            	children: [
+					            { name: 'hello', 
+					            	children: [
+							            { name: 'hello', 
+							            	children: [
+									            { name: 'hello', 
+									            	children: [
+											            { name: 'hello' },
+											            { name: 'wat' }
+											          ]
+									            },
+									            { name: 'wat' }
+									          ]
+							            },
+							            { name: 'wat' }
+							          ]
+					            },
+					            { name: 'wat' }
+					        ]
+			            },
+			            { name: 'wat' }
+			          ]
+			        },
+			        { name: 'hello' },
+			        { name: 'wat' },
+			        {
+			          name: 'child folder',
+			          children: [
+			            { name: 'hello' },
+			            { name: 'wat' }
+			          ]
+			        }
+			      ]
+			    }
+			  ]
+			},
+			{ name: 'hellotree2',
+			children: [
+				{ name: 'hello' },
+				{ name: 'wat' }
+			]},
+			{ name: 'hellotree3',
+			children: [
+				{ name: 'hello' },
+				{ name: 'wat',
+				children: [
+					{ name: 'hello' },
+					{ name: 'wat',
+					children: [
+						{ name: 'hello' },
+						{ name: 'wat' }
+					] }
+				]}
+			]}
+			]
+			
+			
+			
+			// 创建根实例
+			var zmenu = new Vue({
+			  el: '#zmenu',
+			  data: {
+			    treeData: data
+			  }
+			})
+		</script>
+		<style type="text/css">
+			div, p, h1, h2, h3, h4, ul, ol, dl, dd, dt, li { padding:0; margin:0;}
+			li, ol { float:none; list-style: none;}
+			ul, dl { list-style-position: outside; list-style-type: none;}
+			body {
+			  font-family: Menlo, Consolas, monospace;
+			  color: #444;
+			}
+			.zbold {
+			font-weight: bold;
+			  }
+			
+			
+			
+			.zcontainer { width: 300px; margin:40px auto;}
+			.zmenu {
+			  border:1px #ebebeb solid;
+				}
+			.zmenu-sub { padding-left: 20px;}	
+			.zitem {
+			  line-height: 30px;
+				cursor: pointer;
+			}
+			.zmenu-tt { display:inline-block; vertical-align:middle;}
+			.ztrangle_down,
+			.ztrangle_right { display: inline-block; width:18px; height:30px; vertical-align:middle;}
+			.ztrangle_down { background:url(img/trangle_down.png) 0 center no-repeat;}
+			.ztrangle_right { background:url(img/trangle_right.png) 0 center no-repeat;}
+		</style>
+	</body>
+</html>

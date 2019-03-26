@@ -1,0 +1,90 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+Warnning: a_,c_,f_,l_n_,r_,w_,  Can not
+-----------------------------------------------------*/
+
+/*======================================================
+CSS Start
+======================================================*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,th{
+border:0;margin:0; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+/*Clear float*/
+.clear{ clear:both; height:0px; width:0; margin:0; padding:0; border:none; }
+/*Text overflow ellipsis*/
+.overflow { overflow:hidden; white-space:nowrap; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+/*IE6 Empty*/
+.empty { line-height:0; font-size:0;}
+.br { word-wrap:break-word;	word-break:break-all;}
+
+/*======================================================
+Default
+======================================================*/
+#test { position:fixed; right:200px; width:250px; height:400px; background-color:#FFF; line-height:26px; font-size:12px; color:#000; overflow:hidden; overflow-y:auto; z-index:9699999;}
+#test2 { position:fixed; right:200px; width:250px; height:400px; background-color:#FFF; line-height:26px; font-size:12px; color:#000; overflow:hidden; overflow-y:auto; z-index:9699999;}
+/*.box { padding-top:10px;}*/
+.bg { width:100%; height:700px; background-color:#FC3;}
+.sidebar {float:left; width:200px; height:auto;}
+
+.center { width:1024px; height:auto; margin:0 auto; padding:0;}
+
+
+h1 { font-family:'arial'; font-size:14px; font-weight:bold;}
+h2 { font-family:'arial','Microsoft Sans Serif'; font-size:12px; font-weight:normal;}	
+body {font-size:12px;font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif;;color:#414141;background:#fff;}
+
+a { color: #666; text-decoration: none; }
+a:hover { color:#f60; text-decoration: underline; }
+
+
+/*FontColor*/
+.white ,
+.white a:hover 	{ color:#fff;}
+
+.red ,
+.red a:hover { color:#c51410;}
+
+.blue ,
+.blue a:hover { color:#375ba3;}
+
+.gray ,
+.gray a:hover { color:#aaa;}
+
+.yan ,
+.yan a:hover { color:#0bace1;}
+
+/*======================================================
+Header
+======================================================*/
+.top { line-height:31px; background:url(../image/skin/sucai_skin_2.gif) 0 -66px repeat-x; color:#1e1e1e;}
+.t_left { float:left;}
+.t_right { float:right;}
+.header { height:106px;}
+.h_logo { float:left; width:214px; padding-left:76px;}
+.h_search { float:left; width:710px; padding-top:29px;}
+.h_s_bg { width:477px; height:39px; background:url(../image/skin/sucai_skin_1.gif) no-repeat;}
+/*======================================================
+Nav
+======================================================*/
+.nav { height:80px; background:url(../image/skin/sucai_skin_2.gif) 0 29px repeat-x;}
+.n_box { padding-left:20px;}
+.nav li { float:left; width:90px; line-height:29px; margin-left:3px; background:url(../image/skin/sucai_skin_1.gif) -1000px -44px no-repeat; text-align:center;}
+.nav h2 { display:inline;}
+.n_sub {}
+.n_sub li { background:none; line-height:51px; color:#fff;}
+
+
+/*======================================================
+Footer
+======================================================*/
+.footer {height:27px; background:url(../image/skin/sucai_skin_2.gif) 0 -112px repeat-x; text-align:center;}
+.footer span { padding-left:10px; padding-right:10px;}
+.footer h3 { line-height:27px; display:inline;}
+
+/*======================================================
+Alert Msg
+======================================================*/
+.window {}
+.w_bg {}

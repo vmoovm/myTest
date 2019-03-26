@@ -1,0 +1,64 @@
+<!--pages/login/dfs.wxml-->
+<import src="../template/template.wxml"/> 
+<template is="msgItem" data="{{...item}}"></template>
+<view class='imgList-box'>
+	<template is="imgages" data="{{...item}}"  wx:for="{{dataimgs}}"> </template> 
+</view>
+
+<view class='label-btn'>
+	<button hidden='{{!flag ? true : false}}'>取消</button>
+	<button wx:if='{{flag ? true : false}}' type='primary'>确定</button>
+</view>
+<view class="section section_gap">
+    <view class="section__title">表单组件在label内（自定义）</view>
+    <checkbox-group class="group" bindchange="checkboxChange">
+        <view class="label-1" wx:for="{{checkboxItems}}">
+            <label>
+                <checkbox hidden value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+                <view class="label-1__icon">
+                    <view class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0.1}}"></view>
+                </view>
+                <text class="label-1__text">{{item.value}}</text>
+            </label>
+        </view>
+    </checkbox-group>
+</view>
+
+<view class="section section_gap">
+    <text>label用for标识表单组件（原生）</text>
+    <checkbox-group>
+		<view wx:for="{{checkboxItems}}">
+			<label>
+				<checkbox value='{{item.value}}' checked='{{item.checked}}'></checkbox>
+				<text>{{item.value}}</text>
+			</label>
+		</view>
+    </checkbox-group>
+</view>
+
+<view class="section section_gap">
+    <view class="section__title">label用for标识表单组件（自定义）</view>
+    <radio-group class="group" bindchange="radioChange">
+        <view class="label-2" wx:for="{{radioItems}}">
+            <radio id="{{item.color}}" hidden value="{{item.color}}" checked="{{item.checked}}"></radio>
+            <view class="label-2__icon">
+                <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0.1}}"></view>
+            </view>
+            <label class="label-2__text" for="{{item.color}}">
+                <text>{{item.value}}</text>
+            </label>
+        </view>
+    </radio-group>
+</view>
+
+<view class="section section_gap">
+    <text>label用for标识表单组件（原生）</text>
+    <radio-group>
+		<view wx:for="{{radioItems}}">
+			<label>
+				<radio value='{{item.value}}' checked='{{item.checked}}'></radio>
+				<text>{{item.value}}</text>
+			</label>
+		</view>
+    </radio-group>
+</view>

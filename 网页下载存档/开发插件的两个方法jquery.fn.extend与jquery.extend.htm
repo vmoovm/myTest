@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://www.poluoluo.com/jzxy/201311/250983.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/style5.js" charset="utf-8" id="uyan_script"></script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/saved_resource" charset="utf-8" id="uyan_script"></script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/saved_resource(1)" charset="utf-8"></script>
+<title>开发插件的两个方法jquery.fn.extend与jquery.extend</title>
+<meta name="keywords" content="开发插件的两个方法jquery.fn.extend与jquery.extend-破洛洛教学网">
+<meta name="description" content="开发插件的两个方法jquery.fn.extend与jquery.extend-破洛洛教学网">
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<link href="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/DefaultSkin.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/jquery.js"></script>
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/poluoluo.js"></script>
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/coyu.js"></script>
+<script language="javascript">
+$(function(){
+  $('.mainlist li').hover(function(){
+    $(this).addClass('divOver');  
+   },function(){
+    $(this).removeClass('divOver'); 
+   }
+  );
+});
+</script>
+<script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/logger.js"></script><link href="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/bdsstyle.css" rel="stylesheet" type="text/css"><style type="text/css">#uyan_cmt_box{width: 100% !important;}#uyan_star{display: none !important;}#uyan_cmty_btn{display: block !important;}#uyan_login_btn{display: block !important;}#uyan_usp{display: none !important;}.uyan_st_slog{right: 162px !important;}#uyan_ddword{display: none !important;}#uyan_info_sync{display: none !important;}</style></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/o.htm" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="bds_more">更多...</a></li></ul><p><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="goWebsite">百度分享</a></p></div></div></div>
+<div class="topbox">
+
+    <div id="potop">
+        <div class="logo fl"><a href="http://www.poluoluo.com/"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/logo.png" width="145" height="48"></a></div>
+        <div class="iconlink fl">
+          <ul id="icontip">
+            <li class="icon1"><a href="http://www.poluoluo.com/jzxy/txtx/photoshop" title="photoshop教程" target="_blank"><strong style="opacity: 0;">photoshop教程</strong></a></li>
+            <li class="icon2"><a href="http://www.poluoluo.com/jzxy/wzsj/Dreamweaver" title="DreamWeaver教程" target="_blank"><strong style="opacity: 0;">DreamWeaver教程</strong></a></li>
+            <li class="icon3"><a href="http://www.poluoluo.com/jzxy/txtx/fireworks" title="FireWorks教程" target="_blank"><strong style="opacity: 0;">FireWorks教程</strong></a></li>
+            <li class="icon4"><a href="http://www.poluoluo.com/jzxy/txtx/Illustrator" title="Illustrator教程" target="_blank"><strong style="opacity: 0;">Illustrator教程</strong></a></li>
+            <li class="icon5"><a href="http://www.poluoluo.com/jzxy/txtx/flash" title="Flash教程" target="_blank"><strong style="opacity: 0;">Flash教程</strong></a></li>
+            <li class="icon6"><a href="http://www.poluoluo.com/jzxy/txtx/CorelDRAW" title="CorelDRAW教程" target="_blank"><strong style="opacity: 0;">CorelDRAW教程</strong></a></li>
+            <li class="icon7"><a href="http://www.poluoluo.com/jzxy/txtx/imageready/" title="ImageReady教程" target="_blank"><strong style="opacity: 0;">ImageReady教程</strong></a></li>
+          </ul>
+        </div>
+<script type="text/javascript">
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('$("#c d").i(7(){$("a 9",4).b("8","0")});$("#c d").j(7(){$(4).3().5(6,1).f().3().5(6,0.2);$("a 9",4).b("l","m").3().h({8:1,g:"n"},e)},7(){$(4).3().5(6,1).f().3().5(6,1);$("a 9",4).3().h({8:0,g:"-k"},e)});',24,24,'|||stop|this|fadeTo|500|function|opacity|strong||css|icontip|li|300|siblings|top|animate|each|hover|1px|display|none|43px'.split('|'),0,{}))
+</script>
+        <div class="adtop"><script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/adtop.js"></script><a href="http://bbs.poluoluo.com/forum-51-1.html" target="_blank"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/topad.png" width="400" height="60"></a>
+</div>
+  </div>
+</div>
+
+<div class="navbox">
+
+<div id="wrap-nav">
+  <div class="container">
+    <div class="outerbox">
+      <div class="innerbox clearfixmenu">
+
+<ul class="menu">
+	<li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/" class="xiala1"><span>首页</span></a></h3></li>
+    
+    <!--PS教程-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/index.html" class="xiala1"><span>PS教程</span></a></h3>    
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/jczs/Index.html" class="spritemenu"><span>基础知识</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/zptx/Index.html" class="spritemenu"><span>照片美化</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/sljc/Index.html" class="spritemenu"><span>优秀教程</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/tsjc/Index.html" class="spritemenu"><span>调色教程</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/wzxg/Index.html" class="spritemenu"><span>文字效果</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/rwmr/Index.html" class="spritemenu"><span>人物美容</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/anzz/Index.html" class="spritemenu"><span>按钮制作</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/gxqm/Index.html" class="spritemenu"><span>个性签名</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/mslj/Index.html" class="spritemenu"><span>魔术滤镜</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/bk/Index.html" class="spritemenu"><span>边框制作</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/sh/Index.html" class="spritemenu"><span>鼠绘技术</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/kt/Index.html" class="spritemenu"><span>扣图教程</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/yhjm/Index.html" class="spritemenu"><span>图片合成</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/zh/Index.html" class="spritemenu"><span>综合实例</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/fzl/Index.html" class="spritemenu"><span>非主流</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/Index.html" class="spritemenu"><span>图片处理</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/Special/fsh/Index.html" class="spritemenu"><span>仿手绘</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/Special/pscs5/Index.html" class="spritemenu"><span>CS5教程</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/dm/Index.html" class="spritemenu"><span>漫画教程</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/ptu/Index.html" class="spritemenu"><span>练习P图</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/wysj/Index.html" class="spritemenu"><span>网页设计</span></a></h3></li>
+    <li class="count noborder"><div>学习Photoshop的各种技巧</div></li>
+    </ul></li>
+    
+    
+    <!--网站制作-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/jzxy/index.html" class="xiala1"><span>网站制作</span></a></h3>    
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/wysj/Index.html" class="spritemenu"><span>PS设计网页</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/anzz/Index.html" class="spritemenu"><span>PS设计按钮</span></a></h3></li>     
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzsj/CssDiv/Index.html" class="spritemenu"><span>CSS教程</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wzsj/Dreamweaver/Index.html" class="spritemenu"><span>Dreamweaver</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzsj/wybj/Index.html" class="spritemenu"><span>网页布局</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wzkf/Index.html" class="spritemenu"><span>网站开发</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzsj/wybs/Index.html" class="spritemenu"><span>网页配色</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wzyy/Index.html" class="spritemenu"><span>网站运营</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzsj/wyjq/Index.html" class="spritemenu"><span>网页技巧</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/ssyh/Index.html" class="spritemenu"><span>搜索优化</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/ssyh/ssjc/Index.html" class="spritemenu"><span>Seo优化</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/jzzn/Index.html" class="spritemenu"><span>建站指南</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzyy/wztg/Index.html" class="spritemenu"><span>网站推广</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/freespace/Index.html" class="spritemenu"><span>免费空间</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzyy/chyl/Index.html" class="spritemenu"><span>策划赢利</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wzyy/xqgs/Index.html" class="spritemenu"><span>站长茶馆</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzyy/wzzq/Index.html" class="spritemenu"><span>网站赚钱</span></a></h3></li>
+    <li class="count noborder"><div>网页设计教程与开发</div></li>
+    </ul></li>
+    
+    
+    <!--网页代码-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/jzxy/wytx/Index.html" class="xiala1"><span>网页代码</span></a></h3>    
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wytx/jscode/Index.html" class="spritemenu"><span>JS广告代码</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wytx/menu/Index.html" class="spritemenu"><span>导航菜单</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wytx/code/Index.html" class="spritemenu"><span>常用代码</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wytx/dxcode/Index.html" class="spritemenu"><span>典型特效</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wytx/form/Index.html" class="spritemenu"><span>表单及按钮</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/wytx/jquery/Index.html" class="spritemenu"><span>jquery代码</span></a></h3></li>
+    <li class="count noborder"><div>提供各种常见网页效果</div></li>
+    </ul></li>
+    
+    
+    
+    <!--设计教程-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/jzxy/txtx" class="xiala1"><span>设计教程</span></a></h3>    
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/photoshop/index.html" class="spritemenu"><span>Photoshop</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/imageready/index.html" class="spritemenu"><span>ImageReady</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/wzsj/Dreamweaver/index.html" class="spritemenu"><span>DreamWeaver</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/Illustrator/index.html" class="spritemenu"><span>Illustrator</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/fireworks/index.html" class="spritemenu"><span>FireWorks</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/jzxy/txtx/CorelDRAW/index.html" class="spritemenu"><span>CorelDRAW</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/jzxy/txtx/flash/index.html" class="spritemenu"><span>Flash</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/zt/freehand/index.html" class="spritemenu"><span>Freehand</span></a></h3></li>   
+    <li><h3><a href="http://www.poluoluo.com/zt/painter/index.html" class="spritemenu"><span>Painter</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/zt/director/index.html" class="spritemenu"><span>Director</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/zt/autocad/index.html" class="spritemenu"><span>AutoCAD</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/zt/authorware/index.html" class="spritemenu"><span>Authorware</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/zt/a/Index.html" class="spritemenu"><span>3DMAX</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/zt/maya/index.html" class="spritemenu"><span>Maya</span></a></h3></li>
+    <li class="count noborder"><div>提供各种各样的设计教程</div></li>
+    </ul></li>
+    
+    
+    <!--QQ学院-->
+    <li class="spritemenu">
+     
+    <h3><a href="http://www.poluoluo.com/qq" class="xiala1"><span>QQ学院</span></a></h3>   
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/qq/qqxx/Index.html" class="spritemenu"><span>QQ消息</span></a></h3></li> 
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/kjdm/Index.html" class="spritemenu"><span>QQ空间皮肤代码</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/gxqm/Index.html" class="spritemenu"><span>QQ个性签名</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/flashmk/Index.html" class="spritemenu"><span>FLASH模块</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/lydm/Index.html" class="spritemenu"><span>QQ留言代码</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/fdmk/Index.html" class="spritemenu"><span>FD模块</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/dtmk/Index.html" class="spritemenu"><span>QQ大图模块</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/touxiang/Index.html" class="spritemenu"><span>QQ头像</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/kjrz/Index.html" class="spritemenu"><span>QQ空间日志</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/biaoqing/Index.html" class="spritemenu"><span>QQ表情</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/kjsc/Index.html" class="spritemenu"><span>QQ空间素材</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/qqgame/Index.html" class="spritemenu"><span>QQ游戏</span></a></h3></li> 
+    <li><h3><a href="http://www.poluoluo.com/qq/kjjq/Index.html" class="spritemenu"><span>QQ代码技巧</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/qq/qqfzl/Index.html" class="spritemenu"><span>非主流素材</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/qq/qqgif" class="spritemenu"><span>爆笑GIF</span></a></h3></li>
+    <li class="count noborder"><div>装扮QQ，让QQ变得更酷</div></li>
+    </ul></li>
+    
+    <!--设计欣赏-->
+    <li class="spritemenu">
+     
+    <h3><a href="http://www.poluoluo.com/xinshang" class="xiala1"><span>设计欣赏</span></a></h3>   
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/xinshang/kzxs" class="spritemenu"><span>酷站欣赏</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/brand/logo/Index.html" class="spritemenu"><span>标志LOGO</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/graphic/pmsj/Index.html" class="spritemenu"><span>平面设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/brand/UI/Index.html" class="spritemenu"><span>UI设计</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/graphic/ggsj/Index.html" class="spritemenu"><span>广告设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/brand/VI/Index.html" class="spritemenu"><span>VI设计</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/graphic/pop/Index.html" class="spritemenu"><span>海报设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/brand/pop/Index.html" class="spritemenu"><span>POP设计</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/printing" class="spritemenu"><span>印刷设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/house/srsj/Index.html" class="spritemenu"><span>室内设计</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/industrial/Index.html" class="spritemenu"><span>工业设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/house/fdcgg/Index.html" class="spritemenu"><span>房地产广告</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/costume/Index.html" class="spritemenu"><span>服装设计</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/house/yljg/Index.html" class="spritemenu"><span>建筑景观</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/drawing/illustration/Index.html" class="spritemenu"><span>插画手绘</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/xinshang/drawing/photography/Index.html" class="spritemenu"><span>艺术摄影</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/xinshang/drawing/CG/Index.html" class="spritemenu"><span>CG动漫</span></a></h3></li>
+    <li class="count noborder"><div>设计参考，提高自升水平</div></li>
+    </ul></li>
+    
+    <!--服务器-->
+    <li class="spritemenu">
+     
+    <h3><a href="http://www.poluoluo.com/server" class="xiala1"><span>服务器</span></a></h3>   
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/server/win7/Index.html" class="spritemenu"><span>windows7</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/Linux/Index.html" class="spritemenu"><span>Linux</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/server/win2000/Index.html" class="spritemenu"><span>windows2000</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/FreeBSD/Index.html" class="spritemenu"><span>FreeBSD</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/server/win2003/Index.html" class="spritemenu"><span>windows2003</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/MacOS/Index.html" class="spritemenu"><span>MacOS</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/server/win2008/Index.html" class="spritemenu"><span>windows2008</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/Solaris/Index.html" class="spritemenu"><span>Solaris</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/server/web/Index.html" class="spritemenu"><span>WEB服务器</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/ftp/Index.html" class="spritemenu"><span>FTP服务器</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/server/dns/Index.html" class="spritemenu"><span>DNS服务器</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/server/other/Index.html" class="spritemenu"><span>其它服务器</span></a></h3></li>
+    <li class="count noborder"><div>学习服务器和操作系统</div></li>
+    </ul></li>
+    
+    <!--素材-->
+    <li class="spritemenu">
+     
+    <h3><a href="http://www.poluoluo.com/sc" class="xiala1"><span>素材</span></a></h3>   
+    <ul style="display: none;" class="children clearfixmenu">    
+    <li><h3><a href="http://www.poluoluo.com/sc/png/Index.html" class="spritemenu"><span>PNG透明图标</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/sc/gif/Index.html" class="spritemenu"><span>网页小图标</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/sc/bgpic/Index.html" class="spritemenu"><span>溶图素材</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/sucai/psbs/Index.html" class="spritemenu">PS笔刷<span></span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/sc/coolgif/Index.html" class="spritemenu"><span>精美像素图片</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/sucai/psys/Index.html" class="spritemenu"><span>PS样式</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/sc/xk/Index.html" class="spritemenu"><span>相框</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://www.poluoluo.com/sucai/pslj/Index.html" class="spritemenu"><span>PS滤镜</span></a></h3></li>
+    <li><h3><a href="http://www.poluoluo.com/sc/font/" class="spritemenu"><span>PS字体下载</span></a></h3></li>  
+    <li class="count noborder"><div>提供各种素材和工具</div></li>
+    </ul></li>
+    
+    <!--视频教程-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/spjz/index.html" class="xiala1"><span>视频教程</span></a></h3>
+    </li>
+    
+    <!--专题-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/zt/index.html" class="xiala1"><span>专题</span></a></h3></li>
+    
+    <!--论坛-->   
+    <li class="spritemenu">
+    <h3><a href="http://bbs.poluoluo.com/" target="_blank" class="xiala1"><span>论坛</span></a></h3>
+    <ul style="display: none;" class="children clearfixmenu sleft">    
+    <li><h3><a href="http://bbs.poluoluo.com/forum-51-1.html" class="spritemenu" target="_blank"><span>PS资源下载</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://bbs.poluoluo.com/forum-50-1.html" class="spritemenu" target="_blank"><span>素材资源下载</span></a></h3></li>
+    <li><h3><a href="http://bbs.poluoluo.com/forum-70-1.html" class="spritemenu" target="_blank"><span>曝照区</span></a></h3></li>
+    <li class="noborder"><h3><a href="http://bbs.poluoluo.com/forum-54-1.html" class="spritemenu" target="_blank"><span>灌水区</span></a></h3></li>
+    <li class="count noborder"><div>互动交流</div></li>
+    </ul></li>
+
+    
+    <!--娱乐休闲-->
+    <li class="spritemenu">
+    <h3><a href="http://www.poluoluo.com/jzxy/201311/250983.html#" class="xiala1 navRi"><span>转资料</span></a></h3>    
+    <ul style="display: none;" class="children clearfixmenu sleft">    
+    <script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/yuleother.js"></script><li><h3><a href="http://zs.poluoluo.com/d1/index.html" class="spritemenu" target="_blank"><span>玄学类</span></a></h3></li>
+<li class="noborder"><h3><a href="http://zs.poluoluo.com/d2/index.html" class="spritemenu" target="_blank"><span>星相类</span></a></h3></li>
+<li><h3><a href="http://zs2.poluoluo.com/d3/index.html" class="spritemenu" target="_blank"><span>扫盲类</span></a></h3></li>
+<li class="noborder"><h3><a href="http://zs.poluoluo.com/d4/index.html" class="spritemenu" target="_blank"><span>饮食菜谱类</span></a></h3></li>
+<li><h3><a href="http://zs.poluoluo.com/d5/index.html" class="spritemenu" target="_blank"><span>IQ类</span></a></h3></li>
+<li class="noborder"><h3><a href="http://zs.poluoluo.com/d6/index.html" class="spritemenu" target="_blank"><span>语录类</span></a></h3></li>
+<li><h3><a href="http://zs.poluoluo.com/d7/index.html" class="spritemenu" target="_blank"><span>故事类</span></a></h3></li>
+<li class="noborder"><h3><a href="http://zs.poluoluo.com/d8/index.html" class="spritemenu" target="_blank"><span>小说素材类</span></a></h3></li>
+<li><h3><a href="http://bbs.poluoluo.com/forum-66-1.html" class="spritemenu" target="_blank"><span>分享资料</span></a></h3></li>
+
+    <li class="count noborder"><div>收藏学习资料</div></li>
+    </ul></li>
+      
+    <li class="overlay"></li></ul>
+<script type="text/javascript">
+$('#wrap-nav .menu > li').hover(function() {
+$(this).find('.children').animate({ opacity:'show', height:'show' },300);
+$(this).find('.xiala1').addClass('navhover');
+}, function() {
+$('.children').stop(true,true).hide();
+$('.xiala1').removeClass('navhover');
+}
+).slice(-3,-1).find('.children').addClass('sleft');
+</script>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div id="wrap-navcon"><div class="con"><span id="menumsg"><span style="font-size:12px"> 网页WEB美工群①:10661165 PS群①:133051614 手绘画画群:82753941 </span></span><script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/menumsg.js"></script><span id="imenumsg" style="display:none"><span style="font-size:12px"> 网页WEB美工群①:10661165 PS群①:133051614 手绘画画群:82753941 </span></span></div></div>
+      
+</div>
+<div class="box"><div id="ShowPath"><div id="mmmmm">您现在的位置：&nbsp;<a class="LinkPath" href="http://www.poluoluo.com/">破洛洛</a>&nbsp;&gt;&gt;&nbsp;<a class="LinkPath" href="http://www.poluoluo.com/jzxy/Index.html">建站学院</a>&nbsp;&gt;&gt;&nbsp;<a class="LinkPath" href="http://www.poluoluo.com/jzxy/wytx/Index.html">网页特效</a>&nbsp;&gt;&gt;&nbsp;<a class="LinkPath" href="http://www.poluoluo.com/jzxy/wytx/jquery/Index.html">jquery特效代码</a>&nbsp;&gt;&gt;&nbsp;正文</div>
+<div class="fl">
+    <div class="search_p">
+      <form action="http://zhannei.baidu.com/cse/search" target="_blank">
+    <input type="hidden" name="s" value="948364828060857503">
+    <input type="hidden" name="ie" value="gbk">
+    <input type="text" class="bdtext" name="q">
+    <input type="submit" class="bdbtn" value="搜索">
+</form>
+  </div></div> </div></div> 
+<span class="DivH8"></span>
+<!--内容页-->
+<div class="box">
+<!--左边-->
+     <div class="poNLeft">
+          <div class="ponbar"></div>
+           
+          <div class="poncon">
+                    <span class="DivH15"></span>
+                <div class="title"><h1>开发插件的两个方法jquery.fn.extend与jquery.extend</h1></div>
+                    <span class="DivH15"></span>
+                <div class="from"><div class="TimeShare"><div class="PSource">作者：佚名 来源：脚本之家 更新时间：2013-11-22</div><div class="baidushare"><span class="sharedao">分享到</span><!-- Baidu Button BEGIN --><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone" title="分享到QQ空间" href="http://www.poluoluo.com/jzxy/201311/250983.html#"></a><a class="bds_tsina" title="分享到新浪微博" href="http://www.poluoluo.com/jzxy/201311/250983.html#"></a><a class="bds_tqq" title="分享到腾讯微博" href="http://www.poluoluo.com/jzxy/201311/250983.html#"></a><a class="bds_renren" title="分享到人人网" href="http://www.poluoluo.com/jzxy/201311/250983.html#"></a><a class="bds_baidu" title="分享到百度搜藏" href="http://www.poluoluo.com/jzxy/201311/250983.html#"></a><span class="bds_more"></span><a class="shareCount" href="http://www.poluoluo.com/jzxy/201311/250983.html#" title="累计分享0次">0</a></div><!-- Baidu Button END --></div></div></div>
+                    <span class="DivH10"></span>
+                  <div class="ggadT338">
+			   <div class="fleft">
+<script type="text/javascript">/*336*280，创建于2011-8-6*/ var cpro_id = 'u566310';</script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u566310_0"><iframe id="cproIframe_u566310" width="336" height="280" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(5).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom"></script>
+</div>	
+			   <div class="fright">
+<script type="text/javascript">/*336*280，创建于2011-8-6*/ var cpro_id = 'u566310';</script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u566310_1"><iframe id="cproIframe_u566310" width="336" height="280" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(6).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(1)"></script>
+</div></div>
+<div class="hrxia"></div>
+<span class="DivH20"></span>
+                <div class="content"><div class="start">
+jQuery为开发插件提拱了两个方法，分别是： <br><br>JavaScript代码 <br><div class="codetitle"><span style="CURSOR: pointer" onclick="doCopy(&#39;code78615&#39;)"><u>.</u></span> 代码如下:</div><div class="codebody" id="code78615"> <br>jQuery.fn.extend(object); <br>jQuery.extend(object); <br></div> <br>jQuery.extend(object); 为扩展jQuery类本身.为类添加新的方法。 <br><br>jQuery.fn.extend(object);给jQuery对象添加方法。 <br><br>fn 是什么东西呢。查看jQuery代码，就不难发现。 <br><br>JavaScript代码 <br><div class="codetitle"><span style="CURSOR: pointer" onclick="doCopy(&#39;code70330&#39;)"><u>.</u></span> 代码如下:</div><div class="codebody" id="code70330"> <br>jQuery.fn = jQuery.prototype = { <br><br>　　　init: function( selector, context ) {//….　 <br><br>　　　//…… <br><br>}; <br></div> <br>原来 jQuery.fn = jQuery.prototype.对prototype肯定不会陌生啦。 <br><br>虽然 javascript　没有明确的类的概念，但是用类来理解它，会更方便。 <br><br>jQuery便是一个封装得非常好的类，比如我们用 语句　$(“#btn1″) 会生成一个 jQuery类的实例。 <br><br>jQuery.extend(object);　为jQuery类添加添加类方法，可以理解为添加静态方法。如： <br><br>XML/HTML代码 <br><div class="codetitle"><span style="CURSOR: pointer" onclick="doCopy(&#39;code48303&#39;)"><u>.</u></span> 代码如下:</div><div class="codebody" id="code48303"> <br>$.extend({ <br><br>　　add:function(a,b){return a+b;} <br><br>}); <br></div> <br>便为　jQuery　添加一个为 add　的　“静态方法”，之后便可以在引入 jQuery　的地方，使用这个方法了， <br>JavaScript代码 <br><div class="codetitle"><span style="CURSOR: pointer" onclick="doCopy(&#39;code87824&#39;)"><u>.</u></span> 代码如下:</div><div class="codebody" id="code87824"> <br>$.add(3,4); //return 7 <br></div> <br>jQuery.fn.extend(object); 对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。jQuery类的实例可以使用这个“成员函数”。 <br><br>比如我们要开发一个插件，做一个特殊的编辑框，当它被点击时，便alert 当前编辑框里的内容。可以这么做： <br>JavaScript代码 <br><div class="codetitle"><span style="CURSOR: pointer" onclick="doCopy(&#39;code69261&#39;)"><u>.</u></span> 代码如下:</div><div class="codebody" id="code69261"> <br>$.fn.extend({ <br><br>alertWhileClick:function(){ <br><br>$(this).click(function(){ <br><br>alert($(this).val()); <br>}); <br><br>} <br><br>}); <br><br>$(“#input1″).alertWhileClick(); //页面上为：&lt;input id=”input1″ type=”text”/&gt; <br></div> <br>$(“#input1″)　为一个jQuery实例，当它调用成员方法 alertWhileClick后，便实现了扩展，每次被点击时它会先弹出目前编辑里的内容。 <br><br>真实的开发过程中，当然不会做这么小白的插件，事实上jQuery提拱了丰富的操作文档，事件，CSS ,Ajax、效果的方法，结合这些方法，便可以开发出更加 Niubility 的插件。 <br><br><strong>注意：</strong> <br><br>在这里还有一个特殊的地方，就是在函数开头的地方有jQuery.extend = jQuery.fn.extend，而在程序的前面已经将jQuery.prototype赋值给jQuery.fn了，所以在后面的调用中会出现 jQuery.extend()和jQuery.fn.extend()的不同调用，这两个方法调用产生的结果也不一样，jQuery.extend() 的调用并不会把方法扩展到对象的实例上，引用它的方法也需要通过jQuery类来实现，如jQuery.init()，而 jQuery.fn.extend()的调用把方法扩展到了对象的prototype上，所以实例化一个jQuery对象的时候，它就具有了这些方法，这 是很重要的，在jQuery.js中到处体现这一点
+</div></div>
+                    <span class="DivH20"></span>
+                        <div class="P_jian">
+		      <div class="P_cover"></div>
+		      <div class="ujian-hook"><div style="margin: 0; border: none; padding: 0; clear: both; overflow: hidden; *zoom: 1; *position: relative;"><div style="padding: 0; margin: 0; border: none; clear: both; display: block;"><div style="font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:16px;margin: 0; border: none; padding: 10px 0 5px 5px; _padding-top:10px; text-indent: 0; text-align: left; font-weight: bold;color:#333333;">猜你喜欢：</div><ul style="padding: 0; margin: 0 0 0 5px;"><li style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;"><a hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.poluoluo.com/jzxy/201202/152323.html" onmousedown="this.href=&#39;http://e.ujian.cc/?code=968c%2FrRJLrbwDLzY08MzAs1qpRn8oPx9acTnf5PBS6tyVIbvpGDk8xeKHx%2FL3am3hpKDtZF%2Bd4Wp%2FdAWOsHz%2BDGrUkmlEbufKIoy12EDfCiVqybloFN6Vzj9kqg7tnJUQeJGFC3LsnUOCuctv6MVE7fnU%2BiDUgU9Cq6wRihabxPI%2FffzKj9wFlurrXVJMhMZelF1XLwzHGWP3pA2qoq7mCFFpuz6mvyYMJQszydGsXoCxKT3KjDXtQ&#39;; return true;" onmouseup="t=this; setTimeout(function() {t.href=&#39;http://www.poluoluo.com/jzxy/201202/152323.html&#39;;}, 50); return true;" style="text-decoration: none; border-bottom: none; outline: none;"><span onmouseover="this.style.color=&#39;#333333&#39;;" onmouseout="this.style.color=&#39;#333333&#39;;" style="color:#333333;font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;line-height:15px;">jQuery插件原来如此简单 jQuery插件的机制及实战</span></a></li><li style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;"><a hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.poluoluo.com/jzxy/201110/144577.html" onmousedown="this.href=&#39;http://e.ujian.cc/?code=c6b3dZlAek2%2ByIYnCxIEco2dgL68yyBlKvF46m3TNn4EV62u%2F%2BUZ4yZZ8VO%2BwL%2B5uIvk8BJVCtklCDSTXhoW2FDgN6jJw%2BAq5KUnXcFOHsn5aWhaMXeSk3So6p%2Bhi3DiDJTp1LOYdFkxyV2NieyEJ9fg2BsslAZpmDwhwZIgUm08WRbt9JbaQbL5dpOg%2FmdAQP4J%2BDWA6TS%2FoYQVpL6yAvXZWtYAu2XubaWVLO2PotesxDsRAXsyXw&#39;; return true;" onmouseup="t=this; setTimeout(function() {t.href=&#39;http://www.poluoluo.com/jzxy/201110/144577.html&#39;;}, 50); return true;" style="text-decoration: none; border-bottom: none; outline: none;"><span onmouseover="this.style.color=&#39;#333333&#39;;" onmouseout="this.style.color=&#39;#333333&#39;;" style="color:#333333;font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;line-height:15px;">jQuery 核心函数以及jQuery对象</span></a></li><li style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;"><a hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.poluoluo.com/jzxy/201311/249254.html" onmousedown="this.href=&#39;http://e.ujian.cc/?code=83c3LGzJqtoZ3fo73q9zHpq8JkCEKb4bNv%2F%2FYcEPCGys3rr764D9y%2B%2FdtqbsXv8UypER4jm1PU9VkTCx1R0WezDD%2FAk7ZAehwLAunY1NtulIFoBpYSNQTXBXBkBd6XaZBbDFQDXLTetzq4RMXQlQVrbBWWaEcwBR0ngVsOvHEiy7UX5aAwN%2Fxjru61h5%2F7HSwzcX5NKLfxkzR7PMrJXSBHM9XkFfp4Zrx%2BEwCtPL3POpAYuL%2BMDJxg&#39;; return true;" onmouseup="t=this; setTimeout(function() {t.href=&#39;http://www.poluoluo.com/jzxy/201311/249254.html&#39;;}, 50); return true;" style="text-decoration: none; border-bottom: none; outline: none;"><span onmouseover="this.style.color=&#39;#333333&#39;;" onmouseout="this.style.color=&#39;#333333&#39;;" style="color:#333333;font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;line-height:15px;">解决jquery1.9不支持browser对象的问题</span></a></li><li style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;"><a hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.poluoluo.com/jzxy/201110/145324.html" onmousedown="this.href=&#39;http://e.ujian.cc/?code=75efItVQb97DT5K5LWpI7EUOhj9zjmuAFSINID3boM1m6XmViarD6TSvfwn9PDsQfoCuns7vCsv7JbomowuPWvKqByFSDP0t94OsFWQYyROueO8HQVaazYxU6RKEGtxYCbmSR6dU%2BP%2FYXcpbHSEFuXFiuweIHKPgt8NKSNRGlz6Z08yaigX%2BU81pweDupwCbRLDKwoEeOQPqIUpyZHltL%2Bvce61DHAsW3YzsIbEniXFGK0pPycwFjA&#39;; return true;" onmouseup="t=this; setTimeout(function() {t.href=&#39;http://www.poluoluo.com/jzxy/201110/145324.html&#39;;}, 50); return true;" style="text-decoration: none; border-bottom: none; outline: none;"><span onmouseover="this.style.color=&#39;#333333&#39;;" onmouseout="this.style.color=&#39;#333333&#39;;" style="color:#333333;font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;line-height:15px;">最新jQuery引用google地址外部文件(jquery 1.2.6至jquery1.7.2)</span></a></li><li style="list-style: disc inside none; display: list-item; line-height: 1.65em; background: none repeat scroll 0 0 transparent; padding: 0; margin: 0; text-indent: 0; text-align: left; font-size: 12px;"><a hidefocus="true" onmouseout="this.style.textDecoration=&#39;none&#39;" onmouseover="this.style.textDecoration=&#39;underline&#39;" href="http://www.poluoluo.com/jzxy/201105/133966.html" onmousedown="this.href=&#39;http://e.ujian.cc/?code=d956x8Oe9QEakQKNgOwRugaCBX9qUDTNCwHPX7NYTThKphY8mlkYLvjukjbZw5XStaml8zYg%2FUIuVFSRU3r91KoHc4JhjUB%2Bxa%2FoHxAyG6deiK032mSx0Dsfy3%2BiHG62%2BvdusXSOnEQ11zcemGbz83j1gxkEECbMaolUovps7GAHrrqDGwTH9ed%2BTGiekaq1KLxKJpsPvuPK5PNfLo1c3yX77kSsqAoy6h67%2BYu24iAvyTyy%2BiVqqA&#39;; return true;" onmouseup="t=this; setTimeout(function() {t.href=&#39;http://www.poluoluo.com/jzxy/201105/133966.html&#39;;}, 50); return true;" style="text-decoration: none; border-bottom: none; outline: none;"><span onmouseover="this.style.color=&#39;#333333&#39;;" onmouseout="this.style.color=&#39;#333333&#39;;" style="color:#333333;font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;line-height:15px;">jQuery是JavaScript框架:13款非常有用的jQuery插件</span></a></li></ul></div><div style="margin: 0pt; border: medium none; padding: 5px 8px; clear: both; text-align: right;"><a href="http://www.ujian.cc/index2" style="font-family:&#39;Helvetica Neue&#39;,helvetica,arial,sans-serif;font-size:12px;text-decoration:none;color:#999; border-bottom: medium none; word-wrap: normal; display: inline;" title="这是什么工具？" target="_blank">友荐[?]</a></div></div></div>
+		      <script type="text/javascript">var ujian_config = {showType:1};</script>
+                        </div>
+                    <div class="con_ad336"><script type="text/javascript">/*336*280，创建于2011-8-6*/ var cpro_id = 'u566310';</script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u566310_2"><iframe id="cproIframe_u566310" width="336" height="280" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(7).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(2)"></script></div>
+                        <span class="DivH20"></span>
+                               <div class="poluoluoshare">
+                                   <div class="s_site">
+                                   <a class="s1" title="分享到“腾讯QQ微博" href="javascript:;" onclick="poluoluoshare(&#39;qqweibo&#39;)"> </a><a class="s2" title="分享到“新浪微博”" href="javascript:;" onclick="poluoluoshare(&#39;sina&#39;)"> </a><a class="s3" title="分享到“开心网”" href="javascript:;" onclick="poluoluoshare(&#39;kaixin&#39;)"> </a><a class="s4" title="分享到“QQ空间”" href="javascript:;" onclick="poluoluoshare(&#39;qqkoujian&#39;)"> </a><a class="s5" title="分享到“QQ校友”" href="javascript:;" onclick="poluoluoshare(&#39;qqxiaoyou&#39;)"> </a><a class="s6" title="分享到“百度Hi”" href="javascript:;" onclick="poluoluoshare(&#39;baidu&#39;)"> </a><a class="s7" title="分享到“网易微博”" href="javascript:;" onclick="poluoluoshare(&#39;163weibo&#39;)"> </a><a class="s8" title="分享到“人人网”" href="javascript:;" onclick="poluoluoshare(&#39;renren&#39;)"> </a><a class="s9" title="分享到“猫扑推客”" href="javascript:;" onclick="poluoluoshare(&#39;moptui&#39;)"> </a><a class="s10" title="分享到“飞信”" href="javascript:;" onclick="poluoluoshare(&#39;feixin&#39;)"> </a><a class="s11" title="分享到“搜狐微博”" href="javascript:;" onclick="poluoluoshare(&#39;sohu&#39;)"> </a><a class="s12" title="分享到“淘江湖”" href="javascript:;" onclick="poluoluoshare(&#39;taojianghu&#39;)"> </a>
+                                   </div>  
+								   <div class="h_site">
+<script charset="utf8">
+  (function(){
+    var _w = 32, _h = 32;
+    var param = {
+      media     : '',
+      url       : location.href,
+	  md:'poluoluo_com',
+      title     : '',
+      style     : 'icon',
+      size      : 32,
+      minWidth  : 100,
+      minHeight : 100
+    }
+    var args = [];
+    for( var p in param ){
+      if (typeof param[p] == 'object' && param[p].constructor === Array) {
+        for (m in param[p]) {
+          args.push(p + '=' + encodeURIComponent(param[p][m] || ''));
+        }
+      }
+      else {
+        args.push(p + '=' + encodeURIComponent( param[p] || '' ) );
+      }
+    }
+    document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://huaban.com/share/button?' + args.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>');
+  })();
+</script><iframe allowtransparency="true" frameborder="0" scrolling="no" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/button.htm" width="32" height="32"></iframe>
+                                   </div> 
+                               </div>
+                    <span class="DivH30"></span>
+                <div class="hr5">转载请注明:破洛洛(谢谢合作)</div>
+                <div class="hr6"><p></p><li>上一篇文章： <a class="LinkPrevArticle" href="http://www.poluoluo.com/jzxy/201311/250982.html" title="文章标题：利用jq让你的div居中的好方法分享
+作&#160;&#160;&#160;&#160;者：佚名
+更新时间：2013-11-22 17:42:12">利用jq让你的div居中的好方法分享</a></li><p></p><p></p><li>下一篇文章： <a class="LinkNextArticle" href="http://www.poluoluo.com/jzxy/201311/250984.html" title="文章标题：jtable列中自定义button示例代码
+作&#160;&#160;&#160;&#160;者：佚名
+更新时间：2013-11-22 17:42:13">jtable列中自定义button示例代码</a></li><p></p></div>
+          
+          </div>
+<span class="DivH10"></span>
+<div class="baiduad710">
+<script type="text/javascript">
+/*自定义标签云，创建于2013-12-12*/
+var cpro_id = "u1432644";
+</script>
+<script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/c(1).js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u1432644_0"><iframe id="cproIframe_u1432644" width="710" height="80" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom.htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(3)"></script>
+</div> 
+          <div class="Interaction">
+           <div class="Com_bar">网友评论：</div>
+           <div class="Com_cover"></div>
+           <div id="uyan_frame"><div id="uyan_cmt_box" style="width: 100%; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; position: relative; float: left;"><div id="uyan_top" style="height: 30px; font-size: 12px; font-weight: bold;"><div id="uyan_like" style="float: left; padding-right: 13px; padding-top: 2px; width: 88px;"><a id="uyan_vu" onclick="UYAN.voteUD(&#39;uu&#39;);" style="background: url(&#39;http://v2.uyan.cc/code/images/like.png&#39;) no-repeat scroll 19px 5px #999; border-radius: 3px 3px 3px 3px; color: #F2F2F2; cursor: pointer; float: left; font-weight: normal; height: 16px; padding: 3px; width: 48px;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/upDig.png" style="float: left; padding: 2px 5px 0 2px; border: 0 none;"></a><a id="uyan_vd" onclick="UYAN.voteUD(&#39;du&#39;);" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #F2F2F2; cursor: pointer; float: left; font-weight: normal; height: 16px; margin-left: 5px; padding: 3px; width: 16px;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/downDig.png" style="float: left; padding: 3px 0 0 2px;"></a><div style="clear: both;"></div></div><div id="uyan_count" style="font-size: 12px; color: #888888; float: left; font-weight: normal; padding: 5px 5px 0 0;">共有<span id="uyan_vun">2</span>人喜欢&nbsp;&nbsp;共<span id="uyan_acn">1</span>条评论</div><a id="uyan_login_btn" onclick="UYAN.login();" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #EEEEEE; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 20px; margin-left: 5px; margin-top: 2px; height: 16px; line-height: 17px; padding: 3px 15px; text-shadow: 0 1px 0 #646464;">登录</a><a id="uyan_cmty_btn" onclick="UYAN.cmty();" style="background-color: #999; border-radius: 3px 3px 3px 3px; color: #EEEEEE; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 20px; margin-left: 5px; margin-top: 2px; height: 16px; line-height: 17px; padding: 3px 15px; text-shadow: 0 1px 0 #646464;">社区</a><div style="clear: both;"></div></div><div id="uyan_usp" style="margin-bottom: 10px;"><div style="font-size: 13px; height: 26px; overflow: hidden;"><a id="uyan_uname_txt_t" style="color: #5874af; cursor: pointer; display: block; float: left; font-weight: bold; margin: 6px 0 0 0; text-decoration: none; font-size: 16px; line-height: 17px;" href="javascript:;"></a><div style="background: url(&#39;http://v2.uyan.cc/code/images/medalIcon.png&#39;) no-repeat scroll 0 2px transparent; float: left; height: 20px; margin: 6px 0 0 10px; padding-left: 15px; line-height: 18px;"><div id="uyan_utname_edit" style="display: none;"><div style="color: #333333; float: left; padding-right: 4px;">头衔:</div><input id="uyan_utname" type="text" value="" style="color: #777777; float: left; height: 12px; padding: 1px 3px; width: 100px;"><a onclick="UYAN.setUtname();" style="background-color: #8BAD50; border: 1px solid #799E3C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; cursor: pointer; float: left; margin-left: 3px; padding: 0 10px; text-align: center; text-decoration: none;">确定</a><a onclick="UYAN.changeUtname();" style="color: #AAAAAA; cursor: pointer; float: left; margin-left: 6px;">取消</a></div><div id="uyan_utname_txt"><div id="uyan_utname_show" style="color: #444444; float: left; padding-right: 5px;"></div><a onclick="UYAN.changeUtname();" style="color: #5874af; cursor: pointer; float: left; text-decoration: none;">编辑头衔</a></div></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/emailIcon.png&#39;) no-repeat scroll 0 0 transparent; float: left; height: 20px; margin: 6px 0 0 10px; padding-left: 19px; line-height: 18px;"><div id="uyan_femail_edit" style="display: none;"><div style="color: #333333; float: left; padding-right: 4px;">邮箱:</div><input id="uyan_femail" type="text" value="" style="color: #777777; float: left; height: 12px; padding: 1px 3px; width: 100px;"><a onclick="UYAN.setFemail();" style="background-color: #8BAD50; border: 1px solid #799E3C; border-radius: 3px 3px 3px 3px; color: #FFFFFF; cursor: pointer; float: left; margin-left: 3px; padding: 0 10px; text-align: center; text-decoration: none;">确定</a><a onclick="UYAN.changeFemail();" style="color: #AAAAAA; cursor: pointer; float: left; margin-left: 6px;">取消</a></div><div id="uyan_femail_txt"><div id="uyan_femail_show" style="color: #444444; float: left; padding-right: 5px;"></div><a onclick="UYAN.changeFemail();" style="color: #5874af; cursor: pointer; float: left; text-decoration: none;">跟踪回复</a></div></div><div style="clear: both;"></div></div><div style="padding: 4px 0;"><div id="uyan_uacn" style="font-size: 12px; float: left; padding: 0 10px 0 0;">0条评论</div><div id="uyan_uvon" style="font-size: 12px; float: left; padding: 0 10px 0 0;">0次被喜欢</div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_star" style="height: 22px; padding: 0 0 0 60px; overflow: hidden;"><div style="float: left;"><a id="uyan_vs_1" onclick="UYAN.voteStar(1);" onmouseover="UYAN.cagStar(1);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_2" onclick="UYAN.voteStar(2);" onmouseover="UYAN.cagStar(2);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_3" onclick="UYAN.voteStar(3);" onmouseover="UYAN.cagStar(3);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_4" onclick="UYAN.voteStar(4);" onmouseover="UYAN.cagStar(4);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><a id="uyan_vs_5" onclick="UYAN.voteStar(5);" onmouseover="UYAN.cagStar(5);" onmouseout="UYAN.cagStar(0);" style="background: url(&#39;http://v2.uyan.cc/code/images/star_un.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; float: left; height: 16px; padding-right: 5px; width: 16px;"></a><div style="clear: both;"></div></div></div><div id="uyan_loginot" style="padding: 0 0 3px 60px;"><div style="clear: both;"></div></div><div style="height: 78px; overflow: hidden; padding: 0 0 20px 0; _padding: 0;"><div style="float: left; border-radius: 6px 6px 6px 6px; width: 50px; height: 50px; overflow: hidden; margin-right: 10px;"><img id="uyan_uface" style="width: 50px; height: 50px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/duface.png"></div><div style="padding: 0 0 0 60px; overflow: visible;"><div onclick="UYAN.hidIntro(this.firstChild);" style="height: 60px; background: url(&#39;http://v2.uyan.cc/code/images/textareabg.png&#39;) repeat-x scroll 0 0 #FFFFFF; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px; padding: 7px; position: relative; overflow: hidden; cursor: text;"><textarea id="uyan_comment" onkeyup="UYAN.checkTxt(this, 140);" onkeydown="UYAN.checkTxt(this, 140);" onfocus="UYAN.hidIntro(this);" onblur="UYAN.shoIntro(this);" style="background: none repeat scroll 0 0 #FFFFFF; padding: 0; box-shadow: 0 0; color: #BDBBBB; border: 0; z-index: 90; overflow: hidden; float: left; font-size: 13px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; resize: none; height: 60px; display: block; outline: none; word-wrap: break-word; margin: 0;">请输入你的评论</textarea><pre style="width: 100%; font-size: 13px; left: 0; line-height: 18px; position: absolute; top: 0; visibility: hidden; word-wrap: break-word; white-space: pre-wrap;" id="uyan_cmt_cnt"></pre></div><div style="clear: both;"></div></div><div id="uyan_smile" onclick="UYAN.shoSmile(this);" style="display: none; background: url(&#39;http://v2.uyan.cc/code/images/emotion.png&#39;) no-repeat scroll 6px 2px #FFFFFF; color: #3A82FF; cursor: pointer; font-size: 11px; height: 17px; left: 70px; position: relative; top: -2px; width: 60px; z-index: 5500; border: 1px solid #d7d7d7; border-top: none; border-radius: 2px; margin: 0; line-height: 20px; padding-bottom: 2px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表情</div></div><div id="uyan_ssmile" style="margin-left: 60px; margin-top: -20px; _margin-top: 0; position: absolute; z-index: 9999; display: none;"><div style="border: 1px solid #989999; border-radius: 5px; width: 322px; height: 160px; background: #fff; font-size: 12px; padding: 6px;"><ul style="margin: 5px 0 0 0; padding: 0; height: 24px;"><li id="uyan_ssmile_df" onclick="UYAN.shoSmile(this, &#39;df&#39;);" style="float: left; list-style: none; line-height: 22px; background: url(&#39;http://v2.uyan.cc/code/images/smileb.gif&#39;) no-repeat scroll 0 center transparent; color: #fff; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">默认表情</li><li id="uyan_ssmile_al" onclick="UYAN.shoSmile(this, &#39;al&#39;);" style="float: left; list-style: none; line-height: 22px; background: none repeat scroll 0 center transparent; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">阿狸</li></ul><ul id="uyan_ssmile_list" style="margin: 0; padding: 0; width: 310px; border-top: 1px solid #d3e4f0; border-left: 1px solid #d3e4f0; margin: 5px 0 0 5px;"></ul></div></div><div style="color: #D2D2D2; height: 20px; font-size: 13px; position: absolute; z-index: 100; margin-right: 10px; margin-top: -42px; right: 0;"><span id="uyan_tts">140</span></div><div id="uyan_stat_btn" style="position: relative; height: 40px; overflow: hidden; margin-top: -20px; _margin-top: 0;"><a id="uyan_cmt_btn" onmouseover="UYAN.cagBtn(&#39;on&#39;, this);" onmouseout="UYAN.cagBtn(&#39;out&#39;, this);" style="background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x scroll 0 0 transparent; border: 1px solid #d0cfcf; border-radius: 5px 5px 5px 5px; color: #666; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 24px; line-height: 21px; margin: 4px 0 0; padding: 3px 25px 1px; text-align: center; text-shadow: 0 1px 0 #FFFFFF;" onclick="UYAN.addCmt(this);">发&nbsp;&nbsp;布</a><div id="uyan_ottype" style="float: right; padding: 11px 15px 0 3px;"><div style="color: #AAAAAA; float: right; font-size: 12px; padding-left: 5px;"><span id="uyan_vis" style="float: right; line-height: 18px;">&nbsp;&nbsp;或<span style="text-decoration: underline; cursor: pointer;" onclick="UYAN.login();">游客留言</span></span><span onmouseover="UYAN.show(&#39;uyan_slog&#39;);" onmouseout="UYAN.hide(&#39;uyan_slog&#39;);" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/arrow.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginRenren();" title="使用人人账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/renren.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTQq();" title="使用腾讯微博账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tqq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginQq();" title="使用QQ账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/qq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTSina();" title="使用新浪微博账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsina.png" style="margin: 1px 2px 0;"></span></div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_slog" class="uyan_st_slog" onmouseover="UYAN.show(this);" onmouseout="UYAN.hide(this);" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; position: absolute; z-index: 90000; padding: 1px 3px; display: none; width: 20px;"><div onclick="UYAN.loginKaixin001();" title="kaixin001" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/kaixin001.png"></div><div onclick="UYAN.loginTSohu();" title="sohu" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsohu.png"></div><div onclick="UYAN.loginT163();" title="163" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/t163.png"></div></div><div id="uyan_sort" style="color: #424242; font-size: 12px;"><div style="height: 28px; overflow: hidden; float: left;"><a id="uyan_sort_name" onclick="UYAN.cmtSort();" style="background: url(&#39;http://v2.uyan.cc/code/images/sorttype.png&#39;) no-repeat scroll right 7px transparent; color: #424242; cursor: pointer; display: block; float: left; font-size: 12px; padding-right: 15px;">按时间排序</a></div><div style="clear: both;"></div></div><div id="uyan_sort_box" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; left: 15px; position: absolute; width: 115px; z-index: 90000; display: none;"><div style="color: #9797C4; font-size: 12px; font-weight: normal; padding-bottom: 2px; padding-left: 21px; padding-top: 4px; height: 16px;">排序方式:</div><a id="uyan_sort_time" onclick="UYAN.cmtSort(0);" style="color: rgb(28, 28, 28); cursor: pointer; display: block; font-size: 12px; padding-bottom: 2px; padding-left: 21px; padding-top: 2px; height: 16px; background-image: url(http://v2.uyan.cc/code/images/currentSort.png); background-attachment: scroll; background-color: transparent; font-weight: bold; background-position: 8px 8px; background-repeat: no-repeat no-repeat;">按时间排序</a><a id="uyan_sort_hot" onclick="UYAN.cmtSort(1);" style="color: #1C1C1C; cursor: pointer; display: block; font-size: 12px; padding-bottom: 2px; padding-left: 21px; padding-top: 2px; height: 16px;">按热度排序</a></div><div id="uyan_cmt_list">	<div id="uyan_cmt_18989526" onmouseover="UYAN.changeS(this, &#39;on&#39;, &#39;18989526&#39;);" onmouseout="UYAN.changeS(this, &#39;out&#39;, &#39;18989526&#39;);" style="border-top: 1px solid #D7D7D7; padding: 15px 0;">		<div style="position: relative; float: left; border-radius: 6px 6px 6px 6px; width: 50px; height: 50px; margin-right: 10px;">			<a href="" style="cursor: pointer; text-decoration: none; white-space: inherit;" target="_blank">				<img style="border: 0 none; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); border-radius: 4px; width: 50px; height: 50px;" onload="UYAN.loadUface(this, &#39;http://v2.uyan.cc/code/images/duface.png&#39;, &#39;http://v2.uyan.cc/code/images/duface.png&#39;);" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/duface.png" onerror="UYAN.noUface(this, &#39;http://v2.uyan.cc/code/images/duface.png&#39;);">			</a>			<span style="bottom: -4px; position: absolute; right: -5px;">				<a title="游客" style="cursor: pointer; text-decoration: none; background: url(&#39;http://v2.uyan.cc/code/images/semail.png&#39;) no-repeat scroll 0 0 transparent; background-position: 0 0; opacity: 1; display: block; float: left; height: 16px !important; line-height: 100px; opacity: 0.8; overflow: hidden; width: 16px !important;" href="" target="_blank"></a>			</span>		</div>		<div style="padding-left: 60px;">			<div style="color: #303030; font-size: 13px; line-height: 18px; height: 20px;">				<a id="uyan_cmt_uname_18989526" class="uyan_cmt_uname" href="" target="_blank" style="color: #2B8CE6; cursor: pointer; float: left; text-decoration: none; padding-right: 6px;">00</a>								<span class="uyan_cmt_ufromname" style="color: #aaaaaa; float: left;">(<a style="color: #aaaaaa; text-decoration: none;" href="" target="_blank">游客</a>)</span>				<div id="uyan_star_18989526" style="float: right; display: none;"></div>			</div>			<div class="uyan_cmt_txt" style="color: #303030; font-size: 13px; line-height: 18px; word-wrap: break-word; text-align: left;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/3.png"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/23.png"></div>			<div class="uyan_cmt_exp" style="padding: 5px 5px 0 0; line-height: 14px;">				<a id="uyan_exp_rpy_18989526" onclick="UYAN.addRpy(18989526);" onmouseover="UYAN.mouseOO(this.nextSibling, &#39;rpy.png&#39;);" onmouseout="UYAN.mouseOO(this.nextSibling, &#39;rpy2.png&#39;);" style="color: #999999; cursor: pointer; display: block; float: right; font-size: 11px; padding: 0 4px 0 0;">回复</a><a onclick="UYAN.addRpy(18989526);" onmouseover="UYAN.mouseOO(this, &#39;rpy.png&#39;);" onmouseout="UYAN.mouseOO(this, &#39;rpy2.png&#39;);" style="background: url(&#39;http://v2.uyan.cc/code/images/rpy2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; float: right; height: 13px; margin-right: 4px; margin-top: 0px; width: 14px;"></a>				<a onclick="UYAN.cmtUD(&#39;du&#39;, 18989526);" style="color: #999999; cursor: pointer; display: block; float: right; font-size: 11px; padding: 0 10px 0 0;">踩<span id="uyan_cd_18989526" style="padding-left: 3px;"></span></a>				<a id="uyan_cdw_18989526" onclick="UYAN.cmtUD(&#39;du&#39;, 18989526);" style="background: url(&#39;http://v2.uyan.cc/code/images/downDig2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; float: right; height: 13px; margin-right: 4px; margin-top: 3px; width: 13px;"></a>				<a onclick="UYAN.cmtUD(&#39;uu&#39;, 18989526);" style="color: #999999; cursor: pointer; display: block; float: right; font-size: 11px; padding: 0 10px 0 0;">顶<span id="uyan_cu_18989526" style="padding-left: 3px;">2</span></a>				<a id="uyan_cuw_18989526" onclick="UYAN.cmtUD(&#39;uu&#39;, 18989526);" style="background: url(&#39;http://v2.uyan.cc/code/images/upDig2.png&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; float: right; height: 13px; margin-right: 4px; margin-top: 0px; width: 13px;"></a>								<div style="color: #999999; float: left; font-size: 11px; padding: 0 10px 0 0;">8月26日 16:23</div>				<div style="clear: both;"></div>			</div>		</div>		<div style="clear: both;"></div>	</div></div><div style="float: right; font-size: 12px; padding: 20px 8px 10px 0;">    <a style="color: #aaaaaa; text-decoration: none;" target="_blank" title="社会化评论是什么？" href="http://www.uyan.cc/">友言[?]</a>    </div>    <div style="clear: both;"></div></div><div id="uyan_rpy" style="display: none; padding-left: 60px; padding-top: 10px;"><div style="height: 78px; overflow: hidden; padding: 0 0 20px 0; _padding: 0;"><div style="float: left; border-radius: 6px 6px 6px 6px; width: 38px; height: 38px; overflow: hidden; margin-right: 10px;"><img id="uyan_uface_r" style="width: 38px; height: 38px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/duface.png"></div><div style="padding: 0 0 0 48px; overflow: visible;"><div onclick="UYAN.hidIntro(this.firstChild, uyan_smile_region);" style="height: 60px; background: url(&#39;http://v2.uyan.cc/code/images/textareabg.png&#39;) repeat-x scroll 0 0 #FFFFFF; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px; padding: 7px; position: relative; overflow: hidden; cursor: text;"><textarea id="uyan_comment" onkeyup="UYAN.checkTxt(this, 140, uyan_tts_region);" onkeydown="UYAN.checkTxt(this, 140, uyan_tts_region);" onfocus="UYAN.hidIntro(this, uyan_smile_region);" onblur="UYAN.shoIntro(this, uyan_smile_region);" style="background: none repeat scroll 0 0 #FFFFFF; padding: 0; box-shadow: 0 0; color: #BDBBBB; border: 0; z-index: 90; overflow: hidden; float: left; font-size: 13px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; resize: none; height: 60px; display: block; outline: none; word-wrap: break-word; margin: 0;">请输入你的评论</textarea><pre style="width: 100%; font-size: 13px; left: 0; line-height: 18px; position: absolute; top: 0; visibility: hidden; word-wrap: break-word; white-space: pre-wrap;" id="uyan_cmt_cnt"></pre></div><div style="clear: both;"></div></div><div id="uyan_smile" onclick="UYAN.shoSmile(this, &#39;&#39;, uyan_smile_region);" style="display: none; background: url(&#39;http://v2.uyan.cc/code/images/emotion.png&#39;) no-repeat scroll 6px 2px #FFFFFF; color: #3A82FF; cursor: pointer; font-size: 11px; height: 17px; left: 58px; position: relative; top: -2px; width: 60px; z-index: 5500; border: 1px solid #d7d7d7; border-top: none; border-radius: 2px; margin: 0; line-height: 20px; padding-bottom: 2px; font-family: &#39;Microsoft YaHei&#39;,arial,tahoma,宋体,sans-serif; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;表情</div></div><div id="uyan_ssmile" style="margin-left: 48px; margin-top: -20px; _margin-top: 0; position: absolute; z-index: 9999; display: none;"><div style="border: 1px solid #989999; border-radius: 5px; width: 322px; height: 160px; background: #fff; font-size: 12px; padding: 6px;"><ul style="margin: 5px 0 0 0; padding: 0; height: 24px;"><li id="uyan_ssmile_df" onclick="UYAN.shoSmile(this, &#39;df&#39;, uyan_smile_region);" style="float: left; list-style: none; line-height: 22px; background: url(&#39;http://v2.uyan.cc/code/images/smileb.gif&#39;) no-repeat scroll 0 center transparent; color: #fff; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">默认表情</li><li id="uyan_ssmile_al" onclick="UYAN.shoSmile(this, &#39;al&#39;, uyan_smile_region);" style="float: left; list-style: none; line-height: 22px; background: none repeat scroll 0 center transparent; width: 68px; height: 24px; overflow: hidden; text-align: center; margin: 0 5px; display: inline; cursor: pointer; padding: 0;">阿狸</li></ul><ul id="uyan_ssmile_list" style="margin: 0; padding: 0; width: 310px; border-top: 1px solid #d3e4f0; border-left: 1px solid #d3e4f0; margin: 5px 0 0 5px;"></ul></div></div><div style="color: #D2D2D2; height: 20px; font-size: 13px; position: absolute; z-index: 100; margin-right: 10px; margin-top: -42px; right: 0;"><span id="uyan_tts">140</span></div><div id="uyan_stat_btn_r" style="position: relative; height: 40px; overflow: hidden; margin-top: -20px; _margin-top: 0;"><a id="uyan_cmt_btn" onmouseover="UYAN.cagBtn(&#39;on&#39;, this);" onmouseout="UYAN.cagBtn(&#39;out&#39;, this);" style="background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x scroll 0 0 transparent; border: 1px solid #d0cfcf; border-radius: 5px 5px 5px 5px; color: #666; cursor: pointer; float: right; font-size: 13px; font-weight: bold; height: 24px; line-height: 21px; margin: 4px 0 0; padding: 3px 25px 1px; text-align: center; text-shadow: 0 1px 0 #FFFFFF;" onclick="UYAN.addCmt(this, uyan_comment_region);">回&nbsp;&nbsp;复</a><div style="float: right; padding: 11px 15px 0 3px;"><div style="color: #AAAAAA; float: right; font-size: 12px; padding-left: 5px;"><span id="uyan_vis" style="float: right; line-height: 18px;">&nbsp;&nbsp;或<span style="text-decoration: underline; cursor: pointer;" onclick="UYAN.login();">游客留言</span></span><span onmouseover="UYAN.show(&#39;uyan_slog&#39;);" onmouseout="UYAN.hide(&#39;uyan_slog&#39;);" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/arrow.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginRenren();" title="使用人人账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/renren.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTQq();" title="使用腾讯微博账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tqq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginQq();" title="使用QQ账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/qq.png" style="margin: 1px 2px 0;"></span><span onclick="UYAN.loginTSina();" title="使用新浪微博账号登陆" style="float: right; cursor: pointer;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsina.png" style="margin: 1px 2px 0;"></span></div><div style="clear: both;"></div></div><div style="clear: both;"></div></div><div id="uyan_slog" class="uyan_st_slog" onmouseover="UYAN.show(this);" onmouseout="UYAN.hide(this);" style="background-color: #FFFFFF; border-color: #d3d2d2; border-width: 1px 1px 2px; border-style: solid; position: absolute; z-index: 90000; padding: 1px 3px; display: none; width: 20px;"><div onclick="UYAN.loginKaixin001();" title="kaixin001" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/kaixin001.png"></div><div onclick="UYAN.loginTSohu();" title="sohu" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsohu.png"></div><div onclick="UYAN.loginT163();" title="163" style="color: #9797C4;  font-size: 12px; font-weight: normal; width:16px; margin:0 auto; padding:2px 0; cursor: pointer; height: 17px; overflow: hidden;"><img src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/t163.png"></div></div></div><div style="clear: both;"></div><div id="uyan_box" style="font-family: &#39;Microsoft YaHei&#39;; display: none; top: 0px; left: 0px; z-index: 9999999; opacity: 1; empty-cells: show; position: absolute; background: none repeat scroll 0 0 #FFFFFF; text-align: left;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; width: auto; line-height: normal;"><tbody><tr><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxnw.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td><td style="background-color: black; height: 10px; opacity: 0.3; padding: 0; filter: alpha(opacity=60);"></td><td onclick="UYAN.hideBox();" style="background: url(&#39;http://v2.uyan.cc/code/images/boxclose.png&#39;) no-repeat scroll 0 0 transparent; _background: url(&#39;http://v2.uyan.cc/code/images/boxclose.gif&#39;) no-repeat scroll 0 0 transparent; cursor: pointer; display: block; height: 23px; position: absolute; right: -8px; top: -8px; width: 23px; z-index: 100000; padding: 0;"></td></tr><tr><td style="background-color: black; opacity: 0.6; padding: 0; width: 10px; opacity: 0.3; filter: alpha(opacity=60);"></td><td style="background-color: white; padding: 0;"><div id="uyan_box_cnt"></div></td><td style="background-color: black; opacity: 0.6; padding: 0; width: 10px; opacity: 0.3; filter: alpha(opacity=60);"></td></tr><tr><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxsw.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td><td style="background-color: black; height: 10px; opacity: 0.3; padding: 0; filter: alpha(opacity=60);"></td><td style="background: url(&#39;http://v2.uyan.cc/code/images/boxse.png&#39;) repeat scroll 0 0 transparent; height: 10px; padding: 0; width: 10px; opacity: 0.5;"></td></tr></tbody></table></div><div id="uyan_cmty" style="display: none;"><div style="width: 520px;"><div style="border-bottom: 1px solid #b6b5b5; background: #eeeeee; color: #666; font-size: 16px; height: 22px; padding: 10px 0;"><span id="uyan_sdm_name" style="float: left; padding-left: 25px; text-shadow: 0 1px 0 #fff;">www.poluoluo.com</span></div><div style="color: #666;"><div style="background: url(&#39;http://v2.uyan.cc/code/images/commentWeb.png&#39;) no-repeat 20px 13px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_dacn" style="font-size: 18px;">6205</span><br><span style="font-size: 12px;">评论数</span></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/likeWeb.png&#39;) no-repeat 24px 10px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_dvun" style="font-size: 18px;">4955</span><br><span style="font-size: 12px;">喜欢数</span></div><div style="background: url(&#39;http://v2.uyan.cc/code/images/humanWeb.png&#39;) no-repeat 27px 13px; border-right: 1px solid #EEEEEE; float: left; height: 49px; padding-left: 70px; padding-top: 6px; width: 102px;"><span id="uyan_daun" style="font-size: 18px;">1899</span><br><span style="font-size: 12px;">用户数</span></div><div style="clear: both;"></div></div><div id="uyan_cmty_info_tmp" style="border-top: 1px solid #CCCCCC; padding: 10px 20px; font-size: 15px; color: #555555;">数据正在加载中...</div><div style="background-color: #F0F0F0; border-top: 1px solid #CCCCCC; height: 20px; padding-top: 6px;"><a target="_blank" href="http://www.uyan.cc/" style="color: #6B6B6B; cursor: pointer; display: block; float: right; font-family: Arial, Helvetica, sans-serif; font-size: 11px; margin-right: 15px; text-decoration: none;">友言</a><div style="clear: both;"></div></div></div></div><div id="uyan_login" style="display: none;"><div style="border-bottom: 1px solid #b6b5b5; background: #eeeeee; color: #666; font-size: 16px; height: 22px; padding: 10px 0;"><span style="padding-left: 25px; text-shadow: 0 1px 0 #fff; font-weight: 600;">社会化帐号登录</span></div><div style="width: 429px; padding: 22px;"><h2 style="margin: 0; font-size: 14px; font-weight: normal; color: #666; padding-left: 25px; padding-bottom: 5px; background: none repeat scroll 0 center transparent;">点击按钮，使用社交帐号评论</h2><div id="uyan_loginom" style="padding-bottom: 20px;"><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用QQ账号登陆" onclick="UYAN.loginQq();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用QQ账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/qq.png">&nbsp;&nbsp;QQ</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用新浪微博账号登陆" onclick="UYAN.loginTSina();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用新浪微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsina.png">&nbsp;&nbsp;新浪微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用腾讯微博账号登陆" onclick="UYAN.loginTQq();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用腾讯微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tqq.png">&nbsp;&nbsp;腾讯微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用搜狐微博账号登陆" onclick="UYAN.loginTSohu();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用搜狐微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/tsohu.png">&nbsp;&nbsp;搜狐微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用网易微博账号登陆" onclick="UYAN.loginT163();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用网易微博账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/t163.png">&nbsp;&nbsp;网易微博</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用人人网账号登陆" onclick="UYAN.loginRenren();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用人人网账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/renren.png">&nbsp;&nbsp;人人网</a></span><span style="height: 16px; float: left; display: block; line-height: 16px; overflow: hidden; width: 60px; margin: 15px 22px 0 25px; display: inline;"><a title="用开心网账号登陆" onclick="UYAN.loginKaixin001();" style="cursor: pointer; font-size: 14px; color: #666; text-decoration: none;"><img title="用开心网账号登陆" border="0" style="display: block; float: left; width: 16px; height: 16px;" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/kaixin001.png">&nbsp;&nbsp;开心网</a></span><div style="clear: both;"></div></div><div id="uyan_vis_login"><h2 style="padding-top: 10px; border-top: 1px solid #ccc; margin: 0; font-size: 14px; font-weight: normal; color: #666; padding-left: 25px; margin-top: 15px; background: none repeat scroll 0 center transparent;">作为游客留言</h2><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 15px;"><p style="text-indent: 0; display: block; float: left; width: 58px; line-height: 30px; text-align: left; margin: 0; font-size: 14px; color: #666;">Email <span style="color: #ff0000;">*</span></p><input onkeyup="UYAN.syncEN();" onkeydown="UYAN.syncEN();" id="uyan_email_tmp" type="text" style="margin: auto; border: 1px solid #c1c1c1; color: #687793; float: left; height: 24px; line-height: 24px; padding: 2px 8px; width: 230px; border-radius: 5px;"></span><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 18px;"><p style="text-indent: 0; display: block; float: left; width: 58px; line-height: 30px; text-align: left; margin: 0; font-size: 14px; color: #666;">昵&nbsp;&nbsp;称</p><input onfocus="UYAN.nnbg(&#39;h&#39;);" onblur="UYAN.nnbg(&#39;s&#39;);" id="uyan_uname_tmp" type="text" style="margin: auto; background: #f2f2f2; border: 1px solid #c1c1c1; color: #687793; float: left; height: 24px; line-height: 24px; padding: 2px 8px; width: 230px; border-radius: 5px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15) inset;"></span><span style="height: 30px; display: block; padding-left: 54px; overflow: hidden; margin-top: 15px; width: 306px;"><div id="uyan_login_warn_tmp" style="color: #ff0000; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding-right: 15px; padding-top: 8px; text-align: right; width: 150px;"></div><input onclick="UYAN.loginEmail();" type="submit" style="margin: auto; background: url(&#39;http://v2.uyan.cc/code/images/btn.jpg&#39;) no-repeat; width: 86px; height: 26px; border: none; font-size: 14px; font-weight: bold; color: #666; float: right; cursor: pointer;" value="登录"></span></div></div></div><div style="background-color: #FFFFFF; border-color: #D3D2D2; border-style: solid; border-width: 1px 1px 2px; height: 130px; position: absolute; top: 23px; width: 135px; z-index: 99999; display: none;"><div style="color: #9797C4; font-size: 12px; font-weight: normal; padding: 4px 0 4px 10px; line-height: 18px;">顶并分享到:</div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 3px 0;"><input id="sinaShareBox" style="float: left; margin: 2px 5px 0 10px; padding: 0;" type="checkbox"><div style="background: url(&#39;http://v2.uyan.cc/code/images/tsina.png&#39;) no-repeat scroll 0 0 transparent; color: #494949; float: left; height: 18px; line-height: 18px; font-size: 12px; font-weight: normal; padding-left: 18px;">新浪微博</div><div style="clear: both;"></div></div><div style="padding: 5px 0 0 10px;"><a style="border: 1px solid #D0CFCF; background: url(&#39;http://v2.uyan.cc/code/images/buttonLarge.png&#39;) repeat-x; border-radius: 3px 3px 3px 3px; color: #666; font-weight: bold; cursor: pointer; font-weight: normal; float: left; font-size: 12px; height: 20px; line-height: 22px; overflow: hidden; padding: 0 18px;">顶</a><a style="background-color: #FFFFFF; border: 1px solid #FFFFFF; color: #737373; height: 20px; line-height: 22px; overflow: hidden; cursor: pointer; display: block; float: left; font-size: 12px; font-weight: normal; padding: 0 18px;">取消</a><div style="clear: both; height: 1px; overflow: hidden;"></div></div></div></div>
+          </div>
+          
+     </div>
+     
+   <!--右边--> 
+     <div class="fr">
+           <!--最新推荐-->
+           <div class="box250">
+           <h3>最新推荐</h3>
+           <div class="mainlist"><ul><li><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/tsjc/Index.html">PS调色教程</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/251003.html" title="Photoshop给草地上的美女加上唯美清爽的青绿色教程" target="_self">Photoshop给草地上的美女</a></li><li><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/zptx/Index.html">PS照片美化</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/251002.html" title="Photoshop把帅哥照片转为夸张的油画漫画教程" target="_self">Photoshop把帅哥照片转为</a></li><li><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/tsjc/Index.html">PS调色教程</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/250834.html" title="Photoshop打造淡淡柔美的蓝黄色外景美女图片教程" target="_self">Photoshop打造淡淡柔美的</a></li><li><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/wzxg/Index.html">PS文字效果</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/250833.html" title="Photoshop制作非常绚丽的彩块透视字教程" target="_self">Photoshop制作非常绚丽的</a></li><li class=""><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/wzxg/Index.html">PS文字效果</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/250221.html" title="Photoshop设计喜庆创意2014马年生肖3D立体字教程" target="_self">Photoshop设计喜庆创意2</a></li><li class=""><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/zptx/Index.html">PS照片美化</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/250218.html" title="Photoshop给黑白图片增加暴风雨的效果教程" target="_self">Photoshop给黑白图片增加</a></li><li class=""><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/tsjc/Index.html">PS调色教程</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/249972.html" title="Photoshop打造唯美的秋季冷色芦苇美女图片教程" target="_self">Photoshop打造唯美的秋季</a></li><li class=""><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/wzxg/Index.html">PS文字效果</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/249971.html" title="Photoshop制作超酷的碎冰字教程" target="_self">Photoshop制作超酷的碎冰</a></li><li class=""><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/tpcl/tsjc/Index.html">PS调色教程</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/249887.html" title="Photoshop给草地上的美女加上晨曦般的柔褐色教程" target="_self">Photoshop给草地上的美女</a></li><li><span class="fr"></span><span class="iconlist1"></span>[<a class="" href="http://www.poluoluo.com/jzxy/txtx/photoshop/sljc/Index.html">PS实例教程</a>]<a class="" href="http://www.poluoluo.com/jzxy/201311/249886.html" title="Photoshop制作搞怪的绿毛怪表情教程" target="_self">Photoshop制作搞怪的绿毛</a></li></ul></div></div>
+           
+           <!--随机推荐-->
+           <div class="box250 boxH">
+           <h3>随机推荐</h3>
+           <div class="mainlist"><ul>
+<li class=""><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201306/216810.html" target="blank" title="查洪江：竞价效果不好的几大原因分析？">查洪江：竞价效果不好的几大原因分析？</a></li>
+
+<li class=""><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201306/216925.html" target="blank" title="PHP大小写问题：函数名和类名不区分,变量名区分">PHP大小写问题：函数名和类名不区分,变</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201302/198332.html" target="blank" title="面对不同年龄的用户，你将如何设计你的网站？">面对不同年龄的用户，你将如何设计你的</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201309/241819.html" target="blank" title="百度注册新域名或推互联网金融产品">百度注册新域名或推互联网金融产品</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201309/243230.html" target="blank" title="运营的概念及合格运营人员应具备的基本技能">运营的概念及合格运营人员应具备的基本</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201305/208006.html" target="blank" title="JQuery调webservice实现邮箱验证(检测是否可用)">JQuery调webservice实现邮箱验证(检测是</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201212/189144.html" target="blank" title="程苓峰：接着李学凌的话往下说">程苓峰：接着李学凌的话往下说</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201211/187774.html" target="blank" title="分享一下贝贝成长进度的php代码">分享一下贝贝成长进度的php代码</a></li>
+
+<li class=""><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201212/192305.html" target="blank" title="Jquery瀑布流插件使用介绍">Jquery瀑布流插件使用介绍</a></li>
+
+<li><span class="iconlist1"></span><a href="http://www.poluoluo.com/jzxy/201307/234646.html" target="blank" title="VB.NET拷贝整个目录下所有子目录及文件的实例代码">VB.NET拷贝整个目录下所有子目录及文件</a></li>
+
+</ul></div></div>
+<div id="baiduadscss1" class="boxH">
+<script type="text/javascript"> /*250*250，创建于2010-6-7*/ var cpro_id = 'u47121';</script>
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/c.js"></script><div id="BAIDU_DUP_wrapper_u47121_0"><iframe id="cproIframe_u47121" width="250" height="250" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(8).htm" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div><script charset="utf-8" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/acom(4)"></script>
+</div> 
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/api.php"></script>           <!--论坛精华-->
+           <div class="box250 boxH">
+           <h3>论坛精华帖</h3> 
+           <div class="mainlist"><ul><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-58016-1-1.html" target="blank" title="自动化制作马塞克晶格化PS动作效果">自动化制作马塞克晶格化PS动作效果</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-64762-1-1.html" target="blank" title="10款海报专题冰雪凉爽酷冷风格字体PS样式">10款海报专题冰雪凉爽酷冷风格字体PS样式</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-66561-1-1.html" target="blank" title="6款宇宙星空PS样式下载">6款宇宙星空PS样式下载</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-65002-1-1.html" target="blank" title="15款漂亮的纹理字体PS样式2下载">15款漂亮的纹理字体PS样式2下载</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-53333-1-1.html" target="blank" title="网页广告专题类字体效果PS样式：附教程">网页广告专题类字体效果PS样式：附教程</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-58480-1-1.html" target="blank" title="【国庆巨献】超酷可编辑的立体字样式模板:附详细说明">【国庆巨献】超酷可编辑的立体字样式模板:</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-57442-1-1.html" target="blank" title="看图：一款立体字体PS样式分享下载">看图：一款立体字体PS样式分享下载</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-837-1-1.html" target="blank" title="几百个中国风矢量LOGO素材VI标志AI下载">几百个中国风矢量LOGO素材VI标志AI下载</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-43678-1-1.html" target="blank" title="图片转针织PS动作+13款缝纫线笔刷下载">图片转针织PS动作+13款缝纫线笔刷下载</a></li><li><span class="iconlist1"></span><a href="http://bbs.poluoluo.com/thread-55317-1-1.html" target="blank" title="漂亮可爱的黑板手绘字风格PS样式">漂亮可爱的黑板手绘字风格PS样式</a></li></ul></div></div>           
+     
+     </div>
+    
+</div>
+<span class="DivH10"></span>
+<div class="footbox">
+	<div class="foot">
+    <div class="about fl">
+   	  <div class="aboutus fl">
+        	<strong>关于我们</strong>
+            <h4><a href="http://www.poluoluo.com/aboutus.html" target="_blank">关于我们</a></h4>
+            <h4><a href="http://www.poluoluo.com/join.html" target="_blank">加入我们</a></h4>
+            <h4><a href="http://www.poluoluo.com/sponsor.html" target="_blank">赞助我们</a></h4>
+            <h4><a href="http://www.poluoluo.com/disclaimer.html" target="_blank">免责声明</a></h4>
+            <h4><a href="http://www.poluoluo.com/copyright.html" target="_blank">版权声明</a></h4>
+      </div>
+        <div class="contact fl">
+        	<strong>联系我们</strong>
+            <h4><a href="http://www.poluoluo.com/lxwm.html" target="_blank">联系我们</a></h4>
+            <h4><a href="http://www.poluoluo.com/flinks.html" target="_blank">友情链接</a></h4>
+            <h4><a href="http://www.poluoluo.com/quan.html" target="_blank">侵权处理</a></h4>
+            <h4><a href="http://bbs.poluoluo.com/thread-2633-1-1.html" target="_blank">QQ技术群</a></h4>
+        </div>
+        <div class="cooperation fl">
+        	<strong>合作方式</strong>
+            <h4><a href="http://www.poluoluo.com/ads.html" target="_blank">广告服务</a></h4>
+            <h4><a href="http://www.poluoluo.com/ywhz.html" target="_blank">业务合作</a></h4>
+        </div>
+        <div class="opinion fl">
+        	<strong>常见问题</strong>
+            <h4><a href="http://bbs.poluoluo.com/forum-37-1.html" target="_blank">意见反馈</a></h4>
+            <h4><a href="http://bbs.poluoluo.com/forum-47-1.html" target="_blank">发布作品</a></h4>
+        </div>
+
+    </div>
+    <div class="copyright fr">本站不承担任何版权问题，如果我们侵犯了您的利益，请来信<br>告知(admin@poluoluo.com)，我们会在第一时间处理！<br>&#169; 2008-2014 www.poluoluo.com 黔ICP备14000367号<br>破洛洛 版权所有<br><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/stat.php" language="JavaScript" charset="gb2312"></script><script src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=736677" target="_blank" title="站长统计">站长统计</a></div>
+    <div class="footline"></div>
+    </div>
+</div> 
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=698025" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<script type="text/javascript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/ujian.js"></script>
+<script type="text/javascript" id="UYScript" src="./开发插件的两个方法jquery.fn.extend与jquery.extend_files/iframe.js" async=""></script>
+
+
+</body></html>

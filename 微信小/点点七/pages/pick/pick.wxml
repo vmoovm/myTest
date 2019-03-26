@@ -1,0 +1,57 @@
+<view class="zshangchuan">
+    <view class="zsh_iconarea">
+        <view class="zsh_contenteditable1">
+            <textarea placeholder="输入题干，最多500字"></textarea>
+        </view>
+    </view>
+    <view class="zsh_img">
+        <view class="zsh_imgList">
+            <view class="zsh_rel">
+                <view class='zsh_view'>
+                    <image mode='aspectFill' src="../../temp/201709261446_23.jpg" />
+                </view>
+                <icon class="zsh_close" type="clear" size='18' />
+            </view>
+            <view class="zsh_rel">
+                <view class='zsh_view'>
+                    <image mode='aspectFill' src="../../temp/201709261513_20.jpg" />
+                </view>
+                <icon class="zsh_close" type="clear" size='18' />
+            </view>
+            <view class="zsh_rel">
+                <view class='zsh_view'>
+                    <image mode='aspectFill' src="../../temp/201709271849_03.jpg" />
+                </view>
+                <icon class="zsh_close" type="clear" size='18' />
+            </view>
+            <view class="zsh_addImg"></view>
+        </view>
+    </view>
+</view>
+<view class="zintegral">
+    <view class="zin_row" id="zsetTime">
+        <view class='zin_key'>设置时长</view>
+          <!-- <view style=" position:fixed; top:0; left:0; z-index:10; width:100%; height:800px; background:rgba(0, 0, 0, .4)"></view>
+          <picker-view indicator-style="height: 50px;" style=" position:fixed; bottom: 0; left: 0; width: 100%; height: 300px; z-index:112; background:#fff; opacity:0.7" value="{{value}}" bindchange="bindChange">
+            <picker-view-column>
+                <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+            </picker-view-column>
+        </picker-view> -->
+		<text class='zin_value'>123:12:23</text>
+    </view>
+    <view class="zin_row">
+        <text class='zin_key'>允许查看评分统计</text>
+        <view class='zin_value'>
+            <switch checked='checked'></switch>
+        </view>
+    </view>
+</view>
+<view class='zre_top'>
+	<button type='primary'>开始选人</button>
+</view>

@@ -1,0 +1,425 @@
+@charset "utf-8";
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+/*----------------------------------------------------
+手机app  rem em
+
+html {font-size: 62.5%;}  //10/16 = 62.5%
+body {font-size: 1.2rem;}  //1.4*10px = 12px
+h1 { font-size: 2.4rem;}  //2.4*10px = 24px
+rem与em都是相对的计算单位，
+计算上类似不过是以统一的根元素<html>设定基准值，默认原基准值为1em=16px，设定为0.625em=10px方便计算。
+用rem制作出来的页面，宽度自适应，火狐下显示正常，opera浏览器下面的尺寸总是显得大，这是什么情况呢？
+这个问题 其实是因为有的浏览器默认最小字号为12px，导致如果在宽高、行高、边距等地方用rem，
+虽然在html那设置了10px，但默认还是会按照12px来计算，所以实际会偏大。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+a伪类顺序
+未访问的链接 
+a:link {color: #FF0000}
+已访问的链接  
+a:visited {color: #00FF00}
+鼠标移动到链接上	 
+a:hover {color: #FF00FF}
+选定的链接 
+a:active {color: #0000FF}	 
+-----------------------------------------------------*/
+
+
+
+/*white-space:pre;文本有多少个空格浏览器中显示多少空格，文本换行，也换行，即原样输出*/
+/*----------------------------------------------------
+多余省略号
+ overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+中文、英文超出换行
+.br { word-wrap:break-word;	word-break:break-all;}
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+css3 圆角
+-webkit-border-radius:3px; -moz-border-radius:3px; -o-border-radius:3px; border-radius:3px;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+半透明-khtml- 此前缀为老版sarfari
+-webkit-opacity: 0.7;-moz-opacity:0.3;  -o-opacity: 0.9;  opacity: 0.9; filter:alpha(opacity=50);  
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+css3 box阴影
+-webkit-box-shadow:5px 5px 5px #999 inset; -moz-box-shadow:5px 5px 5px #999 inset;  -o-box-shadow:5px 5px 5px #999 inset; box-shadow:5px 5px 5px #999 inset;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+css3 文本阴影
+-webkit-text-shadow:5px 5px 5px #999 inset; -O-text-shadow:5px 5px 5px #999 inset; -moz-text-shadow:5px 5px 5px #999 inset;  text-shadow:5px 5px 5px #999 inset;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+全属性默认效果动画缩写
+-webkit-transition:1s ease all; -moz-transition:1s ease all; -o-transition:1s ease all; transition:1s ease all;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+过渡属性:
+-webkit-transition-property:all; -moz-transition-property:all; -o-transition-property:all; transition-property:all;
+
+all：表示针对所有元素。
+none：表示没有元素。
+ident：指定CSS属性列表，如height  background
+
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+弹层背景平铺宽高自适应
+ position:fixed; _position:absolute; bottom:0; _bottom:auto; _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight));  width:100%; height:1080px; border-top:3px #999 solid; background:url(../images/opacity50.png) repeat;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+最大最小宽高限制
+ min-width: 1000px; *width:expression(document.body.clientWidth < 1000? '1000px':'auto');
+ min-height: 1000px; *width:expression(document.body.clientHeight < 1000? '1000px':'auto');
+ max-width: 1000px; *width:expression(document.body.clientWidth > 1000? '1000px':'auto');
+ max-height: 1000px; *width:expression(document.body.clientHeight > 1000? '1000px':'auto');
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+IE6 png背景透明
+background:transparent url(images/name.png) no-repeat 0 0!important;
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/name.png');
+_background-image: none;
+
+-----------------------------------------------------*/
+
+
+
+/*----------------------------------------------------
+全属性默认效果动画缩写
+-webkit-transition:1s ease all; -moz-transition:1s ease all; -o-transition:1s ease all; transition:1s ease all;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+过渡属性:
+-webkit-transition-property:all; -moz-transition-property:all; -o-transition-property:all; transition-property:all;
+
+all：表示针对所有元素。
+none：表示没有元素。
+ident：指定CSS属性列表，如height  background
+
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+过渡时间:
+-webkit-transition-duration:1s;-moz-transition-duration:1s;-o-transition-duration:1s;transition-duration:1s;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+延迟时间:
+-webkit-transition-delay:1s;-moz-transition-delay:1s;-o-transition-delay:1s;transition-delay:1s;
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+过渡效果:
+-webkit-transition-timing-function:1s;-moz-transition-timing-function:1s;-o-transition-timing-function:1s;transition-timing-function:1s;
+
+ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
+linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+cubic-bezier：特殊的立方贝塞尔曲线效果。
+-----------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------
+旋转 、 缩放
+-webkit-transform:rotate(360deg) scale(1.2,1.2);
+-moz-transform:rotate(360deg) scale(1.2,1.2);
+-o-transform:rotate(360deg) scale(1.2,1.2);
+transform:rotate(360deg) scale(1.2,1.2);
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+缩放
+-webkit-transform:scale(0.8,1.2);
+-moz-transform:scale(0.8,1.2);
+-o-transform:scale(0.8,1.2);
+transform:scale(0.8,1.2);
+
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视空间（三维）
+-webkit-transform:perspective(500px) rotateX(0deg);
+-moz-transform:perspective(500px) rotateX(360deg);
+-o-transform:perspective(500px) rotateX(0deg);
+transform:perspective(500px) rotateX(360deg);
+-----------------------------------------------------*/
+/*----------------------------------------------------
+旋转
+
+旋转45度
+.rotate_clockwise{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+三维空间x轴旋转60度
+.rotateX{
+    -webkit-transform:perspective(800px) rotateX(60deg);
+    -moz-transform:perspective(800px) rotateX(60deg);
+	-o-transform:perspective(800px) rotateX(60deg);
+    transform:perspective(800px) rotateX(60deg);
+}
+三维空间y轴旋转60度
+.rotateY{
+    -webkit-transform:perspective(800px) rotateY(60deg);
+    -moz-transform:perspective(800px) rotateY(60deg);
+ 	-o-transform:perspective(800px) rotateY(60deg);
+    transform:perspective(800px) rotateY(60deg);
+}
+三维空间z轴旋转60度
+.rotateZ{
+    -webkit-transform:perspective(800px) rotateZ(60deg);
+    -moz-transform:perspective(800px) rotateZ(60deg);
+	-o-transform:perspective(800px) rotateZ(60deg);
+    transform:perspective(800px) rotateZ(60deg);
+}          
+-----------------------------------------------------*/
+
+
+
+/*----------------------------------------------------
+位移
+-webkit-transform:translate(100px);
+-moz-transform:translate(100px);
+-o-transform:translate(100px);
+transform:translate(100px);
+-----------------------------------------------------*/
+ 
+ 
+ 
+/*----------------------------------------------------
+倾斜
+-webkit-transform:skew(45deg,20deg);
+-moz-transform:skew(45deg,20deg);
+-o-transform:skew(45deg,20deg);
+transform:skew(45deg,20deg);
+-----------------------------------------------------*/
+/*----------------------------------------------------
+矩阵变形
+-webkit-transform:matrix(1,0.4,0,1,0,0);
+-moz-transform:matrix(1,0.4,0,1,0,0);
+-o-transform:matrix(1,0.4,0,1,0,0);
+transform:matrix(1,0.4,0,1,0,0);
+-----------------------------------------------------*/
+
+
+/*----------------------------------------------------
+
+-----------------------------------------------------*/
+ 
+/*----------------------------------------------------
+完整动画
+.animation_name{
+    position:absolute;
+    -webkit-animation:0.5s 0.5s ease infinite alternate;
+    -webkit-animation-name:demo;
+	-moz-animation:0.5s 0.5s ease infinite alternate;
+    -moz-animation-name:demo;
+	-o-animation:0.5s 0.5s ease infinite alternate;
+    -o-animation-name:demo;
+    animation:0.5s 0.5s ease infinite alternate;
+    animation-name:demo;
+}
+@-webkit-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@-moz-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@-o-keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+@keyframes demo{
+    0%{left:0;}
+    100%{left:400px;}
+}
+-----------------------------------------------------*/
+/*----------------------------------------------------
+动画时间
+-webkit-animation-duration:2s;
+-moz-animation-duration:2s;
+-o-animation-duration:2s;
+animation-duration:2s;
+-----------------------------------------------------*/
+/*----------------------------------------------------
+开始播放时间
+-webkit-animation-delay:1s;
+-moz-animation-delay:0;
+-o-animation-delay:0;
+animation-delay:1s;
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放方式
+-webkit-animation-timing-function:linear;
+-moz-animation-timing-function:linear;
+-o-animation-timing-function:linear;
+animation-timing-function:linear;
+
+ease：缓解效果，等同于cubic-bezier(0.25,0.1,0.25,1.0)函数，既立方贝塞尔。
+linear：线性效果，等同于cubic-bezier(0.0,0.0,1.0,1.0)函数。
+ease-in：渐显效果，等同于cubic-bezier(0.42,0,1.0,1.0)函数。
+ease-out：渐隐效果，等同于cubic-bezier(0,0,0.58,1.0)函数。
+ease-in-out：渐显渐隐效果，等同于cubic-bezier(0.42,0,0.58,1.0)函数。
+step-start：马上转跳到动画结束状态。
+step-end：保持动画开始状态，直到动画执行时间结束，马上转跳到动画结束状态。
+steps(<number>[, [ start | end ] ]?)：第一个参数number为指定的间隔数，即把动画分为n步阶段性展示，第二个参数默认为end，设置最后一步的状态，start为结束时的状态，end为开始时的状态，若设置与animation-fill-mode的效果冲突，而以animation-fill-mode的设置为动画结束的状态。
+cubic-bezier(<number>, <number>, <number>, <number>)：特殊的立方贝塞尔曲线效果。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放次数
+-webkit-animation-iteration-count:infinite
+-moz-animation-iteration-count:infinite;
+-o-animation-iteration-count:infinite
+animation-iteration-count:infinite;
+number：自定义动画执行次数，设置值可为0或正整数。
+infinite：无限循环。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放方向
+-webkit-animation-direction:reverse;
+-moz-animation-direction:reverse;
+-o-animation-direction:reverse;
+animation-direction:reverse;
+
+normal：正常方向。
+reverse：动画反向运行,方向始终与normal相反。（FF14.0.1以下不支持）
+alternate：动画会循环正反方向交替运动，奇数次（1、3、5……）会正常运动，偶数次（2、4、6……）会反向运动，即所有相关联的值都会反向。
+alternate-reverse：动画从反向开始，再正反方向交替运动，运动方向始终与alternate定义的相反。（FF14.0.1以下不支持）
+-----------------------------------------------------*/
+/*----------------------------------------------------
+播放后状态
+-webkit-animation-fill-mode:forwards;
+-moz-animation-fill-mode:forwards;
+-o-animation-fill-mode:forwards;
+animation-fill-mode:forwards;
+
+none：默认值。不设置对象动画之外的状态
+forwards：结束后保持动画结束时的状态，但当animation-direction为0，则动画不执行，持续保持动画开始时的状态
+backwards：结束后返回动画开始时的状态
+both：结束后可遵循forwards和backwards两个规则。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+对象动画状态
+-webkit-animation-play-state:paused;
+-moz-animation-play-state:paused;
+-o-animation-play-state:paused;
+animation-play-state:paused;
+
+running：默认值。运动
+paused：暂停
+-----------------------------------------------------*/
+/*----------------------------------------------------
+变形原点（中心轴）
+-webkit-transform-origin:center center;
+-moz-transform-origin:left center;
+-o-transform-origin:50px top;
+transform-origin:50% 100%;
+
+percentage：用百分比指定坐标值。可以为负值。
+length：用长度值指定坐标值。可以为负值。
+left center right是水平方向取值，而top center bottom是垂直方向的取值。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视属性通常配合
+.mod_run_code{
+    -webkit-perspective-origin:right top;
+    -moz-perspective-origin:right top;
+	-o-perspective-origin:right top;
+    perspective-origin:right top;
+    -webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transform: perspective(500px);
+    -moz-transform: perspective(500px);
+	-o-transform: perspective(500px);
+    transform: perspective(500px);
+}
+-----------------------------------------------------*/
+/*----------------------------------------------------
+透视原点
+-webkit-perspective-origin:50% top;
+-moz-perspective-origin:right center;
+-o-perspective-origin:right -50px;
+perspective-origin:right top;
+
+percentage：用百分比指定坐标值。可以为负值。
+length：用长度值指定坐标值。可以为负值。
+left,center right是水平方向取值，而top center bottom是垂直方向的取值。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+3D呈现
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;
+-webkit-transform-style:preserve-3d;
+
+flat：所有子元素在 2D 平面呈现。
+preserve-3d：保留3D空间。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+隐藏内容的背面
+-webkit-backface-visibility:visible;
+-moz-backface-visibility:visible;
+-o-backface-visibility:visible;
+backface-visibility:visible;
+
+visible：默认值，旋转的时候背景可见。
+hidden：旋转的时候背景不可见。
+-----------------------------------------------------*/
+/*----------------------------------------------------
+实例（鼠标滑过放大，移出还原）
+.IndexClassesList a img	{width: 280px;height: 210px;-moz-transition: all 1s ease 0s;-o-transition: all 1s ease 0s;-webkit-transition: all 1s ease 0s;transition: all 1s ease 0s;}
+.IndexClassesList	.ICLItemCur a img	{-webkit-transform: scale(1.2);-moz-transform: scale(1.2);-ms-transform: scale(1.2);-o-transform: scale(1.2);transform: scale(1.2);}
+-----------------------------------------------------*/
+
+/*----------------------------------------------------
+
+-----------------------------------------------------*/
+
+
+
+/*----------------------------------------------------
+只做测试用
+-----------------------------------------------------*/
+.test { position:fixed; _position:absolute; bottom:0; _bottom:auto; _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); width:200px; height:200px; border:1px #ccc solid; background-color:#fff; overflow:auto;}
+.testbg { background-color:#CF3;}
+.test { width:300px; height:300px; background-color:#F3C;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>自定义-自定义</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<!--<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>-->
+<!--<script src="js/index.js" type="text/javascript"></script>-->
+<script src="dist/echarts.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="dist/echarts.min.js" type="text/javascript" charset="utf-8"></script>-->
+<script type="text/javascript" src="js/china.js" ></script>
+<style type="text/css">
+	body { background: -webkit-linear-gradient(#0e0e20, #1f1021) no-repeat;}
+	.echarts { width: 800px; height: 800px; margin: 50px auto;}
+</style>
+</head>
+
+<body>
+	<div class="">
+		<input type="text" name="" id="" value="dsf" />
+	</div>
+<!--main start-->
+<div class="zmain">
+	<div class="echarts" id="china-map">
+		
+	</div>
+	<div class="echarts" id="echarts-2">
+		
+	</div>
+	<div class="echarts" id="echarts-1">
+		
+	</div>
+</div>
+<!--main end-->
+<!--<script>
+		var mycharts = echarts.init(document.getElementById('echarts-2'))
+		
+		// 省会经纬度
+			var cityXW = {
+				'北京': [116.405289, 39.904987],
+				'天津': [117.190186, 39.125595],
+				'石家庄': [114.502464, 38.045475],
+				'太原': [112.549248, 37.857014],
+				'呼和浩特': [111.751990, 40.841490],
+				'沈阳': [123.429092, 41.796768],
+				'长春': [125.324501, 43.886841],
+				'哈尔滨': [126.642464, 45.756966],
+				'上海': [121.472641, 31.231707],
+				'南京': [118.76741, 32.041546],
+				'杭州': [120.15358, 30.287458],
+				'合肥': [117.283043, 31.861191],
+				'福州': [119.306236, 26.075302],
+				'南昌': [115.892151, 28.676493],
+				'济南': [117.000923, 36.675808],
+				'郑州': [113.665413, 34.757977],
+				'武汉': [114.298569, 30.584354],
+				'长沙': [112.982277, 28.19409],
+				'广州': [113.28064, 23.125177],
+				'南宁': [108.320007, 22.82402],
+				'海口': [110.199890, 20.044220],
+				'重庆': [106.504959, 29.533155],
+				'成都': [104.065735, 30.659462],
+				'贵阳': [106.713478, 26.578342],
+				'昆明': [102.71225, 25.040609],
+				'拉萨': [91.11450, 29.644150],
+				'西安': [108.948021, 34.263161],
+				'兰州': [103.834170, 36.061380],
+				'西宁': [101.777820, 36.617290],
+				'银川': [106.232480, 38.486440],
+				'乌鲁木齐': [87.616880, 43.826630],
+				'台北': [121.5200760, 25.0307240],
+				'香港': [114.165460, 22.275340],
+				'澳门': [113.549130, 22.198750]
+			}
+			// 城市助力热度
+			var cityHot = [
+				{name: '沈阳', value: 23}, 
+				{name: '长春', value: 223}, 
+				{name: '哈尔滨', value: 323}, 
+				{name: '北京', value: 123},
+				{name: '天津', value: 23},
+				{name: '呼和浩特', value: 223},
+				{name: '银川', value: 273},
+				{name: '太原', value: 293},
+				{name: '石家庄', value: 323},
+				{name: '济南', value: 43},
+				{name: '郑州', value: 63},
+				{name: '西安', value: 73},
+				{name: '武汉', value: 63},
+				{name: '南京', value: 23},
+				{name: '合肥', value: 3},
+				{name: '上海', value: 37},
+				{name: '长沙', value: 34},
+				{name: '南昌', value: 28},
+				{name: '杭州', value: 223},
+				{name: '福州', value: 323},
+				{name: '广州', value: 423},
+				{name: '台北', value: 323},
+				{name: '海口', value: 123},
+				{name: '南宁', value: 223},
+				{name: '重庆', value: 323},
+				{name: '昆明', value: 123},
+				{name: '贵阳', value: 123},
+				{name: '成都', value: 123},
+				{name: '兰州', value: 123},
+				{name: '西宁', value: 123},
+				{name: '拉萨', value: 123},
+				{name: '乌鲁木齐', value: 123}, 
+				{name: '香港', value: 123},
+				{name: '澳门', value: 123}
+			]
+		
+		
+		//自定义城市坐标菜单
+		// var geoCoordMap = {
+		    // "海门":[121.15,31.89],
+		    // "鄂尔多斯":[109.781327,39.608266],
+		    // "招远":[120.38,37.35],
+		    // "舟山":[122.207216,29.985295],
+		    // "齐齐哈尔":[123.97,47.33],
+		    // "盐城":[120.13,33.38],
+		    // "赤峰":[118.87,42.28],
+		    // "青岛":[120.33,36.07],
+		    // "乳山":[121.52,36.89],
+		    // "金昌":[102.188043,38.520089],
+		// };
+		//拼接对象数组
+		var convertData = function (data) {
+		    var res = [];
+		    for (var i = 0; i < data.length; i++) {
+		        var geoCoord = cityXW[data[i].name];//获取坐标
+		        if (geoCoord) {//如果有坐标
+		        	res.push({//创建对象数组，
+                        name: data[i].name,  
+                        value: geoCoord.concat(data[i].value)  //用连接数组的形式将value值加入
+                    });  
+		            //res.push(geoCoord.concat(data[i].value));
+		            //res.push(geoCoord.concat(data[i].name));
+		        }
+		    }
+		    return res;
+		};
+		var option1 = {
+		    // backgroundColor: '#404a59',//整个画布背景
+		    //标题组件
+		    title: {
+		        text: '全国主要城市空气质量',
+		        subtext: 'data from PM25.in',
+		        sublink: 'http://www.pm25.in',
+		        left: 'center',
+		        textStyle: {
+		            color: '#fff'
+		        }
+		    },
+		    //提示框组件
+		    tooltip: {
+		        trigger: 'item',
+		        "confine": true,
+	            "formatter": function (p){//自定义提示信息
+	              	var dataCon = p.data;
+	                txtCon =dataCon.name+'<br>值:'+dataCon.value[2];
+	                return txtCon;
+	            }
+		    },
+		    //左下lengend
+		    visualMap: {
+		        min: 0,//最小
+		        max: 300,//最大
+		        splitNumber: 5,//共分5层
+		        color: ['#ff6300','#eac736','#50a3ba'],//颜色从高到低依次渐变
+		        textStyle: {
+		            color: '#fff'
+		        }
+		    },
+		    //地图区域样式
+		    geo: {
+		        map: 'china',
+		        label: {
+		            emphasis: {
+		                show: false
+		            }
+		        },
+		        itemStyle: {
+		        	//未激活样式
+		            normal: {
+		                areaColor: '#f00',
+		                borderColor: '#111'
+		            },
+		            //激活样式
+		            emphasis: {
+		                areaColor: '#2a333d'
+		            }
+		        }
+		    },
+		    //数据
+		    series: [
+		        {
+		            name: 'pm2.5',
+		            type: 'scatter',
+		            coordinateSystem: 'geo',
+		            data: convertData(cityHot),
+		            symbolSize: 12,
+		            //直接在点上显示标签
+		            label: {
+		            	show:false,
+//		                normal: {
+//		                    show: true
+//		                },
+//		                emphasis: {
+//		                    show: true
+//		                },
+		                formatter:'{b}',
+		                offset:[15,-15],//文字的相对偏移
+		            },
+		            //标签的样式
+		            itemStyle: {
+		                emphasis: {
+		                    borderColor: '#fff',
+		                    borderWidth: 1
+		                }
+		            }
+		        }
+		    ]
+		}
+		mycharts.setOption(option1);
+	</script>-->
+	<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	    
+</script>
+		
+		
+		
+		
+		
+
+</body>
+</html>

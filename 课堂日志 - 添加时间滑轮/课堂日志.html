@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="iosSelectRem.css" />
+		<script src="ratio.js"></script>
+		<script src="jquery-1.9.0.min.js"></script>
+		<script src="iosSelectRem.js"></script>
+		<style type="text/css">
+			html,body{
+				width:100%;
+				height:100%;
+			}
+			body{
+				font-size: .32rem;
+			}
+			#gclassLog{
+				width:100%;
+				height:100%;
+				box-sizing: border-box;
+			}
+			.gclasshide{
+				overflow: hidden;
+			}
+			.glocation{
+			    height:1.65rem;
+			    display: -webkit-flex;
+			    border-bottom: .15rem solid #f5f6f8;
+			}
+			.glocimg{
+			    width:1.3rem;
+			    height:1.5rem;
+			    margin-right:.2rem;
+			}
+			.glocimg img{
+			    display: inline-block;
+			    width:1rem;
+			    height:1rem;
+			    border-radius: 50%;
+			    margin-left:.3rem;
+			    margin-top:.27rem;
+			}
+			.glocInfo{
+			    position: relative;
+			    -webkit-flex:1;
+			    height:1.44rem;
+			}
+			.glocTel{
+			    font-size: .3rem;
+			    line-height: .3rem;
+			    margin-top:.4rem;
+			    color:#333333;
+			    font-weight: bold;
+			}
+			.glocCont{
+			    font-size: .24rem;
+			    line-height: .24rem;
+			    margin-top:.2rem;
+			    color:#999999;
+			}
+			.glocType{
+			    position: absolute;
+			    height:1.55rem;
+			    top:0;
+			    right:.3rem;
+			    color:#40b3ff;
+			    line-height: 1.55rem;
+			    font-size: .24rem;
+			}
+			.gtimeLog{
+				min-height:3.15rem;
+				height:auto;
+				border-bottom:.15rem solid #f5f6f8;
+			}
+			.gTcont{
+				height:3rem;
+			}
+			.gTlist{
+				height:1rem;
+				font-size:.28rem;
+	            line-height:1rem;
+	            color:#333333;
+	            text-indent:.3rem;
+	            border-bottom:1px solid #ebebeb;
+			}
+			.gTlist:last-child{
+				border:none;
+			}
+			.gTlist span{
+				color:#838383;
+			}
+			.gfunction,.gfunclock{
+				height:auto;
+			}
+			.gclockInfo{
+				position: relative;
+				height:1rem;
+				line-height: 1rem;
+				font-size: .3rem;
+				color:#333333;
+				border-bottom:1px solid #ebebeb;		
+			}
+			.gclockInfo a{
+				z-index:2;
+	            display:block;
+	            position: relative;
+				height:1rem;
+				line-height: 1rem;
+				font-size: .3rem;
+				color:#333333;
+				background:#ffffff;
+				border-bottom:1px solid #ebebeb;
+			}
+			.gclockInfo i{
+				position: absolute;
+				width:.44rem;
+				height:.54rem;
+				left:.3rem;
+				top:.28rem;
+			}
+			.gclockInfo i img{
+				display: block;
+				width:100%;
+				height:100%;
+			}
+			.gclockInfo span{
+				position: absolute;
+				height:100%;
+				top:0;
+				right:.3rem;
+				color:#0099ff;
+				font-size: .26rem;
+			}
+			.gclockName{
+				display:block;
+				height: 1rem;
+				line-height: 1rem;
+				font-size:.3rem;
+				color:#333333;
+				text-indent:.3rem;
+			}
+			.gclocklead{
+				position: absolute;
+				width:.3rem;
+				height:.3rem;
+				top:.35rem;
+				right:.3rem;
+				background: url(img/lead.png) no-repeat center;
+				background-size: contain;
+			}
+			.gclockInfo:nth-child(1){
+				height:1.1rem;
+				line-height: 1.1rem;
+			}
+			.gclockInfo:nth-child(1) a{
+				height:1.1rem;
+				line-height: 1.1rem;
+			}
+			.gfunclock li:nth-child(1) label{
+				height:1.1rem;
+				line-height: 1.1rem;
+				text-indent: .95rem;
+			}
+			
+			.delList{
+			    position: absolute;
+			    top:2%;
+			    right:0;
+			    width:1rem;
+			    height:96%;
+			    text-align:right;
+			    font-size:0;
+			    overflow:hidden;
+			    
+			}
+			.delList .delbtn{				
+		        display:inline-block;
+		        width:1rem;
+		        height:100%;
+		        background:#ff3b30;
+		        font-size:.3rem;
+		        color:white;
+		        text-align:center;
+		        line-height:1.1rem;			    
+			}
+			.gclocktxt{
+				padding:.3rem;
+				line-height: .5rem;
+				font-size: .26rem;
+				color: #666666;
+			}
+					
+			.gdialog{
+				display: none;
+				z-index: 9;
+				position:absolute;
+				left:0;
+				top:0;
+				width:100%;
+				height:100%;
+			}
+			.gshade{
+				width:100%;
+				height:100%;
+				background: #7a7b7c;
+				opacity: .6;
+			}
+			.gpop{
+				position: absolute;
+				left:.2rem;
+				bottom:.2rem;
+				width:100%;
+				height:5.9rem;
+				width:7.1rem;
+			}
+			.gpul{
+				position: absolute;
+				bottom:1.35rem;
+				width:100%;
+				min-height:1.15rem;
+				height: auto;
+				border-radius:.2rem;
+				background:#fff;
+				overflow: hidden;		
+			}
+			.gpli,.gpcan{				
+				height: 1.15rem;
+				line-height: 1.15rem;
+				font-size: .34rem;
+				color: #409bff;
+				text-align: center;						
+				border-bottom: 1px solid #ebebeb;
+			}
+			.gpcan{
+				position: absolute;
+				width:100%;
+				bottom:0;
+				border:none;
+				border-radius:.2rem;
+				background:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="gclassLog">
+			<div class="gdialog">
+				<div class="gshade"></div>
+				<div class="gpop">
+					<ul class="gpul">
+						<li class="gpli">从授课计划选择</li>
+						<li class="gpli">从历史课程选择</li>
+						<li class="gpli">从网络课程章节目录选择</li>
+						<li class="gpli">手动编辑</li>
+					</ul>
+					<div class="gpcan">取消</div>
+				</div>
+			</div>
+			<div class="glocation">
+				<div class="glocimg"><img src="img/headimg.png" alt="" /></div>
+				<div class="glocInfo">
+					<p class="glocTel">大学物理实验</p>
+					<p class="glocCont">1班（55人）</p>
+					<span class="glocType">添加课堂日志</span>
+				</div>
+			</div>
+			<div class="gtimeLog">
+				<ul class="gTcont">
+					<li class="gTlist" id="zclassDate">上课日期：<span>2018-05-02</span></li>
+					<li class="gTlist" id="zperiod">上课时间：<span>第1-2节课</span></li>
+					<li class="gTlist">上课地点：<span>北京市海淀区上地七街</span></li>
+				</ul>
+			</div>
+			<div class="gfunction">
+				<ul class="gfunclock">
+					<li class="gclockInfo">
+				        <a href="javascript:void(0);">
+				            <i><img src="img/clock.png" alt="" /></i>
+							<label class="gclockName">签到</label>
+							<span>+ 发放</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <a href="javascript:void(0);">
+							<label class="gclockName">手势签到[09:00]</label>
+							<p class="gclocklead"></p>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <a href="javascript:void(0);">
+							<label class="gclockName">手势签到[09:00]</label>
+							<p class="gclocklead"></p>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				</ul>
+				<ul class="gfunclock">
+					<li class="gclockInfo">
+				        <a href="javascript:void(0);">
+				            <i><img src="img/pingfen.png" alt="" /></i>
+							<label class="gclockName">[我的评价问卷]</label>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <a href="javascript:void(0);">
+							<label class="gclockName">关于本堂课的意见</label>
+							<span>待评价</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				</ul>
+				<ul class="gfunclock">
+					<li class="gclockInfo">
+				        <a href="javascript:void(0);">
+				            <i><img src="img/pingfen.png" alt="" /></i>
+							<label class="gclockName">[我的被评问卷]</label>
+							<span>+发放</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <a href="javascript:void(0);">
+							<label class="gclockName">关于本堂课的意见</label>
+							<span>查看详情</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				</ul>
+				<ul class="gfunclock">
+					<li class="gclockInfo">
+				        <a href="javascript:void(0);">
+				            <i><img src="img/jiaoxue.png" alt="" /></i>
+							<label class="gclockName">[教学知识点]</label>
+							<span>+添加</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <a href="javascript:void(0);">
+							<label class="gclockName">2.1钢铁是怎样炼成的？</label>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				</ul>
+				<ul class="gfunclock">
+					<li class="gclockInfo">
+				        <a href="javascript:void(0);">
+				            <i><img src="img/ganxiang.png" alt="" /></i>
+							<label class="gclockName">[教学感想]</label>
+							<span>编辑</span>
+				        </a>
+				        <div class="delList">
+				        	<div class="delbtn">删除</div>
+				        </div>
+				    </li>
+				    <li class="gclockInfo">
+				        <p class="gclocktxt">添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志添加课堂日志</p>
+				    </li>
+				</ul>
+			</div>
+		</div>
+		<script src="zperiod.js" type="text/javascript" charset="utf-8"></script>
+		<script src="getdate.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+		    new CXFun_period("#zperiod", 7, 'span');
+		    new CXFun_getdate("#zclassDate", 1, 1, 'span');
+		</script>
+	</body>
+</html>

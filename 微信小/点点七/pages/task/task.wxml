@@ -1,0 +1,53 @@
+<view class="zintegral" style="margin-top: 0;">
+    <view class="zin_row">
+        <view class="zin_key">分组</view>
+        <view class="zin_value">
+            <switch checked="checked"></switch>
+        </view>
+    </view>
+    <view class="zintegral" style="margin-top: 0; border: none;">
+        <radio-group>
+            <view class='zin_row'>
+                <label class='zin_key'>
+                    <radio checked='checked' color='#09bb07'></radio>随机分组：
+                </label>
+                <view class='zin_value'>
+                    <input type="text" name="" style=" display:inline-block; width: 32rpx; height: 28rpx; text-align: right; color: #09bb07; font-size: 28rpx; padding: 0; vertical-align: middle;" id="" value="12" />
+                    <text style=" padding-left: 0.5rem; line-height: 1; color: #333; vertical-align:middle;">组</text>
+                </view>
+            </view>
+            <view class='zin_row'>
+                <label class='zin_key'>
+                    <radio color='#09bb07'></radio>选择班级小组：
+                </label>
+                <view class='zin_value'>
+                    <a href="#">查看详情</a>
+                </view>
+            </view>
+            <view></view>
+        </radio-group>
+        <view class="zin_row">
+            <view class="zin_key">生成讨论组</view>
+            <view class='zin_value'>
+                <switch checked='checked'></switch>
+            </view>
+        </view>
+        <view class="zin_row">
+            <view class="zin_key">组内成员互评</view>
+            <view class='zin_value'>
+                <switch></switch>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="zintegral" id="zsetTime">
+    <view class="zin_row">
+        <view class="zin_key">设置时长</view>
+        <view class="zin_value">
+            <span data-date="" data-hour="" data-minute="" id="showDate">选择时间</span>
+        </view>
+    </view>
+</view>
+<view class="zre_top">
+    <button type='primary'>保存</button>
+</view>

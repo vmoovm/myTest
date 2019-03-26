@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>记录集</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/checkboxAndRadio.css"/>
+	</head>
+	<body>
+		<!--记录集 start-->
+		<div class="zrecord">
+			<div class="zrecord_header">
+				<dl class="zrecord_thead">
+					<dd class="zrecord_time">日期</dd>
+					<dd class="zrecord_volume">大小</dd>
+					<dd class="zrecord_operate">
+						鼠标滑过操作
+					</dd>
+					<dd class="zrecord_name">
+						<p class="zcheckB">
+							<input class="zcheck_input" onfocus="blur()" type="checkbox" name="" checked="checked" id="mf001" value="" />
+							<label for="mf001"><em class="zcheck"><b></b></em><span>全选</span></label>
+						</p>
+					</dd>
+				</dl>
+				<div class="clear"></div>
+			</div>
+			<div class="zrecord_body">
+				<dl class="zrecord_row">
+					<dd class="zrecord_time">2017-02-26</dd>
+					<dd class="zrecord_volume">24MB</dd>
+					<dd class="zrecord_operate">
+						<i class="zshare"></i>
+						<i class="zcopy"></i>
+						<i class="zdelete"></i>
+					</dd>
+					<dd class="zrecord_name">
+						<p class="zcheckB">
+							<input class="zcheck_input" onfocus="blur()" type="checkbox" name="" checked="checked" id="mf001" value="" />
+							<label for="mf001"><em class="zchecked"><b></b></em><i class="zrecord_icons"></i><span>前端百变魔方</span></label>
+						</p>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<style type="text/css">
+			/*----------------------------------------------------
+			记录集
+			-----------------------------------------------------*/
+			.zrecord {}
+			.zrecord_header { border-bottom: 1px #ccc solid;}
+			.zrecord_body {}
+			.zrecord_footer {}
+			.zrecord_row,
+			.zrecord_thead { height: 38px; padding: 0 20px; font-size: 14px;}
+			.zrecord_row { border-bottom: 1px #ccc dashed;}
+			.zrecord_operate { float: right; padding-top: 8px;}
+			.zrecord_operate i { display: inline-block; margin: 0 10px; width: 20px; height: 20px; background: #000000;}
+			.zrecord_operate i.zshare { background-position: 0 0;}
+			.zrecord_operate i.zcopy { background-position: 0 0;}
+			.zrecord_operate i.zdelete { background-position: 0 0;}
+			.zrecord_volume, 
+			.zrecord_time { float: right; width: 120px; padding: 0 1%; color: #999; text-align: center;  line-height: 38px;}
+			.zrecord_name { overflow: hidden;}
+			.zrecord_name .zcheckB { margin-top: 8px;}
+			.zrecord_icons { display: inline-block; width: 20px; height: 20px; margin-right: 8px; background: #000000; vertical-align: middle;}
+			
+			/*----------------------------------------------------
+			单选和多选(PC  px)
+			-----------------------------------------------------*/
+			.zcheckB label,.zcheckR label { display: block; width: 100%; overflow: hidden;}
+			.zcheckB .zcheck_input,.zcheckR .zcheck_input { position: absolute; left: -10000px;}
+			.zcheckB span,.zcheckR span { display: inline-block; vertical-align: middle;  font-size: 16px; width: 60%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+			.zcheckB em,.zcheckR em { float: left;}
+			.zcheck,.zchecked { margin-right: 8px;}
+			.zcheckB .zcheck b,.zcheckB .zchecked b { display: inline-block; width: 20px; height: 20px; background: url(img/checkboxAndRadio/checkbox_check.png) center 50% no-repeat;}
+			.zcheckB .zchecked b { background-image: url(img/checkboxAndRadio/checkbox_checked.png);}
+			.zcheckR .zcheck b,.zcheckR .zchecked b { display: inline-block; width: 20px; height: 20px; background: url(img/checkboxAndRadio/circle_check.png) center 50% no-repeat;}
+			.zcheckR .zchecked b { background-image: url(img/checkboxAndRadio/circle_checked.png);}
+		</style>
+		<!--记录集 end-->
+		
+		
+		
+	</body>
+</html>

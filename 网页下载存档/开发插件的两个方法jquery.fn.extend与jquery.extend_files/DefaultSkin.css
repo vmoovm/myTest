@@ -1,0 +1,449 @@
+/* --整体-- */
+body{text-align:left;font-size:12px;color:#444;background:#f6f6f6;font-family:\5B8B\4F53,\5FAE\8F6F\96C5\9ED1,Verdana,Helvetica;margin:0;padding:0}
+table,td,tr,th{font-size:12px}
+div,ul,li,dl,dt,dd,ol,ol,form,h1,h2,h3,h4,h5,h6,h7,img,p{margin:0;padding:0;list-style:none}
+img{border:0 none}
+input,select{font-size:12px;vertical-align:middle}
+a:link{text-decoration:none;color:#444}
+a:visited{text-decoration:none;color:#444}
+a:hover{text-decoration:underline;color:#c00}
+a:active{text-decoration:none;color:#444}
+/* --自定义列表标签中背景样式定义-- */
+.BGD3{border:1px solid #d3d3d3}
+.Tstyle1{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;line-height:25px;font-size:14px}
+.Tstyle2{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;line-height:25px;font-size:12px}
+.Tstyle3{width:200px;overflow:hidden}
+.textlist1{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;font-size:12px}
+.textlist2{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;font-size:12px}
+.textlist5{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;font-size:14px}
+.textlist6{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;font-size:14px}
+.textlist9{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line3.gif);font-size:12px}
+.textlistall{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;line-height:25px;font-size:14px}
+.textlistalla{background-color:#ffffff;background-image:url(http://www.poluoluo.com//Skin/line2.gif);height:25px;line-height:25px;font-size:12px}
+#mmmmm{font-size:12px;width:760px;overflow:hidden;float:left}
+/* --DIV搜索-- */
+.search_p{width:198px;overflow:hidden;text-indent:0;line-height:30px;*line-height:32px}
+.search_p .bdtext{border:1px solid #ddd;width:146px;height:18px}
+.search_p .bdbtn{font-size:12px;height:21px;background:#ddd;border:1px solid #ddd;width:40px}
+/* --DIV定义1-- */
+#soso{font-size:12px}
+#baiduadscss{width:248px;overflow:hidden;border:1px solid #ddd}
+#baiduadscss1{width:250px;overflow:hidden}
+.BGCC{border:1px solid #ccc}
+.BGB51717{border:1px solid #b51717}
+.BG1a7db3{border:1px solid #1a7db3}
+.BGb56d17{border:1px solid #b56d17}
+.BG4ab31a{border:1px solid #63b31a}
+.AA970X90A{width:962px;padding:4px;overflow:hidden}
+.AA970X90B{height:90px;background-color:#F5F5F5}
+.ggad728x15{width:700px;overflow:hidden;position:relative;margin:0 auto;z-index:1}
+.ggadB728x15{width:730px;margin:0 auto;overflow:hidden}
+.ggadZ728x90{width:705px;overflow:hidden;position:relative}
+.ggadT338{width:688px;margin:0 auto;overflow:hidden}
+.ggadT360{width:732px;margin:0 auto;overflow:hidden}
+.AD970{width:964px;padding:2px;background:#fff;border:1px solid #ddd;overflow:hidden}
+.hrxia{width:96%;height:10px;font-size:1px;border-bottom:1px solid #ddd;margin:0 auto}
+#redcolor{color:#ff0000}
+#redcolor1{color:#ff0000}
+.con_ad336{text-align:center}
+.con_ad710{border:1px solid #ddd;width:688px;background:#fff;margin-top:10px;padding:10px;overflow:hidden;}
+.pstip{font-size:14px;text-align:center}
+.pstip a{color:#c00}
+.tutip{font-size:14px;text-align:center;padding-bottom:15px}
+.tutip a{color:#c00}
+.ggpd4{float:left;padding-top:4px}
+.BDad710lm{padding-top:10px}
+/*主导航菜单S*/
+#wrap-nav{height:40px;background:url(http://www.poluoluo.com/img/navbg.png) repeat-x}
+#wrap-navcon{height:38px;width:970px;margin:0 auto;background:url(http://www.poluoluo.com/img/navbg.png) no-repeat 0 -40px}
+#wrap-navcon .con{height:36px;line-height:36px;text-align:right;padding-right:10px}
+#wrap-nav .container{position:relative;overflow:visible;width:970px;margin:0 auto;z-index:99;_padding-left:2px}
+#wrap-nav .outerbox{background:url(http://www.poluoluo.com/img/navbg.png) no-repeat 0 -210px}
+#wrap-nav .innerbox{width:972px;_width:972px}
+#wrap-nav .menu{padding:0 0 0 2px}
+#wrap-nav .menu li{position:relative;float:left;padding:0 8px 0 5px;display:inline;font-size:14px;background-position:right -60px}
+#wrap-nav .menu li h3{font-weight:normal;display:inline-block;float:left}
+#wrap-nav .menu li a.xiala1{margin-top:2px;display:inline-block;color:#FFF;text-decoration:none;font-size:14px}
+#wrap-nav .menu li a.selected,#wrap-nav .menu li a.navhover,#wrap-nav .menu li a.xiala1:hover{color:#911531;background-image:url(http://www.poluoluo.com/img/navbg.png);background-repeat:no-repeat;background-position:left -117px}
+#wrap-nav .menu li a.navhover,#wrap-nav .menu li a.xiala1:hover{background-color:#FFF}
+#wrap-nav .menu li a.xiala1 span{height:38px;line-height:38px;margin:0 0 0 8px;padding:0 7px 0 0;display:inline-block;font-weight:bold}
+#wrap-nav .menu li a.navRi span{margin:0 0 0 9px;padding:0 9px 0 0}
+#wrap-nav .menu li a.selected span,#wrap-nav .menu li a.navhover span,#wrap-nav .menu li a.xiala1:hover span{cursor:pointer;background-image:url(http://www.poluoluo.com/img/navbg.png);background-repeat:no-repeat;background-position:right -117px}
+#wrap-nav .menu li a.navhover span,#wrap-nav .menu li a.xiala1:hover span{background-color:#FFF}
+#wrap-nav .menu li.overlay{display:none}
+#wrap-nav .menu li.navRi1{position:absolute;right:-1px;top:0;width:2px;height:40px;background:url(http://www.poluoluo.com/img/p02.gif) no-repeat right -60px}
+#wrap-nav .menu li.navLi1{position:absolute;left:2px;left:0;top:0;width:2px;_width:3px;height:40px;background:url(http://www.poluoluo.com/img/p02.gif) no-repeat right -60px;padding:0;margin:0}
+#wrap-nav .menu li.navLi2{width:2px;height:40px;background:url(http://www.poluoluo.com/img/p02.gif) no-repeat right -60px;padding:0;margin:0}
+#wrap-nav .menu ul.children{display:none;position:absolute;top:40px;left:4px;width:225px;padding:5px 0 0;background:#FFF;border:2px solid #c50000;border-top:0;line-height:normal}
+#wrap-nav .menu ul.sleft{left:auto;right:6px;_right:5px}
+#wrap-nav .menu ul.children li.noborder{border:none}
+#wrap-nav .menu ul.children li{float:left;width:110px;padding:1px;display:inline-block;background-image:none;border-right:1px solid #FFCFCF;font-size:12px}
+#wrap-nav .menu ul.children li h3{display:block;width:100%}
+#wrap-nav .menu ul.children li a{width:100%;height:16px;line-height:17px;overflow:hidden;padding:3px 0;display:block;color:#911531;text-indent:20px;background-position:8px -25px;text-decoration:none;font-size:12px}
+#wrap-nav .menu ul.children li a:hover{background-color:#FFE1E1;text-decoration:none}
+#wrap-nav .menu ul.children li.count{clear:both}
+#wrap-nav .menu ul.children li.count div{width:223px;margin:5px 0 0;padding:3px 0;background-color:#FFE1E1;color:#911531;text-indent:8px}
+.spritemenu{background-image:url(http://www.poluoluo.com/img/p02.gif);background-repeat:no-repeat;background-position:left top}
+/* clearfixmenu */
+.clearfixmenu:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+.clearfixmenu{display:inline-block}
+html[xmlns] .clearfixmenu{display:block}
+* html .clearfixmenu{height:1%}
+#ShowPath{height:34px;line-height:34px;overflow:hidden;text-indent:8mm;background:url(http://www.poluoluo.com/img/navbg.png) no-repeat 0 -78px}
+/*主导航菜单E*/
+.topbox{height:80px;background:#fff}
+.footbox{background:#fff url(http://www.poluoluo.com/img/foot.gif) repeat-x 0 -188px;clear:both;margin-top:20px}
+.box{width:970px;margin:0 auto;clear:both}
+.foot{width:970px;margin:0 auto;clear:both;height:210px;position:relative}
+.bgbox{width:970px;margin:0 auto;clear:both;background-color:#f5f5f5;overflow:hidden}
+.DivH1,.DivH4,.DivH5,.DivH8,.DivH9,.DivH10,.DivH15,.DivH20,.DivH25,.DivH30,.DivH40,.DivH50,.DivHXX{width:100%;overflow:hidden;clear:both;font-size:1px;display:block}
+.DivH1{height:1px}
+.DivH4{height:4px}
+.DivH5{height:5px}
+.DivH8{height:8px}
+.DivH9{height:9px}
+.DivH10{height:10px}
+.DivH15{height:15px}
+.DivH20{height:20px}
+.DivH25{height:25px}
+.DivH30{height:30px}
+.DivH40{height:40px}
+.DivH50{height:50px}
+.DivHXX{height:7px;height:7px\9;}
+.DivW1{text-indent:1px}
+.DivW5{text-indent:5px}
+.DivW10{text-indent:10px}
+.DivW15{text-indent:15px}
+.DivW20{text-indent:20px}
+.DivW25{text-indent:25px}
+.DivW30{text-indent:30px}
+.DivW40{text-indent:40px}
+.fl{float:left}
+.fr{float:right}
+.fleft{float:left}
+.fright{float:right}
+.fclear{clear:both}
+.boxH{margin-top:10px}
+.boxHpage{clear:both;margin:25px 0 15px}
+.ToolBg{background:#f7f7f7}
+#potop{width:970px;margin:0 auto}
+#potop .logo{width:182px;padding-top:17px}
+#potop .iconlink{width:350px;padding-top:20px}
+#potop .iconlink li{ float:left;display:inline;background: url(http://www.poluoluo.com/img/p01.png) no-repeat;position:relative;z-index:9999;position:static\9;z-index:auto\9;}
+#potop .iconlink li a{width:49px;height:46px;display:block;text-decoration:none;position:relative;z-index:9998}
+#potop .iconlink li.icon1{background-position:0 0}
+#potop .iconlink li.icon2{background-position:-49px 0}
+#potop .iconlink li.icon3{background-position:-99px 0}
+#potop .iconlink li.icon4{background-position:-149px 0}
+#potop .iconlink li.icon5{background-position:-199px 0}
+#potop .iconlink li.icon6{background-position:-249px 0}
+#potop .iconlink li.icon7{background-position:-299px 0}
+#potop .iconlink li a strong{font-weight:normal;position:absolute;left:0;top:-1px;color:#333;background:#f7f5d1;padding:5px;z-index:99999;width:90px;cursor:pointer;text-align:center;display:none}
+#potop .adtop{float:right;height:60px;width:400px;margin-top:11px}
+/* #potop .adtop{float:right;height:58px;width:398px;border:1px solid #ddd;margin-top:11px} */
+.box710{width:708px;padding:11px 0 10px;background:#fff;border:1px solid #ddd;position:relative}
+.box970{width:968px;padding:11px 0 10px;background:#fff;border:1px solid #ddd;position:relative}
+.p_bian{position:absolute;top:11px;left:-5px;background:url(http://www.poluoluo.com/img/p02.gif) no-repeat 0 -112px;width:5px;height:29px}
+.type{height:41px}
+.type h3{height:26px;line-height:26px;line-height:28px\9;_height:24px;_line-height:24px;padding:0 18px 0 11px;_padding:2px 18px 0 11px;background:#c00;color:#fff; float:left; margin-right:10px;font-size:14px}
+.type h3 a:link,.type h3 a:visited,.type h3 a:hover{color:#FFF;font-size:14px}
+.type h4{font-weight:normal;float:left;padding:5px 0 0 0;padding:7px 0 0 0\9;}
+.type h4 a{margin-right:10px}
+.type h4 span{padding:0 10px 0 7px;font-family:Arial;font-size:14px}
+.type h4 a:link,.type h4 a:visited{color:#999;font-size:12px}
+.type h4 a:hover{color:#c00}
+.type i{font-style:normal;float:left;height:26px;line-height:26px;color:#999}
+.partmore{position:absolute;right:13px;top:13px}
+.partmore a:link,.partmore a:visited{color:#999}
+.partmore a:hover{color:#c00}
+.mainIMGlist1{clear:both;overflow:hidden;width:702px;padding:0 0 10px 4px;_margin-bottom:1px}
+.mainIMGlist1 .pic_art{float:left;margin-left:4%;_margin-left:28px;_display:inline}
+.mainIMGlist1 .pic_art_img a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist1 .pic_art_img a:hover img{border:1px solid #c00}
+.mainIMGlist1 .pic_art_title{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.imglist1{float:left;margin-left:4%;_margin-left:28px;_display:inline}
+.imglist1 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.imglist1 a:hover img{border:1px solid #c00}
+.imglist1 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.imglistw1{float:left;margin-left:4%;_margin-left:28px;_display:inline}
+.imglistw1 span{border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden;display:block;}
+.imglistw1 a{ height:90px;overflow:hidden;display:block;_width:130px}
+.imglistw1 span:hover{border:1px solid #c00}
+.imglistw1 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.imglist10{float:left;margin-left:4%;margin-bottom:20px;_margin-left:28px;_display:inline}
+.imglist10 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.imglist10 a:hover img{border:1px solid #c00}
+.imglist10 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.mainIMGlist2{clear:both;overflow:hidden;width:700px;width:auto;padding:15px 0 10px 4px;padding:2px 0 131px 4px;_padding:2px 0 132px 4px;overflow:visible;margin-left:-17px}
+.imglist2{float:left;margin-left:51in;_display:inline}
+.imglist2 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.imglist2 a:hover img{border:1px solid #c00}
+.imglist2 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:180px;text-align:center}
+.mainIMGlist3{clear:both;overflow:hidden;width:700px;width:auto;padding:15px 0 100000px 4px;padding:2px 0 131px 4px;_padding:2px 0 132px 4px;overflow:visible;margin-left:-17px}
+.imglist3{float:left;margin-left:4%;_margin-left:28px;_display:inline}
+.imglist3 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#f7f7f7;overflow:hidden}
+.imglist3 a:hover img{border:1px solid #c00}
+.imglist3 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.mainIMGlist4{clear:both;overflow:hidden;width:706px;padding:0 0 0 4px;margin-left:-18px}
+.imglist4{float:left;margin-left:47px;_margin-left:43px;_display:inline}
+.imglist4 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#f7f7f7;overflow:hidden}
+.imglist4 a:hover img{border:1px solid #c00}
+.imglist4 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:280px;text-align:center}
+.mainIMGlist9{clear:both;overflow:hidden;width:962px;padding:0 0 10px 4px}
+.imglist9{float:left;margin-left:17px;_display:inline}
+.imglist9 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.imglist9 a:hover img{border:1px solid #c00}
+.imglist9 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.mainIMGlist40{clear:both;overflow:hidden;width:962px;padding:0 0 10px 4px}
+.mainIMGlist40 .imglist40{float:left;margin:0 0 30px 72px;_display:inline}
+.mainIMGlist40 .imglist40 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist40 .imglist40 a:hover img{border:1px solid #c00}
+.mainIMGlist40 .imglist40 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:150px;text-align:center}
+.mainIMGlist40 .imglist41{float:left;margin:0 0 30px 48px;_display:inline}
+.mainIMGlist40 .imglist41 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist40 .imglist41 a:hover img{border:1px solid #c00}
+.mainIMGlist40 .imglist41 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;text-align:center;width:180px}
+.mainIMGlist40 .imglist42{float:left;margin:0 0 45px 22px;_display:inline}
+.mainIMGlist40 .imglist42 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist40 .imglist42 a:hover img{border:1px solid #c00}
+.mainIMGlist40 .imglist42 p{font-size:12px;height:25px;line-height:25px;overflow:hidden;text-align:center;width:290px}
+.mainIMGlist40 .pic_art{float:left;margin:0 0 30px 72px;_display:inline}
+.mainIMGlist40 .pic_art_img a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist40 .pic_art_img a:hover img{border:1px solid #c00}
+.mainIMGlist40 .pic_art_title{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:150px;text-align:center}
+.mainIMGlist41 a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.mainIMGlist41 a:hover img{border:1px solid #c00}
+/* 字体下载 */
+.pic_list{width:960px;margin:0 auto;overflow:hidden}
+.pic_list .list2{float:left;width:425px;border:1px solid #d3d3d3;text-align:center;padding:3px;margin:39px 0 0 30px;display:inline}
+.pic_list .list2 p{background-color:#f5f5f5;text-align:center;height:30px;line-height:30px}
+.pic_list li{float:left;width:425px;border:1px solid #d3d3d3;text-align:center;padding:3px;margin:40px 0 0 30px;display:inline}
+.pic_list li p{background-color:#f5f5f5;text-align:center;height:30px;line-height:30px}
+.box250{width:248px;background:#fff;border:1px solid #ddd;position:relative}
+.box250 h3{padding:9px 0 5px 7px;padding:10px 0 5px 7px\9;_padding:11px 0 5px 7px;font-size:14px;color:#c00}
+.box250 h3 a:link,.box250 h3 a:visited,.box250 h3 a:hover{color:#c00}
+.mainlist li{line-height:26px;height:26px;padding:0 8px 0 17px;word-break:break-all;word-wrap:break-word;overflow:hidden;position:relative}
+.iconlist1{background:url(http://www.poluoluo.com/img/p02.gif) no-repeat -96px -168px; width:3px;height:3px; position:absolute; display:block; top:12px;top:10px\9;left:7px;}
+.mainlist li span{padding-left:8px}
+.mainlist li .f00{color:#f00}
+.mainlist p{padding:0 8px 0 21px;height:25px;line-height:25px;position:relative}
+.mainlist p.ToolH{padding:0 0 3px 21px}
+.iconlist2{background:url(http://www.poluoluo.com/img/p02.gif) no-repeat -93px -156px; width:6px;height:5px; position:absolute; display:block;_overflow:hidden; top:11px;top:9px\9;left:8px}
+.textlist3{height:26px;line-height:26px;padding:0 8px 0 17px;overflow:hidden;position:relative}
+.textlist4{height:26px;line-height:26px;padding:0 8px 0 17px;overflow:hidden;position:relative}
+.partlist{clear:both}
+.partlist ul{padding:0 8px}
+.partlist li{line-height:40px;height:40px;padding:0 3px 0 17px;word-break:break-all;word-wrap:break-word;overflow:hidden;position:relative;border-bottom:1px dashed #d2d2d2}
+.partlist li a:link,.partlist li a:visited{font-size:14px;color:#111}
+.partlist li a:hover{font-size:14px;color:#c00}
+.partlist li span{padding-left:8px;font-size:14px}
+.partlist li .iconlist1{top:20px;top:18px\9;left:3px;}
+/* --栏目列表-- */
+.pratcol{overflow:hidden;padding:0 0 15px;height:265px}
+.pratPIC{float:left;width:165px;padding:8px 0 0 35px;overflow:hidden}
+.pratPIC .pic_art_img a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.pratPIC .pic_art_img a:hover img{border:1px solid #c00}
+.pratPIC .pic_art_title{font-size:12px;height:25px;line-height:25px;overflow:hidden;width:140px;text-align:center}
+.pratRL{float:right;width:498px;overflow:hidden;position:absolute;left:210px;top:37px}
+.pratRL li{line-height:28px;height:28px;padding:0 8px 0 17px;word-break:break-all;word-wrap:break-word;overflow:hidden;position:relative}
+.pratRL li a:link,.pratRL li a:visited{font-size:14px;color:#111}
+.pratRL li a:hover{font-size:14px;color:#c00}
+.pratRL li span{font-size:14px}
+/* --友情链接-- */
+.logofriendlinks{clear:both;overflow:hidden;padding:13px 0 0 3px;display:none}
+.logofriendlinks li{float:left;text-align:center;width:107px}
+.friendlinks{clear:both;overflow:hidden;padding:0 11px 10px;padding:1px 11px 10px}
+/*.friendlinks li{float: left; font-size: 12px;height: 25px;line-height: 25px; overflow: hidden;text-align: center;width: 107px;}*/.friendlinks li{display:inline;margin-right:6px}
+/* --鼠标经过-- */
+.divOver{background:#f7f7f7}
+/* --底部信息-- */
+.about{padding:15px 0 0 5px}
+.about div{width:140px}
+.about strong{color:#c00;font-weight:700;padding-bottom:10px;display:block}
+.about a:link,.about a:visited{height:23px;line-height:23px;font-weight:normal;color:#9e9e9e;font-size:12px}
+.about a:hover{color:#c00}
+.copyright{font-family:Arial,\5B8B\4F53;color:#9e9e9e;line-height:20px;padding:23px 5px 0 0}
+.copyright a,.copyright a:link,.copyright a:visited,.copyright a:active{color:#9e9e9e}
+.copyright a:hover{color:#cc0000}
+.footline{background:url(http://www.poluoluo.com/img/foot.gif) no-repeat 0 0;width:23px;height:151px;position:absolute;right:340px;top:22px}
+.hr5{background:#f7f7f7;height:15px;line-height:15px;text-align:right}
+.hr6{line-height:180%;padding:3px 0 3px 3px}
+/* --整理-- */
+.kuang5{line-height:6px;height:6px}
+.paddnn{padding-top:20px;padding-right:45px;padding-bottom:20px;padding-left:45px}
+.nnzi{font-size:14px;color:#000000}
+.green{color:#cc0000;text-decoration:none}
+/*yahei FONT-SIZE: 1.36em;*/
+.yahei{font-family:宋体,新宋体, 微软雅黑, Verdana, Arial, Sans-Serif;font-weight:lighter;font-size:14px;color:#cc0000;text-decoration:none;line-height:30px;padding-top:20px;padding-right:45px;padding-bottom:20px;padding-left:45px}
+.poNLeft{width:710px;float:left}
+.poNLeft .ponbara{height:30px;background-image:url(http://www.poluoluo.com/poimg/index_bg.gif);overflow:hidden}
+/* 内容页图片列表*/
+.OCLN98{width:98px;height:33px;background-image:url(http://www.poluoluo.com/poimg/opic_ab98.gif);background-repeat:no-repeat;position:absolute;z-index:1;padding-top:12px;font-weight:bold;color:#000000;font-size:14px;text-align:center}
+.content_pslist{height:30px;background-image:url(http://www.poluoluo.com/poimg/left_00.gif);overflow:hidden}
+.content_piclist{width:968px;text-align:center;overflow:hidden}
+.content_piclist li{float:left;margin-left:20px;display:inline}
+.content_piclist img{border:1px solid #d3d3d3}
+.content_piclist li p{height:25px;line-height:25px;font-size:12px;width:138px;overflow:hidden}
+.poncon{background:#fff}
+.poncon .list{padding:2px}
+.poncon .listc{padding:2px;text-align:center}
+.poncon .list .listwidth{width:100%;overflow:hidden}
+.poncon .list .listwidth .piclist{float:left;width:195px;text-align:center}
+.poNLeft .poncon .list .listwidth .piclist img{margin-top:10px;display:inline}
+.poNLeft .poncon .list .listwidth .W{float:right;width:508px}
+.tuwenlist{padding:2px;width:700px;overflow:hidden}
+.tuwenlist .pic_art{float:left;margin-left:4%;text-align:center;display:inline}
+.poNLeft .ponbar{height:2px;background:#c00;_overflow:hidden}
+.poNLeft .poncon{border:1px solid #ddd;border-top:none}
+.poNLeft .poncon .title{text-align:center;padding-top:5px}
+.poNLeft .poncon .title h1{color:#f00;font-size:24px;font-weight:bold;word-wrap:break-word}
+.poNLeft .poncon .from{width:96%;height:22px;font-size:12px;line-height:20px;text-align:center;border-bottom:1px solid #ddd;overflow:hidden;margin:0 auto; padding:0 0 4px}
+.from .TimeShare{ display:inline-block; *display:inline; zoom:1}
+.from .TimeShare .PSource{ float:left; padding:3px 0 0 0; padding:4px 0 0 0\9}
+.from .TimeShare .baidushare{ float:left;padding:0 0 0 8px}
+.from .TimeShare .sharedao{ float:left;padding:3px 0 0 0;padding:4px 0 0 0\9}
+.fontshare{float:left}
+.fontshare .sharedao{float:left;line-height:25px}
+.poNLeft .poncon .content{color:#111}
+.poNLeft .poncon .content .start{width:96%;line-height:25px;word-wrap:break-word;font-size:14px;margin:0 auto;overflow:hidden}
+.poNLeft .poncon .content .start a{color:#03f;font-size:14px}
+.poNLeft .poncon .content .start a:hover{color:#c00}
+.poNLeft .poncon .content .start td{font-size:14px}
+.poNLeft .poncon .content .jsstart{width:96%;line-height:25px;word-wrap:break-word;font-size:14px;text-align:center;margin:0 auto;overflow:hidden}
+.poNLeft .poncon .content .jsstart p{background-color:#f7f7f7;height:30px;line-height:30px}
+.wenzhanglist{width:674px;padding:30px 18px 20px;overflow:hidden}
+.wenzhanglist ul{border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:15px}
+.wenzhanglist ul .list_title{background:url(http://www.poluoluo.com/jzxy/images/Article_elite5.gif) no-repeat 1px -4px;padding-left:23px;font-size:14px}
+.wenzhanglist ul .list_title a{color:#000;font-weight:bold;font-size:14px}
+.wenzhanglist ul .list_title span{font-size:12px;float:right;color:#787878;font-weight:normal}
+.wenzhanglist ul .ot{color:#000;clear:both}
+.wenzhanglist ul .ot span{margin-right:50px}
+.wenzhanglist ul .text{line-height:23px;text-indent:24px;padding:13px 0;color:#787878}
+.wenzhanglist ul .text a{color:#000}
+.wenzhanglist ul .text img{float:left;margin:0 10px;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.wenzhanglist ul .textaa a img{display:block;position:relative;border:1px solid #ddd;padding:4px;background:#eee;overflow:hidden}
+.wenzhanglist ul .textaa a:hover img{border:1px solid #c00}
+.poNLeftx .poncon .lists{padding:2px}
+.poNLeftx{background:#fff}
+.poNLeftx .ponbar{height:2px;background:#c00;_overflow:hidden}
+.poNLeftx .poncon{border:1px solid #ddd;border-top:none}
+.poNLeftx .poncon .title{text-align:center;padding-top:5px}
+.poNLeftx .poncon .title h1{color:#FF0000;font-size:24px;font-weight:bold;word-wrap:break-word}
+.poNLeftx .poncon .from{width:96%;height:25px;font-size:12px;line-height:20px;text-align:center;border-bottom:1px solid #ddd;overflow:hidden;margin:0 auto}
+.poNLeftx .poncon .content{color:#111}
+.poNLeftx .poncon .content .start{width:96%;line-height:25px;word-wrap:break-word;font-size:14px;margin:0 auto;overflow:hidden}
+.poNLeftx .poncon .content .start p{padding:5px 0}
+.poNLeftx .poncon .content .start a{color:#03f;font-size:14px}
+.poNLeftx .poncon .content .xstart{width:99%;text-align:center;line-height:150%;word-wrap:break-word;font-size:14px;margin:0 auto;overflow:hidden}
+.poNLeftx .poncon .content .scstart{width:99%;text-align:center;line-height:150%;word-wrap:break-word;font-size:14px;margin:0 auto;overflow:hidden}
+.poNLeftx .poncon .content .xstart img{border:1px solid #DDDDDD;padding:4px;background-color:#EEEEEE}
+.poNLeftx .poncon .content .xstart .down p{height:30px;line-height:30px;background-color:#f7f7f7}
+.poNLeftx .poncon .content .xl{width:740px;text-align:center;line-height:150%;float:left;word-wrap:break-word;font-size:14px;overflow:hidden}
+.poNLeftx .poncon .content .xl img{border:1px solid #DDDDDD;padding:4px;background-color:#EEEEEE}
+.poNLeftx .poncon .content .xr{width:220px;line-height:150%;float:right;word-wrap:break-word;font-size:12px;overflow:hidden}
+/* 栏目分类 */
+#bQFLhover{font-weight:bold;color:#cc0000}
+#bQFLhovers{font-weight:bold;color:#cc0000}
+.bQFL{border:1px solid #ddd;background:#fff}
+.bQFL .title{line-height:30px;height:30px;width:956px;margin:0 auto;text-indent:30px;font-size:16px;font-weight:bold;color:#000000;letter-spacing:2px;background-image:url(http://www.poluoluo.com/poimg/bQFLbg.gif);background-repeat:no-repeat}
+.bQFL .bQtr{width:940px;margin:0 auto}
+.bQFL .bQtrindex{width:956px;margin:0 auto}
+.bQFL .bQtr p{line-height:25px;height:25px;font-size:14px;word-spacing:10px;text-indent:4px}
+.bQFL .bQtr p a,.bQFL .bQtr p a:link,.bQFL .bQtr p a:visited,.bQFL .bQtr p a:active{color:#222}
+.bQFL .bQtr p a:hover{color:#cc0000}
+.bQFL .bQtr p .b{font-size:14px;font-weight:bold}
+.bQFL .bQtr .dotted{border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#bbb}
+.bQFL .bQtr .bg{background-color:#f7f7f7}
+/* 更多开始 */
+.bQFL .bQtr .morelist{background-color:#f4f4f4}
+.bQFL .bQtr .morelist{line-height:25px;height:25px;font-size:14px}
+.bQFL .bQtr .morelist li{float:left;width:90px}
+.bQFL .bQtr .morelist ul .w{width:45px}
+.bQFL .bQtr .morelist ul .w1{width:52px}
+.bQFL .bQtr .morelist a,.bQFL .bQtr .morelist a:link,.bQFL .bQtr .morelist a:visited,.bQFL .bQtr .morelist a:active{color:#222}
+.bQFL .bQtr .morelist a:hover{color:#cc0000}
+.bQFL .bQtr .morelist .b{font-size:14px;font-weight:bold}
+.bQFL .bQtr .morelist ul .sjmore_pra{}
+#sjmore{width:90px;position:relative;cursor:pointer;background-image:url(http://www.poluoluo.com/images/arrow_d.gif);background-repeat:no-repeat;background-position:60px 7px}
+#sjlista{position:relative;z-index:98;display:none}
+#sjlist{width:110px;position:absolute}
+#sjlist li{width:110px;height:25px;line-height:25px;background-color:#f4f4f4;text-indent:20px}
+/* 更多结束 */
+.bQFL .bQtr .DW42{text-indent:42px}
+.bQFL .bQtr .DW50{text-indent:49px}
+.bQFL .bQtr .DW80{text-indent:79px}
+.bQFL .bQtr .DW90{text-indent:90px}
+.bQFL .bQtrindex p{line-height:23px;height:23px;font-size:12px;word-spacing:10px;text-indent:4px}
+.bQFL .bQtrindex p a,.bQFL .bQtrindex p a:link,.bQFL .bQtrindex p a:visited,.bQFL .bQtrindex p a:active{color:#222}
+.bQFL .bQtrindex p a:hover{color:#cc0000}
+.bQFL .bQtrindex p .b{font-size:12px;font-weight:bold}
+.bQFL .bQtrindex .dotted{border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#bbb}
+.bQFL .bQtrindex .bg{background-color:#f4f4f4}
+.bQFL .bQtrindex .DW42{text-indent:42px}
+.bQFL .bQtrindex .DW80{text-indent:79px}
+.bQFL .bQtrindex .DW90{text-indent:90px}
+/* 分页样式 */
+.showpage{padding-top:5px}
+.showpage a{ border:1px solid #ddd; padding:5px 10px; background:#f6f6f6; display:inline-block}
+.showpage font{ border:1px solid #e00; padding:5px 10px; background:#fff; display:inline-block}
+.showpage a:hover{ border:1px solid #e00; color:#333;background:#fff}
+#pagebar{text-align:center;display:inline;width:650px;height:32px;font-size:14px}
+#pagebar a,#pagebar .page_now{display:block;margin-right:4px;padding:2px 5px;border:1px solid #000;color:#fff;font-weight:800;background:url(http://www.poluoluo.com/poimg/pagepage2.png) repeat-x 0 0}
+#pagebar a{display:inline}
+#pagebar a:hover{border:1px solid #ff6600;background-position:0 -30px}
+#pagebar .page_wl{border:1px solid #ff6600;background-position:0 -30px}
+#pagebar .page_now{border:1px solid #333;background-image:none;background:#666}
+/* #pagebar { text-align:center; display:inline; width:650px; height:32px; font-size:14px; }
+#pagebar a,#pagebar .page_now { display:block; margin-right:4px; padding:2px 5px; border:1px solid #f30; color:#fff; font-weight:800; background:url(http://www.poluoluo.com/poimg/pagepage1.png) repeat-x  0 0 ;}
+#pagebar a { display:inline;}
+#pagebar a:hover { border:1px solid #03c; background-position:0 -30px;}
+#pagebar .page_wl { border:1px solid #03c; background-position:0 -30px;}
+#pagebar .page_now { border:1px solid #333; background-image:none; background:#666;} */.poluoluoshare{width:632px;margin:10px auto}
+.poluoluoshare .s_site{float:left}
+.poluoluoshare .h_site{float:left;margin-left:2px}
+.poluoluoshare .s_site a{display:inline-block;float:left;width:108px;height:32px;margin:0 2px;background-image:url(http://www.poluoluo.com/poimg/newshare.png);_background-image:url(http://www.poluoluo.com/poimg/newshare.gif)}
+.poluoluoshare .s_site .s1{background-position:0 0}
+.poluoluoshare .s_site .s2{background-position:-108px 0}
+.poluoluoshare .s_site .s3{background-position:0 -32px;width:32px}
+.poluoluoshare .s_site .s4{background-position:-32px -32px;width:32px}
+.poluoluoshare .s_site .s5{background-position:-64px -32px;width:32px}
+.poluoluoshare .s_site .s6{background-position:-96px -32px;width:32px}
+.poluoluoshare .s_site .s7{background-position:-128px -32px;width:32px}
+.poluoluoshare .s_site .s8{background-position:-160px -32px;width:32px}
+.poluoluoshare .s_site .s9{background-position:-192px -32px;width:32px}
+.poluoluoshare .s_site .s10{background-position:-224px -32px;width:32px}
+.poluoluoshare .s_site .s11{background-position:-256px -32px;width:32px}
+.poluoluoshare .s_site .s12{background-position:-288px -32px;width:32px}
+.codetitle{border-left:#ebc138 1px solid;padding-bottom:0;margin:3px auto 0;padding-left:3px;width:600px;padding-right:3px;background:#fffbe3;clear:both;font-size:14px;border-top:#ebc138 1px solid;border-right:#ebc138 1px solid;padding-top:0}
+.codetitle SPAN{float:right}
+.codebody{border-bottom:#ebc138 1px solid;border-left:#ebc138 1px solid;padding-bottom:0;margin:0 auto 3px;padding-left:5px;width:598px;padding-right:3px;background:#fffbe3;clear:both;font-size:14px;border-top:#ebc138 1px solid;border-right:#ebc138 1px solid;padding-top:0}
+/* 评论 */
+.P_jian{font-size:14px;position:relative;margin:20px 13px 0 15px;border-top:1px dashed #ddd;padding-top:8px}
+.P_jian .P_cover{position:absolute;bottom:0;right:0;width:10px;height:40px;background:#FFF;z-index:9999}
+.Interaction{position:relative;margin:10px 0 0;background:#fff;border:1px solid #ddd;overflow:hidden;_width:708px}
+.Interaction .Com_bar{height:30px;line-height:32px;background:#fff url(http://www.poluoluo.com/img/plBG.png) 0 0 repeat-x;color:#444;font-size:12px;font-weight:700;text-indent:18px;_width:708px;overflow:hidden}
+.Interaction .Com_cover{display:none}
+.Interaction #uyan_frame{padding:5px;_width:698px}
+.Interaction970{position:relative;background:#fff;border:1px solid #ddd;overflow:hidden;_width:968px}
+.Interaction970 .Com_bar970{height:30px;line-height:32px;background:#fff url(http://www.poluoluo.com/img/plBG.png) 0 0 repeat-x;color:#444;font-size:12px;font-weight:700;text-indent:18px;_width:968px;overflow:hidden}
+.Interaction970 .Com_cover970{display:none}
+.Interaction970 #uyan_frame{padding:5px;_width:958px}
+.XS_jian{font-size:14px;position:relative;margin:20px 13px 5px 15px;}
+.XS_jian .P_xsover{position:absolute;bottom:0;right:0;width:500px;height:20px;background:#FFF;z-index:9999}
+
+/* 视频栏目 */
+.SPClassName{ font-size:14px; padding:5px 0 5px 20px; font-weight:700}
+.SPlist{ overflow:hidden;}
+.SPlist li{font-size:14px; line-height:25px;height:25px;padding:0 0 0 40px; position:relative}
+.SPlist li .iconlist1{ background:none}
+.SPLRlist{ overflow:hidden;}
+.SPLRlist li{ float:left; width:300px; height:95px; padding:0 30px 0 10px; overflow:hidden}
+.SPLRlist li .SPLRpic{ float:left}
+.SPLRlist li .SPLRpic img{ border:1px solid #ddd}
+.SPLRlist li .SPLRtext{ float:right; line-height:150%}
+/* QQ留言 */
+table.ubb_content{margin:0px auto;}
+table.ubb_content tr.ubb_html{background:#000000; margin:0px auto;border:1px dashed #DEDEDE}
+table.ubb_content tr.ubb_html td{text-align:center;padding:15px 0}
+table.ubb_content textarea{font-size:12px;width:600px}
+.qqwm a{padding:2px 15px;height:30px;line-height:30px;background:#fff;border:1px solid #ddd;display:inline-block}

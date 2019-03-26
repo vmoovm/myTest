@@ -1,0 +1,31 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.syntaxhighlighter { font-size: 14px}
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  line-height: 1.4em !important;
+}
+
+.syntaxhighlighter {
+  padding: 1em 0 1em 0 !important;
+  font-size: 1.2em !important;
+}
+.syntaxhighlighter .toolbar a { line-height: 1em !important;}
+/*----------------------------------------------------
+模块
+-----------------------------------------------------*/
+.mode { padding: 30px; background: #0D3349; color: #fff;}
+.mode-header { padding: 6px 0; line-height: 1.5;}
+.mode-title { color: #fff;}
+.mode-title strong { font-size: 14px;}
+.mode-body { }
+.mode-item { padding-bottom: 20px;}
+.mode-instr { line-height: 1.7em;}

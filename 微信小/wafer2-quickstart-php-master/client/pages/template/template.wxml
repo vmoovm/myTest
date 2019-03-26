@@ -1,0 +1,16 @@
+<!--pages/template/template.wxml-->
+<template name="msgItem">
+	<view class='title'>
+		<view>index:{{index}}</view>
+		<text>time:{{time}}</text>
+	</view>
+</template>
+<template name="imgages">
+	<view class='imgList-item'>
+		<view class='imgList-pic'><image mode='aspectFill' src="{{url}}"></image></view>
+		<view class="imgList-info">
+			<text class='imgList-title'>{{title}}</text>
+			<text class="imgList-txt">{{addr}}</text>
+		</view>
+	</view>
+</template>

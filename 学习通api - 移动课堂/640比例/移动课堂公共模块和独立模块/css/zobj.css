@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+添加发放对象
+-----------------------------------------------------*/
+.zobject {  background-color: #fff; }
+.zobject_site { position: fixed; bottom: 0; left: 0; width: 100%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 1200;}
+.zobject_header { display: -webkit-box; display: box; -webkit-box-pack: justify; height: 3.5rem; padding: 0 1.2rem; border-bottom: 1px #dedede solid; line-height: 3.5rem;}
+.zobject_header h2 { font-size: 1.4rem;}
+.zobject_header h2 span { display: inline-block; vertical-align: middle; line-height: 3.5rem; color: #09f;}
+.zobject_header h2 em { display: inline-block; vertical-align: middle; width: 1.2rem; height: 3.5rem; margin-right: 1rem; background-image: url(../images/icon5.png); background-position: center; background-repeat: no-repeat; background-size: 1.2rem; -webkit-transform: rotate(180deg); transform: rotate(180deg);}
+.zobject_header div { -webkit-box-flex: 1; text-align: center; line-height: 3.5rem; font-size: 1.4rem;}
+.zobject_header p em { display: inline-block; min-width: 1rem; height: 3.5rem; font-size: 1.2rem; color: #09f; }
+.zobject_header p span { display: inline-block; min-width: 1rem; height: 3.5rem; background: url(../images/delete_13.png) center no-repeat;}
+
+.zobject_box { display: -webkit-box; display: box; padding: 0.5rem 1rem; border-bottom: 1px #dedede solid; line-height: 2.75rem; font-size: 1.4rem;}
+.zobject_dt{ height: 3.75rem; line-height: 3.75rem;}
+.zobject_con { -webkit-box-flex: 1; /*min-height: 6.6rem;*/}
+.zobject_con p { display: inline-block;  margin: 0.2rem; padding:0.1rem 0.4rem 0.1rem 0.1rem; border: 1px #dedede solid; border-radius: 0.4rem;}
+.zobject_con p span { display: inline-block; min-width: 3rem; max-width:7rem;  vertical-align: middle; text-align: center; font-size: 1.2rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.zobject_con p span {
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select:none;
+	-khtml-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.zobject_con p i.zdelete_item { display: inline-block; width: 0.55rem; height: 0.55rem; margin: 0 0.3rem; background: url(../images/deletex_03.png) no-repeat; background-size: 0.55rem; vertical-align: middle;}
+.zobject_add { text-align: center;}
+.zobject_add a { display: inline-block; width: 2rem; height: 2rem; margin-top: 0.65rem; /*background: url(../images/add_30.png) no-repeat;*/ background: url(../images/icon5.png) center no-repeat; background-size: 1.2rem;}
+.zobject_btn { margin-top: 1rem; padding: 1.5rem 0; text-align: center;}
+/*----------------------------------------------------
+默认班级列表
+-----------------------------------------------------*/
+.zclasses { max-height: 32rem; position: relative; overflow: hidden; overflow-y: auto; -webkit-overflow-scrolling:touch;}
+.zcl_row { display: -webkit-box; display: box; height: 2.75rem; padding: 0.5rem 1.5rem; border-bottom: 1px #dedede solid; background-color: #fff; line-height: 2.75rem; font-size: 1.4rem;}
+.zcl_con { -webkit-box-flex: 1;}
+.zcl_num i,.zcl_num span { display: inline-block; vertical-align: middle;}
+.zcl_num span { padding-right: 0.2rem; color: #929292;}

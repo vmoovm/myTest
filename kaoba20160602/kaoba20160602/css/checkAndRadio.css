@@ -1,0 +1,12 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+单选和多选
+-----------------------------------------------------*/
+.zcheckB label,.zcheckR label { display: block}
+.zcheckB input,.zcheckR input { position: absolute; left: -100rem;}
+.zcheckB span,.zcheckB em,.zcheckR span,.zcheckR em { display: inline-block; vertical-align: middle; }
+.zcheck,.zchecked { margin-right: 0.6rem;}
+.zcheck i,.zchecked i { display: inline-block; width: 2rem; height: 2.6rem; background: url(../images/circle_check.png) center 46% no-repeat; background-size: 1.6rem;}
+.zchecked i { background-image: url(../images/circle_checked.png);}

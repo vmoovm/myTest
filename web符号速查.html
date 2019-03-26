@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			/* page tools */
+			
+			body { background-color: #F6F6F6; font-family: arial;}
+			.table {
+				border-left: #eee 1px solid;
+				border-top: #eee 1px solid;
+				text-align: center;
+				margin-bottom: 12px;
+				border-radius: 2px;
+			}
+			.table th,
+			.table td {
+				border-right: #eee 1px solid;
+				border-bottom: #eee 1px solid;
+				padding: 8px 6px
+			}
+			.table th {
+				background: #fbfbfb
+			}
+			.table tr td:nth-child(1),
+			.table tr td:nth-child(4) {
+				background: #fdfdfd
+			}
+			.table tr:hover td {
+				background: #fbfbfb;
+				color: #080
+			}
+			.share {
+				margin: 5px 0 12px;
+			}
+			.zcenter {
+				float: left;
+				width: 400px;
+				margin: 10px 20px;
+			}
+			.title { display: table;}
+			.title span,.title i { display: table-cell; height: 50px; background-color: #0033CC;}
+		</style>
+	</head>
+
+	<body>
+		<div class="title">
+			<p><span>1.</span><i>这样写，标题与序号不会被小屏强行换行。display:inline-block;最容易造成序号与标题强行换行。</i></p>
+		</div>
+		<div class="zcenter">
+			<table align="center" cellspacing="1" cellpadding="1" border="0" width="100%" class="table">
+				<tr>
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+			</tr>
+			<tr>
+				<td>Α</td>
+				<td>&amp;Alpha;</td>
+						
+				<td>Β</td>
+				<td>&amp;Beta;</td>
+						
+			</tr>
+			<tr>
+				<td>Γ</td>
+				<td>&amp;Gamma;</td>
+						
+				<td>Δ</td>
+				<td>&amp;Delta;</td>
+						
+			</tr>
+			<tr>
+				<td>Ε</td>
+				<td>&amp;Epsilon;</td>
+						
+				<td>Ζ</td>
+				<td>&amp;Zeta;</td>
+						
+			</tr>
+			<tr>
+				<td>Η</td>
+				<td>&amp;Eta;</td>
+						
+				<td>Θ</td>
+				<td>&amp;Theta;</td>
+						
+			</tr>
+			<tr>
+				<td>Ι</td>
+				<td>&amp;Iota;</td>
+						
+				<td>Κ</td>
+				<td>&amp;Kappa;</td>
+						
+			</tr>
+			<tr>
+				<td>Λ</td>
+				<td>&amp;Lambda;</td>
+						
+				<td>Μ</td>
+				<td>&amp;Mu;</td>
+						
+			</tr>
+			<tr>
+				<td>Ν</td>
+				<td>&amp;Nu;</td>
+						
+				<td>Ξ</td>
+				<td>&amp;Xi;</td>
+						
+			</tr>
+			<tr>
+				<td>Ο</td>
+				<td>&amp;Omicron;</td>
+						
+				<td>Π</td>
+				<td>&amp;Pi;</td>
+						
+			</tr>
+			<tr>
+				<td>Ρ</td>
+				<td>&amp;Rho;</td>
+						
+				<td>Σ</td>
+				<td>&amp;Sigma;</td>
+						
+			</tr>
+			<tr>
+				<td>Τ</td>
+				<td>&amp;Tau;</td>
+						
+				<td>Υ</td>
+				<td>&amp;Upsilon;</td>
+						
+			</tr>
+			<tr>
+				<td>Φ</td>
+				<td>&amp;Phi;</td>
+						
+				<td>Χ</td>
+				<td>&amp;Chi;</td>
+						
+			</tr>
+			<tr>
+				<td>Ψ</td>
+				<td>&amp;Psi;</td>
+						
+				<td>Ω</td>
+				<td>&amp;Omega;</td>
+						
+			</tr>
+			<tr>
+				<td>α</td>
+				<td>&amp;alpha;</td>
+						
+				<td>β</td>
+				<td>&amp;beta;</td>
+						
+			</tr>
+			<tr>
+				<td>γ</td>
+				<td>&amp;gamma;</td>
+						
+				<td>δ</td>
+				<td>&amp;delta;</td>
+						
+			</tr>
+			<tr>
+				<td>ε</td>
+				<td>&amp;epsilon;</td>
+						
+				<td>ζ</td>
+				<td>&amp;zeta;</td>
+						
+			</tr>
+			<tr>
+				<td>η</td>
+				<td>&amp;eta;</td>
+						
+				<td>θ</td>
+				<td>&amp;theta;</td>
+						
+			</tr>
+			<tr>
+				<td>ι</td>
+				<td>&amp;iota;</td>
+						
+				<td>κ</td>
+				<td>&amp;kappa;</td>
+						
+			</tr>
+			<tr>
+				<td>λ</td>
+				<td>&amp;lambda;</td>
+						
+				<td>μ</td>
+				<td>&amp;mu;</td>
+						
+			</tr>
+			<tr>
+				<td>ν</td>
+				<td>&amp;nu;</td>
+						
+				<td>ξ</td>
+				<td>&amp;xi;</td>
+						
+			</tr>
+			<tr>
+				<td>ο</td>
+				<td>&amp;omicron;</td>
+						
+				<td>π</td>
+				<td>&amp;pi;</td>
+						
+			</tr>
+			<tr>
+				<td>ρ</td>
+				<td>&amp;rho;</td>
+						
+				<td>ς</td>
+				<td>&amp;sigmaf;</td>
+						
+			</tr>
+			</table>
+		</div>
+		<div class="zcenter">
+			<table align="center" cellspacing="1" cellpadding="1" border="0" width="100%" class="table">
+				<tr>
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+			</tr>
+			<tr>
+				<td>σ </td>
+				<td>&amp;sigma;</td>
+						
+				<td>τ </td>
+				<td>&amp;tau;</td>
+						
+			</tr>
+			<tr>
+				<td>υ</td>
+				<td>&amp;upsilon;</td>
+						
+				<td>φ </td>
+				<td>&amp;phi;</td>
+						
+			</tr>
+			<tr>
+				<td>χ</td>
+				<td>&amp;chi;</td>
+						
+				<td>ψ </td>
+				<td>&amp;psi;</td>
+						
+			</tr>
+			<tr>
+				<td>ω </td>
+				<td>&amp;omega;</td>
+						
+				<td>ϑ </td>
+				<td>&amp;thetasym;</td>
+						
+			</tr>
+			<tr>
+				<td>ϒ </td>
+				<td>&amp;upsih;</td>
+						
+				<td>ϖ </td>
+				<td>&amp;piv;</td>
+						
+			</tr>
+			<tr>
+				<td>• </td>
+				<td>&amp;bull;</td>
+				
+				<td>… </td>
+				<td>&amp;hellip;</td>
+				
+			</tr>
+			<tr>
+				<td>′ </td>
+				<td>&amp;prime;</td>
+				
+				<td>″ </td>
+				<td>&amp;Prime;</td>
+				
+			</tr>
+			<tr>
+				<td>‾ </td>
+				<td>&amp;oline;</td>
+				
+				<td>⁄ </td>
+				<td>&amp;frasl;</td>
+				
+			</tr>
+			<tr>
+				<td>℘ </td>
+				<td>&amp;weierp;</td>
+				
+				<td>ℑ </td>
+				<td>&amp;image;</td>
+				
+			</tr>
+			<tr>
+				<td>ℜ </td>
+				<td>&amp;real;</td>
+				
+				<td>™ </td>
+				<td>&amp;trade;</td>
+				
+			</tr>
+			<tr>
+				<td>ℵ </td>
+				<td>&amp;alefsym;</td>
+				
+				<td>← </td>
+				<td>&amp;larr;</td>
+				
+			</tr>
+			<tr>
+				<td>↑ </td>
+				<td>&amp;uarr;</td>
+				
+				<td>→ </td>
+				<td>&amp;rarr;</td>
+				
+			</tr>
+			<tr>
+				<td>↓ </td>
+				<td>&amp;darr;</td>
+				
+				<td>↔ </td>
+				<td>&amp;harr;</td>
+				
+			</tr>
+			<tr>
+				<td>↵ </td>
+				<td>&amp;crarr;</td>
+				
+				<td>⇐ </td>
+				<td>&amp;lArr;</td>
+				
+			</tr>
+			<tr>
+				<td>⇑ </td>
+				<td>&amp;uArr;</td>
+				
+				<td>⇒ </td>
+				<td>&amp;rArr;</td>
+				
+			</tr>
+			<tr>
+				<td>⇓ </td>
+				<td>&amp;dArr;</td>
+				
+				<td>⇔ </td>
+				<td>&amp;hArr;</td>
+				
+			</tr>
+			<tr>
+				<td>∀ </td>
+				<td>&amp;forall;</td>
+				
+				<td>∂ </td>
+				<td>&amp;part;</td>
+				
+			</tr>
+			<tr>
+				<td>∃ </td>
+				<td>&amp;exist;</td>
+				
+				<td>∅ </td>
+				<td>&amp;empty;</td>
+				
+			</tr>
+			<tr>
+				<td>∇ </td>
+				<td>&amp;nabla;</td>
+				
+				<td>∈ </td>
+				<td>&amp;isin;</td>
+				
+			</tr>
+			<tr>
+				<td>∉ </td>
+				<td>&amp;notin;</td>
+				
+				<td>∋ </td>
+				<td>&amp;ni;</td>
+				
+			</tr>
+			<tr>
+				<td>∏ </td>
+				<td>&amp;prod;</td>
+				
+				<td>∑ </td>
+				<td>&amp;sum;</td>
+				
+			</tr>
+			</table>
+		</div>
+		<div class="zcenter">
+			<table align="center" cellspacing="1" cellpadding="1" border="0" width="100%" class="table">
+				<tr>
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+			</tr>
+			<tr>
+				<td>− </td>
+				<td>&amp;minus;</td>
+				
+				<td>∗ </td>
+				<td>&amp;lowast;</td>
+				
+			</tr>
+			<tr>
+				<td>√ </td>
+				<td>&amp;radic;</td>
+				
+				<td>∝ </td>
+				<td>&amp;prop;</td>
+				
+			</tr>
+			<tr>
+				<td>∞ </td>
+				<td>&amp;infin;</td>
+				
+				<td>∠ </td>
+				<td>&amp;ang;</td>
+				
+			</tr>
+			<tr>
+				<td>∧ </td>
+				<td>&amp;and;</td>
+				
+				<td>∨ </td>
+				<td>&amp;or;</td>
+				
+			</tr>
+			<tr>
+				<td>∩ </td>
+				<td>&amp;cap;</td>
+				
+				<td>∪ </td>
+				<td>&amp;cup;</td>
+				
+			</tr>
+			<tr>
+				<td>∫ </td>
+				<td>&amp;int;</td>
+				
+				<td>∴ </td>
+				<td>&amp;there4;</td>
+				
+			</tr>
+			<tr>
+				<td>∼ </td>
+				<td>&amp;sim;</td>
+				
+				<td>≅ </td>
+				<td>&amp;cong;</td>
+				
+			</tr>
+			<tr>
+				<td>≈ </td>
+				<td>&amp;asymp;</td>
+				
+				<td>≠ </td>
+				<td>&amp;ne;</td>
+				
+			</tr>
+			<tr>
+				<td>≡ </td>
+				<td>&amp;equiv;</td>
+				
+				<td>≤ </td>
+				<td>&amp;le;</td>
+				
+			</tr>
+			<tr>
+				<td>≥ </td>
+				<td>&amp;ge;</td>
+				
+				<td>⊂ </td>
+				<td>&amp;sub;</td>
+				
+			</tr>
+			<tr>
+				<td>⊃ </td>
+				<td>&amp;sup;</td>
+				
+				<td>⊄ </td>
+				<td>&amp;nsub;</td>
+				
+			</tr>
+			<tr>
+				<td>⊆ </td>
+				<td>&amp;sube;</td>
+				
+				<td>⊇ </td>
+				<td>&amp;supe;</td>
+				
+			</tr>
+			<tr>
+				<td>⊕ </td>
+				<td>&amp;oplus;</td>
+				
+				<td>⊗ </td>
+				<td>&amp;otimes;</td>
+				
+			</tr>
+			<tr>
+				<td>⊥ </td>
+				<td>&amp;perp;</td>
+				
+				<td>⋅ </td>
+				<td>&amp;sdot;</td>
+				
+			</tr>
+			<tr>
+				<td>⌈ </td>
+				<td>&amp;lceil;</td>
+				
+				<td>⌉ </td>
+				<td>&amp;rceil;</td>
+				
+			</tr>
+			<tr>
+				<td>⌊ </td>
+				<td>&amp;lfloor;</td>
+				
+				<td>⌋ </td>
+				<td>&amp;rfloor;</td>
+				
+			</tr>
+			<tr>
+				<td>◊ </td>
+				<td>&amp;loz;</td>
+				
+				<td>♠ </td>
+				<td>&amp;spades;</td>
+				
+			</tr>
+			<tr>
+				<td>♣ </td>
+				<td>&amp;clubs;</td>
+				
+				<td>♥ </td>
+				<td>&amp;hearts;</td>
+				
+			</tr>
+			<tr>
+				<td>♦ </td>
+				<td>&amp;diams;</td>
+				
+				<td></td>
+				<td>&amp;nbsp;</td>
+						
+			</tr>
+			<tr>
+				<td>¡ </td>
+				<td>&amp;iexcl;</td>
+						
+				<td>¢ </td>
+				<td>&amp;cent;</td>
+						
+			</tr>
+			<tr>
+				<td>£ </td>
+				<td>&amp;pound;</td>
+						
+				<td>¤ </td>
+				<td>&amp;curren;</td>
+						
+			</tr>
+			</table>
+		</div>
+		<div class="zcenter">
+			<table align="center" cellspacing="1" cellpadding="1" border="0" width="100%" class="table">
+				<tr>
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+				<th width="17%">特殊符号</th>
+				<th width="17%">命名实体</th>
+						
+			</tr>
+			<tr>
+				<td>¥ </td>
+				<td>&amp;yen;</td>
+						
+				<td>¦ </td>
+				<td>&amp;brvbar;</td>
+						
+			</tr>
+			<tr>
+				<td>§ </td>
+				<td>&amp;sect;</td>
+						
+				<td>¨ </td>
+				<td>&amp;uml;</td>
+						
+			</tr>
+			<tr>
+				<td>© </td>
+				<td>&amp;copy;</td>
+						
+				<td>ª </td>
+				<td>&amp;ordf;</td>
+						
+			</tr>
+			<tr>
+				<td>« </td>
+				<td>&amp;laquo;</td>
+						
+				<td>¬ </td>
+				<td>&amp;not;</td>
+						
+			</tr>
+			<tr>
+				<td>­</td>
+				<td>&amp;shy;</td>
+						
+				<td>® </td>
+				<td>&amp;reg;</td>
+						
+			</tr>
+			<tr>
+				<td>¯</td>
+				<td>&amp;macr;</td>
+						
+				<td>°</td>
+				<td>&amp;deg;</td>
+			</tr>
+			<tr>
+				<td>± </td>
+				<td>&amp;plusmn;</td>
+						
+				<td>²</td>
+				<td>&amp;sup2;</td>
+						
+			</tr>
+			<tr>
+				<td>³</td>
+				<td>&amp;sup3;</td>
+						
+				<td>´</td>
+				<td>&amp;acute;</td>
+						
+			</tr>
+			<tr>
+				<td>µ</td>
+				<td>&amp;micro;</td>
+						
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			</table>
+		</div>
+		<div class="zcenter">
+		</div>
+	</body>
+
+</html>

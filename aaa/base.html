@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		<style type="text/css">
+			.f { position: fixed; left: 0; bottom: 0; right: 0; top: 0;background: rgba(0,0,0,.5);  filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#7F000000, endColorstr=#7F000000);}
+			.zimgs { text-align: center;}
+			.zimgs img {display: block; margin: 0 auto;}
+		</style>
+	</head>
+	<body>
+		<div class="" style=" background: #007AFF;">
+			<div class="" style="height: 30px; background: #ccc;"></div>
+			<div class="" style="height: 30px; background: #FF0081; width: 2000px;"></div>
+		</div>
+		<input type="text"  name="" id="" value="" />
+		<input style="ime-mode:active height: 50px; width: 80%; border: 1px #ccc solid; margin: 30px; color: #000; font-size: 20px;" autocapitalize="on"> 
+		
+		<div class="zimgs">
+			<!--<img src="favicon.ico" />-->
+			教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库教学资源库
+			<!--<img src="images/1390284870411abijg.jpg" style="outline: 1px solid #f00; outline-offset: -1px; -webkit-outline-radius: 50px; border-radius: 50px;"/>-->
+		</div>
+		<div class="">
+			<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				
+		//定义map
+		var zmap = new Map();
+		var rmap = new Map();
+		//用户登录标志
+		var isLogin = 0;
+		//从cookie中获取信息
+		var uid = getCookie('_tid');
+		var puid = getCookie('sso_puid');
+		var fid = getCookie('fid');
+		if(puid){
+			hp.isLogin = 1;
+			isLogin = 1;
+		}
+		if(!fid){
+			fid = 0;
+		}
+		
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i].trim();
+				if (c.indexOf(name) == 0)
+					return c.substring(name.length, c.length);
+			}
+			return "";
+		}
+
+		//分页信息
+		var cpage = 1;
+		var size = 20;
+		var pageCount = 2;
+
+		var pageinfo = {};
+		pageinfo.sortAsc = true,//页码乱序
+		pageinfo.waiting = false;//加载推荐数据中
+		pageinfo.itemCnt = 0,//符合版权的资源计数变量
+		pageinfo.pagesArray = [ 1 ];
+		pageinfo.pageIdx = 0;//当前加载的pageArray数组的下标
+		pageinfo.pageSize = 20;
+		pageinfo.pageCount = 1;
+		pageinfo.reset = function() {
+			pageinfo.sortAsc = false,//页码乱序
+			pageinfo.waiting = false;
+			pageinfo.itemCnt = 0;
+
+			pageinfo.pagesArray.sort(function() {
+				return Math.random() > 0.5 ? -1 : 1;
+			});
+
+			pageinfo.pageIdx = 0;
+		}
+		
+		function reload(){
+			$("#specialList").empty();
+			zmap.clear();
+			pageinfo.reset();
+			loadmore();
+			//刷新最近使用
+			getRecentList();
+		}
+		
+		//7点刷新
+		var lastRefTime = getNowDate();//最近一次刷新的时间
+		function observeTime(){
+			var todayRefTime = new Date();
+			todayRefTime.setHours(7);
+			var todayRefTimeStr = getNowDate(todayRefTime);//今天应该刷新的时间
+			var nowTimeStr = getNowDate();//当前时间
+			if(nowTimeStr >= todayRefTimeStr
+					&& todayRefTimeStr > lastRefTime){
+				reload();
+				lastRefTime = nowTimeStr;
+			}
+		}
+		
+		function getNowDate(time) {
+			 var date = new Date();
+			 if(time){
+				 date = time;
+			 }
+			 var year = date.getFullYear(); // 年
+			 var month = date.getMonth() + 1; // 月
+			 var day  = date.getDate(); // 日
+			 var hour = date.getHours(); // 时
+			 // 给一位数数据前面加 “0”
+			 if (month >= 1 && month <= 9) {
+			  month = "0" + month;
+			 }
+			 if (day >= 0 && day <= 9) {
+			  day = "0" + day;
+			 }
+			 if (hour >= 0 && hour <= 9) {
+			  hour = "0" + hour;
+			 }
+			 var currentdate = year + month + day + hour ;
+			 return currentdate;
+		}
+		
+
+		/* 客户端初始化开始  */
+		function _jsBridgeReady() {
+			//通知客户端，需要监控本页面的显示状态
+			jsBridge.postNotification('CLIENT_WEB_LIFECYCLE',{"enabled":1});	
+			
+			//判断是否登录
+			AppUtils.getUserInfo('', function(object) {
+				if (object && object.puid) {
+					isLogin = 1; //设置成已经登录
+					hp.isLogin = 1;
+					uid = object.uid;
+					fid = object.fid;// passport fid
+					puid = object.puid;
+				}
+			});
+
+			
+			//下拉刷新
+			jsBridge.bind('CLIENT_TRIGGER_EVENT', function(object) {
+				if (object && object.eventCode == 1) {
+					reload();
+				}
+			});
+			
+			//最近使用绑定
+			jsBridge.bind('CLIENT_GET_RECENT_RECORD', function(object) {
+				//先移除最近使用
+				$(".title").remove();
+				$(".tmpitem").remove();
+				//再添加最近使用
+				if (typeof(object) == "undefined") { 
+					$('.appList').addClass('borderBtm');
+				} else { 
+					//最近使用记录数
+					var len = object.list.length;
+					//没有最近使用时，添加分割线
+					if (len == 0) {
+						$('.appList').addClass('borderBtm');
+					} else {
+						
+						var html = '<div class="title">最近使用</div>';
+						//遍历最近使用
+						for (var i = 0; i < len; i++) {
+							//获取最近使用的内容
+							var cataid = object.list[i].cataid;
+							var key = object.list[i].key;
+							var content = eval('(' + object.list[i].content + ')');
+							var topsign = object.list[i].topsign;
+							var subhtml = "";
+							var appname = "";
+							var author = "";
+							var logopath = "";
+							object.list[i].content = content;
+							rmap.put(key, object.list[i]);
+							//是否是加入常用状态
+							if (topsign == 0) {
+								subhtml += '<span id="rece'+ key
+										+ '" class="adduse" onclick="recent('
+										+ cataid
+										+ ',\''
+										+ key
+										+ '\',this);event.cancelBubble=true;"></span>';
+							} else {
+								subhtml += '<span id="rece'+ key
+										+ '" class="adduse addUseC" onclick="recent('
+										+ cataid
+										+ ',\''
+										+ key
+										+ '\',this);event.cancelBubble=true;"></span>';
+							}
+							/* 不同类型记录赋值开始 */
+							//专题
+							if (cataid == 100000001) {
+								appname = content.appname;
+								logopath = content.logopath;
+								author = content.otherConfig.author;
+								//更改图片分辨率
+								logopath = updateLogopath(logopath);
+								if (author) {
+									html +=  '<div class="li tmpitem">'
+										+'<a onclick="openRecent(\''+ key+ '\')" class="useItem ycenter">'
+							    		+'<img class="icon" src="'+logopath+'" />'
+							    		+'<div class="flex1 right borderBtm ycenter">'
+							    		+'<div class="flex1 content">'
+							    		+'	<h3 class="words">'+appname+'</h3>'
+							    		+'		<p class="word">'+author+'</p>'
+							    		+'	</div>';
+								} else {
+									html +=  '<div class="li tmpitem">'
+										+'<a onclick="openRecent(\''+ key+ '\')" class="useItem ycenter">'
+							    		+'<img class="icon" src="'+logopath+'" />'
+							    		+'<div class="flex1 right borderBtm ycenter">'
+							    		+'<div class="flex1 content">'
+							    		+'	<h3 class="words">'+appname+'</h3>'
+							    		+'		<p class="word" style="margin-top: 0;">'+author+'</p>'
+							    		+'	</div>';
+								}
+								
+					    		html += subhtml	+'</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+							//课程
+							} else if (cataid == 100000002) {
+								//是否是教师
+								if (key.indexOf("tea") != -1) {
+									appname = content.name;
+									logopath = content.imageurl;
+									//更改图片分辨率
+									logopath = updateLogopath(logopath);;
+									
+									html +=  getHtml(key, logopath, appname, "teachTag.png");
+									html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+								} else {
+									appname = content.course.data[0].name;
+									logopath = content.course.data[0].imageurl;
+									//更改图片分辨率
+									logopath = updateLogopath(logopath);;
+									
+									html +=  getHtml(key, logopath, appname, "courseTag.png");
+									html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+								}
+							//小组
+							} else if (cataid == 100000013) {
+								appname = content.name;
+								logopath = content.logo;
+								//更改图片分辨率
+								logopath = updateLogopath(logopath);
+								html +=  getHtml(key, logopath, appname, "groupTag.png");
+								html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+							//期刊
+							} else if (cataid == 100000006) {
+								appname = content.appname;
+								logopath = content.logopath;
+								//更改图片分辨率
+								logopath = updateLogopath(logopath);;
+								html +=  getHtml(key, logopath, appname);
+								html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+							} else if (cataid == 100000009) {
+								appname = content.appname;
+								logopath = content.logopath;
+								//更改图片分辨率
+								logopath = updateLogopath(logopath);;
+								html +=  getHtml(key, logopath, appname);
+								html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+							} else if (cataid == 100000015) {
+								appname = content.resTitle;
+								logopath = content.resLogo;
+								//更改图片分辨率
+								logopath = updateLogopath(logopath);;
+								html +=  getHtml(key, logopath, appname);
+								html += subhtml + '</div></a><div onclick="delRecent(\''+ key+ '\')" class="del xcenter ycenter"><p>删除记录</p></div></div>';
+							}
+							/* 不同类型记录赋值结束 */
+						}
+						//把HTML添加到网页上
+						$("#lastuseList").append(html);
+					}
+				}
+			});
+			
+			jsBridge.bind('CLIENT_DEL_RECENTLY', function(object){
+				//刷新最近使用
+				if (object.status == 1) {//用户操作成功,重新拉取最近使用列表
+					getRecentList();
+				}
+			}); 
+			
+			//更改最近使用记录常用状态
+			jsBridge.bind('CLIENT_TOP_RECENT_RECORD', function(object) {
+				if (object.status == 1) {//用户操作成功,重新拉取最近使用列表
+					if(object.topsign == 1){ //置顶操作，要来个提示黑框
+						jsBridge.postNotification("CLIENT_DISPLAY_MESSAGE", {
+							"message" : "设置成功"
+						});
+					}
+					getRecentList();
+				}
+				
+				/* var key = object.key;
+				if (object.status == 1) {
+					if ($("#rece" + key).hasClass("addUseC")) {
+						$("#rece" + key).removeClass("addUseC");
+					} else {
+						$("#rece" + key).addClass("addUseC");
+					}
+				} */
+			});
+			
+			jsBridge.bind('CLIENT_WEB_LIFECYCLE', function(object){
+				if (object.status && object.status == 1) {
+					//刷新最近使用
+					getRecentList();
+					
+					//早7点自动刷新功能
+					observeTime();
+				}
+		 	});  
+
+			//收藏后，返回刷新
+			jsBridge.bind('CLIENT_REFRESH_EVENT', function(object) {
+				//更新收藏状态
+				if (object.type && object.type == 1) {
+					var srckeys = zmap.keys();
+					for (i = 0; i < srckeys.length; i++) {
+						//已收藏专题在界面不显示
+						subResStatus(srckeys[i]);
+					}
+				}
+			});
+			
+			
+			//ready里面拉取最近使用列表
+			getRecentList();
+		}
+
+		/* 客户端初始化结束  */
+		
+		/* 网页端初始化开始  */
+		$(document).ready(function() {
+			//加载轮播图
+			getBanner();
+			//加载更多
+			loadmore();
+			//左滑删除
+			slideDel();
+		});
+		/* 网页端初始化结束  */
+		
+		/* 搜索框开始  */
+		function showSearch() {
+			jsBridge.postNotification('CLIENT_OPEN_URL', {
+				'title' : '找资料',
+				'loadType' : 1,
+				'webUrl' : 'http://m.chaoxing.com/pages/discover/index/searchbox.jsp',
+				'toolbarType' : '2'
+			});
+		}
+		/* 搜索框结束  */
+		
+		/* 轮播图开始 */
+		//获取轮播图数据
+		function getBanner(){
+			$.ajax({
+				url : "/apis/banner/getConfigInfo?incode=cx",
+				success : function(obj) {
+					var res = eval('(' + obj + ')');
+					if (res.result == 1) {
+						var bannerData = res.data;
+						openBanner(bannerData);
+					}
+				}
+			});
+		}
+		//打开轮播图内容
+		function openBanner(bannerData) {
+			if (bannerData.length > 0) {
+				var bannerHtml = '';
+				for (var i = 0; i < bannerData.length; i++) {
+					var categoryId = bannerData[i].categoryId;
+					var imgUrl = bannerData[i].imgUrl;
+					var content = bannerData[i].content;
+					var linkHtml = '';
+					//1：链接，2：小组，3：话题，4：笔记，5：通知
+					switch (categoryId) {
+					case 1:
+						linkHtml = 'onclick="hp.openurlWithLogin(\'' + content.url
+								+ '\',\'' + content.title + '\')"';
+						break;
+					case 2:
+						linkHtml = 'onclick="openGroupById(\'' + content.id
+								+ '\')"';
+						break;
+					case 3:
+						linkHtml = 'onclick="openTopicById(\''
+								+ content.circleId + '\',\'' + content.id
+								+ '\',0)"';
+						break;
+					case 4:
+						linkHtml = 'onclick="openNoteById(\''
+								+ content.createrId + '\',\'' + content.cid
+								+ '\',0)"';
+						break;
+					case 5:
+						linkHtml = 'onclick="openNoticeById(\'' + content.id
+								+ '\')"';
+						break;
+
+					default:
+						break;
+					}
+
+					var itemHtml = '<div class="swiper-slide"><a href="javascript:;" '  + linkHtml + '>'
+							+ '<img src="' + imgUrl + '" />' + '</a></div>';
+
+					bannerHtml += itemHtml;
+
+				}
+				$("#_banner").append(bannerHtml);
+
+			}
+			//实例化轮播图
+			var bannerSwiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				loop : true,
+				grabCursor : true,
+				paginationClickable : true,
+				autoplayDisableOnInteraction : false,
+				autoplay : 4000,
+				calculateHeight : true
+			});
+		}
+		/* 轮播图结束 */
+		
+	
+		
+
+		/* 最近使用开始 */
+		//最近使用记录是否常用状态事件
+		function recent(cataid, key, obj) {
+			//取消常用
+			if ($(obj).hasClass("addUseC")) {
+				jsBridge.postNotification('CLIENT_TOP_RECENT_RECORD', {
+					cataid : cataid,
+					key : key,
+					topsign : 0
+				});
+			} else {
+				jsBridge.postNotification('CLIENT_TOP_RECENT_RECORD', {
+					cataid : cataid,
+					key : key,
+					topsign : 1
+				});
+			}
+		}
+		//打开最近使用内容
+		function openRecent(key) {
+			var info = rmap.get(key);
+			if (key == "tongzhi") {
+				jsBridge.postNotification('CLIENT_OPEN_NOTICE_LIST', {
+					"notice_type" : 1
+				});
+			} else {
+				
+				if (info.cataid == 100000001) {
+					if ((info.content.appurl).match("readTag")) {
+						info.content.appurl = info.content.appurl;
+					} else {
+						info.content.appurl = info.content.appurl+"?readTag=1";
+					}
+				}
+				
+				jsBridge.postNotification('CLIENT_OPEN_RES', {
+					"cataid" : info.cataid,
+					"key" : key,
+					"content" : info.content,
+					"cataName" : ""
+				});
+			}
+		}
+		
+		//删除最近使用内容
+		function delRecent(key) {
+			var info = rmap.get(key);
+			jsBridge.postNotification('CLIENT_DEL_RECENTLY',  {"cataid":info.cataid, "key":key});
+		}
+		
+		/* 最近使用结束*/
+
+		/* 加载更多开始 */
+		function loadmore() {
+			if (pageinfo.waiting) {
+				return;
+			}
+			pageinfo.waiting = true;
+			
+			//对比当前页和总页码，判断是否到底部
+			if (cpage >= pageCount) {
+				$(".pullUpIcon").remove();
+				$(".pullUp").html('已经到底啦~(>_<)~~');
+				return;
+			}
+			var page = pageinfo.pagesArray[pageinfo.pageIdx];
+			if(!puid){
+				puid = "22328615";
+			}
+			//请求书籍数据
+			$.ajax({
+				url : "/apis/data/getIdxSourceFromRecChaoXing?puid="
+						+ puid + "&cpage=" + page + "&size=" + size
+						+ "&nowTime=" + new Date().getTime(),
+				success : function(obj) {
+					var res = eval('(' + obj + ')');
+					if (res.result == 1) {
+						pageinfo.pageIdx++;
+						pageinfo.waiting = false;
+						pageCount = res.data.pageCount;
+						pageinfo.pageCount = pageCount;
+						var len = res.data.list.length;
+						var list = res.data.list;
+						var ids = "";
+						//遍历数据
+						for (var i = 0; i < len; i++) {
+							zmap.put(list[i].key, list[i]);
+							ids += list[i].key + ",";
+							var logopath = list[i].content.logopath;
+							var author = list[i].content.otherConfig.author;
+							//更改图片分辨率
+							logopath = updateLogopath(logopath);;
+							//拼接数据
+							if (author) {
+								var html = '<a id="aitem_'
+									+ list[i].key
+									+ '" onclick="openRes(\''
+									+ list[i].key
+									+ '\')" class="specialItem ycenter"> <img class="icon"'+ 'src="'+logopath+'" onerror="this.src=\'http://img1.16q.cn/48fb03807108259ee7c4f4d27ce78293\'"/>'
+									+ '<div class="flex1 right borderBtm ycenter">'
+									+ '<div class="flex1 content">'
+									+ '<h3 class="words">'
+									+ list[i].content.appname
+									+ '</h3>'
+									+ '<p class="word" id="collection_'+list[i].key+'">'
+									+ author
+									+ '</p>'
+									+ '</div>'
+									+ '<span class="collect" onclick="subscribe(\''
+									+ list[i].key
+									+ '\');event.cancelBubble=true;"></span>'
+									+ '</div>' + '</a> ';
+							} else {
+								var html = '<a id="aitem_'
+									+ list[i].key
+									+ '" onclick="openRes(\''
+									+ list[i].key
+									+ '\')" class="specialItem ycenter"> <img class="icon"'+ 'src="'+logopath+'" onerror="this.src=\'http://img1.16q.cn/48fb03807108259ee7c4f4d27ce78293\'"/>'
+									+ '<div class="flex1 right borderBtm ycenter">'
+									+ '<div class="flex1 content">'
+									+ '<h3 class="words">'
+									+ list[i].content.appname
+									+ '</h3>'
+									+ '<p class="word"  style="margin-top: 0;" id="collection_'+list[i].key+'">'
+									+ author
+									+ '</p>'
+									+ '</div>'
+									+ '<span class="collect" onclick="subscribe(\''
+									+ list[i].key
+									+ '\');event.cancelBubble=true;"></span>'
+									+ '</div>' + '</a> ';
+							}
+							$("#specialList").append(html);
+						}
+
+						for (var i = 0; i < len; i++) {
+							subResStatus(list[i].key);
+						}
+						//请求收藏量数据
+						$.ajax({
+							url : "/apis/data/getSubscribeCntsByIds?nowTime="
+									+ new Date().getTime()
+									+ "&ids="
+									+ ids
+									+ "&cataid=100000001",
+							success : function(obj) {
+								var res = eval('(' + obj + ')');
+								for (var i = 0; i < res.msg.length; i++) {
+									var id = res.msg[i].id;
+									var count = res.msg[i].count;
+									var author = $(
+											"#collection_" + id)
+											.html();
+									var html = author + " 收藏"
+											+ count;
+									$("#collection_" + id)
+											.html(html);
+								}
+							}
+						});
+
+						//更新页码数组
+						if (pageinfo.pagesArray.length > pageinfo.pageCount) {
+							// pageIdx之前的已加载过，只处理待加载的页码
+							for (var i = pageinfo.pageIdx; i < pageinfo.pagesArray.length;) {
+								if (pageinfo.pagesArray[i] > pageinfo.pageCount) {
+									pageinfo.pagesArray.splice(i, 1); //剔除超限值
+									continue;
+								}
+								i++;
+							}
+						} else {
+							while (pageinfo.pagesArray.length < pageinfo.pageCount) {
+								// 多出来的页码补加到后面
+								pageinfo.pagesArray
+										.push(pageinfo.pagesArray.length + 1);
+							}
+						}
+
+					}
+				}
+			});
+		}
+
+		//更新res收藏状态
+		function subResStatus(srcKey) {
+			var info = zmap.get(srcKey);
+			if (info.cataid && info.key) {
+				AppUtils.getSubRssscribeState(info.cataid, "", info.key,
+						function(object) {
+							//如果已经收藏，那么就将样式改成已经收藏。
+							if (object.status == 1) {
+								//$("#span_"+object.key).addClass( "addTopicC" );
+								$("#aitem_" + object.key).remove();
+							}
+						});
+			}
+		}
+
+		//以资源的方式打开书籍
+		function openRes(key) {
+			var info = zmap.get(key);
+			jsBridge.postNotification('CLIENT_OPEN_RES', {
+				"cataid" : info.cataid,
+				"key" : info.key,
+				"content" : info.content,
+				"cataName" : info.cataName
+			});
+		}
+
+		/* 加载更多结束*/
+
+		/* 返回顶部开始  */
+		//当点击跳转链接后，回到页面顶部位置
+		$("#movetop").click(function() {
+			$("body,html").animate({
+				scrollTop : 0
+			}, 500);
+			return false;
+		});
+		// 出现返回顶部视图
+		var oWindowHeight = $(window).height() * 3;
+		$(window).scroll(
+			function() {
+				// 返回顶部
+				if ($(document).scrollTop() > oWindowHeight) {
+					$("#movetop").fadeIn(500);
+				} else {
+					$("#movetop").fadeOut(500);
+				}
+				//加载更多
+				var a = document.documentElement.scrollTop == 0 ? document.body.clientHeight
+						: document.documentElement.clientHeight;
+				if (a > document.documentElement.clientHeight) {
+					a = document.documentElement.clientHeight;
+				}
+				var b = document.documentElement.scrollTop == 0 ? document.body.scrollTop
+						: document.documentElement.scrollTop;
+				var c = document.documentElement.scrollTop == 0 ? document.body.scrollHeight
+						: document.documentElement.scrollHeight;
+				var c2 = c - 1;
+				if (a + b == c || a + b == c2) {
+					//加载更多
+					loadmore();
+				}
+				
+			});
+
+		/* 返回顶部结束  */
+
+		/* 收藏开始 */
+		function subscribe(srcKey) {
+			var info = zmap.get(srcKey);
+			if (isLogin == 0) {
+				jsBridge.postNotification("CLIENT_LOGIN", {
+					"accountKey" : ""
+				});
+				return;
+			}
+
+			AppUtils.recScribe(info.cataid, info.cataName, info.key,
+					info.content, function(object) {
+						var status = object.status;
+						if (status == 1) {
+							//$("#span_"+object.key).addClass( "addCollectC" );
+							//$("#span_"+object.key).removeClass( "news-item news-item-xz clearfix" );
+							$.ajax({
+								url : "/home/subscribe",
+								data : {
+									"puid" : puid,
+									"key" : object.key
+								},
+								type : "GET",
+								beforeSend : function() {
+								},
+								success : function(data) {
+								}
+							});
+							$("#aitem_" + object.key).remove();
+							jsBridge.postNotification("CLIENT_DISPLAY_MESSAGE",
+									{
+										"message" : "收藏成功"
+									});
+						}
+					});
+		}
+		/* 收藏结束 */
+
+		/* open start */
+		//打开某个小组
+		function openGroupById(groupId) {
+			if (isLogin == 0) {
+				jsBridge.postNotification("CLIENT_LOGIN", {
+					"accountKey" : ""
+				});
+				return;
+			}
+
+			jsBridge.postNotification('CLIENT_OPEN_GROUP', {
+				"GroupId" : groupId
+			});
+		}
+
+		//打开某个小组里面的某个话题
+		function openTopicById(groupId, topicId, source) {
+			if (isLogin == 0) {
+				jsBridge.postNotification("CLIENT_LOGIN", {
+					"accountKey" : ""
+				});
+				return;
+			}
+
+			jsBridge.postNotification('CLIENT_OPEN_TOPIC', {
+				"GroupId" : groupId,
+				"TopicId" : topicId,
+				"source" : source
+			});
+		}
+		//打开通知
+		function openNoticeById(noticeID) {
+			if (isLogin == 0) {
+				jsBridge.postNotification("CLIENT_LOGIN", {
+					"accountKey" : ""
+				});
+				return;
+			}
+
+			var opt = {
+				NoticeID : noticeID
+			};
+			jsBridge.postNotification('CLIENT_OPEN_NOTICE_BYID', opt);
+		}
+
+		//打开课程
+		function openCourses() {
+			AppUtils.getUserInfo('', function(object) {
+				if (object && object.puid) {
+					jsBridge.postNotification('CLIENT_OPEN_MYLESSONRES', {});
+				} else {
+					jsBridge.postNotification("CLIENT_LOGIN", {
+						"accountKey" : ""
+					});
+					return;
+				}
+			});
+		}
+
+		//打开笔记
+		function openNoteById(uid, noteCId, source) {
+			if (isLogin == 0) {
+				jsBridge.postNotification("CLIENT_LOGIN", {
+					"accountKey" : ""
+				});
+				return;
+			}
+
+			var opt = {
+				uid : uid,
+				noteCid : noteCId,
+				source : source
+			};
+			jsBridge.postNotification('CLIENT_OPEN_NOTE_DETAIL', opt);
+		}
+		
+		//获取最近使用列表
+		function getRecentList(){
+			if (isLogin == 0) {
+				$('.appList').addClass('borderBtm');
+				return;
+			}
+			//刷新最近使用
+			jsBridge.postNotification('CLIENT_GET_RECENT_RECORD', {
+				"numCount" : 15
+			});
+		}
+		
+		//更改图片分辨率
+		function updateLogopath(logopath){
+			if (logopath) {
+				logopath = logopath.replace("{HEIGHT}",
+						"80");
+				logopath = logopath.replace("{WIDTH}",
+						"80");
+				logopath = logopath.replace("origin",
+						"80_80c");
+				logopath = logopath
+						.replace(/\/\d+_\d+[cf]\//,
+								"/200_200c/");
+			}
+			return logopath;
+		}
+		
+		//通用HTML
+		function getHtml(key, logopath, appname, photo){
+			if(photo){
+				html = '<div class="li tmpitem">'
+				+'<a onclick="openRecent(\''+ key+ '\')" class="useItem ycenter">'
+				+'	<img class="icon" src="'+logopath+'" />'
+				+'	<div class="flex1 right borderBtm ycenter">'
+				+'		<div class="flex1 tagWrap"><p class="words">'+appname+'</p><img class="tagimg" src="/res/images/home/resourcecenter3/'+photo+'" /></div>';
+			}else{
+				html = '<div class="li tmpitem">'
+				+'<a onclick="openRecent(\''+ key+ '\')" class="useItem ycenter">'
+				+'	<img class="icon" src="'+logopath+'" />'
+				+'	<div class="flex1 right borderBtm ycenter">'
+				+'		<div class="flex1 tagWrap"><p class="words">'+appname+'</p></div>';
+			}
+    		return html;
+		}
+		/* open end */
+		
+		//左滑删除样式
+		function slideDel(){
+		   var pressedObj; // 当前左滑的对象
+		   var lastLeftObj; // 上一个左滑的对象
+		   // 用于记录按下的点
+		   var start;
+		   var btnW=76;
+		   $('.lastuseList').on('touchstart','.li',function(e){
+		   	var touchesstart = e.originalEvent.targetTouches[0];
+		   	start = {
+		   		x: touchesstart.clientX, // 横坐标
+		   		y: touchesstart.clientY // 纵坐标
+		   	};
+		   	pressedObj = this; // 记录被按下的对象 
+		   })
+		   .on('touchmove','.li',function(e){
+		   	var touchesmove = e.originalEvent.changedTouches[0];
+		   	delta = {
+		   		x: touchesmove.clientX - start.x,
+		   		y: touchesmove.clientY - start.y
+		   	};
+		   	// 横向位移大于纵向位移，阻止纵向滚动
+		   	if(Math.abs(delta.x) > Math.abs(delta.y)) {
+		   		event.preventDefault();
+		   	} else if(Math.abs(delta.x) < Math.abs(delta.y)) {
+				$(lastLeftObj).css('-webkit-transform','translateX(0)'); // 右滑
+				lastLeftObj = null; // 清空上一个左滑的对象
+			}
+		   	$(this).removeClass('animated');
+		   })
+		   .on('touchend','.li',function(e){
+		   	var touchesend= e.originalEvent.changedTouches[0]
+		   	enddelta = {
+		   			x: touchesend.clientX - start.x,
+		   			y: touchesend.clientY - start.y
+		   	};
+		   	$(this).addClass('animated');
+		   	if(lastLeftObj && pressedObj != lastLeftObj) { // 点击除当前左滑对象之外的任意其他位置
+		   		$(lastLeftObj).css('-webkit-transform','translateX(0)'); // 右滑
+		   		lastLeftObj = null; // 清空上一个左滑的对象
+		   	}
+		   	if(enddelta.x < -35 && (Math.abs(enddelta.x) > Math.abs(enddelta.y)) && Math.abs(enddelta.y) < 30) {
+		   		$(pressedObj).css('-webkit-transform','translateX('+(-btnW)+'px)'); // 左滑
+		   		lastLeftObj && lastLeftObj != pressedObj &&
+		   			$(lastLeftObj).css('-webkit-transform','translateX(0)'); // 已经左滑状态的按钮右滑
+		   		lastLeftObj = pressedObj; // 记录上一个左滑的对象
+		   	} else if(enddelta.x > 35 && (Math.abs(enddelta.x) > Math.abs(enddelta.y)) && Math.abs(enddelta.y) < 30) {
+		   		if(pressedObj == lastLeftObj) {
+		   			$(pressedObj).css('-webkit-transform','translateX(0)'); // 右滑
+		   			lastLeftObj = null; // 清空上一个左滑的对象
+		   		}
+		   	}
+		   })
+		   
+	       $(document).scroll(function(e){
+			 $(pressedObj).css('-webkit-transform','translateX(0)'); // 右滑
+			 lastLeftObj = null; // 清空上一个左滑的对象
+		   }) 
+		   
+		}
+	
+			</script>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">Slide 1</div>
+		        <div class="swiper-slide">Slide 2</div>
+		        <div class="swiper-slide">Slide 3</div>
+		    </div>
+		</div>
+		<!--logo导航 start-->
+		<div class="znavLogo">
+			<a class="fl" href="#" style="font-size: 30px;"><img src=""/>logo</a>
+			<ul class="znavLogo_box">
+				<li class="znavLogo_cur"><a href="#">首页</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li><a href="#">通识课程</a></li>
+				<li><a href="#">教学资源库</a></li>
+			</ul>
+		</div>
+		<style type="text/css">
+			/*----------------------------------------------------
+			logo导航
+			-----------------------------------------------------*/
+			.znavLogo  {}
+			.znavLogo_box { margin-left: 100px; height: 50px; line-height: 50px; font-size: 16px; background: #f7f7f7;}
+			.znavLogo_box li { float: left; padding: 0 16px;}
+			.znavLogo_cur { height: 50px; color: #4C8D00;}
+			.znavLogo_cur a { color: #4C8D00;}
+		</style>
+		<!--上图下文 start-->
+		<ul class="ztopPDownT">
+			<li class="ztopPDownT_pic"><img src=""/></li>
+			<li class="ztopPDownT_txt">
+				<h1 class="ztopPDownT_h"><a href="#">标题可能会很长很长的</a></h1>
+				<p class="ztopPDownT_p">第二行小字</p>
+			</li>
+		</ul>
+		<style type="text/css">
+			/*----------------------------------------------------
+			上图下文
+			-----------------------------------------------------*/
+			.ztopPDownT  { float:left; width: 140px; margin-right: 10px; background: #fff;}
+			.ztopPDownT_pic  { width: 140px; height: 200px; background: #000; overflow: hidden;}
+			.ztopPDownT_pic img { width: 100%;}
+			.ztopPDownT_txt  {}
+			.ztopPDownT_h  { line-height: 22px; font-size: 16px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+			.ztopPDownT_p  { line-height: 18px; font-size: 12px; color: #999;}
+		</style>
+		<!--上图下文 end-->
+		<!--logo导航 end-->
+		<!--<div class="f"></div>-->
+		<div class="wrap">
+			<!--头像式图文列表 start-->
+			<div class="zlargeIcon">
+				<ul class="zlargeIcon_box" id="zlargeIcon">
+					<li class="zlargeIcon_row">
+						<div class="zlargeIcon-rel"><p class="zlargeIcon-site"><span class="blue">移动</span><span class="red">删除</span></p></div>
+						<div class="zlargeIcon_rR">
+							<em>共27人</em>
+						</div>
+						<div class="zlargeIcon_info">
+							<div class="zlargeIcon_icons">
+								<p class="zlargeIcon_img"><!--<img src="temp/201612241557_07.jpg"/>--></p>
+							</div>
+							<div class="zlargeIcon_text">
+						        <div class="zlargeIcon_middle">
+					                <dl class="zlargeIcon_content">
+										<dt><a href="#">UI图标设计教程</a></dt>
+										<dd><span>主讲：罗大人</span></dd>
+										<dd><span>2017年10月上架</span></dd>
+									</dl>
+						        </div>
+						    </div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li class="zlargeIcon_row">
+						<div class="zlargeIcon-rel"><p class="zlargeIcon-site"><span class="blue">移动</span><span class="red">删除</span></p></div>
+						<div class="zlargeIcon_rR">
+							<em>共27人</em>
+						</div>
+						<div class="zlargeIcon_info">
+							<div class="zlargeIcon_icons">
+								<p class="zlargeIcon_img"><!--<img src="temp/201612241557_13.jpg"/>--></p>
+							</div>
+							<div class="zlargeIcon_text">
+						        <div class="zlargeIcon_middle">
+					                <dl class="zlargeIcon_content">
+										<dt><a href="#">UI图标设计教程</a></dt>
+										<dd><span>主讲：罗大人</span></dd>
+										<dd><span>2017年10月上架</span></dd>
+									</dl>
+						        </div>
+						    </div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li class="zlargeIcon_row">
+						<div class="zlargeIcon-rel"><p class="zlargeIcon-site"><span class="blue">移动</span><span class="red">删除</span></p></div>
+						<div class="zlargeIcon_rR">
+							<em>共27人</em>
+						</div>
+						<div class="zlargeIcon_info">
+							<div class="zlargeIcon_icons">
+								<p class="zlargeIcon_img"><!--<img src="temp/201709271849_03.jpg"/>--></p>
+							</div>
+							<div class="zlargeIcon_text">
+						        <div class="zlargeIcon_middle">
+					                <dl class="zlargeIcon_content">
+										<dt><a href="#">UI图标设计教程</a></dt>
+										<dd><span>主讲：罗大人</span></dd>
+										<dd><span>2017年10月上架</span></dd>
+									</dl>
+						        </div>
+						    </div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li class="zlargeIcon_row">
+						<div class="zlargeIcon-rel"><p class="zlargeIcon-site"><span class="blue">移动</span><span class="red">删除</span></p></div>
+						<div class="zlargeIcon_rR">
+							<em>共27人</em>
+						</div>
+						<div class="zlargeIcon_info">
+							<div class="zlargeIcon_icons">
+								<p class="zlargeIcon_img"><!--<img src="temp/201612241557_19.jpg"/>--></p>
+							</div>
+							<div class="zlargeIcon_text">
+						        <div class="zlargeIcon_middle">
+					                <dl class="zlargeIcon_content">
+										<dt><a href="#">UI图标设计教程</a></dt>
+										<dd><span>主讲：罗大人</span></dd>
+										<dd><span>2017年10月上架</span></dd>
+									</dl>
+						        </div>
+						    </div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</li>
+				</ul>
+			</div>
+			<style type="text/css">
+				/*----------------------------------------------------
+				头像式图文列表
+				-----------------------------------------------------*/
+				.zlargeIcon {}
+				.zlargeIcon_box { padding: 30px 0;}
+				.zlargeIcon_row { height: 90px; border-bottom: 1px #dedede dashed;}
+				.zlargeIcon-rel {position: relative; right: 0; top: 0; display: none;}
+				.zlargeIcon-site { position: absolute; right: 0; top: 0; height: 90px; line-height: 90px; font-size: 16px; color: #fff;}
+				.zlargeIcon-site span { display: inline-block; height: 100%;  padding: 0 20px;}
+				.zlargeIcon-site span.blue { background: rgba(0, 153, 255, .8);}
+				.zlargeIcon-site span.red { background: rgba(204, 0, 0, .8);}
+				/*右侧*/
+				.zlargeIcon_rR { float: right; margin-right: 10px;} 
+				.zlargeIcon_rR em { display: inline-block; vertical-align: middle; line-height: 90px; font-size: 14px; color: #858585;}
+				/*默认图标*/
+				.zlargeIcon_info { padding: 0 10px;}
+				.zlargeIcon_icons { float: left;}
+				.zlargeIcon_img { width: 60px; height: 60px; padding-top: 15px;display: table-cell; vertical-align:middle; text-align: center; *font-size: 52px; *font-family:Arial;}
+				.zlargeIcon_img img { max-width: 100%; max-height: 100%;*width: 60px; *height: 60px;}
+				/*多行标题垂直居中(高90)*/
+				.zlargeIcon_text { height:90px; margin-left: 70px; position:static;  *position:relative; *display:block!important; display:table!important; }
+				.zlargeIcon_middle { position:static;  *position:absolute; display:table-cell; vertical-align:middle;  *display:block; top:50%; width:100%; }
+				.zlargeIcon_content {  position:relative; top:-50%; width:100%;}
+				.zlargeIcon_content dt,.zlargeIcon_content dd {/* width: 300px;*/ width: 100%; box-sizing: border-box; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+				.zlargeIcon_content dt { font-size: 16px; color: #333;}
+				.zlargeIcon_content dt span { padding-left: 14px; color: #858585; font-size: 14px;}
+				.zlargeIcon_content dd { padding-top: 8px; font-size: 12px; color: #999;}
+				.zlargeIcon_content dd span { padding-right: 20px;}
+				.zlargeIcon_content dd a { color: #09f;}
+			
+			</style>
+			<!--头像式图文列表 end-->
+			<!--<a href="http://www.baidu.com">百度</a>-->
+		</div>
+		
+		<script type="text/javascript">
+			var str = '{name:"jack"}'; 
+			var js = JSON.parse(new String('{"name":"jack"}')); 
+			// console.log(js.name); 
+			// var obj = JSON.parse(str);
+			// console.log(obj);
+		</script>
+		<div class="a b c" id="abc">abc</div>
+		<script type="text/javascript">
+			var arr = [{
+				a1: 456
+			}]
+			
+			alert('a1' in arr)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+﻿/*----------------------------------------------------
+积分设置
+-----------------------------------------------------*/
+.zintegral { padding:0 1.2rem; border-top: solid 1px #d8dde4; border-bottom: solid 1px #d8dde4; background: #fff;}
+.zin_opacity { position: absolute; bottom: 0; left: 0; width: 100%; height: 100vh; background: #000; opacity: 0.5; display: none; z-index: 99;}
+.zin_site { position: absolute; bottom: 0.6rem; left: 5%; width: 90%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 100;}
+.zin_closebtn { display: block; margin-top: 0.4rem; line-height: 3.5rem; border-radius: 0.4rem; background: #fff; color: #c00; line-height: 3.5rem; text-align: center; font-size: 1.4rem;}
+.zin_itembox { overflow: hidden;  border-radius: 0.5rem;}
+.zin_row { position: relative; width: 100%; padding: 0.5rem 0; border-bottom: solid 1px #d8dde4; line-height: 2.5rem; -webkit-box-sizing: border-box; box-sizing: border-box;}
+.zin_row:last-child { border-bottom: none;}
+.zin_set,.zin_line { display: -webkit-box; display: box; width: 100%; padding: 0.5rem 1.5rem; border-bottom: 1px #d8dde4 solid; line-height: 2.5rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.zin_line { font-size: 1.4rem;}
+#zspace { padding: 0 1.5rem; border-bottom: none;}
+.zin_row dt,.zin_set dt { font-size: 1.4rem; color: #333;}
+.zin_set dt { -webkit-box-flex:1; text-align: right;}
+/*.zin_row:first-child { border-top: 1px #dedede solid;}*/
+.zin_row dd,.zin_set dd { color: #1785fb; font-size: 1.9rem;}
+.zin_row dd {position: absolute; left: 0; top: 0.5rem; width: 100%; padding-right: 1.2rem; box-sizing: border-box; -webkit-box-sizing: border-box; text-align: right;}
+.zin_row dd span {display: inline-block; vertical-align: middle;}
+.zin_row dd em { display: inline-block; width: 1.4rem; height: 1.4rem; margin-left: 0.2rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 1rem; vertical-align: middle;}
+
+.zin_set dd { width: 47%;}
+.zin_set dd i { display: inline-block; width: 5.8rem; height: 2.5rem; background: none;}
+.zin_visible dd i { display: inline-block; background: url(../images/right.jpg) center no-repeat; background-size: 1.8rem;}
+
+/*.zin_itembox {overflow: hidden; border-radius: 0.5rem;}
+.zin_row ,.zin_set { display: -webkit-box; display: box; width: 100%; padding: 0.5rem 1.5rem; border-bottom: solid 1px #d8dde4; line-height: 2.5rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff;}
+.zin_set {  background: #fff;}
+.zin_row dt,.zin_set dt { -webkit-box-flex:1; font-size: 1.4rem; color: #333;}
+.zin_set dt { margin-left: 3rem; text-align: right;}
+.zin_row:first-child { border-top: 1px #dedede solid;}
+.zin_row dd,.zin_set dd { color: #1785fb; font-size: 1.9rem;}
+.zin_row dd { width: 50%;}
+.zin_row dd span {display: inline-block; vertical-align: middle;}
+.zin_row dd em { display: inline-block; width: 1.4rem; height: 1.4rem; margin-left: 0.2rem; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 1rem; vertical-align: middle;}
+
+.zin_set dd { width: 47%;}
+.zin_set dd i { display: none; width: 5.8rem; height: 2.5rem; background: url(../images/right.jpg) center no-repeat; background-size: 1.8rem;}
+.zin_visible dd i { display: inline-block;}*/
+
+.zinfop { padding: 0.2rem 1.5rem; line-height: 3rem; font-size: 1.4rem; color:#929292; font-family: arial;}
+
+.animated {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-fill-mode:both;
+}
+
+
+@-webkit-keyframes fadeInUp{
+    0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px);opacity: 1;}
+}
+
+@keyframes fadeInUp{
+   0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+    100%{ -webkit-transform:translate(0,0px); opacity: 1;}
+}
+
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown{
+    0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px);; opacity: 0;}
+}
+
+@keyframes fadeInDown{
+   0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+    100%{ -webkit-transform:translate(0,60px); opacity: 0;}
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}

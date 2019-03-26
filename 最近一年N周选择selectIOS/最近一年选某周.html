@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0"/>
+<meta charset="utf-8">
+<title>最近一年选某周</title>
+<link rel="stylesheet" href="css/iosSelect.css">
+<!--<link rel="stylesheet" href="css/style.css">-->
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/iosSelectRem.js"></script>
+
+</head>
+
+<body>
+<div class="wrapMax">
+	<div class="zsetDate" id="zsetDate">
+		<div class="zsetDate-row">
+			<dl class="zsetDate-item">
+				<dt>工作时间：</dt>
+				<dd class="zsetDate-js"><span data-date='0'>选择</span></dd>
+			</dl>
+		</div>
+		<div class="zsetDate-add"><p id="zsetDate-add">添加</p></div>
+	</div>
+</div>
+<script type="text/javascript">
+    
+    // 封装时间段
+    function SetDate (sdd, sd) {
+    	this.selectDateDom = sdd;
+    	this.startDom = sd;
+    	var that = this;
+    
+	    // 初始化时间
+	    this.startDom.children('span').data('date', 0);
+	    //格式小于10的数字，保证其最小显示两位数
+	    var formatNumber = function (n) {
+	    	var num = parseInt(n)
+	    	if(num > 9) {
+	    		return num;
+	    	} else {
+	    		num = '' + '0' + num;
+	    	}
+	    	return num;
+	    }
+	    var years = 1;  // 显示几年数据
+		var yearDates = 365;  // 一年按365天计算
+		var dateTimer = 24 * 3600 * 1000;   // 一天毫秒数
+		var weekTimer = 7 * dateTimer;  // 一周毫秒数
+		var fromDay = 1;  // 从周几开始  周日：0，周一：1，周二：2 ... 周六：6
+		var today = new Date();  // 获得当天时间
+		var beforerDayTimer = (today.getDay() - fromDay) *dateTimer;  // 今天是周几，计算周一到今天的毫秒数
+		var afterDayTimer = (7 - today.getDay()- fromDay) *dateTimer;  // 今天是周几，计算周末到今天的毫秒数
+		
+		var beforer = today * 1 - beforerDayTimer - years * (yearDates - 1) / 2 * dateTimer;  //计算前半段时间到今天的毫秒数
+		var after = today * 1+ afterDayTimer + years * (yearDates - 1) / 2 * dateTimer;    // 计算后半段时间到今天的毫秒数
+		
+		var beforerDate = new Date(beforer);
+		var afterDate = new Date(after);
+		var dateArray = [];
+		var resultArray = [];
+		for(var i = beforer; i <= after; i+=weekTimer) {
+			dateArray.push(new Date(i));
+		}
+		for(var b = 0; b < dateArray.length-1; b++) {
+			var week1 = new Date(dateArray[b]);
+			var week2 = new Date(dateArray[b+1] - dateTimer);
+			resultArray.push({id: b, value: week1.getFullYear() + '-' + formatNumber(parseInt(week1.getMonth()+1)) + '-' + formatNumber(week1.getDate()) + ' &nbsp;至 &nbsp; ' + week2.getFullYear() + '-' + formatNumber(parseInt(week2.getMonth()+1)) + '-' + formatNumber(week2.getDate())});
+		}
+		
+	    var dateData = function(callback) {
+	    	console.log(resultArray);
+		    callback(resultArray);
+	    };
+	    
+	    
+	    this.selectDateDom.bind('click', function () {
+	        var oneLevelId = that.startDom.children('span').data('date');
+	        var iosSelect = new IosSelect(1, 
+	            [dateData],
+	            {
+	                title: '',
+	                itemHeight: 35,
+	                headerHeight: 44,
+	                relation: [1, 0, 0, 0],
+	                itemShowCount: 7,
+	                oneLevelId: oneLevelId,
+	                callback: function (selectOneObj) {
+	                    that.startDom.children('span').data('date', selectOneObj.value);
+	                    that.startDom.children('span').html(selectOneObj.value);
+	                }
+	        });
+	    });
+    }
+
+
+</script>
+<script type="text/javascript">
+	// 初始化时页面存在多个时间段时
+	$('#zsetDate .zsetDate-row').each(function () {
+		new SetDate ($(this), $(this).find('.zsetDate-js'))
+	});
+	
+	// 添加一个新时间段时
+	$('#zsetDate').on('click', '#zsetDate-add', function (e) {
+		var newTime = $('<div class="zsetDate-row"> <dl class="zsetDate-item"> <dt>工作时间' + $('#zsetDate .zsetDate-row').length + '：</dt> <dd class="zsetDate-js"><span data-date="0">选择</span></dd></dl> </div>');
+		$(this).parent('.zsetDate-add').before(newTime);
+		new SetDate (newTime, newTime.find('.zsetDate-js'));
+		e.stopPropagation();
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+代码介绍
+-----------------------------------------------------*/
+.zeffects { width:1000px; margin:0 auto; padding-top:50px; padding-bottom:50px; padding-left:20px; padding-right:20px; background-color:#fff;}
+
+.ze_box {}
+
+.zdate {}
+.zda_box {}
+.zda_input {}
+
+.zcalendar { width:400px;}
+.zca_box {}
+.zca_input {}
+.zca_open {}
+.zca_table {}
+
+.zca_year {}
+.zca_y_prev,.zca_y_next {}
+.zca_month {}
+.zca_m_prev,.zca_m_next {}
+.zca_day {}
+.zca_today {}
+
+.zca_thead {}
+.zca_thead th { background-color:#F90; border:1px #FC3 solid; color:#fff;}
+.zca_tbody {}
+.zca_tbody td { background-color:#FFC; color:#FC0; border:1px #F90 solid;}
+.zca_thead th,.zca_tbody td { height:30px;}
+.zca_saturday {}
+.zca_sunday {}
+
+
+
+
+
+
+
+
+
+
+
+
+

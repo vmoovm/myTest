@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>事件处理器</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/vue.min.js" type="text/javascript"></script>
+<style type="text/css">
+	.cs1 {
+			width:100px;
+			height:40px;
+			border:none;
+			background:#f2f2f2;
+			font-size: 16px;
+		}
+	.cs2 {
+		width: 72px; height: 30px; border: none; background: #122B40; color: #fff; font-size: 14px;
+	}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="">
+		<input type="button" name="anniu" id="anniu" v-on:click="bian" value="按钮" />
+		<input type="submit" name="nna" id="nna" v-on:click="bian" value="提交" />
+	</div>
+</div>
+
+
+
+
+<!--main end-->
+<script type="text/javascript">
+	var vd=new Vue({
+		el:'.zmain',
+		data:{
+			css1:{
+				'width':100+'px',
+				'height':40+'px',
+				'border':'none',
+				'background':'#f2f2f2'
+			},
+			cl:'cs2'
+		},
+		methods:{
+			bian:function(event){
+				if(event.target.type=='button'){
+					event.target.style.className=this.cl;
+				}else{
+					console.log(this.css1['width']);
+					alert(1111);
+					event.target.style.className='cs2';
+				}
+			},
+			say:function(ms){
+				alert("你说啥我说啥："+ms);
+			}
+		}
+	});
+</script>
+</body>
+</html>

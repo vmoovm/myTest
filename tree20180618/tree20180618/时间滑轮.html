@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>时间滑轮插件</title>
+	</head>
+	<body>
+		<style type="text/css">
+			.ztime { height: 50px; background: #ccc; color: #00AAAA; font-size: 16px; text-align: center;}
+			.ztime-show { display: block; line-height: 50px; color: #0aa;}
+		</style>
+		<div class="ztime">
+			<a class="ztime-show" data-year="" data-month="" data-date="" href="javascript:void(0)">显示时间为滑轮</a>
+		</div>
+		<script type="text/javascript">
+			var ztimedom = document.querySelector('.ztime');
+			var ztimeshow = document.querySelector('.ztime-show');
+			
+			var now= new Date();
+			var gettime = (function() {
+				return {
+					year: now.getFullYear(),
+					month: now.getMonth() + 1,
+					date: now.getDate(),
+					hour: now.getHours(),
+					week: now.getDay()
+				}
+			})();
+			
+			ztimeshow.setAttribute('data-year', gettime.year);
+			ztimeshow.setAttribute('data-month', gettime.month);
+			ztimeshow.setAttribute('data-date', gettime.date);
+			
+			// 格式化年
+			var yearFormat = function (yearNow) {
+				var yearArr = [];
+				for(var n = yearNow - 5; n < yearNow + 5; n++) {
+					yearArr.push({
+						id: n,
+						value: n + '年'
+					});
+				}
+				return yearArr;
+			}
+			
+			// 格式化月
+			var monthFormat = function () {
+				var monthArr = [];
+				for(var m = 0; m < 12; m++) {
+					monthArr.push({
+						id: m,
+						value: m + '月'
+					});
+				}
+				return monthArr;
+			}
+			
+			// 格式化天
+			var dateFormat = function (days) {
+				var dateArr = [];
+				for(var d = 1; d <= days; d++) {
+					dateArr.push({
+						id: d,
+						value: d + '天'
+					})
+				}
+				return dateArr;
+			}
+			
+			// 导入年
+			var yearData = function (callback) {
+				callback(yearFormat());
+			}
+			
+			// 导入月
+			var monthData = function (year, callback) {
+				callback(monthFormat())
+			}
+			
+			// 导入天
+			var dateData = function (year, month, callback) {
+				if(month == 2) {
+					if(year % 4 == 0) {
+						callback(dateFormat(28));
+					} else {
+						callback(dateFormat(27));
+					}
+				} else if(/**/) {
+					callback(dateFormat(31));
+				} else {
+					callback(dateFormat(30));
+				}
+				callback(dateFormat())
+			}
+			monthData();
+			// console.log(gettime);
+		</script>
+	</body>
+</html>

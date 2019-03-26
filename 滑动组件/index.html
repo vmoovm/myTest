@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="YES"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<title>滑动组件</title>
+		<style type="text/css">
+			body { height: 100%; margin: 0; padding: 0; background: #333; overflow: hidden;}
+			#canvas { width: 100%; height: 100%; overflow: hidden;}
+			ul li { list-style: none; margin: 0; padding: 0; overflow: hidden; width:100%; height:100%;}
+			li { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center;}
+		</style>
+	</head>
+	<body>
+		<div class="" id="canvas">
+			<!--<ul>
+				<li style="586px; -webkit-transform: translate3d(0,0,0);"><img src="img/2009321101408149.jpg"/></li>
+				<li style="586px; -webkit-transform:translate3d(320,0,0)"><img src="img/2009321101435665.jpg"/></li>
+				<li><img src="img/2009321101444148.jpg"/></li>
+				<li><img src="img/2009321101520640.jpg"/></li>
+				<li><img src="img/2009321101528501.jpg"/></li>
+			</ul>-->
+		</div>
+		<script type="text/javascript">
+			var list=[{
+				height:655,
+				width:480,
+				img:'img/2009321101408149.jpg'
+			},
+			{
+				height:480,
+				width:655,
+				img:'img/2009321101435665.jpg'
+			},
+			{
+				height:655,
+				width:480,
+				img:'img/2009321101444148.jpg'
+			},
+			{
+				height:480,
+				width:655,
+				img:'img/2009321101520640.jpg'
+			},
+			{
+				height:655,
+				width:480,
+				img:'img/2009321101528501.jpg'
+			}];
+			function slider(opts)
+				this.wrap=opts.dom;
+				this.list=opts.list;
+				
+				// 构造三部曲
+				this.init();
+				this.renderDOM();
+				this.bindDOM();
+			}
+			slider.prototype.init=function(){
+				//算出窗口长宽比
+				this.radio=window.innerHeight/window.innerWidth;
+				this.scaleW=window.innerWidth;
+				// 当前图片索引
+				this.idx=0;
+			}
+			
+			slider.prototype.renderDOM=function(){
+				var wrap=this.wrap;
+				var data=this.list;
+				var len=data.length;
+				var scale=this.scaleW;
+				
+				this.outer=document.createElement('ul');
+				for(var i=0;i<len;i++){
+					var li=document.createElement('li');
+					var item=data[i];
+					if (item) {
+						if (item['height']/item['width']>this.radio) {
+							li.innerHTML='<img height="'+window.innerHeight+'" src="'+item['img']+'/>';
+						} else{
+							li.innerHTML='<img width="'+window.innerwidth+'" src="'+item['img']+'/>';
+						}
+					}
+					li.style.webkitTransform='translate3d('+i*scale+'px,0,0)';
+					this.outer.appendchild(li);
+				}
+				wrap.style.height=window.innerHeight+'px';
+				wrap.appendChild(this.outer);
+					
+			}
+			
+			new slider({
+				'dom':document.getElementbyId('canvas'),
+				'list':list
+			});
+		</script>
+	</body>
+</html>

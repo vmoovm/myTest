@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <button onclick="fullScreen()">现代浏览器全屏</button>
+
+        <button onclick="exitScreen()">现代浏览器退出</button>
+
+        <button onclick="iefull()">低版本ie全屏</button>
+    </body>
+    <script src="js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //全屏
+        function fullScreen(){
+            var el = document.documentElement;
+            var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;      
+                if(typeof rfs != "undefined" && rfs) {
+                    rfs.call(el);
+                };
+              return;
+        }
+        //退出全屏
+        function exitScreen(){
+            if (document.exitFullscreen) {  
+                document.exitFullscreen();  
+            }  
+            else if (document.mozCancelFullScreen) {  
+                document.mozCancelFullScreen();  
+            }  
+            else if (document.webkitCancelFullScreen) {  
+                document.webkitCancelFullScreen();  
+            }  
+            else if (document.msExitFullscreen) {  
+                document.msExitFullscreen();  
+            } 
+            if(typeof cfs != "undefined" && cfs) {
+                cfs.call(el);
+            }
+        }
+        //ie低版本的全屏，退出全屏都这个方法
+        function iefull(){
+            var el = document.documentElement;
+            var rfs =  el.msRequestFullScreen;
+            if(typeof window.ActiveXObject != "undefined") {
+                //这的方法 模拟f11键，使浏览器全屏
+                var wscript = new ActiveXObject("WScript.Shell");
+                if(wscript != null) {
+                    wscript.SendKeys("{F11}");
+                }
+            }
+        }
+        //注：ie调用ActiveX控件，需要在ie浏览器安全设置里面把 ‘未标记为可安全执行脚本的ActiveX控件初始化并执行脚本’ 设置为启用
+    </script>
+</html>
+
+---------------------
+作者：前端小狮 
+来源：CSDN 
+原文：https://blog.csdn.net/m0_37885651/article/details/79231670?utm_source=copy 
+版权声明：本文为博主原创文章，转载请附上博文链接！

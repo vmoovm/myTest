@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>弹窗</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/alert.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--main start-->
+<!--alert start-->
+<article class="zalert" style="display: block;"></article>
+<article class="zal_box" style="display: block;">
+	<div class="zal_content">
+		<div class="zal_txt">
+			您还没有设置密码，是否现在设置？
+		</div>
+	</div>
+	<div class="zal_btn">
+		<ul>
+			<li class="zal_bt">暂不设置</li>
+			<li class="zal_bt">继续</li>
+		</ul>
+	</div>
+</article>
+<!--alert end-->
+
+<script type="text/javascript">
+	$(".zal_box").css('marginTop','-'+$(".zal_box").height()/2+'px');
+</script>
+</body>
+</html>

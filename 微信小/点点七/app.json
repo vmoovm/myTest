@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/exam/exam",
+    "pages/task/task",
+    "pages/grade/grade",
+    "pages/discuss/discuss",
+    "pages/pick/pick"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ccf",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "移动课堂",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/grade/grade",
+      "text": "评分",
+      "iconPath": "images/active_pingfen_gray.png",
+      "selectedIconPath": "images/active_pingfen.png"
+    }, {
+      "pagePath": "pages/discuss/discuss",
+      "text": "讨论",
+      "iconPath": "images/active_taolun_gray.png",
+      "selectedIconPath": "images/active_taolun.png"
+    },
+    {
+      "pagePath": "pages/pick/pick",
+      "text": "选人",
+      "iconPath": "images/active_xuanren_gray.png",
+      "selectedIconPath": "images/active_xuanren.png"
+    },
+    {
+      "pagePath": "pages/task/task",
+      "text": "任务",
+      "iconPath": "images/active_zy_gray.png",
+      "selectedIconPath": "images/active_zy.png"
+    },
+    {
+      "pagePath": "pages/exam/exam",
+      "text": "投票问卷",
+      "iconPath": "images/active_wenjuan_gray.png",
+      "selectedIconPath": "images/active_wenjuan.png"
+    }],
+    "color": "#888888",
+    "selectedColor": "#1aad19",
+    "backgroundColor": "#f6f7f8",
+    "position":"bottom",
+    "borderStyle": "black"
+  }
+}

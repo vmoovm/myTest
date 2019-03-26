@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>底部弹层</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/zobj.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/zobj.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	
+<div class="zbox">
+	<div class="zbox_content">
+		<div class="zre_top">
+			<p class="zre_go"><a id="zobject_show" href="#">发放</a></p>
+		</div>
+	</div>
+	<div class="zbox_bottom">
+		<div class="zopacity" id="zopacity"></div>
+		<!--选择班级 start-->
+		<div class="zobject_site animated" id="zobject_list">
+			<div class="zobject">
+				<div class="zobject_header">
+					<div>选择班级</div>
+					<p><em id="zobject_cancel">取消</em></p>
+				</div>
+				<div class="zclasses" id="zobject_zclasses">
+					<div class="zcl_row">
+						<div class="zcl_con">
+							<div class="zcheckB">
+								<input type="checkbox" name="radioGroup" checked="checked" id="groupId001" value="" />
+								<label for="groupId001"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+							</div>
+						</div>
+						<div class="zcl_num"><span>50</span></div>
+					</div>
+					<div class="zcl_row">
+						<div class="zcl_con">
+							<div class="zcheckB">
+								<input type="checkbox" name="radioGroup" id="groupId002" value="" />
+								<label for="groupId002"><em class="zcheck"><i></i></em><span>第二组</span></label>
+							</div>
+						</div>
+						<div class="zcl_num"><span>50</span></div>
+					</div>
+					<div class="zcl_row">
+						<div class="zcl_con">
+							<div class="zcheckB">
+								<input type="checkbox" name="radioGroup" id="groupId003" value="" />
+								<label for="groupId003"><em class="zcheck"><i></i></em><span>第三大组</span></label>
+							</div>
+						</div>
+						<div class="zcl_num"><span>50</span></div>
+					</div>
+				</div>
+				<div class="zobject_btn">
+					<p class="zre_go"><a href="#">确定</a></p>
+				</div>
+			</div>
+		</div>
+		<!--选择班级 end-->
+	</div>
+</div>
+<script type="text/javascript">
+	//发放活动主页面
+	$("#zobject_show").click(function() {
+		scoreList("#zobject_list","#zopacity");
+	});
+	
+	
+	$("#zobject_cancel").click(function() {
+		closelayer("#zobject_list","#zopacity");
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+全屏左右滑动
+-----------------------------------------------------*/
+.outer { width:100%; height:550px; margin:0 auto;}
+.postion { position:relative; width:100%; height:550px; overflow:hidden;}
+.bottom { position:absolute; bottom:0; width:100%; height:40px; background-color:#CF0;background:url(../image/fullScreen/sucai_blank.png) repeat; z-index:99999; display:none;}
+.btn_center { width:1000px; margin:0 auto; text-align:center;}
+.btn_off { width:20px; height:30px; background:url(../image/fullScreen/bt1.png) center no-repeat; display:inline-block; cursor:pointer;}
+.btn_on { width:20px; height:30px; background:url(../image/fullScreen/bt2.png) center no-repeat; display:inline-block; cursor:pointer;}
+.middle { position:absolute; width:auto; height:550px; left:0; top:0px;}
+.mid { position:absolute; width:auto; height:550px; left:-3800px; top:0px;}
+.left { position:absolute; left:0; width:84px; height:550px; index:99999; cursor:pointer;}
+.left a { display:block; width:84px; height:550px;; background:url(../image/skin/left_gray.png) center no-repeat;}
+.left_h { background:url(../image/fullScreen/sucai_blank.png) repeat; _background:url(../image/skin/sucai_blank.gif) repeat;}
+.left_h a {display:block; width:84px; height:550px;; background:url(../image/skin/left_green.png) center no-repeat;}
+
+.right { position:absolute; right:-1px; _right:-1px; width:84px; height:500px; z-index:99999; cursor:pointer;}
+.right a { display:block; width:84px; height:550px; background:url(../image/fullScreen/right_gray.png) center no-repeat;}
+.right_h {background:url(../image/fullScreen/sucai_blank.png) repeat; _background:url(../image/fullScreen/sucai_blank.gif) repeat;}
+.right_h a {display:block; width:84px; height:550px;; background:url(../image/fullScreen/right_green.png) center no-repeat;}
+
+.content { float:left; height:550px; }
+.m_box { width:1000px; height:400px; margin:70px auto; padding:10px; border-radius:5px; border:1px #ccc solid; box-shadow: 0 15px 30px rgba(3, 9, 0, 0.5); background-color:#fff; opacity:0.9;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

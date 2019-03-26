@@ -1,0 +1,60 @@
+/*搜索   <div class="search"><a href="#"><b class="search_ico"></b>搜索</a></div>*/
+.w_search {    background: #4e9fee;padding: 0.1rem 0.1rem;position: relative;}
+.w_search a{display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;height:0.75rem;line-height:0.75rem;width:100%;color:#cfcfcf;font-size:0.32rem;background:#fff;border-radius:0.1rem;}
+.w_search .search_ico{width:0.26rem;height:0.26rem;background:url(../images/search_ico.png) no-repeat;background-size:contain;display:block;margin:0px 0.1rem 0 0.23rem;}
+
+
+/*nav*/
+.w_nav{}
+.w_nav_ul{display: -webkit-flex;-webkit-align-items: center;-webkit-flex-wrap: wrap;padding-top: .18rem}
+.w_nav_menu{width: 25%;text-align:center;padding-bottom: .2rem;font-size: .26rem;color: #333;}
+.w_nav_Img img{width: 0.8rem;height: 0.8rem;}
+
+/*灰色线条*/
+.w_gray_line{width: 100%;height: .2rem;background: #f5f6f7}
+
+
+/*主体*/
+.w_main{padding: 0 0.3rem}
+.w_tit{padding-right:.3rem;line-height: 0.8rem;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:justify;font-size: .28rem;color: #999}
+.w_colorBlue{color: #0999ff}
+.w_one_sp{margin-right: .45rem}
+.w_tit h3{color: #333;font-size: .3rem;}
+.w_banner{width: 100%;position: relative;border-radius: .1rem}
+.w_banner img{width: 100%;border-radius: .1rem}
+.w_ban_bot{border-bottom-left-radius:.1rem;border-bottom-right-radius:.1rem;padding:0 0.3rem;width:100%;font-size: .24rem;color: #fff;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:justify;height: 0.58rem;line-height:.58rem;position: absolute;left:0;bottom: 0;background: rgba(0,0,0,0.5);-webkit-box-sizing: border-box;box-sizing: border-box;}
+.w_ban_bot .w_ban_txt{}
+.w_ban_bot .w_ban_r{display:block;background: url(../images/red-star.png) no-repeat left center/0.3rem .3rem; padding-left: .35rem}
+.w_ban2{padding-top: .2rem}
+.w_ban2_ul{display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:justify;}
+.w_ban2_ul li{position: relative;width: 3.3rem;border-radius: .1rem}
+.w_ban2_ul li img{width: 3.3rem;border-radius: .1rem}
+
+/*热门资源*/
+.w_main1{padding-left: 0.3rem}
+.w_data{padding-bottom: 0.4rem}
+.w_data .w_query_data_dl{width:100%;display:-webkit-box;background:-webkit-linear-gradient(bottom,transparent 50%,#ebebeb 50%) center bottom no-repeat; background-size:100% 1px;padding: 0.2rem 0}
+.w_query_data_dl dt{width:2.1rem ;height: 1.5rem;border-radius: 0.1rem;}
+.w_query_data_dl dt img{width:2.1rem ;height: 1.5rem;border-radius: 0.1rem;}
+.w_query_data_dl .w_query_data_dd{margin-left: 0.28rem;line-height: 0.4rem;color: #999;font-size: 0.24rem;-webkit-box-flex: 1}
+.w_query_data_dd h3{font-size: .3rem;margin-bottom: .3rem;color: #333}
+.w_eyes{background: url(../images/eyes.png) no-repeat left center/0.4rem 0.24rem;padding-left: .45rem;margin-right: .5rem}
+.w_download{background: url(../images/download.png) no-repeat left center/0.28rem;padding-left: .4rem;}
+
+
+/*通知公告*/
+.w_data .w_notice_dl{padding: 0;height: 1.3rem;-webkit-box-align: center}
+.w_notice_dl .w_notice_dd{margin-left: 0;}
+.w_query_data_dd .w_notice_name{font-size: .32rem;color: #333;line-height: .48rem}
+.w_query_data_dd .w_notice_date{font-size: .26rem;}
+
+
+.manage{ display:-webkit-box; height:100%;}
+.manage a{ display:block; -webkit-box-flex:1; width:1.53rem; height:100%; text-align:center; color:#fff; font-size:0.3rem; display:-webkit-box; -webkit-box-align:center; -webkit-box-pack:center;}
+.manage a.modify{ background:#C8C7CD; width:1.6rem;}
+.manage a.delete{ background:#fb362d;}
+.w_item{.width:100%; display:-webkit-box; height: 1.9rem;}
+
+
+
+

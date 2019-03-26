@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>无限级菜单</title>
+		<link rel="stylesheet" type="text/css" href="css/jsonMenu.css" />
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+		<script src="js/jsonMenu.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="box">
+				<ul class="zmenu" id="zmenu">
+					<li class="zme_first">
+						<p class="zme_list zme_row"><em>+</em><a href="#">属于一级菜单</a></p>
+						<dl class="zme_second">
+							<dd><p class="zme_row"><em>-</em><a href="#">升为二级</a></p></dd>
+							<dd><p class="zme_row"><em>-</em><a href="#">升为二级</a></p></dd>
+						</dl>
+					</li>
+					<li class="zme_first">
+						<p class="zme_list zme_row"><em>+</em><a href="#">属于一级菜单</a></p>
+						<dl class="zme_second">
+							<dd>
+								<p class="zme_list zme_row"><em>+</em><a href="#">有下一级菜单</a></p>
+								<dl class="zme_second">
+									<dd><p class="zme_row"><em>-</em><a href="#">升为三级</a></p></dd>
+									<dd><p class="zme_row"><em>-</em><a href="#">升为三级</a></p></dd>
+								</dl>
+							</dd>
+							<dd>
+								<p class="zme_list zme_row"><em>+</em><a href="#">有下一级菜单</a></p>
+								<dl class="zme_second">
+									<dd>
+										<p class="zme_list zme_row"><em>+</em><a href="#">有下一级菜单</a></p>
+										<dl class="zme_second">
+											<dd><p class="zme_row"><em>-</em><a href="#">升为四级</a></p></dd>
+											<dd><p class="zme_row"><em>-</em><a href="#">升为四级</a></p></dd>
+										</dl>
+									</dd>
+									<dd><p class="zme_row"><em>-</em><a href="#">升为三级</a></p></dd>
+								</dl>
+							</dd>
+							<dd>
+								<p class="zme_row"><em>-</em><a href="#">升为二级</a></p>
+							</dd>
+						</dl>
+					</li>
+					<li class="zme_first">
+						<p class="zme_list zme_row"><em>+</em><a href="#">属于一级菜单</a></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+	</body>
+
+</html>

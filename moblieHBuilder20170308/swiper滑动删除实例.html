@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>正文文章</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="znotice">
+			<div class="znotice_box">
+				<dl class="znotice_item">
+					<dt><a href="#">移动时代的学习变革暨教育创新思维</a></dt>
+					<dd><span>评价</span><span>签到详情</span></dd>
+				</dl>
+				<dl class="znotice_item">
+					<dt><a href="#">超星泛雅杯</a></dt>
+					<dd><span>评价</span><span>签到详情</span></dd>
+				</dl>
+				<dl class="znotice_item">
+					<dt><a href="#">请设计一堂基于慕课或微课合式教学案例</a></dt>
+					<dd><span>评价</span><span>签到详情</span></dd>
+				</dl>
+				<dl class="znotice_item">
+					<dt><a href="#">请设计一堂基于慕课或微课或微的混合式教学案例</a></dt>
+					<dd><span class="bgGreen">评价</span><span class="bgRed">签到详情</span></dd>
+				</dl>
+				<div class="swiper-container zli_row">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide zli_txt">
+							<a href="#">请设计一堂基于慕课或微课或微的混合式教学案例</a>
+						</div>
+						<div class="swiper-slide zli_manage">
+							<a class="zli_edit" href="#">评价</a>
+							<a class="zli_delete" href="#">签到详情</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-container zli_row">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide zli_txt">
+							<a href="#">超星泛雅杯</a>
+						</div>
+						<div class="swiper-slide zli_manage">
+							<a class="zli_edit" href="#">评价</a>
+							<a class="zli_delete" href="#">签到详情</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<style type="text/css">
+			/*----------------------------------------------------
+教案课件列表
+-----------------------------------------------------*/
+.zlist { padding: 1.85rem 0rem;}
+.zli_row { height: 4.5rem; overflow: hidden; border-bottom: 1px #dedede solid;}
+.zli_row:first-child { border-top: 1px #dedede solid;}
+.zli_record { display: -webkit-box; height: 100%; }
+.zli_txt { width: 100%; padding: 1rem 1.5rem; box-sizing: border-box; font-size: 1.5rem;}
+.zli_row dt { font-size: 1.5rem; color: #000; line-height: 2.4rem;}
+.zli_row dt a { color: #000;}
+/*.zli_row dd { font-size: 1rem; color: #777; line-height: 2rem;}*/
+.zli_manage { display: -webkit-box; display: box; width: 15rem; height: 100%; }
+.zli_manage a { display: block; width: 4.5rem; height: 100%; line-height: 4.5rem; text-align: center;; color: #fff; font-size: 1.5rem;}
+.zli_manage a.zli_edit { width: 5rem; background: #ff7f00; }
+.zli_manage a.zli_move { background: #ff7800; }
+.zli_manage a.zli_delete { width: 10rem; background: #fb0200; }
+			/*----------------------------------------------------
+课程列表
+-----------------------------------------------------*/
+.znotice { margin-top: 1rem;}
+.znotice_box { }
+.znotice_row { padding: 0 1.2rem; height: 4.8rem; border-bottom: 1px #ededed solid; font-size: 1.2rem;}
+.znotice_row  dt { padding-top: 0.8rem; width: 100%; line-height: 1.8; box-sizing: border-box; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.znotice_row dd { text-align: right; font-size: 0.9rem; color: #929292; }
+.znotice_item { display: -webkit-box; width: 100%; overflow: hidden; height: 4.8rem; border-bottom: 1px #ededed solid; font-size: 1.2rem; background: #fff;}
+.znotice_item dt { padding: 0 1.2rem;  padding-top: 0.8rem; width: 100%; line-height: 1.8; box-sizing: border-box; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.znotice_item dd span { display: inline-block; padding: 0 1rem;}
+.znotice_item dd span.bgGreen { background-color: chartreuse}
+.znotice_item dd span.bgRed { background-color: #f00}
+		</style>
+		<!--大图标 end-->
+		<script type="text/javascript">
+			var swiperG=new Array();
+			$(".zli_row").each(function(index){
+				$(this).attr("id",'zli_row'+index);
+				var swiper1=new Swiper("#zli_row"+index,{
+					resistanceRatio : 0,
+					slidesPerView: 'auto',
+					onTouchStart: function(swiper,even){
+				    	for(var n=0;n<swiperG.length;n++){
+					    	//if(n!=swiper.activeIndex){
+						    	swiperG[n].slideTo(0, 300, false);//切换到第一个slide
+					    	//}
+				    	}
+				   }
+				});
+				swiperG.push(swiper1);
+			});
+			
+			
+		</script>
+	</body>
+</html>

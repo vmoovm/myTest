@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+/*max-width: 1580px 类似这些值可以自行设定*/
+@media only screen and (max-width: 1580px) {
+
+}
+
+.cua_font,.cul_box { width:155px; margin:0 auto; margin-top:50px; height:50px; border:1px #6da300 soid; border-radius:3px; color:#00561f; font-size:18px; text-shadow:1px 1px 2px #93cd16; line-height:50px; text-align:center;}
+
+.cul_box { background:-webkit-gradient( linear,0 0,0 bottom,from(#b5eb13),to(#97d813));}
+
+.cua_font { background	:-webkit-gradient();}
+
+#ul_box { /*-webkit-text-fill-color:rgba(0,0,0,0);-webkit-background-clip:text;*/background-size:12px 30px; background-image:url(../images/53ffe152a3106c27b61ada23.jpg); background 0 -200px no-repeat;  width:800px; margin:0 auto; font-size:60px;}
+
+
+
+
+.ul_box li:nth-child(odd) { background-color:#f6f6f6;}
+.ul_box li:nth-child(1) { height:40px; border-bottom:2px #7a0112 solid; border-radius:5px 5px 0 0; background:-webkit-gradient(linear,0 0,0 bottom,from(#da0a00),to(#9c0111),color-stop(0.3,#da0a00),color-stop(0.8,#ad040b)); line-height:40px; font-size:14px; color:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

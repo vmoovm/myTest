@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvasZrender</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script src="js/zrender.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.zrenderCanvas { width: 1000px;}
+			.zrenderCanvas canvas { width: 100%;}
+		</style>
+	</head>
+	<body>
+		<div class="zrenderCanvas">
+			<canvas id="zrenderCanvas" width="2000" height="2000"></canvas>
+		</div>
+		<script type="text/javascript">
+			var zr = zrender.init( document.getElementById('zrenderCanvas') );
+	        var circle = new CircleShape({
+	            position: [100, 100],
+	            scale: [1, 1],
+	            style: {
+	                x: 0,
+	                y: 0,
+	                r: 50,
+	                brushType: 'fill',
+	                color: 'rgba(33, 222, 10, 0.8)',
+	                lineWidth: 5,
+	                text: 'circle',
+	                textPosition: 'inside'
+	            },
+	            draggable: true
+	        });
+	        zr.addShape(circle);
+	        zr.render();
+		</script>
+	</body>
+</html>

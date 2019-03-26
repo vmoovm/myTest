@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//格式小于10的数字，保证其最小显示两位数
+			var formatNumber = function (n) {
+		    	var num = parseInt(n)
+		    	if(num > 9) {
+		    		return num;
+		    	} else {
+		    		num = '' + '0' + num;
+		    	}
+		    	return num;
+		    }
+			var years = 1;  // 年数
+			var yearDates = 365;  // 一年365天
+			var dateTimer = 24 * 3600 * 1000;   // 一天毫秒数
+			var weekTimer = 7 * dateTimer;  // 一周毫秒数
+			var fromDay = 1;  // 从周几开始 默认从周日开始
+			var today = new Date();
+			var beforerDayTimer = (today.getDay() - fromDay) *dateTimer;  // 今天是周几，计算周一到今天的毫秒数
+			var afterDayTimer = (7 - today.getDay()- fromDay) *dateTimer;  // 今天是周几，计算周一到今天的毫秒数
+			
+			var beforer = today * 1 - beforerDayTimer - years * (yearDates - 1) / 2 * dateTimer;
+			var after = today * 1+ afterDayTimer + years * (yearDates - 1) / 2 * dateTimer;
+			
+			var beforerDate = new Date(beforer);
+			var afterDate = new Date(after);
+			var dateArray = [];
+			var resultArray = [];
+			for(var i = beforer; i <= after; i+=weekTimer) {
+				dateArray.push(new Date(i));
+			}
+			for(var b = 0; b < dateArray.length-1; b++) {
+				var week1 = new Date(dateArray[b]);
+				var week2 = new Date(dateArray[b+1] - dateTimer);
+				resultArray.push(week1.getFullYear() + '-' + formatNumber(parseInt(week1.getMonth()+1)) + '-' + formatNumber(week1.getDate()) + '至' + week2.getFullYear() + '-' + formatNumber(parseInt(week2.getMonth()+1)) + '-' + formatNumber(week2.getDate()));
+			}
+			console.log(resultArray);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+上传图片
+-----------------------------------------------------*/
+.zshangchuan {}
+.zsh_input { display: -webkit-box; display: box; width: 100%; padding: 1rem 0; box-sizing: border-box;}
+.zsh_typeText { -webkit-box-flex: 1; height: 3.75rem; -webkit-transiton:0.6s all ease; border-bottom: 1px #dedede solid; border-top:1px #dedede solid; }
+.zsh_typeText input { width: 100%; height: 3.75rem; border: none; border-radius: 0;  background: #fff; line-height: 3.75rem; font-size: 1.5rem; color: #333;} 
+.zsh_tt { height: 3.75rem; padding-left: 1.2rem; border-bottom: 1px #dedede solid; border-top:1px #dedede solid;  background: #fff; line-height: 3.75rem; font-size:1.5rem; color: #929292;}
+.zcameraBtn {  -webkit-transiton:1.6s all ease; width: 4rem; padding-left: 0.6rem; height: 3.75rem; border-bottom: 1px #dedede solid; border-top:1px #dedede solid;  background: #fff;}
+.zcameraBtn img { width: 2.6rem; margin-top: 0.65rem;}
+
+.zsh_textarea { padding: 2rem 0; padding-bottom: 1rem;}
+.zsh_site { position: relative; width: 0.05rem; height: 0;}
+.zsh_zgray { position: absolute; top: 0.8rem; left: 1.2rem; display: inline-block; width: 4.7rem; font-size: 1.5rem; color: #929292;}
+.zsh_contenteditable { width: 100%; min-height: 6.75rem; padding:0.5rem 1rem; padding-left: 5.4rem; -webkit-box-sizing: border-box; box-sizing: border-box; border-bottom: 1px #dedede solid; border-top:1px #dedede solid; outline: none; background: #fff; line-height: 2.5rem; font-size: 1.5rem; color: #333;}
+.zcameraBtn1 { position: relative; width: 100%; height: 0;}
+.zcameraBtn1 img { position: absolute; right: 1rem; top: -3.15rem; width: 2.6rem;}
+ 
+.zsh_intitle { padding: 1rem 0; padding-bottom: 0; }
+.zsh_intitle h2 { padding:0.6rem 1.2rem 0.65rem; line-height: 2.5rem; font-size: 1.4rem; color: #333; word-wrap:break-word; word-break:break-word;}
+.zsh_intitle h2 span { color: #929292;}
+
+.zsh_img,.zsh_img1 { padding:0 0 1rem 1.2rem;}
+.zsh_img1 {border-bottom: 1px #dedede solid;}
+.zsh_imgList { padding: 0.5rem 1.2rem 0; padding-bottom: 0 ;}
+.zsh_rel { position: relative; display: inline-block;  letter-spaceing:-0.2rem;  width: 5rem; height: 5rem; margin-bottom: 1.6rem; margin-right: 1.95rem;}
+.zsh_rel img { position: absolute; left: 0; top: 0; width: 100%; height:100%; border-radius: 0.4rem;}
+.zsh_close { position: absolute; right: -0.8rem; top: -0.8rem; width: 1.5rem; height: 1.5rem; background: url(../images/delete_06.png) center no-repeat; background-size: 90%; z-index: 10;}
+.zsh_addImg { display: inline-block; letter-spaceing:-0.2rem; width: 5rem; height: 5rem; margin-bottom: 1.6rem; background: url(../images/add_03.png) center no-repeat; background-size: 100%;}
+.zsh_h { padding: 0 1.5rem 0.1rem; line-height: 1.6rem; font-size: 1.4rem; color: #929292;}

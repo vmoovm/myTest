@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+field不带下划线普通字段
+-----------------------------------------------------*/
+.zfield { padding:1rem 1.2rem 0rem;  font-size: 1.4rem;}
+.zfield_row { display: -webkit-box; padding-top: 0.6rem;}
+.zfield dt {-webkit-box-flex:1;}
+.zfield dt em { color: #f00;}
+.zfield dd { font-size: 1.4rem;}
+.zfield dd a { color: #09f;}
+
+
+.zscore { padding: 0 1.2rem;}
+.zscore_row { padding: 0.3rem 1.2rem; border-bottom: 1px #dedede solid;}
+.zscore_info { display: -webkit-box; display: box;}
+.zscore_pic { width: 4rem; height: 4rem; padding: 0.2rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+.zscore_pic img { width: 4rem; border-radius: 50%;}
+.zscore_txt { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack:center; margin-left: 1rem;}
+.zscore_txt:only-child {margin-left: 0;}
+.zscore_th { display: -webkit-box; -webkit-box-pack: justify;}
+.zscore_th h2 { font-size: 1.4rem;}
+.zscore_th p { font-size: 1.2rem; color: #333;}
+.zscore_th span { color: red; font-size: 1.4rem;}
+.zscore_evaluate { line-height: 1.6rem; color: #777; font-size: 1.1rem;}
+.zscore_evaluate span { font-size: 1.2rem; color: #333;}
+.zscore_empty { display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack: center; height: 12rem; -webkit-box-align: center; text-align: center; font-size: 1.4rem; color: #929292;}

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表单</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/vue.min.js" type="text/javascript"></script>
+<style type="text/css">
+	dl { width: 500px; margin: 10px auto; border: 1px #ccc solid; padding: 20px; line-height: 1.8;}
+	dt { font-size: 14px; font-weight: bold;}
+	dd { font-size: 12px}
+	input { margin: 10px; width: 180px; height: 30px;}
+	textarea { min-height: 300px; width: 200px; padding: 10px;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="">
+		
+	</div>
+	<dl>
+		<dt>表单双向数据绑定 输入</dt>
+		<dd>
+			<p>请输入：<input type="text" v-model="ms" /></p>
+			<div class="">
+				<textarea name="" rows="" cols="" v-html="ms" placeholder="多行文本输入">默认：{{ms}}</textarea>
+			</div>
+		</dd>
+	</dl>
+	<dl>
+		<dt>多选双向绑定(单选)</dt>
+		<dd>
+			<div class="">
+				<input type="radio" name="radio1" id="radio1" v-model="instr" value="蚊子"/><label for="radio1">蚊子</label>
+				<input type="radio" name="radio1" id="radio2" v-model="instr" value="影子"/><label for="radio2">影子</label>
+				<input type="radio" name="radio1" id="radio3" v-model="instr" value="狮子"/><label for="radio3">狮子</label>
+				<input type="radio" name="radio1" id="radio4" v-model="instr" value="猴子"/><label for="radio4">猴子</label>
+			</div>
+			<input type="text" name="" v-html="" id="" disabled="disabled" v-bind:value="instr" />
+			<p>选中的是：{{instr}}</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt>多选双向绑定（多选）</dt>
+		<dd>
+			<div class="">
+				<input type="checkbox" name="checkbox2" id="checkbox1" v-model="mo" value="咬人"/><label for="checkbox1">蚊子</label>
+				<input type="checkbox" name="checkbox3" id="checkbox2" v-model="mo" value="光线"/><label for="checkbox2">影子</label>
+				<input type="checkbox" name="checkbox4" id="checkbox3" v-model="mo" value="速度"/><label for="checkbox3">狮子</label>
+				<input type="checkbox" name="checkbox5" id="checkbox4" v-model="mo" value="敏捷"/><label for="checkbox4">猴子</label>
+			</div>
+			<input type="text" name="" v-html="" id="" disabled="disabled" v-bind:value="mo" />
+			<p>选中的是：{{mo}}</p>
+		</dd>
+	</dl>
+	<dl>
+		<dt>多选双向绑定（select）</dt>
+		<dd>
+			<div class="">
+				<select name="" v-model="sls">
+					<option selected="selected" value="">请选择</option>
+					<option value="下班回家">下班回家</option>
+					<option value="公园散步">公园散步</option>
+					<option value="坐地铁">坐地铁</option>
+				</select>
+			</div>
+			<input type="text" name="" v-html="" id="" disabled="disabled" v-bind:value="sls" />
+			<p>选中的是：{{sls}}</p>
+		</dd>
+	</dl>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	new Vue({
+		el:'.zmain',
+		data:{
+			ms:'表单双向数据绑定',
+			instr:[],
+			mo:[],
+			sls:''
+		},
+		methods:{
+			
+		},
+		computed:{
+			
+		}
+	})
+</script>
+</body>
+</html>

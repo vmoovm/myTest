@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+参考备用：完稿需删除
+.overflow { overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.br { word-wrap:break-word;	word-break:break-all;}
+-----------------------------------------------------*/
+
+.zwide { width:840px; }
+.zwi_box {padding:20px; border:1px #f5f5f5 solid; background-color:#fff;}
+.zsidebar { width:320px; padding:20px; border:1px #ccc solid; background-color:#fff;}
+
+
+/*-----------------------------------------------------
+summary
+-----------------------------------------------------*/
+.summary {padding-top:20px; padding-bottom:30px; border:1px #ddd solid; border-top:none;}
+.zsu_select { margin-top:6px; margin-right:25px;}
+
+.zsu_item { padding-bottom:28px;}
+.zsu_img { width:150px; height:210px;}
+.zsu_info { width:480px; height:165px; padding-left:32px; line-height:22px;}
+.zsu_i_h2 { padding-bottom:10px; line-height:26px; font-size:22px; color:#333;}
+.zsu_i_h2 a { color:#333;}
+.zsu_i_field { padding-right:10px; color:#999;}
+.zsu_i_tag ,.zsu_i_tag a { color:#00acee;}
+.zsu_i_evaluation,.zsu_i_evaluation a { color:#7b9e31; vertical-align:middle;}
+.zsu_i_eval {}
+.zsu_i_star { display:inline-block; width:82px; height:16px; background:url(../images/ebook_star.png) no-repeat; vertical-align:middle;}
+.zsu_i_s1 { background-position:0px -134px;}
+.zsu_i_s11 { background-position:0px -117px;}
+.zsu_i_s2 { background-position:0px -100px;}
+.zsu_i_s22 { background-position:0px -82px;}
+.zsu_i_s3 { background-position:0px -66px;}
+.zsu_i_s33 { background-position:0px -48px;}
+.zsu_i_s4 { background-position:0px -32px;}
+.zsu_i_s44 { background-position:0px -14px;}
+.zsu_i_s5 { background-position:0px 0px;}
+.zsu_i_count { display:inline-block; vertical-align:middle;}
+.zsu_i_btn { padding-top:6px;}
+.zsu_i_web,.zsu_i_down { display:inline-block; font-size:12px;  background:url(../images/summary.png) 11px 7px no-repeat;}
+.zsu_i_web a,.zsu_i_down a { display:inline-block; width:78px; height:28px; padding-left:28px; border:1px #7b9e31 solid; border-radius:4px;  line-height:28px; text-align:center; color:#7b9e31;}
+.zsu_i_down { margin-left:25px; background-position: 11px -21px;}
+
+.zmedia { margin-top:25px; color:#333;}
+.zme_tab {}
+.zme_def ,.zme_cur { display:inline-block; padding-right:10px;}
+.zme_def a,.zme_cur a { display:inline-block; height:22px; padding-left:10px; padding-right:10px; border-bottom:1px #fff solid; color:#494949; line-height:22px;}
+.zme_def a:hover,.zme_cur a { border-bottom:2px #cda548 solid; color:#333; text-decoration:none;}
+
+.zme_box { padding-top:40px;}
+.zme_info { width:84px;}
+.zme_pro { width:50px; height:50px;}
+.zme_pro img { border-radius:50%;}
+.zme_star { padding-top:10px;}
+.zme_name { padding-top:9px; font-size:14px;}
+
+.zme_comment { width:694px; padding-left:20px; font-family:'宋体'; line-height:20px; color:#555;}
+.zme_reply { padding-top:16px; text-align:right;}
+.zme_reply a { color:#999;}
+.zme_reply_cur a { color:#7b9e31;}
+.zme_r_time { padding-right:18px; color:#999;}
+.zem_r_box { width:90%; margin-top:15px; padding:13px; border:1px #e5e5e5 solid; border-radius:5px;}
+.zem_r_rel { position:relative; width:100%; height:0;}
+.zem_r_abs { position:absolute; right:-12px; top:-23px; width:30px; height:30px; color:#e5e5e5; font-size:21px;}
+.zem_r_abs1 { position:absolute; right:-11px; top:-22px; width:28px; height:28px; color:#fff; font-size:20px;}
+.zem_r_pro { width:30px; height:30px;}
+.zem_r_pro img { border-radius:50%;}
+.zem_r_content { padding-left:20px;}
+
+
+
+
+
+
+

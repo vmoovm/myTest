@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/default.css"/>
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css"/>
+		<link rel="stylesheet" type="text/css" href="swiper/swiper.min.css"/>
+		<script src="swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shAutoloader.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+		<script type="text/javascript">
+			SyntaxHighlighter.all();
+		</script>-->
+		<script src="js/rainbow-custom.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--<script type="text/javascript">
+			$(document).ready(function(){
+			    SyntaxHighlighter.autoloader(
+			            ['js','jscript','javascript','syntaxhighlighter/scripts/shBrushJScript.js'],
+			            ['bash','shell','syntaxhighlighter/scripts/shBrushBash.js'],
+			            ['css','syntaxhighlighter/scripts/shBrushCss.js'],
+			            ['xml','html','syntaxhighlighter/scripts/shBrushXml.js'],
+			            ['sql','syntaxhighlighter/scripts/shBrushSql.js'],
+			            ['php','syntaxhighlighter/scripts/shBrushPhp.js']
+			        ); 
+			    SyntaxHighlighter.all(); 
+			})
+		</script>-->
+		
+		
+	</head>
+	<body class="bg">
+		<header class="top">
+			<a href="#"><i>H</i><em>C</em><b>Q</b></a>
+		</header>
+		<div class="center">
+			<div class="content">
+				<div class="code">
+					<div class="code_header">
+				        <h2 class="code_title">头像</h2>
+				        <p class="code_right">去服看到</p>
+				    </div>
+				    <div class="code_body">
+				    	<div class="lie">
+					    	<div class="lie_w">
+						    	<!--<h2 class="code_tt">在线预览效果：</h2>-->
+						    	<div class="code_imgs">
+									<iframe src="module/头像20160531/头像.html" width="100%" height="100%"></iframe>
+								</div>
+							</div>
+							<div class="lie_flex">
+								<h2 class="code_tt">模块简介：</h2>
+								<div class="code_instr">
+								没事，不用担心，有了小模块，方便多了，以后再不愁敲代码了。
+								</div>
+								<h2 class="code_tt">HTML代码：</h2>
+						    	<div class="code_box">
+						    		<pre class="brush: xml">
+						    			<div class="zportrait">
+						    				<dl class="zpo_row zpo_rowList">
+						    					<dd class="zre_num">1</dd>
+						    					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+						    					<dt class="zpo_txt">
+						    						<div class="zpo_th">
+						    							<a href="#">柳辰飞</a>
+						    							<p class="zpo_t">学号:1958545</p>
+						    						</div>
+						    						<div class="zpo_time">
+						    							<h2>06'25"</h2>
+						    							<p class="zpo_red">北京</p>
+						    						</div>
+						    					</dt>
+						    				</dl>
+						    			</div>
+						    		</pre>
+						    	</div>
+						    	<h2 class="code_tt">CSS代码：</h2>
+						    	<div class="code_box">
+									<pre class="brush:css;">
+										/*----------------------------------------------------
+										portrait头像 可以列表
+										-----------------------------------------------------*/
+										.zportrait { padding: 1.2rem;}
+										.zpo_row,.zpo_rowList { display: -webkit-box; display: box; padding: 0 1.2rem;}
+										.zpo_rowList { padding: 0.3rem 1.2rem; border-bottom: 1px #dedede solid;}
+										.zre_num { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; width: 2rem; line-height: 4.4rem; font-size: 1.6rem; color: #f00;}
+										.zpo_pic { position: relative; width: 4rem; height: 4rem; padding: 0.2rem; border: 1px #dedede solid; border-radius: 50%; text-align: center;}
+										.zpo_pic img { width: 4rem; border-radius: 50%;}
+										.zpo_pic span,.zpo_pic em { display: inline-block; position: absolute;}
+										.zpo_pic span { position: absolute; left: -2.2rem; top: -1rem; width: 3.25rem; height: 3.1rem;}
+										.zpo_pic em { width: 3.25rem; height: 3.1rem; background: url(../images/kinghap_03.png) no-repeat; background-size: 2.4rem;}
+										.zpo_txt { -webkit-box-flex:1; display: -webkit-box; display: box; margin-left: 1rem;}
+										.zpo_th { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+										.zpo_th a { display: block; height: 2.4rem; line-height: 2.4rem; font-size: 1.4rem; color: #000;}
+										.zpo_th a:hover,.zpo_th a:focus,.zpo_th a:active { color:#000; text-decoration: none;}
+										.zpo_th p { height: 1.6rem; font-size: 1rem; color: #777;}
+										.zpo_th p.zpo_t { line-height: 1.6rem; color: #929292;}
+										.zpo_time { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center; font-size: 1rem; color: #777;}
+										.zpo_time h2 { line-height: 2.4rem; font-size: 1rem;}
+										.zpo_time p { line-height: 1.6rem;}
+										.zpo_red { color: red;}
+									</pre>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<h2 class="footer_title"><span>&nbsp;宙霸&nbsp;</span></h2>
+			<div class="footer_box">
+				<h2>人人做前端，解放前端！</h2>
+				<p>2016-09-17 更新</p>
+			</div>
+		</footer>
+	</body>
+</html>

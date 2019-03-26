@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/comJs.css" type="text/css" rel="stylesheet"/>
+<!--<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/comJs.js"></script>
+<script>
+	$(function() {
+		$("#test").carousel({
+			 //isLoop: false,
+			 isButton: true,
+			// isSlow: true,
+			// speed: 500,
+			// interval: 1000,
+			 isPagination: true,
+			 curClass: "FocusCur"
+			// isSlow: true,
+			 //directionXY: false,
+			 //direction: false,
+		});
+	});
+</script>
+<title>焦点图</title>
+</head>
+
+<body>
+
+<div class="FocusImg" id="test">
+	<span class="Btn BtnLeft" role="left"></span>
+    <span class="Btn BtnRight" role="right"></span>
+	<div class="FocusPic" role="viewport">
+    	<ul role="content">
+        	<li><a href="javascript:;"><img src="image/comJs/1.jpg" width="500" height="335" title="四季很好，如果你在"/></a></li>
+            <li><a href="javascript:;"><img src="image/comJs/2.jpg" width="500" height="335" title="四季很好，如果你在"/></a></li>
+            <li><a href="javascript:;"><img src="image/comJs/3.jpg" width="500" height="335" title="四季很好，如果你在"/></a></li>
+        </ul>
+    </div>
+    <div class="FocusNum" role="points">
+    	<a href="javascript:;" class="FocusCur"></a>
+    </div>
+</div>
+</body>
+</html>

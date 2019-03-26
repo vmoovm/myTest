@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+布局
+-----------------------------------------------------*/
+.zwrap { min-width: 1260px; *width:expression(document.body.clientWidth < 1260? '1260px':'auto'); padding-left: 1%; padding-right: 1%;}
+.zmiddle { margin-left: 268px; margin-right: 268px; padding-left: 2%; padding-right: 3%;}
+.list_sidebar { padding-top: 20px;}
+
+
+
+/*-----------------------------------------------------
+list
+-----------------------------------------------------*/
+.zlist { background-position: 0 -50px; }
+.zli_row { line-height: 30px;}
+.zli_box { padding-top: 10px; padding-bottom: 10px; line-height: 26px;}
+.zli_666 { color: #666;}
+.zli_indent { text-indent: 2em;}
+.zli_item { display: inline-block; width: 61px; height: 30px; line-height: 30px;}
+.zli_item { *display: inline;}
+
+/*----------------------------------------------------
+检索结果
+-----------------------------------------------------*/
+.zresult {}
+.zre_item { height: 210px; padding-top: 20px; border-bottom: 1px #cfcfcf dashed;}
+.zre_checkbox { width: 22px; height: 22px;}
+.zre_sidebar { width: 100px;}
+.zre_img { width: 100px; height: 145px; overflow: hidden;}
+.zre_info { margin-left: 140px;}
+.zre_h { height: 26px; font-family: "微软雅黑";}
+.zre_h a { display: inline-block; }
+.zre_h a.zre_title { padding-right: 15px; font-size: 16px; color: #000; font-weight: bold; }
+.zre_h a.zre_primary,.zre_h a.zre_warning { width: 70px; height: 20px; line-height: 20px; text-align: center; font-size: 12px; color: #fff;}
+.zre_h a.zre_primary:hover,.zre_h a.zre_warning:hover { text-decoration: none;}
+.zre_h a.zre_primary { background: #2978e3;}
+.zre_h a.zre_warning { background: #f2a500;}
+.zre_h a.zre_primary:hover { background: #2f84f8;}
+.zre_h a.zre_warning:hover { background: #ffb61b;}
+
+.zre_field { width: 95%; line-height: 22px; font-size: 12px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zre_f_name,.zre_f_name1,.zre_f_dir { color: #a4a4a4; white-space: nowrap;}
+.zre_f_name1 { padding-top: 4px;}
+.zre_f_dir { display: inline-block; width: 36px;}
+.zre_f_con {  padding-right: 15px; color: #000;}
+
+.zre_f_con1 { line-height: 24px; color: #000;}
+.zre_media { padding-top: 8px; text-align: right;}
+.zre_icon { display: inline-block; height: 20px; padding-left: 47px;  background: url(../images/duxiu_icons1.png) no-repeat;}
+/*.zre_fankui { background-position: 27px 3px;} 反馈符号*/
+.zre_shoucang { background-position: 27px -21px;}
+.zre_daochu { background-position: 27px -45px;}
+.zre_count { padding-right: 10px;}
+.zre_bottom { padding-top: 14px;}
+/*----------------------------------------------------
+相关
+-----------------------------------------------------*/
+.zxiangguan {  padding-top: 12px;}
+.zxg_item { display: inline-block; width: 170px; height: 30px;  padding-right: 2%; line-height: 30px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zxg_item { *display: inline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

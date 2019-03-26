@@ -1,0 +1,133 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+公共
+-----------------------------------------------------*/
+.zblue ,.zblue a { color: #004aaf;}
+
+
+.zrow { line-height: 31px;}
+.zro_h { padding-top: 20px; padding-bottom: 4px;}
+.zro_m { padding-top: 10px; padding-right: 10px; font-size: 12px; color: #004aaf; text-align: right; font-family: '宋体';}
+.zro_m a { color: #004aaf;}
+.zro_rqcode { padding-top: 8px; padding-bottom: 8px; text-align: center;}
+.zro_cheaper { padding-left: 10px;}
+.zro_cheaper,.zro_cheaper a { color: #c8483b;}
+/*----------------------------------------------------
+图书
+-----------------------------------------------------*/
+.zbook {}
+.zbo_sidebar { width: 150px;}
+.zbo_btn { position: relative; width: 100%; height: 0px;}
+.zbo_count { position: absolute; right: 20px; top: 0px; width: 300px; height: 16px; text-align: right; color: #000 forestgreen;12px;}
+.zbo_count em { padding-left: 3px; padding-right: 3px; color: #c8483b;}
+.zbo_primary,.zbo_warning,.zbo_danger { position: absolute; right: 20px; width: 123px; height: 34px; line-height: 34px; text-align: center; font-size: 14px;}
+.zbo_primary a,.zbo_warning a,.zbo_danger a { display: block; height: 100%;  color: #fff;}
+.zbo_primary { top: 31px; background: #2978e3;}
+.zbo_warning { top: 95px; background: #f2a500;}
+.zbo_danger { top: 159px; background: #f76157;}
+.zbo_primary a:hover,.zbo_warning a:hover,.zbo_danger a:hover { text-decoration: none;}
+.zbo_primary a:hover { background: #2f84f8;}
+.zbo_warning a:hover { background: #ffb61b;}
+.zbo_danger a:hover { background: #fa4e43;}
+.zbo_img { height: 215px;}
+.zbo_txt { height: 20px; text-align: center; color: #004aaf;}
+.zbo_txt span { padding-right: 20px;}
+.zbo_txt em { color: #c8483b;}
+.zbo_share { height: 20px; padding-top: 3px;}
+.zbo_info { width: 544px;}
+.zbo_info h2 {  font-size: 18px; color: #000; font-family: "微软雅黑";}
+.zbo_info p { width: 370px; line-height: 30px; font-size: 12px;}
+.zbo_info em,.zbo_f_name1 { color: #a4a4a4; white-space: nowrap;}
+.zbo_f_name1 { padding-top: 4px;}
+.zbo_info span {  color: #000;}
+
+.zbo_f_con1 { line-height: 24px; color: #000;}
+.zbo_media { padding-top: 14px; text-align: right;}
+.zbo_icon { display: inline-block; height: 20px; padding-left: 47px;  background: url(../images/icons1.png) no-repeat;}
+.zbo_fankui { background-position: 27px 3px;}
+.zbo_shoucang { background-position: 27px -21px;}
+.zbo_daochu { background-position: 27px -45px;}
+/*----------------------------------------------------
+在线阅读
+-----------------------------------------------------*/
+.zco_list { height: 170px; padding-top: 20px; overflow: hidden;}
+.zco_list li { float: left; width: 97px; height: 170px; padding-left: 25px;}
+.zco_list li p { width: 97px; height: 143px; border: 1px #ccc solid; background-color: #fff;}
+.zco_list li h2 { width: 97px; padding-top: 10px; text-align: center; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;;}
+.zco_l_pl0 { padding-left: 0px;}
+/*----------------------------------------------------
+引用图书
+-----------------------------------------------------*/
+.zquote { padding-top: 12px;}
+.zqu_row { height: 25px; line-height: 25px;}
+.zqu_row span { padding-left: 10px; padding-right: 15px;}
+
+/*----------------------------------------------------
+图书评论
+-----------------------------------------------------*/
+.zcomment {}
+.zco_media { padding-top: 16px;}
+.zco_icon { display: inline-block; height: 20px; margin-left: 20px; ; background: url(../images/icons1.png) no-repeat; color: #004aaf;}
+.zco_icon a { padding-left: 22px; color: #004aaf;}
+.zco_n { background-position: 0px -68px;}
+.zco_w { background-position: 0px -91px;}
+.zco_item { padding-top: 20px;}
+.zco_img { width: 63px; height: 61px; background-color: #000000;}
+.zco_info { padding-left: 9px;}
+.zco_h { height: 22px; font-size: 14px; color: #c8483b;}
+.zco_gray { height: 20px; font-size: 12px; color: #9a9797;}
+.zco_txt { height: 20px;}
+/*----------------------------------------------------
+您可能还需要
+-----------------------------------------------------*/
+.zrecommend { display: none;}
+.zre_tab { padding-top: 12px;}
+.zre_def ,
+.zre_cur ,
+.zre_tab em { vertical-align: middle; cursor: pointer; }
+.zre_cur { color: #2978e3;}
+.zre_tab em { padding-left: 3px; padding-right: 3px;}
+.zre_list { height: 186px; padding-top: 12px; padding-left: 40px;}
+.zre_list li { height: 25px; line-height: 25px; list-style-position: outside; list-style: decimal; color: #2978e3;}
+.zre_prev,.zre_next { float: left; width: 22px; height: 168px;}
+.zre_prev { padding-right: 20px;}
+.zre_next { padding-left: 20px;}
+.zre_prev a,.zre_next a { display: block; height: 100%; background: url(../images/btn_03.png) no-repeat;}
+.zre_prev a { background-position: -86px 72px;}
+.zre_next a { background-position: -119px 72px;}
+.zre_view { position: relative; float: left; width: 628px; height: 198px; overflow: hidden;}
+.zre_site { position: absolute; left: 0px; width: 1000px;}
+
+.zre_item { float: left; width: 99px; height: 177px; padding-top: 21px; padding-right:33px;}
+.zre_first { padding-left: 0;}
+.zre_img { width: 100%; height: 145px; overflow: hidden;}
+.zre_img img:hover { -webkit-transition:1s ease all; -moz-transition:1s ease all;-o-transition:1s ease all;transition:1s ease all;-webkit-transform:scale(1.1,1.1);-moz-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1);transform:scale(1.1,1.1);}
+.zre_h { width:100%; height: 32px; line-height: 32px; text-align: center; font-size: 12px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+
+
+
+
+
+
+/*----------------------------------------------------
+被收藏
+-----------------------------------------------------*/
+.zbsc { padding-top: 10px; padding-bottom: 17px;}
+.zbs_prev,.zbs_next { float: left; width: 24px; height: 100px;}
+.zbs_prev { padding-right: 10px;}
+.zbs_next { padding-left: 10px;}
+.zbs_prev a,.zbs_next a { display: block; height: 100%; background: url(../images/btn_03.png) no-repeat;}
+.zbs_prev a { background-position: 0px 20px;}
+.zbs_next a { background-position: -55px 20px;}
+.zbs_view { position: relative; float: left; width: 198px; height: 100px; overflow: hidden;}
+.zbs_site { position: absolute; left: 0px; width: 1000px;}
+.zbs_site li { float: left; width: 60px; height: 100px; padding-right: 8px;}
+.zbs_pl0 { padding-left: 0;}
+.zbs_pro { width: 60px; height: 55px;}
+.zbs_media { height: 16px; padding-top: 9px; text-align: center;}
+.zbs_email ,.zbs_buy { display: inline-block; width: 16px; height: 16px; margin-left: 3px; margin-right: 3px; background: url(../images/icons1.png) no-repeat;}
+.zbs_email { background-position: 0px -114px;}
+.zbs_buy { background-position: 0px -137px;}
+.zbs_site li h3 { width: 100%; height: 18px; padding-top: 2px; text-align: center; font-size: 14px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zbs_site li h3 a { color: #000;}

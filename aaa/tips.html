@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			/*-----------------------------------------------------
+			黑框提醒弹层
+			-----------------------------------------------------*/
+			.cx_alert-bg { position: fixed; bottom: 56%; width: 100%; text-align: center;  opacity: 0;}
+			.cx_alert-bg span { display: inline-block; min-width:117px; padding: 23px 46px; background: #333; border-radius: 4px; line-height: 35px; font-size: 28px; color: #fff;}
+		</style>
+		<input class="zlo_danwei" type="text" name="" id="danwei" value="" placeholder="学校／单位" />
+		<script type="text/javascript">
+			function prompt(title,second){
+				$("<article class='cx_alert-bg' style='opacity:1'><span>"+title+"</span></article>").appendTo($(document.body)).delay(1000*second).fadeOut(1000,function(){
+					$(this).remove();
+				});
+			}
+			
+			$("#danwei").blur(function(){
+				prompt('邮箱格式不正确',1)
+			})
+			// prompt('邮箱格式不正确',3)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,203 @@
+// pc版
+
+// 全局配置
+
+
+// 必读：
+/*-----------------------------------------------------
+大小简写：
+x-small: 	特小 xm
+small: 		小 	sm
+middle: 	中 	md
+large: 		大 	lg
+extra: 		特大 et
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+简写：
+default: 	默认 df
+current: 	当前 cur
+routine：	常规 rt
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+位置简写：
+top：	上：t
+bottom：下：b
+left： 	左：l
+right：	右：r
+-----------------------------------------------------*/
+/*-----------------------------------------------------
+颜色程度简写：
+dark: 	深色	 d
+gray: 	灰色  g
+light:  浅色  l
+white:  白色  w
+
+-----------------------------------------------------*/
+
+
+//-----------------------------------------------------
+// 图片默认路径 url
+// -----------------------------------------------------
+@url: '../images/';
+@wrap: 1200px;
+
+.wrap (@wrap: @wrap) { width:@wrap; margin-left: auto; margin-right: auto;}
+/*-----------------------------------------------------
+font-size
+-----------------------------------------------------*/
+@fontSize: 12px;				// 默认 
+@fontSize-xm: 14px;				// 特小号
+@fontSize-sm: 16px;				// 小号
+@fontSize-md: 18px;				// 中号
+@fontSize-lg: 20px;				// 大号
+@fontSize-et: 22px;				// 特大号
+
+.fontSize { font-size: @fontSize;}
+.fontSize-xm { font-size: @fontSize-xm;}
+.fontSize-sm { font-size: @fontSize-sm;}
+.fontSize-md { font-size: @fontSize-md;}
+.fontSize-lg { font-size: @fontSize-lg;}
+.fontSize-et { font-size: @fontSize-et;}
+
+/*-----------------------------------------------------
+font-family
+-----------------------------------------------------*/
+@family: Tahoma,Helvetica,Arial,'Microsoft YaHei',sans-serif;				// 默认字体
+@family-st: '宋体';															// 宋体 	song ti
+@family-yh: '微软雅黑','Microsoft YaHei';									// 雅黑	ya hei
+@family-en: 'Helvetica Neue',Helvetica,Arial,sans-serif;					// 英文	en enlish
+@family-cn: Tahoma,Helvetica,Arial,'Microsoft YaHei',sans-serif;			// 英/汉	cn china
+
+.family { font-family: @family;}
+.family-st { font-family: @family-st;}
+.family-yh { font-family: @family-yh;}
+.family-en { font-family: @family-en;}
+.family-cn { font-family: @family-cn;}
+
+
+// -----------------------------------------------------
+// line-height: lineH / multiple：mp 倍数
+// -----------------------------------------------------
+@lineH: 22px;				// 默认行高
+@lineH-xm: 24px;			// 
+@lineH-sm: 26px;			// 
+@lineH-md: 28px;			// 
+@lineH-lg: 30px;			// 
+@lineH-et: 32px;			// 
+@lineH-tt: 34px;			// 默认标题行高
+@lineH-tt-xm: 36px;			// 
+@lineH-tt-sm: 38px;			// 
+@lineH-tt-md: 40px;			// 
+@lineH-tt-lg: 42px;			// 
+@lineH-tt-et: 44px;			// 
+@lineH-mp: 1.5;				// 默认倍数行高
+@lineH-mp-xm: 1;			// 
+@lineH-mp-sm: 1.2;			// 
+@lineH-mp-md: 1.6;			// 
+@lineH-mp-lg: 1.8;			// 
+@lineH-mp-et: 2;			// 
+
+.lineH(@height: @lineH) { line-height:@lineH;}
+.lineH-xm(@height: @lineH-xm) { line-height:@lineH;}
+.lineH-sm(@height: @lineH-sm) { line-height:@lineH;}
+.lineH-md(@height: @lineH-md) { line-height:@lineH;}
+.lineH-lg(@height: @lineH-lg) { line-height:@lineH;}
+.lineH-et(@height: @lineH-et) { line-height:@lineH;}
+.lineH-mp(@height: @lineH-mp) { line-height:@lineH;}
+.lineH-mp-xm(@height: @lineH-mp-xm) { line-height:@lineH;}
+.lineH-mp-sm(@height: @lineH-mp-sm) { line-height:@lineH;}
+.lineH-mp-md(@height: @lineH-mp-md) { line-height:@lineH;}
+.lineH-mp-lg(@height: @lineH-mp-lg) { line-height:@lineH;}
+.lineH-mp-et(@height: @lineH-mp-et) { line-height:@lineH;}
+
+.lineH-tt(@lineH: @lineH-tt) { line-height:@lineH;}
+.lineH-tt-xm(@lineH: @lineH-tt-xm) { line-height:@lineH;}
+.lineH-tt-sm(@lineH: @lineH-tt-sm) { line-height:@lineH;}
+.lineH-tt-md(@lineH: @lineH-tt-md) { line-height:@lineH;}
+.lineH-tt-lg(@lineH: @lineH-tt-lg) { line-height:@lineH;}
+.lineH-tt-et(@lineH: @lineH-tt-et) { line-height:@lineH;}
+
+
+/*-----------------------------------------------------
+通用色
+-----------------------------------------------------*/
+@main: #0cf;				// 主色
+@auxi: #37b0bb;				// 辅色
+@primary: #33577b;			// 原始色 暗蓝
+@info: #399bff;				// 信息色 蓝
+@success: #26a65b;			// 通过色 绿
+@danger: #ef4836;			// 危险色 红
+@warning: #f39c12;			// 警告色 黄
+@disable: #ccc;				// 禁止色 浅灰色
+@default: #58666e;			// 默认色 深灰色
+// hover 色
+@default-hover: darken(@default, 10%);		// 默认色
+@disable-hover: darken(@disable, 10%);		// 禁止色
+@primary-hover: darken(@primary, 10%);		// 原始色
+@info-hover: darken(@info, 10%);				// 信息色
+@success-hover: darken(@success, 10%);		// 通过色
+@danger-hover: darken(@danger, 10%);			// 危险色
+@warning-hover: darken(@warning, 10%);		// 警告色
+@main-hover: darken(@main, 10%);				// 主色
+@auxi-hover: darken(@auxi, 10%);				// 辅色
+/*-----------------------------------------------------
+color:c /black:b /dark:d /gray:g /light:l /white:w /main:m /auxi:a
+-----------------------------------------------------*/
+@color: #333;					// 默认
+@color-d: #333;					// 深灰	dark
+@color-g: #666;					// 灰色	gray
+@color-l: #999;					// 浅灰	light
+@color-w: #fff;					// 白色	white
+@color-default: @default;		// 默认色
+@color-disable: @disable;		// 禁止色
+@color-primary: @primary;		// 原始色
+@color-info: @info;				// 信息色
+@color-success: @success;		// 通过色
+@color-danger: @danger;			// 危险色
+@color-warning: @warning;		// 警告色
+@color-main: @main;				// 主色
+@color-auxi: @auxi;				// 辅色
+.color { color: @color;}
+.color-d { color: @color-d;}
+.color-g { color: @color-g;}
+.color-l { color: @color-l;}
+.color-w { color: @color-w;}
+.color-default { color: @color-default;}
+.color-disable { color: @color-disable;}
+.color-primary { color: @color-primary;}
+.color-info { color: @color-info;}
+.color-success { color: @color-success;}
+.color-danger { color: @color-danger;}
+.color-warning { color: @color-warning;}
+.color-main { color: @color-main;}
+.color-auxi { color: @color-auxi;}
+// hover
+@color-hover: darken(@color, 10%);
+@color-d-hover: darken(@color-d, 10%);
+@color-g-hover: darken(@color-g, 10%);
+@color-l-hover: darken(@color-l, 10%);
+@color-w-hover: #fff;
+@color-default-hover: darken(@default, 10%);
+@color-disable-hover: darken(@disable, 10%);
+@color-primary-hover: darken(@primary, 10%);
+@color-info-hover: darken(@info, 10%);
+@color-success-hover: darken(@success, 10%);
+@color-danger-hover: darken(@danger, 10%);
+@color-warning-hover: darken(@warning, 10%);
+@color-main-hover: darken(@main, 10%);
+@color-auxi-hover: darken(@auxi, 10%);
+
+.color-default-hover { color: @color-default-hover;}
+.color-disable-hover { color: @color-disable-hover;}
+.color-primary-hover { color: @color-primary-hover;}
+.color-info-hover { color: @color-info-hover;}
+.color-success-hover { color: @color-success-hover;}
+.color-danger-hover { color: @color-danger-hover;}
+.color-warning-hover { color: @color-warning-hover;}
+.color-main-hover { color: @color-main-hover;}
+.color-auxi-hover { color: @color-auxi-hover;}
+.color-hover { color: @color-hover;}
+.color-d-hover { color: @color-d-hover;}
+.color-g-hover { color: @color-g-hover;}
+.color-l-hover { color: @color-l-hover;}
+.color-w-hover { color: @color-w-hover;}

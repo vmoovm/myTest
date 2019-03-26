@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>单选和多选</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/checkboxAndRadio.css"/>
+<link href="css/zobj.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="js/ratio.js" type="text/javascript"></script>-->
+<script src="js/checkboxAndRadio.js" type="text/javascript" charset="utf-8"></script>
+<!--如果跳屏可以试着用失去焦点的思路（永远失去焦点）：onfocus="blur()"或者 onfocus="javascript:return false"或者Enable=false-->
+</head>
+
+<body>
+<!--main start-->
+<h2 class="zht2 zbgef zfs14 zc6 zbdeb">以下为多选</h2>
+<div class="checkGroup">
+	<ul class="check_opt">
+		<li class="check_all">全选</li>
+		<li class="check_opposite">反选</li>
+	</ul>
+	<div class="zclasses" id="zclasses">
+		<ul class="zcl_row">
+			<li class="zcl_num"><i>—</i></li>
+			<li class="zcl_con">
+				<div class="zcheckB">
+					<input class="zcheck_input" onfocus="blur()" type="checkbox" name="" checked="checked" id="classId001" value="" />
+					<label for="classId001"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+				</div>
+			</li>
+		</ul>
+		<ul class="zcl_row">
+			<li class="zcl_num"><i>—</i></li>
+			<li class="zcl_con">
+				<div class="zcheckB">
+					<input class="zcheck_input" type="checkbox" name="" id="classId002" value="" />
+					<label for="classId002"><em class="zcheck"><i></i></em><span>北京检方：雷洋尸体检验鉴定机构委托依法合规</span></label>
+				</div>
+			</li>
+		</ul>
+		<ul class="zcl_row">
+			<li class="zcl_num"><i>—</i></li>
+			<li class="zcl_con">
+				<div class="zcheckB">
+					<input class="zcheck_input" type="checkbox" name="" id="classId003" value="" />
+					<label for="classId003"><em class="zcheck"><i></i></em>
+						<div class="zcl_input">
+							<input type="text" name="" id="" value="" />
+						</div>
+					</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="Group">
+	
+
+
+<div class="zclasses">
+	<ul class="check_opt">
+		<li class="check_all">全选</li>
+		<li class="check_opposite">反选</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" checked="checked" id="groupId001" value="" />
+				<label for="groupId001"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" id="groupId002" value="" />
+				<label for="groupId002"><em class="zcheck"><i></i></em><span>湖南一副局长</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" id="groupId003" value="" />
+				<label for="groupId003"><em class="zcheck"><i></i></em><span>被指再偷窥 </span></label>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="zclasses">
+	<ul class="check_opt">
+		<li class="check_all">全选</li>
+		<li class="check_opposite">反选</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" checked="checked" id="groupId010" value="" />
+				<label for="groupId010"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" id="groupId012" value="" />
+				<label for="groupId012"><em class="zcheck"><i></i></em><span>湖南一副局长</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckB">
+				<input class="zcheck_input" type="checkbox" name="" id="groupId013" value="" />
+				<label for="groupId013"><em class="zcheck"><i></i></em><span>被指再偷窥 </span></label>
+			</div>
+		</li>
+	</ul>
+</div>
+<h2 class="zht2 zbgef zfs14 zc6 zbdeb">以下为单选</h2>
+<div class="zclasses">
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckR">
+				<input class="zcheck_input" type="radio" name="radioGroup1" checked="checked" id="groupId101" value="" />
+				<label for="groupId101"><em class="zcheck"><i></i></em><span>纪委立案</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckR">
+				<input class="zcheck_input" type="radio" name="radioGroup1" id="groupId102" value="" />
+				<label for="groupId102"><em class="zcheck"><i></i></em><span>女孩</span></label>
+			</div>
+		</li>
+	</ul>
+	<ul class="zcl_row">
+		<li class="zcl_num"><span>50</span></li>
+		<li class="zcl_con">
+			<div class="zcheckR">
+				<input class="zcheck_input" type="radio" name="radioGroup1" id="groupId103" value="" />
+				<label for="groupId103"><em class="zcheck"><i></i></em><span>洗澡</span></label>
+			</div>
+		</li>
+	</ul>
+</div>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	$(".checkGroup").checkAndRadio({inputType:'checkbox',checkGroup:'.zclasses'});
+	$(".Group").checkAndRadio({inputType:'checkbox',checkGroup:'.zclasses'});
+	$(".Group").checkAndRadio({inputType:'radio',checkGroup:'.zclasses'});
+	// 多操作（全选）
+	$(".Group").CAR_All({CAR_btn:'.check_all',checkGroup:'.zclasses',checks:true});
+	// 多操作（反选）
+	$(".Group").CAR_Reverse({CAR_btn:'.check_opposite',checkGroup:'.zclasses',checks:true});
+	
+	// 单组操作 （全选） 
+	$(".checkGroup").CAR_All({CAR_btn:'.check_all',checkGroup:'#zclasses',checks:false});
+	// 单组操作 （反选）
+	$(".checkGroup").CAR_Reverse({CAR_btn:'.check_opposite',checkGroup:'#zclasses',checks:false});
+</script>
+</body>
+</html>

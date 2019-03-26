@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+弹窗口背景
+-----------------------------------------------------*/
+.zlayer {position:fixed; _position:absolute; left:0; top:0;  _top:expression(eval(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight)); width:100%; height:2000px; background:url(../images/opacity50_white.png) repeat; display:none; z-index: 1001;}
+/*弹窗口背景*/
+.zlayer_containter {width:650px; margin:0 auto; border:1px #ccc solid; background-color:#fff; -o-box-shadow:0px 0px 14px #ccc; -webkit-box-shadow:0px 0px 14px #ccc; -moz-box-shadow:6px 6px 14px #ccc; box-shadow:0 0px 14px #ccc; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=135, Color=#cccccc);}
+.zlayer_header { height: 52px; background: #efefef;}
+.zlayer_title { padding-left: 12px; line-height: 52px; color: #333; font-size: 18px;}
+.zlayer_close { width: 30px; height: 30px; background: url(../images/znote_icons_01.png) 0 -501px no-repeat;}
+.zlayer_body { padding: 20px;}
+.zlayer_footer { padding: 20px 20px 30px;}
+.zlayer_box { height: 386px; margin-top: 16px; overflow-y: auto;}
+/*按钮*/
+.zlayer_btn { text-align: center;}
+.zlayer_btn a { display: inline-block; width: 74px; height: 32px; margin: 0 10px; border: 1px #7b9e31 solid; border-radius: 3px; background: #7b9e31; line-height: 32px; text-align: center; font-size: 16px; color: #fff;}
+.zlayer_btn a.zgreen {}
+.zlayer_btn a.zgray { border: 1px #e6e6e6  solid; background: #e6e6e6; color: #4c4c4c;}
+/*文件收藏操作*/
+.zlayer_top { height: 30px; font-size: 16px; line-height: 30px;}
+.zlayer_top a { margin-right: 10px; color: #333;}
+.zlayer_top a.zback i {  display: inline-block; margin-left: 4px; width: 20px; height: 20px; background: url(../images/znote_icons_01.png) 0  -555px no-repeat;}
+.zlayer_top a.zmain { color: #666;}
+.zlayer_top a.znew {}
+.zlayer_top a.znew i { display: inline-block; width: 26px; height: 26px; background: url(../images/znote_icons_01.png) 0 -535px no-repeat;}
+.zlayer_top a.znew i,.zlayer_top a.znew b { vertical-align: middle;}
+.zlayer_dir { border-top: 1px #e0e0e0 solid; font-size: 16px; color: #333;}
+.zlayer_row { }
+.zlayer_row p { height: 60px; line-height: 60px; border-bottom: 1px #e0e0e0 solid; display: block;}
+.zlayer_row img ,.zlayer_row em,.zlayer_row b { vertical-align: middle;}
+.zlayer_row em { display: inline-block; width: 34px; height: 34px; margin-right: 10px; background: url(../images/group_06.png) no-repeat;}
+.zlayer_row p i { float: right; width: 20px; height: 20px; margin-right: 10px; margin-top: 16px; background: url(../images/znote_icons_01.png) no-repeat}
+.zlayer_row p i.zoff { background-position: 0 -581px;}
+.zlayer_row p i.zon { background-position: 0 -607px;}
+.zlayer_row p a.zadd { float: right; width: 26px; height: 26px; background: url(../images/znote_icons_01.png) 0 -535px no-repeat;}
+.zlayer_row input { margin-left: 6px;}
+.zlayer_row .zinput { width: 40%; height: 24px; padding-left: 2px; border: 1px #b3b3b3 solid; background: #fff; color: #666; font-size: 14px;}
+.zlayer_row .zsubmit { width: 40px; height: 24px; border: 1px #7b9e31 solid; border-radius: 2px; background: #7b9e31; color: #fff; font-size: 14px;}
+.zlayer_row .zcancel { width: 40px; height: 24px; border: 1px #b3b3b3 solid; border-radius: 2px; background: #fff; color: #666; font-size: 14px;}
+.zlayer_sub { padding-left: 50px; display: none;}
+/*消息*/
+.zlayer_message { padding: 20px; font-size: 18px; color: #333; text-align: center;}
+
+/*弹窗尺寸*/
+.zlayer_mx { width: 400px;}
+.zlayer_sm { width: 480px;}
+.zlayer_md { width: 580px;}
+.zlayer_lg { width: 700px;}
+/*百分宽*/
+.zlayer_pc { width: 60%;}
+
+
+
+
+
+
+
+
+
+

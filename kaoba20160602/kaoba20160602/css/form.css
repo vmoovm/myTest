@@ -1,0 +1,36 @@
+
+.zbody { background: #ff5a28;}
+
+/*登录*/
+.zlogin {}
+.zlogin_logo { padding: 3.6rem 0 2.6rem; text-align: center;}
+.zlogin_logo img {width:11.08rem;}
+.zlogin_row { padding-top: 0.8rem; text-align: center;}
+
+.zlogin_calls { padding-top: 3.6rem;}
+.zlogin_userName ,.zlogin_passWord { width: 70%; height: 2.6rem; padding-left: 2.4rem; box-sizing: border-box; border: 1px #e02724 solid; border-radius: 0.4rem; background: #fff; line-height: 2.6rem; font-size: 1rem; color: #333;}
+.zlogin_calls .zlogin_userName ,.zlogin_passWord { border: 1px #ddd solid;}
+.zlogin_userName { background: url(../images/login_07.png) 0.6rem center no-repeat #f4f4f4; background-size: 1.12rem;}
+.zlogin_passWord { background: url(../images/login_10.png) 0.6rem center no-repeat #f4f4f4; background-size: 1.12rem;}
+.zlogin_btn { padding-top: 2.8rem;}
+.zlogin_enter,.zlogin_register { width: 70%; height: 2.6rem; border: none; border-radius: 0.4rem; background: none; font-size: 1.2rem;}
+.zlogin_enter { border: 1px #fb8d6c solid; background: #f4f4f4; color: #ff5a28;}
+.zlogin_register { border: 1px #f4411e solid; background: #e02724; color: #f4f4f4;}
+.zlogin_calls .zlogin_enter { border: 1px #ff5a28 solid; background: #ff5a28; color: #f4f4f4;}
+.zlogin_forget,.zlogin_tb { display: inline-block; width: 70%; line-height: 2rem; color: #f4f4f4; text-align: right; font-size: 1rem;}
+.zlogin_forget a,.zlogin_tb a { padding-right: 0.2rem; color: #f4f4f4;}
+.zlogin_tb em { display: inline-block; padding: 0 0.4rem; color: #ff5a28;}
+.zlogin_calls .zlogin_tb a { color: #ff5a28;}
+
+.zlogin_getCode { position: relative; width: 0rem; height: 2.4rem;}
+.zlogin_getCode input { position: absolute; right: 0.48rem; top: -0.32rem; width: 5.6rem; height: 1.84rem; border: none; border-radius: 0.3rem; background: #e02724; color: #f4f4f4; font-size: 0.8rem;}
+
+
+
+
+
+
+
+
+
+

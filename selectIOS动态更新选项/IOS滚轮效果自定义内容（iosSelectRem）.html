@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" /> 
+<title>IOS滚轮效果自定义内容</title>
+<link href="css/iosSelectRem.css" rel="stylesheet" type="text/css" />
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/iosSelectRem.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	.select { width: 3rem; margin: 250px auto;}
+	.select li { margin: .3rem; background: #EEEEEE; color: #333; font-size: .24rem; text-align: center; line-height: .54rem;}
+	.select li:first-child { background-color: #09f; color: #fff;}
+</style>
+</head>
+
+<body class="zbgwh">
+<!--main start-->
+	<ul class="select">
+		<li class="cx_portrait-js" id="firstItem"><span>选择第一项</span></li>
+		<li class="cx_portrait-js" id="secondItem"><span>选择联动项</span></li>
+		<li class="cx_portrait-js" id="thirdItem"><span>选择联动项</span></li>
+	</ul>
+	
+<!--main end-->
+<script type="text/javascript">
+    // 分数
+    var selectScoreDom = [];
+    var showScoreDom = [];
+    
+    $(".cx_portrait-js").each(function(){
+    	selectScoreDom.push($(this))
+    	showScoreDom.push($(this).children('span:first'))
+    })
+    
+    // 数据初始化
+    var minScore="-10", maxScore="10";
+    // var scoreData = function(callback) {
+        // var arr = [];
+        // for (var i = minScore; i <= maxScore; i++) {
+            // arr.push({
+                // id: i + '',
+                // value: i + ''
+            // });
+        // }
+        // console.log(callback(arr))
+        // callback(arr)
+    // }
+    scoreData1 = [{
+    	id: 1001,
+        value: '2011级'
+    },{
+    	id: 1002,
+        value: '2012级'
+    },{
+    	id: 1003,
+        value: '2013级'
+    },{
+    	id: 1004,
+        value: '2014级'
+    },{
+    	id: 1005,
+        value: '2015级'
+    }
+    ]
+    scoreData2 = [{
+    	id: 2021,
+        value: '信息工程系'
+    },{
+    	id: 2022,
+        value: '经济贸易系'
+    },{
+    	id: 2023,
+        value: '酒店管理系'
+    },{
+    	id: 2024,
+        value: '医药管理系'
+    },{
+    	id: 2025,
+        value: '机械电子工程系'
+    }
+    ]
+    scoreData3 = [{
+    	id: 3031,
+        value: '1班'
+    },{
+    	id: 3032,
+        value: '2班'
+    },{
+    	id: 3033,
+        value: '3班'
+    },{
+    	id: 3034,
+        value: '4班'
+    },{
+    	id: 3035,
+        value: '5班'
+    }
+    ]
+    scoreData4 = [{
+    	id: 4031,
+        value: '6班'
+    },{
+    	id: 4032,
+        value: '7班'
+    },{
+    	id: 4033,
+        value: '8班'
+    },{
+    	id: 4034,
+        value: '9班'
+    },{
+    	id: 4035,
+        value: '10班'
+    }
+    ]
+    scoreData5 = [{
+    	id: 5031,
+        value: '5000零5'
+    },{
+    	id: 5032,
+        value: '5000二5'
+    },{
+    	id: 5033,
+        value: '5000三5'
+    },{
+    	id: 5034,
+        value: '5000四5'
+    },{
+    	id: 5035,
+        value: '5000五5'
+    }
+    ]
+    var Data1 = scoreData1
+	$('#firstItem').bind('click', function () {
+	    var that = $(this).children('span:first');
+	    var iosSelect = new IosSelect(1,
+	        [Data1],
+	        {
+	            title: '选择积分',
+	            itemHeight: 0.6786,
+                headerHeight:0.819,
+                relation: [1, 0, 0, 0],
+                cssUnit:'rem',
+                itemShowCount: 7,
+	            oneLevelId: that.attr('data-score'),
+	            callback: function (selectOneObj) {
+	                that.attr('data-score', selectOneObj.id);
+	                that.html(selectOneObj.value);
+	                var temp = window['scoreData' + selectOneObj.id.slice(3)]
+	                Data2 = temp
+	                console.log(selectOneObj.id.slice(3))
+	            }
+	    });
+	});
+	$('#secondItem').bind('click', function () {
+	    var that = $(this).children('span:first');
+	    var iosSelect = new IosSelect(1,
+	        [Data2],
+	        {
+	            title: '选择积分',
+	            itemHeight: 0.6786,
+                headerHeight:0.819,
+                relation: [1, 0, 0, 0],
+                cssUnit:'rem',
+                itemShowCount: 7,
+	            oneLevelId: that.attr('data-score'),
+	            callback: function (selectOneObj) {
+	                that.attr('data-score', selectOneObj.id);
+	                that.html(selectOneObj.value);
+	                var temp = window['scoreData' + selectOneObj.id.slice(3)]
+	                Data3 = temp
+	                console.log(selectOneObj.id.slice(3))
+	            }
+	    });
+	});
+	$('#thirdItem').bind('click', function () {
+	    var that = $(this).children('span:first');
+	    var iosSelect = new IosSelect(1,
+	        [Data3],
+	        {
+	            title: '选择积分',
+	            itemHeight: 0.6786,
+                headerHeight:0.819,
+                relation: [1, 0, 0, 0],
+                cssUnit:'rem',
+                itemShowCount: 7,
+	            oneLevelId: that.attr('data-score'),
+	            callback: function (selectOneObj) {
+	                that.attr('data-score', selectOneObj.id);
+	                that.html(selectOneObj.value);
+	                // var temp = window['scoreData' + selectOneObj.id.slice(3)]
+	                // Data1 = temp
+	                console.log(selectOneObj.id.slice(3))
+	            }
+	    });
+	});
+
+    
+</script>
+</body>
+</html>

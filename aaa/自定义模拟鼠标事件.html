@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>自定义模拟鼠标事件</title>
+	</head>
+	<body>
+		<div style="background:red; width:180px; padding:10px;">
+		  <div id="out"></div>
+		  <input type="text">
+		</div>
+		<script type="text/javascript">
+			document.body.onclick = function(){
+			  e = arguments[0];
+			  var dt = e.target,
+			      stag = dt.tagName.toLowerCase();
+			  document.getElementById("out").innerHTML = stag;
+			  console.log(e)
+			};
+			
+			var simulateClick = function(){
+			  var evt = document.createEvent("MouseEvents");
+			  evt.initMouseEvent("click", true, true, window, 0, 0, 0, 140, 25, false, false, false, false, 0, null);
+			  document.body.dispatchEvent(evt);
+			}
+			
+			simulateClick();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>多选样式</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<!--单选样式 start-->
+		<p class="zcheckbox">
+			<input type="checkbox" name="radio" id="radio0" value=""/><label for="radio0">选我</label>
+			<input type="checkbox" name="radio" id="radio1" value=""/><label for="radio1">选他</label>
+		</p>
+		<style type="text/css">
+			.zcheckbox {}
+			.zcheckbox input { position: relative; width: 1px; height: 1px; margin-right: 18px; margin-left: 24px;}
+			.zcheckbox input:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px; border: 1px #ccc solid; border-radius: 1px; background: #f1f1f1; content: '';}
+			.zcheckbox input:checked:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px;  border: 1px #09f solid; border-radius: 1px; background: #f1f1f1; content: '';}
+			.zcheckbox input:checked:after { position: absolute; left: 1px; top: -5px; width: 8px; height: 8px; background: #09f; content: ''; z-index: 1;}
+		</style>
+		<!--单选样式 end-->
+		<!--多选样式 start-->
+		<p class="zcheckbox">
+			<input type="checkbox" name="checkbox" id="checkbox0" value=""/><label for="checkbox0">选我</label>
+			<input type="checkbox" name="checkbox" id="checkbox1" value=""/><label for="checkbox1">选他</label>
+		</p>
+		<style type="text/css">
+			/*----------------------------------------------------
+			多选样式
+			-----------------------------------------------------*/
+			.zcheckbox {}
+			.zcheckbox input { position: relative; width: 1px; height: 1px; margin-right: 18px; margin-left: 24px;}
+			.zcheckbox input:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px; border: 1px #ccc solid; border-radius: 1px; background: #f1f1f1; content: '';}
+			.zcheckbox input:checked:before { position: absolute; left: -4px; top: -9px; width: 16px; height: 16px;  border: 1px #09f solid; border-radius: 1px; background: #f1f1f1; content: '';}
+			.zcheckbox input:checked:after { position: absolute; left: 1px; top: -5px; width: 8px; height: 8px; background: #09f; content: ''; z-index: 1;}
+		</style>
+		<!--多选样式 end-->
+	</body>
+</html>

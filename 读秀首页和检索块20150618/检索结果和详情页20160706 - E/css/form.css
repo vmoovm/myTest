@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*登录*/
+.zlogin { padding-top: 190px; height: 500px; background: url(../images/bg_02.png) repeat-x;}
+.zlogin_box { width: 490px; height: 432px; margin: 0 auto; border: 1px #ccc solid; background: #fff;}
+.zlogin_header { height: 69px; background: url(../images/bg_05.png) no-repeat;}
+.zlogin_content { padding-top: 43px;}
+.zlogin_row,.zlogin_verfly { padding-top: 22px; padding-left: 36px; font-size: 18px; color: #999;}
+.zlogin_row span,.zlogin_row input,.zlogin_verfly span,.zlogin_verfly input,.zlogin_verfly a { vertical-align: middle;}
+.zlogin_row span { display: inline-block; width: 84px; height: 40px; line-height: 40px; text-align: right;}
+.zlogin_row input { width: 300px; height: 30px; padding: 4px 5px; border: 1px #ccc solid; background: #fff; line-height: 30px; color: #666; font-size: 14px;}
+.zlogin_verfly span { display: inline-block; width: 84px; height: 40px; line-height: 40px; text-align: right;}
+.zlogin_verfly input { width: 200px; height: 30px; padding: 4px 5px; border: 1px #ccc solid; background: #fff; line-height: 30px; color: #666; font-size: 14px;}
+.zlogin_verfly a { display: inline-block; width: 92px; text-align: right;}
+
+.zlogin_btn { padding-top: 40px;}
+.zlogin_btn a { display: inline-block; width: 310px; height: 38px; border: 1px #498eec solid; background: #498eec; line-height: 38px; text-align: center; color: #fff; font-size: 18px;}
+.zlogin_btn a:hover { text-decoration: none; background: #5096f4;}
+
+

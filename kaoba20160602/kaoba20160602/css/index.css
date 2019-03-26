@@ -1,0 +1,77 @@
+/*九宫格*/
+.znav {}
+.znav_bg { padding: 1.2rem; border-bottom: 1px #ddd solid; background: #fcfcfc; overflow: hidden; margin: 0;}
+.znav_item { float:left; width: 25%; height: 6.8rem; margin: 0; padding: 0 0rem; list-style-type: none;}
+.znav_item a { display: block; color: #333;}
+.znav_icon { display: block; width: 3.6rem; height: 3.6rem; margin: 0.5rem auto; border-radius: 3rem; background-size: 2.6rem; background-position: center; background-repeat: no-repeat}
+.znav_bkdy { background-image: url(../images/icon_15.png); background-color: #5185f2;}
+.znav_xxjh { background-image: url(../images/icon_17.png); background-color: #fa5e8d;}
+.znav_ksxx { background-image: url(../images/icon_19.png); background-color: #23cc93;}
+.znav_mryl { background-image: url(../images/icon_21.png); background-color: #af7bf7;}
+.znav_ksrd { background-image: url(../images/icon_27.png); background-color: #fb7a5d;}
+.znav_mfzb { background-image: url(../images/icon_29.png); background-color: #a0d468;}
+.znav_tsjc { background-image: url(../images/icon_31.png); background-color: #ffce55;}
+.znav_xkzn { background-image: url(../images/icon_33.png); background-color: #a0d468;}
+.znav_tt { display: block; height: 1.36rem; text-align: center; font-size: 1rem; color: #333;}
+
+/*zbanner*/
+.zbanner { }
+.zbanner a { display: block;}
+.zbanner a img { width: 100%;}
+#swiper-banner .swiper-pagination-bullet {
+  width: 0.48rem;
+  height: 0.48rem;
+  display: inline-block;
+  border-radius: 100%;
+  background: #fff;
+  opacity: 0.5;
+}
+#swiper-banner .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #5185f2;
+}
+
+/*课程列表*/
+.zcourse { padding: 1.2rem 0; }
+#swiper-container2 .swiper-wrapper { padding: 0.52rem 0rem; border-bottom: 1px #ddd solid; background: #fff;}
+#swiper-container2 .swiper-slide{line-height:1.36rem !important;text-align: center;color:#666 !important;font-size:0.96rem !important;}
+#swiper-container2 .swiper-slide:not(:last-child) { border-right: 1px #ddd solid;}
+#swiper-container2 .active-nav{	color: #ff5a28!important;}
+#swiper-container3 { background: #fff; border-bottom: 1px #ddd solid;}
+.zcourse_row { display: -webkit-box; display: box; padding: 0; padding: 0 1.2rem; padding-bottom: 1.2rem;}
+.zcourse_pic { width: 13.12rem; height: 7.36rem; overflow: hidden;}
+.zcourse_pic a { display: inline-block; width: 13.12rem;}
+.zcourse_pic img { width: 100%;}
+.zcourse_info { -webkit-box-flex: 1; padding-left: 1.2rem;}
+.zcourse_info { padding-left: 1rem;}
+.zcourse_info h2 { width: 100%; margin: 0; line-height: 1.6rem; font-weight: normal; font-size: 0.96rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zcourse_info h2 em { font-style: normal; color: #999; padding-right: 0.2rem;}
+.zcourse_info h2 span { color: #333;}
+.zcourse_zul { display: -webkit-box; display: box; -webkit-box-pack: justify; padding-top: 1.88rem; float: none;}
+.zcourse_daller { width: 5rem; font-size: 1rem;}
+.zcourse_zbtn { -webkit-box-flex: 1; height: 1.8rem;list-style-type: none;}
+.zcourse_zbtn a { display: block; height: 100%; border-radius: 0.2rem; background: #ff5a28; text-align: center; line-height: 1.8rem; color: #fff; font-size: 0.8rem;}
+.zcourse_loading { padding: 1.2rem;}
+.zcourse_loading a { display: block; height: 2.8rem; border: 1px #ddd solid; border-radius: 0.4rem; background: #f4f4f4; line-height: 2.8rem; text-align: center; font-size: 0.96rem; color: #999;}
+
+/*热点*/
+.zhot {}
+.zhot_box { padding: 1.2rem 0.7rem; background: #fff; border-bottom: 1px #ddd solid;}
+.zhot_row { display: -webkit-box; display: box; -webkit-box-pack: justify;}
+.zhot_item { display: block; width: 50%; height: 10.36rem; overflow: hidden; }
+.zhot_item dl dd { width: 100%; height: 7.36rem; box-sizing: border-box; padding: 0 0.5rem; overflow: hidden;}
+.zhot_item dl dd img { width: 100%;}
+.zhot_item dl dt { width: 100%; height: 3.2rem;  padding: 0 0.5rem; box-sizing: border-box;  line-height: 3.2rem; font-size: 1rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #333;}
+
+/*服务*/
+.zserver { margin-bottom: 1.2rem; padding: 1.2rem; border-bottom: 1px #ddd solid; background: #fff; }
+.zserver_row { display: -webkit-box; display: box; border-bottom: 1px #ddd solid; background: #fff; text-align: center;}
+.zserver_row:last-child { border-bottom: none;}
+.zserver_row li { width: 50%; border-right: 1px #ddd solid;}
+.zserver_row li:last-child { border-right: none;}
+.zserver_row li img { max-width: 100%;}
+
+
+
+
+

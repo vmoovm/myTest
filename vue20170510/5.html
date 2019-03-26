@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>样式绑定</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/vue.min.js" type="text/javascript"></script>
+<style type="text/css">
+	dl { width: 500px; margin: 10px auto; border: 1px #ccc solid; padding: 20px; line-height: 1.8;}
+	dt { font-size: 14px; font-weight: bold;}
+	dd { font-size: 12px}
+	.box { margin: 20px auto; width: 200px; height: 200px;}
+	.bgLv { background: green;}
+	.bgHang { background: greenyellow;}
+	.bgHong {  background: #f00;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<dl>
+		<dt>还可以设置多个class名称</dt>
+		<dd class="box"  v-bind:class="{bgHang:bg1,bgLv:bg2}"></dd>
+	</dl>
+	<dl>
+		<dt>还可以以对象字变量方式借用computed 把class表达式写到函数内</dt>
+		<dd class="box" v-bind:class="bg">与上面效果相同</dd>
+	</dl>
+	<dl>
+		<dt>还可以以数组的方式实现</dt>
+		<dd class="box" v-bind:class="[bg3,bg4]"></dd>
+	</dl>
+	<dl>
+		<dt>三元写法</dt>
+		<dd class="box" v-bind:class="[bg3,bg2 ? bg3 : bg5]">bg3样式名始终存在</dd>
+	</dl>
+	<dl>
+		<dt>内联样式style</dt>
+		<dd class="box" v-bind:style="[css3,css4,css5]">内联css体验|<br />数组方式</dd>
+	</dl>
+	<dl>
+		<dt>内联样式style</dt>
+		<dd class="box" v-bind:style="{color:cl,fontSize:fs}">内联css体验|<br />对象方式</dd>
+	</dl>
+	
+</div>
+<!--main end-->
+<script type="text/javascript">
+	new Vue({
+		el:'.zmain',
+		data:{
+			bg1:true,
+			bg2:false,
+			bg3:'bgHang',
+			bg4:'bgLv',
+			bg5:'bgHong',
+			css3:{color:'#f00',fontSize:'28px'},
+			css4:{backgroundColor:'#0f0',lineHeight:'3'},
+			css5:{textAlign:'center'},
+			cl:'#f00',
+			fs:'28px',
+			lh:3,
+			bc:'#0f0',
+			tac:'center'
+		},
+		computed:{
+			bg:function(){
+				return {'bgHang':this.bg1,'bgLv':this.bg2}
+			}
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>查看已评和未评</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="css/score.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+<style type="text/css">
+	.swiper-slide { background: #007AFF;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zbox">
+	<div class="zbox_content">
+		<!--选项卡 start-->
+		<div class="zheader">
+			<ul class="ztab">
+				<li class="ztab_cur">已评：1人</li>
+				<li>未评：3人</li>
+			</ul>
+		</div>
+		<!--选项卡 end-->
+		<div class="swiper-container" id="zscore">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="zscore">
+						<div class="zscore_empty">
+							全部评完
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="zscore">
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！很好继续，努力！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>优！</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dd class="zscore_pic"><img src="temp/201602221349_02.png" /></dd>
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>再接再厉</p>
+						</div>
+						<div class="zscore_row">
+							<dl class="zscore_info">
+								<dt class="zscore_txt">
+									<div class="zscore_th">
+										<h2>柳辰飞</h2>
+										<p>评分：<span class="zscore_red">95</span>分</p>
+									</div>
+								</dt>
+							</dl>
+							<p class="zscore_evaluate"><span>评语：</span>再接再厉</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	// ztab
+	$(".ztab").on("touchstart","li",function(){
+		$(this).addClass("ztab_cur").siblings().removeClass("ztab_cur")
+		zscore.slideTo( $(this).index());
+	});
+	var zscore=new Swiper("#zscore",{
+		onSlideChangeStart: function(swiper){
+			updateNavPosition(swiper)
+		}
+	});
+	function updateNavPosition(swiper){
+		$(".ztab li").removeClass("ztab_cur");
+		$(".ztab li").eq(zscore.activeIndex).addClass('ztab_cur');
+		var zch=Math.floor($("#zscore .swiper-slide").eq(zscore.activeIndex).find(".zscore").height())+5;
+		$("#zscore").height(zch);
+		
+	}
+</script>
+</body>
+</html>

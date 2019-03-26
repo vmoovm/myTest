@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" /> 
+<title>视频播放页</title>
+<!--<link href="css/base.css" rel="stylesheet" type="text/css" />-->
+<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet/less" type="text/css" href="less/style.less"/>
+<!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript"></script>
+<script src="js/less.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<!--main start-->
+	<div class="zcontainer">
+		<div class="zvideoPlayer zvideoPlayer-toggle" id="zvideoPlayer">
+			<video id="media" class="video-js" controls="controls" height="200" preload="auto" x5-video-player-type="h5" x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true">
+				<source type="video/mp4" src="video/sd.mp4"></source>
+				<source src="myvideo.ogv" type="video/ogg"></source>
+				<source src="myvideo.webm" type="video/webm"></source>
+				<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+					<param name="movie" value="myvideo.swf" />
+					<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+				</object>
+				当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+			</video>
+			<!--<div class="zvideoPlayer-trigger trigger-js"></div>
+			<div class="zvideoPlayer-top top-js">
+				<div class="zvideoPlayer-back"><a href="#"></a></div>
+				<div class="zvideoPlayer-toMusic"><a href="#"></a></div>
+			</div>
+			<div class="zvideoPlayer-operation operation-js">
+				<p class="zvideoPlayer-start play-js" id="play"></p>
+				<p class="zvideoPlayer-startTime startTime-js" id="startTime">00 : 00</p>
+				<div class="zvideoPlayer-progressBar">
+					<div class="zvideoPlayer-progressBg">
+						<div class="zvideoPlayer-progressCur progress-js" id="progress" style="width: 0;">
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<p class="zvideoPlayer-endTime countTime-js" id="countTime">00 : 00</p>
+				<p></p>
+			</div>-->
+		</div>
+		<div class="zvideo">
+			<div class="zvideo-header">
+				<div class="zvideo-title">
+					<h1>让科学成为未来中国的文化基因</h1>
+					<p>金晓峰&nbsp;复旦大学教授</p>
+				</div>
+				<div class="zvideo-slide zvideo-slideUp" id="zvideo-slide"><span>简介</span></div>
+			</div>
+			<div class="zvideo-comment" id="zvideo-comment" flag='on'>
+				<h1>讲座简介</h1>
+				<p>西方近代启蒙文化推动科技发展以后，科技成果同时也在改造文化，被
+科技改造后的文化就是科技文化，它又会反作用于科技，同时去影响经
+济和政治。</p>
+				<h1>主讲人简介</h1>
+				<p>金晓峰，法国同步辐射中心和瑞典Chalmers大学博士后(1990-1991)。复
+旦大学物理系讲师（1989）、副教授（1993）和教授（1995）。1994年
+至今，在美国UC Berkeley、德国Max-Planck微结构研究所、香港科技大
+学、美国Utah大学、日本东北大学和美国ORNL国家实验室等多个单位工
+作过。</p>
+			</div>
+			<div class="zvideo-footer">
+				<ul class="zvideo-flex">
+					<li class="zvideo-commentIcon"><span>1235</span></li>
+					<li class="zvideo-viewIcon"><span>123</span></li>
+				</ul>
+				<ul class="zvideo-media">
+					<!--<li class="zvideo-faveriteIcon"></li>-->
+					<li class="zvideo-faveritedIcon"></li>
+					<li class="zvideo-downIcon"></li>
+					<li class="zvideo-shareIcon"></li>
+				</ul>
+			</div>
+		</div>
+		<!--选集播放 start-->
+		<div class="zvideoDir">
+			<header class="zvideoDir-header">
+				<div class="zvideoDir-title">
+					<h1>选集播放</h1>
+					<p>共5集</p>
+				</div>
+			</header>
+			<section class="zvideoDir-body">
+				<div class="swiper-container" id="zvideoDir-js">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide zvideoDir-slide zvideoDir-cur">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因东奔西走大规模在顶戴压顶村（一）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+				        	<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（二）</h2>
+				        		<p># 19'23"</p>
+			        		</div>
+				        </div>
+				        <div class="swiper-slide zvideoDir-slide">
+			        		<div class="zvideoDir-item">
+				        		<h2>让科学成为未来中国的文化基因（三）</h2>
+				        		<p># 19'23"</p>
+					        </div>
+				        </div>
+				    </div>
+				</div>
+			</section>
+		</div>
+		<!--选集播放 end-->
+		<p class="zsplitM"></p>
+		<!--每天30分钟一讲座 start-->
+		<div class="zlecture">
+			<div class="zlecture-list">
+				<div class="zlecture-row">
+					<div class="zlecture-pic"><img src="images/chaoxinglogo.png"/></div>
+					<div class="zlecture-info">
+						<dl class="zlecture-text">
+							<dt>每天30分钟一讲座</dt>
+							<dd>23.4万人订阅</dd>
+						</dl>
+						<div class="zlecture-subscribe"><a href="#">订阅</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--每天30分钟一讲座 end-->
+		<!--猜你喜欢 start-->
+		<p class="zsplitM"></p>
+		<div class="ztitleP">
+			<div class="ztitleP-default"><h1>猜你喜欢</h1><p></p><h1>知识胶囊</h1></div>
+		</div>
+		<p class="ztitle-line"><span></span></p>
+		<div class="zcai">
+			<div class="swiper-container zcai-swiper" id="zcai-swiper">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="zcai-item">
+			        		<p class="zcai-pic"><img src="temp/201712011113_38.jpg"/></p>
+			        		<div class="zcai-opacity"></div>
+			        		<dl class="zcai-title">
+			        			<dt><a href="#">让科学成为未来中 国的文化基因国的文化基因</a></dt>
+			        			<dd>金晓峰 复旦大学教授</dd>
+			        		</dl>
+			        		<div class="zcai-howlong">
+			        			<h1>03'36''</h1>
+			        			<p>#</p>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="zcai-item">
+			        		<p class="zcai-pic"><img src="temp/201712011113_38.jpg"/></p>
+			        		<div class="zcai-opacity"></div>
+			        		<dl class="zcai-title">
+			        			<dt><a href="#">让科学成为未来中</a></dt>
+			        			<dd>金晓峰 复旦大学教授</dd>
+			        		</dl>
+			        		<div class="zcai-howlong">
+			        			<h1>03'36''</h1>
+			        			<p>#</p>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="zcai-item">
+			        		<p class="zcai-pic"><img src="temp/201712011113_38.jpg"/></p>
+			        		<div class="zcai-opacity"></div>
+			        		<dl class="zcai-title">
+			        			<dt><a href="#">让科学成为未来中 国的文化基因</a></dt>
+			        			<dd>金晓峰 复旦大学教授</dd>
+			        		</dl>
+			        		<div class="zcai-howlong">
+			        			<h1>03'36''</h1>
+			        			<p>#</p>
+			        		</div>
+			        	</div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<div class="ztitleP">
+			<div class="ztitleP-default"><h1>猜你喜欢</h1><p></p><h1>每天30分钟一讲座</h1></div>
+		</div>
+		<p class="ztitle-line"><span></span></p>
+		<div class="zimgListCai-list">
+			<div class="swiper-container" id="zimgList">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<a href="#">
+			        	<div class="zimgListCai-item">
+							<div class="zimgListCai-img">
+								<img src="temp/201712011155_03.jpg"/>
+							</div>
+							<div class="zimgListCai-text">
+								<h1>让科学成为未来中国的文化基因</h1>
+								<p>金晓峰&nbsp;&nbsp;复旦大学教授 </p>
+							</div>
+						</div>
+						</a>
+			        </div>
+			        <div class="swiper-slide">
+			        	<a href="#">
+			        	<div class="zimgListCai-item">
+							<div class="zimgListCai-img">
+								<img src="temp/201712011155_03.jpg"/>
+							</div>
+							<div class="zimgListCai-text">
+								<h1>让科学成为未来中国的文化基因</h1>
+								<p>金晓峰&nbsp;&nbsp;复旦大学教授 </p>
+							</div>
+						</div>
+						</a>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		<!--猜你喜欢 end-->
+		<p class="zsplit"></p>
+		<!--想说点什么 start-->
+		<div class="ztitleP">
+			<div class="ztitleP-default"><h1>你想说点什么？</h1></div>
+		</div>
+		<p class="ztitle-line"><span></span></p>
+		<div class="zwantToSay">
+			<div class="zwantToSay-header">
+				<p class="zwantToSay-img"><img src="temp/201612241557_25.jpg"/></p>
+				<div class="zwantToSay-flex">
+					<div class="zwantToSay-input">
+						<input type="text" name="" id="" value="" placeholder="你想说点什么？" />
+					</div>
+				</div>
+				<input class="zwantToSay-btn" type="button" name="" id="" value="提交" />
+			</div>
+			<div class="zwantToSay-body">
+				<div class="zwantToSay-list" id="zwantToSay-list">
+					<div class="zwantToSay-row">
+						<div class="zwantToSay-pic"><a href="#"><img src="temp/201612241557_25.jpg"/></a></div>
+						<div class="zwantToSay-content">
+							<div class="zwantToSay-info">
+								<dl class="zwantToSay-text">
+									<dt><a href="#">李丹丹</a></dt>
+									<dd>11-03</dd>
+								</dl>
+								<p class="zwantToSay-good"><span>586</span></p>
+							</div>
+							<div class="zwantToSay-said">
+								<p>莫言老师说的太有道理了，值得我们去思考， 未来的路还很长，在前行的道路上我们需要 这样有智慧的领路人为我们点亮明灯。</p>
+								<p><a href="javascript:void(0)">李丹丹</a>：的确是这样，我们需要这样有智慧 的领路人</p>
+								<p><a href="javascript:void(0)">赵启明</a>回复<a href="javascript:void(0)">李丹丹</a>：的确是这样，我们需要 这样有智慧的领路人。</p>
+								<p><a href="javascript:void(0)">李丹丹</a>回复<a href="javascript:void(0)">赵启明</a>：的确是这样，我们需要 这样有智慧的领路人。</p>
+								<p><a href="javascript:void(0)">吴敏</a>回复<a href="javascript:void(0)">赵启明</a>：赞同你的观点！</p>
+								<div class="zwantToSay-reply zwantToSay-hide">
+									<div class="zwantToSay-textarea">
+										<textarea name="" rows="" cols="" placeholder="回复赵启明："></textarea>
+									</div>
+									<div class="zwantToSay-media">
+										<div class="zwantToSay-emoticon">
+											<span></span>
+										</div>
+										<div class="zwantToSay-submit">
+											<p>取消</p>
+											<input type="button" name="" id="" value="提交" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zwantToSay-row">
+						<div class="zwantToSay-pic"><a href="#"><img src="temp/20160104162001.png"/></a></div>
+						<div class="zwantToSay-content">
+							<div class="zwantToSay-info">
+								<dl class="zwantToSay-text">
+									<dt><a href="#">李凡凡</a></dt>
+									<dd>11-02</dd>
+								</dl>
+								<p class="zwantToSay-gooded"><span>6</span></p>
+							</div>
+							<div class="zwantToSay-said">
+								<p>莫言老师说的太有道理了，值得我们去思考， 未来的路还很长，在前行的道路上我们需要 这样有智慧的领路人为我们点亮明灯。</p>
+								<div class="zwantToSay-reply zwantToSay-hide">
+									<div class="zwantToSay-textarea">
+										<textarea name="" rows="" cols="" placeholder="回复赵启明："></textarea>
+									</div>
+									<div class="zwantToSay-media">
+										<div class="zwantToSay-emoticon">
+											<span></span>
+										</div>
+										<div class="zwantToSay-submit">
+											<p>取消</p>
+											<input type="button" name="" id="" value="提交" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zwantToSay-row">
+						<div class="zwantToSay-pic"><a href="#"><img src="temp/20160104162001.png"/></a></div>
+						<div class="zwantToSay-content">
+							<div class="zwantToSay-info">
+								<dl class="zwantToSay-text">
+									<dt><a href="#">李凡凡</a></dt>
+									<dd>11-02</dd>
+								</dl>
+								<p class="zwantToSay-good"><span>6</span></p>
+							</div>
+							<div class="zwantToSay-said">
+								<p>莫言老师说的太有道理了，值得我们去思考， 未来未来的路还很长，在前行的路还很长，未来未来的路还很长，在前行的路还很长，在前行的路还很长，在前行的路还很长，在前行的路还很长，在前行的道路上我们需要 这样有智慧的领路人为我们点亮明灯。</p>
+								<div class="zwantToSay-reply zwantToSay-hide">
+									<div class="zwantToSay-textarea">
+										<textarea name="" rows="" cols="" placeholder="回复赵启明："></textarea>
+									</div>
+									<div class="zwantToSay-media">
+										<div class="zwantToSay-emoticon">
+											<span></span>
+										</div>
+										<div class="zwantToSay-submit">
+											<p>取消</p>
+											<input type="button" name="" id="" value="提交" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="zwantToSay-row">
+						<div class="zwantToSay-pic"><a href="#"><img src="temp/20160104162001.png"/></a></div>
+						<div class="zwantToSay-content">
+							<div class="zwantToSay-info">
+								<dl class="zwantToSay-text">
+									<dt><a href="#">李凡凡</a></dt>
+									<dd>11-02</dd>
+								</dl>
+								<p class="zwantToSay-good"><span>6</span></p>
+							</div>
+							<div class="zwantToSay-said">
+								<p>莫言老师说的太有道理了，值得我们去思考</p>
+								<p><a href="javascript:void(0)">李丹丹</a>：的确是这样</p>
+								<p><a href="javascript:void(0)">赵启明</a>回复<a href="javascript:void(0)">李丹丹</a>：这样有智慧的领路人。</p>
+								<p><a href="javascript:void(0)">李丹丹</a>回复<a href="javascript:void(0)">赵启明</a>：值得我们去思考!值得我们去思考!我们需要 这样有智慧的领路人。</p>
+								<p><a href="javascript:void(0)">吴敏</a>回复<a href="javascript:void(0)">赵启明</a>：赞同你的观点！</p>
+								<p><a href="javascript:void(0)">吴敏</a>回复<a href="javascript:void(0)">赵启明</a>：赞同你的观点！</p>
+								<p><a href="javascript:void(0)">吴敏</a>回复<a href="javascript:void(0)">赵启明</a>：赞同你的观点！</p>
+								<div class="zwantToSay-reply zwantToSay-hide">
+									<div class="zwantToSay-textarea">
+										<textarea name="" rows="" cols="" placeholder="回复赵启明："></textarea>
+									</div>
+									<div class="zwantToSay-media">
+										<div class="zwantToSay-emoticon">
+											<span></span>
+										</div>
+										<div class="zwantToSay-submit">
+											<p>取消</p>
+											<input type="button" name="" id="" value="提交" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!--想说点什么 end-->
+	</div>
+	<div class="bdsharebuttonbox" data-tag="share_1">
+    <!-- 此处添加展示按钮 -->
+</div>
+<script src="js/zplayer-video.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		var mediaSource = [{
+				title: 'bbc_sherlock_openning',
+				srcMedia: 'video/sd.mp4',
+				cover: 'temp/20160104162001.png'
+			}, {
+				title: 'Neptune Illusion Dennis Kuo',
+				srcMedia: 'video/test.mp4',
+				cover: 'temp/201712011442_05.jpg'
+			}, {
+				title: '爱上这个女声 放进专辑里私藏 夜电播音员',
+				srcMedia: 'music/爱上这个女声 放进专辑里私藏 夜电播音员.mp3',
+				cover: 'temp/201711281441_14.jpg'
+			}];
+			
+			// zplayer ('#zvideoPlayer', mediaSource);
+			
+	</script>
+<script>
+    // 简介
+    var comment = document.getElementById("zvideo-slide");
+	var commentShow = document.getElementById("zvideo-comment");
+	comment.addEventListener('touchstart', function() {
+		var flag = commentShow.getAttribute('flag');
+		if (flag === 'off' || flag === null) {
+			commentShow.style.display = 'block';
+			commentShow.setAttribute('flag', 'on');
+			comment.classList.add('zvideo-slideUp')
+		} else {
+			commentShow.style.display = 'none';
+			commentShow.setAttribute('flag', 'off');
+			comment.classList.remove('zvideo-slideUp')
+		}
+	});
+</script>
+<!--main end-->
+<script type="text/javascript">
+	var mynav = new Swiper('#zcai-swiper', {
+    	slidesPerView: 2.3
+    });
+    
+    var mynav = new Swiper('#zimgList', {
+    	slidesPerView: 1.4
+    });
+    
+    // 自定义触发机制,让以下代码执行
+    // mynav.prependSlide([
+        // '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>',
+        // '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>'
+    // ]);
+    
+    
+    var videoDir = new Swiper('#zvideoDir-js', {
+    	scrollbarHide: true,
+        slidesPerView: 'auto'
+    });
+    
+</script>
+<script type="text/javascript">
+	/**
+	 * 评论
+	 */
+	
+	var content = document.getElementById("zwantToSay-list")
+	var info = content.querySelectorAll('.zwantToSay-said');
+	var more_html = document.createElement('div');
+	more_html.className = 'zwantToSay-more';
+	
+	/**
+	 * @description 返回字符串文字长度
+	 * @param {String} 字符串文字
+	 */
+	function _getByteForUTF(s){
+		var enLen = 0, cnLen = 0, len = 0;
+		// 过虑英文字母
+		var a = s.replace(/[\u0000-\u007f]/g, "\u0061");
+		// 过虑英文符号
+		var b = a.replace(/[\u0080-\u07ff]/g, "\u0061\u0061");
+		cnLen = b.replace(/a/g,'').length, enLen = b.length - cnLen;
+		len = cnLen *2 +enLen;
+		return len;
+	}
+	
+	/**
+	 * @description 在refChild元素后插入newChild新元素
+	 * @param {ClassString} newChild
+	 * @param {ClassString} refChild
+	 */
+	function _insertAfter(newChild,refChild){
+		var parElem=refChild.parentNode;
+		if(parElem.lastChild==refChild){
+			refChild.appendChild(newChild);
+		}else{
+			parElem.insertBefore(newChild,refChild.nextSibling);
+		}
+	}
+	
+	info.forEach(function (item) {
+		if (_getByteForUTF(item.innerText.toString()) > 228) {
+			item.classList.add('zwantToSay-overflow');
+			_insertAfter(more_html.cloneNode(true), item);
+		}
+		var reply = item.querySelector('.zwantToSay-reply');
+		var reply_cur =item;
+		item.querySelectorAll('a').forEach(function (item) {
+			item.addEventListener('click', function(){
+ 				_insertAfter(reply, this.parentElement);
+ 				reply.classList.remove('zwantToSay-hide');
+ 				reply_cur.classList.remove('zwantToSay-overflow');
+ 				reply_cur.querySelector('textarea').setAttribute('placeholder', '回复' + this.innerText);
+			});
+		});
+		// 移动回复框
+		item.querySelector('p').addEventListener('click', function(){
+			_insertAfter(reply, this);
+			reply.classList.remove('zwantToSay-hide');
+			item.classList.remove('zwantToSay-overflow');
+			var name = item.previousElementSibling.querySelector('a').innerText;
+			item.querySelector('textarea').setAttribute('placeholder', '回复' + name)
+		});
+		// 收起展开
+		item.nextSibling.addEventListener('click', function () {
+			if (new RegExp(' zwantToSay-overflow ').test(' ' + item.className + ' ')) {
+				item.classList.remove('zwantToSay-overflow');
+			} else {
+				item.classList.add('zwantToSay-overflow');
+			}
+		});
+		// 取消回复框
+		item.querySelector('.zwantToSay-submit p').addEventListener('click', function () {
+			reply.classList.add('zwantToSay-hide');
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+代码介绍
+-----------------------------------------------------*/
+.zeffects { width:1000px; margin:0 auto; padding-top:50px; padding-bottom:50px; padding-left:20px; padding-right:20px; background-color:#fff;}
+
+.ze_box {}
+/*图标*/
+.wrapicons{width:620px;height:400px;margin:0 auto; padding-top:50px;}
+.wr_btnl ,.wr_btnr { padding-top:7px;}
+.wr_btnl a , .wr_btnr a { display:inline-block; width:39px; height:49px; }
+.wr_btnl a { background:url(../image/singleslide/hover_btn.gif) 0 -58px no-repeat;}
+.wr_btnl a:hover { background:url(../image/singleslide/hover_btn.gif) -54px -58px no-repeat;}
+.wr_btnr a { background:url(../image/singleslide/hover_btn.gif) 0px 0px no-repeat;}
+.wr_btnr a:hover { background:url(../image/singleslide/hover_btn.gif) -54px 0px no-repeat;}
+.wr_icon { position:relative; width:541px; height:400px; overflow:hidden;}
+.wr_box { position:absolute; left:0; width:3000px;}
+.wr_li { width:121px; text-align:right;}
+.Icon1 a {display:inline-block;width:64px;height:42px;background:url(../image/singleslide/icon.png) no-repeat -6px -10px;color:#ad78c3;font-size:14px;padding-top:22px;text-align:center}
+.Icon1 a:hover{background-position:-6px -102px; color:#fff;}
+.Icon2 a{background-position:-94px -9px;color:#f1b050}
+.Icon2 a:hover{background-position:-94px -102px;}
+.Icon3 a{background-position:-186px -10px;color:#1287b5}
+.Icon3 a:hover{background-position:-190px -102px;}
+.Icon4 a{height:52px;background-position:-277px -10px;color:#555555; vertical-align:middle;padding-top:12px;}
+.Icon4 a:hover{background-position:-287px -102px;}
+.wr_mark { padding-top:10px; text-align:right;}
+.wr_mark a { display:inline-block; width:58px; height:22px; border:1px #ccc solid; border-radius:3px; background-color:#fff; line-height:22px; text-align:center;}
+.wr_mark a:hover { background-color:#157efb; color:#fff;}
+

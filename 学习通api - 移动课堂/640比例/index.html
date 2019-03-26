@@ -1,0 +1,1613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>小模块</title>
+		<link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.css" />
+		<link type="text/css" rel="stylesheet" href="static/syntaxhighlighter/styles/shCoreEclipse.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<script src="static/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/bootstrap/tab.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/bootstrap/collapse.js" type="text/javascript" charset="utf-8"></script>
+		<script src="static/syntaxhighlighter/scripts/shCore.js"  type="text/javascript" ></script>
+		<script src="static/syntaxhighlighter/scripts/shBrushJScript.js" type="text/javascript"></script>
+		<script src="static/syntaxhighlighter/scripts/shBrushXml.js" type="text/javascript"></script>
+		<script src="static/syntaxhighlighter/scripts/shBrushCss.js" type="text/javascript"></script>
+		<script type="text/javascript">SyntaxHighlighter.all();</script>
+	</head>
+
+	<body>
+		<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#zmenu_fixed">
+		            <span class="sr-only">切换导航</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+				<a class="dib_vm pl20 pt5" href="#"><img src="images/fanya_logo.png" /></a>
+			</div>
+		</header>
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+					<aside class="col-md-3 col-sm-4" id="zmenu_width">
+						<nav class="collapse navbar-collapse" id="zmenu_fixed">
+							<h3 class="ztitleH zti_h f20 pl15">模块导航</h3>
+							<ul class="list-group" style="max-height:500px; overflow-y: auto;">
+								<li class="list-group-item"><a href="#css">样式表概述（css）</a></li>
+								<li class="list-group-item"><a href="#layout">整站布局（layout）</a></li>
+								<li class="list-group-item"><a href="#caption">模块标题（caption）</a></li>
+								<li class="list-group-item"><a href="#listGroup">列表组或对（listGroup）</a></li>
+								<li class="list-group-item"><a href="#button">按钮(button)</a></li>
+								<li class="list-group-item"><a href="#tab">标签页切换（tab）</a></li>
+								<li class="list-group-item"><a href="#lists">图文列表（lists）</a></li>
+								<li class="list-group-item"><a href="#upImage">上传图片（upImage）</a></li>
+								<li class="list-group-item"><a href="#photoType">头像类型（photoType）</a></li>
+								<li class="list-group-item"><a href="#nothing">内容为空(nothing)</a></li>
+								<li class="list-group-item"><a href="#alert">弹层(alert)</a></li>
+								<li class="list-group-item"><a href="#loading">加载中(loading)</a></li>
+								<li class="list-group-item"><a href="#checkType">模拟选项(checkType)</a></li>
+								<li class="list-group-item"><a href="#menuBottom">底部菜单(menuBottom)</a></li>
+								<li class="list-group-item"><a href="#pushDown">下拉刷新(pushDown)</a></li>
+								<!--<li class="list-group-item"><a href="#">发放对象(obj)</a></li>
+								<li class="list-group-item"><a href="#">教案列表(teachingPlan)</a></li>
+								<li class="list-group-item"><a href="#">课件列表(inputTextarea)</a></li>
+								<li class="list-group-item"><a href="#">课堂记录(inputTextarea)</a></li>
+								<li class="list-group-item"><a href="#">任务列表(taskList)</a></li>
+								<li class="list-group-item"><a href="#">统计(statistics)</a></li>-->
+							</ul>
+						</nav>
+					</aside>
+					<article class="col-md-9 col-sm-8">
+						<section class="panel panel-default" id="css">
+							<header class="panel-heading"><h3 class="panel-title">样式表概述（css）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">本页面用的单位是<code>rem</code>比例缩放javascript 是 <code>ratio.js</code>且必须引用的js<br />
+								<code>ratio.js</code>必须依赖于jquery库，版本是 1.9.0 </h2>
+								<p class="text-capitalize">配色：</p>
+								<h2 class="lead">
+									主色：<code>#09f</code>
+									页面背景色：<code>#f1f2f3</code>
+									字体常规色：<code>#000</code> <code>#333</code> <code>#666</code>
+									灰色字：<code>#929292</code>
+									边框色：<code>#dedede</code>
+								</h2>
+								<p class="text-capitalize">字体大小：</p>
+								<h2 class="lead">
+									常规字号：<code>1rem 1.2rem</code>
+									标题字号：<code>1.3rem</code> <code>1.4rem</code>
+								</h2>
+							</div>
+						</section>
+						<section class="panel panel-default" id="layout">
+							<header class="panel-heading"><h3 class="panel-title">整站布局（layout）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">默认标题CSS：</h2>
+								<pre class="brush:css;">
+									.zbox { display: -webkit-box; -webkit-box-orient: vertical;  height: 100vh;}
+									.zbox_top { position: relative; width: 100%; height: 0.01rem; z-index:100000;}
+									.zbox_content { -webkit-box-flex: 1;  -webkit-overflow-scrolling:touch; overflow:hidden; overflow-y:auto; }
+									.zbox_footer { position: relative; width: 100%;  height: 4.6rem; z-index: 100;}
+									.zbox_bottom { height: 0.01rem;}
+								</pre>
+								<h2 class="lead">html页面大布局：</h2>
+								<pre class="brush:html;">
+									<div class="zbox">
+										<div class="zbox_top">
+											顶部放默认隐藏元素
+										</div>
+										<div class="zbox_content">
+											页面正文
+										</div>
+										<div class="zbox_bottom">
+											底部放默认隐藏元素，例如页面打开时默认不显示的按钮和菜单等
+										</div>
+										<div class="zbox_footer">
+											始终在最底部内容（height:4.6rem）
+										</div>
+									</div>								
+								</pre>
+								<h2 class="lead">如果按钮始终放在最底部：</h2>
+								<pre class="brush:html;">
+									<div class="zbox">
+										<div class="zbox_content">
+											正文
+										</div>
+										<div class="zre_top">
+											<div class="zre_go">
+												<a href="#">发放</a>
+											</div>
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/layout/20170222145735.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="caption">
+							<header class="panel-heading"><h3 class="panel-title">模块标题（caption）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">默认标题CSS：</h2>
+								<pre class="brush:css;">
+									/*标题*/
+									.zht { padding: 0 1.2rem; /*background: #efefef;去掉原因：影响投票类型*/ line-height: 3.75rem; font-size: 1.4rem; color: #666;}
+									.zht2 { line-height: 2.5rem; padding: 0rem 1.2rem; font-size: 1.4rem; color: #666;}
+								</pre>
+								<h2 class="lead">默认标题html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zht">标题行高为3.75rem</h2>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/caption/20170222152903.png"/>
+								</div>
+								<h2 class="lead">添加一个图标：</h2>
+								<pre class="brush:html;">
+									<h2 class="zht2">标题行高为2.5rem</h2>									
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/caption/20170222152849.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="listGroup">
+							<header class="panel-heading"><h3 class="panel-title">列表组或对（listGroup）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">用于设置的列表组CSS：</h2>
+								<pre class="brush:css;">
+									/*----------------------------------------------------
+									list列表对
+									-----------------------------------------------------*/
+									.zlist_group { margin-top: 1rem; border-top: 1px #dedede solid; border-bottom: 1px #dedede solid; background: #fff; font-size: 1.35rem;}
+									/*.zuser_link { display: block; margin: 0 1.2rem; padding: 0 1rem; border-bottom: 1px #dedede solid; background: url(../images/icon5.png) right center no-repeat; background-size: 1.2rem; line-height: 3.75rem; color: #333;}*/
+									.zlist_field { display: -webkit-box; -webkit-box-pack: justify; margin: 0 1.2rem; padding: 0 1rem; border-bottom: 1px #dedede solid; line-height: 3.75rem;}
+									.zlist_field dt { color: #333;}
+									.zlist_field dd { color: #929292; text-align: right;}
+									.zlist_zompany { -webkit-box-flex:1; display: -webkit-box; height: 3.75rem;}
+									.zlist_zompany p { width: 4rem; height: 2.5rem; margin-top: 0.5rem; border:1px #09f solid; border-radius: 0.4rem; background: #09f; line-height: 2.5rem; text-align: center; color: #fff; font-size: 1.4rem;}
+									.zlist_ptop { padding-top: 0.8rem;}
+									.zlist_field:last-child { border-bottom: none;}
+									.zlist_flex { -webkit-box-flex:1; display: -webkit-box; -webkit-box-orient:vertical; -webkit-box-pack:center;}
+									.zlist_flex input { width: 100%; border: none; background: none; font-size: 1.35rem;}
+									.zlist_space { padding-left: 1rem;}
+								</pre>
+								<h2 class="lead">用于设置的列表组html：</h2>
+								<pre class="brush:html;">
+									<div class="zlist_group">
+										<dl class="zlist_field">
+											<dt>真实姓名：</dt>
+											<dd class="zlist_flex"><input type="text" name="" id="" value=""placeholder="请填写您的真实姓名" /></dd>
+										</dl>
+										<dl class="zlist_field">
+											<dt>身份证号：</dt>
+											<dd class="zlist_flex"><input type="text" name="" id="" value="" placeholder="请填写您的身份证号" /></dd>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/listGroup/20170224162923887.jpg"/>
+								</div>
+								<p class="text-capitalize">展示列表对html</p>
+								<h2 class="lead">html</h2>
+								<pre class="brush:html;">
+									<div class="zlist_group">
+										<dl class="zlist_field">
+											<dt>真实姓名：</dt>
+											<dd class="zlist_flex">姚阳</dd>
+										</dl>
+										<dl class="zlist_field">
+											<dt>身份类型：</dt>
+											<dd class="zlist_flex">身份证</dd>
+										</dl>
+										<dl class="zlist_field">
+											<dt>身份证号：</dt>
+											<dd class="zlist_flex">130**********2X</dd>
+										</dl>
+									</div>									
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/listGroup/20170224162740799.jpg"/>
+								</div>
+								<h2 class="lead">可用于标题html：</h2>
+								<pre class="brush:html;">
+									<dl class="zlist_field">
+										<dt>身份证号：</dt>
+									</dl>									
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/listGroup/20170222154438.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="button">
+							<header class="panel-heading"><h3 class="panel-title">按钮（button）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">按钮样式css：</h2>
+								<pre class="brush:css;">
+									/*按钮*/
+									.zre_top { padding: 3.4rem 0; text-align: center;}
+									.zre_btn { text-align: center;}
+									.zre_bottom { padding: 1.5rem 0; text-align: center;}
+									.zbtn_middle { display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+									.zbtn_double { display: -webkit-box; -webkit-box-pack: center;}
+									.zre_go ,.zre_end,.zre_hollow { text-align: center;}
+									.zre_go a,.zre_end a,.zre_end span,.zre_hollow a { display:inline-block; width: 50%; height: 3.75rem; padding-top: 0.05rem; border:1px #09f solid; border-radius: 0.5rem; background: #09f; line-height: 3.7rem; text-align: center; color: #fff; font-size: 1.5rem;}
+									.zre_end a,.zre_end span { border:1px #c4c4c4 solid; background: #c4c4c4; color: #fff;}
+									.zre_hollow a { border:1px #09f solid; background: transparent; color: #09f;}
+									.zre_go a:hover,.zre_go a:focus,.zre_go a:active { text-decoration: none; color: #fff;}
+									.zre_end a:hover,.zre_end a:focus,.zre_end a:active { text-decoration: none; color:#a4a4a4;}
+									.zbtn_double .zre_go ,.zbtn_double .zre_end ,.zbtn_double .zre_end ,.zbtn_double .zre_hollow { width: 40%;}
+									.zbtn_double .zre_go a,.zbtn_double .zre_end a,.zbtn_double .zre_end span,.zbtn_double .zre_hollow a { width: 80%;}									
+								</pre>
+								<h2 class="lead">不带边距按钮：</h2>
+								<pre class="brush:html;">
+									<p class="zre_go"><a href="#">发放</a></p>									
+								</pre>
+								<h2 class="lead">不带边距按钮：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/button/20170222143615.png"/>
+								</div>
+								<h2 class="lead">带边距按钮：<br />可把自定义边距写在标签内style内，如果把按钮放在最底部，请参考页面大布局</h2>
+								<pre class="brush:html;">
+									<div class="zre_top">
+										<p class="zre_go"><a href="#">发放</a></p>
+									</div>							
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/button/20170222143818.png"/>
+								</div>
+								<p class="text-capitalize">IOS滑块按钮SwitchButton CSS：<code>common.css</code></p>
+								<h2 class="lead">css</h2>
+								<pre class="brush:css;">
+									/*-----------------------------------------------------
+									switch
+									-----------------------------------------------------*/
+									/*开关与文字注解*/
+									.zswitch_set { display: -webkit-box; -webkit-box-pack: justify; padding: 1.2rem;}
+									.zswitch_set dt { font-size: 1.4rem; color: #333;}
+									.zswitch_set dd {}
+									
+									.mui-switch {
+										width: 3.6rem;
+										height: 2.1rem;
+										position: relative;
+										border: 1px solid #dfdfdf;
+										background-color: #fdfdfd;
+										box-shadow: #dfdfdf 0 0 0 0 inset;
+										border-radius: 1rem;
+										border-top-left-radius: 1rem;
+										border-top-right-radius: 1rem;
+										border-bottom-left-radius: 1rem;
+										border-bottom-right-radius: 1rem;
+										background-clip: content-box;
+										display: inline-block;
+										-webkit-appearance: none;
+										user-select: none;
+										outline: none; 
+									}
+									.mui-switch:before {
+										content: '';
+									  width: 1.9rem;
+									  height: 1.9rem;
+									  position: absolute;
+									  top: 0px;
+									  left: 0;
+									  border-radius: 1rem;
+									  border-top-left-radius: 1rem;
+									  border-top-right-radius: 1rem;
+									  border-bottom-left-radius: 1rem;
+									  border-bottom-right-radius: 1rem;
+									  background-color: #fff;
+									  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+									.mui-switch:checked {
+									  border-color: #09f;
+									  box-shadow: #09f 0 0 0 16px inset;
+									  background-color: #09f; }
+									.mui-switch:checked:before {
+									  left: 1.6rem; }
+									.mui-switch.mui-switch-animbg {
+									    transition: background-color ease 0.4s; }
+									.mui-switch.mui-switch-animbg:before {
+									      transition: left 0.3s; }
+									.mui-switch.mui-switch-animbg:checked {
+									      box-shadow: #dfdfdf 0 0 0 0 inset;
+									      background-color: #09f;
+									      transition: border-color 0.4s, background-color ease 0.4s; }
+									.mui-switch.mui-switch-animbg:checked:before {
+									        transition: left 0.3s; }
+									.mui-switch.mui-switch-anim {
+									    transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+									.mui-switch.mui-switch-anim:before {
+									      transition: left 0.3s; }
+									.mui-switch.mui-switch-anim:checked {
+									      box-shadow: #09f 0 0 0 16px inset;
+									      background-color: #09f;
+									      transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+									.mui-switch.mui-switch-anim:checked:before {
+									        transition: left 0.3s; }
+								</pre>
+								<h2 class="lead">html</h2>
+								<pre class="brush:html;">
+									<dl class="zswitch_set">
+										<dt>允许学生查看统计</dt>
+										<dd><label><input class="mui-switch mui-switch-animbg" type="checkbox" checked=""></label></dd>
+									</dl>							
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/button/20170224173146979.jpg"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="tab">
+							<header class="panel-heading"><h3 class="panel-title">标签页切换（tab）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">按钮式标签切换css：</h2>
+								<pre class="brush:css;">
+									/*按钮式tab切换*/
+									.zheader { display: -webkit-box; -webkit-box-align: center; -webkit-box-orient: vertical; -webkit-box-pack: center; height: 4rem;}
+									.ztab { display: -webkit-box; -webkit-box-align: center; width: 80%; height: 2.5rem; border: 1px #09f solid; border-radius: 0.4rem;}
+									.ztab li { -webkit-box-flex: 1; height: 2.5rem; border-right: 1px #09f solid; line-height: 2.5rem; text-align: center; font-size: 1.4rem; color: #09f;}
+									.ztab li:last-child { border-right: none;}
+									.ztab li.ztab_cur { background: #09f; color: #fff;}									
+								</pre>
+								<h2 class="lead">html：</h2>
+								<pre class="brush:html;">
+									<div class="zheader">
+										<ul class="ztab">
+											<li class="ztab_cur">已评：1人</li>
+											<li>未评：3人</li>
+										</ul>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/tab/20170222155544.png"/>
+								</div>
+								<p class="text-capitalize">标题式标签切换</p>
+								<h2 class="lead">css：</h2>
+								<pre class="brush:css;">
+									/*标题式tab切换*/
+									.zheader1 { display: -webkit-box; -webkit-box-align: center; -webkit-box-orient: vertical; -webkit-box-pack: center; height: 4rem; padding: 0 1.2rem;}
+									.ztabList { display: -webkit-box; -webkit-box-align: center; width:100%; height: 3rem; }
+									.ztabList li { -webkit-box-flex: 1; height: 3rem; border-bottom: 1px #dedede solid; line-height: 3rem; text-align: center; font-size: 1.4rem; color: #333;}
+									.ztabList li:last-child { border-right: none;}
+									.ztabList li.ztabList_cur { border-bottom: 1px #09f solid; color: #09f;}								
+								</pre>
+								<h2 class="lead">html：</h2>
+								<pre class="brush:html;">
+									<div class="zheader1">
+										<ul class="ztabList">
+											<li class="ztabList_cur">未批：3</li>
+											<li>已批：18</li>
+										</ul>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/tab/20170224190115603.jpg"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="lists">
+							<header class="panel-heading"><h3 class="panel-title">图文列表（lists）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>portrait.css</code></p>
+								<h2 class="lead">图文列表html：</h2>
+								<pre class="brush:html;">
+									<div class="zstudentList">
+										<dl class="zpo_row zpo_rowList">
+											<dd class="zpo_pic"><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>投票：正确</h2>
+												</div>
+											</dt>
+										</dl>
+										<dl class="zpo_row zpo_rowList">
+											<dd class="zpo_pic"><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>投票：正确</h2>
+												</div>
+											</dt>
+										</dl>
+									</div>					
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/lists/20170222160633.png"/>
+								</div>
+								<p class="text-capitalize">评论列表：本功能属于表<code>score.css</code></p>
+								<h2 class="lead">html</h2>
+								<pre class="brush:html;">
+									<div class="zscore">
+										<div class="zscore_row">
+											<dl class="zscore_info">
+												<dd class="zscore_pic"><img src="#" /></dd>
+												<dt class="zscore_txt">
+													<div class="zscore_th">
+														<h2>柳辰飞</h2>
+														<p>评分：<span class="zscore_red">95</span>分</p>
+													</div>
+												</dt>
+											</dl>
+											<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！努力！很好继续，努力！很好继续，努力！很好继续，努力！</p>
+										</div>
+										<div class="zscore_row">
+											<dl class="zscore_info">
+												<dd class="zscore_pic"><img src="#" /></dd>
+												<dt class="zscore_txt">
+													<div class="zscore_th">
+														<h2>柳辰飞</h2>
+														<p>评分：<span class="zscore_red">95</span>分</p>
+													</div>
+												</dt>
+											</dl>
+											<p class="zscore_evaluate"><span>评语：</span>很好继续，努力！</p>
+										</div>
+									</div>					
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/lists/20170222160852.png"/>
+								</div>
+								<h2 class="lead">图文列表2：本功能属于表<code>livelist.css</code></h2>
+								<pre class="brush:html;">
+									<div class="zlivelist">
+										<ul class="zlivelist_item zlivelist_ing">
+											<li class="zlivelist_pic"><img src="#"/></li>
+											<li class="zlivelist_info">
+												<dl class="zlivelist_title">
+													<dt>大学生心理健康 大课直播</dt>
+													<dd>李子勋 2016-12-11 9：30</dd>
+												</dl>
+												<!--<p class="zlivelist_status">正在直播</p>-->
+												<p class="zlivelist_status"><a href="#">正在直播</a></p>
+											</li>
+										</ul>
+										<ul class="zlivelist_item">
+											<li class="zlivelist_pic"><img src="#"/></li>
+											<li class="zlivelist_info">
+												<dl class="zlivelist_title">
+													<dt>大学生心理健康大学生心理健康大学生心理健康 大课直播</dt>
+													<dd>李子勋 2016-12-11 9：30</dd>
+												</dl>
+												<p class="zlivelist_status"><a href="#">提醒</a></p>
+											</li>
+										</ul>
+									</div>					
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/lists/20170222161229.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="upImage">
+							<header class="panel-heading"><h3 class="panel-title">上传图片（upImage）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>imgUpLoad.css</code></p>
+								<h2 class="lead">单行可输入文本html：</h2>
+								<pre class="brush:css;">
+									<div class="zsh_input">
+										<div class="zsh_tt">
+											标题：
+										</div>
+										<div class="zsh_typeText">
+											<input type="text" name="" value="" />
+										</div>
+										<div class="zcameraBtn">
+											<span></span>
+										</div>
+									</div>
+									<div class="zsh_img">
+										<dl class="zsh_imgList">
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+										</dl>
+									</div>									
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/upImage/20170222162844.png"/>
+								</div>
+								<p class="text-capitalize">多行可输入文本</p>
+								<h2 class="lead">html：</h2>
+								<pre class="brush:html;">
+									<div class="zsh_textarea">
+										<div class="zsh_site"><i class="zsh_zgray">标题：</i></div>
+										<div class="zsh_contenteditable">
+											<textarea name="" rows="" cols=""></textarea>
+										</div>
+										<div class="zcameraBtn"><span></span></div>
+									</div>
+									<div class="zsh_img">
+										<dl class="zsh_imgList">
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+										</dl>
+									</div>				
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/upImage/20170222163127.png"/>
+								</div>
+								<p class="text-capitalize">单行不带标题两字输入框</p>
+								<h2 class="lead">单行不带标题两字输入框：</h2>
+								<pre class="brush:html;">
+									<div class="zsh_input">
+										<div class="zsh_typeText">
+											<input type="text" name="" id="zsh_typeText" value="" />
+										</div>
+										<div class="zcameraBtn">
+											<span></span>
+										</div>
+									</div>
+									<div class="zsh_img">
+										<dl class="zsh_imgList">
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+										</dl>
+									</div>				
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/upImage/20170222164152.png"/>
+								</div>
+								<p class="text-capitalize">多行不带标题两字输入框</p>
+								<h2 class="lead">多行不带标题两字输入框：</h2>
+								<pre class="brush:html;">
+									<div class="zsh_textarea">
+										<div class="zsh_contenteditable1">
+											<textarea name="" rows="" cols=""></textarea>
+										</div>
+										<div class="zcameraBtn"><span></span></div>
+									</div>
+									<div class="zsh_img">
+										<dl class="zsh_imgList">
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+											<dd class="zsh_rel"><img src="#" /><span class="zsh_close"></span></dd>
+										</dl>
+									</div>				
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/upImage/20170222164259.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="photoType">
+							<header class="panel-heading"><h3 class="panel-title">头像类型（photoType）</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>portrait.css</code></p>
+								<h2 class="lead">不带文字头像（1X）：</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row">
+											<dd class="zpo_pic"><img src="#" /></dd>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222164800.png"/>
+								</div>
+								<h2 class="lead">不带文字头像（2X）：仅有样式名zpo_row_2x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row_2x">
+											<dd class="zpo_pic"><img src="#" /></dd>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170059.png"/>
+								</div>
+								<h2 class="lead">不带文字头像（3X）：仅有样式名zpo_row_3x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row_3x">
+											<dd class="zpo_pic"><img src="#" /></dd>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170147.png"/>
+								</div>
+								<h2 class="lead">带文字头像——竖（1X）：</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<div class="zphoto">
+											<dl class="zph_info">
+												<dt class="zph_pic"><span><em></em></span><img src="#" /></dt>
+												<dd class="zph_name">张中乐</dd>
+												<dd class="zph_p">zhongle@chaoxing.com</dd>
+											</dl>
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222164821.png"/>
+								</div>
+								<h2 class="lead">带文字头像——竖（2X）：仅有样式名zphoto_2x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<div class="zphoto_2x">
+											<dl class="zph_info">
+												<dt class="zph_pic"><span><em></em></span><img src="#" /></dt>
+												<dd class="zph_name">张中乐</dd>
+												<dd class="zph_p">zhongle@chaoxing.com</dd>
+											</dl>
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170117.png"/>
+								</div>
+								<h2 class="lead">带文字头像——竖（3X）：仅有样式名zphoto_3x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<div class="zphoto_3x">
+											<dl class="zph_info">
+												<dt class="zph_pic"><span><em></em></span><img src="#" /></dt>
+												<dd class="zph_name">张中乐</dd>
+												<dd class="zph_p">zhongle@chaoxing.com</dd>
+											</dl>
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170208.png"/>
+								</div>
+								<h2 class="lead">带文字头像——列（1X）：</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row zpo_rowList">
+											<dd class="zre_num">1</dd>
+											<dd class="zpo_pic"><span><em></em></span><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p class="zpo_red">北京</p>
+												</div>
+											</dt>
+										</dl>
+										<dl class="zpo_row zpo_rowList">
+											<dd class="zre_num">2</dd>
+											<dd class="zpo_pic"><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p>北京</p>
+												</div>
+											</dt>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222164839.png"/>
+								</div>
+								<h2 class="lead">带文字头像——列（2X）：仅有样式名zpo_row_2x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row_2x zpo_rowList">
+											<dd class="zre_num">1</dd>
+											<dd class="zpo_pic"><span><em></em></span><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p class="zpo_red">北京</p>
+												</div>
+											</dt>
+										</dl>
+										<dl class="zpo_row_2x zpo_rowList">
+											<dd class="zre_num">2</dd>
+											<dd class="zpo_pic"><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p>北京</p>
+												</div>
+											</dt>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170131.png"/>
+								</div>
+								<h2 class="lead">带文字头像——列（3X）：仅有样式名zpo_row_3x改变</h2>
+								<pre class="brush:html;">
+									<div class="zportrait">
+										<dl class="zpo_row_3x zpo_rowList">
+											<dd class="zre_num">1</dd>
+											<dd class="zpo_pic"><span><em></em></span><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p class="zpo_red">北京</p>
+												</div>
+											</dt>
+										</dl>
+										<dl class="zpo_row_3x zpo_rowList">
+											<dd class="zre_num">2</dd>
+											<dd class="zpo_pic"><img src="#" /></dd>
+											<dt class="zpo_txt">
+												<div class="zpo_th">
+													<a href="#">柳辰飞</a>
+													<p class="zpo_t">学号:1958545</p>
+												</div>
+												<div class="zpo_time">
+													<h2>06'25"</h2>
+													<p>北京</p>
+												</div>
+											</dt>
+										</dl>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/photoType/20170222170221.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="nothing">
+							<header class="panel-heading"><h3 class="panel-title">内容为空(nothing)</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">按钮样式：</h2>
+								<pre class="brush:css;">
+									/*----------------------------------------------------
+									空
+									-----------------------------------------------------*/
+									.znothing { padding-top: 8rem; }
+									.znothing_topics,
+									.znothing_icon { width: 4.8rem; min-height: 6.25rem; margin: 0 auto; background: center no-repeat; background-size: 3.5rem;}
+									/*.znothing_topics { background-image: url(../images/ztopics_03.png);}*/
+									.znothing_txt { padding-top: 1rem; line-height: 2rem; font-weight: normal; text-align: center; font-size: 1.4rem; color: #929292;}
+									.znothing_bottom { position: fixed; bottom: 4rem; width: 100%;}								
+								</pre>
+								<h2 class="lead">内容为空：</h2>
+								<pre class="brush:html;">
+									<div class="znothing">
+										<div class="znothing_txt">没有内容</div>
+									</div>					
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/nothing/20170223095040.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="alert">
+							<header class="panel-heading"><h3 class="panel-title">弹层(alert)</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>alert.css</code></p>
+								<h2 class="lead">弹窗html</h2>
+								<pre class="brush:html;">
+									<!--alert start-->
+									<article class="zalert" style="display: block;"></article>
+									<article class="zal_box" style="display: block;">
+										<div class="zal_content">
+											<div class="zal_txt">
+												您还没有设置密码，是否现在设置？
+											</div>
+										</div>
+										<div class="zal_btn">
+											<ul>
+												<li class="zal_bt">暂不设置</li>
+												<li class="zal_bt">继续</li>
+											</ul>
+										</div>
+									</article>
+									<!--alert end-->					
+								</pre>
+								<h2 class="lead">弹层js</h2>
+								<pre class="brush:js;">
+									$(".zal_box").css('marginTop','-'+$(".zal_box").height()/2*0.05-4+'rem');			
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/alert/20170223170149.png"/>
+								</div>
+								<p class="text-capitalize">黑框提示性弹窗</p>
+								<h2 class="lead">黑框提示性弹窗html</h2>
+								<pre class="brush:html;">
+									<article class="zal_bg">
+										<span>邮箱格式不正确</span>
+									</article>				
+								</pre>
+								<h2 class="lead">黑框提示性弹层js</h2>
+								<pre class="brush:js;">
+									function tep(ele,n){
+										if(zc) clearInterval(zc);
+										var js=n;
+										$(ele).removeClass("zend").addClass("zstart");
+										var zc=setInterval(function(){
+											if(js<=0){
+												$(ele).removeClass('zstart').addClass("zend");
+												clearInterval(zc);
+											}
+											js--;
+										},1000);
+									}
+									
+									$("#danwei").blur(function(){
+										tep(".zal_bg",1);
+									});			
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/alert/20170224172320639.jpg"/>
+								</div>
+								<p class="text-capitalize">底部弹窗 必须引样式表<code>zobj.css</code> 和js <code>zobj.js</code></p>
+								<h2 class="lead">底部弹窗html</h2>
+								<pre class="brush:html;">
+									<div class="zbox">
+										<div class="zbox_content">
+											<div class="zre_top">
+												<p class="zre_go"><a id="zobject_show" href="#">发放</a></p>
+											</div>
+										</div>
+										<div class="zbox_bottom">
+											<div class="zopacity" id="zopacity"></div>
+											<!--选择班级 start-->
+											<div class="zobject_site animated" id="zobject_list">
+												<div class="zobject">
+													<div class="zobject_header">
+														<div>选择班级</div>
+														<p><em id="zobject_cancel">取消</em></p>
+													</div>
+													<div class="">
+														这里都可以自定义
+													</div>
+													<div class="zobject_btn">
+														<p class="zre_go"><a href="#">确定</a></p>
+													</div>
+												</div>
+											</div>
+											<!--选择班级 end-->
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">底部弹窗js</h2>
+								<pre class="brush:js;">
+									//弹出
+									$("#zobject_show").click(function() {
+										scoreList("#zobject_list","#zopacity");
+									});
+									
+									//关闭
+									$("#zobject_cancel").click(function() {
+										closelayer("#zobject_list","#zopacity");
+									});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/alert/20170224165202452.jpg"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="loading">
+							<header class="panel-heading"><h3 class="panel-title">加载中(loading)</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能样式属于表<code>common.css</code></p>
+								<h2 class="lead">查看更多CSS：</h2>
+								<pre class="brush:css;">
+									/*-----------------------------------------------------
+									loading
+									-----------------------------------------------------*/
+									.zloadingMore { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center; text-align: center; margin-top: 2rem;}
+									.zloadingMore .load_btn { color: #929292; font-size: 1rem;}
+									.zloadingMore .load_btn a { line-height: 2rem; color: #929292;}
+									.zloadingMore .load_text { margin-left: 0.5em;}
+									.zloadingMore .loading {
+									  margin: 0.2em;
+									  font-size: 10px;
+									  border-top: 0.2em solid rgba(0, 0, 0, 0.3);
+									  border-right: 0.2em solid rgba(0, 0, 0, 0.3);
+									  border-bottom: 0.2em solid rgba(0, 0, 0, 0.3);
+									  border-left: 0.2em solid #000;
+									  -webkit-animation: ccircle 1.1s infinite linear;
+									  animation: ccircle 1.1s infinite linear;
+									}								
+								</pre>
+								<h2 class="lead">查看更多html：</h2>
+								<pre class="brush:html;">
+									<div class="zloadingMore">
+										<p class="load_btn"><a href="#">查看更多</a></p>
+									</div>							
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/loading/20170223170939.png"/>
+								</div>
+								<h2 class="lead">数据加载中html：</h2>
+								<pre class="brush:html;">
+									<div class="zloadingMore">
+										<p class="loading"></p><p class="load_text">数据加载中</p>
+									</div>							
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/loading/20170223171420.png"/>
+								</div>
+								<h2 class="lead">没有数据了html：</h2>
+								<pre class="brush:html;">
+									<div class="zloadingMore">
+										<p class="load_btn">到底了</p>
+									</div>
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/loading/20170223171400.png"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="checkType">
+							<header class="panel-heading"><h3 class="panel-title">模拟选项(checkType)</h3></header>
+							<div class="panel-body">
+								<p class="text-capitalize">本功能主要样式表必选<code>checkAndRadio.css</code>	可选辅助样式表<code>topics.css</code> 必选JS <code>checkAndRadio.js</code></p>
+								<p class="text-danger">特别注意：每一项id必须不重复且label的for属性与之input的id属性一一对应</p>
+								<h2 class="lead">一般单选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">一般单选：（选中属性checked="checked"）默认无此属性，即未选中状态）</h2>
+									<div class="zselectTopic">
+										<ul class="zse_row zse_bg">
+											<li class="zse_con">
+												<div class="zcheckR">
+													<input type="radio" name="classname000" checked="checked" id="classId001" value="" />
+													<label for="classId001"><em class="zcheck"><i></i></em><span>A:对象自身用处不， 对象，就可以更好地理解其他对</span></label>
+												</div>
+											</li>
+										</ul>
+										<ul class="zse_row ">
+											<li class="zse_con">
+												<div class="zcheckR">
+													<input type="radio" name="classname000" id="classId002" value="" />
+													<label for="classId002"><em class="zcheck"><i></i></em><span>B:第二小组</span></label>
+												</div>
+											</li>
+										</ul>
+										<ul class="zse_row">
+											<li class="zse_con">
+												<div class="zcheckR">
+													<input type="radio" name="classname000" id="classId003" value="" />
+													<label for="classId003"><em class="zcheck"><i></i></em><span>C:小组</span></label>
+												</div>
+											</li>
+										</ul>
+									</div>					
+								</pre>
+								<h2 class="lead">一般单选调用js</h2>
+								<pre class="brush:js;">
+									// inputType:'radio' 单选还是多选标志
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选
+									// 仅限每页只有一组时可用，如果想一页出现多组请参考多组单选
+									$(".zselectTopic").checkAndRadio({inputType:'radio',defaultT:'.zse_row'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224133721607.jpg"/>
+								</div>
+								<h2 class="lead">一般多选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">一般多选：（选中属性checked="checked"）默认无此属性，即未选中状态）</h2>
+									<div class="zselectTopic">
+										<ul class="zse_row zse_bg">
+											<li class="zse_con">
+												<div class="zcheckB">
+													<input type="checkbox" name="" checked="checked" id="classId001" value="" />
+													<label for="classId001"><em class="zcheck"><i></i></em><span>A:第一小组</span></label>
+												</div>
+											</li>
+										</ul>
+										<ul class="zse_row">
+											<li class="zse_con">
+												<div class="zcheckB">
+													<input type="checkbox" name="" id="classId002" value="" />
+													<label for="classId002"><em class="zcheck"><i></i></em><span>B:吃饭组</span></label>
+												</div>
+											</li>
+										</ul>
+										<ul class="zse_row">
+											<li class="zse_con">
+												<div class="zcheckB">
+													<input type="checkbox" name="" id="classId003" value="" />
+													<label for="classId003"><em class="zcheck"><i></i></em><span>C:饭桶组</span></label>
+												</div>
+											</li>
+										</ul>
+									</div>				
+								</pre>
+								<h2 class="lead">一般多选调用JS：<br />
+								// inputType:'radio' 单选还是多选标志<br />
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选<br />
+									// 仅限每页只有一组时可用，如果想一页出现多组请参考多组多选</h2>
+								<pre class="brush:js;">
+									$(".zselectTopic").checkAndRadio({inputType:'radio',defaultT:'.zse_row'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224133758486.jpg"/>
+								</div>
+								<h2 class="lead">多组单选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">多组单选html：（选中属性checked="checked"）默认无此属性，即未选中状态</h2>
+									<div class="" id="group">
+										<h2 class="zse_t">group单选1：</h2>
+										<div class="zselectTopic">
+											<ul class="zse_row zse_bg">
+												<li class="zse_con">
+													<div class="zcheckR">
+														<input type="radio" name="classname000" checked="checked" id="classId101" value="" />
+														<label for="classId101"><em class="zcheck"><i></i></em><span>A:对象自身用处不大，不过在了解其他类之前，还是应该了解它。</span></label>
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row ">
+												<li class="zse_con">
+													<div class="zcheckR">
+														<input type="radio" name="classname000" id="classId102" value="" />
+														<label for="classId102"><em class="zcheck"><i></i></em><span>B:第二小组</span></label>
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckR">
+														<input type="radio" name="classname000" id="classId103" value="" />
+														<label for="classId103"><em class="zcheck"><i></i></em><span>C:小组</span></label>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<h2 class="zse_t">group单选2：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+										<h2 class="zse_t">group单选3：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+									</div>			
+								</pre>
+								<h2 class="lead">多组单选js:<br />
+									// $("#group") 是范围限定id<br />
+									// inputType:'radio' 单选还是多选标志<br />
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选<br />
+									// checkGroup:'.zselectTopic' 每一组单选的组名class名<br />
+								</h2>
+								<pre class="brush:js;">
+									$("#group").checkAndRadio({inputType:'radio',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224141055145.jpg"/>
+								</div>
+								<h2 class="lead">多组多选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">多组多选html：（选中属性checked="checked"）默认无此属性，即未选中状态</h2>
+									<div class="" id="group">
+										<h2 class="zse_t">group多选1：</h2>
+										<div class="zselectTopic">
+											<ul class="zse_row zse_bg">
+												<li class="zse_con">
+													<div class="zcheckB">
+														<input type="checkbox" name="" checked="checked" id="classId401" value="" />
+														<label for="classId401"><em class="zcheck"><i></i></em><span>A:第一小组</span></label>
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckB">
+														<input type="checkbox" name="" id="classId402" value="" />
+														<label for="classId402"><em class="zcheck"><i></i></em><span>B:吃饭组</span></label>
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckB">
+														<input type="checkbox" name="" id="classId403" value="" />
+														<label for="classId403"><em class="zcheck"><i></i></em><span>C:饭桶组</span></label>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<h2 class="zse_t">group多选2：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+									</div>			
+								</pre>
+								<h2 class="lead">多组多选js:<br />
+									// $("#group") 是范围限定id<br />
+									// inputType:'checkbox' 单选还是多选标志<br />
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选<br />
+									// checkGroup:'.zselectTopic' 每一组多选的组名class名<br />
+								</h2>
+								<pre class="brush:js;">
+									$("#group").checkAndRadio({inputType:'checkbox',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224141816509.jpg"/>
+								</div>
+								<h2 class="lead">group多选型单选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">group多选型单选html：（选中属性checked="checked"）默认无此属性，即未选中状态</h2>
+									<div class="" id="group">
+										<h2 class="zse_t">group多选型单选1：</h2>
+										<div class="zselectTopic">
+											<ul class="zse_row zse_bg">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="checkbox" name="" checked="checked" id="classId211" value="" />
+														<label for="classId211"><em class="zcheck"><i></i></em><span>A:第一小组</span></label>
+														<input type="text" name="" id="" value="" placeholder="" />
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="checkbox" name="" id="classId212" value="" />
+														<label for="classId212"><em class="zcheck"><i></i></em><span>B:吃饭组</span></label>
+														<input type="text" name="" id="" value="" placeholder="" />
+													</div>
+												</li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="checkbox" name="" id="classId213" value="" />
+														<label for="classId213"><em class="zcheck"><i></i></em><span>C:饭桶组</span></label>
+														<input type="text" name="" id="" value="" placeholder="" />
+													</div>
+												</li>
+											</ul>
+										</div>
+										<h2 class="zse_t">group多选型单选2：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+									</div>			
+								</pre>
+								<h2 class="lead">group多选型单选js:<br />
+									// $("#group") 是范围限定id<br />
+									// inputType:'checkboxRadio' 固定值必选项<br />
+									// checkR:'.zcheckR_edit' 编辑状态单选<br />
+									// checkboxRadio:'.zse_row' 指定每个选项class名，必选值<br />
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选<br />
+									// checkGroup:'.zselectTopic' 每一组多选的组名class名<br />
+								</h2>
+								<pre class="brush:js;">
+									$("#group").checkAndRadio({inputType:'checkboxRadio',checkR:'.zcheckR_edit',checkboxRadio:'.zse_row',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224142856761.jpg"/>
+									<img class="img-responsive" src="images/checkType/20170224142908521.jpg"/>
+								</div>
+								
+								
+								<h2 class="lead">编辑状态单选和多选html：</h2>
+								<pre class="brush:html;">
+									<h2 class="zse_t">编辑状态单选和多选html：（选中属性checked="checked"）默认无此属性，即未选中状态</h2>
+									<div class="" id="group">
+										<h2 class="zse_t">编辑状态group单选1：</h2>
+										<div class="zselectTopic">
+											<ul class="zse_row zse_bg">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="radio" name="classname100" checked="checked" id="classId101" value="" />
+														<label for="classId101"><em class="zcheck"><i></i></em><span>A:</span></label>
+														<input type="text" name="" id="" value="" placeholder="" />
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row ">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="radio" name="classname100" id="classId102" value="" />
+														<label for="classId102"><em class="zcheck"><i></i></em><span>B:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="radio" name="classname100" id="classId103" value="" />
+														<label for="classId103"><em class="zcheck"><i></i></em><span>C:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckR_edit">
+														<input type="radio" name="classname100" id="classId104" value="" />
+														<label for="classId104"><em class="zcheck"><i></i></em><span>D:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+										</div>
+										<h2 class="zse_t">编辑状态group单选2：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+										<h2 class="zse_t">编辑状态group多选1：</h2>
+										<div class="zselectTopic">
+											<ul class="zse_row zse_bg">
+												<li class="zse_con">
+													<div class="zcheckB_edit">
+														<input type="checkbox" name="" checked="checked" id="classId001" value="" />
+														<label for="classId001"><em class="zcheck"><i></i></em><span>A:</span></label>
+														<input type="text" name="" id="" value="" placeholder="" />
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row ">
+												<li class="zse_con">
+													<div class="zcheckB_edit">
+														<input type="checkbox" name="" id="classId002" value="" />
+														<label for="classId002"><em class="zcheck"><i></i></em><span>B:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckB_edit">
+														<input type="checkbox" name="" id="classId003" value="" />
+														<label for="classId003"><em class="zcheck"><i></i></em><span>C:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+											<ul class="zse_row">
+												<li class="zse_con">
+													<div class="zcheckB_edit">
+														<input type="checkbox" name="" id="classId004" value="" />
+														<label for="classId004"><em class="zcheck"><i></i></em><span>D:</span></label>
+														<input type="text" name="" id="" value="" placeholder=""/>
+													</div>
+												</li>
+												<li class="zse_num"><i>—</i></li>
+											</ul>
+										</div>
+										
+										<h2 class="zse_t">编辑状态group多选2：</h2>
+										<div class="zselectTopic">
+											……除id不同外，其他同上
+										</div>
+									</div>			
+								</pre>
+								<h2 class="lead">group多选型单选js:<br />
+									// $("#group") 是范围限定id<br />
+									// inputType:'checkboxRadio' 固定值必选项<br />
+									// checkR:'.zcheckR_edit/.zcheckB_edit' 编辑状态的单选和多选的标志<br />
+									// checkboxRadio:'.zse_row' 指定每个选项class名，必选值<br />
+									// defaultT:'.zse_row' 是否有选中背景，如果没有可不选<br />
+									// checkGroup:'.zselectTopic' 每一组多选的组名class名<br />
+								</h2>
+								<pre class="brush:js;">
+									$("#group").checkAndRadio({inputType:'checkbox',checkB:'.zcheckB_edit',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+									$("#group").checkAndRadio({inputType:'radio',checkR:'.zcheckR_edit',defaultT:'.zse_row',checkGroup:'.zselectTopic'});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/checkType/20170224144614154.jpg"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="menuBottom">
+							<header class="panel-heading"><h3 class="panel-title">底部菜单(menuBottom)</h3></header>
+							<div class="panel-body">
+								<h2 class="text-capitalize">通用底部菜单css <code>common.css</code></h2>
+								<pre class="brush:css;">
+									/*底部菜单*/
+									.zbottomMenu {}
+									.zbottomMenu_site { position: absolute; bottom: 0.6rem; left: 5%; width: 90%;  -webkit-box-sizing: border-box; box-sizing: border-box;  display: none; z-index: 100;}
+									a.zbottomMenu_closebtn { display: block; margin-top: 0.4rem; border-radius: 0.4rem; background: #fff; color: #c00; line-height: 4.4rem; text-align: center; font-size: 1.5rem;}
+									.zbottomMenu_itembox {overflow: hidden; border-radius: 0.5rem;}
+									.zbottomMenu_row { width: 100%; border-bottom: solid 1px #d8dde4; line-height: 4.4rem; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff; text-align: center;}
+									.zbottomMenu_row a { display: block; color: #09f; font-size: 1.5rem;}
+									
+									.animated {
+									  -webkit-animation-duration: 0.25s;
+									  animation-duration: 0.25s;
+									  -webkit-animation-fill-mode:both;
+									}
+									
+									
+									@-webkit-keyframes fadeInUp{
+									    0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+									    100%{ -webkit-transform:translate(0,0px);opacity: 1;}
+									}
+									
+									@keyframes fadeInUp{
+									   0%{ -webkit-transform:translate(0,60px); opacity: 0;}
+									    100%{ -webkit-transform:translate(0,0px); opacity: 1;}
+									}
+									
+									
+									.fadeInUp {
+									  -webkit-animation-name: fadeInUp;
+									  animation-name: fadeInUp;
+									}
+									
+									@-webkit-keyframes fadeInDown{
+									    0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+									    100%{ -webkit-transform:translate(0,60px);; opacity: 0;}
+									}
+									
+									@keyframes fadeInDown{
+									   0%{ -webkit-transform:translate(0,0px); opacity: 1;}
+									    100%{ -webkit-transform:translate(0,60px); opacity: 0;}
+									}
+									
+									.fadeInDown {
+									  -webkit-animation-name: fadeInDown;
+									  animation-name: fadeInDown;
+									}
+								</pre>
+								<pre class="brush:html;">
+									<div class="zre_btn">
+										<p class="zre_go"><a id="selectVideo" href="#">添加图片</a></p>
+									</div>
+									<div class="zbox_bottom">
+										<div class="zopacity" id="zhibo_opacity"></div>
+										<div class="zbottomMenu_site animated" id="zbottomMenu_site">
+											<div class="zbottomMenu_itembox">
+												<p class="zbottomMenu_row">
+														<a href="#">从相册选择</a>
+												</p>
+												<p class="zbottomMenu_row">
+														<a href="#">拍摄</a>
+												</p>
+												<p class="zbottomMenu_row">
+														<a href="#">从我的收藏选择</a>
+												</p>
+											</div>
+											<a class="zbottomMenu_closebtn" id="zbottomMenu_closebtn" href="#">取消</a>
+										</div>
+										<!--添加发放对象 end-->
+									</div>
+								</pre>
+								<h2 class="lead">调用js</h2>
+								<pre class="brush:js;">
+									//触发底部菜单
+									$("#selectVideo").click(function() {
+										scoreList("#zbottomMenu_site", "#zhibo_opacity");
+									});
+									//关闭按钮
+									$("#zbottomMenu_closebtn").click(function() {
+										closelayer("#zbottomMenu_site", "#zhibo_opacity");
+									});
+								</pre>
+								<div class="zresult">
+									<img class="img-responsive" src="images/menuBottom/20170224165822441.jpg"/>
+								</div>
+								<h2 class="text-capitalize">通用积分设置css <code>integral.css</code></h2>
+								<h2 class="lead">通用积分设置css </h2>
+								<pre class="brush:html;">
+									<div class="zbox">
+										<div class="zbox_content">
+											<div class="zintegral" id="zintegral">
+												<dl class="zin_row">
+													<dt>积分奖励：</dt>
+													<dd><span>    3       </span><em></em></dd>
+												</dl>
+											</div>
+										</div>
+										<div class="zbox_bottom">
+											<div class="zopacity" id="zopacity"></div>
+											<!--积分设置 start-->
+											<div class="zin_site animated" id="zin_site">
+												<div class="zin_itembox">
+													<dl class="zin_set">
+														<dt>0</dt>
+														<dd><i></i></dd>
+													</dl>
+													<dl class="zin_set">
+														<dt>1</dt>
+														<dd><i></i></dd>
+													</dl>
+													<dl class="zin_set">
+														<dt>2</dt>
+														<dd><i></i></dd>
+													</dl>
+													<dl class="zin_set">
+														<dt>3</dt>
+														<dd><i></i></dd>
+													</dl>
+													<dl class="zin_set">
+														<dt>4</dt>
+														<dd><i></i></dd>
+													</dl>
+													<dl class="zin_set">
+														<dt>5</dt>
+														<dd><i></i></dd>
+													</dl>
+												</div>
+												<a class="zin_closebtn" id="zin_closebtn" href="#">取消</a>
+											</div>
+											<!--积分设置 end-->
+										</div>
+									</div>
+								</pre>
+								<h2 class="lead">调用js</h2>
+								<pre class="brush:js;">
+									// 积分设置
+									$("#zintegral").zscore({
+										contentBox: "#zin_site",
+										opacityBg: 	"#zopacity",
+										visibleCur: "zin_visible",
+										itemIdClass:	"#zintegral .zin_row",
+										setIdClass:	"#zin_site .zin_set",
+										closeID:	"#zin_closebtn"
+									});
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/integral/20170224171540690.jpg"/>
+								</div>
+							</div>
+						</section>
+						<section class="panel panel-default" id="pushDown">
+							<header class="panel-heading"><h3 class="panel-title">下拉刷新(pushDown)</h3></header>
+							<div class="panel-body">
+								<h2 class="text-capitalize">下拉刷新 <code>swiper.css</code> <code>swiper.min.js</code></h2>
+								<h2 class="lead">html</h2>
+								<pre class="brush:html;">
+									<div id="resh">
+										<ul class="zloadingMore">
+											<li class="loading"></li>
+											<li class="load_text">刷新中</li>
+										</ul>
+									</div>
+									<div class="swiper-container wrap" id="update">
+										<div class="swiper-scrollbar update-scrollbar"></div>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+											<p style="width: 100px; font-size: 16px; margin: 0 auto;">一天下午，我同学在建设银行十分无聊的上班，一个穿得很糟糕的女士(神经病患者)来到他窗口，</p>
+											</div>
+										</div>
+									</div>
+										<style type="text/css">
+											.swiper-slide { height: auto;}
+											.swiper-container { height: 100%;}
+										</style>
+								</pre>
+								<h2 class="lead">js</h2>
+								<pre class="brush:js;">
+									var mySwiper = new Swiper('#update', {  
+								        scrollbar: '.update-scrollbar',
+								        direction: 'vertical',
+								        slidesPerView: 'auto',
+								        mousewheelControl: true,
+								        freeMode: true,
+								        onTouchEnd: function(swiper){  
+								            if(swiper.translate>60){ //判断下拉刷新  
+								            	$('#resh').show();//下拉刷新的div显示  
+								                //loadNewData();//加载更多数据  
+											    // 3秒后取消
+											    setTimeout(function(){
+											    	$('#resh').hide();
+											    },1500);
+								        	}  
+								        }
+								    });  
+								</pre>
+								
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src="images/pushDown/20170224181042595.jpg"/>
+								</div>
+							</div>
+						</section>
+						<!--<section class="panel panel-default" id="">
+							<header class="panel-heading"><h3 class="panel-title">积分设置(integral)</h3></header>
+							<div class="panel-body">
+								<h2 class="text-capitalize">通用积分设置css <code>integral.css</code></h2>
+								<h2 class="lead">html</h2>
+								<pre class="brush:html;">
+									
+								</pre>
+								<h2 class="lead">结果如下所示：</h2>
+								<div class="zresult">
+									<img class="img-responsive" src=""/>
+								</div>
+							</div>
+						</section>-->
+					</article>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(window).resize(function(){
+				$("#zmenu_fixed").width($("#zmenu_width").width());
+			});
+			$("#zmenu_fixed").width($("#zmenu_width").width());
+			$(window).scroll(function(){
+				var scrollSite=$(document).scrollTop();
+				if(scrollSite>19){
+					$("#zmenu_fixed").addClass("zmenu_fixed");
+					$("#zmenu_fixed").width($("#zmenu_width").width());
+				}else{
+					$("#zmenu_fixed").removeClass("zmenu_fixed");
+				}
+			});
+			
+		</script>		
+	</body>
+
+</html>

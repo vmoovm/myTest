@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*var bajie = {name:'猪八戒', introduce: function (job, ability) {
+				console.log(job + this.name + ability);
+			}, type: '西游记'}
+			bajie.introduce('天蓬大元帅','调戏嫦娥仙子');
+			var wukong = {name:'孙悟空'}
+			bajie.introduce.call(wukong, '齐天大圣', '调戏嫂嫂铁扇公主');
+			wukong.call(this, bajie)
+			console.log(wukong.type)
+			bajie.introduce.apply(wukong, ['齐天大圣', '调戏嫂嫂铁扇公主']);*/
+			
+			
+			function Animal (name, food, sound) {
+				this.name = name;
+				this.food = food;
+				this.sound = sound;
+			}
+			Animal.prototype.speak = function () {
+				console.log(this.name + '爱吃' + this.food + '    ' + this.sound);
+			}
+			function Cat (name, food, sound) {
+				Animal.call(this, name, food, sound);
+				Animal.apply(this, arguments);
+			}
+			Cat.prototype = new Animal();
+			var cat = new Cat('咪胖', '鱼', '喵喵喵~');
+			cat.speak();
+			console.log(cat.name)
+			
+		</script>
+	</body>
+</html>

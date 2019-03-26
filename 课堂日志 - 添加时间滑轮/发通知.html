@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>
+		<link rel="stylesheet" href="reset.css" />
+		<script src="ratio.js"></script>
+		<style>
+			html,body{
+				width:100%;
+				height:100%;
+			}
+			body{
+				font-size: .32rem;
+			}
+			#ginform{
+				width:100%;
+				height:100%;
+				box-sizing: border-box;
+			}
+			.greceiver{
+				height:1rem;
+				display:-webkit-flex;
+				border-bottom: 1px solid #e2f1ff;
+			}
+			.greName{
+				width:1.2rem;
+				height:1rem;
+				text-indent:.3rem;
+				line-height:1rem;
+				font-size:.26rem;
+			}
+			.gmore{
+				-webkit-flex:1;
+				height:1rem; 
+			}
+			.gmore label{
+				position:absolute;
+				right:.3rem;
+				top:.3rem;
+				width:.4rem;
+				height:.4rem;
+				border:2px solid #74c6fe;
+				border-radius: 50%;
+				text-align: center;
+				line-height:.4rem;
+				color: #74c6fe;
+				font-size:.28rem;
+			}
+			.gmul{
+				height:1rem;
+				display: -webkit-flex;
+			}
+			.gmli{
+				position:relative;
+				width:1.2rem;
+				height:.6rem;
+				text-align: center;
+				line-height: .6rem;
+				background: #eeeeee;
+				color:#9c9c9c;
+				border-radius:.1rem;
+				margin-top:.2rem;
+				margin-right:.2rem;
+				font-size:.26rem;
+			}
+			.gmli i{
+				position:absolute;
+				font-style: normal;
+				width:.3rem;
+				height:.3rem;
+				top:-.1rem;
+				right:-.1rem;
+				background:#787878;
+				color:#fff;
+				text-align:center;
+				line-height: .3rem;
+				font-size:.2rem;
+				border-radius: 50%;
+			}
+			.ginlog{
+				line-height: 1rem;
+				font-size:.3rem;
+				text-indent: .3rem;
+				border-bottom: 1px solid #e2f1ff;
+			}
+			.ginTxt{
+				font-size:.28rem;
+				line-height:.4rem;
+				padding:.3rem .3rem;
+			}
+			.gicon{
+				position: absolute;
+				left:0;
+				bottom:0;
+				width:100%;
+				height:.8rem;
+				background:#fafafa;
+			}
+			.gadd,.gbell{
+				position: absolute;
+				width:.4rem;
+				height:.4rem;
+				left:.3rem;
+				top:.2rem;
+				background: url(img/add.png) no-repeat center;
+				background-size: contain;
+				border-radius:50%;
+			}
+			.gbell{
+				left:1rem;
+				background: url(img/bell.png) no-repeat center;
+				background-size: contain;
+				border-radius:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ginform">
+			<div class="greceiver">
+				<div class="greName">收件人</div>
+				<div class="gmore">
+					<ul class="gmul">
+						<li class="gmli">某某某<i>×</i></li>
+						<li class="gmli">某某某<i>×</i></li>
+					</ul>
+					<label>+</label>
+				</div>
+			</div>
+			<p class="ginlog">教学日志督促</p>
+			<p class="ginTxt">你所教课程《大学物理》有教学日志未完成，请尽快填写。</p>
+			<div class="gicon">
+				<span class="gadd"></span>
+				<span class="gbell"></span>
+			</div>
+		</div>
+	</body>
+</html>

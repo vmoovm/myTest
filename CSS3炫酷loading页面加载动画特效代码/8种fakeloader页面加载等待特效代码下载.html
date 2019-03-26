@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0104)http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>8种fakeloader页面加载等待特效代码下载</title>
+
+<!--可无视-->
+<link rel="stylesheet" type="text/css" href="./8种fakeloader页面加载等待特效代码下载_files/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./8种fakeloader页面加载等待特效代码下载_files/demo.css">
+
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="./8种fakeloader页面加载等待特效代码下载_files/fakeloader.css">
+
+</head>
+<body>
+
+<div class="fakeloader" style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 999; display: none; background-color: rgb(46, 204, 113);"><div class="fl spinner1" style="position: absolute; left: 919.5px; top: 430.5px;"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+
+<section id="section-navigation">
+
+	<div class="container text-center">
+		<a href="./8种fakeloader页面加载等待特效代码下载_files/8种fakeloader页面加载等待特效代码下载.html"><button class="btn-default btn-white btn-active">效果1</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo2.html"><button class="btn-default btn-white">效果2</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo3.html"><button class="btn-default btn-white">效果3</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo4.html"><button class="btn-default btn-white">效果4</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo5.html"><button class="btn-default btn-white">效果5</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo6.html"><button class="btn-default btn-white">效果6</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo7.html"><button class="btn-default btn-white">效果7</button></a>
+		<a href="http://www.17sucai.com/preview/119710/2014-12-21/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/demo8.html"><button class="btn-default btn-white">图片</button></a>
+	</div>
+</section>
+
+<div class="container text-center">
+	<h1 style="margin-top:250px">DOM was loaded</h1>
+</div>
+
+<script type="text/javascript" src="./8种fakeloader页面加载等待特效代码下载_files/jquery.min.js"></script>
+<script type="text/javascript" src="./8种fakeloader页面加载等待特效代码下载_files/fakeloader.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".fakeloader").fakeLoader({
+		timeToHide:1200,
+		bgColor:"#2ecc71",
+		spinner:"spinner1"
+	});
+});
+</script>
+ 
+
+</body></html>

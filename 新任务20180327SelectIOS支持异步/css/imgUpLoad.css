@@ -1,0 +1,73 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*----------------------------------------------------
+上传图片
+-----------------------------------------------------*/
+.zshangchuan { border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+/*单行文本输入*/
+.zsh_input { display: -webkit-box; display: box; width: 100%; padding: 0.234rem 0; padding-top: 0; box-sizing: border-box;}
+.zsh_typeText { -webkit-box-flex: 1; height: 0.8775rem; padding-left: 0.3rem; -webkit-transiton:0.6s all ease; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid; background: #fff;}
+.zsh_typeText input { width: 100%; height: 0.8775rem; border: none; border-radius: 0; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff; line-height: none; line-height: normal; font-size: 0.351rem; color: #333;} 
+.zsh_typeText input::-webkit-input-placeholder { font-size: 0.3042rem;}
+.zsh_tt { height: 0.8775rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; line-height: 0.8775rem; font-size:0.351rem; color: #999;}
+
+.zcameraBtn {  -webkit-transiton:1.6s all ease; width: 1.1232rem; padding-left: 0.1404rem; padding-right: 0.234rem; height: 0.8775rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; text-align: right;}
+.zcameraBtn img { width: 0.6084rem; margin-top: 0.1521rem;}
+.zcameraBtn span { display: inline-block; width: 0.819rem; height: 0.819rem; background: url(../images/camera_03.png) no-repeat; background-position: center; background-size: 0.5616rem; line-height: 0.819rem; font-size: 0.3rem; color: #09f;-webkit-filter: grayscale(1); filter: grayscale(1);}
+
+.zaddBtn { padding-left: 0.1404rem; padding-right: 0.234rem; height: 0.8775rem; border-bottom: 1px #ebebeb solid; border-top:1px #ebebeb solid;  background: #fff; text-align: right;}
+.zaddBtn span { display: block; width: 0.468rem; height: 0.468rem; margin-top: 0.2223rem; background: url(../images/add_32.png) no-repeat;/* background: url(../images/icon5.png) center no-repeat;*/ background-size: 0.3744rem;}
+
+/*多行文本输入*/
+.zsh_textarea {}
+.zsh_site { position: relative; width: 0.0117rem; height: 0;}
+.zsh_zgray { position: absolute; top: 0.1638rem; left: 0.3rem; display: inline-block; width: 1.0998rem; font-size: 0.3159rem; color: #333; z-index: 10; -webkit-user-select: none;}
+.zsh_contenteditable ,.zsh_contenteditable1 { width: 100%;}
+.zsh_contenteditable textarea,.zsh_contenteditable1  textarea {-webkit-appearance: none; width: 100%; min-height: 1.404rem; padding:0.0936rem 0.3rem 0; -webkit-box-sizing: border-box; box-sizing: border-box; border: none; border-radius: 0; outline: none; background: #fff; line-height: 0.585rem; font-size: 0.32rem; color: #333;}
+.zsh_contenteditable1  textarea { border: none; border-radius: 0; outline: none; background: #fff; line-height: 1.4;}
+.zsh_contenteditable1  textarea::-webkit-input-placeholder { font-size: 0.3042rem; }
+
+.zcameraBtn1 { position: relative; width: 100%; height: 0; -webkit-filter: grayscale(1); filter: grayscale(1);}
+.zcameraBtn1 img { position: absolute; right: 0.234rem; top: -0.7371rem; width: 0.6084rem;}
+.zcameraBtn1 span { position: absolute; right: 0.234rem; top: -0.7371rem; width: 0.702rem; height: 0.702rem; background: url(../images/camera_03.png) no-repeat; background-position: center; background-size: 0.5616rem; -webkit-filter: grayscale(1); filter: grayscale(1);}
+
+.zsh_intitle { padding: 0.1872rem 0; padding-bottom: 0; }
+.zsh_intitle h2 { padding:0.1404rem 0.3rem 0.1521rem 0.3rem; line-height: 1.4; font-size: 0.32rem; color: #333; word-wrap:break-word;	word-break:break-all;}
+.zsh_intitle h2 span { color: #999;}
+
+.zsh_img,.zsh_img1 { padding:0 0.3rem;}
+.zsh_img1 { border-bottom: 1px #ebebeb solid;}
+.zsh_imgList { padding: 0.117rem 0 0 0;}
+.zsh_rel { position: relative; display: inline-block; letter-spaceing:-0.0468rem; width: 1.18rem; height: 1.18rem; margin-bottom: 0.26rem; margin-right: 0.4563rem;}
+.zsh_view { display: inline-block;  overflow: hidden; width: 1.18rem; height: 1.18rem; border-radius: 0.0936rem;}
+.zsh_view img { /*display: none;*/}
+.zsh_close { position: absolute; right: -0.22rem; top: -0.22rem; width: 0.44rem; height: 0.44rem; background: url(../images/delete_06.png) center no-repeat; background-size: .42rem; z-index: 10;}
+.zsh_addImg { display: inline-block; letter-spaceing:-0.0468rem; width: 1.18rem; height: 1.18rem; margin-bottom: 0.26rem; border:1px #ebebeb solid; border-radius: .08rem; background: url(../images/add_03.png) center no-repeat; background-size: 0.6rem; vertical-align: top;}
+.zsh_addImg:first-child { background-image: url(../images/cameraicon.png); border: none; }
+.zsh_h { padding: 0 0.3rem 0.0234rem; line-height: 0.3744rem; font-size: 0.32rem; color: #999;}
+
+/*借助swiper 大图预览*/
+.imgLarge {}
+.imgLarge_item { display: table-cell; height: 3.744rem; text-align: center; vertical-align: middle;}
+.imgLarge_item img { max-width: 100%; max-height: 100%;}
+
+.zlistImgs { width: 100%; padding: 0.234rem 0 0.0936rem;}
+.zlistImgs p { margin: 0 0.3rem; margin-left: 0.234rem; padding-bottom: 0.1404rem;}
+.zlistImgs p img { max-width: 100%; /*max-height: 100%;因为有时会异常变形简答学生端*/}
+
+/*----------------------------------------------------
+图片展示
+-----------------------------------------------------*/
+.zimgList { border-bottom: 1px #ebebeb solid; background-color: #fff;}
+.zimgList_header { padding: 0.3rem 0.3rem;}
+.zimgList_header h2 { line-height: 1.5; font-size: 0.32rem; color: #333;}
+.zimgList_box { padding-bottom: 0.3rem; margin-left: 0rem;}
+.zimgList_item { width: 1.94rem; height: 1.94rem; margin-right: .1rem;}
+.zimgList_item:first-child { margin-left: .3rem;}
+.zimgList_item:last-child { margin-right: .3rem;}
+.zimgList_bg { position: relative; width: 100%; height: 100%; overflow: hidden;}
+.zimgList_img { height: 100%;}
+.zimgList_img img { }
+.zimgList_imgw100 img { width: 100%; display: inline-block;}
+.zimgList_imgh100 img { height: 100%; display: inline-block;}
+.zimgList_th { position: absolute; left: 0; bottom:0; width:97.5%; padding-left: 2.5%; height: 20px; background: rgba(0,0,0,0.4); color: #fff; font-size: 12px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}

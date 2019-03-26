@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>下拉刷新</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+	<!--必须注意：html,body { height:100%;},但，外层div高度禁止100%-->
+	<div id="resh">
+		<ul class="zloadingMore">
+			<li class="loading"></li>
+			<li class="load_text">刷新中</li>
+		</ul>
+	</div>
+	<div class="swiper-container wrap" id="update">
+		<div class="swiper-scrollbar update-scrollbar"></div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+			<p style="width: 200px; font-size: 16px; margin: 0 auto;">一天下午，我同学在建设银行十分无聊的上班，一个穿得很糟糕的女士(神经病患者)来到他窗口，给了他一张纸条要提款。&nbsp;<br><br>纸条上赫然写着&nbsp;<br><br>'兹派XX同志于贵银行处提取人民币'.&nbsp;<br>然后是l后面N多个零元。&nbsp;<br>落款是***C.P中央办公厅***。&nbsp;<br><br>我同学本来想报警,可看该神经病患者女子很认真的样子,想想还是打发给保安算鸟.(~估计保安也是很闲).&nbsp;<br>果然,保安对该女子说:'你这张条子想要提款,必须先到对面派出所,找所长盖一个章，他盖完章,你再来取钱就没问题啦。'&nbsp;<br>该女子想都没想，直接就向派出所走去了。(这保安还真不一般,平时有点小看他了).&nbsp;<br><br>大概十多分钟，排队的顾客慢慢多起来的时候，那个女子兴高采烈的回来了，举着那个条子，说：'人家说啦，办公程序简化了，不用所长批条直接就可以取钱啦。'&nbsp;<br><br>我这个同学一听到这就不住的感叹:pol.ice队伍里真有高人，一句'高调'就给打发回来了。&nbsp;<br><br>我这个同学和保安当时就有点傻了，营业大厅有很多人都在，怕她精神病发作起来影响正常的秩序，只好把值班主管找来了。&nbsp;<br><br>主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的,买穿的'主管指了指不远处的地方，该女子就又高高兴兴地走了。&nbsp;<br>保安去请教'高招',主管当时是这样对女患者说的: '我们这里是建行,只有建房子才能到这里取钱。你取钱买吃的,那肯定是粮食了,要去农行,买穿的等东西,取钱要到工商银行才行！'&nbsp;<br>我同学打心眼里佩服呀,到底是当主管的啊!!!!&nbsp;<br><br>…………&nbsp;<br>…………&nbsp;<br>过了一会儿,该女士又回来了.而且带来了工行的回答:'农行的人说了,这里是农行,只有农民能取钱,我是城市人口,工行的人说了,我们这里是公行,只能公的来取,母的不行!!!!,说我是贱人,要到建行取钱'&nbsp;</p>
+			</div>
+		</div>
+	</div>
+	<style type="text/css">
+		.swiper-slide { height: auto;}
+		.swiper-container { height: 100%;}
+		#resh { height: 40px; font-size: 16px; text-align: center; color: #fff; display: none;}
+		.bbg {transition: background-color ease 2s; background: #fff;}
+		.load_text { color: #000;}
+	</style>
+
+<script type="text/javascript">
+	var mySwiper = new Swiper('#update', {  
+        scrollbar: '.update-scrollbar',
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        freeMode: true,
+        onTouchMove: function(swiper){  
+            if(swiper.translate>60){ //判断下拉刷新  
+            	$('#resh').find(".load_text").text("放手刷新");//改变下拉提示
+            	
+            	$('#resh').show();//下拉刷新的div显示  
+        	}  
+        },
+        onTouchEnd: function(swiper){  
+            if(swiper.translate>60){ //判断下拉刷新  
+                $('#resh').find(".load_text").text("加载中");//改变下拉提示
+            	$('#resh').show();//下拉刷新的div显示  
+                //loadNewData();//加载更多数据
+			    // 3秒后取消
+			    setTimeout(function(){
+			    	$('#resh').hide();
+			    },1500);
+        	}  
+        }
+    });  
+    
+</script>
+
+
+</body>
+</html>

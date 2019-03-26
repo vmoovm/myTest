@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>自定义-自定义</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+	
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">超星</a>
+	</div>
+	<div class="">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">笔记</a></li>
+			<li><a href="#">帮助</a></li>
+		</ul>
+	</div>
+</nav>
+<!--main start-->
+<div class="container">
+	<div class="show">
+		<div class="col-sm-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h1 class="panel-title">获取元素</h1>
+				</div>
+				<div class="panel-body">
+					<div class="well lh24 f14">
+						<h2 class="f16">以id方式获取元素</h2>
+						<p>document.getElementById();</p>
+					</div>
+					<div class="well lh24 f14">
+						<h2 class="f16">以样式名获取元素</h2>
+						<p>document.getElementsByClassName();</p>
+					</div>
+					<div class="well lh24 f14">
+						<h2 class="f16">以标签名获取元素</h2>
+						<p>document.getElementsByTagName();</p>
+					</div>
+					<div class="well lh24 f14">
+						<h2 class="f16">以name属性获取元素</h2>
+						<p>document.getElementsByName();</p>
+					</div>
+				</div>
+				<div class="panel-footer tr">
+					<input class="btn btn-info" type="button" id="byId003" value="以id查看" />
+					<input class="btn btn-primary" type="button" id="byClassName004" value="以class查看" />
+					<input class="btn btn-success" type="button" id="byTagName005" value="以标签名查看" />
+					<input class="btn btn-danger" type="button" id="byName006" value="以name查看" />
+				</div>
+			</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h1 class="panel-title">打开窗口</h1>
+				</div>
+				<div class="panel-body">
+					<div class="well lh24 f14">
+						<h2>打开 showModalDialog</h2>
+						<div>
+							<h2>html代码</h2>
+							<blockquote class="zlight">
+								<h2 class="zlight_title"></h2>
+								<dl class="zlight_code">
+									<dt><a class="fr zlight_copy" href="#" onclick="copyText(this)" >复制代码</a>代码示例<div class="clear"></div></dt>
+									<dd>&lt;input class="btn btn-success" type="button" id="byName701" value="打开 open" /&gt;</li>
+								</dl>
+							</blockquote>
+						</div>
+					</div>
+					<div class="well lh24 f14">
+						<h2></h2>
+						<p>
+							&lt;input class="btn btn-danger" type="button" id="byName701" value="打开 showModalDialog" /&gt;
+						</p>
+					</div>
+				</div>
+				<div class="panel-footer tr">
+					
+					
+				</div>
+			</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h1 class="panel-title">获取元素</h1>
+				</div>
+				<div class="panel-body">
+					<div class="well lh24 f14">
+						<h2></h2>
+						<p></p>
+					</div>
+				</div>
+				<div class="panel-footer tr">
+					<input class="btn btn-danger" type="button" id="byName702" value="查看" />
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h1 class="panel-title">事件操作</h1>
+				</div>
+				<div class="panel-body">
+					<div class="well lh24 f14">
+						<h2>添加事件  </h2>
+						<p>IE: attachEvent </p> 
+						<p>Other: addEventListener </p> 
+					</div>
+					<div class="well lh24 f14">
+						<h2>删除事件  </h2>
+						<p>IE: detachEvent</p> 
+						<p>Other: removeEventListener</p> 
+					</div>
+					<div class="well lh24 f14">
+						<h2>事件冒泡机制 </h2>
+						<p>IE: 事件从它发生的地方被触发，然后向DOM结构的上层冒泡 </p> 
+						<p>Other: 事件先向下沉入到目标元素，再向上冒泡 </p>
+						<p>addEventListener( , ,[true|false])</p> 
+						<p>true: 向下沉入时截获事件</p>
+						<p>false: 向上冒泡时截获事件</p>
+					</div>
+					<div class="well lh24 f14">
+						<h2>停止事件冒泡:  </h2>
+						<p>IE: window.event.cancelBubble=false;  </p> 
+						<p>Other: e.stopPropagation();  </p>
+					</div>
+					<p id="byName001">getElementsByName();//获取</p>
+					<div onclick="bindEvent()">  
+					    <input type="button" id="buttonId" value="showEvent"/>  
+					</div>
+				</div>
+				<div class="panel-footer tr">
+					<div class="">
+						<input class="btn btn-primary" type="button" id="byName703" value="查看" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="zcc">
+    <input type="button" value="改变颜色">  
+    <input type="button" value="改变宽高">
+    <input type="button" value="隐藏内容" >
+    <input type="button" value="显示内容" >
+    <input type="button" value="取消设置" >
+	</form>
+    <script type="text/javascript">
+
+    </script>
+</div>
+<!--main end-->
+<footer class="footer">
+
+</footer>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

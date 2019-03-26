@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable" /> 
+<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+<meta content="telephone=no" name="format-detection" /> 
+<title>4.4教师【任务】已批阅小组成员列表</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link href="css/portrait.css" rel="stylesheet" type="text/css" />
+<link href="css/iosSelectRem.css" rel="stylesheet" type="text/css" />
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/iosSelectRem.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	.zpo-fs { font-size: .3rem;}
+</style>
+</head>
+
+<body class="zbgwh">
+<!--main start-->
+	<div class="zbox">
+		<div class="zbox_content">
+			<dl class="zlist_field">
+				<dt>共4人</dt>
+				<dd class="zlist_arrowColor"><a class="zblue" href="#">进入讨论组</a></dd>
+			</dl>
+			<div class="">
+				<dl class="zpo_row zpo_rowList zpo_js">
+					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+					<dt class="zpo_txt">
+						<div class="zpo_th">
+							<div class="zportrait-align">
+								<a href="#">柳辰飞</a>
+								<!--<div class="zportrait-flower">放小花</div>-->
+								<!--<div class="zportrait-star">放星星</div>-->
+							</div>
+							<p class="zpo_t">201219132001</p>
+						</div>
+						<div class="zpo_time zpo_arrowd zpo_blue zpo-fs zpo_score"><span>8</span><span>分</span></div>
+					</dt>
+				</dl>
+				<dl class="zpo_row zpo_rowList zpo_js">
+					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+					<dt class="zpo_txt">
+						<div class="zpo_th">
+							<div class="zportrait-align">
+								<a href="#">柳辰飞</a>
+								<!--<div class="zportrait-flower">放小花</div>-->
+								<!--<div class="zportrait-star">放星星</div>-->
+							</div>
+							<p class="zpo_t">201219132001</p>
+						</div>
+						<div class="zpo_time zpo_arrowd zpo_blue zpo-fs zpo_score"><span>10</span><span>分</span></div>
+					</dt>
+				</dl>
+				<dl class="zpo_row zpo_rowList zpo_js">
+					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+					<dt class="zpo_txt">
+						<div class="zpo_th">
+							<div class="zportrait-align">
+								<a href="#">柳辰飞</a>
+								<!--<div class="zportrait-flower">放小花</div>-->
+								<!--<div class="zportrait-star">放星星</div>-->
+							</div>
+							<p class="zpo_t">201219132001</p>
+						</div>
+						<div class="zpo_time zpo_arrowd zpo_blue zpo-fs zpo_score"><span>0</span><span>分</span></div>
+					</dt>
+				</dl>
+				<dl class="zpo_row zpo_rowList zpo_js">
+					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+					<dt class="zpo_txt">
+						<div class="zpo_th">
+							<div class="zportrait-align">
+								<a href="#">柳辰飞</a>
+								<!--<div class="zportrait-flower">放小花</div>-->
+								<!--<div class="zportrait-star">放星星</div>-->
+							</div>
+							<p class="zpo_t">201219132001</p>
+						</div>
+						<div class="zpo_time zpo_arrowd zpo_blue zpo-fs zpo_score"><span>2</span><span>分</span></div>
+					</dt>
+				</dl>
+				<dl class="zpo_row zpo_rowList zpo_js">
+					<dd class="zpo_pic"><span><em></em></span><img src="temp/201602221349_02.png" /></dd>
+					<dt class="zpo_txt">
+						<div class="zpo_th">
+							<div class="zportrait-align">
+								<a href="#">柳辰飞</a>
+								<!--<div class="zportrait-flower">放小花</div>-->
+								<!--<div class="zportrait-star">放星星</div>-->
+							</div>
+							<p class="zpo_t">201219132001</p>
+						</div>
+						<div class="zpo_time zpo_arrowd zpo_blue zpo-fs zpo_score"><span>9</span><span>分</span></div>
+					</dt>
+				</dl>
+			
+			</div>
+		</div>
+		
+		<div class="zbox_bottom"></div>
+	</div>
+	
+<!--main end-->
+<script type="text/javascript">
+	// 数据初始化
+	var minScore="-10", maxScore="10";
+	var scoreData = function(callback) {
+	    var arr = [];
+	    for (var i = minScore; i <= maxScore; i++) {
+	        arr.push({
+	            id: i + '',
+	            value: i + ''
+	        });
+	    }
+	    callback(arr)
+	}
+	// 封装后设置分数
+    function SetSocre(sdd){
+    	this.selectScoreDom = sdd;
+	    this.selectScoreDom.bind('click', function () {
+    	    var that = $(this).children('span:first');
+    	    var iosSelect = new IosSelect(1,
+    	        [scoreData],
+    	        {
+    	            title: '选择积分',
+    	            itemHeight: 0.6786,
+	                headerHeight:0.819,
+	                relation: [1, 0, 0, 0],
+	                cssUnit:'rem',
+	                itemShowCount: 7,
+    	            oneLevelId: that.attr('data-score'),
+    	            callback: function (selectOneObj) {
+    	                that.attr('data-score', selectOneObj.id);
+    	                that.html(selectOneObj.value);
+    	            }
+    	    });
+    	});
+    }
+    
+    // 定位到最后一条记录并设置id,为异步获取该id后面所有元素，每加载一次，增加1
+    var siteId = 0;
+    $(".zpo_js:first").attr('id','zscore'+siteId);
+    function setId(curId) {
+    	siteId++
+    	new SetSocre($(curId).find('.zpo_score:first'));
+    	$(curId).nextAll('.zpo_js').each(function(){
+	    	new SetSocre($(this).find('.zpo_score:first'));
+	    });
+    	$(".zpo_js:last").attr('id','zscore'+siteId);
+    }
+    // 每步加载调用此方法，此方法为异步绑定SelectIOS事件
+    setId('#zscore' + siteId);
+    
+    
+  
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>子级导航</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<!--子级导航 start-->
+		<div class="znav1">
+			<ul class="znav1_box">
+				<li class="znav1_item znav1_cur"><p><a href="#">首页</a></p></li>
+				<li class="znav1_item"><p><a href="#">关于我们</a></p></li>
+				<li class="znav1_item"><p><a href="#">通识课程</a></p>
+					<ul class="znav1_sub">
+						<li><p><a href="#">英语</a></p></li>
+						<li><p><a href="#">高等数学</a></p></li>
+						<li><p><a href="#">综合艺术</a></p></li>
+					</ul>
+				</li>
+				<li><p><a href="#">教学资源库</a></p></li>
+			</ul>
+		</div>
+		<style type="text/css">
+			/*----------------------------------------------------
+			子级导航
+			-----------------------------------------------------*/
+			.znav1  {}
+			.znav1_box { height: 50px; line-height: 50px; border-bottom: 1px #ccc solid; font-size: 16px; background: #f7f7f7;}
+			.znav1_item { float: left; position: relative; padding: 0 16px;}
+			.znav1_cur { height: 50px; color: #4C8D00;}
+			.znav1_cur a { color: #4C8D00;}
+			.znav1_sub { display: block; position: absolute; left: 0; width: 100px; border: 1px #ccc solid; border-top: none; background: #f7f7f7; text-align: center;}
+			.znav1_sub li { position: relative; width: 100%;}
+			.znav1_sub li:hover { background: #fff;}
+		</style>
+		<!--子级导航 end-->
+		
+	</body>
+</html>

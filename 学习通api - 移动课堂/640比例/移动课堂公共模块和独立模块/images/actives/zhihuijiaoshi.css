@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'zhihuijiaoshi';
+  src:  url('zhihuijiaoshi.eot?mt1ddx');
+  src:  url('zhihuijiaoshi.eot?mt1ddx#iefix') format('embedded-opentype'),
+    url('zhihuijiaoshi.ttf?mt1ddx') format('truetype'),
+    url('zhihuijiaoshi.woff?mt1ddx') format('woff'),
+    url('zhihuijiaoshi.svg?mt1ddx#zhihuijiaoshi') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'zhihuijiaoshi' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tp:before {
+  content: "\e913";
+}
+.icon-txt:before {
+  content: "\e914";
+}
+.icon-lunwen:before {
+  content: "\e912";
+}
+.icon-pingfen:before {
+  content: "\e917";
+}
+.icon-camera:before {
+  content: "\e90d";
+}
+.icon-package:before {
+  content: "\e911";
+}
+.icon-freshen:before {
+  content: "\e90f";
+}
+.icon-time:before {
+  content: "\e910";
+}
+.icon-copy:before {
+  content: "\e90e";
+}
+.icon-qiandao:before {
+  content: "\e90c";
+}
+.icon-question:before {
+  content: "\e908";
+}
+.icon-vote:before {
+  content: "\e909";
+}
+.icon-suo:before {
+  content: "\e90a";
+}
+.icon-ceyan:before {
+  content: "\e90b";
+}
+.icon-zhong:before {
+  content: "\e901";
+}
+.icon-xuanren:before {
+  content: "\e902";
+}
+.icon-qiangda:before {
+  content: "\e903";
+}
+.icon-biji:before {
+  content: "\e904";
+}
+.icon-picture:before {
+  content: "\e900";
+}
+.icon-share:before {
+  content: "\e905";
+}
+.icon-write:before {
+  content: "\e906";
+}
+.icon-yunpan:before {
+  content: "\e907";
+}
+

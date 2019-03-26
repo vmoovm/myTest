@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+弹层
+-----------------------------------------------------*/
+.zopacity { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000; opacity: 0.4; display:none; z-index:10000;}
+.zalert { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000; opacity: 0.4; display:none; z-index:10000;}
+.zal-box { position: fixed; left: 50%; top: 50%; width: 66%; height: auto; margin-left: -33%; /* padding: 0.468rem;*/ display:none; z-index:10001;}
+
+.zal-content { padding: 0.351rem 0.3276rem;  border-radius: 0.234rem 0.234rem 0 0;  background: #fff; text-align: center; color: #333; font-size: 0.3042rem;}
+.zal-txt { padding-top: 0.117rem; line-height: 0.468rem;}
+.zal-btn { border-radius: 0 0 0.234rem 0.234rem; overflow: hidden; }
+.zal-btn ul { display: -webkit-box; display: box; background-image: -webkit-linear-gradient(#ebebeb 50%,transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-color:#fff; background-position: top;}
+.zal-bt { -webkit-box-flex: 1; box-flex: 1; height: 0.936rem; line-height: 0.936rem; text-align: center; font-size: 0.3rem; color: #09f;}
+.zal-bt:not(:last-child) { background-image:-webkit-linear-gradient(left,#ebebeb 50%,transparent 50%); background-size:1px 100%; background-repeat:no-repeat; background-position:right;}
+/*-----------------------------------------------------
+弹窗
+-----------------------------------------------------*/
+.zal-bg { position: fixed; bottom: 16%; width: 100%; text-align: center;  opacity: 1;}
+.zal-bg span { display: inline-block; min-width:1.17rem; padding: 0.234rem 0.468rem; background: #333; border-radius: 0.1872rem; line-height: 0.351rem; font-size: 0.3rem; color: #fff;}
+
+/*--动画--*/
+.zstart { 
+	-webkit-animation:0.2s zstart forwards;
+	animation:0.2s zstart forwards;
+}
+@-webkit-keyframes zstart{
+	from{ 
+		opacity: 0;
+		-webkit-transform:translate(0px,-20px);
+		transform:translate(0px,-20px);
+		}
+	to{
+		opacity: 1;
+		-webkit-transform:translate(0px,0px);
+		transform:translate(0px,0px);
+		}
+}
+.zend {
+	
+	-webkit-animation:0.2s zend forwards;
+	animation:0.2s zend forwards;
+}
+
+@-webkit-keyframes zend{
+	from{ 
+		opacity: 1;
+		-webkit-transform:translate(0px,0px);
+		transform:translate(0px,0px);
+		}
+	to{
+		opacity: 0;
+		-webkit-transform:translate(0px,20px);
+		transform:translate(0px,20px);
+		}
+}
+
+/*-----------------------------------------------------
+二维码弹窗
+-----------------------------------------------------*/
+.zrcode { position: fixed; z-index: 1000; left: 50%; top: 35%; width: 4rem; height: 4rem; margin-top: -1.2rem; margin-left: -2rem; padding: .08rem; border-radius: .18rem; background: #fff;}
+.zrcode img { width: 100%; height: 100%;}
+
+

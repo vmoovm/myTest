@@ -1,0 +1,1394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>检索结果-2005</title>
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="css/list.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/checkAndRadio.css"/>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+		<script src="js/common.js" type="text/javascript"></script>
+		<!--<script type="text/javascript" src="js/prettyCheckboxes.js"></script>-->
+		<script src="js/checkAndRadio.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				//左侧的学科下拉菜单
+				$(".zxueke li").on('click','p',function(){
+					if(!$(this).next('.zxk_menu').is(':animated')){
+						$(this).next('.zxk_menu').slideToggle();
+						$(this).find('em').toggleClass('zxk_arrow1');
+					}
+				});
+				//匹配方式
+				$(".zco_mode").on('mouseenter','.zco_menu',function(){
+					if(!$(this).find('p').nextAll().is(':animated')){
+						$(this).find('p').nextAll().show();
+						$(this).find('p').addClass('zco_triangle1');
+					}
+				}).on('mouseleave','.zco_menu',function(){
+					if(!$(this).find('p').nextAll().is(':animated')){
+						$(this).find('p').nextAll().hide();
+						$(this).find('p').removeClass('zco_triangle1');
+					}
+				});
+				//点更多弹层
+				var bro={}
+				bro.vs=navigator.userAgent;
+				bro.isIE9=bro.vs.indexOf("MSIE 9")>0;
+				bro.flag=0;
+				$(window).resize(function(){
+					if(bro.flag>0){
+						$("#zopacity").height($(window).height());
+					}
+				})
+				if (bro.isIE9 || !$.support.leadingWhitespace) {
+					$(".zre_info").on('click','.zlist_more',function(){
+						$("#zopacity").show();
+						$("#zlayer").show();
+					});
+					$('body').on('click','#zla_close,#zopacity',function(){
+						$("#zopacity").hide();
+						$("#zlayer").hide();
+					});
+				}else{
+					$(".zre_info").on('click','.zlist_more',function(){
+						bro.flag=1;
+						$("#zopacity").height($(window).height());
+						$("#zopacity").show();
+						$("#zlayer").show();
+						$("#zlayer").addClass('animated bounceIn');
+						
+						setTimeout(function(){
+							$("#zlayer").removeClass('animated bounceIn');
+						},800);
+					});
+					$('body').on('click','#zla_close,#zopacity',function(){
+						bro.flag=0;
+						$("#zlayer").addClass('animated bounceOut');
+						setTimeout(function(){
+							$("#zlayer").removeClass('animated bounceOut');
+							$("#zopacity").hide();
+							$("#zlayer").hide();
+						},800);
+					});
+				}
+				$("#zmiddle").checkAndRadio({inputType:'checkbox',checkB:'.zcheckB',checkGroup:'.zmiddle'});
+				$("#prettyRadio1").checkAndRadio({inputType:'radio',checkR:'.zcheckR',checkGroup:'.zs_field'});
+				$("#prettyRadio1").checkAndRadio({inputType:'radio',checkR:'.zcheckR',checkGroup:'.zs_pp'});
+				$("#zmiddle").CAR_All({inputType:'checkbox',CAR_btn:'.zre_checkAll',checkGroup:'.zmiddle'});
+			});
+			
+		</script>
+	</head>
+
+	<body>
+		
+		<!--点击更多 后弹层 start-->
+		<div class="zopacity" id="zopacity">
+		</div>
+		<div class="zlayer" id="zlayer">
+			<div class="zla_box" id="zla_box">
+				<div class="zla_title clearfix">
+					<h2>从你的全世界走过</h2>
+					<p id="zla_close"></p>
+				</div>
+				<div class="zla_bg">
+					<div class="zla_info">
+						<p><em>作者：</em><span class="zre_f_con">张佳佳著</span>
+						</p>
+						<p><em>出版社：</em><span class="zre_f_con">湖南教育出版社</span>
+						</p>
+						<p><em>页数：</em><span class="zre_f_con">3333</span>
+						</p>
+						<p><em>出版日期：</em><span class="zre_f_con">2014.08</span>
+						</p>
+					</div>
+					<div class="zla_con">
+						<h2>&lt;以下为本书搜索到的数目信息&gt;</h2>
+						<div class="zla_scroll">
+							<p><em>ISBN号：</em><span class="zre_f_con">978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zre_f_con zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><span class="zre_f_dir">目录：</em><span class="zre_f_con">第1页 从你的全世界路过</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第2页 猪头的爱情</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第3页 初恋是一个人的兵荒马乱</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第4页 我希望有个如你一般的人</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第5页 我希望有个如你一般的人2. 生鲜小龙虾的爱情</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第6页 无法说出我爱你</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第7页 猪头的爱情</span>
+							</p>
+							<p><span class="zre_f_dir"></span><span class="zre_f_con">第8页 初恋是一个人的兵荒马乱  <a href="#">更多…</a></span>
+							</p>
+							<p style="padding-top: 10px; color: #c00; font-size: 16px;">更多页码可以ajax追加到这里zre_f_con后面</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--点击更多 后弹层 end-->
+		<!--top start-->
+		<div class="ztop">
+			<ul>
+				<li class="zt_left zt_sub">
+					<p class="zt_menu"><a href="#">选择行业</a>
+					</p>
+					<div class="zt_site">
+						<ul class="zt_box">
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+						</ul>
+					</div>
+					<p class="zt_arrow1">&diams;</p>
+					<p class="zt_arrow2">&diams;</p>
+				</li>
+				<li class="zt_def">
+					<a href="#">退出</a>
+				</li>
+				<li class="zt_def zt_sub">
+					<p class="zt_menu"><a href="#">服务中心</a>|</p>
+					<div class="zt_site">
+						<ul class="zt_box">
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+							<li><a href="#">我的图书馆</a>
+							</li>
+						</ul>
+					</div>
+					<p class="zt_arrow1">&diams;</p>
+					<p class="zt_arrow2">&diams;</p>
+				</li>
+				<li class="zt_def">
+					<a href="#">论文检测</a>|
+				</li>
+				<li class="zt_def">
+					<a href="#">繁體中文</a>|
+				</li>
+				<li class="zt_cur">
+					<a href="#">首页</a>|
+				</li>
+			</ul>
+		</div>
+		<!--top end-->
+		<div class="wrap">
+			<!--header start-->
+			<div class="zs_wrap">
+				<div class="fl zs_logo">
+					<a href="#">
+						<img src="images/logo2.png" />
+					</a>
+				</div>
+				<div class="zs_box2 prettyRadio1" id="prettyRadio1">
+					<ul>
+						<li class="zs_classly">
+							<span class="zs_c_cur"><a href="#">知识</a></span>
+							<span class="zs_c_def"><a href="#">图书</a></span>
+							<span class="zs_c_def"><a href="#">期刊</a></span>
+							<span class="zs_c_def"><a href="#">报纸</a></span>
+							<span class="zs_c_def"><a href="#">学位论文</a></span>
+							<span class="zs_c_def"><a href="#">会议论文</a></span>
+							<span class="zs_c_def"><a href="#">文档</a></span>
+							<span class="zs_c_def"><a href="#">信息资讯</a><i>|</i></span>
+							<span class="zs_c_def"><a href="#">电子书</a></span>
+							<span class="zs_c_def"><a href="#"></a></span>
+						</li>
+						<li class="zs_more zs_m_sub">
+							<p class="zs_m_menu"><a href="#">更多&gt;&gt</a>
+							</p>
+							<div class="zs_m_site">
+								<ul class="zs_m_box">
+									<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+									</li>
+									<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+									</li>
+									<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+									</li>
+									<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+									</li>
+									<li><a href="#">我的图书馆</a><a href="#">我的图书馆</a><a href="#">我的图书馆</a>
+									</li>
+								</ul>
+							</div>
+							<p class="zs_m_arrow1">&diams;</p>
+							<p class="zs_m_arrow2">&diams;</p>
+						</li>
+	
+					</ul>
+	
+					<div class="zs_input">
+						<input type="text" id="" class="zs_intext" value="" />
+						<input type="button" id="" class="zs_btn" value="中文搜索" />
+						<input type="button" id="" class="zs_btn" value="外文搜索" />
+						<span class="zs_to">
+							<a href="#">高级搜索</a>
+						</span>
+					</div>
+					<ul>
+						<li class="fl zs_field">
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" checked="checked" name="names_book" id="bookId005" value="" />
+									<label for="bookId005"><em class="zcheck"><i></i></em><span>全部字段</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_book" id="bookId006" value="" />
+									<label for="bookId006"><em class="zcheck"><i></i></em><span>书名</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_book" id="bookId007" value="" />
+									<label for="bookId007"><em class="zcheck"><i></i></em><span>作者</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_book" id="bookId008" value="" />
+									<label for="bookId008"><em class="zcheck"><i></i></em><span>主题词</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_book" id="bookId009" value="" />
+									<label for="bookId009"><em class="zcheck"><i></i></em><span>丛书名</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_book" id="bookId010" value="" />
+									<label for="bookId010"><em class="zcheck"><i></i></em><span>目次</span></label>
+								</span>
+							</p>
+							<div class="clear"></div>
+						</li>
+						<li class="fl zs_pp">
+							<span class="fl zs_p_name">匹配：</span>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_pp" id="ppId007" value="" />
+									<label for="ppId007"><em class="zcheck"><i></i></em><span>精确</span></label>
+								</span>
+							</p>
+							<p class="zs_radio">
+								<span class="zcheckR">
+									<input class="zradioinput" type="radio" name="names_pp" id="ppId008" value="" />
+									<label for="ppId008"><em class="zcheck"><i></i></em><span>模糊</span></label>
+								</span>
+							</p>
+							<div class="clear"></div>
+						</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--header end-->
+			<div class="zgray zcount">
+				<p class="fl">找到相关的中文图书 <em class="zred">163077</em> 种,用时 <em class="zred">0.021</em> 秒</p>
+				<ul class="fr zco_mode">
+					<li class="zco_menu">
+						<p class="zco_triangle"><a href="#">匹配方式</a></p>
+						<div class="zco_site">
+							<ul class="zco_box">
+								<li><a href="#">模糊</a>
+								</li>
+								<li><a href="#">精确</a>
+								</li>
+							</ul>
+						</div>
+						<p class="zco_arrow1">&diams;</p>
+						<p class="zco_arrow2">&diams;</p>
+					</li>
+					<li class="zco_menu">
+						<p class="zco_triangle"><a href="#">相关性排序</a></p>
+						<div class="zco_site">
+							<ul class="zco_box">
+								<li><a href="#">默认</a>
+								</li>
+								<li><a href="#">时间降序</a>
+								</li>
+								<li><a href="#">时间升序</a>
+								</li>
+								<li><a href="#">访问量</a>
+								</li>
+								<li><a href="#">个人收藏量</a>
+								</li>
+								<li><a href="#">单位收藏量</a>
+								</li>
+								<li><a href="#">引用量</a>
+								</li>
+								<li><a href="#">电子馆藏</a>
+								<li><a href="#">本馆馆藏</a>
+								</li>
+							</ul>
+						</div>
+						<p class="zco_arrow1" >&diams;</p>
+						<p class="zco_arrow2" >&diams;</p>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<!--main start-->
+			<div class="zwrap" id="zwrap">
+				<div class="fl zsidebar zorange list_sidebar">
+					<!--类型 start-->
+					<div class="zs_title clearfix">
+						<h2 class="fl zs_h">类型</h2>
+						<p class="fr zs_m"><a href="#">本馆馆藏分析</a>
+						</p>
+					</div>
+					<div class="zs_content">
+						<ul class="zli_row">
+							<li><a href="#">本馆电子全文(1702)</a>
+							</li>
+							<li><a href="#">本馆随书光盘(1512)</a>
+							</li>
+							<li><a href="#">在线试读(7074)</a>
+							</li>
+						</ul>
+					</div>
+					<!--类型 end-->
+					<!--年代 start-->
+					<div class="zs_title">
+						<h2 class="fl zs_h">年代</h2>
+						<p class="fr zs_m"><a href="#">趋势曲线图</a>
+						</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zs_content">
+						<ul class="zli_row">
+							<li><a href="#">2015(1702)</a>
+							</li>
+							<li><a href="#">2014(1512)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+							<li><a href="#">2013(7074)</a>
+							</li>
+						</ul>
+						<p><a href="#">更多…</a>
+						</p>
+					</div>
+					<!--年代 end-->
+					<!--学科 start-->
+					<h2 class="zs_title">学科</h2>
+					<div class="zs_content">
+						<ul class="zxueke">
+							<li>
+								<p><a href="javascript:void(0)">政治、法律(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<p><a href="javascript:void(0)">文化、科学、教育、体育(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<p><a href="javascript:void(0)">经济(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<p><a href="javascript:void(0)">政治、法律(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<p><a href="javascript:void(0)">文化、科学、教育、体育(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+							<li>
+								<p><a href="javascript:void(0)">经济(19397)</a><em class="zxk_arrow"></em></p>
+								<dl class="zxk_menu">
+									<dt class=""><a href="#">自动化技术、计算机技术 </a>&gt; <a href="#">计算技
+	术、计算机技术</a><i></i></dt>
+									<dd><a href="#">计算机软件(19397)</a></dd>
+									<dd><a href="#">计算机的应用(17705)</a></dd>
+									<dd><a href="#">微型计算机(5265)</a></dd>
+									<dd><a href="#">一般性问题(3006)</a></dd>
+									<dd><a href="#">习题、试题及题解(1114)</a></dd>
+									<dd><a href="#">电子数字计算机（不连续作用电子计
+	      算机）(985)</a></dd>
+								</dl>
+							</li>
+						</ul>
+						<p><a href="#">更多…</a>
+						</p>
+					</div>
+					<!--学科 end-->
+					<!--作者 start-->
+					<h2 class="zs_title">作者</h2>
+					<div class="zs_content">
+						<ul class="zli_row">
+							<li><a href="#">谭浩强(1702)</a>
+							</li>
+							<li><a href="#">匡松(1512)</a>
+							</li>
+							<li><a href="#">刘瑞新(7074)</a>
+							</li>
+							<li><a href="#">黄明(7074)</a>
+							</li>
+							<li><a href="#">沈大林(7074)</a>
+							</li>
+							<li><a href="#">李大友(7074)</a>
+							</li>
+						</ul>
+						<p><a href="#">更多…</a>
+						</p>
+					</div>
+					<!--作者 end-->
+				</div>
+				<div class="fr zsidebar">
+					<!--外文搜索结果 start-->
+					<h2 class="ztitle">
+	
+				<i class="zti_icon1"></i>
+	
+				<span class="zti_h">外文搜索结果</span>
+	
+			</h2>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>(computer ，<a href="#">calculator</a> ，adding machine ) 词典</p>
+					</div>
+					<!--外文搜索结果 end-->
+					<!--近义词 start-->
+					<h2 class="ztitle">
+	
+				<i class="zti_icon1"></i>
+	
+				<span class="zti_h">近义词</span>
+	
+			</h2>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span> 电脑，电子计算机，<span class="zred"><a href="#">计算机</a></span>
+						</p>
+					</div>
+					<!--近义词 end-->
+					<!--共现词 start-->
+					<h2 class="ztitle">
+	
+				<i class="zti_icon1"></i>
+	
+				<span class="zti_h">共现词</span>
+	
+			</h2>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span> 操作系统，网络，应用，软件，教学</p>
+					</div>
+					<!--共现词 end-->
+					<!--下位词 start-->
+					<h2 class="ztitle">
+	
+				<i class="zti_icon1"></i>
+	
+				<span class="zti_h">下位词</span>
+	
+			</h2>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>(computer ，<a href="#">calculator</a> ，adding machine ) 词典</p>
+					</div>
+					<!--下位词 end-->
+					<!--人物 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">人物</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box">
+						<p><span><a href="#">金怡濂</a></span>
+						</p>
+						<p class="zli_indent zli_666">
+							金怡濂 (1929.9.5-- ) <span class="zred"><a href="#">计算机</a></span>专家。天津市人。1951年毕业于清华大学。1956—1958年在原苏联科学院精密机械与计算机...</p>
+						<p><a href="#">详细介绍</a>
+						</p>
+					</div>
+					<!--人物 end-->
+					<!--期刊 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">期刊</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关1817086篇</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>硬盘故障数据恢复技术探索</p>
+						<p class="zli_666">石德琳, 网络安全技术与应用, 2015</p>
+						<p>试论计算机应用技术与信息管理的整合</p>
+						<p class="zli_666">杨清茹，胡宏涛, 科技与企业, 2015</p>
+					</div>
+					<!--期刊 end-->
+					<!--报纸 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">报纸</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关177018篇</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p>扶持加大 <span class="zred"><a href="#">计算机</a></span>股现涨停潮</p>
+						<p class="zli_666">信息时报, 2015</p>
+						<p>嵌入式计算机软件的侵权认定</p>
+						<p class="zli_666">周波, 中国知识产权报, 2015</p>
+					</div>
+					<!--报纸 end-->
+					<!--知识 start-->
+					<h2 class="ztitle">
+	
+				<i class="zti_icon1"></i>
+	
+				<span class="zti_h">知识</span>
+	
+			</h2>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>与计算机程序</p>
+						<p><span class="zred"><a href="#">计算机</a></span>
+						</p>
+					</div>
+					<!--知识 end-->
+					<!--文档 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">文档</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>与计算机程序</p>
+						<p><span class="zred"><a href="#">计算机</a></span>
+						</p>
+					</div>
+					<!--文档 end-->
+					<!--学位论文 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">学位论文</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p>中职护校创新型<span class="zred"><a href="#">计算机</a></span>实训教学模式研究</p>
+						<p class="zli_666">赵娟, 硕士, 河北师范大学, 2014</p>
+						<p><span class="zred"><a href="#">计算机</a></span>辅助审计应用研究</p>
+						<p class="zli_666">朱艳飞, 硕士, 中国海洋大学, 2014</p>
+					</div>
+					<!--学位论文 end-->
+					<!--会议论文 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">会议论文</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关147514篇</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p>中职护校创新型<span class="zred"><a href="#">计算机</a></span>实训教学模式研究</p>
+						<p class="zli_666">赵娟, 硕士, 河北师范大学, 2014</p>
+						<p><span class="zred"><a href="#">计算机</a></span>辅助审计应用研究</p>
+						<p class="zli_666">朱艳飞, 硕士, 中国海洋大学, 2014</p>
+					</div>
+					<!--会议论文 end-->
+					<!--课程课件 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">课程课件</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关4340篇</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>原理 唐玉华</p>
+						<p class="zli_666">《计算机原理》课程简介课程的性质地位：《计算机原理》是计算机科学与技术、软件工程、网络工程、信息安全专业的学科基础必修课程。本课程从计算机硬件和软件两个角度来阐述电子数字计算机的运...</p>
+					</div>
+					<!--课程课件 end-->
+					<!--考试辅导 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">考试辅导</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>与计算机程序</p>
+						<p><span class="zred"><a href="#">计算机</a></span>
+						</p>
+					</div>
+					<!--考试辅导 end-->
+					<!--政府公开信息 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">政府公开信息</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box">
+						<p><span class="zred"><a href="#">计算机</a></span>软件保护条例</p>
+						<p><span class="zred"><a href="#">计算机</a></span>软件保护条例</p>
+					</div>
+					<!--政府公开信息 end-->
+					<!--标准 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">标准</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p>喷墨<span class="zred"><a href="#">计算机</a></span>直接制版（CTP）墨水</p>
+						<p class="zli_666">2014</p>
+						<p>民用飞机飞行告警<span class="zred"><a href="#">计算机</a></span>通用规范</p>
+						<p class="zli_6664</p class=" zli_666>
+					</div>
+					<!--标准 end-->
+					<!--专利 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">专利</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p>喷墨<span class="zred"><a href="#">计算机</a></span>直接制版（CTP）墨水</p>
+						<p class="zli_666">2014</p>
+						<p>民用飞机飞行告警<span class="zred"><a href="#">计算机</a></span>通用规范</p>
+						<p class="zli_6664</p class=" zli_666>
+					</div>
+					<!--专利 end-->
+					<!--视频 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+	
+					<i class="zti_icon1"></i>
+	
+					<span class="zti_h">视频</span>
+	
+				</h2>
+						<p class="fr zti_gray">相关13487位</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box zblue">
+						<p><span class="zred"><a href="#">计算机</a></span>
+						</p>
+						<p><span class="zred"><a href="#">计算机</a></span>维修教程 计算机组装教程 计算机视频教程</p>
+					</div>
+					<!--视频 end-->
+					<!--其他频道 start-->
+					<div class="ztitle">
+						<h2 class="fl">
+							<i class="zti_icon1"></i>
+	<span class="zti_h">其他频道</span>
+	
+	</h2>
+						<p class="fr zti_gray zMidnightBlue"><a href="#">更多&gt;&gt;</a>
+						</p>
+						<div class="clear"></div>
+					</div>
+					<div class="zli_box">
+						<ul>
+							<li class="zli_item"><a href="#">图片</a>
+							</li>
+							<li class="zli_item"><a href="#">电影</a>
+							</li>
+							<li class="zli_item"><a href="#">博客</a>
+							</li>
+							<li class="zli_item"><a href="#">音乐</a>
+							</li>
+							<li class="zli_item"><a href="#">新闻</a>
+							</li>
+							<li class="zli_item"><a href="#">论坛</a>
+							</li>
+							<li class="zli_item"><a href="#">地图</a>
+							</li>
+						</ul>
+					</div>
+					<!--其他频道 end-->
+				</div>
+	
+				<div class="zmiddle" id="zmiddle">
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId003" value="" />
+								<label for="classId003"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId004" value="" />
+								<label for="classId004"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId005" value="" />
+								<label for="classId005"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId006" value="" />
+								<label for="classId006"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId007" value="" />
+								<label for="classId007"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId008" value="" />
+								<label for="classId008"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId009" value="" />
+								<label for="classId009"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId010" value="" />
+								<label for="classId010"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId011" value="" />
+								<label for="classId011"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_item">
+						<div class="fl zre_checkbox">
+							<div class="zcheckB">
+								<input class="zcheckinput" type="checkbox" name="" id="classId012" value="" />
+								<label for="classId012"><em class="zcheck"><i></i></em><span></span></label>
+							</div>
+						</div>
+						<div class="fl zre_sidebar">
+							<p class="zre_img">
+								<img src="temp/201504201647_06.png" width="100" />
+							</p>
+							<div class="zstar">
+								<span class="zstar_icon zstar_s1"></span>
+							</div>
+						</div>
+						<div class="zre_info">
+							<h2 class="zre_h">
+								<a class="zre_title" href="#">从你的全世界路过</a> 
+								<a class="zre_primary" href="#">包库全文</a>
+								
+								<a class="zre_primary" href="#">部分阅读</a>
+							</h2>
+							<p><em>作者：</em><span>张佳佳著</span><em>页数：</em><span>466页</span><em>出版时间：</em><span>2014.08</span>
+							</p>
+							<p><em>内容提要：</em><span>本书是青年作家张佳佳的一部小说集，在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版在原版的基础上,新增了9个打动人心的故事 原版的基础上，新增了9个打动人心的故事在原版的基础上</span>
+							</p>
+							<p><em>ISBN号：</em><span>978-7-5404-6689-3</span>
+							</p>
+							<p><em>分类：</em><span class="zblue"><a href="#">短篇小说</a>-<a href="#">小说集</a>-<a href="#">中国</a>-<a href="#">当代</a></span>
+							</p>
+							<p><i>目录：</i><span>第1页 从你的全世界路过</span>
+							</p>
+							<p><i></i><span>第2页 猪头的爱情</span>
+							</p>
+							<p><i></i><span>第3页 初恋是一个人的兵荒马乱  <a class="zlist_more" href="#">更多…</a></span>
+							</p>
+						</div>
+						<div class="zre_media">
+							<span class="zgray zre_count">收藏馆：10</span>
+							<span class="zgray zre_count">总被引：22</span>
+							<span class="zgray zre_count">被图书引：2</span>
+							<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出</a></span>
+						</div>
+					</div>
+					<div class="zre_bottom">
+						<!--<label class="label_check">
+							<input type="checkbox" name="" id="" value="" />
+							
+						</label>-->
+						<span class="zre_checkAll zgray">全选</span>
+						<span class="zre_icon zre_shoucang"><em></em><a href="#">收藏所选记录</a></span>
+							<span class="zre_icon zre_daochu"><em></em><a href="#">导出所选记录</a></span>
+					</div>
+					<!--分页 start-->
+					<div class="zpage zMidnightBlue">
+						<a class="zp_prev" href="#">上一页</a>
+						<a class="zp_cur" href="#">1</a>
+						<a href="#">2</a>
+						<a href="#">3</a>
+						<a href="#">4</a>
+						<a href="#">5</a>
+						<a href="#">6</a>
+						<a href="#">7</a>
+						<a href="#">8</a>
+						<a href="#">9</a>
+						<a href="#">10</a>
+						<a class="zp_next" href="#">下一页</a>
+					</div>
+					<!--分页 end-->
+					<h2 class="ztitle">
+	
+						<i class="zti_icon1"></i>
+			
+						<span class="zti_h">共现词</span>
+			
+					</h2>
+					<div class="zxiangguan">
+						<ul>
+							<li><a href="#">从你的世界路过</a></li>
+							<li><a href="#">从你的全世界路过 pdf</a></li>
+							<li><a href="#">从你的全世界路过电影</a></li>
+							<li><a href="#">张嘉佳</a></li>
+							<li><a href="#">谁的青春不迷茫</a></li>
+							<li><a href="#">偷影子的人</a></li>
+							<li><a href="#">从你的世界路过 txt</a></li>
+							<li><a href="#">从你的全世界路过 txt</a></li>
+							<li><a href="#">从你的全世界路过电影</a></li>
+							<li><a href="#">从你的世界路过</a></li>
+							<li><a href="#">从你的全世界路过 pdf</a></li>
+							<li><a href="#">从你的全世界路过电影</a></li>
+							<li><a href="#">张嘉佳</a></li>
+							<li><a href="#">谁的青春不迷茫</a></li>
+							<li><a href="#">偷影子的人</a></li>
+							<li><a href="#">从你的世界路过 txt</a></li>
+							<li><a href="#">从你的全世界路过 txt</a></li>
+							<li><a href="#">从你的全世界路过电影</a></li>
+						</ul>
+					</div>
+				</div>
+	
+			</div>
+			<!--main end-->
+			<div class="clear"></div>
+		</div>
+		<!--footer start-->
+		<div class="zfooter">
+			<div class="zcenter">
+				<p>
+					<span><a href="#">关于读秀</a>|</span>
+					<span><a href="#">用户评价</a>|</span>
+					<span><a href="#">常见问题</a>|</span>
+					<span><a href="#">使用帮助</a>|</span>
+					<span><a href="#">联系我们</a>|</span>
+					<span><a href="#">使用感受</a></span>
+				</p>
+				<p class="zf_p">公司内部 © 2015 · powered by duxiu 客服电话：010-51667449 京ICP备07013879号-1 京公网安备11010802013526号</p>
+			</div>
+		</div>
+		<!--footer end-->
+	</body>
+
+</html>

@@ -1,0 +1,68 @@
+/*----------------------------------------------------
+选择题
+-----------------------------------------------------*/
+.zselectTopic { padding:0 30rpx; background:#fff;}
+.zse_tabBox { margin-top: 35rpx;}
+.zse_t { padding: 0 30rpx; line-height: 88rpx; font-size: 32rpx; color: #666;}
+.zse_box {}
+.zse_row { display: -webkit-box; display: box; padding: 12rpx 0; border-bottom: 1px #ebebeb solid; background-color: #fff; line-height: 64rpx; font-size: 32rpx;}
+.zse_con { -webkit-box-flex: 1; }
+.zse_con input { height: 80rpx; line-height: 80rpx; border:none; background: #fff;}
+.zse_label { display: block; padding-right: 10rpx; height: 80rpx;}
+.zse_label text { line-height: 80rpx; vertical-align: middle}
+.zse_label radio { vertical-align: middle;}
+.zse_delete { padding-top: 24rpx;}
+/*右侧可选择加东西，备用样式*/
+.zse_num {  display: block; width: 88rpx; padding:0 2rpx; text-align: right; display: -webkit-box; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.zse_num i,.zse_num span { display: inline-block; vertical-align: middle;}
+.zse_num span { padding-right: 5rpx; color: #999;}
+.zse_num i { position: relative; display: inline-block; margin-top: 12rpx; width: 37rpx; height: 37rpx; border: 1rpx #ccc solid; border-radius: 50%;}
+.zse_num i:after { position: absolute; left: 50%; margin-left: -12rpx; top: 50%; margin-top: -1rpx; display: inline-block; width: 0.24rpx; height: 2rpx; background: #ccc; content: '';}
+/*添加选项*/
+.zse_add { padding:24rpx 30rpx;}
+.zse_add span,.zse_add a { display: inline-block; vertical-align: middle;}
+.zse_add a { width: 46rpx; height: 46rpx; background: url(../images/add_30.png) no-repeat; background-size: 44rpx;}
+.zse_add span { display: block; height: 46rpx; padding-left: 14rpx; line-height: 46rpx; font-size: 30rpx; color: #d8d8d8;}
+.zse_add span:before { display: inline-block; width: 37rpx; height: 32rpx; background: url(../images/add_03.png) 0 top no-repeat; background-size: 30rpx; vertical-align: middle; content: '';}
+/*----------------------------------------------------
+简答题
+-----------------------------------------------------*/
+.zshortAnswer { border-top:1rpx #dedede solid;  border-bottom:1rpx #dedede solid;}
+
+/*----------------------------------------------------
+填空题
+-----------------------------------------------------*/
+.zblanks {}
+.zblanks_row { display: -webkit-box; border-bottom: 1rpx #dedede solid; background: #fff; }
+.zblanks_row:nth-child(1) { border-top: 1rpx #dedede solid;}
+.zblanks_tt { height: 88rpx; padding-left: 30rpx; font-size:35rpx;line-height: 88rpx; color: #999;}
+.zblanks_input {  -webkit-box-flex: 1; height: 88rpx; padding-right: 30rpx; padding-left: 18rpx; line-height: 86rpx; font-size: 35rpx; color: #333;}
+.zblanks_input input { width: 100%; height: 88rpx; border: none;  background: #fff; line-height: normal; font-size: 35rpx; color: #333; vertical-align: top;}
+/*----------------------------------------------------
+编辑题类型
+-----------------------------------------------------*/
+.zeditQuestion {}
+.zed_box { display: -webkit-box; -webkit-box-align: center; padding: 46rpx 30rpx 12rpx; text-align: center;}
+.zed_box li { -webkit-box-flex: 1; height: 82rpx; margin: 0 24rpx; padding-top: 1rpx; border:1px #09f solid; border-radius: 12rpx; line-height: 82rpx; text-align: center; color: #09f; font-size: 35rpx;}
+.zed_box li.zed_cur { background: #09f; color: #fff;}
+/*----------------------------------------------------
+发放测验
+-----------------------------------------------------*/
+.zpolls {}
+.zpolls_item { margin-bottom: 24rpx; border-bottom: 1rpx #ebebeb solid; border-top: 1rpx #ebebeb solid; background: #fff;}
+.zpolls_t1 { display: -webkit-box; display: box; -webkit-box-pack: justify; height: 88rpx; overflow: hidden; background: #f8f8f8;}
+.zpolls_num {  -webkit-box-flex: 1; padding-left: 30rpx; line-height: 88rpx; font-size: 32rpx;}
+.zpolls_num span { padding-left: 24rpx;}
+.zpolls_num em {}
+.zpolls_con {}
+.zpolls_textarea { padding: 0 ;}
+.zpolls_integral { display: -webkit-box; line-height: 88rpx; -webkit-transition: all ease 0.3s; transition: all ease 0.3s; -webkit-filter: grayscale(1); filter: grayscale(1);}
+.zpolls_integral dd { color: #1785fb; font-size: 32rpx;}
+.zpolls_integral dd { padding-right: 3rpx; text-align: right;}
+.zpolls_integral dd span {display: inline-block; vertical-align: middle;}
+.zpolls_integral dd em { display: inline-block; width: 32rpx; height: 32rpx; margin-left: 5rpx; background: url(../images/arrowDown_03.png) center no-repeat; background-size: 30rpx; vertical-align: middle;}
+
+.zpolls_state1 { -webkit-transform: rotateX(180deg); transform: rotateX(180deg);}
+.zpolls_state2 { -webkit-transform: translateY(-88rpx); transform: translateY(-88rpx);}
+.zaddItem { height: 70rpx; padding: 0 30rpx; line-height: 70rpx;text-align: right;}
+.zaddItem a { font-size: 35rpx; color: #999;}

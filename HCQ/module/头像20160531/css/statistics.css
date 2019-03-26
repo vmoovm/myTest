@@ -1,0 +1,35 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+参考备用
+-----------------------------------------------------*/
+
+/*统计*/
+.zstatisitics {}
+.zst_key { padding:0 1.2rem; padding-top: 1rem;  font-size: 1.4rem;}
+.zst_row { display: -webkit-box; padding-top: 0.6rem; border-top: 1px #dedede solid;}
+.zst_p { -webkit-box-flex:1; }
+.zst_p span { /*padding: 0.5rem 0 1rem 0;*/ }
+.zst_p span i { color:#3cba6e }
+.zst_score { text-align: right; color: #929292;}
+/*已投/未投 已答/未答*/
+.zst_TaD {  padding:0 1.2rem; font-size: 1.4rem; color: #09f;}
+.zst_TaD i { color:#3cba6e;}
+/*图表*/
+.zst_chart { margin-top: 1.5rem; border-top: 1.5rem #dedede solid; background: #fff; text-align: center;}
+
+/*选项统计*/
+.zst_option { padding: 1.2rem; border-top: 1px #dedede solid; background: #fff;}
+.zst_item { padding-top: 1.2rem;}
+.zst_h { font-size: 1.4rem;}
+.zst_progress { display: -webkit-box;}
+.zst_progressBar { -webkit-box-flex: 1; height: 1.2rem; margin-top: 0.4rem; border-radius: 0.6rem; overflow: hidden; background: #dedede;}
+.zst_progressBar em { display: block; height: 100%; width: 0rem; background: #09f;}
+.zst_num { width: 4.5rem; padding-top: 0.2rem; padding-left: 1.5rem; line-height: 1.8rem; color: #09f; font-size: 1.4rem;}
+.zst_progressVal { width: 4rem; padding-top: 0.2rem; padding-right: 0.6rem; line-height: 1.8rem; text-align: right; font-size: 1.4rem; color: #666;}
+.zst_shortAnswer {font-size: 1.2rem; line-height: 2rem;}
+
+/*教师查看该学生结果*/
+.zst_box { padding:1.2rem; padding-bottom: 0; border-top: 1rem #e4e4e4 solid; overflow: hidden; overflow-y: auto;}
+

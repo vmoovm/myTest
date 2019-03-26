@@ -1,0 +1,1 @@
+document.writeln("<a href=\"http:\/\/bbs.poluoluo.com\/forum-51-1.html\" target=\"_blank\"><img src=\"http:\/\/www.poluoluo.com\/img\/topad.png\" width=\"400\" height=\"60\" \/><\/a>")

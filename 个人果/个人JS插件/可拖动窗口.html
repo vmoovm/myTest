@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Exit" content="revealTrans(Duration=1,Transition=23)">
+<meta name="keywords" content="ThinkPHP,文档中心,开发框架,web框架,PHP开发框架,ThinkPHP手册"/>
+<meta name="description" content="中文最佳实践框架 大道至简 开发由我|php快速开发|php开源框架|php网站开发|PHP企业开发"/>
+<title>定义页面标题</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/drag.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/drag.js" type="text/javascript"></script>
+<script>
+	$(function(){
+	$('.ck').zdrag({
+		dragE:'.ck_drag'		   
+	});
+
+	$('#test').zdrag();
+});
+</script>
+</head>
+
+<body>
+<div id="test" style=" position:fixed; left:0; top:0; width:150px; height:150px; padding:20px; background-color:#FC3; line-height:40px; color:#F60; font-size:13px;"></div>
+<div class="ck">
+	<div class="ck_drag">温馨提示：</div>
+	<div class="ck_content">
+		<p class="ck_site"><img src="image/drag/online1.gif" width="149" height="196" /></p>
+		<p class="ck_site">
+			<span class="ck_signal"></span>
+			<span class="ck_info">文件夹重名了，是否覆盖同名文件夹？</span>
+		</p>
+	</div>
+</div>
+
+<div class="ck" id="ck1" style=" left:30px;">
+	<div class="ck_drag">友情提示：</div>
+	<div class="ck_content">
+		<p class="ck_site"><img src="image/drag/online1.gif" width="149" height="196" /></p>
+		<p class="ck_site">
+			<span class="ck_signal"></span>
+			<span class="ck_info">文件夹重名了，是否覆盖同名文件夹？</span>
+		</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Page-Exit" content="revealTrans(Duration=1,Transition=23)">
+<meta name="keywords" content="ThinkPHP,文档中心,开发框架,web框架,PHP开发框架,ThinkPHP手册"/>
+<meta name="description" content="中文最佳实践框架 大道至简 开发由我|php快速开发|php开源框架|php网站开发|PHP企业开发"/>
+<title>输入框默认值变化</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/inputVal.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/defaultInput.js" type="text/javascript"></script>
+<script>
+$(function(){
+	$('.zinput1').defaultInput({text:'默认值'});	
+	$('.zinput2').defaultInput({text:'用户'});	
+	$('.zinput3').defaultInput({text:'密码'});	
+	$('.zinput4').defaultInput({text:'请输入关键字'});
+	/*var cc='<input id="test" class="zinput3" type="text" value="密码" />';
+	$('#test').after(cc);
+	$('#test').remove();*/
+	$('#test').attr('name','1111111');
+	$('#test').attr('value','1111111');  
+});
+</script>
+</head>
+
+<body>
+<div class="center">
+	<ul>
+    	<li><input class="zinput1" type="text" value="默认值" /></li>
+        <li><input class="zinput2" type="text" value="用户" /></li>
+        <li><input class="zinput3" type="text" value="密码" /><input id="test" name="" type="password" /></li>
+        <li><input class="zinput4" type="text" value="请输入关键字"/></li>
+    </ul>
+</div>
+</body>
+</html>

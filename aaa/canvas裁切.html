@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas裁切</title>
+	</head>
+	<body>
+		<div>
+		    <input type="file" id="imgFile">
+		</div>
+		<div id="demoBox" style="width: 500px;height: 500px;position: absolute;left: 300px;top: 0;overflow:hidden;border: 1px solid #ccc">
+		    <img id="demoImg" alt="">
+		    <div style="width: 360px;height: 480px;border: 1px solid #4fb8e3;background:rgba(255,255,255,.5);position: absolute;left: 0;top: 0;z-index: 1000;cursor:move" id="chooseBox"></div>
+		</div>
+		<div style="position: absolute;left: 700px;top: 0">
+		    <canvas id="myCan" width="180" height="240"></canvas>
+		    <button id="cut">裁剪文件</button>
+		    <button id="btn">后台返回获取裁剪后的文件</button>
+		    <img id="returnImg" alt="">
+		</div>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/canvasCut.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

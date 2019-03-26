@@ -1,0 +1,211 @@
+<view class="zpolls" id="zpolls">
+    <view class="zpolls_item">
+        <view class="zpolls_t1">
+            <view class="zpolls_num">
+                <text>第1题</text>
+                <text>钢铁是怎样烧成的？</text>
+            </view>
+            <view class="zpolls_integral">
+                <view>
+                    <text>单选题</text>
+                </view>
+            </view>
+        </view>
+        <view class="zpolls_con">
+			<view class="zshangchuan">
+				<view class="zsh_textarea zpolls_textarea">
+					<view class="zsh_contenteditable">
+						<textarea name="" rows="" cols="" placeholder='题干最多输入500字'></textarea>
+					</view>
+				</view>
+				<view class="zsh_img">
+					<view class="zsh_imgList">
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709261446_23.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709261513_20.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709271849_03.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709271849_05.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_addImg"></view>
+					</view>
+				</view>
+			</view>
+            <!--答案/选项 start-->
+            <view class="zselectTopic">
+                <radio-group>
+                    <view class='zse_row'>
+                        <label class='zse_label'>
+                            <radio></radio><text>A:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+					<view class='zse_row'>
+                        <label class='zse_label'>
+                            <radio></radio><text>B:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+					<view class='zse_row'>
+                        <label class='zse_label'>
+                            <radio></radio><text>C:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+                </radio-group>
+            </view>
+            <!--答案/选项 end-->
+            <view class="zse_add zpolls_add">
+                <a href="#"></a>
+            </view>
+        </view>
+    </view>
+    <view class="zpolls_item">
+        <view class="zpolls_t1">
+            <view class="zpolls_num">
+                <em>第2题</em>
+                <text>钢铁是怎样烧成的？</text>
+            </view>
+            <view class="zpolls_integral">
+                <view>
+                    <text>多选题</text>
+                    <em></em>
+                </view>
+            </view>
+        </view>
+        <view class="zpolls_con">
+            <view class="zshangchuan">
+				<view class="zsh_textarea zpolls_textarea">
+					<view class="zsh_contenteditable">
+						<textarea name="" rows="" cols="" placeholder='题干最多输入500字'></textarea>
+					</view>
+				</view>
+				<view class="zsh_img">
+					<view class="zsh_imgList">
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709261446_23.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709261513_20.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709271849_03.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_rel">
+							<view class='zsh_view'>
+								<image mode='aspectFill' src="../../temp/201709271849_05.jpg" />
+							</view>
+							<icon class="zsh_close" type="clear" size='18' />
+						</view>
+						<view class="zsh_addImg"></view>
+					</view>
+				</view>
+			</view>
+            <!--答案/选项 start-->
+            <view class="zselectTopic">
+                <radio-group>
+                    <view class='zse_row'>
+                        <label class='zse_label'>
+                            <checkbox></checkbox><text>A:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+					<view class='zse_row'>
+                        <label class='zse_label'>
+                            <checkbox></checkbox><text>B:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+					<view class='zse_row'>
+                        <label class='zse_label'>
+                            <checkbox></checkbox><text>C:</text>
+                        </label>
+						<view class='zse_con'>
+							<input type='text' placeholder='请输入'/>
+						</view>
+						<view class='zse_delete'>
+							<icon type='clear'></icon>
+						</view>
+                    </view>
+                </radio-group>
+            </view>
+            <!--答案/选项 end-->
+            <view class="zse_add zpolls_add">
+                <a href="#"></a>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="zaddItem" id="zaddItem">
+    <a href="#">+ 添加题目</a>
+</view>
+<view class="zintegral" id="ztime">
+    <view class="zin_row">
+        <view class='zin_key'>答题时长：</view>
+        <view class='zin_value'>
+            <text>30分钟</text>
+            <em></em>
+        </view>
+    </view>
+    <view class="zin_row">
+        <view class='zin_key'>积分奖励：</view>
+        <view class='zin_value'>
+            <text>    3       </text>
+            <em></em>
+        </view>
+    </view>
+</view>
+<view class="zre_top">
+    <button type='primary'>发放</button>
+</view>

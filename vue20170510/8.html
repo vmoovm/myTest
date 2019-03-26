@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>组件</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script src="js/vue.min.js" type="text/javascript"></script>
+<style type="text/css">
+	dl { width: 500px; margin: 10px auto; border: 1px #ccc solid; padding: 20px; line-height: 1.8;}
+	dt { font-size: 14px; font-weight: bold;}
+	dd { font-size: 12px}
+	input { margin: 10px; width: 180px; height: 30px;}
+	textarea { min-height: 300px; width: 200px; padding: 10px;}
+</style>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="" style="position: relative; z-index: 2; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+		<!--全局组件 vh-->
+		<vh></vh>
+		<dl>
+			<dt>局部组件</dt>
+			<dd>
+				<ha></ha>
+			</dd>
+		</dl>
+		<!--<dl>
+			<dt>全局组件</dt>
+			<dd></dd>
+		</dl>-->
+	</div>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	// 全局组件
+	Vue.component('vh',{
+		template:'<dl><dt>全局组件</dt><dd>内容可以是默认的</dd></dl>'
+		// template:'<dl><dt>title</dt><dd>content</dd></dl>'
+	});
+	var ha={
+		template:'<h1>自定义组件</h1>'
+	}
+	new Vue({
+		el:'.zmain',
+		data:{
+			title:'标题是这样定义的',
+			content:'内容可以是默认的'
+		},
+		components:{
+			'ha':ha
+		}
+	})
+</script>
+</body>
+</html>

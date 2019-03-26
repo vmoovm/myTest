@@ -1,0 +1,48 @@
+/*九宫格*/
+.mui-grid-view.mui-grid-9 { border: none;}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell { border:none;}
+.mui-grid-view.znav_bg { border-bottom: 1px #ddd solid; background: #fcfcfc;}
+.znav_icon { width: 3.6rem; height: 3.6rem; margin: 0.5rem; border-radius: 3rem; background-size: 2.6rem; background-position: center; background-repeat: no-repeat}
+.znav_bkdy { background-image: url(../images/icon_15.png); background-color: #5185f2;}
+.znav_xxjh { background-image: url(../images/icon_17.png); background-color: #fa5e8d;}
+.znav_ksxx { background-image: url(../images/icon_19.png); background-color: #23cc93;}
+.znav_mryl { background-image: url(../images/icon_21.png); background-color: #af7bf7;}
+.znav_ksrd { background-image: url(../images/icon_27.png); background-color: #fb7a5d;}
+.znav_mfzb { background-image: url(../images/icon_29.png); background-color: #a0d468;}
+.znav_tsjc { background-image: url(../images/icon_31.png); background-color: #ffce55;}
+.znav_xkzn { background-image: url(../images/icon_33.png); background-color: #a0d468;}
+.mui-table-view.mui-grid-view .mui-table-view-cell .znav_tt { height: 1.36rem; font-size: 1rem; color:#333;}
+
+
+/*课程列表*/
+.zcourse {}
+.mui-slider .mui-slider-group { border-top: 1px #ddd solid;}
+.mui-table-view .zcourse_pic { max-width: 13.12rem; /*height: 160px;*/;}
+.zcourse_content { padding: 0 1.2rem; background: #fff;}
+.mui-slider .mui-slider-group .zcourse_box { border-top: none; border-bottom: 1px #ddd solid;}
+
+.zcourse_zinfo { padding-left: 1rem;}
+.zcourse_zinfo h2 { font-size: 0.8rem;}
+.zcourse_zinfo h2 span { color: #999; padding-right: 0.2rem;}
+.zcourse_zul { margin: 0; padding: 0; float: none;}
+.zcourse_zbtn { padding-top: 40px; list-style-type: none;}
+.zcourse_zbtn button { width: 100%; border: 1px #ff5a28 solid; background: #ff5a28; color: #fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

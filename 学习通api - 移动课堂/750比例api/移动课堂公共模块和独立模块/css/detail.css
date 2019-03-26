@@ -1,0 +1,24 @@
+.zdetail { border-bottom: 1px #e6e6e6 solid; background: #fff;}
+.zdetail_body { }
+.zdetail_type { display: -webkit-flex; display: -webkit-box; display: flex; padding: 0 0.2808rem;}
+.zdetail_item { -webkit-box-flex: 1; display: -webkit-flex; display: -webkit-box; display: flex; padding: 0.0936rem 0.3276rem 0.0936rem 0; line-height: 1.8; font-size: 0.2925rem; }
+.zschedule { border-top: 1px #e6e6e6 solid; background: #fff;}
+.zschedule_box { padding-bottom: 0.6084rem;}
+.zschedule_rel { position: relative; margin-left: 0.351rem; padding-bottom: 0.0702rem;}
+.zschedule_line { position: absolute; margin-top: 0.3276rem; height: 100%; width: 1px; background: #dbdbdb;}
+.zschedule_row { margin-left: 0.3744rem; padding: 0.0702rem 0.2808rem 0.117rem 0 ;}
+.zschedule_row dt { line-height: 0.5148rem; font-size: 0.2574rem; color: #808080;}
+/*默认黄色*/
+.zschedule_row i { position: absolute; left: -0.1521rem; margin-top: 0.1521rem; display: inline-block; width: 0.1872rem; height: 0.1872rem; border: 0.0702rem #fff solid; border-radius: 50%; background: #ffeec1;}
+.zschedule_row i:after { content: ''; position: absolute; left: 0.0351rem; margin-top: 0.0351rem; display: inline-block; width: 0.117rem; height: 0.117rem; border-radius: 50%; background: #ffc831;}
+/*红色*/
+.zschedule_row i.zred { background: #ffd5c9;}
+.zschedule_row i.zred:after { background: #fa7955;}
+/*绿色*/
+.zschedule_row i.zgreen { background: #b3eeda;}
+.zschedule_row i.zgreen:after { background: #04d18d;}
+/*蓝色*/
+.zschedule_row i.zblue { background: #cce9ff;}
+.zschedule_row i.zblue:after { background: #57b6ff;}
+.zschedule_row dd { line-height: 1.4; font-size: 0.3042rem; color: #000;}
+.zschedule_rel {}

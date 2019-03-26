@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>底部菜单（积分设置）</title>
+<link rel="stylesheet" type="text/css" href="css/zcommon.css"/>
+<link rel="stylesheet" type="text/css" href="css/integral.css"/>
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/integral.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="zbox">
+	<div class="zbox_content">
+		<div class="zintegral" >
+			<dl class="zin_row" id="ztime">
+				<dt>答题时长：</dt>
+				<dd><span>30分钟</span><em></em></dd>
+			</dl>
+			<dl class="zin_row" id="zintegral">
+				<dt>积分奖励：</dt>
+				<dd><span>    3       </span><em></em></dd>
+			</dl>
+		</div>
+	</div>
+	<div class="zbox_bottom">
+		<div class="zopacity" id="zopacity"></div>
+		<!--积分设置 start-->
+		<div class="zin_site animated" id="zin_site">
+			<div class="zin_itembox">
+				<dl class="zin_set">
+					<dt>0</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>1</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>2</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>3</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>4</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>5</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>6</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>7</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>8</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>9</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>10</dt>
+					<dd><i></i></dd>
+				</dl>
+			</div>
+			<a class="zin_closebtn" id="zin_closebtn" href="#">取消</a>
+		</div>
+		<!--积分设置 end-->
+		<!--答题时长 start-->
+		<div class="zin_site animated" id="ztime_site">
+			<div class="zin_itembox">
+				<dl class="zin_set">
+					<dt>15分钟</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>30分钟</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>45分钟</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>60分钟</dt>
+					<dd><i></i></dd>
+				</dl>
+				<dl class="zin_set">
+					<dt>手动结束</dt>
+					<dd><i></i></dd>
+				</dl>
+			</div>
+			<a class="zin_closebtn" id="ztime_closebtn" href="#">取消</a>
+		</div>
+		<!--答题时长 end-->
+	</div>
+</div>
+
+<script type="text/javascript">
+	// 积分设置
+	$("#zintegral").zscore({
+		contentBox: "#zin_site",
+		opacityBg: 	"#zopacity",
+		visibleCur: "zin_visible",
+		itemIdClass:	"#zintegral",
+		setIdClass:	"#zin_site .zin_set",
+		closeID:	"#zin_closebtn"
+	});
+	
+	// 答题时长
+	$("#ztime").zscore({
+		contentBox: "#ztime_site",
+		opacityBg: 	"#zopacity",
+		visibleCur: "zin_visible",
+		itemIdClass:	"#ztime",
+		setIdClass:	"#ztime_site .zin_set",
+		closeID:	"#ztime_closebtn"
+	});
+</script>
+</body>
+</html>

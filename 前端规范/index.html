@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>前端规范</title>
+<!--<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDjango.css"/>-->
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreMidnight.css"/>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+</head>
+
+<body>
+<!--main start-->
+<div class="zmain">
+	<div class="mode">
+		<header class="title">
+			<h1 class="mode-title"><strong>[样式命名规范]</strong></h1>
+		</header>
+		<div class="mode_body">
+			<p class="mode-instr">样式层级限制在三级以内，尽可能多命名样式名，少用标签名写样式，例如：</p><br />
+			<p class="mode-instr">不规范的html：</p>
+			<pre class="brush: xml">
+				<div class="znav">
+					<ul>
+						<li class=".znav-row znav-cur"><a href="#">首页</a></li>
+						<li class=".znav-row"><a href="#">课程资源</a></li>
+					</ul>
+				</div>
+				<!--css:-->
+				<style>
+					.znav ul li a {...} 
+				</style>
+			</pre>
+			<p class="mode-instr">规范的html：</p>
+			<pre class="brush: xml">
+				<div class="znav">
+					<ul class="znav-wrap">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">课程资源</a></li>
+					</ul>
+				</div>
+				<!--css:-->
+				<style>
+					.znav {...} 
+					.znav-wrap {...}
+					.znav-row {...}
+					.znav-cur {...}
+				</style>
+			</pre>
+		</div>
+	</div>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	// SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.all();
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------------------------------
+弹层
+-----------------------------------------------------*/
+.zalert { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000; opacity: 0.4; display:none; z-index:10000;}
+.zal_box { position: fixed; left: 50%; top: 50%; width: 66%; height: auto; margin-left: -33%; /* padding: 0.468rem;*/ display:none; z-index:10001;}
+
+.zal_content { padding: 0.351rem 0.3276rem;  border-radius: 0.234rem 0.234rem 0 0;  background: #fff; text-align: center; color: #333; font-size: 0.3042rem;}
+.zal_txt { padding-top: 0.117rem; line-height: 0.468rem;}
+.zal_btn { border-radius: 0 0 0.234rem 0.234rem; overflow: hidden; }
+.zal_btn ul { display: -webkit-box; display: box; background-image: -webkit-linear-gradient(#ebebeb 50%,transparent 50%); background-size: 100% 1px; background-repeat: no-repeat; background-color:#fff; background-position: top;}
+.zal_bt { -webkit-box-flex: 1; box-flex: 1; height: 0.936rem; line-height: 0.936rem; text-align: center; font-size: 0.3rem; color: #09f;}
+.zal_bt:not(:last-child) { background-image:-webkit-linear-gradient(left,#ebebeb 50%,transparent 50%); background-size:1px 100%; background-repeat:no-repeat; background-position:right;}
+/*-----------------------------------------------------
+弹窗
+-----------------------------------------------------*/
+.zal_bg { position: fixed; bottom: 16%; width: 100%; text-align: center;  opacity: 0;}
+.zal_bg span { display: inline-block; min-width:1.17rem; padding: 0.234rem 0.468rem; background: #333; border-radius: 0.1872rem; line-height: 0.351rem; font-size: 0.3rem; color: #fff;}
+
+/*--积分弹窗--*/
+.zal_integral { position: fixed; top: 50%; width: 100%; margin-top: -0.4095rem; text-align: center;  opacity: 0; z-index: 10;}
+.zal_integral span { display: inline-block; min-width:1.17rem; padding: 0.234rem 0.468rem; background: rgba(0,0,0,0.6); border-radius: 0.0936rem; line-height: 0.351rem; font-size: 0.3rem; color: #fff; z-index: 12;}
+
+/*--动画--*/
+.zstart { 
+	-webkit-animation:0.2s zstart forwards;
+	animation:0.2s zstart forwards;
+}
+@-webkit-keyframes zstart{
+	from{ 
+		opacity: 0;
+		-webkit-transform:translate(0px,-20px);
+		transform:translate(0px,-20px);
+		}
+	to{
+		opacity: 1;
+		-webkit-transform:translate(0px,0px);
+		transform:translate(0px,0px);
+		}
+}
+.zend {
+	
+	-webkit-animation:0.2s zend forwards;
+	animation:0.2s zend forwards;
+}
+
+@-webkit-keyframes zend{
+	from{ 
+		opacity: 1;
+		-webkit-transform:translate(0px,0px);
+		transform:translate(0px,0px);
+		}
+	to{
+		opacity: 0;
+		-webkit-transform:translate(0px,20px);
+		transform:translate(0px,20px);
+		}
+}
+
+/*管理*/
+
+.zmanage { position: fixed; left: 50%; top: 50%; width: 66%; height: auto; margin-left: -33%; /* padding: 0.468rem;*/ display:none; z-index:10002;}
+.zmanage ul { display: -webkit-box; -webkit-box-pack: center; padding: 0.117rem 0;}
+.zmanage ul li { min-width: 0.936rem; padding: 0 0.1872rem; border-right: 1px #fff solid; background: #333; line-height: 0.8775rem; text-align: center; font-size: 0.32rem; color: #fff;}
+.zmanage ul li:first-child { border-radius: 0.117rem 0 0 0.117rem;}
+.zmanage ul li:last-child { border-right: 0; border-radius: 0 0.117rem 0.117rem 0;}
+
+/*数量*/
+.ztp { display: -webkit-box; -webkit-box-pack: center; padding: 0.351rem 0;}
+.ztp_field { line-height: 0.6084rem;}
+.ztp_jishu { display: -webkit-box; display: box; width: 1.404rem; height: 0.585rem; border: 1px #ebebeb solid; background: #fff;}
+.ztp_input { -webkit-box-flex: 1; -webkit-box-orient: vertical; -webkit-box-pack: center;}
+.ztp_input input::-webkit-outer-spin-button,
+.ztp_input input::-webkit-inner-spin-button{-webkit-appearance: none !important; appearance: none !important;}
+.ztp_input input { width: 100%;  border: none; box-sizing: border-box; background: none; vertical-align: top; line-height: 0.585rem; text-align: center; font-size: 0.32rem; color: #333;} 
+.ztp_minus,.ztp_plus { display: block; width: 0.468rem; height: 0.585rem; background: #efefef; text-align: center; color: #333; font-size: 0.3rem; line-height: 0.585rem; cursor: default;}
+.ztp_plus { border-left: 1px #ebebeb solid;}
+.ztp_minus { border-right: 1px #ebebeb solid;}
+
+
+
+
+
