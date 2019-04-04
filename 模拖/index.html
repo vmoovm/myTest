@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/comm.css"/>
+		<link rel="stylesheet" type="text/css" href="css/its.css"/>
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			/*.kui-scroll-container {
+			display: block;
+			vertical-align: top;
+			overflow-y: auto;
+			overflow-x: hidden
+		}
+		.kui-scroll-container::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+			background: 0 0!important
+		}
+		.kui-scroll-container::-webkit-scrollbar-track {
+			box-shadow: none;
+			width: 4px;
+			height: 4px;
+			background: 0 0!important
+		}
+		.kui-scroll-container::-webkit-scrollbar-thumb {
+			border-radius: 2px;
+			background-color: #7a7a8c;
+			box-shadow: none
+		}
+		.kui-scroll-container.x-scroll {
+			overflow-x: auto;
+			overflow-y: hidden
+		}
+		.kui-scroll-container.y-scroll {
+			overflow-x: hidden;
+			overflow-y: auto
+		}
+		.clear:after, .clear:before {
+			content: '';
+			display: table
+		}*/
+		</style>
+	</head>
+	<body>
+		<div class="zwrap">
+			<div class="r zwrap-side zscrollStyle" style=" overflow: auto;">
+				<div class="" style="height: 2000px;">
+					<div class="form-cell">
+						<div class="margin_configurator">
+							<div class="input_left"><input type="text" name="margin-left"> px</div>
+							<div class="input_top"><input type="text" name="margin-top"> px</div>
+							<div class="input_right"><input type="text" name="margin-right" disabled="disabled"> px</div>
+							<div class="input_bottom"><input type="text" name="margin-bottom" disabled="disabled"> px</div>
+							<div class="inner_box"></div>
+						</div>
+						<label><input style="vertical-align:middle;" type="checkbox" class="symmetry">间距对称</label>
+					</div>
+				</div>
+				<div class="configurator configurator-show system_plugin-text"><div class="ui-tab " data-role="ui-tab"><ul class="tab-nav"><li class="cur"><a href="javascript:;">内容</a></li><li class=""><a href="javascript:;">样式</a></li></ul><div class="tab-panels"><div class="tab-content cur" data-role="ui-tab-content"><form action="javascript:;" method="post" onsubmit="return false;"><fieldset class="js-tabpanel-property"><div class="form-row  "><div class="ui-richtext editor" data-editor-id="15537669072086283"><div class="head"><ul><li data-action="bold"><a class="ico" href="javascript:;"><span class="ki24 icon-page-bold"></span></a></li><li data-action="italic"><a class="ico" href="javascript:;"><span class="ki24 icon-page-i"></span></a></li><li data-action="underline"><a class="ico" href="javascript:;"><span class="ki24 icon-page-u"></span></a></li><li data-action="fontsize"><a class="ico" href="javascript:;"><span class="ki24 icon-page-fontsize"></span></a><div class="dropdown" style="display: none;"><a href="javascript:;" data-val="1"><em>12px</em></a><a href="javascript:;" data-val="2"><em>14px</em></a><a href="javascript:;" data-val="3"><em>16px</em></a><a href="javascript:;" data-val="4"><em>18px</em></a><a href="javascript:;" data-val="5"><em>24px</em></a><a href="javascript:;" data-val="6"><em>32px</em></a><a href="javascript:;" data-val="7"><em>48px</em></a></div></li><li data-action="linehight"><a class="ico" href="javascript:;"><span class="ki24 icon-page-hangju"></span></a><div class="dropdown" style="display: none;"><a href="javascript:;" data-val="1.0"><em>1.0</em></a><a href="javascript:;" data-val="1.2"><em>1.2</em></a><a href="javascript:;" data-val="1.5"><em>1.5</em></a><a href="javascript:;" data-val="2.0"><em>2.0</em></a><a href="javascript:;" data-val="3.0"><em>3.0</em></a></div></li><li data-action="color"><a class="ico" href="javascript:;"><span class="ki24 icon-page-fontcolor"></span></a></li><li data-action="bgcolor"><a class="ico" href="javascript:;"><span class="ki24 icon-page-color"></span></a></li><li data-action="align"><a class="ico" href="javascript:;"><span class="ki24 icon-page-left"></span></a><div class="dropdown" style="display: none;"><a href="javascript:;" data-val="left"><span class="ki24 icon-page-left"></span></a><a href="javascript:;" data-val="center"><span class="ki24 icon-page-midle"></span></a><a href="javascript:;" data-val="right"><span class="ki24 icon-page-right"></span></a></div></li><li data-action="link"><a class="ico" href="javascript:;"><span class="ki24 icon-btn-subbject"></span></a></li><li data-action="light"><a class="ico" href="javascript:;"><span class="ki24 icon-lightoff"></span></a></li></ul></div><div class="content" style="background-color: rgb(245, 245, 245);"><iframe src="" data-role="text-editable" frameborder="0" allowtransparency="true" title="Rich Text Edit" data-min-height="150" data-max-height="600" style="height: 150px;"></iframe></div><textarea name="richtext" data-role="text-edit-value">&lt;div data-role="line"&gt;每日一闻&lt;/div&gt;</textarea></div></div><div class="ui-placeholder js-field-align"></div><div class="ui-placeholder js-field-margin-right"></div><div class="ui-placeholder js-field-margin-bottom"></div><div class="ui-placeholder js-field-margin-left"></div></fieldset></form></div><div class="tab-content" data-role="ui-tab-content"><form action="javascript:;" method="post" onsubmit="return false;"><fieldset class="js-tabpanel-style"><div class="form-row ui-switchrow  st-checked"><label><input type="checkbox" name="chk_margin" value="true" data-role="switch">调整边距</label><div class="form-cell"><div class="margin_configurator"><div class="input_left"><input type="text" name="margin-left"> px</div><div class="input_top"><input type="text" name="margin-top"> px</div><div class="input_right"><input type="text" name="margin-right"> px</div><div class="input_bottom"><input type="text" name="margin-bottom"> px</div><div class="inner_box"></div></div><label><input style="vertical-align:middle;" type="checkbox" class="symmetry">间距对称</label></div></div></fieldset></form></div></div></div></div>
+			</div>
+			<div class="l zwrap-side">
+				<div class="switchy-fixed-content">
+					<ul class="kz-package-list">
+						<div class="ui-category"><span><!-- react-text: 523 -->基础组件<!-- /react-text --><i class="kz-e-nav-pull-down" style="transition: all 0.5s; transform: rotate(0deg);"></i></span>
+							<div style="display: block;">
+								<li class="shortcut-category">
+									<ul>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-T"></i></p>
+											<!-- react-text: 535 -->文本
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-picture"></i></p>
+											<!-- react-text: 569 -->图片
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-search"></i></p>
+											<!-- react-text: 614 -->搜索
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-link"></i></p>
+											<!-- react-text: 648 -->链接
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-pictures"></i></p>
+											<!-- react-text: 673 -->组图
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-pictures2"></i></p>
+											<!-- react-text: 691 -->图集
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-vedio"></i></p>
+											<!-- react-text: 716 -->视频
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-circle"></i></p>
+											<!-- react-text: 741 -->按钮
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-title"></i></p>
+											<!-- react-text: 766 -->标题
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-navigation"></i></p>
+											<!-- react-text: 791 -->导航
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-chang"></i></p>
+											<!-- react-text: 816 -->畅言评论
+											<!-- /react-text -->
+										</li>
+										<li class="exclusive-plugin shortcut " draggable="false"><i class="small-diamond"></i>
+											<p><i class="kz-e-bianjiqi-html"></i></p>
+											<!-- react-text: 820 -->HTML
+											<!-- /react-text -->
+										</li>
+										<li class="exclusive-plugin shortcut " draggable="false"><i class="small-diamond"></i>
+											<p><i class="kz-e-bianjiqi-js"></i></p>
+											<!-- react-text: 846 -->JS
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-separate"></i></p>
+											<!-- react-text: 798 -->分隔符
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-double"></i></p>
+											<!-- react-text: 823 -->双栏
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-leaving-space"></i></p>
+											<!-- react-text: 849 -->留空
+											<!-- /react-text -->
+										</li>
+										<li class="advanced-plugin shortcut " draggable="false"><i class="small-diamond"></i>
+											<p><i class="kz-e-bianjiqi-wechat"></i></p>
+											<!-- react-text: 853 -->公众号关注
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-position"></i></p>
+											<!-- react-text: 830 -->地图
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-saoma"></i></p>
+											<!-- react-text: 856 -->二维码
+											<!-- /react-text -->
+										</li>
+										<li class="advanced-plugin shortcut " draggable="false"><i class="small-diamond"></i>
+											<p><i class="kz-e-bianjiqi-share"></i></p>
+											<!-- react-text: 860 -->分享
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-yinying"></i></p>
+											<!-- react-text: 864 -->底板
+											<!-- /react-text -->
+										</li>
+									</ul>
+								</li>
+							</div>
+						</div>
+						<div class="ui-category"><span><!-- react-text: 509 -->功能组件<!-- /react-text --><i class="kz-e-nav-pull-down" style="transition: all 0.5s; transform: rotate(0deg);"></i></span>
+							<div style="display: block;">
+								<li class="shortcut-category">
+									<ul>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-weibo"></i></p>
+											<!-- react-text: 517 -->微博
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-chatlist"></i></p>
+											<!-- react-text: 839 -->社区话题列表(新版)
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut " draggable="true">
+											<p><i class="kz-e-bianjiqi-ticket-2"></i></p>
+											<!-- react-text: 865 -->快投票
+											<!-- /react-text -->
+										</li>
+										<li class="shortcut" draggable="false">
+											<p><i class="kz-e-bianjiqi-add"></i></p>
+										</li>
+									</ul>
+								</li>
+							</div>
+						</div>
+					</ul>
+</div>
+			</div>
+			<div class="zwrap-view"></div>
+		</div>
+	</body>
+</html>
