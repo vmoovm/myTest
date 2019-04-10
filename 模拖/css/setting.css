@@ -1,0 +1,44 @@
+body { background: #fcfcfc;}
+.zsetting { margin: 50px;}
+.zsetting-wrap { width: 600px; height: 400px; border: 1px #ccc solid; background-color: #fff;}
+
+.zsetting-box { padding: 20px; height: 245px; overflow: auto;}
+.zsetting-box::-webkit-scrollbar { width: 8px;}
+.zsetting-box::-webkit-scrollbar-track { width: 8px;}
+.zsetting-box::-webkit-scrollbar-thumb { border-radius: 4px; background-color: #ddd;}
+
+.zsetting-header { display: table; width: 100%; border-bottom: 1px #ebebeb solid;}
+.zsetting-tab { display: table-cell;}
+.zsetting-tab li { display: table-cell; line-height: 34px; padding-left: 16px; padding-right: 16px; color: #999;}
+.zsetting-tab li.cur { background: #31b16c; color: #fff;}
+.zsetting-close { display: table-cell; width: 40px; line-height: 34px;}
+
+.zsetting-body { }
+.zsetting-wide { display: table-cell; padding-right: 20px;}
+.zsetting-side { display: table-cell; width: 260px; padding-left: 10px;}
+.zsetting-group { margin-bottom: 20px; border: 1px #f5f6f8 solid;}
+.zsetting-type { padding-right: 5px; padding-left: 5px; font-size: 12px; color: #999;}
+.zsetting-h { padding-top: 10px; padding-bottom: 8px; font-size: 12px; color: #999; font-weight: normal;}
+.zsetting-row { padding-top: 5px; padding-bottom: 5px; display: table;}
+.zsetting-field { display: table-cell; padding-right: 5px;}
+.zsetting-value { display: table-cell; padding-right: 10px;}
+.zsetting-input,
+.zsetting-input1,
+.zsetting-input2 { width: 36px; height: 20px; border: none; border-bottom: 1px #ccc solid; background: none; text-align: center;}
+.zsetting-input1 { width: 66px;}
+.zsetting-input2 { width: 146px;}
+.zsetting-textarea {}
+.zsetting-textarea textarea { width: 100%; height: 100px; resize: none; border: 1px #ccc dashed; box-sizing: border-box;}
+.zsetting-radio,
+.zsetting-checkbox { display: table-cell; padding-left: 9px;}
+
+.zsetting-footer { padding-top: 20px; padding-right: 20px; text-align: right;}
+.zsetting-use,
+.zsetting-ok { display: inline-block; width: 70px; height: 30px; line-height: 30px; font-size: 14px; text-align: center;}
+.zsetting-ok { background: #31b16c; color: #fff;}
+.zsetting-cancel {}
+.zsetting-hide { display: none;}
+
+
+
+

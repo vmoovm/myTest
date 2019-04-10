@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>设置</title>
+		<link rel="stylesheet" type="text/css" href="css/comm.css"/>
+		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.test span { vertical-align: sub; color: #f00;}
+		</style>
+		<style type="text/css" id="style0">
+		</style>
+		<style type="text/css" id="style1">
+		</style>
+		<style type="text/css" id="style2">
+		</style>
+		<style type="text/css" id="style3">
+		</style>
+		<style type="text/css" id="style4">
+		</style>
+	</head>
+	<body>
+		<div class="test" >123<span id="test">sss</span></div>
+		<div class="zsetting">
+			
+			<div class="zsetting-wrap">
+				<div class="zsetting-header">
+					<ul class="zsetting-tab" id="zsettingTab">
+						<li class="cur">常规</li>
+						<li class="">布局</li>
+						<li class="">文本</li>
+						<li class="">背景</li>
+						<li class="">修饰</li>
+					</ul>
+					<p class="zsetting-close">关闭</p>
+				</div>
+				<div class="zsetting-body">
+		            <!--常规 start-->
+					<div class="zsetting-box" data-type="0">
+						<div class="zsetting-wide">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">重要</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">宽 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" data-css="width:" id="dataWidth" value="100px" />
+									</dd>
+									<dt class="zsetting-field">高 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" data-css="height:" id="dataHeight" value="100px" />
+									</dd>
+									<dt class="zsetting-field">条数 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" data-num= "1" id="dataNum" value="5" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">内边距</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataPaddingTop" data-css="padding-top:" value="11px" />
+									</dd>
+									<dt class="zsetting-field">右 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataPaddingRight" data-css="padding-right:" value="12px" />
+									</dd>
+									<dt class="zsetting-field">下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataPaddingBottom" data-css="padding-bottom:" value="13px" />
+									</dd>
+									<dt class="zsetting-field">左 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataPaddingLeft" data-css="padding-left:" value="14px" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">外边距</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataMarginTop" data-css="margin-top:" value="8px" />
+									</dd>
+									<dt class="zsetting-field">右 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataMarginRight" data-css="margin-right:" value="9px" />
+									</dd>
+									<dt class="zsetting-field">下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataMarginBottom" data-css="margin-bottom:" value="7px" />
+									</dd>
+									<dt class="zsetting-field">左 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataMarginLeft" data-css="margin-left:" value="9px" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">边框</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataBorderTop" data-css="border-top:" value="1px" />
+									</dd>
+									<dt class="zsetting-field">右 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataBorderRight" data-css="border-right:" value="2px" />
+									</dd>
+									<dt class="zsetting-field">下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataBorderBottom" data-css="border-bottom:" value="2px" />
+									</dd>
+									<dt class="zsetting-field">左 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataBorderLeft" data-css="border-left:" value="1px" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">颜色 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderColor" data-css="border-color:" value="#f00" />
+									</dd>
+									<dt class="zsetting-field">类型 </dt>
+									<dd class="zsetting-value">
+										<select name="" id="dataBorderStyle" data-css="border-style:">
+											<option value="solid">实线</option>
+											<option value="dashed">虚线</option>
+										</select>
+									</dd>
+								</dl>
+							</fieldset>
+						</div>
+						<div class="zsetting-side">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">样式生成</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">父级权限 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="prefix0" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="styleName0" value="d" />
+									</dd>
+								</dl>
+								<h2 class="zsetting-h">最终样式：</h2>
+								<div class="zsetting-textarea">
+									<textarea name="textarea" rows="" cols="" id="cssText0"></textarea>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<!--常规 end-->
+		            <!--布局 start-->
+					<div class="zsetting-box zsetting-hide"  data-type="1">
+						<div class="zsetting-wide">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">浮动</legend>
+								<dl class="zsetting-row">
+									<dd class="zsetting-radio">
+										<input type="radio" name="dataFloat" id="dataFloatLeft" data-css="float:" value="left" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataFloatLeft">左</label></dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="dataFloat" id="dataFloatRight" data-css="float:" value="right" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataFloatRight">右 </label></dt>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">定位</legend>
+								<dl class="zsetting-row" id="site">
+									<dd class="zsetting-radio">
+										<input type="radio" name="position" id="dataPostionStatic" data-css="position:" value="static" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataPostionStatic">静态</label></dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="position" id="dataPostionRelative" data-css="position:" value="relative" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataPostionRelative">相对</label> </dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="position" id="dataPostionAbsolute" data-css="position:" value="absolute" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataPostionAbsolute">绝对</label> </dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="position" id="dataPostionFixed" data-css="position:" value="fixed" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataPostionFixed">悬浮</label> </dt>
+								</dl>
+								<dl class="zsetting-row zsetting-hide" id="positionBox">
+									<dt class="zsetting-field">上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataTop" data-css="top:" value="11px" />
+									</dd>
+									<dt class="zsetting-field">右 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataRight" data-css="right:" value="12px" />
+									</dd>
+									<dt class="zsetting-field">下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataBottom" data-css="bottom:" value="13px" />
+									</dd>
+									<dt class="zsetting-field">左 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input" name="" id="dataLeft" data-css="left:" value="14px" />
+									</dd>
+								</dl>
+							</fieldset>
+						</div>
+						<div class="zsetting-side">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">样式生成</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">父级样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="prefix1" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="styleName1" value="" />
+									</dd>
+								</dl>
+								<h2 class="zsetting-h">生成的样式：</h2>
+								<div class="zsetting-textarea">
+									<textarea name="textarea" rows="" cols="" id="cssText1"></textarea>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<!--布局 end-->
+					<!--文本 start-->
+					<div class="zsetting-box zsetting-hide"  data-type="2">
+						<div class="zsetting-wide">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">重要</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">字号 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataFontSize" data-css="font-size:" value="16px" />
+									</dd>
+									<dt class="zsetting-field">颜色 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataColor" data-css="color:" value="#666" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">对齐方式</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">水平 </dt>
+									<dd class="zsetting-checkbox">
+										<select name="" id="dataTextAlign" data-css="text-align:">
+											<option value="inherit">默认</option>
+											<option value="left">左对齐</option>
+											<option value="center">居中</option>
+											<option value="right">右对齐</option>
+										</select>
+									</dd>
+									<dt class="zsetting-field">垂直 </dt>
+									<dd class="zsetting-checkbox">
+										<select name="" id="dataVerticalAlign" data-css="vertical-align:">
+											<option value="inherit">默认</option>
+											<option value="top">顶端</option>
+											<option value="middle">居中</option>
+											<option value="bottom">底端</option>
+											<option value="super">上标</option>
+											<option value="sub">下标</option>
+										</select>
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">格式</legend>
+								<dl class="zsetting-row">
+									<dd class="zsetting-checkbox">
+										<input type="checkbox" name="" id="dataFontWeight" data-css="font-weight:" value="blod" />
+									</dd>
+									<dt class="zsetting-field"> 加粗 </dt>
+									<dd class="zsetting-checkbox">
+										<input type="checkbox" name="" id="dataFontStyle" data-css="font-style:" value="initial" />
+									</dd>
+									<dt class="zsetting-field"> 斜体 </dt>
+								</dl>
+							</fieldset>
+						</div>
+						<div class="zsetting-side">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">样式生成</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">父级权限 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="prefix2" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="styleName2" value="s" />
+									</dd>
+								</dl>
+								<h2 class="zsetting-h">生成的样式：</h2>
+								<div class="zsetting-textarea">
+									<textarea name="textarea" rows="" cols="" id="cssText2"></textarea>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<!--文本 end-->
+					<!--背景 start-->
+					<div class="zsetting-box zsetting-hide"  data-type="3">
+						<div class="zsetting-wide">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">重要</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">图片 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="dataBackgroundImage" data-css="background-image:" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">颜色 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2"  name="" id="dataBackgroundColor" data-css="background-color:" value="" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">平铺方向</legend>
+								<dl class="zsetting-row">
+									<dd class="zsetting-radio">
+										<input type="radio" name="repeat" id="dataBackgroundRepeatXY" data-css="background-repeat:" value="repeat" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataBackgroundRepeatXY">X 和 Y轴</label></dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="repeat" id="dataBackgroundRepeatX" data-css="background-repeat:" value="repeat-x" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataBackgroundRepeatX">X轴</label></dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="repeat" id="dataBackgroundRepeatY" data-css="background-repeat:" value="repeat-y" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataBackgroundRepeatY">Y轴</label></dt>
+									
+									
+									
+									
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">图片坐标</legend>
+							   <dl class="zsetting-row">
+									<dt class="zsetting-field">坐标轴(x y) </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="dataBackgroundPosition" data-css="background-position:" value="" />
+									</dd>
+								</dl>
+							</fieldset>
+						</div>
+						<div class="zsetting-side">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">样式生成</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">父级样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="prefix3" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="styleName3" value="d3" />
+									</dd>
+								</dl>
+								<h2 class="zsetting-h">最终样式：</h2>
+								<div class="zsetting-textarea">
+									<textarea name="textarea" rows="" cols="" id="cssText3"></textarea>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<!--背景 end-->
+					<!--修饰 start-->
+					<div class="zsetting-box zsetting-hide" data-type="4">
+						<div class="zsetting-wide">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">角弧度</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">左上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+									<dt class="zsetting-field">右上 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">右下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+									<dt class="zsetting-field">左下 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">阴影</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">X轴 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+									<dt class="zsetting-field">Y轴 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">羽化 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+									<dt class="zsetting-field">扩展 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+								</dl>
+							</fieldset>
+						</div>
+						<div class="zsetting-side">
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">样式生成</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="" value="" />
+									</dd>
+								</dl>
+								<h2 class="zsetting-h">最终样式：</h2>
+								<div class="zsetting-textarea">
+									<textarea name="textarea" rows="" cols=""></textarea>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<!--修饰 end-->
+				</div>
+				<div class="zsetting-footer">
+					<p class="zsetting-use" id="zsetting-use">应用</p>
+					<p class="zsetting-ok" id="zsetting-ok">保存</p>
+				</div>
+			</div>
+		</div>
+		<script src="js/motuo.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
