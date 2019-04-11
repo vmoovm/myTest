@@ -98,40 +98,6 @@
 									</dd>
 								</dl>
 							</fieldset>
-							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">边框</legend>
-								<dl class="zsetting-row">
-									<dt class="zsetting-field">上 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" id="dataBorderTop" data-css="border-top:" value="1px" />
-									</dd>
-									<dt class="zsetting-field">右 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" id="dataBorderRight" data-css="border-right:" value="2px" />
-									</dd>
-									<dt class="zsetting-field">下 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" id="dataBorderBottom" data-css="border-bottom:" value="2px" />
-									</dd>
-									<dt class="zsetting-field">左 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" id="dataBorderLeft" data-css="border-left:" value="1px" />
-									</dd>
-								</dl>
-								<dl class="zsetting-row">
-									<dt class="zsetting-field">颜色 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderColor" data-css="border-color:" value="#f00" />
-									</dd>
-									<dt class="zsetting-field">类型 </dt>
-									<dd class="zsetting-value">
-										<select name="" id="dataBorderStyle" data-css="border-style:">
-											<option value="solid">实线</option>
-											<option value="dashed">虚线</option>
-										</select>
-									</dd>
-								</dl>
-							</fieldset>
 						</div>
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
@@ -389,48 +355,73 @@
 					<div class="zsetting-box zsetting-hide" data-type="4">
 						<div class="zsetting-wide">
 							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">角弧度</legend>
+							    <legend class="zsetting-type">边框</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">左上 </dt>
+									<dt class="zsetting-field">上边框 </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input1" name="" id="dataBorderTop" data-css="border-top:" value="1px" />
 									</dd>
-									<dt class="zsetting-field">右上 </dt>
+									<dt class="zsetting-field">右边框 </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input1" name="" id="dataBorderRight" data-css="border-right:" value="2px" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">右下 </dt>
+									<dt class="zsetting-field">下边框</dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input1" name="" id="dataBorderBottom" data-css="border-bottom:" value="2px" />
 									</dd>
-									<dt class="zsetting-field">左下 </dt>
+									<dt class="zsetting-field">左边框</dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input1" name="" id="dataBorderLeft" data-css="border-left:" value="1px" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">颜色 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderColor" data-css="border-color:" value="#f00" />
+									</dd>
+									<dt class="zsetting-field">类型 </dt>
+									<dd class="zsetting-value">
+										<select name="" id="dataBorderStyle" data-css="border-style:">
+											<option value="solid">实线</option>
+											<option value="dashed">虚线</option>
+										</select>
+									</dd>
+								</dl>
+							</fieldset>
+							<fieldset class="zsetting-group">
+							    <legend class="zsetting-type">角弧度</legend>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">左上角 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusLT" data-css="border-left-top-radius:" value="4px" />
+									</dd>
+									<dt class="zsetting-field">右上角 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusRT" data-css="border-right-top-radius:" value="6px" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field">右下角 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusRB" data-css="border-right-bottom-radius:" value="8px" />
+									</dd>
+									<dt class="zsetting-field">左下角 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusLB" data-css="border-left-bottom-radius:" value="10px" />
 									</dd>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">阴影</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">X轴 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
-									</dd>
-									<dt class="zsetting-field">Y轴 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
-									</dd>
+									<dt class="zsetting-field">格式说明（X轴 Y轴  羽化 扩展 颜色）</dt>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">羽化 </dt>
+									<dt class="zsetting-field">格式值</dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
-									</dd>
-									<dt class="zsetting-field">扩展 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input2" name="" id="dataBox-shadow" data-css="box-shadow:" value="5px 5px 8px 1px #fcfcfc" />
 									</dd>
 								</dl>
 							</fieldset>
@@ -438,15 +429,21 @@
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
+							    <dl class="zsetting-row">
+									<dt class="zsetting-field">父级样式名 </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="prefix4" value="" />
+									</dd>
+								</dl>
 								<dl class="zsetting-row">
 									<dt class="zsetting-field">样式名 </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="" value="" />
+										<input type="text" class="zsetting-input2" name="" id="styleName4" value="xiuShi" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">最终样式：</h2>
 								<div class="zsetting-textarea">
-									<textarea name="textarea" rows="" cols=""></textarea>
+									<textarea name="textarea" rows="" cols="" id="cssText4"></textarea>
 								</div>
 							</fieldset>
 						</div>

@@ -1,4 +1,5 @@
 var config = {
+	// 以下是常规 
 	dataWidth: {
 		id: '#dataWidth',
 		value: '100px',
@@ -90,6 +91,8 @@ var config = {
 		type: 'class',
 		postil: '生成的样式',
 	},
+	
+	// 以下是布局 
 	dataFloatLeft: {
 		id: '#dataFloatLeft',
 		value: false,
@@ -181,6 +184,8 @@ var config = {
 		type: 'class',
 		postil: '生成的样式',
 	},
+	
+	// 以下是文本
 	dataFontSize: {
 		id: '#dataFontSize',
 		value: '',
@@ -243,22 +248,121 @@ var config = {
 		dataCss: '',
 		type: 'class',
 		postil: '生成的样式'
+	},
+	// 以下是背景
+	dataBackgroundImage: {
+		id: '#dataBackgroundImage',
+		value: '',
+		dataCss: 'background-image:',
+		type: 'text',
+		postil: '背景图片',
+	},
+	dataBackgroundColor: {
+		id: '#dataBackgroundColor',
+		value: '#fafafa',
+		dataCss: 'background-color:',
+		type: 'text',
+		postil: '背景颜色',
+	},
+	dataBackgroundRepeatXY: {
+		id: '#dataBackgroundRepeatXY',
+		value: true,
+		dataCss: 'background-repeat:',
+		type: 'radio',
+		postil: '背景平铺XY轴',
+	},
+	dataBackgroundRepeatX: {
+		id: '#dataBackgroundRepeatX',
+		value: false,
+		dataCss: 'background-repeat:',
+		type: 'radio',
+		postil: '背景平铺X轴',
+	},
+	dataBackgroundRepeatY: {
+		id: '#dataBackgroundRepeatY',
+		value: false,
+		dataCss: 'background-repeat:',
+		type: 'radio',
+		postil: '背景平铺Y轴',
+	},
+	dataBackgroundPosition: {
+		id: '#dataBackgroundPosition',
+		value: '10px 10px',
+		dataCss: 'background-position:',
+		type: 'text',
+		postil: '背景图片的位置坐标',
+	},
+	prefix3: {
+		id: '#prefix3',
+		value: '',
+		dataCss: '',
+		type: 'text',
+		postil: '父级样式名',
+	},
+	styleName3: {
+		id: '#styleName3',
+		value: 'bg',
+		dataCss: '',
+		type: 'text',
+		postil: '样式名',
+	},
+	cssText3: {
+		id: '#cssText3',
+		value: '',
+		dataCss: '',
+		type: 'text',
+		postil: '最终样式',
+	},
+	
+	// 以下是修饰
+	dataBorderTop: {
+		id: '#dataBorderTop',
+		value: '1px',
+		dataCss: 'border-top:',
+		type: 'text',
+		postil: '上边框',
+	},
+	dataBorderRight: {
+		id: '#dataBorderRight',
+		value: '1px',
+		dataCss: 'border-right:',
+		type: 'text',
+		postil: '右边框',
+	},
+	dataBorderBottom: {
+		id: '#dataBorderBottom',
+		value: '1px',
+		dataCss: 'border-bottom:',
+		type: 'text',
+		postil: '下边框',
+	},
+	dataBorderLeft: {
+		id: '#dataBorderLeft',
+		value: '1px',
+		dataCss: 'border-left:',
+		type: 'text',
+		postil: '左边框',
+	},
+	dataBorderColor: {
+		id: '#dataBorderColor',
+		value: '#0ff',
+		dataCss: 'border-color:',
+		type: 'text',
+		postil: '边框线颜色',
+	},
+	dataBorderStyle: {
+		id: '#dataBorderStyle',
+		value: 'solid',
+		dataCss: 'border-style:',
+		type: 'text',
+		postil: '边框线类型',
 	}
-	// ,
-	// dataFontStyle: {
-		// id: '',
-		// value: '',
-		// dataCss: '',
-		// type: '',
-		// postil: '',
-	// }
-	// ,
-	// dataFontStyle: {
-		// id: '',
-		// value: '',
-		// dataCss: '',
-		// type: '',
-		// postil: '',
+	// dataBorderTop: {
+		// id: '#',
+		// value: '1',
+		// dataCss: 'border-top:',
+		// type: 'text',
+		// postil: '上边框',
 	// }
 }
 for(i in config){
@@ -355,6 +459,15 @@ function getStyle (arr) {
 }
 
 
+function init (styleTxt) {
+	var st = styleTxt
+	$('#cssText' + curType).text(st)
+    var className = $('#styleName' + curType).val()
+    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
+	$('#style' + curType).text($('#style' + curType).text() + temp)
+	$('#test').addClass(className)
+}
+
 $('#zsetting-use').on('click', function () {
 	$('#style' + curType).text('')
 	switch(curType) {
@@ -369,21 +482,9 @@ $('#zsetting-use').on('click', function () {
 		    	'#dataMarginTop',
 		    	'#dataMarginRight',
 		    	'#dataMarginBottom',
-		    	'#dataMarginLeft',
-		    	'#dataBorderTop',
-		    	'#dataBorderRight',
-		    	'#dataBorderBottom',
-		    	'#dataBorderLeft',
-		    	'#dataBorderColor',
-		    	'#dataBorderStyle'
+		    	'#dataMarginLeft'
 		    	]
-		    var styleTxt = getStyle(idArr)
-		    $('#cssText' + curType).text(styleTxt)
-		    var className = $('#styleName' + curType).val()
-		    console.log(className)
-		    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
-			$('#style' + curType).text($('#style' + curType).text() + temp)
-			$('#test').addClass(className)
+			init (getStyle(idArr))
 		    break
 		    
 		case 1:
@@ -400,13 +501,7 @@ $('#zsetting-use').on('click', function () {
 		    	'#dataBottom',
 		    	'#dataLeft'
 		    	]
-		    var styleTxt = getStyle(idArr)
-		    $('#cssText' + curType).text(styleTxt)
-		    var className = $('#styleName' + curType).val()
-		    console.log(className)
-		    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
-			$('#style' + curType).text($('#style' + curType).text() + temp)
-			$('#test').addClass(className)
+		    init (getStyle(idArr))
 		    break
 		
 		case 2:
@@ -439,17 +534,20 @@ $('#zsetting-use').on('click', function () {
 		    	'#dataBackgroundPosition'
 		    	
 		    	]
-		    var styleTxt = getStyle(idArr)
-		    $('#cssText' + curType).text(styleTxt)
-		    var className = $('#styleName' + curType).val()
-		    console.log(className)
-		    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
-			$('#style' + curType).text($('#style' + curType).text() + temp)
-			$('#test').addClass(className)
+		    init (getStyle(idArr))
 		    break
 		
 		case 4:
 		    console.log(4)
+		    var idArr = [
+		    	'#dataBorderTop',
+		    	'#dataBorderRight',
+		    	'#dataBorderBottom',
+		    	'#dataBorderLeft',
+		    	'#dataBorderColor',
+		    	'#dataBorderStyle'
+		    	]
+		    init (getStyle(idArr))
 		    break
 	}
 })
