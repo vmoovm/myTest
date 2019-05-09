@@ -1,0 +1,10 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.zs_i_infor { width:2000px; padding-left:5px; margin:0 auto;}
+dl,dd { padding:0; margin:0; list-style:none; font:normal;}
+
+
+.zs_t_mouseover li { padding:3px; cursor:pointer;}
+.zs_t_mouseover2 dd { padding:3px; cursor:pointer;}
+.zs_t_r_gray,.zs_t_r_color { float:left; width:256px; height:256px; background:url(../image/star/score_gray.png) no-repeat; display:block;}
+.zs_t_r_color { background:url(../image/star/score_color.png) no-repeat;}

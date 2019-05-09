@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*======================================================
+drag
+======================================================*/
+
+.ck { position:absolute; left:200px; top:50px; width:700px; height:450px; background:url(../image/drag/bg.png) no-repeat;}
+.ck_drag { height:63px; padding-left:28px; line-height:63px; cursor:move; font-size:18px; color:#39F;}
+.ck_content { height:360px;}
+.ck_site { padding:20px; text-align:center;}
+.ck_signal { display:inline-block; width:44px; height:24px; background:url(../image/drag/warning.png) no-repeat; vertical-align:middle;}
+.ck_info { display:inline-block; line-height:30px; color:#6CF; font-size:16px; vertical-align:middle;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

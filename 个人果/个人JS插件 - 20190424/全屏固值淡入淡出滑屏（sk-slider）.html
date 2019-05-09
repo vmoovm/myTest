@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ck-slider.css"/>
+		
+	</head>
+
+	<body>
+		<div class="ck-slide">
+			<ul class="ck-slide-wrapper">
+				<li>
+					<a href="http://www.dowebok.com/144.html"><img src="image/sk-slide/ff3df68e2944399d12af9577f2a587db.png" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:"><img src="image/sk-slide/295673a31194d4c52a6b4c2bb82da9ad.png" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:"><img src="image/sk-slide/47ed96a18e868f594b401f92b82ba399.png" alt=""></a>
+				</li>
+				<li>
+					<a href="javascript:"><img src="image/sk-slide/598c81fd43da64e75bda9bbf0d0e3637.png" alt=""></a>
+				</li>
+			</ul>
+
+			<a href="javascript:" class="ctrl-slide ck-prev">上一张</a>
+			<a href="javascript:" class="ctrl-slide ck-next">下一张</a>
+
+			<div class="ck-slidebox">
+				<div class="slideWrap">
+					<ul class="dot-wrap">
+						<li class="current"><em>1</em></li>
+						<li><em>2</em></li>
+						<li><em>3</em></li>
+						<li><em>4</em></li>
+						<li><em>5</em></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="article">
+			<h2>配置</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>属性/方法</th>
+						<th>类型</th>
+						<th>默认值</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>autoPlay</td>
+						<td>布尔值</td>
+						<td>false</td>
+						<td>自动播放</td>
+					</tr>
+					<tr>
+						<td>dir</td>
+						<td>字符串</td>
+						<td>null</td>
+						<td>可选 ‘x’，即水平滚动，非 ‘x’ 为淡入淡出</td>
+					</tr>
+					<tr>
+						<td>isAnimate</td>
+						<td>布尔值</td>
+						<td>false</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slide.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.ck-slide').ckSlide({
+				autoPlay: false, // 是否自动播放
+		        dir: null,    // 取值说明  默认 null，淡入淡出效果；  x为 水平滚动
+		        isAnimate: false // 是否禁止播放
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,16 @@
+﻿@charset "utf-8";
+/*----------------------------------------------------
+公告
+-----------------------------------------------------*/
+.zopen { margin-top: 40px; background-color: #f7f7f7;}
+.zop_title { width: 82px; height: 40px; background-color: #d3d3d3; line-height: 40px; text-align: center; font-size: 16px; color: #fff; font-family: "微软雅黑"; font-weight: bold;}
+.zop_content { position: relative; width: 1072px; height: 40px; overflow: hidden;}
+.zop_move { position: absolute; width: 3000px; height: 40px; font-size: 14px;}
+.zop_move li {  }
+.zop_move li a { display: inline-block; width: 300px; height: 40px; padding-left: 24px; padding-right: 30px ; line-height: 40px; overflow:hidden; white-space:nowrap; -webkit-text-overflow:ellipsis; -moz-text-overflow:ellipsis; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.zop_btn { width: 46px; height: 40px; background-color: #d3d3d3;}
+.zop_btn a { display: inline-block; width: 23px; height: 40px; background: url(../image/upAndDown/zdt_icon.png) no-repeat;}
+.zop_btn a { *display: inline;}
+.zop_btn a:hover{background-color:#999}
+.zop_btn a.zprev { background-position: 8px -116px;}
+.zop_btn a.znext { background-position: -46px -116px;}

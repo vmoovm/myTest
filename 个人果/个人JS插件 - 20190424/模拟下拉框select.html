@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模拟下拉框select-插件</title>
+<link href="css/basic.css" rel="stylesheet" type="text/css" />
+<link href="css/select.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="js/select.js" type="text/javascript"></script>
+<!--<script src="js/jquery-often-effects.js" type="text/javascript" charset="utf-8"></script>-->
+<script>
+$(function(){
+	//例：3 选中第二项
+	$('#selectd10').imiSelect({
+		sub_ul:'ul',	//默认下拉框父标签为‘ul’,可修改为其他标签
+		sub_li:'li',	//默认下拉框子标签为‘li’，可修改为其他标签
+		myevent:'click',	//默认事件为‘click’，可修改
+		speed:100,	//默认100,下拉和收起速度，可修改
+		clickIsHide:true,	//默认为true，点击后下拉框是否消失
+		parent_css:'.zselect' //默认项，如果所有样式名都有修改，此样式名必须重传，解决下拉框层级问题
+	});
+	//例：2 选中任意一项
+	$('#selectdd').imiSelect({
+		//sub_ul:'ul',
+		//sub_li:'li',
+		//myevent:'click',
+		//speed:100
+	});
+	//例：4不选择时，默认选中第一项
+	$('#selectde').imiSelect({
+		//sub_ul:'ul',
+		//sub_li:'li',
+		//myevent:'click',
+		//speed:100
+	});
+	//例：5 选中第一项
+	$('#selec1t').imiSelect({
+		sub_ul:'dl',
+		sub_li:'dd'
+	});
+	
+	//例：1 选中最后一项
+	//说明：'\'为换行符号表示，'\'后面不能有任何字符包括空格
+	var html='<li class="zse_li zse_first"><a href="javascript:void(0);">请选择</a></li>\
+                <li class="zse_li"><a href="javascript:void(0);">北京</a></li>\
+                <li class="zse_li"><a href="javascript:void(0);">上海</a></li>\
+                <li class="zse_li"><a href="javascript:void(0);">天津</a></li>';
+	$('#select').children('ul').append(html);
+	
+	$('#select').imiSelect({
+		//selected:0
+	});
+
+});
+</script>
+</head>
+<body>
+<div class="zeffects">
+	<div class="ze_box" style=" float:right;">
+		<h2>例：1 选中最后一项</h2>
+		<div class="zselect" id="select">
+			<p class="zse_p width60">请选择</p>
+			<ul class="zse_ul">
+            	<!--<li class="zse_li zse_first"><a href="javascript:void(0);">北京</a></li>
+                <li class="zse_li"><a href="javascript:void(0);">上海</a></li>
+                <li class="zse_li"><a href="javascript:void(0);">天津</a></li>-->
+            </ul>
+            <div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="请选择" >请选择</option>
+					<option value="北京">北京</option>
+					<option value="上海">上海</option>
+					<option value="天津" selected="selected">天津</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="ze_box" style=" float:left;">
+		<h2>例：2 选中任意一项</h2>
+		<div class="zselect" id="selectdd">
+			<p class="zse_p width60">请选择</p>
+			<ul class="zse_ul">
+				<li class="zse_li zse_first"><a href="javascript:void(0);">请选择</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">石家庄</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">保定</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">衡水</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">邯郸</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">张家口</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">廊坊</a></li>
+			</ul>
+			<div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="请选择">请选择</option>
+					<option value="石家庄" selected="selected">石家庄</option>
+					<option value="保定">保定</option>
+					<option value="衡水">衡水</option>
+					<option value="邯郸">邯郸</option>
+					<option value="张家口">张家口</option>
+					<option value="廊坊">廊坊</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="zeffects">
+	<div class="fl ze_box width100">
+		<h2>例：3 选中第二项</h2>
+		<div class="zselect bradius3 width100" id="selectd10">
+			<p class="zse_p width60">请选择</p>
+			<ul class="zse_ul width100">
+				<li class="zse_li zse_first"><a href="javascript:void(0);">请选择</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">派单</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">周结</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">月结</a></li>
+			</ul>
+			<div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="请选择">请选择</option>
+					<option value="派单" selected="selected">派单</option>
+					<option value="周结">周结</option>
+					<option value="月结">月结</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="zeffects">
+	<div class="ze_box">
+		<h2>例：4不选择时，默认选中第一项</h2>
+		<div class="zselect" id="selectde">
+			<p class="zse_p width60">请选择</p>
+			<ul class="zse_ul">
+				<li class="zse_li zse_first"><a href="javascript:void(0);">请选择</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单一</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单二</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单三</a></li>
+			</ul>
+			<div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="请选择">请选择</option>
+					<option value="菜单一">菜单一</option>
+					<option value="菜单二">菜单二</option>
+					<option value="菜单三">菜单三</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<!--<div class="ze_box">
+		<h2>例：4不选择时，默认选中第一项</h2>
+		<div class="zselect" id="selectde">
+			<p class="zse_p width60">请选择</p>
+			<ul class="zse_ul">
+				<li class="zse_li zse_first"><a href="javascript:void(0);">请选择</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单一</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单二</a></li>
+				<li class="zse_li"><a href="javascript:void(0);">菜单三</a></li>
+			</ul>
+			<div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="请选择">请选择</option>
+					<option value="菜单一">菜单一</option>
+					<option value="菜单二">菜单二</option>
+					<option value="菜单三">菜单三</option>
+				</select>
+			</div>
+		</div>
+	</div>-->
+</div>
+<div class="zeffects">
+	<div class="za_box">
+		<h2>例：5 选中第一项</h2>
+		<div class="zselect" id="selec1t">
+			<p class="zse_p width60">模拟一</p>
+			<dl class="zse_ul">
+				<dd class="zse_li zse_first"><a href="javascript:void(0);">模拟一</a></dd>
+				<dd class="zse_li"><a href="javascript:void(0);">模拟二</a></dd>
+				<dd class="zse_li"><a href="javascript:void(0);">模拟三</a></dd>
+			</dl>
+			<div class="zselect_hidden">
+				<select name="zselect" class="zselect_e">
+					<option value="模拟一" selected="selected">模拟一</option>
+					<option value="模拟二">模拟二</option>
+					<option value="模拟三">模拟三</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

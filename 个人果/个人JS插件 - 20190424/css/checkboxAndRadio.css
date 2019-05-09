@@ -1,0 +1,34 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+单选和多选(PC  px)
+-----------------------------------------------------*/
+.zcheckB label,.zcheckR label { display: block; width: 100%; overflow: hidden;}
+.zcheckB .zcheck_input,.zcheckR .zcheck_input { position: absolute; /*left: -10000px;*/}
+.zcheckB span,.zcheckB em,.zcheckR span,.zcheckR em { line-height: 70px; font-size: 20px;}
+.zcheckB em,.zcheckR em { float: left;}
+.zcheckB b,.zcheckR b { font-weight: normal; color: #929292;}
+.zcheck,.zchecked { margin-right: 8px;}
+.zcheckB .zcheck i,.zcheckB .zchecked i { display: inline-block; width: 40px; height: 70px; background: url(../image/checkboxAndRadio/checkbox_check.png) center 50% no-repeat;}
+.zcheckB .zchecked i { background-image: url(../image/checkboxAndRadio/checkbox_checked.png);}
+.zcheckR .zcheck i,.zcheckR .zchecked i { display: inline-block; width: 40px; height: 70px; background: url(../image/checkboxAndRadio/circle_check.png) center 50% no-repeat;}
+.zcheckR .zchecked i { background-image: url(../image/checkboxAndRadio/circle_checked.png);}
+
+.zcheckB .zdisabled .zcheck i,.zcheckB .zdisabled .zchecked i { background-image: url(../image/checkboxAndRadio/checkbox_check_disabled.png);}
+.zcheckB .zdisabled .zchecked i { background-image: url(../image/checkboxAndRadio/checkbox_checked_disabled.png);}
+.zcheckR .zdisabled .zcheck i,.zcheckR .zdisabled .zchecked i { background-image:url(../image/checkboxAndRadio/circle_check_disabled.png)}
+.zcheckR .zdisabled .zchecked i { background-image: url(../image/checkboxAndRadio/circle_checked_disabled.png);}
+
+/*----------------------------------------------------
+单选和多选(手机  rem)
+-----------------------------------------------------*/
+/*.zcheckB label,.zcheckR label { display: -webkit-box; width: 100%;}
+.zcheckB input[type=checkbox],.zcheckR input[type=radio] { position: absolute; left: -100rem;}
+.zcheckB span,.zcheckB em,.zcheckR span,.zcheckR em { display: block; }
+.zcheckB b,.zcheckR b { font-weight: normal; color: #929292;}
+.zcheck,.zchecked { margin-right: 0.4rem;}
+.zcheck i,.zchecked i { display: inline-block; width: 2rem; height: 2.6rem; background: url(../image/checkboxAndRadio/circle_check.png) center 48% no-repeat; background-size: 1.8rem;}
+.zchecked i { background-image: url(../image/checkboxAndRadio/circle_checked.png);}
+.zcheckB input[type=text],.zcheckR input[type=text] { display: block; -webkit-box-flex: 1; height: 2.5rem; margin-left: 1rem; padding-right: 1rem; border: none; background: none; line-height: 2.5rem; vertical-align: middle;}*/
+

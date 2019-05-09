@@ -1,0 +1,25 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+添加发放对象
+-----------------------------------------------------*/
+
+.zobject {}
+.zobject_box { display: -webkit-box; display: box;}
+.zobject_dt{ height: 3.75rem; line-height: 3.75rem;}
+.zobject_item{ -webkit-box-flex: 1;}
+.zobject_item p { display: inline-block;  margin: 0.2rem; padding:0.1rem 0.5rem;}
+.zobject_item p span { display: inline-block; min-width: 3rem; max-width:7rem;  vertical-align: middle; text-align: center;}
+.zobject_item p i.zdelete_item { display: inline-block; width: 0.55rem; height: 0.55rem; margin-left: 0.6rem; background: url(../images/deletex_03.png) no-repeat; background-size: 0.55rem; vertical-align: middle;}
+.zobject_add { display: block; text-align: center;}
+.zobject_add a { display: inline-block; width: 2rem; height: 2rem; margin-top: 0.65rem; background: url(../images/add_30.png) no-repeat; background-size: 2rem;}
+
+/*----------------------------------------------------
+默认班级列表
+-----------------------------------------------------*/
+.zclasses {}
+.zcl_row {}
+.zcl_num { }
+.zcl_num span { padding-right: 0.2rem;}
+.zcl_row {}

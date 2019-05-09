@@ -1,5 +1,56 @@
+var configIdArr = {
+	routine: [ // 常规
+		'#dataWidth',
+		'#dataHeight',
+		'#dataPaddingTop',
+		'#dataPaddingRight',
+		'#dataPaddingBottom',
+		'#dataPaddingLeft',
+		'#dataMarginTop',
+		'#dataMarginRight',
+		'#dataMarginBottom',
+		'#dataMarginLeft'
+	],
+	layout: [ // 布局
+		'#dataFloatLeft',
+    	'#dataFloatRight',
+    	'#dataPostionStatic',
+    	'#dataPostionRelative',
+    	'#dataPostionAbsolute',
+    	'#dataPostionFixed',
+    	'#dataTop',
+    	'#dataRight',
+    	'#dataBottom',
+    	'#dataLeft'
+	],
+	text: [ // 文本
+		'#dataFontSize',
+    	'#dataColor',
+    	'#dataTextAlign',
+    	'#dataVerticalAlign',
+    	'#dataFontWeight',
+    	'#dataFontStyle'
+	],
+	bg: [ // 背景
+		'#dataBackgroundImage',
+    	'#dataBackgroundColor',
+    	'#dataBackgroundRepeatXY',
+    	'#dataBackgroundRepeatX',
+    	'#dataBackgroundRepeatY',
+    	'#dataBackgroundPosition'
+	],
+	decorate: [ // 装饰
+    	'#dataBorderTop',
+    	'#dataBorderRight',
+    	'#dataBorderBottom',
+    	'#dataBorderLeft',
+    	'#dataBorderColor',
+    	'#dataBorderStyle'
+    ]
+}
+
 var config = {
-	// 以下是常规 
+	// 常规 
 	dataWidth: {
 		id: '#dataWidth',
 		value: '100px',
@@ -92,7 +143,7 @@ var config = {
 		postil: '生成的样式',
 	},
 	
-	// 以下是布局 
+	// 布局 
 	dataFloatLeft: {
 		id: '#dataFloatLeft',
 		value: false,
@@ -185,7 +236,7 @@ var config = {
 		postil: '生成的样式',
 	},
 	
-	// 以下是文本
+	// 文本
 	dataFontSize: {
 		id: '#dataFontSize',
 		value: '',
@@ -249,7 +300,7 @@ var config = {
 		type: 'class',
 		postil: '生成的样式'
 	},
-	// 以下是背景
+	// 背景
 	dataBackgroundImage: {
 		id: '#dataBackgroundImage',
 		value: '',
@@ -314,7 +365,7 @@ var config = {
 		postil: '最终样式',
 	},
 	
-	// 以下是修饰
+	// 装饰
 	dataBorderTop: {
 		id: '#dataBorderTop',
 		value: '1px',
@@ -365,38 +416,80 @@ var config = {
 		// postil: '上边框',
 	// }
 }
-for(i in config){
-	var type = config[i].type
-	
-	switch(type) {
-		case 'text':
-			console.log('text')
-			if (config[i].value) $(config[i].id).val(config[i].value)
-			break
-		case 'checkbox':
-			console.log('checkbox')
-			if (config[i].value) {
-				$(config[i].id).prop('checked', true)
-			} else {
-				$(config[i].id).prop('checked', false)
-			}
-			break
-		case 'radio':
-			console.log('radio')
-			if (config[i].value) {
-				$(config[i].id).prop('checked', true)
-			} else {
-				$(config[i].id).prop('checked', false)
-			}
-			break
-		case 'select':
-			console.log('select')
-			if (config[i].value) $(config[i].id).val(config[i].value)
-			break
-		case 'class':
-			console.log('class')
-			if (config[i].value) $(config[i].id).val(config[i].value)
-			break
+
+/**
+ * 将配置同步到界面
+ */
+function updatePage () {
+	for(i in config){
+		var type = config[i].type
+		switch(type) {
+			case 'text':
+				if (config[i].value) $(config[i].id).val(config[i].value)
+				break
+				
+			case 'checkbox':
+				if (config[i].value) {
+					$(config[i].id).prop('checked', true)
+				} else {
+					$(config[i].id).prop('checked', false)
+				}
+				break
+				
+			case 'radio':
+				if (config[i].value) {
+					$(config[i].id).prop('checked', true)
+				} else {
+					$(config[i].id).prop('checked', false)
+				}
+				break
+				
+			case 'select':
+				if (config[i].value) $(config[i].id).val(config[i].value)
+				break
+				
+			case 'class':
+				if (config[i].value) $(config[i].id).val(config[i].value)
+				break
+		}
+	}
+}
+
+/**
+ * 将界面值同步到配置
+ */
+function updateConfig () {
+	// console.log(configIdArr)
+	var d = 0
+	for (k in configIdArr) {
+		console.log(k,d)
+		init(getStyle(configIdArr[k]), d)
+		d++
+		// console.log(configIdArr.text)
+	}
+	for(i in config){
+		var type = config[i].type
+		switch(type) {
+			case 'text':
+				if ($(config[i].id).val()) config[i].value = $(config[i].id).val()
+				break
+				
+			case 'checkbox':
+				config[i].value = $(config[i].id).prop('checked')
+				break
+				
+			case 'radio':
+				config[i].value = $(config[i].id).prop('checked')
+				break
+				
+			case 'select':
+				if ($(config[i].id).val()) config[i].value = $(config[i].id).val()
+				break
+				
+			case 'class':
+				if ($(config[i].id).val()) config[i].value = $(config[i].id).val()
+				break
+		}
 	}
 }
 
@@ -408,13 +501,15 @@ for(i in config){
 		// $('#positionBox').show()
 	// }
 // })
-$('#dataPostionStatic').change(function () {
-	console.log(123)
-})
+// $('#dataPostionStatic').change(function () {
+	// console.log(123)
+// })
 
 
 var curType = 0
-
+/**
+ * tab切换
+ */
 $('#zsettingTab').on('click', 'li', function () {
 	$(this).addClass('cur').siblings().removeClass('cur')
 	$(".zsetting-box").eq(curType).addClass('zsetting-hide')
@@ -422,8 +517,12 @@ $('#zsettingTab').on('click', 'li', function () {
 	$(".zsetting-box").eq(curType).removeClass('zsetting-hide')
 })
 
-
+/**
+ * 将界面当前值生成样式表
+ * @param {Object} arr
+ */
 function getStyle (arr) {
+	console.log(arr)
 	var str = ''
 	for (var i = 0; i < arr.length; i++) {
 		switch($(arr[i]).attr('type')) {
@@ -432,13 +531,11 @@ function getStyle (arr) {
 				str += $(arr[i]).data('css') + $(arr[i]).val() + ';\n'
 				break
 			case 'checkbox':
-				console.log('checkbox')
 				if ($(arr[i]).prop('checked')) {
 					str += $(arr[i]).data('css') + $(arr[i]).val() + ';\n'
 				}
 				break
 			case 'radio':
-				console.log('radio')
 				if ($(arr[i]).prop('checked')) {
 					str += $(arr[i]).data('css') + $(arr[i]).val() + ';\n'
 					if ($(arr[i]).attr('id') != 'dataPostionStatic' && curType == 1) {
@@ -449,8 +546,6 @@ function getStyle (arr) {
 				}
 				break
 			default:
-				console.log('select')
-				console.log($(arr[i]).val())
 				str += $(arr[i]).data('css') + $(arr[i]).val() + ';\n'
 				break
 		}
@@ -458,96 +553,58 @@ function getStyle (arr) {
 	return str
 }
 
-
-function init (styleTxt) {
+/**
+ * 初始化配置界面
+ * @param {Object} styleTxt
+ */
+function init (styleTxt, type) {
 	var st = styleTxt
-	$('#cssText' + curType).text(st)
-    var className = $('#styleName' + curType).val()
-    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
-	$('#style' + curType).text($('#style' + curType).text() + temp)
+	console.log(st)
+	console.log(type)
+	$('#cssText' + type).text(st)
+	$('#cssText' + type).val(st)
+    var className = $('#styleName' + type).val()
+    var temp = $('#prefix' + type).val() + '.' + className + '{' + $('#cssText' + type).val() + '}\n'
+	$('#style' + type).text($('#style' + type).text() + temp)
 	$('#test').addClass(className)
 }
 
+
+/**
+ * 开始生效
+ */
 $('#zsetting-use').on('click', function () {
 	$('#style' + curType).text('')
 	switch(curType) {
-		case 0:
-		    var idArr = [
-		    	'#dataWidth',
-		    	'#dataHeight',
-		    	'#dataPaddingTop',
-		    	'#dataPaddingRight',
-		    	'#dataPaddingBottom',
-		    	'#dataPaddingLeft',
-		    	'#dataMarginTop',
-		    	'#dataMarginRight',
-		    	'#dataMarginBottom',
-		    	'#dataMarginLeft'
-		    	]
-			init (getStyle(idArr))
+		case 0: // 常规
+			init(getStyle(configIdArr.routine), curType)
 		    break
 		    
-		case 1:
-		    console.log(1)
-		    var idArr = [
-		    	'#dataFloatLeft',
-		    	'#dataFloatRight',
-		    	'#dataPostionStatic',
-		    	'#dataPostionRelative',
-		    	'#dataPostionAbsolute',
-		    	'#dataPostionFixed',
-		    	'#dataTop',
-		    	'#dataRight',
-		    	'#dataBottom',
-		    	'#dataLeft'
-		    	]
-		    init (getStyle(idArr))
+		case 1: // 布局
+		    init(getStyle(configIdArr.layout), curType)
 		    break
 		
-		case 2:
-		    console.log(2)
-		    var idArr = [
-		    	'#dataFontSize',
-		    	'#dataColor',
-		    	'#dataTextAlign',
-		    	'#dataVerticalAlign',
-		    	'#dataFontWeight',
-		    	'#dataFontStyle'
-		    	]
-		    var styleTxt = getStyle(idArr)
-		    $('#cssText' + curType).text(styleTxt)
-		    var className = $('#styleName' + curType).val()
-		    console.log(className)
-		    var temp = $('#prefix' + curType).val() + '.' + className + '{' + $('#cssText' + curType).val() + '}\n'
-			$('#style' + curType).text($('#style' + curType).text() + temp)
-			$('#test').addClass(className)
+		case 2: // 文本
+		    init(getStyle(configIdArr.text), curType)
 		    break
 		
-		case 3:
-		    console.log(3)
-		    var idArr = [
-		    	'#dataBackgroundImage',
-		    	'#dataBackgroundColor',
-		    	'#dataBackgroundRepeatXY',
-		    	'#dataBackgroundRepeatX',
-		    	'#dataBackgroundRepeatY',
-		    	'#dataBackgroundPosition'
-		    	
-		    	]
-		    init (getStyle(idArr))
+		case 3: // 背景
+		    init(getStyle(configIdArr.bg), curType)
 		    break
 		
-		case 4:
-		    console.log(4)
-		    var idArr = [
-		    	'#dataBorderTop',
-		    	'#dataBorderRight',
-		    	'#dataBorderBottom',
-		    	'#dataBorderLeft',
-		    	'#dataBorderColor',
-		    	'#dataBorderStyle'
-		    	]
-		    init (getStyle(idArr))
+		case 4: // 修饰
+		    init(getStyle(configIdArr.decorate), curType)
 		    break
+		    
 	}
 })
+
+// 保存
+$("#zsetting-ok").on('click', function() {
+	updateConfig()
+	console.log(6)
+})
+
+// localStorage.setItem('key', JSON.stringify(config))
+			var a = localStorage.getItem('key')
+			console.log(JSON.parse(a))

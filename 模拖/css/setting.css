@@ -29,6 +29,9 @@ body { background: #fcfcfc;}
 .zsetting-input2 { width: 146px;}
 .zsetting-textarea {}
 .zsetting-textarea textarea { width: 100%; height: 100px; resize: none; border: 1px #ccc dashed; box-sizing: border-box;}
+.zsetting-textarea textarea::-webkit-scrollbar { width: 8px;}
+.zsetting-textarea textarea::-webkit-scrollbar-track { width: 8px;}
+.zsetting-textarea textarea::-webkit-scrollbar-thumb { border-radius: 4px; background-color: #ddd;}
 .zsetting-radio,
 .zsetting-checkbox { display: table-cell; padding-left: 9px;}
 
@@ -38,7 +41,16 @@ body { background: #fcfcfc;}
 .zsetting-ok { background: #31b16c; color: #fff;}
 .zsetting-cancel {}
 .zsetting-hide { display: none;}
+.zsetting-flag { float: left; margin-left: 40px;}
+.zsetting-false,
+.zsetting-true { display: inline-block; padding-right: 20px;}
+.zsetting-true i,
+.zsetting-false i { display: inline-block; vertical-align: middle; width: 4px; height: 4px; border: 1px #ebebeb solid; margin-right: 5px; background-color: #ebebeb}
+.zsetting-true i { border: 1px #085 solid; background: #085;}
 
-
-
-
+.isTake { /*color: #008855;*/}
+/*.isTake span { position: relative;}
+.isTake span:after { display: inline-block; content: ''; position: absolute; border-radius: 50%; width: 5px; height: 8px; background: #008855;}*/
+.isTake input { position: relative; width: 0; height: 0; margin-right: 10px;}
+.isTake input:after { display: inline-block; position: absolute; top: -8px; content: ''; width: 4px; height: 4px; border: 1px #ebebeb solid; background-color: #ebebeb;}
+.isTake input:checked:after { background-color: #085; border: 1px #085 solid;}

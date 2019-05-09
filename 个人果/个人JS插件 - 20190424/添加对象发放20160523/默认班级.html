@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>移动</title>
+<link href="css/zcommon.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/checkAndRadio.css"/>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<!--<script src="js/zepto.js" type="text/javascript"></script>-->
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ratio.js" type="text/javascript"></script>
+<script src="js/checkAndRadio.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<!--main start-->
+<h2 class="zht2 zbgef zfs14 zc6 zbdeb">以下为多选</h2>
+<div class="zclasses" id="zclasses">
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckB">
+				<input type="checkbox" name="" checked="checked" id="classId001" value="" />
+				<label for="classId001"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckB">
+				<input type="checkbox" name="" id="classId002" value="" />
+				<label for="classId002"><em class="zcheck"><i></i></em><span>吃饭组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckB">
+				<input type="checkbox" name="" id="classId003" value="" />
+				<label for="classId003"><em class="zcheck"><i></i></em><span>饭桶组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+</div>
+<h2 class="zht2 zbgef zfs14 zc6 zbdeb">以下为单选</h2>
+<div class="zclasses">
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup" checked="checked" id="groupId001" value="" />
+				<label for="groupId001"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup" id="groupId002" value="" />
+				<label for="groupId002"><em class="zcheck"><i></i></em><span>吃饭组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup" id="groupId003" value="" />
+				<label for="groupId003"><em class="zcheck"><i></i></em><span>饭桶组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+</div>
+<div class="zclasses">
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup1" checked="checked" id="groupId101" value="" />
+				<label for="groupId101"><em class="zcheck"><i></i></em><span>第一小组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup1" id="groupId102" value="" />
+				<label for="groupId102"><em class="zcheck"><i></i></em><span>吃饭组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+	<ul class="zcl_row zbdeb zht1 zfs14 zbgwh zdb">
+		<li class="zbf">
+			<div class="zcheckR">
+				<input type="radio" name="radioGroup1" id="groupId103" value="" />
+				<label for="groupId103"><em class="zcheck"><i></i></em><span>饭桶组</span></label>
+			</div>
+		</li>
+		<li class="zcl_num"><span class="zdvm zc9">50</span><i class="zarrowr"></i></li>
+	</ul>
+</div>
+<!--main end-->
+<script type="text/javascript">
+	$("#zclasses").checkAndRadio({inputType:'checkbox'});
+	$(".zclasses").checkAndRadio({inputType:'radio'});
+</script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>echarts3D地图</title>
+		<style type="text/css">
+			.aaaa {
+				    position: absolute;
+				    width: 0;
+				    height: 0;
+				    box-sizing: border-box;
+				    border-color: black transparent transparent transparent;
+				    top: 15px;
+				    bottom: 0;
+				    border-style: solid;
+				    border-width: 4px;
+				    margin: auto;
+				    left: 10px;
+				    border-top-width: 8px;
+			}
+			.main {
+				position: fixed; left: 0; top: 0; width: 100%; height: 100%; color:#fff;
+			}
+			.bg { background: #000;}
+		</style>
+	</head>
+	<body class="bg">
+		<div class="main" id="main">dfsdasadasf</div>
+		<canvas id="canvas"></canvas>
+		<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts-gl.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/javascript">
+			var canvas = document.createElement("canvas");
+			var ctx = canvas.getContext("2d");
+			
+			var imgData;
+			var currentImg;
+			
+			var myChart = echarts.init(document.getElementById('main'));
+			// Configurations
+			var config = {
+			    scale: 0.3,
+			    roughness: 0,
+			    metalness: 1,
+			    projection: "orthographic",
+			    depthOfField: 4,
+			    lockY: false,
+			    move: true,
+			    sameColor: false,
+			    color: '#777',
+			    colorContrast: 1.2,
+			    lightIntensity: 1,
+			    lightColor: '#fff',
+			    lightRotate: 30,
+			    lightPitch: 40,
+			    AO: 1.5,
+			    showEnvironment: false,
+			
+			    barNumber: 80,
+			    barBevel: 0.18,
+			    barSize: 1.2
+			};
+			
+			var option = {
+			    tooltip: {},
+			    backgroundColor: "#000",
+			    xAxis3D: {
+			        type: "value"
+			    },
+			    yAxis3D: {
+			        type: "value"
+			    },
+			    zAxis3D: {
+			        type: "value",
+			        min: 0,
+			        max: 100
+			    },
+			    grid3D: {
+			        show: false,
+			        viewControl: {
+			            projection: "perspective",
+			            alpha: 45,
+			            beta: -45,
+			            panSensitivity: config.move ? 1 : 0,
+			            rotateSensitivity: config.lockY ? [1, 0] : 1,
+			            damping: 0.9,
+			            distance: 60
+			        },
+			        postEffect: {
+			            enable: true,
+			            bloom: {
+			                intensity: 0.2
+			            },
+			            screenSpaceAmbientOcclusion: {
+			                enable: true,
+			                intensity: 1.5,
+			                radius: 5,
+			                quality: "high"
+			            },
+			            screenSpaceReflection: {
+			                enable: true
+			            },
+			            depthOfField: {
+			                enable: true,
+			                blurRadius: config.depthOfField,
+			                fstop: 10,
+			                focalDistance: 55
+			            }
+			        },
+			        boxDepth: 100,
+			        boxHeight: 20,
+			        environment: "none",
+			        light: {
+			            main: {
+			                shadow: true,
+			                intensity: 2
+			            },
+			            ambientCubemap: {
+			                texture: 'images/pisa.hdr',
+			                exposure: 2,
+			                diffuseIntensity: 0.2,
+			                specularIntensity: 1.5
+			            }
+			        }
+			    }
+			};
+			
+			function updateData(pixelData, width, height) {
+			    console.time("update");
+			    var data = new Float32Array(pixelData.length / 4 * 3);
+			    var off = 0;
+			    for (var i = 0; i < pixelData.length / 4; i++) {
+			        var r = pixelData[i * 4];
+			        var g = pixelData[i * 4 + 1];
+			        var b = pixelData[i * 4 + 2];
+			
+			        var lum = 0.2125 * r + 0.7154 * g + 0.0721 * b;
+			        lum = (lum - 125) * config.scale + 50;
+			        data[off++] = i % width;
+			        data[off++] = height - Math.floor(i / width);
+			        data[off++] = lum;
+			    };
+			
+			    myChart.setOption({
+			        grid3D: {
+			            boxWidth: 100 / height * width
+			        },
+			        series: [{
+			            animation: false,
+			            type: "bar3D",
+			            shading: "realistic",
+			            realisticMaterial: {
+			                roughness: config.roughness,
+			                metalness: config.metalness
+			            },
+			            barSize: config.barSize,
+			            bevelSize: config.barBevel,
+			            silent: true,
+			            itemStyle: {
+			                color: config.sameColor ? config.color : function(params) {
+			                    var i = params.dataIndex;
+			                    var r = pixelData[i * 4] / 255;
+			                    var g = pixelData[i * 4 + 1] / 255;
+			                    var b = pixelData[i * 4 + 2] / 255;
+			                    var lum = 0.2125 * r + 0.7154 * g + 0.0721 * b;
+			                    r *= lum * config.colorContrast;
+			                    g *= lum * config.colorContrast;
+			                    b *= lum * config.colorContrast;
+			                    return [r, g, b, 1];
+			                }
+			            },
+			            data: data
+			        }]
+			    });
+			
+			    console.timeEnd("update");
+			}
+			
+			function loadImage(img) {
+			    var height = (canvas.height = Math.min(config.barNumber, img.height));
+			    var aspect = img.width / img.height;
+			    var width = (canvas.width = Math.round(height * aspect));
+			
+			    ctx.drawImage(img, 0, 0, width, height);
+			
+			    imgData = ctx.getImageData(0, 0, width, height);
+			
+			    updateData(imgData.data, width, height);
+			}
+			
+			// Default
+			var img = new Image();
+			img.onload = function() {
+			    loadImage(img);
+			    currentImg = img;
+			};
+			img.src = "images/bitcoin.png";
+		</script>-->
+		<script type="text/javascript">
+		var chart = echarts.init(document.getElementById('main'));
+		
+		var config = {
+		    color: '#c0101a',
+		    levels: 1,
+		    intensity: 4,
+		    threshold: 0.01
+		}
+		
+		var canvas = document.createElement('canvas');
+		canvas.width = 4096;
+		canvas.height = 2048;
+		context = canvas.getContext("2d");
+		
+		context.lineWidth = 0.5;
+		context.strokeStyle = config.color;
+		context.fillStyle = config.color;
+		context.shadowColor = config.color;
+		
+		chart.setOption({
+			backgroundColor: '#000',
+			grid3D: {},
+			xAxis3D: {},
+			yAxis3D: {},
+			zAxis3D: {},
+			globe: {
+		//         baseTexture: 'images/asset/earth.jpg',
+		        baseTexture: 'temp/20190507123246.png',
+		//         heightTexture: 'images/asset/bathymetry_bw_composite_4k.jpg',
+		        displacementScale: 0.1,
+		        shading: 'lambert',//地球中三维图形的着色效果,通过经典的 lambert 着色表现光照带来的明暗
+		//         environment: 'images/asset/starfield.jpg',
+				// postEffect: {
+	                // enable: true,
+	            // },
+		        light: {
+		            ambient: {
+		                intensity: .5,//全局的环境光设置。环境光的强度。
+						quality: 'high'
+		            },
+		            main: {//场景主光源的设置，在 globe 组件中就是太阳光
+		                intensity: .5//主光源的强度。
+		            },
+					ambientCubemap: {
+	                    exposure: 1.0,
+	                    diffuseIntensity: 1,
+	                    specularIntensity:1
+	                }
+		        },
+		//         layers: [{
+		//             type: 'blend',
+		//             blendTo: 'emission',
+		//             texture: 'images/asset/night.jpg'
+		//         }, {
+		//             type: 'overlay',
+		//             texture: 'images/asset/clouds.png',
+		//             shading: 'lambert',
+		//             distance: 10 // 云层与地球的间距
+		//         }]
+		    },
+			series: [{
+				type: 'bar3D',
+				shading:"realistic",//着色效果
+				coordinateSystem: 'globe',//该系列使用的坐标系
+		        bevelSize:12,//柱子的倒角尺寸
+		        bevelSmoothness:50,//柱子的倒角光滑度
+				symbolSize: 50,
+				data: [[-1, -1, -1], [4, 2, 1], [1, 1, 1]],
+				itemStyle: {
+					opacity: 1
+				}
+			}]
+		})
+		</script>
+		<!--<script type="text/javascript">
+			visualMap: {
+	            show: false, //设置为true的时候会显示控制条
+	            min: 12,
+	            max: 10,
+	            inRange: {
+	                color: ['rgba(255,109,34,0.8)', 'rgba(255,210,4,0.8)', 'rgba(255,255,0,0.8)', 'rgba(255,255,134,0.8)', 'rgba(255,255,255,0.8)']//color参数可以是#fff格式颜色
+	            }
+	        }
+			series:{
+	            type: 'bar3D',
+	            coordinateSystem: 'globe',//该系列使用的坐标系
+	            data: data,//每一项的前两个值分别是经纬度 lng, lat，第三个值表示数值大小，
+	            barSize: 2.0,//柱状图大小
+	            bevelSize:1,//柱子的倒角尺寸
+	            bevelSmoothness:10,//柱子的倒角光滑度
+	            silent: false,//图形是否不响应和触发鼠标事件
+	            shading:"realistic",//着色效果
+			}
+			globe:{
+		        postEffect: {
+	                enable: true,
+	            },
+	            light: {
+	                main: {
+	                    intensity: 1,
+	                },
+	                ambient:{
+	                    intensity:10,
+	                    quality: 'high'
+	                },
+	                ambientCubemap: {
+	                    exposure: 1.0,
+	                    diffuseIntensity: 2,
+	                    specularIntensity:2
+	                }
+	            }
+			}
+			emphasis:{
+                label:{
+                    show:true,
+                    //distance:5,
+                    formatter:'我在：{b}',
+                    textStyle:{
+                        fontWeight:'bolder',
+                        fontSize:22,
+                        lineHeight:22,
+                        backgroundColor:"#fff",
+                        padding:[5,15],
+                        borderRadius:5
+                    }
+ 
+                },
+            },
+			
+		</script>-->
+		<!--<script type="text/javascript">
+			option = {
+			    backgroundColor: '#000',
+			    globe: {
+			        baseTexture: 'data-gl/asset/earth.jpg',
+			        heightTexture: 'data-gl/asset/bathymetry_bw_composite_4k.jpg',
+			        displacementScale: 0.1,
+			        shading: 'lambert',
+			        environment: 'data-gl/asset/starfield.jpg',
+			        light: {
+			            ambient: {
+			                intensity: 0.1
+			            },
+			            main: {
+			                intensity: 1.5
+			            }
+			        },
+			        layers: [{
+			            type: 'blend',
+			            blendTo: 'emission',
+			            texture: 'data-gl/asset/night.jpg'
+			        }, {
+			            type: 'overlay',
+			            texture: 'data-gl/asset/clouds.png',
+			            shading: 'lambert',
+			            distance: 5
+			        }]
+			    },
+			    series: []
+			}
+			let getOption = function (svg) {
+			  let option = {
+			    backgroundColor: 'rgba(0,0,0,0)',
+			    globe: {
+			      show: !!svg,
+			      baseTexture: svg,
+			      displacementScale: 0.4,
+			      shading: 'color',//地球中三维图形的着色效果,通过经典的 lambert 着色表现光照带来的明暗
+			      viewControl: {
+			        rotateSensitivity:0
+			      },
+			      light: {
+			        ambient: {
+			          intensity: 0.5//全局的环境光设置。环境光的强度。
+			        },
+			        main: {//场景主光源的设置，在 globe 组件中就是太阳光
+			          intensity: 1//主光源的强度。
+			        }
+			      },
+			      postEffect:{
+			        enable:true,
+			        bloom:100,
+			      }
+			    },
+			    series: []
+			  };
+			  return option;
+			};
+			
+			//可能会出现图片还未加载完全，出现白球旋转
+			let image = new Image();
+			image.onload = () => {
+			     this.options = getOption(image);
+			};
+			image.src = world;
+			
+			var canvas = document.createElement('canvas');
+			var mapChart = echarts.init(canvas, null, {
+			    width: 4096, height: 2048
+			});
+			mapChart.setOption({
+			    series : [
+			        {
+			            type: 'map',
+			            map: 'world',
+			            // 绘制完整尺寸的 echarts 实例
+			            top: 0, left: 0,
+			            right: 0, bottom: 0,
+			            boundingCoords: [[-180, 90], [180, -90]]
+			        }
+			    ]
+			});
+			// baseTexture: mapChart
+			
+		</script>-->
+	</body>
+</html>
