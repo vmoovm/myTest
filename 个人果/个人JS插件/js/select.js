@@ -27,6 +27,7 @@
 				selected:0,
 				speed:100,
 				clickIsHide:true,
+				callfn: function (){},
 				parent_css:'.zselect',
 				box:'.zse_ul',
 				Tselect:'.zselect_e'
@@ -67,6 +68,7 @@
 				}else{
 					e.cancelBubble = true;
 				}
+				if (options.callfn) options.callfn($(this))
 				return false;
 			});
 			//点击后下拉框是否消失
