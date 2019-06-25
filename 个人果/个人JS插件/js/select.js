@@ -27,7 +27,7 @@
 				selected:0,
 				speed:100,
 				clickIsHide:true,
-				callfn: function (){},
+				callfn: function (ol){},
 				parent_css:'.zselect',
 				box:'.zse_ul',
 				Tselect:'.zselect_e'
@@ -50,10 +50,11 @@
 			ele.ul=p_self.find(options.sub_ul+':eq(0)');
 			ele.li=p_self.find(options.sub_ul+':eq(0)').find(options.sub_li);
 			
-			if(options.selected){
+			if(options.selected >= 0){
 				if(options.selected<ele.li.length){
 					p_self.find(':eq(0)').html(ele.li.eq(options.selected).find('a').html());
 					p_self.find(options.Tselect).children().eq(options.selected).attr("selected",true);
+					if (options.callfn) options.callfn(ele.li.eq(options.selected).find('a').html())
 				}else{
 					alert('id='+p_self.attr('id')+'  的下拉框默认选中项输入有误');
 				}
@@ -62,13 +63,15 @@
 			p_self.find(options.sub_ul+':eq(0)').on('click',options.sub_li,function(e){
 				var li_html=$(this).find('a').html();
 				$(this).parent().prev().html(li_html);
+				p_self.find(options.Tselect).children().attr("selected",false);
 				p_self.find(options.Tselect).children().eq($(this).index()).attr("selected",true);
+				options.selected = $(this).index()
 				if(e.stopPropagation){
 					e.stopPropagation();
 				}else{
 					e.cancelBubble = true;
 				}
-				if (options.callfn) options.callfn($(this))
+				if (options.callfn) options.callfn(li_html)
 				return false;
 			});
 			//点击后下拉框是否消失

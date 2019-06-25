@@ -17,7 +17,15 @@ $(function(){
 		myevent:'click',	//默认事件为‘click’，可修改
 		speed:100,	//默认100,下拉和收起速度，可修改
 		clickIsHide:true,	//默认为true，点击后下拉框是否消失
-		parent_css:'.zselect' //默认项，如果所有样式名都有修改，此样式名必须重传，解决下拉框层级问题
+		parent_css:'.zselect', //默认项，如果所有样式名都有修改，此样式名必须重传，解决下拉框层级问题
+		callfn: function(o) {
+			console.log(this)
+			console.log(o)
+			console.log($('#selectd10').find('p').text())
+			var vv = $('#selectd10').find('select option[selected]').text();
+			console.log(vv)
+			// console.log($('#zhengJianLeiXing').find('select option:selected').val()) //选中的值
+		}
 	});
 	//例：2 选中任意一项
 	$('#selectdd').imiSelect({
@@ -25,6 +33,14 @@ $(function(){
 		//sub_li:'li',
 		//myevent:'click',
 		//speed:100
+		callfn: function(o) {
+			console.log(this)
+			console.log(o)
+			console.log($('#selectdd').find('p').text())
+			var vv = $('#selectdd').find('select option[selected]').text();
+			console.log(vv)
+			// console.log($('#zhengJianLeiXing').find('select option:selected').val()) //选中的值
+		}
 	});
 	//例：4不选择时，默认选中第一项
 	$('#selectde').imiSelect({
@@ -32,11 +48,27 @@ $(function(){
 		//sub_li:'li',
 		//myevent:'click',
 		//speed:100
+		callfn: function(o) {
+			console.log(this)
+			console.log(o)
+			console.log($('#selectde').find('p').text())
+			var vv = $('#selectde').find('select option[selected]').text();
+			console.log(vv)
+			// console.log($('#zhengJianLeiXing').find('select option:selected').val()) //选中的值
+		}
 	});
 	//例：5 选中第一项
 	$('#selec1t').imiSelect({
 		sub_ul:'dl',
-		sub_li:'dd'
+		sub_li:'dd',
+		callfn: function(o) {
+			console.log(this)
+			console.log(o)
+			console.log($('#selec1t').find('p').text())
+			var vv = $('#selec1t').find('select option[selected]').text();
+			console.log(vv)
+			// console.log($('#zhengJianLeiXing').find('select option:selected').val()) //选中的值
+		}
 	});
 	
 	//例：1 选中最后一项

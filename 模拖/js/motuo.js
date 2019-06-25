@@ -467,7 +467,7 @@ function updateConfig () {
 		d++
 		// console.log(configIdArr.text)
 	}
-	for(i in config){
+	for (i in config) {
 		var type = config[i].type
 		switch(type) {
 			case 'text':
