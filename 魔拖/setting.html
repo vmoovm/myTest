@@ -7,7 +7,12 @@
 		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
 		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
-			.test p { vertical-align: sub; color: #f00;}
+			.view { padding: 0 50px 10px; padding-top: 0; border-bottom: 1px #ebebeb solid;}
+			.view p { vertical-align: sub; color: #f00;}
+			.logo { padding: 30px;}
+			.logo p { display: inline-block; vertical-align: middle; width: 60px; height: 60px;}
+			.logo p img { width: 100%; height: 100%;}
+			.logo h1 { display: inline-block; vertical-align: middle; padding-left: 10px; font-size: 18px; color: #31b16c; text-align: center;}
 		</style>
 		<style type="text/css" id="style0">
 		</style>
@@ -21,8 +26,17 @@
 		</style>
 	</head>
 	<body>
-		<div class="test" >要配置的模块<p id="test">样式</p></div>
-		<div class="zsetting">
+		<div class="logo">
+			<p><img src="images/motuo.png"/></p>
+			<h1>魔拖</h1>
+		</div>
+		<div class="view" >
+			<h2 id="title">要配置的模块</h2>
+			<div id="target">
+				<p id="test">样式</p>
+			</div>
+		</div>
+		<div class="zsetting UnSelect">
 			
 			<div class="zsetting-wrap">
 				<div class="zsetting-header">
@@ -35,72 +49,70 @@
 					</ul>
 					<p class="zsetting-close">关闭</p>
 				</div>
-				<div class="zsetting-body">
+				<div class="zsetting-body" id="zsetting-body">
 		            <!--常规 start-->
 					<div class="zsetting-box" data-type="0">
 						<div class="zsetting-wide">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">重要</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" value="" /> <span>宽</span></label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataWidth" class="isSetting-js" value="" /> <span>宽</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" data-css="width:" id="dataWidth" value="100px" />
+										<input type="text" class="zsetting-input1" name="" data-css="width:" data-allow="yes" id="dataWidth" value="100px" />
 									</dd>
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" value="" />高</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataHeight" class="isSetting-js" id="" value="" />高</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" data-css="height:" id="dataHeight" value="100px" />
+										<input type="text" class="zsetting-input1" name="" data-css="height:" data-allow="yes" id="dataHeight" value="100px" />
 									</dd>
-								</dl>
-								<dl class="zsetting-row">
-									<dt class="zsetting-field">条数 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataNum" class="isSetting-js" id="" value="" />条数</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input" name="" data-num= "1" id="dataNum" value="5" />
+										<input type="text" class="zsetting-input1" name="" data-num= "1" data-allow="yes" id="dataNum" value="5" />
 									</dd>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">内边距</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked"  value="" />上</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataPaddingTop" class="isSetting-js" id=""  value="" />上</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataPaddingTop" data-css="padding-top:" value="11px" />
+										<input type="text" class="zsetting-input2" name="" id="dataPaddingTop" data-css="padding-top:" data-allow="yes" value="11px" />
 									</dd>
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />右</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataPaddingRight" class="isSetting-js" id="" value="" />右</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataPaddingRight" data-css="padding-right:" value="12px" />
+										<input type="text" class="zsetting-input2" name="" id="dataPaddingRight" data-css="padding-right:" data-allow="yes" value="12px" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />下 </label></dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataPaddingBottom" data-allow="yes" class="isSetting-js" id="" value="" />下 </label></dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataPaddingBottom" data-css="padding-bottom:" value="13px" />
+										<input type="text" class="zsetting-input2" name="" id="dataPaddingBottom" data-css="padding-bottom:" value="13px" />
 									</dd>
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />左</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataPaddingLeft" class="isSetting-js" id="" value="" />左</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataPaddingLeft" data-css="padding-left:" value="14px" />
+										<input type="text" class="zsetting-input2" name="" id="dataPaddingLeft" data-css="padding-left:" data-allow="yes" value="14px" />
 									</dd>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">外边距</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />上</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataMarginTop" class="isSetting-js" id="" value="" />上</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataMarginTop" data-css="margin-top:" value="8px" />
+										<input type="text" class="zsetting-input2" name="" id="dataMarginTop" data-css="margin-top:" data-allow="yes" value="8px" />
 									</dd>
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />右</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataMarginRight" class="isSetting-js" id="" value="" />右</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataMarginRight" data-css="margin-right:" value="9px" />
+										<input type="text" class="zsetting-input2" name="" id="dataMarginRight" data-css="margin-right:" data-allow="yes" value="9px" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />下 </label></dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataMarginBottom" class="isSetting-js" id="" value="" />下 </label></dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataMarginBottom" data-css="margin-bottom:" value="7px" />
+										<input type="text" class="zsetting-input2" name="" id="dataMarginBottom" data-css="margin-bottom:" data-allow="yes" value="7px" />
 									</dd>
-									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" id="" checked="checked" value="" />左</label> </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataMarginLeft" class="isSetting-js" id="" value="" />左</label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataMarginLeft" data-css="margin-left:" value="9px" />
+										<input type="text" class="zsetting-input2" name="" id="dataMarginLeft" data-css="margin-left:" data-allow="yes" value="9px" />
 									</dd>
 								</dl>
 							</fieldset>
@@ -108,16 +120,16 @@
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">父级权限 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="prefix0" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="prefix0" value="" />
 									</dd>
 								</dl>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="styleName0" value="d" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName0" value="d" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">最终样式：</h2>
@@ -132,35 +144,35 @@
 					<div class="zsetting-box zsetting-hide"  data-type="1">
 						<div class="zsetting-wide">
 							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">浮动</legend>
+							    <legend class="zsetting-type"><label class="isTake"><input type="checkbox" name="" data-allow="no" class="isSetting-js" id="group-float"  value="" />浮动</label></legend>
 								<dl class="zsetting-row">
 									<dd class="zsetting-radio">
-										<input type="radio" name="dataFloat" id="dataFloatLeft" data-css="float:" value="left" />
+										<input type="radio" name="dataFloat" id="dataFloatLeft" data-css="float:" data-group="group-float" value="left" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataFloatLeft">左</label></dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="dataFloat" id="dataFloatRight" data-css="float:" value="right" />
+										<input type="radio" name="dataFloat" id="dataFloatRight" data-css="float:" data-group="group-float" value="right" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataFloatRight">右 </label></dt>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">定位</legend>
+							    <legend class="zsetting-type"><label class="isTake"><input type="checkbox" name="" data-allow="no" class="isSetting-js" id="group-position" value="" /> <span>定位</span></label></legend>
 								<dl class="zsetting-row" id="site">
 									<dd class="zsetting-radio">
-										<input type="radio" name="position" id="dataPostionStatic" data-css="position:" value="static" />
+										<input type="radio" name="position" id="dataPostionStatic" data-css="position:" data-group="group-float" value="static" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataPostionStatic">静态</label></dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="position" id="dataPostionRelative" data-css="position:" value="relative" />
+										<input type="radio" name="position" id="dataPostionRelative" data-css="position:" data-group="group-float" value="relative" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataPostionRelative">相对</label> </dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="position" id="dataPostionAbsolute" data-css="position:" value="absolute" />
+										<input type="radio" name="position" id="dataPostionAbsolute" data-css="position:" data-group="group-float" value="absolute" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataPostionAbsolute">绝对</label> </dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="position" id="dataPostionFixed" data-css="position:" value="fixed" />
+										<input type="radio" name="position" id="dataPostionFixed" data-css="position:" data-group="group-float" value="fixed" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataPostionFixed">悬浮</label> </dt>
 								</dl>
@@ -187,16 +199,16 @@
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">父级样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="prefix1" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="prefix1" value="" />
 									</dd>
 								</dl>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="styleName1" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName1" value="" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">生成的样式：</h2>
@@ -213,20 +225,20 @@
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">重要</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">字号 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataFontSize" class="isSetting-js" id="" value="" /> <span>字号</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataFontSize" data-css="font-size:" value="16px" />
+										<input type="text" class="zsetting-input2" name="" id="dataFontSize" data-css="font-size:" value="16px" />
 									</dd>
-									<dt class="zsetting-field">颜色 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataColor" class="isSetting-js" id="" value="" /> <span>颜色</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataColor" data-css="color:" value="#666" />
+										<input type="text" class="zsetting-input2" name="" id="dataColor" data-css="color:" value="#666" />
 									</dd>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">对齐方式</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">水平 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataTextAlign" class="isSetting-js" id="" value="" /> <span>水平</span></label> </dt>
 									<dd class="zsetting-checkbox">
 										<select name="" id="dataTextAlign" data-css="text-align:">
 											<option value="inherit">默认</option>
@@ -235,7 +247,7 @@
 											<option value="right">右对齐</option>
 										</select>
 									</dd>
-									<dt class="zsetting-field">垂直 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataVerticalAlign" class="isSetting-js" id="" value="" /> <span>垂直</span></label> </dt>
 									<dd class="zsetting-checkbox">
 										<select name="" id="dataVerticalAlign" data-css="vertical-align:">
 											<option value="inherit">默认</option>
@@ -249,32 +261,32 @@
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">格式</legend>
+							    <legend class="zsetting-type"><label class="isTake"><input type="checkbox" name="" class="isSetting-js" id="group-layout" value="" /> <span>格式</span></label></legend>
 								<dl class="zsetting-row">
 									<dd class="zsetting-checkbox">
-										<input type="checkbox" name="" id="dataFontWeight" data-css="font-weight:" value="blod" />
+										<input type="checkbox" name="" id="dataFontWeight" data-css="font-weight:" data-group="group-layout" value="blod" />
 									</dd>
-									<dt class="zsetting-field"> 加粗 </dt>
+									<dt class="zsetting-field">加粗</dt>
 									<dd class="zsetting-checkbox">
-										<input type="checkbox" name="" id="dataFontStyle" data-css="font-style:" value="initial" />
+										<input type="checkbox" name="" id="dataFontStyle" data-css="font-style:" data-group="group-layout" value="initial" />
 									</dd>
-									<dt class="zsetting-field"> 斜体 </dt>
+									<dt class="zsetting-field">斜体</dt>
 								</dl>
 							</fieldset>
 						</div>
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">父级权限 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="prefix2" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="prefix2" value="" />
 									</dd>
 								</dl>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="styleName2" value="s" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName2" value="s" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">生成的样式：</h2>
@@ -291,45 +303,45 @@
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">重要</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">图片 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBackgroundImage" class="isSetting-js" id="" value="" /> <span>图片</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="dataBackgroundImage" data-css="background-image:" value="" />
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="dataBackgroundImage" data-css="background-image:" value="" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">颜色 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBackgroundColor" class="isSetting-js" id="" value="" /> <span>颜色</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2"  name="" id="dataBackgroundColor" data-css="background-color:" value="" />
+										<input type="text" class="zsetting-input zsetting-w100"  name="" id="dataBackgroundColor" data-css="background-color:" value="" />
 									</dd>
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
-							    <legend class="zsetting-type">平铺方向</legend>
+							    <legend class="zsetting-type"><label class="isTake"><input type="checkbox" name="" data-allow="no" class="isSetting-js" id="group-bgRepeat" value="" /> <span>平铺方向</span></label></legend>
 								<dl class="zsetting-row">
 									<dd class="zsetting-radio">
-										<input type="radio" name="repeat" id="dataBackgroundRepeatXY" data-css="background-repeat:" value="repeat" />
+										<input type="radio" name="repeat" id="dataBackgroundNoRepeat" data-group="group-bgRepeat" data-css="background-repeat:" value="no-repeat" />
+									</dd>
+									<dt class="zsetting-field"><label for="dataBackgroundNoRepeat">不平铺</label></dt>
+									<dd class="zsetting-radio">
+										<input type="radio" name="repeat" id="dataBackgroundRepeatXY" data-group="group-bgRepeat" data-css="background-repeat:" value="repeat" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataBackgroundRepeatXY">X 和 Y轴</label></dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="repeat" id="dataBackgroundRepeatX" data-css="background-repeat:" value="repeat-x" />
+										<input type="radio" name="repeat" id="dataBackgroundRepeatX" data-group="group-bgRepeat" data-css="background-repeat:" value="repeat-x" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataBackgroundRepeatX">X轴</label></dt>
 									<dd class="zsetting-radio">
-										<input type="radio" name="repeat" id="dataBackgroundRepeatY" data-css="background-repeat:" value="repeat-y" />
+										<input type="radio" name="repeat" id="dataBackgroundRepeatY" data-group="group-bgRepeat" data-css="background-repeat:" value="repeat-y" />
 									</dd>
 									<dt class="zsetting-field"><label for="dataBackgroundRepeatY">Y轴</label></dt>
-									
-									
-									
-									
 								</dl>
 							</fieldset>
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">图片坐标</legend>
 							   <dl class="zsetting-row">
-									<dt class="zsetting-field">坐标轴(x y) </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBackgroundPosition" class="isSetting-js" id="" value="" /> <span>坐标轴(x y)</span></label></dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="dataBackgroundPosition" data-css="background-position:" value="" />
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="dataBackgroundPosition" data-css="background-position:" value="" />
 									</dd>
 								</dl>
 							</fieldset>
@@ -337,16 +349,16 @@
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">父级样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="prefix3" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="prefix3" value="" />
 									</dd>
 								</dl>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="styleName3" value="d3" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName3" value="d3" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">最终样式：</h2>
@@ -363,31 +375,31 @@
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">边框</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">上边框 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderTop" class="isSetting-js" value="" /> <span>上边框</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderTop" data-css="border-top:" value="1px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderTop" data-css="border-top:" value="1px" />
 									</dd>
-									<dt class="zsetting-field">右边框 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderRight" class="isSetting-js" id="" value="" /> <span>右边框</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderRight" data-css="border-right:" value="2px" />
-									</dd>
-								</dl>
-								<dl class="zsetting-row">
-									<dt class="zsetting-field">下边框</dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderBottom" data-css="border-bottom:" value="2px" />
-									</dd>
-									<dt class="zsetting-field">左边框</dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderLeft" data-css="border-left:" value="1px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderRight" data-css="border-right:" value="2px" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">颜色 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderBottom" class="isSetting-js" id="" value="" /> <span>下边框</span></label></dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderColor" data-css="border-color:" value="#f00" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderBottom" data-css="border-bottom:" value="2px" />
 									</dd>
-									<dt class="zsetting-field">类型 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderLeft" class="isSetting-js" id="" value="" /> <span>左边框</span></label></dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="dataBorderLeft" data-css="border-left:" value="1px" />
+									</dd>
+								</dl>
+								<dl class="zsetting-row">
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderColor" class="isSetting-js" id="" value="" /> <span>颜色</span></label> </dt>
+									<dd class="zsetting-value">
+										<input type="text" class="zsetting-input2" name="" id="dataBorderColor" data-css="border-color:" value="#f00" />
+									</dd>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderStyle" class="isSetting-js" id="" value="" /> <span>类型</span></label> </dt>
 									<dd class="zsetting-value">
 										<select name="" id="dataBorderStyle" data-css="border-style:">
 											<option value="solid">实线</option>
@@ -399,23 +411,24 @@
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">角弧度</legend>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">左上角 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" class="isSetting-js" id="" value="" /> <span>左上角</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusLT" data-css="border-left-top-radius:" value="4px" />
+										<input type="hidden" name="border-radius" id="dataBorderRadius" data-css="border-radius:" value="4px 6px 8px 10px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderRadiusLT" value="4px" />
 									</dd>
-									<dt class="zsetting-field">右上角 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" class="isSetting-js" id="" value="" /> <span>右上角</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusRT" data-css="border-right-top-radius:" value="6px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderRadiusRT" value="6px" />
 									</dd>
 								</dl>
 								<dl class="zsetting-row">
-									<dt class="zsetting-field">右下角 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderRadiusRB" class="isSetting-js" id="" value="" /> <span>右下角</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusRB" data-css="border-right-bottom-radius:" value="8px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderRadiusRB" value="8px" />
 									</dd>
-									<dt class="zsetting-field">左下角 </dt>
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBorderRadiusLB" class="isSetting-js" id="" value="" /> <span>左下角</span></label> </dt>
 									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input1" name="" id="dataBorderRadiusLB" data-css="border-left-bottom-radius:" value="10px" />
+										<input type="text" class="zsetting-input2" name="" id="dataBorderRadiusLB" value="10px" />
 									</dd>
 								</dl>
 							</fieldset>
@@ -424,10 +437,10 @@
 								<dl class="zsetting-row">
 									<dt class="zsetting-field">格式说明（X轴 Y轴  羽化 扩展 颜色）</dt>
 								</dl>
-								<dl class="zsetting-row">
-									<dt class="zsetting-field">格式值</dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="dataBox-shadow" data-css="box-shadow:" value="5px 5px 8px 1px #fcfcfc" />
+								<dl class="zsetting-row zsetting-w100">
+									<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataBox-shadow" class="isSetting-js" id="" value="" /> <span>格式值</span></label></dt>
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="dataBox-shadow" data-css="box-shadow:" value="5px 5px 8px 1px #fcfcfc" />
 									</dd>
 								</dl>
 							</fieldset>
@@ -435,16 +448,16 @@
 						<div class="zsetting-side">
 							<fieldset class="zsetting-group">
 							    <legend class="zsetting-type">样式生成</legend>
-							    <dl class="zsetting-row">
+							    <dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">父级样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="prefix4" value="" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="prefix4" value="" />
 									</dd>
 								</dl>
-								<dl class="zsetting-row">
+								<dl class="zsetting-row zsetting-w100">
 									<dt class="zsetting-field">样式名 </dt>
-									<dd class="zsetting-value">
-										<input type="text" class="zsetting-input2" name="" id="styleName4" value="xiuShi" />
+									<dd class="zsetting-value zsetting-w100">
+										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName4" value="xiuShi" />
 									</dd>
 								</dl>
 								<h2 class="zsetting-h">最终样式：</h2>
@@ -458,8 +471,7 @@
 				</div>
 				<div class="zsetting-footer">
 					<ul class="zsetting-flag">
-						<li class="zsetting-false"><i></i><span>不生效</span></li>
-						<li class="zsetting-true"><i></i><span>生效</span></li>
+						<li class=""><label class="zsetting-apply"><input type="checkbox" name="" id="" value=""><span>使用自定义样式</span></label></li>
 					</ul>
 					<p class="zsetting-use" id="zsetting-use">应用</p>
 					<p class="zsetting-ok" id="zsetting-ok">保存</p>

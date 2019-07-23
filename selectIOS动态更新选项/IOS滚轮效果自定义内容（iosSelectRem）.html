@@ -136,8 +136,11 @@
     }
     ]
     var Data1 = scoreData1
+    var Data2 = null
+    var Data3 = null
 	$('#firstItem').bind('click', function () {
 	    var that = $(this).children('span:first');
+	    if (!Data1)  return
 	    var iosSelect = new IosSelect(1,
 	        [Data1],
 	        {
@@ -152,6 +155,7 @@
 	                that.attr('data-score', selectOneObj.id);
 	                that.html(selectOneObj.value);
 	                var temp = window['scoreData' + selectOneObj.id.slice(3)]
+	                console.log(selectOneObj.id.slice(3))
 	                Data2 = temp
 	                console.log(selectOneObj.id.slice(3))
 	            }
@@ -159,6 +163,7 @@
 	});
 	$('#secondItem').bind('click', function () {
 	    var that = $(this).children('span:first');
+	    if (!Data2)  return
 	    var iosSelect = new IosSelect(1,
 	        [Data2],
 	        {
@@ -180,6 +185,7 @@
 	});
 	$('#thirdItem').bind('click', function () {
 	    var that = $(this).children('span:first');
+	    if (!Data3)  return
 	    var iosSelect = new IosSelect(1,
 	        [Data3],
 	        {
