@@ -11,9 +11,9 @@ body { background: #fcfcfc;}
 
 
 .zsetting { margin: 50px;}
-.zsetting-wrap { width: 800px; height: 500px; box-shadow: 0 0 10px 5px #eee; background-color: #fff;}
+.zsetting-wrap { width: 800px; height: 500px; box-shadow: 0 0 10px 5px rgba(0, 0, 0, .3); background-color: #fff;}
 
-.zsetting-box { display: table; width: 96%; padding: 2%; height: 345px; overflow: auto;}
+.zsetting-box { display: table; width: 780px; padding: 10px; padding-bottom: 0; height: 400px; overflow: auto;}
 .zsetting-box::-webkit-scrollbar { width: 8px;}
 .zsetting-box::-webkit-scrollbar-track { width: 8px;}
 .zsetting-box::-webkit-scrollbar-thumb { border-radius: 4px; background-color: #ddd;}
@@ -26,7 +26,7 @@ body { background: #fcfcfc;}
 
 .zsetting-body { }
 .zsetting-wide { display: table-cell; padding-right: 20px;}
-.zsetting-side { display: table-cell; width: 360px; padding-left: 10px;}
+.zsetting-side { display: table-cell; width: 320px; padding-left: 10px;}
 .zsetting-group { margin-bottom: 20px; border: 1px #f5f6f8 solid;}
 .zsetting-type { padding-right: 5px; padding-left: 5px; font-size: 12px; color: #999;}
 .zsetting-h { padding-top: 10px; padding-bottom: 8px; font-size: 12px; color: #999; font-weight: normal;}
@@ -50,10 +50,12 @@ body { background: #fcfcfc;}
 .zsetting-checkbox { display: table-cell; padding-left: 15px;}
 .zsetting-radio:first-child,
 .zsetting-checkbox:first-child { padding-left: 0;}
-.zsetting-footer { padding-top: 20px; padding-right: 20px; text-align: right;}
+.zsetting-footer { padding-top: 10px; padding-right: 10px; text-align: right;}
+.zsetting-clear,
 .zsetting-use,
 .zsetting-ok { display: inline-block; width: 70px; height: 30px; line-height: 30px; font-size: 14px; text-align: center;}
 .zsetting-ok { background: #31b16c; color: #fff;}
+.zsetting-clear { width: auto; font-size: 12px;}
 .zsetting-cancel {}
 .zsetting-hide { display: none;}
 .zsetting-flag { float: left; margin-left: 40px;}
