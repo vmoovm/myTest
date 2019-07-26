@@ -5,6 +5,7 @@
 		<title>设置</title>
 		<link rel="stylesheet" type="text/css" href="css/comm.css"/>
 		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="temp/demoModule.css"/>
 		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			.view { padding: 0 50px 10px; padding-top: 0; border-bottom: 1px #ebebeb solid;}
@@ -14,7 +15,19 @@
 			.logo p img { width: 100%; height: 100%;}
 			.logo h1 { display: inline-block; vertical-align: middle; padding-left: 10px; font-size: 18px; color: #31b16c; text-align: center;}
 		</style>
-		<style type="text/css" id="style">
+		
+		<style type="text/css">
+			.moTuoModule {}
+			.moTuoModule-setting { position: relative; display: none;}
+			.moTuoModule:hover .moTuoModule-setting { display: block;} 
+			.moTuoModule-settingBox { position: absolute; left: 0; top: 0; right: 0; background: rgba(0, 0, 0, .5);}
+			.moTuoModule-settingFn { height: 30px; padding-right: 10px; text-align: right; line-height: 30px; font-size: 12px; color: #fff;}
+			.moTuoModule-settingFn  p { display: inline-block; padding-left: 10px;}
+			.moTuoModule-settingElements { padding: 10px;}
+			.moTuoModule-settingElements span { display: inline-block; margin: 5px; padding: 2px 8px; background-color: rgba(26, 150, 83, .5); color: #fff;}
+			.moTuoModule-settingTitle { font-size: 14px; color: #fff;}
+			.moTuoModule-settingSelected { box-shadow: 0 0 3px 3px rgba(32, 191, 107, .8);}
+			.moTuoModule-settiingHover { box-shadow: 0 0 3px 1px rgba(12, 132, 255, .8);}
 		</style>
 	</head>
 	<body>
@@ -22,14 +35,108 @@
 			<p><img src="images/motuo.png"/></p>
 			<h1>魔拖</h1>
 		</div>
-		<div class="view" >
+		<div class="view" id="view">
 			<h2 id="title">要配置的模块</h2>
-			<div id="target">
-				<p id="test" class="changGui">样式</p>
-				<img src="temp/abcd.png"/>
+			<div class="moTuoModule" id="moTuoModule1">
+				<div class="wyx ">
+					<p class="changGui ">模块1</p>
+					<div class="sub ">
+						<p class="changGui-sub">标题11</p>
+						<p class="changGui-sub">标题12</p>
+						<p class="changGui-sub">标题13</p>
+					</div>
+				</div>
+				<div class="moTuoModule-setting">
+					<div class="moTuoModule-settingBox">
+						<div class="moTuoModule-settingFn">
+							<p class="moTuoModule-settingEdit">编辑</p>
+							<p class="moTuoModule-settingDelete">删除</p>
+						</div>
+						<h1 class="moTuoModule-settingTitle">要修改的元素</h1>
+						<div class="moTuoModule-settingElements">
+							<span data-module="moTuoModule1">.wyx</span>
+							<span data-module="moTuoModule1">.changGui</span>
+							<span data-module="moTuoModule1">.sub</span>
+							<span data-module="moTuoModule1">.changGui-sub</span>
+						</div>
+					</div>
+				</div>
 			</div>
+			<div class="moTuoModule" id="moTuoModule2">
+				<div class="wyx">
+					<p class="changGui">模块2</p>
+					<div class="sub">
+						<p class="changGui">样式22</p>
+					</div>
+				</div>
+				<div class="moTuoModule-setting">
+					<div class="moTuoModule-settingBox">
+						<div class="moTuoModule-settingFn">
+							<p class="moTuoModule-settingEdit">编辑</p>
+							<p class="moTuoModule-settingDelete">删除</p>
+						</div>
+						<h1 class="moTuoModule-settingTitle">要修改的元素</h1>
+						<div class="moTuoModule-settingElements">
+							<span data-module="moTuoModule2">.wyx</span>
+							<span data-module="moTuoModule2">.changGui</span>
+							<span data-module="moTuoModule2">.sub</span>
+							<span data-module="moTuoModule2">.changGui-sub</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="moTuoModule" id="moTuoModule3">
+				<div class="ssw">
+					<p class="changGui">模块3</p>
+					<div class="sub">
+						<p class="changGui-sub">样式33</p>
+					</div>
+				</div>
+				<div class="moTuoModule-setting">
+					<div class="moTuoModule-settingBox">
+						<div class="moTuoModule-settingFn">
+							<p class="moTuoModule-settingEdit">编辑</p>
+							<p class="moTuoModule-settingDelete">删除</p>
+						</div>
+						<h1 class="moTuoModule-settingTitle">要修改的元素</h1>
+						<div class="moTuoModule-settingElements">
+							<span data-module="moTuoModule3">.ssw</span>
+							<span data-module="moTuoModule3">.changGui</span>
+							<span data-module="moTuoModule3">.sub</span>
+							<span data-module="moTuoModule3">.changGui-sub</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="moTuoModule" id="moTuoModule4">
+				<div class="ash">
+					<p class="changGui">模块4</p>
+					<div class="xing-4">
+						<p class="changGui-sub">样式44</p>
+					</div>
+				</div>
+				<div class="moTuoModule-setting">
+					<div class="moTuoModule-settingBox">
+						<div class="moTuoModule-settingFn">
+							<p class="moTuoModule-settingEdit">编辑</p>
+							<p class="moTuoModule-settingDelete">删除</p>
+						</div>
+						<h1 class="moTuoModule-settingTitle">要修改的元素</h1>
+						<div class="moTuoModule-settingElements">
+							<span data-module="moTuoModule4">.ash</span>
+							<span data-module="moTuoModule4">.changGui</span>
+							<span data-module="moTuoModule4">.xing-4</span>
+							<span data-module="moTuoModule4">.changGui-sub</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="temp/abcd.png"/>
+			<!--<div id="target1">
+				
+			</div>-->
 		</div>
-		<div class="zsetting UnSelect" style="position: fixed; bottom: 0;">
+		<div class="zsetting UnSelect" style="position: fixed; bottom: 0; display: none;" id="zsetting">
 			
 			<div class="zsetting-wrap">
 				<div class="zsetting-header">
@@ -40,7 +147,7 @@
 						<li class="">背景</li>
 						<li class="">修饰</li>
 					</ul>
-					<p class="zsetting-close">关闭</p>
+					<p class="zsetting-close" id="zsetting-close">关闭</p>
 				</div>
 				<div class="zsetting-body" id="zsetting-body">
 					<div class="zsetting-box">
@@ -125,6 +232,10 @@
 											<input type="radio" name="dataFloat" id="dataFloatRight" data-css="float:" data-group="#group-float" value="right" />
 										</dd>
 										<dt class="zsetting-field"><label for="dataFloatRight">右 </label></dt>
+										<dt class="zsetting-field"><label class="isTake"><input type="checkbox" name="" data-set="#dataClearFloat" class="isSetting-js" id="single-ClearFloat"  value="" />清浮动</label></dt>
+										<!--<dd class="zsetting-radio">
+											<input type="checkbox" name="dataClearFloat" id="dataClearFloat" data-css="clear:" data-single="#single-ClearFloat" value="both" />
+										</dd>-->
 									</dl>
 								</fieldset>
 								<fieldset class="zsetting-group">
@@ -408,7 +519,7 @@
 									</dd>
 								</dl>
 								<dl class="zsetting-row zsetting-w100">
-									<dt class="zsetting-field">样式名 </dt>
+									<dt class="zsetting-field">样式/标签名 </dt>
 									<dd class="zsetting-value zsetting-w100">
 										<input type="text" class="zsetting-input zsetting-w100" name="" id="styleName" value="p" />
 									</dd>
@@ -426,15 +537,16 @@
 					<ul class="zsetting-flag">
 						<li class=""><label class="zsetting-apply"><input type="checkbox" name="" id="" value=""><span>使用自定义样式</span></label></li>
 					</ul>
-					<p class="zsetting-clear" id="zsetting-clear">清除</p> <!--清除已保存的自定义样式-->
-					<p class="zsetting-use" id="zsetting-use">应用</p>
+					<p class="zsetting-clear" id="zsetting-clear">恢复默认</p> <!--清除已保存的自定义样式-->
 					<p class="zsetting-ok" id="zsetting-ok">保存</p>
 				</div>
 			</div>
 			
 		</div>
-		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/motuo.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css" id="style">
+		</style>
+		<script src="js/moTuoConfig.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/moTuo.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			
 		</script>

@@ -1,28 +1,19 @@
 // localStorage.removeItem('configLimit')
-	// localStorage.removeItem('configDefault')
+	// localStorage.removeItem('key')
 	// localStorage.removeItem('curType')
-	// localStorage.removeItem('moTuoConfig')
-var moTuoConfig = {}
-var currentModule = 'moTuoModule1' // 当前操作的模块
-var currentClass = '' // 当前操作的样式名
-var currentCssText = '' // 当前生成的样式
-var currentConfig = {
-		configIdArr: configIdArr,
-		configDefault: configDefault,
-		configLimit: configLimit,
-		cssText: ''
-	}
-
 
 /**
  * 将配置项同步到配置界面
  */
 function updatePage () {
+	// console.log(config)
 	for(i in configDefault){
 		var type = configDefault[i].type
 		switch(type) {
 			case 'text':
+				// console.log($(config[i].id), config[i].value)
 				if (configDefault[i].value) $(configDefault[i].id).val(configDefault[i].value)
+				// console.log(config[i].id +  '---' +config[i].value)
 				break
 			
 			case 'hidden':
@@ -114,20 +105,8 @@ function updateConfig () {
     	return
     }
     
-    var temp ='#' + currentModule + ' ' + $(configDefault.prefix.id).val() + ' ' + className + '{' + $(configDefault.cssText.id).val() + '}\n'
-    // 清浮动
-    if (configDefault.prefix.id == 'dataClearFloat') {
-    	temp += '#' + currentModule + ' ' + $(configDefault.prefix.id).val() + ' ' + className + '{clear:both}'
-    }
-	currentCssText = temp
-	var cssText = ''
-	console.log(moTuoConfig)
-	for(m in moTuoConfig) {
-		for(t in moTuoConfig[m]) {
-			cssText += moTuoConfig[m][t].cssText
-		}
-	}
-	$('#style').text(cssText)
+    var temp ='#view ' + $(configDefault.prefix.id).val() + ' ' + className + '{' + $(configDefault.cssText.id).val() + '}\n'
+	$('#style').text(temp)
 }
 
 
@@ -188,18 +167,14 @@ function getStyle (arr) {
 	}
 	return strCss
 }
-var configDefault = {}
+
 /**
  * 将生效样式权限配置映射到界面
  */
-function initPage (c) {
-	currentClass = c.substring(1, )
-	var getConfig = localStorage.getItem('moTuoConfig')
-	if (getConfig) {
-		moTuoConfig = JSON.parse(getConfig)
-		if (!moTuoConfig[currentModule][currentClass]) return
-		configDefault = moTuoConfig[currentModule][currentClass]['configDefault']
-		configLimit = moTuoConfig[currentModule][currentClass]['configLimit']
+function powerToPage () {
+	var getConfigLimit = localStorage.getItem('configLimit')
+	if (getConfigLimit) {
+		configLimit = JSON.parse(getConfigLimit)
 	}
 	for (s in configLimit) {
 		if (configLimit[s].dataAllow == 'yes') {
@@ -224,9 +199,22 @@ function initPage (c) {
 			}
 		}
 	}
+}
+
+/**
+ * 初始化配置界面
+ */
+function initPage () {
+	var a = localStorage.getItem('key')
+	if (a) {
+		config = JSON.parse(a)
+	}
 	updatePage()
 	updateConfig()
 }
+
+powerToPage()
+initPage()
 
 /**
  * tab切换
@@ -277,43 +265,29 @@ $("#position-style").on('change', 'input[type="radio"]', function () {
 
 
 
-
+/**
+ * 生效当前选项卡样式
+ */
 
 // 保存并生成所有选项卡配置
 $("#zsetting-ok").on('click', function() {
 	updateConfig()
 	TakeConfig()
 	saveConfigLimit ()
-	// currentModule = 'moTuoModule1' // 当前操作的模块
-	// currentClass = '' // 当前操作的样式名
-	currentConfig = {
-		configIdArr: configIdArr,
-		configDefault: configDefault,
-		configLimit:configLimit,
-		cssText: currentCssText
-	}
-	var getConfig = localStorage.getItem('moTuoConfig')
-	if (getConfig) {
-		moTuoConfig = JSON.parse(getConfig)
-	}
-	if (moTuoConfig[currentModule]) {
-		console.log('已存在直接赋值')
-		moTuoConfig[currentModule][currentClass] = currentConfig
-	} else {
-		console.log('不存在创建')
-		moTuoConfig[currentModule] = {}
-		moTuoConfig[currentModule][currentClass] = currentConfig
-	}
-	localStorage.setItem('moTuoConfig', JSON.stringify(moTuoConfig))
+	
+	localStorage.removeItem('configLimit')
+	localStorage.removeItem('key')
+	localStorage.removeItem('curType')
+	localStorage.setItem('configLimit', JSON.stringify(configLimit))
+	localStorage.setItem('key', JSON.stringify(configDefault))
 	localStorage.setItem('curType', curType)
-	render(classArr)
 })
 
 // 删除本地存储
 $('#zsetting-clear').on('click', function () {
 	if (confirm()) {
 		localStorage.removeItem('configLimit')
-		localStorage.removeItem('configDefault')
+		localStorage.removeItem('key')
 		localStorage.removeItem('curType')
 		// runConfig()
 		// updateConfig()
@@ -325,87 +299,29 @@ initPage()
 	}
 })
 
-$("#zsetting-close").on('click', function () {
-	$("#zsetting").hide()
-})
-
-$(".moTuoModule-settingElements").on('click', function () {
-	
-})
 
 /*----------------------------------------------------------*/
-$("#view").on('mouseenter', '.moTuoModule', function () {
-	currentModule = $(this).attr('id')
-	$('#view .moTuoModule-setting').addClass('zsetting-hide')
-	$(this).children('.moTuoModule-setting').removeClass('zsetting-hide')
-})
-
-
-$('#view .moTuoModule-settingElements').children().each(function () {
+$("#moTuoModule1 .moTuoModule-settingElements").children().each(function () {
 	$(this).on('mouseenter', function () {
-		currentModule = $(this).data('module')
-		$('#' + currentModule + ' ' + $(this).text()).addClass('moTuoModule-settiingHover')
+		$('#moTuoModule1 ' +$(this).text()).addClass('moTuoModule-settiingHover')
 	}).on('mouseleave', function () {
 		$($(this).text()).removeClass('moTuoModule-settiingHover')
 	})
 	$(this).on('click', function () {
-		currentModule = $(this).data('module')
-		$('#' + currentModule + ' .moTuoModule-settingSelected').removeClass('moTuoModule-settingSelected')
-		$('#' + currentModule + ' ' + $(this).text()).addClass('moTuoModule-settingSelected')
+		console.log($(this))
+		$('#moTuoModule1 .moTuoModule-settingSelected').removeClass('moTuoModule-settingSelected')
+		$('#moTuoModule1 ' +$(this).text()).addClass('moTuoModule-settingSelected')
 		$("#styleName").val($(this).text())
-		$("#zsetting").show()
-		currentClass = $(this).text().substring(1, )
-		initPage ($(this).text())
 	})
 })
 
-/**
- * 去重数组
- * @param {Object} arr
- */
-function newArray (arr) {
-	var newArr = []
-	for (var r = 0; r < arr.length; r++) {
-		if (newArr.indexOf(arr[r]) == -1) {
-			newArr.push(arr[r])
-		}
-	}
-	return newArr
-}
-function getTags (moduleId) {
-	var tags = []
-	tags.push('.' + $('#' + moduleId).children(':first').attr('class'))
-	$('#' + moduleId).children(':not(.moTuoModule-setting)').find('*').each(function () {
-		 tags.push('.' + $(this).attr('class'))
-	})
-	tags = newArray(tags)
-	return tags
-}
-var tagArr = {}
-$('#view .moTuoModule').each(function () {
-	var moduleId = $(this).attr('id') 
-	tagArr[moduleId] = getTags(moduleId)
-})
 
-
-
-var classArr = ['.wyx', '.changGui', '.sub', '.changGui-sub']
-function render (arr) {
-	for (w in arr) {
-		for(c in arr[w]) {
-			initPage(arr[w][c])
-		}
-	}
-}
-render(tagArr)
-
-console.log(tagArr)
 /**
  * 存在的bug:
- * 
- * 
+ * 1.布局选项卡中的定位还没有完整实现，top right bottom left
+ * 2.如何选定要设置的目录元素设置样式（解决方案：没有）
  * 3.暂时只能修改有class名的样式，不能直接修改标签的样式
- * 4.缺少清除浮动
+ * 
  */
 //运行流程:
 // 读取默认配置项->将配置项映射到界面->将界面配置生成样式表->追加到指定元素

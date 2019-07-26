@@ -160,6 +160,13 @@ var configDefault = {
 		type: 'radio',
 		postil: '浮动右'
 	},
+	dataClearFloat: {
+		id: '#dataClearFloat',
+		value: false,
+		dataCss: 'clear:',
+		type: 'checkbox',
+		postil: '清浮动'
+	},
 	dataPostionStatic: {
 		id: '#dataPostionStatic',
 		value: false,
@@ -515,6 +522,12 @@ var configLimit = {
 		type: 'group',
 		postil: '定位'
 	},
+	groupPosition: {
+		id: '#group-position',
+		dataAllow: 'no',
+		type: 'group',
+		postil: '定位'
+	},
 	dataTop: {
 		id: '#dataTop',
 		dataAllow: 'no',
@@ -642,3 +655,47 @@ var configLimit = {
 		postil: '边框线类型'
 	}
 }
+
+
+
+/***************************************************************************
+ * 全页模块配置 = {
+ *   模块id配置: {
+ * 	       该模块id中样式名称: {
+ * 	    configIdArr: {},
+		configDefault: {},
+		configLimit: {},
+		cssText: ''
+ *   }
+ * }
+ * 
+ * }
+ * 
+ */
+
+
+// var moTuoConfig = {
+	// moduleId1: {
+		// className1: {
+			// configIdArr: {},
+			// configDefault: {},
+			// configLimit: {},
+			// cssText: ''
+		// },
+		// className2: {
+			// configIdArr: {},
+			// configDefault: {},
+			// configLimit: {},
+			// cssText: ''
+		// }
+	// },
+	// moduleId2: {
+		// className1: {
+			// configIdArr: {},
+			// configDefault: {},
+			// configLimit: {},
+			// cssText: ''
+		// }
+	// }
+	// 
+// }

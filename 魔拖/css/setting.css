@@ -10,7 +10,7 @@ body { background: #fcfcfc;}
 }
 
 
-.zsetting { margin: 50px;}
+.zsetting { margin: 50px; margin-bottom: 0;}
 .zsetting-wrap { width: 800px; height: 500px; box-shadow: 0 0 10px 5px rgba(0, 0, 0, .3); background-color: #fff;}
 
 .zsetting-box { display: table; width: 780px; padding: 10px; padding-bottom: 0; height: 400px; overflow: auto;}
