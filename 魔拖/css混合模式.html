@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>混合模式</title>
+		<style type="text/css">
+			.cssBg { position: relative; height: 1080px; background: url(temp/最外环.jpg)}
+			.bgimage { width: 860px; height: 848px; font-size: 7rem; font-weight: 700; background: url(temp/中间射线.png) center center no-repeat; mix-blend-mode: soft-light;
+				-webkit-animation: op 6s infinite forwards linear;
+			 }
+			.bg-outer { position: absolute; left: 50%; top: 50%; margin-left: -510px; margin-top: -519px; width: 1021px; height: 1038px; background: url(temp/中间高光-拷贝.png) center center no-repeat; mix-blend-mode: screen; 
+				-webkit-animation: circle 8s infinite forwards linear;
+			}
+			.bg-club { position: absolute; top: 35%; left: 0; width: 100%;  mix-blend-mode: soft-light;
+			-webkit-animation: abc 1s infinite forwards linear;
+				
+			}
+			.bg-club img { width: 100%; }
+			h1 span { mix-blend-mode: multiply; }
+			/*h1 span:nth-child(1) { color: rgba(#AB1795, 0.75); }*/
+			h1 span:nth-child(1) { color: rgba(255, 2, 100, 0.75); }
+			
+			@-webkit-keyframes op{
+				0%{ opacity: 1; -webkit-transform: rotate(0deg) scale(1, 1);}
+				50%{ opacity: 0; -webkit-transform: rotate(180deg) scale(.5, .5);}
+				100%{ opacity: 1; -webkit-transform: rotate(360deg) scale(1, 1);}
+			}
+			@-webkit-keyframes circle{
+				0%{ opacity: 1; -webkit-transform: rotate(0deg) scale(1, 1);}
+				50%{ opacity: 0; -webkit-transform: rotate(180deg) scale(.5, .5);}
+				100%{ opacity: 1; -webkit-transform: rotate(360deg) scale(0, 0);}
+			}
+			@-webkit-keyframes abc {
+				0%{ -webkit-transform: scale(1, 0); opacity: 0;}
+				80%{ -webkit-transform: scale(1, .5); opacity: .5;}
+				90%{ -webkit-transform: scale(1, 1); opacity: 1;}
+				100%{ -webkit-transform: scale(1, 0); opacity: 0;}
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+	
+		<div class="cssBg">
+			<div class="bgimage">
+				<!--<h1><span>fadsfads</span></h1>-->
+			</div>
+			<div class="bg-outer"></div>
+			<div class="bg-club"><img src="temp/zuoyou.png"/></div>
+			<div class="bg-club"><img src="temp/zuoyou.png"/></div>
+			<div class="bg-club"><img src="temp/zuoyou.png"/></div>
+		</div>
+	</body>
+</html>

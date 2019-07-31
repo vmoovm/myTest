@@ -7,7 +7,7 @@
 
 
 // 可配置项所有Id
-var configIdArr = [
+var configDefaultIdArr = [
 		// ------------------------------------------ 常规[routine]
 		'#dataWidth',   // 宽
 		'#dataHeight',  // 高
@@ -73,7 +73,7 @@ var configIdArr = [
  * postil: 该元素的标注
  * 
  */
-var configDefault = {
+var configDefaultData = {
 	// ------------------------------------------常规 
 	dataWidth: {
 		id: '#dataWidth',
@@ -446,7 +446,7 @@ var configDefault = {
  * postil: 该元素的标注
  * 
  */
-var configLimit = {
+var configDefaultLimit = {
 	// ------------------------------------------常规 
 	dataWidth: {
 		id: '#dataWidth',
@@ -514,8 +514,15 @@ var configLimit = {
 		id: '#group-float',
 		dataAllow: 'no',
 		type: 'group',
-		postil: '浮动'
+		postil: '浮动方向'
 	},
+	dataClearFloat: {
+		id: '#dataClearFloat',
+		dataAllow: 'no',
+		type: 'single',
+		postil: '清浮动'
+	},
+	
 	groupPosition: {
 		id: '#group-position',
 		dataAllow: 'no',
@@ -663,7 +670,7 @@ var configLimit = {
  *   模块id配置: {
  * 	       该模块id中样式名称: {
  * 	    configIdArr: {},
-		configDefault: {},
+		configData: {},
 		configLimit: {},
 		cssText: ''
  *   }
@@ -678,13 +685,13 @@ var configLimit = {
 	// moduleId1: {
 		// className1: {
 			// configIdArr: {},
-			// configDefault: {},
+			// configData: {},
 			// configLimit: {},
 			// cssText: ''
 		// },
 		// className2: {
 			// configIdArr: {},
-			// configDefault: {},
+			// configData: {},
 			// configLimit: {},
 			// cssText: ''
 		// }
@@ -692,7 +699,7 @@ var configLimit = {
 	// moduleId2: {
 		// className1: {
 			// configIdArr: {},
-			// configDefault: {},
+			// configData: {},
 			// configLimit: {},
 			// cssText: ''
 		// }

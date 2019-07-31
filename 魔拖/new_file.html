@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css"> 
+		#div1{width:100px; height:100px; background:#f5f6f8; padding-top: 10px; ;} 
+		</style> 
+		<script type="text/javascript"> 
+			function getStyle(obj, attr) {
+			 	if(obj.currentStyle) {
+			 		return obj.currentStyle[attr];
+			 	} else {
+			 		return getComputedStyle(obj, false)[attr];
+			 	}
+			 }
+			 window.onload = function() {
+			 	var oDiv = document.getElementById('div1');
+			 	var aac = oDiv['style']
+			 	// console.log(aac)
+			 	for(k in aac) {
+			 		// console.log(k)
+			 		console.log(k + ':' + getStyle(oDiv, k))
+			 	}
+			 	// console.log(getStyle(oDiv, 'padding') +)
+			 }
+		</script> 
+	</head>
+	<body>
+		<div class="" id="div1" style="padding: 100px; padding-top: 10px;"></div>
+	
+		<div id="mytable" border="1" cellpadding="1" cellspacing="0">
+            <ul>
+                <li>222</li>
+            </ul>
+        </div>
+        
+		
+		
+	</body>
+</html>

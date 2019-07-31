@@ -1,0 +1,183 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+参考备用
+-----------------------------------------------------*/
+
+
+/*----------------------------------------------------
+logo导航
+-----------------------------------------------------*/
+.znav  { min-width: 1200px; height: 100px; background: #fff;}
+.znav_box { margin-left: 100px; height: 100px; line-height: 100px; font-size: 16px;}
+.znav_box li { position: relative; float: left; padding: 0 17px;}
+.znav_box li a:hover { text-decoration: none; color: #20bf6b;}
+.znav_cur { height: 100px; background-color: #20bf6b; color: #fff;}
+.znav_cur a { color: #fff;}
+.znav-hover {}
+.znav-arrowbg { position: absolute; left: 50%; bottom: 0; width: 10px; height: 10px; display: none;}
+.znav-arrow { display: inline-block; width: 0; height: 0; border:8px transparent solid; border-bottom: 10px #20bf6b solid; border-top: 0 transparent solid; vertical-align: middle;}
+.znav-sub { position: fixed; left: 0; margin-bottom: -37px; width: 1200px; height: 37px; background-image: url(../images/opacitybg_03.png); background-repeat: repeat; display: none;}
+.znav-site { position: absolute; left: -80px; line-height: 37px; color: #fff; z-index: 12; white-space: nowrap; display: none;}
+.znav-site a { color: #fff; padding-left: 10px; padding-right: 10px; white-space: nowrap;}
+.znav_box li .znav-site a:hover { color: #fff;}
+.znav-hover .znav-arrowbg { display: block;} 
+.znav-hover .znav-sub { display: block;}
+.znav-hover .znav-site { display: block;}
+
+
+/*公共标题*/
+.ztitle { padding-top: 44px;}
+.ztitle h1 { height: 54px; line-height: 54px; text-align: center; font-size: 30px; color: #26de81;}
+.ztitle p { height: 18px; background: url(../images/201805031112_28.png) center center no-repeat;}
+/*----------------------------------------------------
+tab 切换
+-----------------------------------------------------*/
+.ztab  { height: 42px; margin-top: 40px; font-size: 16px; color: #20bf6b; text-align: center;}
+.ztab dd { display: inline-block; width: 236px; height: 38px; margin-left: 50px; margin-right: 50px; border: 2px #20bf6b solid; border-radius: 12px; text-align: center; line-height: 38px;}
+.ztab dd { *display: inline-block;}
+.ztab dd:hover,
+.ztab_cur { background: #20bf6b; color: #fff;}
+
+.zheader { height: 199px; min-width: 1200px; padding-top: 159px; background: url(../images/201805031047_05.jpg) center no-repeat;}
+.zheader-search { width: 521px; margin: 0 auto; height: 40px; background: url(../images/headerOpacitybg_08.png) no-repeat;}
+.zheader-input { width: 455px; height: 40px; padding-left: 15px; border: none; background: none; vertical-align: middle; color: #fff;}
+.zheader-submit { display: inline-block; width: 50px; height: 40px; vertical-align: middle;}
+.zheader-channel { width: 521px; margin: 0 auto; margin-top: 40px; text-align: center;}
+.zheader-btn { display: inline-block; width: 105px; height: 35px; margin-left: 14px; margin-right: 14px; background: url(../images/headerOpacitybg_13.png) no-repeat; line-height: 35px; text-align: center; font-size: 12px; color: #fff;}
+.zheader-btn:hover { color: #fff;}
+.zheader-first { margin-left: 0;}
+.zheader-slideDown { position: relative; width: 521px; margin: 0 auto; z-index: 10;}
+.zheader-site { position: absolute; top: 0; width: 520px; background: url(../images/opacity50.png) repeat; padding-top:20px; padding-bottom: 20px;}
+.zheader-site li { padding-left: 20px; padding-right: 20px; line-height: 26px; font-size: 14px; color: #fff;}
+.zheader-site li:hover { background: url(../images/opacity50.png) repeat; }
+/*----------------------------------------------------
+图上标题
+-----------------------------------------------------*/
+.zimgInTxt { padding-bottom: 40px;}
+.zimgInTxt-hide { display: none;}
+.zimgInTxt-box {}
+.zimgInTxt-item  { float: left; position: relative; width: 262px; height: 190px; overflow: hidden; margin-left: 30px; margin-top: 40px;}
+.zimgInTxt_pic  { position: absolute; left: 0; top: 0; width: 262px; height: 190px; background: #ccc; overflow: hidden;}
+.zimgInTxt_pic img { width: 100%; height: 100%;}
+.zimgInTxt_txt  { position: absolute; left: 0; top: 149px; width: 100%; height: 189px; border-top: 1px #20bf6b solid; background: rgba(0,0,0,0.4); -webkit-transition: top ease .21s;}
+.zimgInTxt_title  { font-size: 16px; color: #fff;}
+.zimgInTxt_title a { display: block; line-height: 42px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; color: #fff;}
+.zimgInTxt_comment { height: 84px; padding-top: 16px; padding-left: 20px; padding-right: 20px; line-height: 24px; font-size: 14px; color: #fff;}
+.zimgInTxt-hover .zimgInTxt_txt { top: 0; }
+.zimgInTxt_todetails { text-align: center;}
+.zimgInTxt_todetails a { display: inline-block; width: 100px; height: 30px; border-radius: 2px; line-height: 30px; background-color: #20bf6b; font-size: 14px; color: #fff;}
+.zimgInTxt-more { padding-top: 30px; padding-right: 30px; text-align: right;}
+.zimgInTxt-more a { display: inline-block; width: 100px; height: 30px; border-radius: 2px; line-height: 30px; text-align: center; background-color: #20bf6b; font-size: 14px; color: #fff;}
+
+
+/*----------------------------------------------------
+上图标，下文字
+-----------------------------------------------------*/
+.zicon { background-color: #d1ffe7;}
+.zicon-box { width: 1056px; margin-left: auto;; margin-right: auto;}
+.zicon-item { float: left; width: 264px; height: 224px; padding-top: 40px; padding-bottom: 40px;}
+.zicon_icon { text-align: center;}
+.zicon_icon i { display: inline-block; width: 98px; height: 98px; border: 2px #f7b731 solid; border-radius: 50%; background-position: center center; background-repeat: no-repeat;}
+.zicon_icon i.zteacher { background-image: url(../images/icons_28.png);}
+.zicon_icon i.zstudent { background-image: url(../images/icons_30.png);}
+.zicon_icon i.zsociety { background-image: url(../images/icons_32.png);}
+.zicon_icon i.zcompany { background-image: url(../images/icons_34.png);}
+.zicon_txt h1 { text-align: center; line-height: 30px; text-align: center; color: #666; font-size: 14px;}
+.zicon_txt p { text-align: center; line-height: 22px; font-size: 12px; color: #999;}
+
+/*----------------------------------------------------
+左图右文大图标
+-----------------------------------------------------*/
+.zleftPRightT { background-color: #eefff6}
+.zleftPRightT-box { width: 944px; margin-left: auto; margin-right: auto; padding-bottom: 66px;}
+.zleftPRightT-item  { float: left; width: 236px; padding-top: 50px;}
+.zleftPRightT_icon  { float: left; width: 88px; height: 88px; border: 2px #f7b731 solid; border-radius: 5px; overflow: hidden;}
+.zleftPRightT_icon i { display: inline-block; width: 88px; height: 88px; background-position: center center; background-repeat: no-repeat;}
+.zleftPRightT_icon i.zicons1 { background-image: url(../images/icons_106.png);}
+.zleftPRightT_icon i.zicons2 { background-image: url(../images/icons_109.png);}
+.zleftPRightT_icon i.zicons3 { background-image: url(../images/icons_112.png);}
+.zleftPRightT_icon i.zicons4 { background-image: url(../images/icons_115.png);}
+.zleftPRightT_txt  { margin-left: 125px;}
+.zleftPRightT_h  { line-height: 34px; font-size: 20px; color: #189151;}
+.zleftPRightT_p  { line-height: 34px; font-size: 12px; color: #20bf6b;}
+.zleftPRightT_p span { font-size: 24px; color: #f7b731;}
+
+/*----------------------------------------------------
+左图右文小图标题
+-----------------------------------------------------*/
+.zminIcons { background-color: #d1ffe7}
+.zminIcons-comment { padding: 50px 68px 28px; line-height: 24px; text-indent: 2em; font-size: 14px; color: #333;}
+.zminIcons-box { padding-bottom: 116px;}
+.zminIcons-item  { float: left; width: 240px; padding-top: 40px;}
+.zminIcons_icon  { float: left; width: 58px; height: 58px; border: 2px #f7b731 solid; border-radius: 5px;}
+.zminIcons_icon i { display: inline-block; width: 58px; height: 58px; background-position: center center; background-repeat: no-repeat;}
+.zminIcons_icon i.zicon1 { background-image: url(../images/icons_122.png);}
+.zminIcons_txt  { margin-left: 74px; padding-right: 22px;}
+.zminIcons_h  { line-height: 22px; font-size: 16px;  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.zminIcons_p  { line-height: 18px; font-size: 12px; color: #999;}
+
+/*----------------------------------------------------
+zfriend
+-----------------------------------------------------*/
+.zfriend { background: #d1ffe7; padding-bottom: 20px;}
+.zfriend_box { width: ; margin: 0 auto; padding: 20px 0 30px;}
+.zfriend_min { width: 510px;}
+.zfriend_max { width: 640px;}
+.zfriend_title { padding:10px 0px; line-height: 2; font-size: 16px;}
+.zfriend_title i,.zfriend_title span,.zfriend_title b { display: inline-block; vertical-align: middle;}
+.zfriend_title b { font-size: 14px;}
+.zfriend_title i { width: 24px; height: 24px; margin-right: 6px; background-position: center center; background-repeat: no-repeat;}
+.zfriend_title i.ziconA { background-image: url(../images/icons_128.png);}
+.zfriend_title i.ziconB { background-image: url(../images/icons_130.png);}
+.zfriend_title i.ziconC { background-image: url(../images/icons_126.png);}
+.zfriend_img { float: right; width: 100px; height: 100px;}
+.zfriend_link { line-height: 1.6; font-size: 14px;}
+.zfriend_link li { display: inline-block; width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+/*----------------------------------------------------
+请选择专业方向
+-----------------------------------------------------*/
+.zradioLink { position: fixed; left: 0; top: 0; bottom: 0; right: 0; background: url(../images/opacity50.png) repeat; z-index: 100;  -webkit-transition: top,opacity .2s ease; transition: top .2s ease;}
+.zradioLink-box { position: absolute; left: 50%; top: 50%; margin-left: -286px; margin-top: -380px; width: 573px; height: 702px; background: url(../images/radioLink_03.png) no-repeat;}
+.zradioLink-close { position: absolute; right: -68px; top: -5px; width: 44px; height: 44px; cursor: pointer; background: url(../images/radioLink_05.png) no-repeat;}
+.zradioLink-tongxin,
+.zradioLink-xinxi { position: absolute; top: 114px; display: block; width: 224px; height: 224px;}
+.zradioLink-tongxin { left: 32px;}
+.zradioLink-xinxi { left: 330px;}
+
+.zradioLink-hide { display: none;}
+.zradioLink-animation { -webkit-animation: .6s ease forwards 1 alternate; -webkit-animation-name: hideDown;}
+
+@-webkit-keyframes hideDown {
+	0% { opacity: 1; top: 0;}
+	90% {opacity: 0; top: 100%;}
+	100% { opacity: 0; top: 100%; display: none;}
+}
+
+/*----------------------------------------------------
+资源
+-----------------------------------------------------*/
+.zresourse {}
+.zresourse-box { width: 1000px; margin-left: auto; margin-right: auto; padding-top: 37px; padding-bottom: 37px;}
+.zresourse-item { float: left; width: 300px; height: 440px; margin-right: 30px; margin-left: 30px; background: url(../images/dit_01.png) right top repeat-y;}
+.zresourse-title { height: 27px;}
+.zresourse-tt { border-bottom: 1px #68865b solid; line-height: 27px; font-size: 14px; color: #333;}
+/*资源论坛*/
+.zforum { width: 230px; height: 440px;}
+.zforum-btn {}
+.zforum-btn span { display: inline-block; vertical-align: middle; padding-right: 4px; text-align: right; font-size: 12px; color: #666;}
+.zforum-btn a { display: inline-block; vertical-align: middle; width: 17px; height: 17px; margin-left: 4px; border: 1px #d9d9d9 solid; background-color: #fff;}
+.zforum-btn a i { display: inline-block; margin-left: 5px; margin-top: 5px; border:4px transparent solid; vertical-align: middle;}
+.zforum-btn a.zriangle_down i { border-top: 6px #666 solid;border-bottom: 0 transparent solid;}
+.zforum-btn a.zriangle_up i { border-bottom: 6px #666 solid; border-top: 0 transparent solid;}
+
+.zforum-title { height: 27px;}
+.zforum-tt { border-bottom: 1px #68865b solid; line-height: 27px; font-size: 14px; color: #333;}
+.zforum-list { padding-top: 5px;}
+.zforum-row { width: 220px; height: 72px; padding: 0 5px; margin-bottom: 8px; background-color: #e5e5e5;}
+.zforum-header { line-height: 26px; font-size: 12px; color: #909090;}
+.zforum-comment { line-height: 24px; font-size: 12px; color: #333;}
+.zforum-tt { }
+.zforum-name { }

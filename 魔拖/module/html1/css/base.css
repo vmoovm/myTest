@@ -1,0 +1,64 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*----------------------------------------------------
+Default
+-----------------------------------------------------*/
+*html{ background-image:url("IE6-fixed-FangDou"); background-attachment:fixed;}
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,fieldset,table,td,img,div,th{
+border:0;margin:0px; padding:0;}
+li,dd,dl,dt {list-style-type:none;}
+table {border-collapse:collapse;} 
+b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+.empty { line-height:0; font-size:0;}
+.fr{ float:right;}
+.fl{ float:left;}
+.clearfix{overflow:hidden;zoom:1}
+.br { word-wrap:break-word;	word-break:break-all;}
+
+/*-----------------------------------------------------
+User-defined
+-----------------------------------------------------*/
+h1,h2,h3,h4,h5,h6 { font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; font-size:12px; font-weight:normal;}	
+body {font-size:12px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; background:#f8fffb;}
+input,select,textarea{ margin: 0; padding:0; vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+
+a { color: #333; text-decoration: none; }
+a:hover { color:#333; text-decoration: underline; }
+
+.zcenter { width: 1200px; margin: 0 auto;}
+.zwrap {}
+/*----------------------------------------------------
+头部
+-----------------------------------------------------*/
+.ztop { height: 65px; background-color: #282a2b; color: #999; font-size: 12px;}
+.ztop-wide { line-height: 24px; padding-top: 8px;}
+.ztop-side { height: 65px; line-height: 65px;}
+.ztop-side a { color: #999;}
+
+/*----------------------------------------------------
+logo导航
+-----------------------------------------------------*/
+.znav  { min-width: 1200px; height: 100px; background: #fff;}
+.znav_box { margin-left: 100px; height: 100px; line-height: 100px; font-size: 16px;}
+.znav_box li { position: relative; float: left; padding: 0 17px;}
+.znav_box li a:hover { text-decoration: none; color: #20bf6b;}
+.znav_cur { height: 100px; background-color: #20bf6b; color: #fff;}
+.znav_cur a { color: #fff;}
+.znav-hover {}
+.znav-arrowbg { position: absolute; left: 50%; bottom: 0; width: 10px; height: 10px; display: none;}
+.znav-arrow { display: inline-block; width: 0; height: 0; border:8px transparent solid; border-bottom: 10px #20bf6b solid; border-top: 0 transparent solid; vertical-align: middle;}
+.znav-sub { position: fixed; left: 0; margin-bottom: -37px; width: 1200px; height: 37px; background-image: url(../images/opacitybg_03.png); background-repeat: repeat; display: none;}
+.znav-site { position: absolute; left: -80px; line-height: 37px; color: #fff; z-index: 12; white-space: nowrap; display: none;}
+.znav-site a { color: #fff; padding-left: 10px; padding-right: 10px; white-space: nowrap;}
+.znav_box li .znav-site a:hover { color: #fff;}
+.znav-hover .znav-arrowbg { display: block;} 
+.znav-hover .znav-sub { display: block;}
+.znav-hover .znav-site { display: block;}
+
+/*----------------------------------------------------
+尾部
+-----------------------------------------------------*/
+.zfooter { height: 40px; background-color: #282a2b;}
+.zfooter_copyright { line-height: 40px; text-align: center; font-size: 14px; color: #999;}
