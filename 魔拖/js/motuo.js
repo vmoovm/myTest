@@ -488,7 +488,15 @@ function render (arr) {
 	cssTextToPage()
 }
 
-
+// 取该样式名下所有子标签
+function getChildren(mId, cn) {
+	var tags = []
+	$('#' + mId +' ' + cn).children(':not(.moTuoModule-setting)').find('*').each(function () {
+		tags.push($(this).prop("tagName"))
+	})
+	tags = newArray(tags)
+	return tags
+}
 
 
 // <div class="moTuoModule-settingElements">\
@@ -499,13 +507,21 @@ function render (arr) {
 						// </div>\
 
 
-
+var getCTags = {}
 var tagArr = {}
+var getMIdTags = {}
 $('#view .moTuoModule').each(function () {
 	var moduleId = $(this).attr('id') 
-	tagArr[moduleId] = getTags(moduleId)
+	var getClasses = getTags(moduleId)
+	tagArr[moduleId] = getClasses
+	var getMIdArr = []
+	for(var t = 0; t < getClasses.length; t++) {
+		getMIdArr.push(getChildren(moduleId, getClasses[t]))
+	}
+	getMIdTags[moduleId] = getMIdArr
 })
-console.log(tagArr)
+console.log(getMIdTags)
+// console.log(tagArr)
 if (tagArr) {
 	var handleHtmlA = ''
 	var handleHtmlB = ''

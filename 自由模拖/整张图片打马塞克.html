@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="shiti" width="500" height="500"></canvas>
+		<canvas id="canvas" data-src="img/20160907-a31982ec47428e69_980x660.jpg" width="800" height="600"></canvas>
+		<script type="text/javascript">
+			const mosaicImage = (target, mosaicSize = 40) => {
+		        let canvas = document.getElementById(target),
+		            xuni = document.createElement('canvas');
+		            shiti = document.getElementById('shiti');
+		            cxt = shiti.getContext('2d');
+		
+		        if (!canvas || !canvas.getContext) {
+		            return false;
+		        }
+		
+		        /**
+		         * 根据图片填充马赛克块
+		         */
+		        const createMosaic = (_context, width, height, size, data,context) => {
+		            shiti.width = data.width;
+		            shiti.height = data.height;
+		            cxt.putImageData(data,0,0);
+		            // for (let a = 120; a < 150; a+=size) {
+		                // for (let b = 120; b < 150; b+=size) {
+				            for (let y = 0; y < height; y+=size) {
+				                for (let x = 0; x < width; x+=size) {
+				                    /**
+				                     * 取出像素的r,g,b,a值
+				                     */
+				                    let cR = data.data[(y * width + x) * 4],
+				                        cG = data.data[(y * width + x) * 4 + 1],
+				                        cB = data.data[(y * width + x) * 4 + 2];
+				                    
+				                        // context.fillStyle = `rgb(${cR},${cG},${cB})`;
+				                    context.fillStyle = `rgb(${cR},${cG},${cB})`;
+				                    console.log(`rgb(${cR},${cG},${cB})`)
+				                    // var rdm = Math.floor(Math.random()*size);
+				                    // var color = getXY(data,x*size,y*size);
+				                    // x=x+120, y=y+120
+				                    console.log((x + '和'+ y) + ':' + ((x+size) + '与' + (y*1+size)))
+				                    // context.fillRect(a,b, a*1+size*1,b*1+size*1);
+				                    
+				                    context.fillRect(x, y, size, size);
+				                    // for(var k=0;k<size;k+=size){
+				                        // for(var l=0;l<size;l+=size){
+				                            //设置小方格的颜色
+				                            // setXY(data,x*size,y*size,color);
+				                        // }    
+				                    // }
+		                    
+				                }
+				            }
+		                // }
+		            // }
+		            // context.fillStyle = "#ff0";
+		            // context.fillRect(100, 100, 120, 120);
+		            // context.fillStyle = "#f0f";
+		            // context.fillRect(120, 120, 140, 140);
+		            // context.fillStyle = "#fcc";
+		            // context.fillRect(160, 160, 180, 180);
+		            // context.putImageData(data,120,120);
+		        };
+			function getXY(obj,x,y){
+	            varw  = obj.width;
+	            var h = obj.height;
+	            var d = obj.data;
+	            var color = [];
+	            color[0] =     obj.data[4*(y*w+x)];
+	            color[1] =     obj.data[4*(y*w+x)+1];
+	            color[2] =     obj.data[4*(y*w+x)+2];
+	            color[3] =     obj.data[4*(y*w+x)+3];
+	            return color;
+	        }
+	        
+	        function setXY(obj,x,y,color){
+	            var w = obj.width;
+	            var h = obj.height;
+	            var d = obj.data;
+	            obj.data[4*(y*w+x)] = color[0];
+	            obj.data[4*(y*w+x)+1] = color[1];
+	            obj.data[4*(y*w+x)+2] = color[2];
+	            obj.data[4*(y*w+x)+3] = color[3];
+	        }
+		        /**
+		         * 将数据画到canvas
+		         */
+		        const draw = (_context, imageData, context) => {
+		            createMosaic(_context, imageData.width, imageData.height, mosaicSize, imageData,context);
+		            // console.log(imageData.height, imageData.width)
+		            shiti.width = imageData.width;
+		            shiti.height = imageData.height;
+		            cxt.width,cxt.height
+		            
+		            cxt.putImageData(imageData,0,0);
+		        };
+		
+		        const init = () => {
+		            let context = canvas.getContext('2d');
+		            /**
+		             * 设置图片来源
+		             */
+		            let img = new Image();
+		            img.src = canvas.getAttribute('data-src');
+		
+		            /**
+		             * 加载图片
+		             */
+		            img.onload = () => {
+		                let _context = xuni.getContext('2d'),
+		                    imageData;
+		                /**
+		                 * 图片大小与canvas匹配
+		                 */
+		                xuni.width = img.width;
+		                xuni.height = img.height;
+		                /**
+		                 * 重置canvas画布大小
+		                 */
+		                canvas.width = img.width;
+		                canvas.height = img.height;
+		                _context.drawImage(img, 0, 0);
+		                context.drawImage(img, 0, 0);
+		                /**
+		                 * 获取canvas各像素的颜色信息
+		                 * 像素的颜色信息从左到右,r, g, b, a 值排列
+		                 */
+		                // cxt.clearRect(0,0,c.width,c.height);
+		                imageData = _context.getImageData(120, 120, 150, 150);
+		                // context.clearRect(120, 120, 140, 140)
+		                draw(_context, imageData, context);
+		            };
+		        };
+		        init();
+		    };
+		
+		    /**
+		     * div对象, 及马赛克大小
+		     */
+		    mosaicImage('canvas', 20);
+		</script>
+	</body>
+</html>

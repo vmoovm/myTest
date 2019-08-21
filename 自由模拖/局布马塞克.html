@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+        <canvas id="canvas" data-src="img/20160907-241c96c6e6c29d0b_980x660.jpg" width="980" height="660"></canvas>
+        <script src="js/CanvasInput.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas");
+	        var ctx = canvas.getContext("2d");
+	        var input = new CanvasInput({
+			  canvas: document.getElementById('canvas'),
+			  fontSize: 18,
+			  fontFamily: 'Arial',
+			  fontColor: '#212121',
+			  fontWeight: 'bold',
+			  width: 300,
+			  padding: 8,
+			  borderWidth: 1,
+			  borderColor: '#000',
+			  borderRadius: 3,
+			  boxShadow: '1px 1px 0px #fff',
+			  innerShadow: '0px 0px 5px rgba(0, 0, 0, 0.5)',
+			  placeHolder: 'Enter message here...'
+			});
+	        var aImg = new Image();
+	        aImg.src = 'img/20160907-241c96c6e6c29d0b_980x660.jpg';
+	        aImg.onload = function(){
+	            /**
+				 * 图片大小与canvas匹配
+				 */
+				/**
+				 * 重置canvas画布大小
+				 */
+				ctx.width = this.width;
+				ctx.height = this.height;
+	            draw(this,this.width,this.height);
+	            
+	        }
+	        
+	        function draw(obj,cw,ch){
+	            //绘制第一张图
+	            ctx.drawImage(obj,0,0,cw,ch);
+	            //绘制第二张图，用作对比
+	            ctx.drawImage(obj,400,0,cw,ch);
+	            //获取坐边图像的局部坐标的部分像素（左图位置在258，为方便演示，这里设成和马赛克显示位置一样的坐标）
+	            var oImg = ctx.getImageData(600,160,240,240);
+	            
+	            var w = oImg.width;
+	            var h = oImg.height;
+	            //马赛克的程度，数字越大越模糊
+	            var num = 24;
+	            //等分画布
+	            var stepW = w/num;
+	            var stepH = h/num;
+	            //这里是循环画布的像素点
+	            for(var i=0;i<stepH;i++){
+	                for(var j=0;j<stepW;j++){
+	                    //获取一个小方格的随机颜色，这是小方格的随机位置获取的
+	                    var color = getXY(oImg,j*num+Math.floor(Math.random()*num),i*num+Math.floor(Math.random()*num));
+	                    //这里是循环小方格的像素点，
+	                    for(var k=0;k<num;k++){
+	                        for(var l=0;l<num;l++){
+	                            //设置小方格的颜色
+	                            setXY(oImg,j*num+l,i*num+k,color);
+	                        }    
+	                    }
+	                        
+	                }    
+	            }
+	            ctx.putImageData(oImg,600,160);
+	        }
+	        
+	        function getXY(obj,x,y){
+	            var w = obj.width;
+	            var h = obj.height;
+	            var d = obj.data;
+	            var color = [];
+	            color[0] =     obj.data[4*(y*w+x)];
+	            color[1] =     obj.data[4*(y*w+x)+1];
+	            color[2] =     obj.data[4*(y*w+x)+2];
+	            color[3] =     obj.data[4*(y*w+x)+3];
+	            return color;
+	        }
+	        
+	        function setXY(obj,x,y,color){
+	            var w = obj.width;
+	            var h = obj.height;
+	            var d = obj.data;
+	            obj.data[4*(y*w+x)] = color[0];
+	            obj.data[4*(y*w+x)+1] = color[1];
+	            obj.data[4*(y*w+x)+2] = color[2];
+	            obj.data[4*(y*w+x)+3] = color[3];
+	        }
+		</script>
+	</body>
+</html>

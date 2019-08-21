@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作div尺寸</title>
+		<style type="text/css">
+			.dragBox1, 
+			.dragBox { width: 300px; height: 300px; border: #000000 1px solid; background: #3E4B53; position: absolute; left: 20%; top: 20%;}
+			.dragBox1 { left: inherit; right: 20%;}
+			
+			
+			/*水平拉大*/
+			.mouseEResize { cursor: e-resize;}
+			/*垂直拉大*/
+			.mouseNResize { cursor: n-resize;}
+			/*移动鼠标*/
+			.mouseAResize { cursor: all-scroll;}
+		</style>
+	</head>
+	<body>
+		<div class="" style="height: 2000px;">
+		<div class="dragBox drag" id="dragBox">
+			<div class="" style=" float: left; height: 300px; width: 100px; background: #0000FF;"></div>
+			<div class="" style="margin-left: 100px; height: 300px; background: #47A05E;"></div>
+		</div>
+		
+		<div class="dragBox1 drag" id="dragBox1">
+			<div class="" style=" float: left; height: 300px; width: 100px; background: #0000FF;"></div>
+			<div class="" style="margin-left: 100px; height: 300px; background: #47A05E;"></div>
+		</div>
+		
+		</div>
+		<script type="text/javascript">
+			
+			
+			/**
+			 * 拖动盒子
+			 * @param {Object} dragId
+			 * @param {Object} options
+			 */
+			function dragBox (dragId, options) {
+				var that = this
+				this.dragBox = document.getElementById(dragId)
+				// 默认配置项
+				this.options = {
+					drag: null, // 拖动元素时回调函数
+					dragStart: null, // 开始拖动元素时回调函数
+					dragEnd: null, // 结束拖动元素时回调函数
+				}
+				// 合并配置项
+				if (options) {
+					for (s in options) {
+						this.options[s] = options[s]
+					}
+				}
+				//
+				this.eventing = false // 是否正在拖动中（鼠标按下后是否弹起）
+				
+				/**
+				 * 鼠标按下事件
+				 * @param {Object} e
+				 */
+				var _down_pull = function (e) {
+					that.eventing = true
+					if ((that.dragBox.offsetLeft < e.pageX && (that.dragBox.clientWidth + that.dragBox.offsetLeft) > e.pageX) && (that.dragBox.offsetTop < e.pageY && (that.dragBox.clientHeight + that.dragBox.offsetTop) > e.pageY)) {
+						// 判断元素边缘处
+						if (((that.dragBox.clientWidth + that.dragBox.offsetLeft - 5) <= e.pageX && (that.dragBox.clientWidth + that.dragBox.offsetLeft + 5) >= e.pageX) || (that.dragBox.clientHeight + that.dragBox.offsetTop - 5) <= e.pageY && (that.dragBox.clientHeight + that.dragBox.offsetTop + 5) >= e.pageY) {
+							// 触发开始拖动回调
+							if (that.options.dragStart) {
+								// 返回值
+								var obj = {
+									eve: e,
+									size: e.pageX - that.dragBox.offsetLeft,
+									self: that.dragBox,
+									orient: null
+								}
+								that.options.dragStart(obj)
+							}
+							document.addEventListener('mousemove', _move_pull, false)
+							document.removeEventListener('mousedown', _down_pull)
+						}
+					}
+				}
+				
+				/**
+				 * 鼠标移动事件
+				 * @param {Object} e
+				 */
+				var _move_pull = function (e) {
+					// document.removeEventListener('mousedown', _down_pull)
+					document.addEventListener('mouseup', _up_pull, false)
+					// 返回值
+					var obj = {
+						eve: e,
+						size: e.pageX - that.dragBox.offsetLeft,
+						self: that.dragBox,
+						orient: null
+					}
+					if (new RegExp(' mouseEResize ', 'g').test(' ' + that.dragBox.className + ' ') && that.eventing) {
+						that.dragBox.style.width = e.pageX - that.dragBox.offsetLeft + 'px'
+						if (that.options.drag) {
+							obj.orient = 'horizntal' // 水平拖动
+							that.options.drag(obj) // 拖动回调
+						}
+					}
+					if (new RegExp(' mouseNResize ', 'g').test(' ' + that.dragBox.className + ' ') && that.eventing) {
+						that.dragBox.style.height = e.pageY - that.dragBox.offsetTop + 'px'
+						if (that.options.drag) {
+							obj.orient = 'verti' // 垂直拖动
+							that.options.drag(obj) // 拖动回调
+						}
+					}
+				}
+				
+				/**
+				 * 鼠标弹起事件
+				 * @param {Object} e
+				 */
+				var _up_pull = function (e) {
+					document.removeEventListener('mousemove', _move_pull)
+					document.removeEventListener('mouseup', _up_pull)
+					document.addEventListener('mousedown', _down_pull, false)
+					// 触发结束拖动回调
+					if (that.options.dragEnd) {
+						// 返回值
+						var obj = {
+							eve: e,
+							size: e.pageX - that.dragBox.offsetLeft,
+							self: that.dragBox,
+							orient: null
+						}
+						that.options.dragEnd(obj)
+					}
+					that.eventing = false
+				}
+				
+				document.addEventListener('mousedown', _down_pull, false)
+				
+				/**
+				 * 鼠标移入事件-改变鼠标状态标识
+				 * @param {Object} e
+				 */
+				var _move_resize = function (e) {
+					// 鼠标到右末尾时显示左右拉大
+					if ((e.pageX >= (that.dragBox.offsetLeft + that.dragBox.clientWidth - 10) && (that.dragBox.offsetLeft + that.dragBox.clientWidth + 10 ) >= e.pageX ) || (e.pageX >= (that.dragBox.offsetLeft - 10) && e.pageX <= (that.dragBox.offsetLeft + 10 ) )) {
+						that.dragBox.classList.add('mouseEResize')
+					} else {
+						that.dragBox.classList.remove('mouseEResize')
+					}
+					// 鼠标到右末尾时显示上下拉大
+					if (e.pageY >= (that.dragBox.offsetTop + that.dragBox.clientHeight - 10) && (that.dragBox.offsetTop + that.dragBox.clientHeight + 10 ) >= e.pageY ) {
+						that.dragBox.classList.add('mouseNResize')
+					} else {
+						that.dragBox.classList.remove('mouseNResize')
+					}
+				}
+				
+				/**
+				 * 鼠标离开事件-将改变鼠标标识状态失效
+				 * @param {Object} e
+				 */
+				var _leave_resize = function (e) {
+					that.dragBox.classList.remove('mouseResize')
+					// that.eventing = false
+				}
+				
+				that.dragBox.addEventListener('mousemove', _move_resize, false)
+				that.dragBox.addEventListener('mouseleave', _leave_resize, false)
+				
+				// 以下为拖动事件***********************************************
+				var tx = 0 // 盒子坐标x
+				var ty = 0 // 盒子坐标y
+				// var ex = 0 // 结束坐标x
+				// var ey = 0 // 结束坐标y
+				var sx = 0 // 开始坐标x
+				var sy = 0 // 开始坐标y
+				var mx = 0 // 移动水平x
+				var my = 0 // 移动纵向y
+				
+				/**
+				 * 鼠标按下事件
+				 * @param {Object} e
+				 */
+				var _down_hander = function (e) {
+					that.dragBox.addEventListener('mousemove', _move_hander, false)
+					that.dragBox.addEventListener('mouseout', _out_hander, false)
+					sx = e.pageX
+					sy = e.pageY
+					// ex = e.clientX - that.dragBox.offsetLeft
+					// ey = e.clientY - that.dragBox.offsetTop
+					tx = that.dragBox.offsetLeft
+					ty = that.dragBox.offsetTop
+				}
+				/**
+				 * 鼠标移动事件
+				 * @param {Object} e
+				 */
+				var _move_hander = function (e) {
+					that.dragBox.removeEventListener('mousedown', _down_hander)
+					that.dragBox.addEventListener('mouseup', _up_hander, false)
+					if (window.innerWidth - 5 == e.clientX || window.innerHeight - 5  == e.clientY || 5 >= e.clientX || 5 >= e.clientY) {
+						that.dragBox.removeEventListener('mousemove', _move_hander)
+						that.dragBox.addEventListener('mousedown', _down_hander, false)
+					}
+					mx = e.pageX - sx
+					my = e.pageY - sy
+					that.dragBox.style.left = tx + mx + 'px'				
+					that.dragBox.style.top = ty + my + 'px'
+				}
+				/**
+				 * 鼠标弹起事件
+				 * @param {Object} e
+				 */
+				var _up_hander = function (e) {
+					that.dragBox.removeEventListener('mousemove', _move_hander)
+					that.dragBox.removeEventListener('mouseup', _up_hander)
+					that.dragBox.addEventListener('mousedown', _down_hander, false)
+				}
+				/**
+				 * 鼠标移出事件
+				 * @param {Object} e
+				 */
+				var _out_hander = function (e) {
+					that.dragBox.removeEventListener('mousemove', _move_hander)
+					that.dragBox.removeEventListener('mouseup', _up_hander)
+					that.dragBox.removeEventListener('mouseout', _out_hander)
+					that.dragBox.addEventListener('mousedown', _down_hander, false)
+				}
+				that.dragBox.addEventListener('mousedown', _down_hander, false)
+			}
+			new dragBox("dragBox", {
+				// 拖动事件进行中触发
+				drag: function (o) {
+					// console.log(o)
+				},
+				// 拖动事件开始时触发
+				dragStart: function(o) {
+					// console.log(o)
+				},
+				// 拖动事件结束时触发
+				dragEnd: function(o) {
+					// console.log(o)
+				}
+			})
+			new dragBox("dragBox1", {
+				// 拖动事件进行中触发
+				drag: function (o) {
+					// console.log(o)
+				},
+				// 拖动事件开始时触发
+				dragStart: function(o) {
+					// console.log(o)
+				},
+				// 拖动事件结束时触发
+				dragEnd: function(o) {
+					// console.log(o)
+				}
+			})
+			
+			
+			var drags = document.querySelectorAll('.drag')
+			
+			function msr (ele) {
+				ele.addEventListener('mouseover', function () {
+					console.log(ele)
+				}, false)
+			}
+			
+			function mst (ele) {
+				ele.addEventListener('mouseout', function () {
+					console.log(ele)
+				}, false)
+			}
+			for (var c = 0; c < drags.length; c++) {
+				msr(drags[c])
+				//console.log(c)
+			}
+		</script>
+	</body>
+</html>

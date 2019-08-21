@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+		
+	</head>
+	<body>
+		<div class="thumb">  
+         <!--<img src="img/20160907-241c96c6e6c29d0b_980x660.jpg" id="dolly1" />  
+        <img src="img/20160907-a31982ec47428e69_980x660.jpg" id="dolly2" />  
+        <img src="img/20160907-e7a868acfa535840_980x660.jpg" id="dolly3" />  -->
+        <canvas style="background: #CCCCFF;" id="canvas" data-src="img/20160907-241c96c6e6c29d0b_980x660.jpg" width="980" height="660"></canvas>
+</div> 
+		
+	    <script type="text/javascript">
+	    	var canvas = document.getElementById("canvas")
+	    	var cxt = canvas.getContext("2d")
+	    	var aimg = new Image();
+	    	aimg.src = "img/20160907-e7a868acfa535840_980x660.jpg";
+	    	aimg.onload = function() {
+	    		cxt.width = this.width;
+	    		cxt.height = this.height;
+	    		draw(this,this.width,this.height);
+	    	}
+	    	
+	    	function draw(obj, cw, ch){
+	    		cxt.drawImage(obj, 0,0,cw,ch)
+	    		cxt.drawImage(obj, 400, 0, cw, ch)
+	    		cxt.fillStyle = '#fff';
+	    		cxt.font ="30px Adobe Ming Std"
+	    		cxt.fillText('怎么得到你想要的？', 30, 30)
+	    		cxt.stroke()
+	    		var oimg = cxt.getImageData(40, 100, 100,160)
+	    		var w = oimg.width;
+	    		var h = oimg.height;
+	    		var num = 20;
+	    		
+	    		var stepW = w/num;
+	    		var stepH = h/num;
+	    		
+	    		for(var i=0;i<stepH;i++){
+	    			for(var j=0;j<stepW;j++){
+	    				var color = getXY(oimg,j*num+Math.floor(Math.random()*num),i*num+Math.floor(Math.random()*num))
+	    				for(var k = 0; k < num; k++) {
+	    					for(var l = 0; l < num; l++) {
+	    						setXY(oimg, j*num +l, i*num + k, color)
+	    					}
+	    				}
+	    			}
+	    		}
+	    		cxt.putImageData(oimg,40,100);
+	    	}
+	    	function getXY(obj,x,y){
+	    		var w = obj.width;
+	    		var h = obj.height;
+	    		var d = obj.data;
+	    		var color = [];
+	    		color[0] = obj.data[4*(y*w+x)]
+	    		color[1] = obj.data[4*(y*w+x+1)]
+	    		color[2] = obj.data[4*(y*w+x)+2]
+	    		color[3] = obj.data[4*(y*w+x)+3]
+	    		return color;
+	    	}
+	    	
+	    	function setXY(obj,x,y,color){
+	    		var w = obj.width;
+	    		var h = obj.height;
+	    		var d = obj.data;
+	    		 obj.data[4*(y*w+x)] = color[0]
+	    		 obj.data[4*(y*w+x)+1] = color[1]
+	    		 obj.data[4*(y*w+x)+2] = color[2]
+	    		 obj.data[4*(y*w+x)+3] = color[3]
+	    	}
+	    </script>
+	    
+	    
+	    
+	</body>
+</html>

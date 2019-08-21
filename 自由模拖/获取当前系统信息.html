@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.rad { transition: all ease 1s;}
+		</style>
+	</head>
+	<body>
+	<h1>本工具可以获取当前系统以下信息  </h1>
+		<p>ip地址</p>
+		<p>操作系统</p>
+		<p>屏幕分辨率</p>
+		<p>浏览器及版本号</p>
+		<p>停留时长浏览</p>
+		<p>当前浏览的URL</p>
+		<svg width="100%" height="400"  style="background: #0000FF;">
+			<path id="rad" d="M0, 120 C100, 20 380,20 480, 120" fill="none" stroke="#000000"></path>
+		</svg>
+		<script type="text/javascript">
+
+			
+			 var rad = document.getElementById("rad");
+			 rad.setAttribute('d', 'M0, 120 C240, 0 240,0 480, 120')
+			 
+			 var sh = window.screen.height,
+			 	sw = window.screen.width;
+			console.log(sh)
+			console.log(sw)
+		</script>
+		
+		<ul>
+			<li>整理一套学习通UI 和  移动UI</li>
+			<li>开发一套拖拽建站系统</li>
+			<li>开发一套前端统计工具</li>
+		</ul>
+		<dl>
+			<dt>开发一套前端统计工具</dt>
+			<dd>目的：产品经理，客户需求，前端技术，UI设计师了解用户行为，按用户行为和需求，精确的了解市场需求，精确开发新产品和优化产品，提高用户体验度; 避免盲目开发</dd>
+			<dd>统计范围：全公司所有产品</dd>
+			<dd>使用前提：需要注册，注册时提交域名，ip地址，联系人，联系方式，邮箱</dd>
+			<dd>统计工具需要注册，提交域名</dd>
+		</dl>
+		
+		
+		屏幕分辨率的高：
+
+屏幕分辨率的宽： window.screen.width搜索
+屏幕可用工作区高度： window.screen.availHeight
+
+屏幕可用工作区宽度： window.screen.availWidth
+	</body>
+</html>

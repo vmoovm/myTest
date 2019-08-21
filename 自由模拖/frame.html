@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>无标题文档</title>  
+<link type="text/css" rel="stylesheet" href="jquery-ui.css"/>  
+<script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>  
+<script src="js/jquery-ui.js" type="text/javascript"></script>  
+<script src="js/draggable.js" type="text/javascript"></script>  
+<style>  
+.liClass {border:solid #000000;width:180px;height:30px;}  
+.tab {min-height:100px;}  
+</style>  
+</head>  
+  
+<body>  
+<ul class="tab">  
+<li class="liClass"><label>aaaaaaa</label></li>  
+</ul>  
+</body>  
+<script>  
+$(function(){  
+    $(".cpList", parent.document).find("li").each(function() {  
+        $(this).on("dragstart", function(ev) {//开始拖拽  
+            var dt = ev.originalEvent.dataTransfer;  
+            dt.setData('Text', ev.target.id);//将拖拽组件ID传入  
+        });  
+    });  
+    //拖拽组件  
+    Draggable({destId:".tab",dragTag:"li"});  
+})  
+</script>  
+</html> 

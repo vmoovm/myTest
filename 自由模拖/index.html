@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/zrender.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ratio.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body { background: #fff;}
+			* {margin: 0; padding: 0;}
+			.main { width: 800px; height: 600px; margin: 40px auto; background: #ccc;;}
+			.zimg p img { width:100%}
+			.field { display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: end; padding-right: .2rem; height: .6rem; border-bottom: 1px #ccc solid; border-top: 1px #ccc solid; background: url(img/arrow.png) right center no-repeat; background-size: .24rem .24rem;}
+			.field p { font-size: .3rem; background-color: #f00}
+		</style>
+	</head>
+	<body>
+		<div class="field"><p>10</p></div>
+		<div class="main" id="main">
+			
+		</div>
+		<script type="text/javascript">
+			var zr = zrender.init(document.getElementById('main'));
+			// 正n边形
+		    var tenDeg = 2Math.PI * 360; //角度/360*2PI 
+		    var origin = tenDeg;
+		    var zrheight = 180;
+		    
+/*		    var circle = new zrender.Circle({
+			    shape: {
+			        cx: 150,
+			        cy: 50,
+			        r: 40
+			    },
+			    style: {
+			        fill: 'none',
+			        stroke: '#F00'
+			    }
+			});
+			zr.add(circle);*/
+		    
+			var addShape = new zrender.Heart({
+				rotation: tenDeg,
+				position: [100, 100],
+			    shape : {
+			    	cx: 100,
+		            cy: 200,
+			    	width: 100,
+		            height: 200
+			    }
+			});
+			zr.add(addShape);
+			Transformable(opts)
+			// zr.Transformable.rotation = [tenDeg, 5, zrheight-55],
+		</script>
+		
+	</body>
+</html>

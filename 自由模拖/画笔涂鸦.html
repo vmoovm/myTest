@@ -1,0 +1,202 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>canvas画图小程序</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="canvas"/>
+        <meta name="description" content="canvas画图"/>
+        <meta name="author" content="王翠" />
+       <meta name="viewport" content="width=device-width initial-scale=1.0" />
+  </head>
+
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .wrap{
+    width: 500px;
+    height:500px;
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .main-header{
+    display:flex;
+    padding: 10px 0;
+  }
+  #canvas{
+    border:1px solid #000;
+  }
+
+  .main-color,.main-size{
+    width:250px;
+    height: 80px;
+    background-color: #ccc;
+    border:1px solid #ccf;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .main-color ul li,.main-size ul li{
+   display: flex;
+   list-style: none;
+   width: 30px;
+   height:30px;
+   padding: 5px;
+   margin: 0 10px 0 0;
+   justify-content:center;
+   align-items:center;
+  }
+  .main-color ul ,.main-size ul {
+    padding: 10px 0;
+    display: flex;
+    justify-content:center;
+  }
+  .redColor{
+    background-color: rgba(255,0,0,1);
+  }
+  .blueColor{
+    background-color: rgba(255,0,247,1);
+  }
+  .yellowColor{
+    background-color: rgba(255,235,59,1);
+  }
+  .main-color ul li:hover,.main-size ul li:hover {
+   border:1px solid #000;
+   opacity:0.5;
+  }
+
+  .smallLine{
+    width:20px;
+    height:20px;
+    display: block;
+
+    border-radius: 100%;
+    background-color:#607d8b;
+  }
+
+  .middleLine{
+    width:25px;
+    height:25px;
+    display: block;
+    border-radius: 100%;
+    background-color:#607d8b;
+  }
+  .largeLine{
+    width:30px;
+    height:30px;
+    display: block;
+    border-radius: 100%;
+    background-color:#607d8b;
+  }
+  #showImg{
+    display: none;
+  }
+  </style>
+  <script type="text/javascript">
+    window.onload = function(){
+
+      canvas = document.getElementById('canvas');
+      context = canvas.getContext('2d');
+      canvas.onmousedown = startDrawing;
+      canvas.onmouseup = stopDrawing;
+      canvas.onmousemove = isDrawing;
+      var isDrawing=false;
+      // 开始画图
+      function startDrawing(e){
+        isDrawing=true;
+        // 创建一个绘图路径
+        context.beginPath();
+        // 把画笔移到鼠标位置
+        context.moveTo(e.pageX - canvas.offsetLeft,e.pageY -canvas.offsetTop)
+      }
+      // 画图中
+      function isDrawing(e){
+        if(isDrawing){
+          // v找到鼠标的最新位置
+          x = e.pageX - canvas.offsetLeft;
+          y = e.pageY -canvas.offsetTop;
+          context.lineTo(x,y);
+          context.stroke();
+        }
+      }
+      // 停止画图
+      function stopDrawing(){
+        isDrawing=false;
+      }    
+  } 
+  // 改变颜色
+  function changeColor(that){
+    // 获取当前选中元素的父元素，先统一清空其他li的边框    
+    var chilNodes=that.parentNode.childNodes;
+    var j=chilNodes.length;
+    for (i=0;i<j;i++)
+      // 过滤节点中的文本节点
+      if(chilNodes[i].nodeType!==3){
+        chilNodes[i].style.border = '';
+      }
+    that.style.border = '1px #000 solid';
+    //获取当前选择区域的颜色，这里用了计算属性,可能是背景颜色是通过类名设置的，直接用.style获取不到
+    var thatColor = window.getComputedStyle(that, null).backgroundColor
+    context.strokeStyle = thatColor;
+  }
+   // 画笔粗细
+  function changeSize(temp,that){
+    // 由于点击的元素是a所以取ul得两次获取父节点
+    var chilNodes=that.parentNode.parentNode.childNodes;
+    var j=chilNodes.length;
+    for (i=0;i<j;i++)
+      if(chilNodes[i].nodeType!==3){
+        chilNodes[i].style.border = '';
+      }   
+    that.parentNode.style.border = '1px #000 solid'
+     context.lineWidth = temp;
+  }
+   // 保存画布
+  function saveCanvas(){
+    var img = document.getElementById('img')
+    var showImg = document.getElementById('showImg')
+    img.src = canvas.toDataURL();
+    showImg.style.display = 'block';
+  }       
+  // 清除画布
+  function clearCanvas(){
+    context.clearRect(0,0,canvas.width,canvas.width);
+    var showImg = document.getElementById('showImg');
+    showImg.style.display = 'none';
+  } 
+  </script>
+    <body>
+    <div class='wrap'>
+        <h3>canvas画图小程序</h3>
+      <div class='main-header'>
+        <div class="main-color">
+          <h3>画笔颜色</h3>
+          <ul>
+            <li class='redColor' onclick="changeColor(this)"></li>
+            <li class='blueColor'onclick="changeColor(this)"></li>
+            <li class='yellowColor'onclick="changeColor(this)"></li>
+          </ul>
+        </div>
+        <div class="main-size">
+          <h3>画笔粗细</h3>
+          <ul>
+            <li ><a class='smallLine' href='javascript:void(0)' alt="细" onclick="changeSize('3',this)"></a></li>
+            <li ><a class='middleLine' href='javascript:void(0)' alt="中" onclick="changeSize('6',this)"></a></li>
+            <li ><a class='largeLine' href='javascript:void(0)' alt="粗"  onclick="changeSize('10',this)"></a></li>
+          </ul>
+        </div>
+      </div>
+      <canvas id="canvas" width="500px" height="300px"></canvas>
+      <div class="main-footer">
+        <button onclick="clearCanvas()">清除画布</button>
+        <button onclick="saveCanvas()">保存画布</button>
+        <div class="saveImg" id="showImg" style='width:500px;height:300px'>
+          <img id="img">
+          <span>点击右键保存......</span>
+        </div>        
+      </div>
+
+    </div>
+    </body>
+</html>

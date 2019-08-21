@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8"/>
+<title>小林网 - Xiaolin.Net</title>
+</head>
+<body>
+<fieldset id="xiaolin" style="border:1px red solid; width:300px; height:400px;line-height:25px; color:blue">
+<legend style="color:red">您最近浏览过的新闻 </legend>
+未找到您的最近浏览记录
+</fieldset>
+<script type="text/javascript">
+// <![CDATA[
+if(navigator.cookieEnabled){//判断是否支持Cookie
+     var tag = document.getElementById("xiaolin");//输出结果DIV id
+     var N = 10;//太长标题截取汉字字数
+     var listCount = 10;//记录和显示最近几条
+     var myTitle = escape(document.title) + "^";//取标题
+     var myUrl = escape(location.pathname) + "$";//取地址
+     var expTime = new Date(new Date().setDate(new Date().getDate() + 500));//设定过期时间为500天
+     var edp = "|; expires=" + expTime.toGMTString() + "; path=/"; //; domain=xiaolin.net //组合Cookie参数
+     var allCookie = document.cookie; //取出全部Cookie
+     if(allCookie.indexOf("news=") != -1 || allCookie.indexOf("$|") != -1){//判断是否为第一次浏览
+         var myCookieStart = allCookie.indexOf("news=") + "news=".length;
+         var myCookieEnd = allCookie.indexOf("$|",myCookieStart);
+         var myCookieall = unescape(allCookie.substring(myCookieStart,myCookieEnd));
+         var myCookie = myCookieall.split("$");
+         var myCookieTit = new Array();
+         var myCookieUrl = new Array();
+         for(var i = 0; i < myCookie.length; i++){
+             var myCookieOne = myCookie[i].split("^");
+             myCookieTit[i] = myCookieOne[0];
+             myCookieUrl[i] = myCookieOne[1];
+         }
+         var tagDat = "";
+         for(var i =myCookieTit.length - 1; i >= 0; i--){//从先到后顺序取得结果值
+             var textCount = myCookieTit[i].replace(/[^\x00-\xff]/g,"aa").length;
+             if(textCount <= N*2){
+                 texts = myCookieTit[i];
+             }else{
+                 for(var a = N; a < textCount; a++){
+                     texts = myCookieTit[i].substr(0,a);
+                     if(texts.replace(/[^\x00-\xff]/g,"aa").length >= N*2){
+                         texts += "..."
+                         break;
+                     }
+                 }
+             }
+             tagDat += "<a href=\"" + myCookieUrl[i] + "\"" + " title=\"" + myCookieTit[i] + "\">" + texts + "</a><br>"
+         }
+     tag.innerHTML =tagDat;//输出结果给页面div
+     var newCookie = "";//************************************************
+     if(myCookie.length < listCount){
+         for(i in myCookie){
+             if(myCookieTit[i] == document.title) continue;//去除重复
+             newCookie += escape(myCookieTit[i]) + "^" + escape(myCookieUrl[i]) + "$" ;
+         }
+     }else{
+         for(var i = 1; i < listCount; i++){
+             if(myCookieTit[i] == document.title) continue;
+             newCookie += escape(myCookieTit[i]) + "^" + escape(myCookieUrl[i]) + "$" ;
+         }
+     }
+     document.cookie = "news=" + newCookie + myTitle + myUrl + edp;//**********
+     }else{//
+         document.cookie = "news="+ myTitle + myUrl + edp;  
+     }
+}else{//不支持Cookie的处理
+     tag.innerHTML="您浏览器关闭了cookie功能，不能为您自动保存最近浏览过的网页。"
+}
+// ]]>
+</script>
+</body>
+</html>
