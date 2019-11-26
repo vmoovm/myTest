@@ -51,6 +51,12 @@ IOS用户点链接会出现一个半透明灰色遮罩, 如果想要禁用
 a,button,input,textarea{
 	-webkit-tap-highlight-color: transparent;
 }
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
 /*----------------------------------------------------
 webkit滚动条，仅支持谷歌
 -----------------------------------------------------*/

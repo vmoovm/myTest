@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素弧线运动</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 2px solid #ff8800;
+        }
+        .ball,
+        span{
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #222;
+            
+
+        }
+        span {animation: center1 2s ease-in forwards;}
+        .ball { position: absolute; left: 0; bottom: 0; transition: all 1s ease-out;}
+        .ball:after,
+        span:after{
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            background: greenyellow;
+            
+        }
+        span:after{
+        	animation: center2 2s ease-out forwards;
+        }
+        .ball:after { position: absolute; left: 0; bottom: 0; background: #0000CC; transition: all 1s ease-in;}
+        @keyframes center1 {
+            to{transform: translateX(360px)}
+        }
+        @keyframes center2 {
+            to{transform: translateY(360px)}
+        }
+        .ani { position: absolute; left: 560px; bottom: 0px;}
+        .ani:after { position: absolute; left: 360px; bottom: 560px;}
+    </style>
+</head>
+<body>
+	<div class="box">
+	    <span></span>
+	    <p class="ball" id="ball"></p>
+	</div>
+	    <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" style="background: #ccc;">
+		  <line x1="0"  y1="560" x2="600"   y2="136" style="stroke:#006600;"/>
+		</svg>                            
+	
+	
+	<script type="text/javascript">
+		var ball  = document.getElementById('ball')
+		ball.addEventListener('click', function () {
+			var _this = this
+			this.classList.add('ani')
+			setTimeout(function () {
+				_this.classList.remove('ani')
+			}, 2000)
+		})
+	</script>
+	
+</body>
+</html>

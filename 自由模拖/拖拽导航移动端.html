@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>移动端滑动导航菜单</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <style>
+        /*nav*/
+        .m-nav{
+            position: relative;
+            height:3rem;
+        }
+        .frame{margin: 0 10px; height:100%;    padding-right:50px;background-color: #00a0e9}
+        .nav-box{
+            position: relative;
+            height:100%;
+            overflow: hidden;
+        }
+        .m-nav ul{
+            position: relative;
+            left:0;
+            margin: 0.5rem;padding: 0;
+            list-style: none;
+            width:9999px;
+            height:100%;
+        }
+        .m-nav li{
+            float:left;
+            margin:0;
+            padding-right: 10px;
+        }
+        .m-nav li a{
+            text-decoration: none;
+            color:#000;
+            display: inline-block;
+        }
+        .menu-btn{
+            position: absolute;
+            top:0px;
+            right:10px;
+            width:40px;
+            float:left;
+            margin-left: 2%;
+            display:block;
+            height: 3rem;
+            text-align: center;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<!--菜单-->
+<div class="m-nav">
+    <div class="frame">
+        <div class="nav-box" id="nav-box">
+            <ul class="nav-list" id="nav-list">
+                <li><a href="" class="list-item">111一级建造师</a></li>
+                <li><a href="" class="list-item">222一级建造师</a></li>
+                <li><a href="" class="list-item">333一级建造师</a></li>
+                <li><a href="" class="list-item">444一级建</a></li>
+                <li><a href="" class="list-item">5555一级建造师</a></li>
+                <li><a href="" class="list-item">6666一级建造师</a></li>
+                <li><a href="" class="list-item">7777一级建造师</a></li>
+                <li><a href="" class="list-item">8888一级建造师</a></li>
+                <li><a href="" class="list-item">9999一级建造师</a></li>
+                <li><a href="" class="list-item">100000建造师</a></li>
+            </ul>
+        </div>
+        <a href="javascript:void(0);" class="menu-btn" id="menu-btn" ></a>
+    </div>
+</div>
+
+<script>
+    window.onload = function(){
+        var isdrag = false;//是否允许再拖动
+        var leftDis,curPage;//ul的left值,当前拖动开始时坐标
+        var list = document.getElementById("nav-list");
+        var finalLeft;//拖动结束时ul的left
+        var liPadding = 10;//li的间距
+        var items = document.getElementsByClassName("list-item");//li内a标签集合
+        var totalWidth = 0;//ul的实际宽度
+        var navBox = document.getElementById("nav-box");//ul外div
+        var boxWidth;
+        var isShow = false;
+
+        //获取ul外div的宽度
+        boxWidth = parseInt(window.getComputedStyle(navBox,null).width);
+
+        //计算ul的实际宽度
+        for(var i = 0;i<items.length;i++){
+            totalWidth += parseInt(window.getComputedStyle(items[i],null).width);
+        }
+        totalWidth = totalWidth+items.length*liPadding;
+
+        //设置ul的宽度值,否则li将会换行
+        list.style.width = totalWidth+10+'px';
+
+        //绑定事件
+        list.addEventListener('touchstart',startMouse);
+        list.addEventListener('touchmove',moveMouse);
+        list.addEventListener('touchend',function(){
+            isdrag = false;
+        });
+
+        function startMouse(e){
+            isdrag = true;
+            leftDis = parseInt(list.style.left+0);//ul的left值
+            curPage = e.touches[0].pageX;//手指触摸开始时的坐标
+            return false;
+        }
+        function moveMouse(e){
+            if (isdrag){
+                finalLeft = leftDis + e.touches[0].pageX - curPage;//触摸结束时ul的left值
+                console.log(finalLeft);
+                if(finalLeft<=-(totalWidth-boxWidth)||finalLeft>=0){//滑到最末一页时
+                    return false;
+                }
+                else{
+                    list.style.left = finalLeft +'px';
+                }
+            }
+        }
+
+        //点击菜单按钮显示全部
+        var menuBtn = document.getElementById("menu-btn");
+        menuBtn.onclick = function(){
+            if(!isShow){
+                list.removeEventListener('touchstart',startMouse);
+                list.removeEventListener('touchmove',moveMouse);
+                list.style.width = boxWidth+'px';
+                list.style.left = '0px';
+                navBox.style.overflow = 'visible';
+                navBox.style.height = 'auto';
+                isShow = true;
+            } else{
+                list.addEventListener('touchstart',startMouse);
+                list.addEventListener('touchmove',moveMouse);
+                list.style.width = totalWidth+10+'px';
+                navBox.style.overflow = 'hidden';
+                navBox.style.height = '100%';
+                isShow = false;
+            }
+        }
+    };
+
+</script>
+</body>
+</html>

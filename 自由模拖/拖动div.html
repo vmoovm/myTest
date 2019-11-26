@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div class="" style="height: 2000px;">
-		<div class="test" id="test"></div>
+		<div class="test" id="test" draggable="true"></div>
 		</div>
 		<script type="text/javascript">
 			var test = document.getElementById("test")
@@ -27,6 +27,8 @@
 			 * @param {Object} e
 			 */
 			var down_hander = function (e) {
+				// if (test.getAttribute('draggable') != 'true') return false
+				// console.log(test.getAttribute('draggable') != 'true1')
 				test.addEventListener('mousemove', move_hander, false)
 				test.addEventListener('mouseout', out_hander, false)
 				sx = e.pageX

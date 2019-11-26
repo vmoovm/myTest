@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title>操作div尺寸(移动端)</title>
+		<style type="text/css">
+			* { margin: 0; padding: 0;}
+			li { list-style-position: outside;}
+			.dragBox1, 
+			.dragBox { width: 300px; height: 300px; border: #000000 1px solid; background: #3E4B53; position: absolute; left: 20%; top: 40%;}
+			.dragBox1 { left: 0; right: 20%;}
+			
+			
+			/*水平拉大*/
+			.mouseEResize { cursor: e-resize;}
+			/*垂直拉大*/
+			.mouseNResize { cursor: n-resize;}
+			/*移动鼠标*/
+			.mouseAResize { cursor: all-scroll;}
+			li { list-style: none;}
+			.box1 { border: #000000 1px solid;}
+			.box2 { border: #1ab 1px solid; margin-top: 15px;}
+			.boxItem { float: left; margin: 10px; background: #CCCCCC; padding: 10px;}
+			.box:after { display: block; content: ''; clear: both;}
+			.empty { height: 1500px; background-color: #f5f6f8;}
+			.box li.currentR,
+			.box li.currentL { background: #0000CC;}
+			.box li.currentR {border-right: 80px #F04134 solid;}
+			.box li.currentL { border-left: 80px #F04134 solid;}
+			.pst { position: absolute; z-index: 999;}
+			.ani { transition: all .5s ease;}
+		</style>
+	</head>
+	<body>
+		<!--<div class="empty"></div>-->
+		<div class="">
+		<!--<div class="" style="height: 2000px;">-->
+			<div class="box1">
+				<ul class="box" id="box1">
+					<li class="boxItem dragSort-js" sid="11111">box1-1</li>
+					<li class="boxItem dragSort-js" sid="11112">box1-2</li>
+					<li class="boxItem dragSort-js" sid="11113">box1-3</li>
+					<li class="boxItem dragSort-js" sid="11114">box1-4</li>
+					<li class="boxItem dragSort-js" sid="11115">box1-5</li>
+					<!--<li class="boxItem dragSort-js" sid="21115">box2-5</li>-->
+				</ul>
+			</div>
+			<div class="box2">
+				<ul class="box" id="box2">
+					<li class="boxItem dragSort-js" sid="21111">box2-1</li>
+					<li class="boxItem dragSort-js" sid="21112">box2-2</li>
+					<li class="boxItem dragSort-js" sid="21113">box2-3</li>
+					<li class="boxItem dragSort-js" sid="21114">box2-4</li>
+					<li class="boxItem dragSort-js" sid="21115">box2-5</li>
+				</ul>
+			</div>
+			
+		<div class="dragBox drag" id="dragBox">
+			<div class="" style=" float: left; height: 300px; width: 100px; background: #0000FF; transform: translate();"></div>
+			<div class="" style="margin-left: 100px; height: 300px; background: #47A05E;"></div>
+		</div>
+		
+		<div class="dragBox1 drag" id="dragBox1">
+			<div class="" style=" float: left; height: 300px; width: 100px; background: #0000FF;"></div>
+			<div class="" style="margin-left: 100px; height: 300px; background: #47A05E;"><p id="layout">退出登录</p></div>
+		</div>
+		
+		</div>
+		<script src="js/dragSort.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var box1 = document.getElementById('box1')
+			var dragbox1 = new DragSort(box1, function (o) {
+				console.log(o)
+			})
+			var box2 = document.getElementById('box2')
+			var dragbox2 = new DragSort(box2, function (o) {
+				console.log(o)
+			})
+			//动态更新元素时使用： dragbox1.upDate()
+			// dragbox1.upDate()
+			// 消毁该拖放元素时使用 dragbox1.destroy() dragbox1 = null
+			
+			
+			
+			var dragDom = document.getElementById("dragBox")
+			new DragBox(dragDom, {
+				// 拖动事件进行中触发
+				dragging: function (o) {
+					// console.log(o)
+					console.log('translate(' + (o.moveX) + 'px, ' + (o.moveY) + 'px)')
+					
+				},
+				// 拖动事件开始时触发
+				dragStart: function(o) {
+					// console.log(o)
+				},
+				// 拖动事件结束时触发
+				dragEnd: function(o) {
+					// console.log(o)
+					o.self.style.webkitTransform = 'translate(' + 0 + 'px, ' + 0 + 'px)'
+				}
+			})
+			
+			
+			var dragDom1 = document.getElementById("dragBox1")
+			new DragBox(dragDom1, {
+				// 拖动事件进行中触发
+				dragging: function (o) {
+					// console.log(o)
+				},
+				// 拖动事件开始时触发
+				dragStart: function(o) {
+					// console.log(o)
+				},
+				// 拖动事件结束时触发
+				dragEnd: function(o) {
+					// console.log(o)
+				}
+			})
+		</script>
+		
+		
+		<div class="test" id="ccd">sftestestestesetsetstesetststestestestsetsetest</div>
+		<ul id="cc">
+			<li>setsetsetsetestestestestsetestestestestsetestestest</li>
+			<li id="cb">setsetsetsetestestestestsetestestestestsetestestest</li>
+			<li>setsetsetsetestestestestsetestestestestsetestestest</li>
+		</ul>
+		<script type="text/javascript">
+			
+			var ccd = document.getElementById('ccd')
+			var cc = document.getElementById('cc')
+			var cb = document.getElementById('cb')
+			
+			var aa = document.createElement('li')
+			aa.innerHTML = '<h2>h2h2h2h2h2h2h</h2>'
+			
+			// insertAfter(aa, cb)
+			cc.insertBefore(aa, cb)
+			
+		</script>
+		<li class="boxItem pst">box1-1</li>
+	</body>
+</html>
