@@ -54,6 +54,7 @@ body {background: transparent;  }
 			 */
 			function zopenWindow(state){
 				var w=state ? $(window.parent.document):$(window);
+				// w = $(window)
 				// var w=$(window.parent.document);
 				if(!(w.find("body").find("#zopacity").length)){
 					var eleCss= {'position': 'fixed', 'width': '100%', 'height': '100%', 'background': '#000', 'left': '0', 'bottom': 0, 'display': 'none'};
@@ -68,7 +69,7 @@ body {background: transparent;  }
 				$("#zlayer").show();
 				
 			}
-			zopenWindow(true);
+			// zopenWindow(true);
 			
 			$(window.parent.document).on("click",".zgreen",function(){
 				alert('能');
@@ -78,6 +79,7 @@ body {background: transparent;  }
 				w.find("#zopacity").hide();
 				$("#zlayer").hide();
 			}
+			
     </script>
     
     
@@ -91,5 +93,27 @@ body {background: transparent;  }
 <div>
   <input type="button" name="btnOk" value="在顶端显示退出" onclick="zopenWindow(true);" />
 </div>
+<script type="text/javascript">
+	// 传输数据
+	//给父页面发送消息，data为对象
+	parent.postMessage( {msg: 'MessageFromIframePage'}, '*');
+</script>
 </body>
 </html>
+<script type="text/javascript">
+	// var iClick = function (){
+		// alert('xuj')
+	// }
+	var iClick = 56456654654
+	
+</script>
+<script type="text/javascript">
+	//回调函数
+	function receiveMessageFromIframePage (event) {
+	    console.log('子已接收父的指示', event)
+	}
+	
+	//监听message事件
+	window.addEventListener("message", receiveMessageFromIframePage, false);
+	parent.postMessage( {msg: 'MessageFromIframePage'}, '*');
+</script>

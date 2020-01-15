@@ -22,5 +22,16 @@
 And then one fine morning— So we beat on, boats against the
 current, borne back ceaselessly into the past.</div>
 <div style=" float:right; height:30px; background-color:#336"></div>
+<script type="text/javascript">
+	// 子方法，供父iframe调用
+	function closea() {
+			$("#zopacity").hide()
+			$("#zlayer").hide();
+			console.log('子方法调用成功')
+	}
+</script>
+<script type="text/javascript">
+	 // parent.postMessage( {msg: 'MessageFromIframePage'}, '*');
+</script>
 </body>
 </html>

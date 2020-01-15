@@ -5,6 +5,7 @@
 <title>首页</title>
 <link rel="stylesheet" type="text/css" href="css/basic.css"/>
 <!--<link rel="stylesheet" type="text/css" href="css/alert.css"/>-->
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 <style type="text/css">
 	.top { height: 100px; background: #EEEEEE;}
 	.middle { height: 300px; background: #333333;}
@@ -20,11 +21,47 @@
 	<iframe src="top.html" width="100%" height=""></iframe>
 </div>
 <div class="middle">
-	<iframe id="main" src="main.html" width="" height=""></iframe>
+	<iframe id="main" name="main" src="main.html" width="" height=""></iframe>
 </div>
 <div class="bottom">
 	<iframe src="bottom.html" width="" height=""></iframe>
 </div>
 <!--main end-->
+<script type="text/javascript">
+		
+	// var mainsub = main
+	// var mainsub = $(window.parent.document).contents().find("#gamePlay")[0].contentWindow.startGame();
+	// document.getElementById("main").contentWindow.close11()
+	
+	// 原生js父调用子窗口函数
+	// var mainsub = document.getElementById("main").contentWindow;
+	// console.log(window)
+	// console.log(mainsub)
+	// mainsub.onload= function () {
+		// console.log(mainsub.closea());
+	// }
+	//不加load,页面加载有延迟，会报没有这个方法，需要等子页面加载完成后可执行 console.log(mainsub.closea());
+	
+	// 原生jq父调用子窗口函数
+	var mainsub = $("#main");
+	console.log(mainsub)
+    mainsub.load(function () {
+		if (mainsub[0].contentWindow.closea) mainsub[0].contentWindow.closea() 
+		mainsub[0].contentWindow.postMessage( 'hello world', '*');   //父页向子页面发送
+	})
+	
+	
+
+	//回调函数
+	function receiveMessageFromIframePage (event) {
+	    mainsub.attr('src', 'Udled-1.html')
+	    console.log('receiveMessageFromIframePage', event)
+	}
+	
+	//监听message事件
+	window.addEventListener("message", receiveMessageFromIframePage, false);
+</script>
+
+
 </body>
 </html>
