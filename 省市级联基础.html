@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>省市级联</title>
+	</head>
+ 
+	<body>
+		国籍：<select id="cc"></select>
+		
+		省份选择:<select id="province" onChange="loadCity();">
+		<option>--请选择省份--</option>
+		</select>
+		 
+		城市选择:<select id="city">
+		<option>--请选择城市--</option>
+		</select>
+		<script type="text/javascript">
+			var cityList=new Array();//构建城市列表,城市太多,这里只简单写几个
+			cityList["北京市"]=['海淀区','朝阳区','密云区'];
+			cityList["上海市"]=['徐汇区','黄埔区','虹口区'];
+			cityList["吉林省"]=['长春市','吉林市','四平市'];
+			
+			function allprovince(){
+				//获取省的select对象
+				var province=document.getElementById("province");
+				for (var i in cityList){
+					province.add(new Option(i,i),null);
+					}
+				}
+				
+				
+			//根据省份加载对应的城市
+			function loadCity(){
+				
+					//获取省份的值
+					var province=document.getElementById("province").value;
+					//获取城市的对象
+					var city=document.getElementById("city");
+					
+					//清空上一次选择省份显示的城市
+					city.options.length=1;
+					
+					for(var i in cityList){
+						//让其对应
+						if(i==province){
+							for(var j in cityList[i]){
+								city.add(new Option(cityList[i][j],cityList[i][j]), true);
+								}
+							}
+						}
+					}
+			window.οnlοad=allprovince();
+			
+		</script>
+	</body>
+</html>
