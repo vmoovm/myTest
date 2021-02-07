@@ -28,7 +28,24 @@
 </div>
 <!--main end-->
 <script type="text/javascript">
-		
+	
+	// 父页面寻找子页面元素：
+//        window.frames["iframeName"].document.getElementsByClassName('div')[0]
+// 
+//        $(document.getElementById("iframeId").contentWindow.document).find(".div")
+// 
+//        $( window.frames["iframeName"].document).find(".div")
+// 
+//        $("#iframeId").contents().find(".div")
+	// 
+	// 子页面寻找父页面元素：
+//        $(window.parent.document).find(".divParent")
+// 
+//        window.parent.document.getElementsByClassName("divParent")[0]
+// 
+//        $(". divParent",parent.document)
+	
+	
 	// var mainsub = main
 	// var mainsub = $(window.parent.document).contents().find("#gamePlay")[0].contentWindow.startGame();
 	// document.getElementById("main").contentWindow.close11()
@@ -50,13 +67,17 @@
 		mainsub[0].contentWindow.postMessage( 'hello world', '*');   //父页向子页面发送
 	})
 	
-	
+	function parentfn () {
+		console.log('父方法')
+	}
 
 	//回调函数
 	function receiveMessageFromIframePage (event) {
 	    mainsub.attr('src', 'Udled-1.html')
 	    console.log('receiveMessageFromIframePage', event)
+	    alert('MessageFromIframePage')
 	}
+	
 	
 	//监听message事件
 	window.addEventListener("message", receiveMessageFromIframePage, false);

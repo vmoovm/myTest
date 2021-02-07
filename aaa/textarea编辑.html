@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>hover demo</title> 
+</head>
+<body>
+ 
+<textarea rows="8" cols="35" id="areaId"> </textarea>
+<p></p>
+<button class="btn btn-sm btn-purple"  onclick="addExpressContent('20008')">+</button>
+<button class="btn btn-sm btn-purple"  onclick="addExpressContent('-')">-</button>
+<button class="btn btn-sm btn-purple"  onclick="addExpressContent('*')">*</button>
+<button class="btn btn-sm btn-purple"  onclick="addExpressContent('/')">/</button>
+<button class="btn btn-sm btn-purple"  onclick="addExpressContent('测试文字')">添加文字</button>
+ 
+<script>
+/**
+ * 添加内容
+ */
+function addExpressContent(str){
+    var obj = document.getElementById("areaId");
+     if (document.selection) {  
+           var sel = document.selection.createRange();  
+           sel.text = str;  
+       } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {  
+           var startPos = obj.selectionStart;  
+           var    endPos = obj.selectionEnd;  
+           var    cursorPos = startPos;  
+           var    tmpStr = obj.value;  
+           obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);  
+           cursorPos += str.length;  
+           obj.selectionStart = obj.selectionEnd = cursorPos;  
+       } else {  
+           obj.value += str;  
+       }  
+}
+</script>
+</body>
+</html>

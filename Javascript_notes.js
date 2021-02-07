@@ -259,6 +259,13 @@ var elem = document.getElementById('abc');
     insertHTML(elem, 'afterEnd', '<dd class="color_5">下一个兄弟节点nextSibling</dd>');
 
 /*-----------------------------------------------------
+jQuery.html() 是获取当前节点下的html代码，并不包含当前节点本身的代码，然而我们有时候的确需要，可以通过jQuery.prop("outerHTML")的方式设置
+因为原生JS DOM里有一个内置属性 outerHTML,所以用jQuery的prop()能拿到
+-----------------------------------------------------*/
+
+$(".test").prop("outerHTML");
+
+/*-----------------------------------------------------
 FF下支持IE特有的insertAdjacentElement以及insertAdjacentText
 -----------------------------------------------------*/
 if(typeof HTMLElement!="undefined" && !HTMLElement.prototype.insertAdjacentElement)
@@ -517,3 +524,71 @@ var arr = ['abc',2,4,546,'st']
 arr.length = 1  // ['abc']
 arr.length = 2  // ['abc',2]
 arr.length = 3  // ['abc',2,4]
+/*-----------------------------------------------------
+js原生实现jquery方法offset()和position()
+-----------------------------------------------------*/
+$(() => {
+    console.log($('p').offset())
+    console.log($('p').position())
+    console.log(offset($('p')[0]))
+    console.log(position($('p')[0]))
+
+    // jquery offset原生实现
+    function offset(target) {
+        var top = 0,
+            left = 0
+
+        while(target.offsetParent) {
+            top += target.offsetTop
+            left += target.offsetLeft
+            target = target.offsetParent
+        }
+
+        return {
+            top: top,
+            left: left,
+        }
+    }
+
+    // jquery position原生实现
+    function position(target) {
+        return {
+            top: target.offsetTop,
+            left: target.offsetLeft,
+        }
+    }
+})
+/*-----------------------------------------------------
+javascript 移除css某属性,非removeAttribute("style"),注,仅移除style行内样式,样式表中不生效
+-----------------------------------------------------*/
+var heading = document.getElementById("heading")
+heading.style.removeProperty("background");
+
+/*-----------------------------------------------------
+input 原生方法
+-----------------------------------------------------*/
+input.select(); // select(); 选中内容
+input.selectionStart // selectionStart // 光标结束选中的位置
+input.selectionEnd = 0; // selectionEnd // 光标结束选中位置
+
+input.setSelectionRange(0, 0); // setSelectionRange(start, end); // 选中指定区域的内容
+
+input.focus(); // focus(); // 获取焦点
+
+input.blur(); // 失去焦点
+
+
+/*-----------------------------------------------------
+判断网页是移动端还是pc端
+-----------------------------------------------------*/
+function goPAGE() {
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        // 移动端
+        $('body').addClass('mobile')
+    }
+    else {
+        // pc端
+        $('body').removeClass('mobile')
+    }
+}
+goPAGE();

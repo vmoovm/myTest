@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div class="" style="position: absolute; width: 500px; height: 500px; background: #ccc;" id="layer"></div>
+		
+		
+		<script type="text/javascript">
+			var layer_bg = document.getElementById("layer")
+			var lastTap = true
+			var isdoubleTap = false
+			var clearTimer = null
+			layer_bg.addEventListener('click', function (e) {
+			var now = new Date() * 1
+			if (lastTap && (now - lastTap) < 220) { // 240毫秒是模拟单击和双击区分，240毫秒内点两次为双周，超过为单击
+				isdoubleTap = true
+				lastTap = null
+				console.log('双击')
+				e.stopPropagation()
+				if (clearTimer) clearTimeout(clearTimer)
+				return
+			}
+			isdoubleTap = false
+			lastTap = now
+			var that = this
+		clearTimer = setTimeout(function () { // 240毫秒内无再次点击为单击事件
+				if (isdoubleTap) return
+				that.style.display = "none"
+				if (clearTimer) clearTimeout(clearTimer)
+				console.log('单击')
+			}, 220)
+			e.stopPropagation()
+		}, false)
+		</script>
+	</body>
+</html>

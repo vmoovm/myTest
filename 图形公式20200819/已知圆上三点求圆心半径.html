@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta content="yes" name="apple-mobile-web-app-capable" /> 
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" /> 
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>移动</title>
+		<link href="css/base.css" rel="stylesheet" type="text/css" />
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<script src="js/ratio.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<canvas id="mycanvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var s = {
+				a: {x: 10, y: 66},
+				b: {x: 30, y: 20},
+				c: {x: 44, y: 66},
+				d: {x: null, y: null}
+			}
+			var r = null
+			var mycanvas = document.getElementById("mycanvas")
+			var cxt = mycanvas.getContext('2d')
+			console.log(cxt)
+			cxt.arc(s.a.x, s.a.y, 2,.1*Math.PI,2*Math.PI)
+			cxt.arc(s.b.x, s.b.y, 2,0,2*Math.PI)
+			cxt.arc(s.c.x, s.c.y, 2,0,2*Math.PI)
+			
+			var aa = Calculate_cicular(s.a, s.b, s.c)
+			cxt.fill()
+			function Calculate_cicular(px1, px2, px3) {
+
+    var x1, y1, x2, y2, x3, y3;
+
+    var a, b, c, g, e, f;
+
+    x1 = px1.x;
+
+    y1 = px1.y;
+
+    x2 = px2.x;
+
+    y2 = px2.y;
+
+    x3 = px3.x;
+
+    y3 = px3.y;
+
+    e = 2 * (x2 - x1);
+
+    f = 2 * (y2 - y1);
+
+    g = x2*x2 - x1*x1 + y2*y2 - y1*y1;
+
+    a = 2 * (x3 - x2);
+
+    b = 2 * (y3 - y2);
+
+    c = x3*x3 - x2*x2 + y3*y3 - y2*y2;
+
+    X = (g*b - c*f) / (e*b - a*f);
+
+    Y = (a*g - c*e) / (a*f - b*e);
+
+    R = Math.sqrt((X-x1)*(X-x1)+(Y-y1)*(Y-y1));
+    console.log(X, Y, R)
+
+ 
+cxt.arc(X, Y, R,R,0,2*Math.PI)
+cxt.fill()
+}
+			
+		</script>
+	</body>
+</html>

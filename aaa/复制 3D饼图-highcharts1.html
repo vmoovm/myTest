@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+    	.uplayer { position: absolute; left: 8px; top: 8px; width: 400px; height: 400px; background: rgba(255, 54, 128, .5);}
+    	.uplayer .p { position: absolute; font-size: 14px; height: 46px; width: 96px; background: #0000FF;}
+    	/*r = (400 - 170)/2 = 115*/
+    </style>
+</head>
+<body>
+    <div id="container" style="width: 400px;height:400px;"></div>
+    <!--<div class="uplayer">
+    	<div class="p" id="p" style="left: 109px; top: 35px;"><p>sfdasfadasdf</p></div>
+    	<div class="p" id="p" style="left: ;"><p>sfdasfadasdf</p></div>
+    	<div class="p" id="p"><p>sfdasfadasdf</p></div>
+    </div>-->
+    <script type="text/javascript">
+    	var p = document.getElementById("p")
+    	var angle = 1.1519173063162573
+    	// var angle = -0.9424777960769379
+    	// var angle = 3.6651914291880914
+    	var left = 115 + 115 * Math.sin(angle) + 'px'
+    	var top1 = 115+ 115 * Math.cos(angle) + 'px'
+    	// p.style.left = 196.8 + 'px'
+    	console.log(left, top1)
+
+    </script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts-3d.js"></script>
+    <script>
+    	
+     var colors = ['#F59656', '#90BF18', '#EDCA4E'];
+        // 图表配置
+        var options = {
+            
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 300,
+                    beta: 0
+                },
+                backgroundColor: 'rgba(1,1,1,1)'
+            },
+            credits: {//关闭版权信息的标签
+                enabled: false
+            },
+            tooltip: {
+                enabled: false, // 默认true,是否启用提示框
+                
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    innerSize: 50,
+                    dataLabels: {
+                    	distance: 40,//控制引导线的长度
+                    	useHTML:true,
+                    	softConnector: false,
+                    	cursor: 'pointer',
+                    	borderColor: 'rgba(32, 94, 166, 1)',
+                    	borderWidth: '1',
+                    	backgroundColor: {
+							linearGradient: [0, 500, 500, 0],
+							stops: [
+								[0, 'rgba(32, 94, 166, 1)'],
+								[1, 'rgba(32, 94, 166, 0)']
+							]
+						},
+                    	// depth: 70,
+                        enabled: true,
+                        formatter: function () {
+                            let percentage = this.percentage.toFixed(0);
+                            var y = this.y.toFixed(0)
+                            console.log(this)
+                            return '<p style="color:#fff; fontSize: 18px; fontWeight: 400">' + y +' 门   ' + percentage + '%</p><br/><p style="color:#3088c4;font-size:14px;">'+this.key+ '  占比' + '</p>';
+                        },
+                        style: {
+                            // fontSize: '18px',
+                            // fontWeight: '400',
+                            textOutline: 'none'
+                        }
+                    },
+                    states:{
+                        halo:{
+                            pacity:1
+                        }
+                    },
+                    borderWidth: 0.5,
+                    
+                }
+            },
+            series: [
+            		{
+                    type: 'pie',
+                    depth:-30,
+                    zIndex:1,
+                    size:'35%',
+                    center: ['52%', '40%'],
+                    dataLabels:{
+                    	distance: 30,//控制引导线的长度
+                        enabled:false
+                    },
+                    data: [
+                        {'name':'实验类课程',y:30,color:'rgba(41, 176, 214, .9)'}, // 蓝
+                        {'name':'理论课程',y:70,color:'rgba(41, 176, 214, 0)'},
+                        {'name':'实验理论混合',y:50,color:'rgba(41, 176, 214, 0)'},
+                    ]
+               },
+                {
+                    type: 'pie',
+                    size:'35%',
+                    depth:-20,
+                    // lineWidth: 0,
+					linkedTo: ':previous',
+                    zIndex:3,
+                    dataLabels:{
+                       enabled:false
+                    },
+                    center: ['51%', '41%'],
+                    data: [
+                        {'name':'实验类课程',y:30,color:'rgba(41, 176, 214,0)'},
+                        {'name':'理论课程',y:70,color:'rgba(41, 176, 214,0)'},
+                        {'name':'实验理论混合',y:50,color:'rgba(41, 176, 214,.9)'}, // 黄
+                    ]
+                },
+                {
+                    type: 'pie',
+                    size:'35%',
+                    depth:-10,
+                    zIndex:4,
+                    dataLabels: {
+                    	
+                    },
+                    center: ['52%', '47.5%'],
+                    data: [
+                        {'name':'实验类课程',y:30,color:'rgba(41, 176, 214,0)'},
+                        {'name':'理论课程',y:70,color:'rgba(41, 176, 214,.9)'}, // 红
+                        {'name':'实验理论混合',y:50,color:'rgba(41, 176, 214,0)'},
+                    ]
+                },
+                
+            ]
+        };
+        // 图表初始化函数
+        var chart = Highcharts.chart('container', options);
+    </script>
+</body>
+</html>
+ 

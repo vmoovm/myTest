@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML5 canvas 中的线条样式</title>
+	</head>
+	<body>
+		<!--<div>
+			线条样式属性
+		lineCap        设置或返回线条的结束端点样式
+		butt         默认。向线条的每个末端添加平直的边缘。
+		round         向线条的每个末端添加圆形线帽。
+		square         向线条的每个末端添加正方形线帽。
+		
+		lineJoin        设置或返回两条线相交时，所创建的拐角类型
+		bevel         创建斜角。
+		round         创建圆角。
+		miter         默认。创建尖角。
+		
+		lineWidth        设置或返回当前的线条宽度
+		number         当前线条的宽度，以像素计
+		
+		miterLimit        设置或返回最大斜接长度
+		number         正数。规定最大斜接长度。
+		                   如果斜接长度超过 miterLimit 的值，边角会以 lineJoin 的 "bevel" 类型来显示。
+		</div>-->
+		<canvas id="c" width="500" height="450" style="border:1px solid #000"></canvas>
+		<script type="text/javascript">
+		var a=document.getElementById("c");
+		var ctx=a.getContext("2d");
+		ctx.beginPath();                //起始一条路径，或重置当前路径
+		ctx.moveTo(20,20);                //把路径移动到画布中的指定点，不创建线条
+		ctx.lineTo(200,20);                //添加一个新点，然后在画布中创建从该点到最后指定点的线条
+		ctx.lineWidth=5;                //设置或返回当前的线条宽度
+		ctx.lineCap="round";        //向线条的每个末端添加圆形线帽。
+		ctx.strokeStyle="green";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.moveTo(20,40);
+		ctx.lineTo(200,40);
+		ctx.lineWidth=5;                //设置或返回当前的线条宽度
+		ctx.lineCap="butt";                //默认。向线条的每个末端添加平直的边缘。
+		ctx.strokeStyle="blue";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.moveTo(20,60);
+		ctx.lineTo(200,60);
+		ctx.lineWidth=5;                        //设置或返回当前的线条宽度
+		ctx.lineCap="square";                //向线条的每个末端添加正方形线帽。
+		ctx.strokeStyle="yellow";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.lineJoin="round";        //设置或返回两条线相交时，所创建的拐角类型
+		ctx.moveTo(20,80);
+		ctx.lineTo(50,100);
+		ctx.lineTo(20,120);
+		ctx.lineWidth=20;
+		ctx.strokeStyle="red";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.lineJoin="bevel";
+		ctx.moveTo(120,80);
+		ctx.lineTo(150,100);
+		ctx.lineTo(120,120);
+		ctx.lineWidth=20;
+		ctx.strokeStyle="red";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.lineJoin="miter";
+		ctx.moveTo(220,80);
+		ctx.lineTo(250,100);
+		ctx.lineTo(220,120);
+		ctx.lineWidth=20;
+		ctx.strokeStyle="red";
+		ctx.stroke();
+		 
+		ctx.beginPath();
+		ctx.lineWidth=10;
+		ctx.lineJoin="miter";
+		ctx.miterLimit=5;        //设置或返回最大斜接长度,斜接长度指的是在两条线交汇处内角和外角之间的距离
+		ctx.moveTo(20,150);
+		ctx.lineTo(50,157);
+		ctx.lineTo(20,164);
+		ctx.stroke();
+		</script>
+	</body>
+</html>

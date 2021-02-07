@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<span class="viewshare wx"  data-mshare="2">微信</span>
+		<span class="viewshare wxline"  data-mshare="1">微信</span>
+		<span class="viewshare QQ"   data-mshare="3">QQ</span>
+		<span class="viewshare wb" data-mshare="4">微博</span>
+		<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mshare.js"></script>
+		<script type="text/javascript">
+		var u = navigator.appVersion;
+		var uc = u.split('UCBrowser/').length > 1  ? 1 : 0;
+		var qq = u.split('MQQBrowser/').length > 1 ? 2 : 0;
+		var wx = ((u.match(/MicroMessenger/i)) && (u.match(/MicroMessenger/i).toString().toLowerCase() == 'micromessenger'));
+		 
+		// 绑定单击事件
+		$('.wx,.wxline,.QQ,.wb').on("click", function () {
+		    if(uc||(qq && !wx)){
+		        mshare.init($(this).data('mshare'));
+		    }
+		    mshare.init(2)
+		})
+		</script>
+	</body>
+</html>

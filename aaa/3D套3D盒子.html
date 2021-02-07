@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html, body, div, ul, dl, p, li, dd, dt, h1, h2, h3, h4, h5,
+			span, a {    margin: 0px;
+    padding: 0px;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;}
+.box-3d {
+	width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  /*position: fixed;*/
+  z-index: 999;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  /*right: 50%;*/
+  /*bottom: 50%;*/
+  /*margin-top: -50px;*/
+  /*margin-right: -50px;*/
+ margin: 400px auto;
+  
+	-webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          
+}  
+  
+.container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 999;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+/*-webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;*/
+         -webkit-transform-origin: 400px 0 0;
+	          transform-origin: 400px 0 0;
+}
+.cube-box1,
+.cube-box2,
+.cube-box3,
+.cube-box4,
+.cube-box5,
+.cube-box6,
+.cube-box7,
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          -webkit-transform-origin: 400px 0 0;
+	          transform-origin: 400px 0 0;
+         
+}
+
+.cube {
+	/*-webkit-animation: around 60s forwards linear infinite;*/
+          animation: around 60s forwards linear infinite;
+    -webkit-transform: rotateX(-50deg) rotateY(0deg) translateZ(-400px);
+}
+
+.cube-box1 {
+	-webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(0deg) translateZ(400px);
+}
+.cube-box2 {
+	-webkit-transform: rotateX(0deg) rotateY(51.4deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(51.4deg) translateZ(400px);
+}
+.cube-box3 {
+	-webkit-transform: rotateX(0deg) rotateY(102.8deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(102.8deg) translateZ(400px);
+}
+.cube-box4 {
+	-webkit-transform: rotateX(0deg) rotateY(154.2deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(154.2deg) translateZ(400px);
+}
+.cube-box5 {
+	-webkit-transform: rotateX(0deg) rotateY(205.6deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(205.6deg) translateZ(400px);
+}
+.cube-box6 {
+	-webkit-transform: rotateX(0deg) rotateY(257deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(257deg) translateZ(400px);
+}
+.cube-box7 {
+	-webkit-transform: rotateX(0deg) rotateY(308.4deg) translateZ(400px);
+    transform: rotateX(0deg) rotateY(308.4deg) translateZ(400px);
+}
+.cube .plane {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0;
+  position: absolute;
+  
+}
+.cube .plane a {
+  color: white;
+  font-size: 8em;
+  text-decoration: none;
+  text-align: center;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.front {
+  -webkit-transform: rotateY(0deg) translateZ(60px);
+          transform: rotateY(0deg) translateZ(60px);
+  background-color: rgba(0, 65, 194, .9);
+}
+.back {
+  -webkit-transform: rotateX(180deg) translateZ(60px);
+          transform: rotateX(180deg) translateZ(60px);
+  background-image: -webkit-linear-gradient(5deg, rgba(0, 65, 194, .9), rgba(0, 0, 102, 1));
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.left {
+  -webkit-transform: rotateY(-90deg) translateZ(60px);
+          transform: rotateY(-90deg) translateZ(60px);
+   background-color: rgba(0, 65, 194, .5);
+}
+.right {
+  -webkit-transform: rotateY(90deg) translateZ(60px);
+          transform: rotateY(90deg) translateZ(60px);
+  background-color: rgba(230, 230, 230, 0.7);
+  background-image: -webkit-linear-gradient(5deg, rgba(0, 65, 194, .9), rgba(0, 0, 102, 1));
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.top {
+  -webkit-transform: rotateX(90deg) translateZ(60px);
+          transform: rotateX(90deg) translateZ(60px);
+          background-image: -webkit-linear-gradient(5deg, rgba(0, 51, 255, .9), rgba(0, 187, 255, 1));
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(60px);
+          transform: rotateX(-90deg) translateZ(60px);
+  background-image: -webkit-linear-gradient(5deg, rgba(0, 51, 255, .9), rgba(0, 187, 255, 1));
+}
+
+ /*@-webkit-keyframes around {
+  0% {
+    -webkit-transform: rotateX(15deg) rotateY(0deg) translateZ(-100px);
+            transform: rotateX(15deg) rotateY(0deg) translateZ(-100px);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) translateZ(-100px);
+            transform: rotateX(360deg) rotateY(360deg) translateZ(-100px);
+  }
+}*/
+
+@keyframes around {
+  0% {
+    -webkit-transform: rotateX(-50deg) rotateY(0deg) translateZ(-100px);
+            transform: rotateX(-50deg) rotateY(0deg) translateZ(-100px);
+  }
+  100% {
+    -webkit-transform: rotateX(-50deg) rotateY(360deg) translateZ(-100px);
+            transform: rotateX(-50deg) rotateY(360deg) translateZ(-100px);
+  }
+}
+
+</style>
+	</head>
+	<body class="box_bg bg01">
+		<div class="box-3d">
+			<div class="container">
+			    <div class="cube">
+				  	<div class="cube-box1">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+			    </div>
+				<div class="cube">
+				  	<div class="cube-box2">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					  </div>
+				</div>
+				<div class="cube">
+					<div class="cube-box3">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+				</div>
+				<div class="cube">
+					<div class="cube-box4">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+				</div>
+				<div class="cube">
+					<div class="cube-box5">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+				</div>
+				<div class="cube">
+					<div class="cube-box6">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+				</div>
+				<div class="cube">
+					<div class="cube-box7">
+					    <div class="plane front"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane back"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane right"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane left"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane top"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+					    <div class="plane bottom"><a href="" target="_blank" rel="nofollow" style="font-size:28px;"></a></div>
+				    </div>
+				</div>
+			</div>
+		</div>
+<script src="js/rem750.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/cxUniter.css"/>
+
+	</body>
+</html>

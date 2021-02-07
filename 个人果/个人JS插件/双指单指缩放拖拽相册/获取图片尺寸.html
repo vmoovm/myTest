@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击获取图片尺寸</title>
+	</head>
+	<body>
+		<h2>点击获取图片尺寸</h2>
+		<div class="img1"><img src="images/201601051723_09.png"/></div>
+		<div class="img1"><img src="images/20160811110621.png"/></div>
+		<div class="img1"><img src="images/20160811110803.png"/></div>
+		<script type="text/javascript">
+			function getImgDimensions(imgDom, callFn) {
+			　　var w, h;
+			　　if (!imgDom.naturalWidth) { // 现代浏览器
+			
+			　　　　nWidth = imgDom.naturalWidth
+			　　　　nHeight = imgDom.naturalHeight
+			　　　　callFn({width: w, height: h})
+			
+			　　} else { // IE6/7/8
+			　　　　var img = new Image()
+			        img.onload = function() {
+			            w = img.width
+			            h = img.height
+			           callFn({width: w, height: h})
+			　　　　}
+			　　　　img.src = imgDom.src
+			　　}
+			}
+			
+			
+			
+			
+			var imgs = document.querySelectorAll('.img1')
+			for(var v = 0; v < imgs.length; v++) {
+				imgs[v].addEventListener('click', function () {
+					var imgDom = this.querySelector('img')
+					getImgDimensions(imgDom, function(dimensions){
+					　　console.log(dimensions.width);
+					});
+				})
+			}
+		</script>
+	</body>
+</html>

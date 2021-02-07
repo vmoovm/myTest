@@ -61,10 +61,13 @@
 				var mr=parseInt($(notConf.viewSize).css('marginRight'));
 				var mt=parseInt($(notConf.viewSize).css('marginTop'));
 				var mb=parseInt($(notConf.viewSize).css('marginBottom'));
-				if(aw) notConf.max_w=aw;
+				if(aw) notConf.max_w=aw-140;
 				if(bh) notConf.max_h=bh-40;
-				$(notConf.content).width(notConf.max_w+pl+pr+ml+mr);
+				console.log(notConf)
+				// $(notConf.content).width(notConf.max_w+pl+pr+ml+mr);
+				$(notConf.content).width(notConf.max_w);
 				$(notConf.content).height(notConf.max_h+pt+pb+mt+mb+$(notConf.imgTitle).height());
+				
 				$(notConf.prev).height(notConf.max_h-$(notConf.imgTitle).height());
 				$(notConf.next).height(notConf.max_h-$(notConf.imgTitle).height());
 				$(notConf.viewSize).height(notConf.max_h-$(notConf.imgTitle).height());

@@ -14,8 +14,8 @@
 		 * 注
 		 * jquery版本：1.9.0     有on的应用需要1.9以上版本
 		 *---------------------------------------
-		 * Great：2015.1.5 
-		 * Update: 2015.12.17
+		 * Greate：2015.1.5 
+		 * Update: 2020.9.28
 		 */
 		'imiSelect':function(options){
 			var p_self=$(this);
@@ -28,10 +28,13 @@
 				speed:100,
 				clickIsHide:true,
 				callfn: function (ol){},
+				callshow: function (ol) {},
+				callhide: function (ol) {},
 				parent_css:'.zselect',
 				box:'.zse_ul',
 				Tselect:'.zselect_e'
 			},options);
+			var isshow = 1
 			p_self.find(options.Tselect).children().each(function(){
 				if($(this).attr('selected')){
 					options.selected=$(this).index();
@@ -43,6 +46,13 @@
 				$(this).css('zIndex','22');
 				if(!$(this).find(options.sub_ul+':eq(0)').is(':animated')){
 					$(this).find(options.sub_ul+':eq(0)').slideToggle(options.speed?'fast':options.speed);
+					if ($(this).attr('show') == 1) {
+						$(this).attr('show', 0)
+						if (options.callhide) options.callhide($(this))
+					} else {
+						$(this).attr('show', 1)
+						if (options.callshow) options.callshow($(this))
+					}
 				}
 			});
 			
@@ -71,7 +81,7 @@
 				}else{
 					e.cancelBubble = true;
 				}
-				if (options.callfn) options.callfn(li_html)
+				if (options.callfn) options.callfn($(this))
 				return false;
 			});
 			//点击后下拉框是否消失
@@ -80,11 +90,19 @@
 				p_self.find(options.sub_li).on('click',function(){
 					p_self.children(options.sub_ul+':eq(0)').slideUp(options.speed?'fast':options.speed);
 					$(options.parent_css).css('zIndex','1');
+					if (p_self.attr('show') == 1) {
+						p_self.attr('show', 0)
+						if (options.callhide) options.callhide(p_self)
+					}
 				});
 			}
 			//鼠标离开下拉框消失
 			p_self.on('mouseleave',function(){
 				$(this).find(options.sub_ul+':eq(0)').slideUp(options.speed?'fast':options.speed);
+				if ($(this).attr('show') == 1) {
+					$(this).attr('show', 0)
+					if (options.callhide) options.callhide($(this))
+				}
 			});
 			
 			return this;

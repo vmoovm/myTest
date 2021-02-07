@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>寻找指定的父节点(返回数组)</title>
+	</head>
+	<body>
+		<div class="za_box" id="domid" style="width: 1150px; background: #efefef;border: 1px solid #e6e6e6;">
+			<ul class="zgroup">
+				<li>字段名</li>
+				<li><p id="test"><a href="#">a链接</a></p></li>
+			</ul>
+			<ul class="zgroup">
+				<li>字段名</li>
+				<li><p><a href="#">a链接</a></p></li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			/**
+			 * 寻找指定父节点
+			 */
+			function parents (self, parent) {
+				var targetType = getType(parent);
+				
+				 // 获取目标元素类型方法
+		        function getType(target) {
+		            var type;
+		            if (target.indexOf(".") !== -1) {
+		                type = "className";
+		            } else {
+		                type = "tagName";
+		            }
+		            return type;
+		        }
+		        
+				function getNode(node) {
+		            switch(targetType) {
+		            	case 'className':
+				            if ('.' + node.className.toLowerCase() === parent.toLowerCase()) {
+					            return node;
+					        } else if (node.nodeName.toLowerCase() == 'body' || node.nodeName.toLowerCase() == 'html'){
+					            return false
+					        } else {
+					        	return getNode(node.parentNode);
+					        }
+		            		break
+		            	case 'tagName':
+		            		if (node.nodeName.toLowerCase() === parent.toLowerCase()) {
+					            return node;
+					        } else if (node.nodeName.toLowerCase() == 'body' || node.nodeName.toLowerCase() == 'html'){
+					            return false
+					        } else {
+					        	return getNode(node.parentNode);
+					        }
+		            		break
+		            }
+		            
+				}
+				var target = getNode(self)
+				if (target) {
+					var parentNode = target.parentNode
+					var parentDom = parentNode.querySelectorAll(parent)
+					return parentDom
+				} else {
+					return []
+				}
+			}
+			var test = document.getElementById("test")
+			
+			// var target = parents(test, '.zgroup')
+			// var target = parents(test, '#domid')
+			// var target = parents(test, 'div')
+			var target = parents(test, '.zgroup')
+			// var target = parents(test, 'ul')
+			console.log(target)
+			
+		</script>
+	</body>
+</html>

@@ -93,11 +93,11 @@ body {background: transparent;  }
 <div>
   <input type="button" name="btnOk" value="在顶端显示退出" onclick="zopenWindow(true);" />
 </div>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	// 传输数据
 	//给父页面发送消息，data为对象
 	parent.postMessage( {msg: 'MessageFromIframePage'}, '*');
-</script>
+</script>-->
 </body>
 </html>
 <script type="text/javascript">
@@ -105,6 +105,7 @@ body {background: transparent;  }
 		// alert('xuj')
 	// }
 	var iClick = 56456654654
+	
 	
 </script>
 <script type="text/javascript">
@@ -114,6 +115,15 @@ body {background: transparent;  }
 	}
 	
 	//监听message事件
-	window.addEventListener("message", receiveMessageFromIframePage, false);
+	// window.addEventListener("message", receiveMessageFromIframePage, false);
 	parent.postMessage( {msg: 'MessageFromIframePage'}, '*');
+</script>
+<script type="text/javascript">
+	// 火狐不支持
+	// parent.父方法()
+	// parent.parentfn()
+	console.log(window.opener)
+	// console.log(window.parent.frames)
+	// console.log(window.parent.top)
+	// window.parent.frames.item(1).data.value = window.parent.frames.item(0).data.value;
 </script>

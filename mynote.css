@@ -57,6 +57,24 @@ a {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
+
+/*----------------------------------------------------
+对图片进行剪切，保留原始比例
+-----------------------------------------------------*/
+
+object-fit:cover
+img.a {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+}
+img.a {
+  width: 200px;
+  height: 400px;
+  object-fit: none;
+  object-position: 5px 10%;
+  border: 5px solid red;
+}
 /*----------------------------------------------------
 webkit滚动条，仅支持谷歌
 -----------------------------------------------------*/
@@ -822,10 +840,27 @@ bottom: 34px;
 main .content {  
     height: 2000px;  
 }
+/*----------------------------------------------------
+data类型的Url大致有下面几种形式
+-----------------------------------------------------*/
+data:,<文本数据>
+data:text/plain,<文本数据>
+data:text/html,<HTML代码>
+data:text/html;base64,<base64编码的HTML代码>
+data:text/css,<CSS代码>
+data:text/css;base64,<base64编码的CSS代码>
+data:text/javascript,<Javascript代码>
+data:text/javascript;base64,<base64编码的Javascript代码>
+data:image/gif;base64,base64编码的gif图片数据
+data:image/png;base64,base64编码的png图片数据
+data:image/jpeg;base64,base64编码的jpeg图片数据
+data:image/x-icon;base64,base64编码的icon图片数据
 
+/*其他格式*/
+data:text/plain;charset=UTF-8;base64,5L2g5aW977yM5Lit5paH77yB
 
-
-
-
-
-
+/*使用方法*/
+<img src="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAF..." />
+background-image:url(data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAF...);
+<link rel="stylesheet" type="text/css" href="data:text/css;base64,LyogKioqKiogVGVtcGxhdGUgKioq..." />
+<script type="text/javascript" href="data:text/javascript;base64,dmFyIHNjT2JqMSA9IG5ldyBzY3Jv..."></script>

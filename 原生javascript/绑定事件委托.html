@@ -24,17 +24,27 @@
 		}
 		li {
 		 	width: 398px;
-		 	height: 20px;
+		 	min-height: 26px;
 		 	border: 1px solid black;
-		 	margin: 15px 0px;
+		 	margin: 0px;
 		 	padding: 0px;
 		 	list-style: none;
 		}
+		li p,
+		li div,
+		li span { display: block; height: 100%; line-height: 100%;}
+		p { padding: 0; margin: 0;}
 		</style>
-		<ul id="list">
-		 <li id="item1" class="item" >item1</li>
-		 <li id="item2" class="item" >item2</li>
-		 <li id="item3" class="item" style="background: #33A6FF; height: 100px;"><p class="aa" id="daAAB" style="background: #4E6B9C;">item3</p></li>
+		<ul>
+			<li class="item">父级1</li>
+			<li class="item">父级2</li>
+			<li class="item">
+				<ul id="list">
+				 <li id="item1" class="item" >item1</li>
+				 <li id="item2" class="item" >item2</li>
+				 <li id="item3" class="item" style="background: #33A6FF; height: 100px;"><p class="aa" id="daAAB" style="background: #4E6B9C;">item3</p></li>
+				</ul>
+			</li>
 		</ul>
 		 
 		 <!--找到了 start-->
@@ -75,17 +85,16 @@
 	        var len = parentNodes.length;
 	        var targetType = getType(child);
 	        var curSite = null;	//记录当前对象
-	        if (len === 0) {
-	            return;
-	        }
-	
+	         if (len === 0) return
+
 	        for (var i = 0; i < len; i++) {
+	            parentNodes[i].setAttribute('target', 'self') // 设置本身，以防点击本身时使用
 	            addListener(i)
 	        }
 	        // 绑定事件方法
 	        function addListener(i) {
 		        parentNodes[i].addEventListener(eventsName, function(event){
-		        	var obj = getNode(event.target);
+		        	var obj = getNode(event.target,targetType );
 		        	var cd = parentNodes[i].querySelectorAll(child)
 		        	for(var c = 0; c < cd.length; c++){
 		        		if (cd[c].getAttribute('curSite') === curSite) {
@@ -97,8 +106,14 @@
 			        	obj.e = event;
 			        	callback(obj);
 			        }
+			        event.stopPropagation()
 		        }, false);
 	        }
+	        // 某元素是否包含指定cls
+		    function hasClass (el, c) {
+				var re = new RegExp("(^|\\s)" + c + "(\\s|$)");
+		        return re.test(el.className);
+			}
 	        // 获取目标元素类型方法
 	        function getType(target) {
 	            var type;
@@ -111,21 +126,21 @@
 	            }
 	            return type;
 	        }
-			function getNode(node) {
+			function getNode(node, targetType) {
 		        var obj = {
 		        	self: node,
 		        	flag: false
 		        }
 		        if (targetType === "className") {
-	                if ('.'+node.className.toLowerCase() === child.toLowerCase()) {
+	                if (hasClass (node, child.replace('.', ''))) {
 			            obj.flag = true;
 			            curSite = 'cur' + new Date()*1
 						node.setAttribute('curSite',curSite);
 			            return obj;
-			        } else if (node.nodeName === 'BODY' || node.nodeName === 'HTML'){
+			        } else if (node.getAttribute('target') == 'self') {// 点击本身时直接退出，因为没有点子集没有意义
 			            return false
 			        } else {
-			        	return getNode(node.parentNode);
+			        	return getNode(node.parentNode, targetType);
 			        }
 	            } else if (targetType === "id") {
 	                if (node.id.toLowerCase() === child.toLowerCase()) {
@@ -133,10 +148,10 @@
 			            curSite = 'cur' + new Date()*1
 						node.setAttribute('curSite',curSite);
 			            return obj
-			        } else if (node.nodeName === 'BODY' || node.nodeName === 'HTML'){
+			        } else if (node.getAttribute('target') == 'self') {// 点击本身时直接退出，因为没有点子集没有意义
 			            return false
 			        } else {
-			        	return getNode(node.parentNode);
+			        	return getNode(node.parentNode, targetType);
 			        }
 	            } else {
 	                if (node.nodeName.toLowerCase() === child.toLowerCase()) {
@@ -144,10 +159,10 @@
 			            curSite = 'cur' + new Date()*1
 						node.setAttribute('curSite',curSite);
 			            return obj
-			        } else if (node.nodeName === 'BODY' || node.nodeName === 'HTML'){
+			        } else if (node.getAttribute('target') == 'self') {// 点击本身时直接退出，因为没有点子集没有意义
 			            return false
 			        } else {
-			        	return getNode(node.parentNode);
+			        	return getNode(node.parentNode, targetType);
 			        }
 	            }
 		    }
@@ -190,9 +205,9 @@
 		    	console.log(789)
 		    })*/
 			// 例子 父子均为标签时
-			on('ul','click','li',function(obj){
-		    	console.log(obj.index)
-		    })
+			// on('ul','click','li',function(obj){
+		    	// console.log(obj.index)
+		    // })
 			// 获得参数应用
 			/*on('ul','click','li',function(obj){
 				// 获得对象
@@ -205,12 +220,37 @@
 		    	// console.log(obj.self)
 				// 获得当前元素索引
 		    	// console.log(obj.index)
-				
-		    	
-		    	
 		   });*/
+	    	on('#list','click','.item',function(obj){
+		    	console.log(obj.index)
+		    })
 			
 		</script>
 		
+		<ul id="ul1">
+			<li><p><span>span</span></p></li>
+			<li><div>div</div></li>
+		</ul>
+		
+		<script type="text/javascript">
+			 var oUl = document.getElementById('ul1');
+
+                oUl.onmouseover = function(ev){
+                    var ev = ev || window.event;
+                    var oLi = ev.srcElement || ev.target;
+                    if(oLi.nodeName.toLowerCase() == 'li'){
+                        oLi.style.background = 'red';
+                    }
+
+                }
+
+                oUl.onmouseout = function(ev){
+                    var ev = ev || window.event;
+                    var oLi = ev.srcElement || ev.target;
+                    if(oLi.nodeName.toLowerCase() == 'li'){
+                        oLi.style.background = '';
+                    }
+                }
+		</script>
 	</body>
 </html>

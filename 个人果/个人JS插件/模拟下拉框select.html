@@ -68,6 +68,14 @@ $(function(){
 			var vv = $('#selec1t').find('select option[selected]').text();
 			console.log(vv)
 			// console.log($('#zhengJianLeiXing').find('select option:selected').val()) //选中的值
+		},
+		callshow: function (o) {
+			console.log(o)
+			o.addClass('zse_show')
+		},
+		callhide: function (o) {
+			console.log(o)
+			o.removeClass('zse_show')
 		}
 	});
 	

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>div放大图片是否放大</title>
+		<link rel="stylesheet" type="text/css" href="css/basic.css"/>
+		<style type="text/css">
+			.img { width: 414px; background: #000000;}
+			.img img { width: 100%;}
+		</style>
+	</head>
+	<body>
+		<h2>div放大图片是否放大.html</h2>
+		<div class="img"><img src="images/c1.png"/></div>
+		<script type="text/javascript">
+			var img = document.querySelector('.img')
+			var img_h = img.scrollHeight
+			console.log(img_h)
+		</script>
+	</body>
+</html>

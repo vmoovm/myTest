@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.imgs { width: 300px; height: 300px; margin-top: 100px; border: 1px #ccc solid; background: #f2f2f2;}
+			.img4 { width: 100%; height: 100%; overflow: hidden;}
+			.img4 img { width: 100%; -webkit-transform-origin: 50px 60px;}
+			
+			#test { position: fixed; bottom: 0; left: 0; width: 100%; height: 300px; background: rgba(0, 0, 0, .5); color: #fff; font-size: 14px; line-height: 1.5;}
+		</style>
+	</head>
+	<body>
+		<!--单双指操作插件-->
+		<!--<script src="https://cdn.bootcdn.net/ajax/libs/hammer.js/2.0.8/hammer.js"></script>-->
+		
+		
+		<div id="test">
+			
+		</div>
+		<div class="imgs"><div class="img4"><img id="abs" src="images/259779-13112PZ63960.jpg"/></div></div>
+		<script src="js/dragBox.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 获取元素在浏览器位置
+			function offset(target) {
+			    var top = 0,
+			        left = 0
+			    while(target.offsetParent) {
+			        top += target.offsetTop
+			        left += target.offsetLeft
+			        target = target.offsetParent
+			    }
+			
+			    return {
+			        top: top,
+			        left: left,
+			    }
+			}
+			var test = document.getElementById("test")
+			var imgDom = document.querySelector('#abs')
+			var top1 = offset(imgDom)
+			
+			var lastTap = 0
+			var clearTimer = null
+			var isdoubleTap = false
+			var scaleX = 0, scaleY = 0
+			var ratio = 1
+			/*imgDom.addEventListener('click', function (e) {
+				scaleX = e.pageX - top1.left
+				scaleY = e.pageY - top1.top
+				console.log(scaleX, scaleY)
+				var now = new Date() * 1
+				if (lastTap && (now - lastTap) < 201) { // 240毫秒是模拟单击和双击区分，240毫秒内点两次为双周，超过为单击
+					isdoubleTap = true
+					test.innerHTML = '坐标X：' + scaleX + ' 坐标Y:' + scaleY 
+					lastTap = null
+					e.stopPropagation()
+					if (clearTimer) clearTimeout(clearTimer)
+					
+					return
+				}
+				isdoubleTap = false
+				lastTap = now
+			clearTimer = setTimeout(function () { // 240毫秒内无再次点击为单击事件
+					if (isdoubleTap) return
+					if (clearTimer) clearTimeout(clearTimer)
+				}, 220)
+				e.stopPropagation()
+				
+			},false)*/
+			
+			var isEnlarge = new DragBox(this.imgDom, {
+				drag: function (o,o2) {
+					if (o.eve.targetTouches.length > 1) { // 双指放大操作
+						var add = o2.mab / o2.sab * 0.25
+						var flag = add < 0 ? -1 : 1 // 记录正负号
+						add = Math.abs(add)
+						add = add < 0.1 ? 0.1 : add // 保持缩放平滑
+						add = add > 0.25 ? 0.25 : add // 保持缩放平滑
+						add = add * flag // 恢复正负号
+						ratio += add
+						ratio = ratio < .6 ? 0.6 : ratio
+						ratio = ratio > 4 ? 4 : ratio
+						let num = ratio
+						let numStr = num.toString()
+						let index = numStr.indexOf('.')
+						let result = numStr.slice(0, index + 3)
+						ratio = Number(result)
+//						test.innerHTML = ratio
+						
+//						test.innerHTML = scaleX + ',' + scaleY
+						o.self.style.transform = 'scale(' +  ratio + ')'
+						if (!(o.mab <= 1 || o2.mab <= 1)) {
+							o.self.style.transformOrigin = scaleX + 'px ' + scaleY + 'px'
+						}
+					}
+				},
+				// 拖动事件开始时触发
+				dragStart: function(o, o2) {
+					o.self.style.removeProperty('transition')
+					imgwidth = o.self.clientWidth
+					imgheight = o.self.clientHeight
+					
+					if (o.eve.targetTouches.length > 1) {
+						scaleX = (o.sx + o2.sx)/2-top1.left
+						scaleY = (o.sy + o2.sy)/2-top1.top
+					}
+				},
+				// 拖动事件结束时触发
+				dragEnd: function(o, o2) {
+					if (ratio < 1) {
+						ratio = 1
+						o.self.style.transform = 'scale(' +  ratio + ')'
+						o.self.style.transformOrigin = scaleX + 'px ' + scaleY + 'px'
+					}
+					
+				}
+			})
+			
+		</script>
+	</body>
+</html>

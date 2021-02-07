@@ -1,0 +1,45 @@
+/**
+ * 字符串替换为 *
+ * @param str  字符串
+ * @param regArr 字符串格式
+ * @param type 替换方式
+ * @param ARepText 替换字符串 （默认为*）
+ * @returns {XML|string|void} 结果
+ */
+function replaceStr(str, regArr, type, ARepText) {
+    let regtext = '', Reg = null, replaceText = ARepText || '*';
+    //replaceStr('18819322663',[3,5,3],0)
+    //188*****663
+    //repeatStr是在上面定义过的（字符串循环复制），大家注意哦
+    if (regArr.length === 3 && type === 0) {
+        regtext = '(\\w{' + regArr[0] + '})\\w{' + regArr[1] + '}(\\w{' + regArr[2] + '})'
+        Reg = new RegExp(regtext);
+        let replaceCount = repeatStr(replaceText, regArr[1]);
+        return str.replace(Reg, '$1' + replaceCount + '$2')
+    }
+    //replaceStr('asdasdasdaa',[3,5,3],1)
+    //***asdas***
+    else if (regArr.length === 3 && type === 1) {
+        regtext = '\\w{' + regArr[0] + '}(\\w{' + regArr[1] + '})\\w{' + regArr[2] + '}'
+        Reg = new RegExp(regtext);
+        let replaceCount1 = repeatSte(replaceText, regArr[0]);
+        let replaceCount2 = repeatSte(replaceText, regArr[2]);
+        return str.replace(Reg, replaceCount1 + '$1' + replaceCount2)
+    }
+    //replaceStr('1asd88465asdwqe3',[5],0)
+    //*****8465asdwqe3
+    else if (regArr.length === 1 && type == 0) {
+        regtext = '(^\\w{' + regArr[0] + '})'
+        Reg = new RegExp(regtext);
+        let replaceCount = repeatSte(replaceText, regArr[0]);
+        return str.replace(Reg, replaceCount)
+    }
+    //replaceStr('1asd88465asdwqe3',[5],1,'+')
+    //"1asd88465as+++++"
+    else if (regArr.length === 1 && type == 1) {
+        regtext = '(\\w{' + regArr[0] + '}$)'
+        Reg = new RegExp(regtext);
+        let replaceCount = repeatSte(replaceText, regArr[0]);
+        return str.replace(Reg, replaceCount)
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="mycanvas" width="1200" height="1000"></canvas>
+		<script type="text/javascript">
+			var result_arr = [];
+			let dom = document.getElementById('mycanvas'),
+			ctx = dom.getContext('2d');
+			var img = new Image();
+			img.src = 'images/circle2.png';
+			img.onload = function(){
+			ctx.drawImage(img,0,0,180,150);
+			var cw = canvas.width , ch = canvas.height;
+			let imgData = ctx.getImageData(0,0,cw,ch).data;
+			var i = 0 , len = imgData.length , j = 0;
+			var tmpx = 0;
+			for( ; i < len ; i++ ){
+			tmpx+=1;
+			if(i % 1200 == 0 && i!= 0){
+			j+=1;
+			tmpx = 0;
+			};
+			var rgbas = `rgba(${imgData[i]},${imgData[i+1]},${imgData[i+2]},${imgData[i+3]})`;
+			result_arr.push( { x : tmpx , y : j , rgbas : rgbas } );
+			i+=3;
+			};
+			ctx.clearRect(0,0,cw,ch);
+			result_arr = result_arr.filter(item=>{ return item.rgbas != 'rgba(0,0,0,0)' });
+			var i = 0 ;
+			function draw(){
+			for( var i = 0 ;i < result_arr.length; i++ ){
+			ctx.fillStyle = result_arr[i].rgbas;
+			ctx.fillRect( result_arr[i].x , result_arr[i].y ,1,1);
+			};
+			}
+			draw();
+			};
+			
+			
+			
+			
+			function TForm1Button1Click(TObject *Sender)
+{
+    for(int x=0; x<Image1.Picture.Bitmap.Width;x++)
+        for(int y=0;y<Image1.Picture.Bitmap.Height;y++)
+            if(Image1.Picture.Bitmap.Canvas.Pixels[x][y]==clBlack)
+                Memo1.Lines.Add(IntToStr(x)+","+IntToStr(y));
+}
+		</script>
+	</body>
+</html>

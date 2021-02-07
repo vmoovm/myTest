@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>前端规范</title>
 <!--<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDjango.css"/>-->
-<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreMidnight.css"/>
+<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css"/>
+<!--<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeDjango.css"/>-->
+
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <link href="css/index.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
@@ -23,7 +25,7 @@
 		<div class="mode_body">
 			<p class="mode-instr">样式层级限制在三级以内，尽可能多命名样式名，少用标签名写样式，例如：</p><br />
 			<p class="mode-instr">不规范的html：</p>
-			<pre class="brush: xml">
+			<pre class="brush: html">
 				<div class="znav">
 					<ul>
 						<li class=".znav-row znav-cur"><a href="#">首页</a></li>
@@ -36,7 +38,7 @@
 				</style>
 			</pre>
 			<p class="mode-instr">规范的html：</p>
-			<pre class="brush: xml">
+			<pre class="brush: html">
 				<div class="znav">
 					<ul class="znav-wrap">
 					<li><a href="#">首页</a></li>
@@ -50,6 +52,35 @@
 					.znav-row {...}
 					.znav-cur {...}
 				</style>
+			</pre>
+			<p class="mode-instr">规范的css：</p>
+			<pre class="brush: css">
+				<!--css:-->
+					/*----------------------------------------------------
+					Default
+					-----------------------------------------------------*/
+					body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,label,iframe,fieldset,table,td,img,div,th{
+					border:0;margin:0px; padding:0;}
+					li,dd,dl,dt {list-style-type:none;}
+					table {border-collapse:collapse;} 
+					b,em,i,u,strong{font-weight:normal;font-style:normal;text-decoration:none;}
+					.clear{ clear:both; line-height:0; font-size:0;  border:none; height:0; }
+					.empty { line-height:0; font-size:0;}
+					.fr{ float:right;}
+					.fl{ float:left;}
+					.clearfix{overflow:hidden;zoom:1}
+					.br { word-wrap:break-word;	word-break:break-all;}
+					
+					/*-----------------------------------------------------
+					User-defined
+					-----------------------------------------------------*/
+					h1,h2,h3,h4,h5,h6 { font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; font-size:12px; font-weight:normal;}	
+					body {font-size:12px; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#414141; background:#fff;}
+					input,select,textarea{ margin: 0; padding:0; vertical-align:middle; font-family:Tahoma, Helvetica, Arial, 'Microsoft YaHei', sans-serif; color:#333; outline:none; resize:none;}
+					input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #ccc;}
+					a { color: #333; text-decoration: none; }
+					a:hover { color:#4c8d00; text-decoration: underline; }
+
 			</pre>
 		</div>
 	</div>

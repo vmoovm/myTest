@@ -31,7 +31,8 @@
 .za_box .zse_li a:hover { color:#fff; text-decoration: none; background-color:#09C;}
 .za_box .zse_li a:active { color: #555; text-decoration: none; }
 .za_box .zselect_e { width: 200px; height: 40px; line-height: 40px; border: 1px #f90 solid;}
-
+.za_box .zselect:hover { border:2px #3BA7C0 solid;}
+.za_box .zse_show { border:2px #3BA7C0 solid; cursor:pointer; background-image:url(../image/select/select_arrow_show.png);}
 
 
 
